@@ -5,7 +5,7 @@ public class ButtonClickEvent: MonoBehaviour {
 
 	public void IntroScene_New()
 	{
-
+		Application.LoadLevel("LoadingScene");
 	}
 
 	public void IntroScene_Continue()
