@@ -129,7 +129,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "BOSS\u51FA\u73B0\u4E86\uFF01"
+  m_Text: 
 --- !u!222 &72856727
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -182,6 +182,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   battleCanvas: {fileID: 1470008197}
   mapCanvas: {fileID: 688854419}
+  message: {fileID: 72856726}
 --- !u!4 &155301292
 Transform:
   m_ObjectHideFlags: 0

@@ -8,9 +8,10 @@ public class BattleLogic : MonoBehaviour {
 
 	public Canvas battleCanvas;
 	public Canvas mapCanvas;
+	public Text message;
 	GameObject enemyPanel;
 	GameObject infoPanel;
-	Text message;
+
 	List<GameObject> enemys = new List<GameObject>();
 	List<GameObject> players = new List<GameObject>();
 
@@ -18,7 +19,6 @@ public class BattleLogic : MonoBehaviour {
 	{
 		enemyPanel = battleCanvas.transform.FindChild ("EnemyPanel").gameObject;
 		infoPanel = battleCanvas.transform.FindChild("InfoPanel").gameObject;
-		message = battleCanvas.transform.FindChild ("MessagePanel").GetComponentInChildren<Text> ();
 	}
 
 	public void EnterBattle()
@@ -35,6 +35,7 @@ public class BattleLogic : MonoBehaviour {
 	{
 		mapCanvas.gameObject.SetActive (false);
 		battleCanvas.gameObject.SetActive (true);
+		message.text = "";
 	}
 
 	void LoadEnemy(int[] enemyIDs)
@@ -45,6 +46,7 @@ public class BattleLogic : MonoBehaviour {
 			enemy.transform.SetParent(enemyPanel.transform);
 			enemy.transform.localPosition = new Vector3(0,0,0);
 			enemys.Add(enemy);
+			AddMessage("怪物出现了！");
 		}
 		switch(enemys.Count)
 		{
@@ -83,5 +85,10 @@ public class BattleLogic : MonoBehaviour {
 	void LoadBGM()
 	{
 		AudioManager.Instance.PlayBGM ("Music/Battle0" + Random.Range(1,4));
+	}
+
+	void AddMessage(string msg)
+	{
+		message.text += msg +"\n";
 	}
 }
