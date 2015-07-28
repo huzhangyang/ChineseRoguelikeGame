@@ -12,20 +12,31 @@ public class AudioManager : MonoBehaviour {
 	public static AudioManager Instance { get { return s_Instance; } }
 
 	public AudioSource BGM;
-	public float volumeBGM;
+	public float volumeBGM
+	{
+		get
+		{
+			return BGM.volume;
+		}
+		set
+		{
+			BGM.volume = value;
+		}
+	}
 	public float volumeSE;
 
 	public void Start()
 	{
+		DontDestroyOnLoad (this.gameObject);
 		BGM.loop = true;
-		BGM.Play ();
+		volumeBGM = 1;
+		volumeSE = 1;
 	}
 
 	public void PlayBGM(string path)
 	{
-		AudioClip clip = AudioClip.Create(path, 44100 * 2, 1, 44100, true);
+		AudioClip clip = Resources.Load (path, typeof(AudioClip)) as AudioClip;
 		BGM.clip = clip;
-		BGM.volume = volumeBGM;
 		BGM.Play ();
 	}
 
@@ -48,7 +59,7 @@ public class AudioManager : MonoBehaviour {
 	{
 		if (go == null)
 			go = this.gameObject;
-		AudioClip clip = AudioClip.Create(path, 44100 * 2, 1, 44100, true);
+		AudioClip clip = Resources.Load (path, typeof(AudioClip)) as AudioClip;
 		AudioSource source = go.AddComponent<AudioSource>();
 		source.clip = clip;
 		source.volume = volumeSE;

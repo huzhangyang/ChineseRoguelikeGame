@@ -1,32 +1,87 @@
 ﻿using UnityEngine;
+using System.Collections.Generic;
 using System.Collections;
 using UnityEngine.UI;
 using DG.Tweening;
 
 public class BattleLogic : MonoBehaviour {
 
-	public Text message;
-	public Image bossPic;
-	public GameObject buttons;
+	public Canvas battleCanvas;
+	public Canvas mapCanvas;
+	GameObject enemyPanel;
+	GameObject infoPanel;
+	Text message;
+	List<GameObject> enemys = new List<GameObject>();
+	List<GameObject> players = new List<GameObject>();
 
-	public void Fight()
+	void Start()
 	{
-		message.text = "BOSS被你打败了！";
-		bossPic.sprite = Resources.Load("boss1", typeof(Sprite)) as Sprite;
-		buttons.SetActive (false);
+		enemyPanel = battleCanvas.transform.FindChild ("EnemyPanel").gameObject;
+		infoPanel = battleCanvas.transform.FindChild("InfoPanel").gameObject;
+		message = battleCanvas.transform.FindChild ("MessagePanel").GetComponentInChildren<Text> ();
 	}
 
-	public void Run()
+	public void EnterBattle()
 	{
-		message.text = "逃走了...";
-		bossPic.gameObject.SetActive (false);
-		buttons.SetActive (false);
+		int[] enemyIDs = new int[3]{10,10,10};
+
+		LoadGUI ();
+		LoadEnemy (enemyIDs);
+		LoadPlayer ();
+		LoadBGM ();
 	}
 
-	public void Stay()
+	void LoadGUI()
 	{
-		message.text = "被BOSS杀死了！";
-		buttons.SetActive (false);
-		bossPic.transform.DOShakeScale(1f, new Vector3(0.3f, -0.3f, 0f), 4, 0f).SetLoops(-1, LoopType.Yoyo);
+		mapCanvas.gameObject.SetActive (false);
+		battleCanvas.gameObject.SetActive (true);
+	}
+
+	void LoadEnemy(int[] enemyIDs)
+	{
+		for(int i = 0; i < enemyIDs.Length; i++)
+		{
+			GameObject enemy = Instantiate(Resources.Load("Enemy/Enemy" + enemyIDs[i])) as GameObject;
+			enemy.transform.SetParent(enemyPanel.transform);
+			enemy.transform.localPosition = new Vector3(0,0,0);
+			enemys.Add(enemy);
+		}
+		switch(enemys.Count)
+		{
+			case 2:	enemys[0].transform.DOLocalMoveX(-150,0.5f);
+					enemys[1].transform.DOLocalMoveX(150,0.5f);
+					break;
+			case 3: enemys[1].transform.DOLocalMoveX(-200,0.5f);
+					enemys[2].transform.DOLocalMoveX(200,0.5f);
+					break;
+		}
+	}
+
+	void LoadPlayer(bool man = true, bool girl = true)
+	{
+		if(man)
+		{
+			GameObject player = Instantiate(Resources.Load("Character/Character00")) as GameObject;
+			player.transform.SetParent(infoPanel.transform);
+			player.transform.localPosition = new Vector3(0,0,0);
+			players.Add(player);
+		}
+		if(girl)
+		{
+			GameObject player = Instantiate(Resources.Load("Character/Character01")) as GameObject;
+			player.transform.SetParent(infoPanel.transform);
+			player.transform.localPosition = new Vector3(0,0,0);
+			players.Add(player);
+		}
+		if(players.Count > 1)
+		{
+			players[0].transform.DOLocalMoveX(-200,0.5f);
+			players[1].transform.DOLocalMoveX(200,0.5f);
+		}			
+	}
+	
+	void LoadBGM()
+	{
+		AudioManager.Instance.PlayBGM ("Music/Battle0" + Random.Range(1,4));
 	}
 }
