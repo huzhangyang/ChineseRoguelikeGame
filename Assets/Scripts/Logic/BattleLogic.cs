@@ -11,14 +11,18 @@ public class BattleLogic : MonoBehaviour {
 	public Text message;
 	GameObject enemyPanel;
 	GameObject infoPanel;
+	GameObject commandPanel;
+	GameObject timeLine;
 
-	List<GameObject> enemys = new List<GameObject>();
-	List<GameObject> players = new List<GameObject>();
+	List<Enemy> enemys = new List<Enemy>();
+	List<Player> players = new List<Player>();
 
 	void Start()
 	{
 		enemyPanel = battleCanvas.transform.FindChild ("EnemyPanel").gameObject;
 		infoPanel = battleCanvas.transform.FindChild("InfoPanel").gameObject;
+		commandPanel = battleCanvas.transform.FindChild("CommandPanel").gameObject;
+		timeLine = battleCanvas.transform.FindChild ("TimeLine").gameObject;
 	}
 
 	public void EnterBattle()
@@ -26,9 +30,10 @@ public class BattleLogic : MonoBehaviour {
 		int[] enemyIDs = new int[3]{10,10,10};
 
 		LoadGUI ();
-		LoadEnemy (enemyIDs);
-		LoadPlayer ();
 		LoadBGM ();
+		LoadPlayer ();
+
+		StartCoroutine(LoadEnemy (enemyIDs));
 	}
 
 	void LoadGUI()
@@ -38,25 +43,9 @@ public class BattleLogic : MonoBehaviour {
 		message.text = "";
 	}
 
-	void LoadEnemy(int[] enemyIDs)
+	void LoadBGM()
 	{
-		for(int i = 0; i < enemyIDs.Length; i++)
-		{
-			GameObject enemy = Instantiate(Resources.Load("Enemy/Enemy" + enemyIDs[i])) as GameObject;
-			enemy.transform.SetParent(enemyPanel.transform);
-			enemy.transform.localPosition = new Vector3(0,0,0);
-			enemys.Add(enemy);
-			AddMessage("怪物出现了！");
-		}
-		switch(enemys.Count)
-		{
-			case 2:	enemys[0].transform.DOLocalMoveX(-150,0.5f);
-					enemys[1].transform.DOLocalMoveX(150,0.5f);
-					break;
-			case 3: enemys[1].transform.DOLocalMoveX(-200,0.5f);
-					enemys[2].transform.DOLocalMoveX(200,0.5f);
-					break;
-		}
+		AudioManager.Instance.PlayBGM ("Music/Battle0" + Random.Range(1,4));
 	}
 
 	void LoadPlayer(bool man = true, bool girl = true)
@@ -66,14 +55,22 @@ public class BattleLogic : MonoBehaviour {
 			GameObject player = Instantiate(Resources.Load("Character/Character00")) as GameObject;
 			player.transform.SetParent(infoPanel.transform);
 			player.transform.localPosition = new Vector3(0,0,0);
-			players.Add(player);
+			players.Add(player.GetComponent<Player>());
+
+			GameObject avatar = Instantiate(Resources.Load("avatar")) as GameObject;
+			avatar.transform.SetParent(timeLine.transform);
+			player.GetComponent<Player>().SetAvatar(avatar);
 		}
 		if(girl)
 		{
 			GameObject player = Instantiate(Resources.Load("Character/Character01")) as GameObject;
 			player.transform.SetParent(infoPanel.transform);
 			player.transform.localPosition = new Vector3(0,0,0);
-			players.Add(player);
+			players.Add(player.GetComponent<Player>());
+
+			GameObject avatar = Instantiate(Resources.Load("avatar")) as GameObject;
+			avatar.transform.SetParent(timeLine.transform);
+			player.GetComponent<Player>().SetAvatar(avatar);
 		}
 		if(players.Count > 1)
 		{
@@ -81,10 +78,38 @@ public class BattleLogic : MonoBehaviour {
 			players[1].transform.DOLocalMoveX(200,0.5f);
 		}			
 	}
-	
-	void LoadBGM()
+
+	IEnumerator LoadEnemy(int[] enemyIDs)
 	{
-		AudioManager.Instance.PlayBGM ("Music/Battle0" + Random.Range(1,4));
+		for(int i = 0; i < enemyIDs.Length; i++)
+		{
+			GameObject enemy = Instantiate(Resources.Load("Enemy/Enemy" + enemyIDs[i])) as GameObject;
+
+			enemy.transform.SetParent(enemyPanel.transform);
+			enemy.transform.localPosition = new Vector3(0,0,0);
+			enemy.transform.DOShakeScale(1);
+			enemys.Add(enemy.GetComponent<Enemy>());
+
+			GameObject avatar = Instantiate(Resources.Load("avatar")) as GameObject;
+			avatar.transform.SetParent(timeLine.transform);
+			enemy.GetComponent<Enemy>().SetAvatar(avatar);
+
+			AddMessage("怪物出现了！");
+			yield return new WaitForSeconds(1f);
+			switch(enemyIDs.Length)
+			{
+			case 2: if(i == 0)
+						enemy.transform.DOLocalMoveX(-150,0.5f);
+					else if(i == 1)
+						enemy.transform.DOLocalMoveX(150,0.5f);
+					break;
+			case 3:	if(i == 0)
+						enemy.transform.DOLocalMoveX(-200,0.5f);
+					else if(i == 2)
+						enemy.transform.DOLocalMoveX(200,0.5f);
+					break;
+			}
+		}
 	}
 
 	void AddMessage(string msg)
