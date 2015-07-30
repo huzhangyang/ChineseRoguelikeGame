@@ -64,6 +64,12 @@ public class EventManager : MonoBehaviour{
 		waitEvent.Add(new InvokeParam((int)evt, args));
 	}
 
+	public void PostEvent(EventDefine evt)
+	{
+		MessageEventArgs args = new MessageEventArgs();
+		waitEvent.Add(new InvokeParam((int)evt, args));
+	}
+
 	// 立即执行事件
 	public void InvokeEvent(EventDefine evt, MessageEventArgs args)
 	{

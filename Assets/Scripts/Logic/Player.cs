@@ -13,5 +13,12 @@ public class Player : BattleObject {
 		return data;
 	}
 
-
+	protected override void OnUpdateTimeline(MessageEventArgs args)
+	{
+		base.OnUpdateTimeline(args);
+		if(timelinePosition >= 400)
+		{
+			EventManager.Instance.PostEvent(EventDefine.PlayerReady);
+		}	
+	}
 }

@@ -24,18 +24,17 @@ public class BattleUI : MonoBehaviour {
 	
 	void OnEnable() 
 	{
-		EventManager.Instance.RegisterEvent (EventDefine.EnterBattle, LoadGUI);
-		EventManager.Instance.RegisterEvent (EventDefine.UpdateTimeline, UpdateTimeline);
-
+		EventManager.Instance.RegisterEvent (EventDefine.EnterBattle, OnEnterBattle);
+		EventManager.Instance.RegisterEvent (EventDefine.PlayerReady, OnPlayerReady);
 	}
 	
 	void OnDisable () 
 	{
-		EventManager.Instance.UnRegisterEvent (EventDefine.EnterBattle, LoadGUI);
-		EventManager.Instance.UnRegisterEvent (EventDefine.UpdateTimeline, UpdateTimeline);
+		EventManager.Instance.UnRegisterEvent (EventDefine.EnterBattle, OnEnterBattle);
+		EventManager.Instance.RegisterEvent (EventDefine.PlayerReady, OnPlayerReady);
 	}
 
-	void LoadGUI(MessageEventArgs args)
+	void OnEnterBattle(MessageEventArgs args)
 	{
 		mapCanvas.gameObject.SetActive (false);
 		battleCanvas.gameObject.SetActive (true);
@@ -81,6 +80,11 @@ public class BattleUI : MonoBehaviour {
 		}
 	}
 
+	void OnPlayerReady(MessageEventArgs args)
+	{
+		commandPanel.SetActive(true);
+	}
+
 	IEnumerator LoadEnemy(string[] enemyIDs)
 	{
 		for(int i = 0; i < enemyIDs.Length; i++)
@@ -113,21 +117,7 @@ public class BattleUI : MonoBehaviour {
 			}
 		}
 		yield return new WaitForSeconds(1f);
-		EventManager.Instance.PostEvent (EventDefine.StartBattle, new MessageEventArgs ());
-	}
-
-	void UpdateTimeline(MessageEventArgs args)
-	{
-		foreach(Player player in BattleLogic.players)
-		{
-			if(player.battleStatus == BattleObject.BattleStatus.Prepare)
-				player.timelinePosition += 10;
-			if(player.timelinePosition == 500)
-			{
-				player.battleStatus = BattleObject.BattleStatus.Ready;
-				commandPanel.SetActive(true);
-			}
-		}
+		EventManager.Instance.PostEvent (EventDefine.StartBattle);
 	}
 
 	public void AddMessage(string msg)
