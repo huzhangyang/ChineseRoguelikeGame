@@ -1,119 +1,47 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
-using UnityEngine.UI;
-using DG.Tweening;
 
 public class BattleLogic : MonoBehaviour {
 
-	public Canvas battleCanvas;
-	public Canvas mapCanvas;
-	public Text message;
-	GameObject enemyPanel;
-	GameObject infoPanel;
-	GameObject commandPanel;
-	GameObject timeLine;
+	public static List<Enemy> enemys;
+	public static List<Player> players;
 
-	List<Enemy> enemys = new List<Enemy>();
-	List<Player> players = new List<Player>();
-
-	void Start()
+	void OnEnable() 
 	{
-		enemyPanel = battleCanvas.transform.FindChild ("EnemyPanel").gameObject;
-		infoPanel = battleCanvas.transform.FindChild("InfoPanel").gameObject;
-		commandPanel = battleCanvas.transform.FindChild("CommandPanel").gameObject;
-		timeLine = battleCanvas.transform.FindChild ("TimeLine").gameObject;
+		EventManager.Instance.RegisterEvent (EventDefine.StartBattle, StartBattle);
+	}
+	
+	void OnDisable () 
+	{
+		EventManager.Instance.UnRegisterEvent (EventDefine.EnterBattle, StartBattle);
 	}
 
 	public void EnterBattle()
 	{
-		int[] enemyIDs = new int[3]{10,10,10};
+		enemys = new List<Enemy>();
+		players = new List<Player>();
 
-		LoadGUI ();
-		LoadBGM ();
-		LoadPlayer ();
-
-		StartCoroutine(LoadEnemy (enemyIDs));
+		MessageEventArgs args = new MessageEventArgs ();
+		args.AddMessage("man","1");
+		args.AddMessage("girl","1");
+		args.AddMessage("enemy","10,10,10");
+		EventManager.Instance.PostEvent (EventDefine.EnterBattle, args);
 	}
 
-	void LoadGUI()
+	void StartBattle(MessageEventArgs args)
 	{
-		mapCanvas.gameObject.SetActive (false);
-		battleCanvas.gameObject.SetActive (true);
-		message.text = "";
-	}
-
-	void LoadBGM()
-	{
-		AudioManager.Instance.PlayBGM ("Music/Battle0" + Random.Range(1,4));
-	}
-
-	void LoadPlayer(bool man = true, bool girl = true)
-	{
-		if(man)
+		GlobalManager.Instance.gameStatus = GlobalManager.GameStatus.Battle;
+		foreach(Player player in players)
 		{
-			GameObject player = Instantiate(Resources.Load("Character/Character00")) as GameObject;
-			player.transform.SetParent(infoPanel.transform);
-			player.transform.localPosition = new Vector3(0,0,0);
-			players.Add(player.GetComponent<Player>());
-
-			GameObject avatar = Instantiate(Resources.Load("avatar")) as GameObject;
-			avatar.transform.SetParent(timeLine.transform);
-			player.GetComponent<Player>().SetAvatar(avatar);
-		}
-		if(girl)
-		{
-			GameObject player = Instantiate(Resources.Load("Character/Character01")) as GameObject;
-			player.transform.SetParent(infoPanel.transform);
-			player.transform.localPosition = new Vector3(0,0,0);
-			players.Add(player.GetComponent<Player>());
-
-			GameObject avatar = Instantiate(Resources.Load("avatar")) as GameObject;
-			avatar.transform.SetParent(timeLine.transform);
-			player.GetComponent<Player>().SetAvatar(avatar);
-		}
-		if(players.Count > 1)
-		{
-			players[0].transform.DOLocalMoveX(-200,0.5f);
-			players[1].transform.DOLocalMoveX(200,0.5f);
-		}			
-	}
-
-	IEnumerator LoadEnemy(int[] enemyIDs)
-	{
-		for(int i = 0; i < enemyIDs.Length; i++)
-		{
-			GameObject enemy = Instantiate(Resources.Load("Enemy/Enemy" + enemyIDs[i])) as GameObject;
-
-			enemy.transform.SetParent(enemyPanel.transform);
-			enemy.transform.localPosition = new Vector3(0,0,0);
-			enemy.transform.DOShakeScale(1);
-			enemys.Add(enemy.GetComponent<Enemy>());
-
-			GameObject avatar = Instantiate(Resources.Load("avatar")) as GameObject;
-			avatar.transform.SetParent(timeLine.transform);
-			enemy.GetComponent<Enemy>().SetAvatar(avatar);
-
-			AddMessage("怪物出现了！");
-			yield return new WaitForSeconds(1f);
-			switch(enemyIDs.Length)
-			{
-			case 2: if(i == 0)
-						enemy.transform.DOLocalMoveX(-150,0.5f);
-					else if(i == 1)
-						enemy.transform.DOLocalMoveX(150,0.5f);
-					break;
-			case 3:	if(i == 0)
-						enemy.transform.DOLocalMoveX(-200,0.5f);
-					else if(i == 2)
-						enemy.transform.DOLocalMoveX(200,0.5f);
-					break;
-			}
+			player.battleStatus = BattleObject.BattleStatus.Prepare;
 		}
 	}
 
-	void AddMessage(string msg)
+	void Update()
 	{
-		message.text += msg +"\n";
+		if(GlobalManager.Instance.gameStatus == GlobalManager.GameStatus.Battle)
+			EventManager.Instance.PostEvent (EventDefine.UpdateTimeline, new MessageEventArgs ());
 	}
+
 }

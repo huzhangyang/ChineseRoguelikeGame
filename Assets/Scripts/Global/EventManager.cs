@@ -13,27 +13,21 @@ public class EventManager : MonoBehaviour{
 	private static EventManager s_Instance;
 	public EventManager() { s_Instance = this; }
 	public static EventManager Instance { get { return s_Instance; } }
-		
-	// 消息参数,所以参数将继承于EventArgs
-	public class EventStringArgs : EventArgs
-	{
-		public Dictionary<string, string> msg = new Dictionary<string, string>();
-	}
 
 	// 消息处理函数代理
-	public delegate void EventHandler(EventArgs arg);
+	public delegate void EventHandler(MessageEventArgs arg);
 		
 	// 消息对应参数容器
 	private class InvokeParam
 	{
-		public InvokeParam(int evt, EventArgs arg)
+		public InvokeParam(int evt, MessageEventArgs arg)
 		{
 			this.evt = evt;
 			this.args = arg;
 		}
 			
 		public int evt;
-		public EventArgs args;
+		public MessageEventArgs args;
 	}
 
 	private Dictionary<int, List<EventHandler>> events = new Dictionary<int, List<EventHandler>>(); // 保存所有消息处理的字典
@@ -65,13 +59,13 @@ public class EventManager : MonoBehaviour{
 	}
 		
 	// 将事件加入消息队列
-	public void PostEvent(EventDefine evt, EventArgs args)
+	public void PostEvent(EventDefine evt, MessageEventArgs args)
 	{
 		waitEvent.Add(new InvokeParam((int)evt, args));
 	}
 
 	// 立即执行事件
-	public void InvokeEvent(EventDefine evt, EventArgs args)
+	public void InvokeEvent(EventDefine evt, MessageEventArgs args)
 	{
 		int _event = (int)evt;
 		List<EventHandler> handlerList;
@@ -104,5 +98,68 @@ public class EventManager : MonoBehaviour{
 			return;
 		}
 		events[_event].Remove(handler);
+	}
+}
+
+public class MessageEventArgs : EventArgs
+{
+	public MessageEventArgs()
+	{
+		messages = new Dictionary<string, string>();
+	}
+	
+	public MessageEventArgs(MessageEventArgs copy)
+	{
+		messages =  new Dictionary<string, string>(copy.messages);
+	}
+	
+	public Dictionary<string, string> messages;
+	
+	public void AddMessage(string _key, string _value)
+	{
+		messages.Add(_key, _value);
+	}
+	
+	public void AddMessageReplace( string _key , string _value)
+	{
+		if ( messages.ContainsKey( _key ))
+			messages[_key]= _value;
+		else
+			messages.Add( _key , _value );
+	}
+	
+	public void SetMessage(string _key, string _value)
+	{
+		messages[_key] = _value;
+	}
+	
+	public void RemoveMessage(string _key)
+	{
+		messages.Remove(_key);
+	}
+	
+	public bool ContainMessage( string _key )
+	{
+		if( messages.ContainsKey(_key) )
+		{
+			return true;
+		}
+		
+		return false;		
+	}
+	
+	public string GetMessage(string _key)
+	{
+		if( !messages.ContainsKey(_key) )
+		{
+			return null;
+		}
+		
+		return messages[_key];
+	}
+	
+	public void ClearMessage()
+	{
+		messages.Clear();
 	}
 }

@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 428898}
   - 82: {fileID: 8274102}
   - 114: {fileID: 11451068}
+  - 114: {fileID: 11429730}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -98,6 +99,17 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!114 &11429730
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 154684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcc634d338f49614cbedc43e15b3d4a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11451068
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -110,7 +122,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BGM: {fileID: 8274102}
-  volumeBGM: 0
   volumeSE: 0
 --- !u!1001 &100100000
 Prefab:

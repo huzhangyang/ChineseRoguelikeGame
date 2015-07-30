@@ -285,6 +285,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 155301292}
   - 114: {fileID: 155301291}
+  - 114: {fileID: 155301293}
   m_Layer: 0
   m_Name: BattleLogic
   m_TagString: Untagged
@@ -303,9 +304,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5bf5c266890adb4c9925a5840dd9b36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  battleCanvas: {fileID: 1470008197}
-  mapCanvas: {fileID: 688854419}
-  message: {fileID: 72856726}
 --- !u!4 &155301292
 Transform:
   m_ObjectHideFlags: 0
@@ -318,6 +316,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
+--- !u!114 &155301293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 155301290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b5874cc3337f8b41b30a90004d7e405, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  battleCanvas: {fileID: 1470008197}
+  mapCanvas: {fileID: 688854419}
+  message: {fileID: 72856726}
 --- !u!1001 &656894922
 Prefab:
   m_ObjectHideFlags: 0

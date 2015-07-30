@@ -10,6 +10,8 @@ public class GlobalManager : MonoBehaviour {
 	private static GlobalManager s_Instance;
 	public GlobalManager() { s_Instance = this; }
 	public static GlobalManager Instance { get { return s_Instance; } }
+
+	public GameStatus gameStatus = GameStatus.Title;
 	
 	void Start()
 	{
@@ -28,5 +30,14 @@ public class GlobalManager : MonoBehaviour {
 		{//进入前台
 
 		}
+	}
+
+	public enum GameStatus
+	{
+		Title,
+		Loading,
+		Map,
+		Battle,
+		Pause
 	}
 }

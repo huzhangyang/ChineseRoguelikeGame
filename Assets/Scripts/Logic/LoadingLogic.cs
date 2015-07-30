@@ -8,6 +8,7 @@ public class LoadingLogic : MonoBehaviour {
 
 	void Start () {
 		//tips.text = 
+		GlobalManager.Instance.gameStatus = GlobalManager.GameStatus.Loading;
 		StartCoroutine (LoadScene ());
 	}
 
