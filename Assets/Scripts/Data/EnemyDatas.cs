@@ -1,14 +1,32 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
+public class EnemyDatas : ScriptableObject 
+{
+	public List<EnemyData> datas;
+	
+	public EnemyData GetAnimationData(int enemyID)
+	{
+		foreach (EnemyData data in datas)
+		{
+			if (data.enemyID == enemyID)
+				return data;
+		}
+		return null;
+	}
+}
+
+[System.Serializable]
 public class EnemyData : ObjectData {
 /*
  * 怪物数据。除了通用属性外，还有一些怪物独有的属性。
 */
-
+	public int enemyID;
 	public EnemyData(int enemyID)
 	{
 		name = "Enemy";
+		this.enemyID = enemyID;
 		maxHP = (int)(100 * Random.Range(0.8f, 1.2f));
 		maxMP = (int)(100 * Random.Range(0.8f, 1.2f));
 		power = (int)(10 * Random.Range(0.8f, 1.2f));
