@@ -8,10 +8,13 @@ public class Enemy : BattleObject {
  * */
 	public int enemyID;
 
-	EnemyData data = new EnemyData();
+	void Start()
+	{
+		data = new EnemyData(enemyID);
+	}
 
 	public EnemyData GetData()
 	{
-		return data;
+		return (EnemyData)data;
 	}
 }

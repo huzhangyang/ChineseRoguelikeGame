@@ -18,7 +18,8 @@ public abstract class BattleObject : MonoBehaviour {
 		}
 	}//max:500
 
-	Image timelineAvatar;
+	protected ObjectData data;
+	protected Image timelineAvatar;
 
 	void OnEnable() 
 	{
@@ -41,7 +42,7 @@ public abstract class BattleObject : MonoBehaviour {
 	protected virtual void OnUpdateTimeline(MessageEventArgs args)
 	{
 		if(this.battleStatus == BattleObject.BattleStatus.Prepare)
-			this.timelinePosition += 10;
+			this.timelinePosition += data.agility;
 		if(timelinePosition >= 400)
 		{
 			battleStatus = BattleObject.BattleStatus.Ready;

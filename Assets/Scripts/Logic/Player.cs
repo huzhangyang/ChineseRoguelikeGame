@@ -6,11 +6,16 @@ public class Player : BattleObject {
 /*
  * 角色在战斗中的数据实体与逻辑。
  * */	
-	PlayerData data = new PlayerData();
+	public int playerID;
+
+	void Start()
+	{
+		data = new PlayerData(playerID);
+	}
 	
 	public PlayerData GetData()
 	{
-		return data;
+		return (PlayerData)data;
 	}
 
 	protected override void OnUpdateTimeline(MessageEventArgs args)
@@ -18,7 +23,9 @@ public class Player : BattleObject {
 		base.OnUpdateTimeline(args);
 		if(timelinePosition >= 400)
 		{
-			EventManager.Instance.PostEvent(EventDefine.PlayerReady);
+			MessageEventArgs _args = new MessageEventArgs();
+			_args.AddMessage("PlayerName",data.name);
+			EventManager.Instance.PostEvent(EventDefine.PlayerReady,_args);
 		}	
 	}
 }

@@ -19,7 +19,37 @@ public class PlayerData : ObjectData {
 	public Ring ring1;
 	public Ring ring2;
 
-	public PlayerData()
+	public PlayerData(int playerID)
 	{
+		switch(playerID)
+		{
+		case 0:	name = "Man";
+				maxHP = 200;
+				maxMP = 100;
+				power = 15;
+				skill = 15;
+				agility = 10;
+				toughness = 15;
+				luck = 5;
+				break;
+		case 1: name = "Girl";
+				maxHP = 100;
+				maxMP = 200;
+				power = 5;
+				skill = 15;
+				agility = 20;
+				toughness = 10;
+				luck = 10;
+				break;
+		}
+		currentHP = maxHP;
+		currentMP = maxMP;
+		expMaxHP = 0;
+		expMaxMP = 0;
+		expPower = 0;
+		expSkill = 0;
+		expAgility = 0;
+		expToughness = 0;
+		expLuck = 0;
 	}
 }

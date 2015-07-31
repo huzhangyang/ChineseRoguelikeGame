@@ -10,12 +10,13 @@ public class BattleLogic : MonoBehaviour {
 	void OnEnable() 
 	{
 		EventManager.Instance.RegisterEvent (EventDefine.StartBattle, OnStartBattle);
-
+		EventManager.Instance.RegisterEvent (EventDefine.PlayerReady, OnPlayerReady);
 	}
 	
 	void OnDisable () 
 	{
 		EventManager.Instance.UnRegisterEvent (EventDefine.EnterBattle, OnStartBattle);
+		EventManager.Instance.UnRegisterEvent (EventDefine.PlayerReady, OnPlayerReady);
 	}
 
 	public void EnterBattle()
@@ -34,6 +35,21 @@ public class BattleLogic : MonoBehaviour {
 	{
 		GlobalManager.Instance.gameStatus = GlobalManager.GameStatus.Battle;
 	}
+
+	void OnPlayerReady(MessageEventArgs args)
+	{
+		string name = args.GetMessage ("PlayerName");
+		foreach(Enemy enemy in enemys)
+		{
+			enemy.battleStatus = BattleObject.BattleStatus.Pause;
+		}
+		foreach(Player player in players)
+		{
+			if(player.GetData().name != name)
+				player.battleStatus = BattleObject.BattleStatus.Pause;
+		}
+	}
+
 
 	void Update()
 	{

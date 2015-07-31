@@ -50,6 +50,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1575d39b13671114fa8e19aac45a1040, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  battleStatus: 0
+  playerID: 1
 --- !u!222 &22234062
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -87,6 +89,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: playerID
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
