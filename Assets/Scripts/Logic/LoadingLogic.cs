@@ -14,6 +14,7 @@ public class LoadingLogic : MonoBehaviour {
 
 	IEnumerator LoadScene()
 	{
+		DataManager.Instance.LoadAllDatas ();
 		yield return new WaitForSeconds (1f);//这一行是为了防止乃们看不清Loading过程-_-
 		AsyncOperation asyncOp = Application.LoadLevelAsync("GameScene");
 		yield return asyncOp;

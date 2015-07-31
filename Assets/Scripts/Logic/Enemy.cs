@@ -8,9 +8,9 @@ public class Enemy : BattleObject {
  * */
 	public int enemyID;
 
-	void Start()
+	void Awake()
 	{
-		data = new EnemyData(enemyID);
+		data = DataManager.Instance.GetEnemyDatas ().GetEnemyData (enemyID);
 	}
 
 	public EnemyData GetData()

@@ -99,7 +99,7 @@ public class BattleUI : MonoBehaviour {
 			avatar.transform.SetParent(timeLine.transform);
 			enemy.GetComponent<Enemy>().SetAvatar(avatar);
 			
-			AddMessage("怪物出现了！");
+			AddMessage(enemy.GetComponent<Enemy>().GetData().name + "出现了！");
 			enemy.transform.DOShakeScale(1);
 			yield return new WaitForSeconds(1f);
 			switch(enemyIDs.Length)

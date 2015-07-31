@@ -6,13 +6,14 @@ public class EnemyDatas : ScriptableObject
 {
 	public List<EnemyData> datas;
 	
-	public EnemyData GetAnimationData(int enemyID)
+	public EnemyData GetEnemyData(int enemyID)
 	{
 		foreach (EnemyData data in datas)
 		{
 			if (data.enemyID == enemyID)
 				return data;
 		}
+		Debug.LogError("Asking for an non-exist enemy:" + enemyID);
 		return null;
 	}
 }
