@@ -1,11 +1,29 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+
+public class PlayerDatas
+{
+	public List<PlayerData> datas;
+	
+	public PlayerData GetPlayerData(int playerID)
+	{
+		foreach (PlayerData data in datas)
+		{
+			if (data.playerID == playerID)
+				return data;
+		}
+		Debug.LogError("Asking for an non-exist player:" + playerID);
+		return null;
+	}
+}
 
 [System.Serializable]
 public class PlayerData : ObjectData {
 /*
  * 玩家数据。除了通用属性外，还有一些玩家独有的属性。
 */
+	public int playerID;
 	//attribute exp
 	public int expMaxHP;//最大生命值
 	public int expMaxMP;//最大灵力值
@@ -43,6 +61,7 @@ public class PlayerData : ObjectData {
 				luck = 10;
 				break;
 		}
+		this.playerID = playerID;
 		currentHP = maxHP;
 		currentMP = maxMP;
 		expMaxHP = 0;
