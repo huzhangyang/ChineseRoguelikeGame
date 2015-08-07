@@ -14,16 +14,28 @@ public class DataManager : MonoBehaviour {
 
 	EnemyDatas enemyDatas;
 	PlayerDatas playerDatas;
+	DialogueDatas dialogueDatas;
 	//ConfigData configData;
 
 	public void LoadAllDatas()
 	{
+		//enemyData
 		enemyDatas = Resources.Load ("GameData/EnemyData", typeof(EnemyDatas)) as EnemyDatas;
 		if (enemyDatas == null)
 		{
 			Debug.LogWarning ("Load EnemyData Failed.");
-			playerDatas = new PlayerDatas();
+			enemyDatas = new EnemyDatas();
+			enemyDatas.datas = new List<EnemyData>();
 		}
+		//dialogueData
+		dialogueDatas = Resources.Load ("GameData/DialogueData", typeof(DialogueDatas)) as DialogueDatas;
+		if (dialogueDatas == null)
+		{
+			Debug.LogWarning ("Load DialogueData Failed.");
+			dialogueDatas = new DialogueDatas();
+			dialogueDatas.datas = new List<DialogueData>();
+		}
+		//playerData
 		SaveManager.Instance.LoadGame ();
 		if(playerDatas == null)
 		{
@@ -33,6 +45,7 @@ public class DataManager : MonoBehaviour {
 			playerDatas.datas.Add(new PlayerData(0));
 			playerDatas.datas.Add(new PlayerData(1));
 		}
+		//configData
 		/*SaveManager.Instance.LoadConfig ();
 		if(configData == null)
 		{
@@ -49,6 +62,11 @@ public class DataManager : MonoBehaviour {
 	public EnemyDatas GetEnemyDatas()
 	{
 		return enemyDatas; 
+	}
+
+	public DialogueDatas GetDialogueDatas()
+	{
+		return dialogueDatas; 
 	}
 
 	public PlayerDatas GetPlayerDatas()

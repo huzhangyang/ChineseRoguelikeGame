@@ -11,6 +11,7 @@ GameObject:
   - 114: {fileID: 11456024}
   - 114: {fileID: 11474390}
   - 114: {fileID: 11468650}
+  - 114: {fileID: 11419662}
   m_Layer: 0
   m_Name: GlobalManager
   m_TagString: Untagged
@@ -30,6 +31,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &11419662
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 103946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e784f08947909c4f8f447cc8460052d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11456024
 MonoBehaviour:
   m_ObjectHideFlags: 1
