@@ -2,12 +2,12 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class LoadingLogic : MonoBehaviour {
+public class LoadingWindow : MonoBehaviour {
 
 	public Text tips;
 
 	void Start () {
-		//tips.text = 
+		tips.text = "Tips：击败BOSS卷毛咩，有可能掉落大量珍贵毛皮！";
 		GlobalManager.Instance.gameStatus = GlobalManager.GameStatus.Loading;
 		StartCoroutine (LoadScene ());
 	}

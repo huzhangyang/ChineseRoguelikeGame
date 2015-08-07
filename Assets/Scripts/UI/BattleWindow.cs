@@ -4,22 +4,20 @@ using System.Collections;
 using UnityEngine.UI;
 using DG.Tweening;
 
-public class BattleUI : MonoBehaviour {
-
-	public Canvas battleCanvas;
-	public Canvas mapCanvas;
+public class BattleWindow: MonoBehaviour {
+	
 	public Text message;
 	GameObject enemyPanel;
 	GameObject infoPanel;
 	GameObject commandPanel;
 	GameObject timeLine;
 
-	void Start () 
+	void Awake () 
 	{
-		enemyPanel = battleCanvas.transform.FindChild ("EnemyPanel").gameObject;
-		infoPanel = battleCanvas.transform.FindChild("InfoPanel").gameObject;
-		commandPanel = battleCanvas.transform.FindChild("CommandPanel").gameObject;
-		timeLine = battleCanvas.transform.FindChild ("TimeLine").gameObject;
+		enemyPanel = this.transform.FindChild ("EnemyPanel").gameObject;
+		infoPanel = this.transform.FindChild("InfoPanel").gameObject;
+		commandPanel = this.transform.FindChild("CommandPanel").gameObject;
+		timeLine = this.transform.FindChild ("TimeLine").gameObject;
 	}
 	
 	void OnEnable() 
@@ -36,8 +34,6 @@ public class BattleUI : MonoBehaviour {
 
 	void OnEnterBattle(MessageEventArgs args)
 	{
-		mapCanvas.gameObject.SetActive (false);
-		battleCanvas.gameObject.SetActive (true);
 		message.text = "";
 
 		if(args.ContainMessage("man"))

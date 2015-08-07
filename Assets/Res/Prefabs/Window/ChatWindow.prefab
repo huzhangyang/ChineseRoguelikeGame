@@ -416,9 +416,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccd10d4666d355a4aa721081f869908d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogText: {fileID: 0}
-  tellerName: {fileID: 0}
-  tellerImage: {fileID: 0}
+  dialogText: {fileID: 11473456}
+  tellerName: {fileID: 11485346}
+  tellerImage: {fileID: 11431732}
   dialogID: 1001
 --- !u!222 &22215366
 CanvasRenderer:

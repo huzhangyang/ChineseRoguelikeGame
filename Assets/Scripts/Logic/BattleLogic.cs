@@ -7,6 +7,9 @@ public class BattleLogic : MonoBehaviour {
 	public static List<Enemy> enemys;
 	public static List<Player> players;
 
+	public Canvas battleCanvas;
+	public Canvas mapCanvas;
+
 	void OnEnable() 
 	{
 		EventManager.Instance.RegisterEvent (EventDefine.StartBattle, OnStartBattle);
@@ -21,6 +24,9 @@ public class BattleLogic : MonoBehaviour {
 
 	public void EnterBattle()
 	{
+		mapCanvas.gameObject.SetActive (false);
+		battleCanvas.gameObject.SetActive (true);
+
 		enemys = new List<Enemy>();
 		players = new List<Player>();
 
