@@ -23,8 +23,8 @@ public class SaveManager : MonoBehaviour {
 
 	void Start()
 	{
-		//PATH_SAVE = Application.dataPath + "/../GameData/Player.sav";//local
-		//PATH_CONFIG = Application.dataPath + "/../GameData/Config.sav";//local
+		//PATH_SAVE = Application.dataPath + "/../GameData/Player.sav";//local, editor only
+		//PATH_CONFIG = Application.dataPath + "/../GameData/Config.sav";//local, editor only
 		PATH_SAVE = Application.persistentDataPath + "/Player.sav";
 		PATH_CONFIG = Application.persistentDataPath + "/Config.sav";
 		ENCRYPT_KEY = "CRGProject";
@@ -64,11 +64,19 @@ public class SaveManager : MonoBehaviour {
 
 	public void SaveConfig()
 	{
-
+		ConfigData data = DataManager.Instance.GetConfigData ();
+		string configDatastring = SerializeObject (data, typeof(ConfigData));
+		WriteXML (PATH_CONFIG, configDatastring);
 	}
 	
 	public void LoadConfig()
 	{
+		if (!File.Exists (PATH_CONFIG))
+			return;
+		
+		string configDatastring = ReadXML (PATH_CONFIG);
+		ConfigData data = DeserializeObject(configDatastring, typeof(ConfigData)) as ConfigData;
+		DataManager.Instance.SetConfigData (data);
 	}
 	
 	string SerializeObject(object pObject, System.Type userType)
