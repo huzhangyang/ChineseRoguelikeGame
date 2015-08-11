@@ -15,7 +15,7 @@ public class DataManager : MonoBehaviour {
 	EnemyDatas enemyDatas;
 	PlayerDatas playerDatas;
 	DialogueDatas dialogueDatas;
-	//ConfigData configData;
+	ConfigData configData;
 
 	public void LoadAllDatas()
 	{
@@ -46,12 +46,12 @@ public class DataManager : MonoBehaviour {
 			playerDatas.datas.Add(new PlayerData(1));
 		}
 		//configData
-		/*SaveManager.Instance.LoadConfig ();
+		SaveManager.Instance.LoadConfig ();
 		if(configData == null)
 		{
 			Debug.LogWarning ("Load ConfigData Failed.");
 			configData = new ConfigData();
-		}*/
+		}
 	}
 
 	public void UnLoadAllDatas()
@@ -79,4 +79,15 @@ public class DataManager : MonoBehaviour {
 		playerDatas = new PlayerDatas ();
 		playerDatas.datas = new List<PlayerData> (playerDataArray);
 	}
+
+	public ConfigData GetConfigData()
+	{
+		return configData;
+	}
+
+	public void SetConfigData(ConfigData configData)
+	{
+		this.configData = configData;
+	}
+
 }
