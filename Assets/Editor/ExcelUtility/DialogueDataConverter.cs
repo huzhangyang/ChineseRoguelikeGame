@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEditor;
 using System.Collections;
 using System.Collections.Generic;
@@ -10,7 +10,7 @@ public class DialogueDataConvertor : MonoBehaviour
 {
 	const string PATH_EXCEL = "/../Documents/ExcelData/DialogueData.xls";
 	const string PATH_ASSET = "Assets/Resources/GameData/DialogueData.asset";
-	static DialogueDatas dialogueDatas;
+	static DialogueDataSet dialogueDatas;
 	static DataTable ExcelData;
 
 	[MenuItem("CRGTools/DialogueDataConverter")]
@@ -20,8 +20,8 @@ public class DialogueDataConvertor : MonoBehaviour
 		IExcelDataReader excelReader = ExcelReaderFactory.CreateBinaryReader(stream);
 		ExcelData = excelReader.AsDataSet ().Tables["Dialogue"];
 		excelReader.Dispose ();
-		dialogueDatas = ScriptableObject.CreateInstance<DialogueDatas>();
-		dialogueDatas.datas = new List<DialogueData>();
+		dialogueDatas = ScriptableObject.CreateInstance<DialogueDataSet>();
+		dialogueDatas.dataSet = new List<DialogueData>();
 		
 		if (ExcelData != null)
 		{
@@ -39,7 +39,7 @@ public class DialogueDataConvertor : MonoBehaviour
 			int dialogueID = ExcelUtility.GetIntCell(ExcelData, i, 0);
 
 			data = new DialogueData(dialogueID);
-			dialogueDatas.datas.Add(data);
+			dialogueDatas.dataSet.Add(data);
 
 			SentenceData sentence;
 			sentence.tellerName = ExcelUtility.GetCell(ExcelData, i, 1);

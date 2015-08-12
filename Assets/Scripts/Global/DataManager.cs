@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -12,41 +12,41 @@ public class DataManager : MonoBehaviour {
 	public DataManager() { s_Instance = this; }
 	public static DataManager Instance { get { return s_Instance; } }
 
-	EnemyDatas enemyDatas;
-	PlayerDatas playerDatas;
-	DialogueDatas dialogueDatas;
+	EnemyDataSet enemyDataSet;
+	PlayerDataSet playerDataSet;
+	DialogueDataSet dialogueDataSet;
 	ConfigData configData;
 
-	public void LoadAllDatas()
+	public void LoadAllData()
 	{
 		//enemyData
-		enemyDatas = Resources.Load ("GameData/EnemyData", typeof(EnemyDatas)) as EnemyDatas;
-		if (enemyDatas == null)
+		enemyDataSet = Resources.Load ("GameData/EnemyData", typeof(EnemyDataSet)) as EnemyDataSet;
+		if (enemyDataSet == null)
 		{
 			Debug.LogWarning ("Load EnemyData Failed.");
-			enemyDatas = new EnemyDatas();
-			enemyDatas.datas = new List<EnemyData>();
+			enemyDataSet = new EnemyDataSet();
+			enemyDataSet.dataSet = new List<EnemyData>();
 		}
 		//dialogueData
-		dialogueDatas = Resources.Load ("GameData/DialogueData", typeof(DialogueDatas)) as DialogueDatas;
-		if (dialogueDatas == null)
+		dialogueDataSet = Resources.Load ("GameData/DialogueData", typeof(DialogueDataSet)) as DialogueDataSet;
+		if (dialogueDataSet == null)
 		{
 			Debug.LogWarning ("Load DialogueData Failed.");
-			dialogueDatas = new DialogueDatas();
-			dialogueDatas.datas = new List<DialogueData>();
+			dialogueDataSet = new DialogueDataSet();
+			dialogueDataSet.dataSet = new List<DialogueData>();
 		}
 		//playerData
-		SaveManager.Instance.LoadGame ();
-		if(playerDatas == null)
+		playerDataSet = SaveManager.Instance.LoadGame ();
+		if(playerDataSet == null)
 		{
 			Debug.LogWarning ("Load PlayerData Failed.");
-			playerDatas = new PlayerDatas();
-			playerDatas.datas = new List<PlayerData>();
-			playerDatas.datas.Add(new PlayerData(0));
-			playerDatas.datas.Add(new PlayerData(1));
+			playerDataSet = new PlayerDataSet();
+			playerDataSet.dataSet = new List<PlayerData>();
+			playerDataSet.dataSet.Add(new PlayerData(0));
+			playerDataSet.dataSet.Add(new PlayerData(1));
 		}
 		//configData
-		SaveManager.Instance.LoadConfig ();
+		configData = SaveManager.Instance.LoadConfig ();
 		if(configData == null)
 		{
 			Debug.LogWarning ("Load ConfigData Failed.");
@@ -54,40 +54,29 @@ public class DataManager : MonoBehaviour {
 		}
 	}
 
-	public void UnLoadAllDatas()
+	public void UnLoadAllData()
 	{
-		enemyDatas = new EnemyDatas ();
+		enemyDataSet = new EnemyDataSet ();
 	}
 
-	public EnemyDatas GetEnemyDatas()
+	public EnemyDataSet GetEnemyDataSet()
 	{
-		return enemyDatas; 
+		return enemyDataSet; 
 	}
 
-	public DialogueDatas GetDialogueDatas()
+	public DialogueDataSet GetDialogueDataSet()
 	{
-		return dialogueDatas; 
+		return dialogueDataSet; 
 	}
 
-	public PlayerDatas GetPlayerDatas()
+	public PlayerDataSet GetPlayerDataSet()
 	{
-		return playerDatas;
-	}
-
-	public void SetPlayerDatas(PlayerData[] playerDataArray)
-	{
-		playerDatas = new PlayerDatas ();
-		playerDatas.datas = new List<PlayerData> (playerDataArray);
+		return playerDataSet;
 	}
 
 	public ConfigData GetConfigData()
 	{
 		return configData;
-	}
-
-	public void SetConfigData(ConfigData configData)
-	{
-		this.configData = configData;
 	}
 
 }

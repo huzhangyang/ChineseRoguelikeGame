@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
@@ -10,7 +10,7 @@ public class Enemy : BattleObject {
 
 	void Awake()
 	{
-		data = DataManager.Instance.GetEnemyDatas ().GetEnemyData (enemyID);
+		data = DataManager.Instance.GetEnemyDataSet ().GetEnemyData (enemyID);
 	}
 
 	public EnemyData GetData()

@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEditor;
 using System.Collections;
 using System.Collections.Generic;
@@ -10,7 +10,7 @@ public class EnemyDataConvertor : MonoBehaviour
 {
 	const string PATH_EXCEL = "/../Documents/ExcelData/EnemyData.xls";
 	const string PATH_ASSET = "Assets/Resources/GameData/EnemyData.asset";
-	static EnemyDatas enemyDatas;
+	static EnemyDataSet enemyDatas;
 	static DataTable ExcelData;
 
 	[MenuItem("CRGTools/EnemyDataConverter")]
@@ -20,8 +20,8 @@ public class EnemyDataConvertor : MonoBehaviour
 		IExcelDataReader excelReader = ExcelReaderFactory.CreateBinaryReader(stream);
 		ExcelData = excelReader.AsDataSet ().Tables["Enemy"];
 		excelReader.Dispose ();
-		enemyDatas = ScriptableObject.CreateInstance<EnemyDatas>();
-		enemyDatas.datas = new List<EnemyData>();
+		enemyDatas = ScriptableObject.CreateInstance<EnemyDataSet>();
+		enemyDatas.dataSet = new List<EnemyData>();
 		
 		if (ExcelData != null)
 		{
@@ -39,7 +39,7 @@ public class EnemyDataConvertor : MonoBehaviour
 			int enemyID = ExcelUtility.GetIntCell(ExcelData, i, 0);
 
 			data = new EnemyData(enemyID);
-			enemyDatas.datas.Add(data);
+			enemyDatas.dataSet.Add(data);
 
 			data.name = ExcelUtility.GetCell(ExcelData, i, 1);
 			data.maxHP = ExcelUtility.GetIntCell(ExcelData, i, 2);

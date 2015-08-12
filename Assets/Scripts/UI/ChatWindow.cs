@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 
@@ -14,7 +14,7 @@ public class ChatWindow : MonoBehaviour {
 
 	void Start () 
 	{
-		dialogueData = DataManager.Instance.GetDialogueDatas ().GetDialogueData(dialogID);
+		dialogueData = DataManager.Instance.GetDialogueDataSet ().GetDialogueData(dialogID);
 		currentTextCount = 1;
 		OnNextDialogue ();
 	}

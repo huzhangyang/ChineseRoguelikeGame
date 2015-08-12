@@ -2,13 +2,13 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class DialogueDatas : ScriptableObject 
+public class DialogueDataSet : ScriptableObject 
 {
-	public List<DialogueData> datas;
+	public List<DialogueData> dataSet;
 	
 	public DialogueData GetDialogueData(int dialogueID)
 	{
-		foreach (DialogueData data in datas)
+		foreach (DialogueData data in dataSet)
 		{
 			if (data.dialogueID == dialogueID)
 				return data;

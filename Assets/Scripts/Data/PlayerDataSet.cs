@@ -2,13 +2,13 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class PlayerDatas
+public class PlayerDataSet
 {
-	public List<PlayerData> datas;
+	public List<PlayerData> dataSet;
 	
 	public PlayerData GetPlayerData(int playerID)
 	{
-		foreach (PlayerData data in datas)
+		foreach (PlayerData data in dataSet)
 		{
 			if (data.playerID == playerID)
 				return data;

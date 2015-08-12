@@ -2,13 +2,13 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class EnemyDatas : ScriptableObject 
+public class EnemyDataSet : ScriptableObject 
 {
-	public List<EnemyData> datas;
+	public List<EnemyData> dataSet;
 	
 	public EnemyData GetEnemyData(int enemyID)
 	{
-		foreach (EnemyData data in datas)
+		foreach (EnemyData data in dataSet)
 		{
 			if (data.enemyID == enemyID)
 				return data;

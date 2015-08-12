@@ -1,9 +1,10 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System;
 using System.Xml;
 using System.Xml.Serialization;
 using System.IO;
 using System.Text;
+using System.Collections.Generic;
 using System.Security.Cryptography;
 
 public class SaveManager : MonoBehaviour {
@@ -47,19 +48,21 @@ public class SaveManager : MonoBehaviour {
 
 	public void SaveGame()
 	{
-		PlayerData[] data = DataManager.Instance.GetPlayerDatas ().datas.ToArray ();
+		PlayerData[] data = DataManager.Instance.GetPlayerDataSet ().dataSet.ToArray ();
 		string playerDatastring = SerializeObject (data, typeof(PlayerData[]));
 		WriteXML (PATH_SAVE, playerDatastring);
 	}
 
-	public void LoadGame()
+	public PlayerDataSet LoadGame()
 	{
 		if (!File.Exists (PATH_SAVE))
-			return;
+			return null;
 
 		string playerDatastring = ReadXML (PATH_SAVE);
 		PlayerData[] data = DeserializeObject(playerDatastring, typeof(PlayerData[])) as PlayerData[];
-		DataManager.Instance.SetPlayerDatas (data);
+		PlayerDataSet dataSet = new PlayerDataSet();
+		dataSet.dataSet = new List<PlayerData>(data);
+		return dataSet;
 	}
 
 	public void SaveConfig()
@@ -69,14 +72,13 @@ public class SaveManager : MonoBehaviour {
 		WriteXML (PATH_CONFIG, configDatastring);
 	}
 	
-	public void LoadConfig()
+	public ConfigData LoadConfig()
 	{
 		if (!File.Exists (PATH_CONFIG))
-			return;
+			return null;
 		
 		string configDatastring = ReadXML (PATH_CONFIG);
-		ConfigData data = DeserializeObject(configDatastring, typeof(ConfigData)) as ConfigData;
-		DataManager.Instance.SetConfigData (data);
+		return DeserializeObject(configDatastring, typeof(ConfigData)) as ConfigData;
 	}
 	
 	string SerializeObject(object pObject, System.Type userType)
