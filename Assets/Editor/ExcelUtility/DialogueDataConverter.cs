@@ -8,7 +8,7 @@ using Excel;
 
 public class DialogueDataConvertor : MonoBehaviour
 {
-	const string PATH_EXCEL = "/Res/ExcelData/DialogueData.xls";
+	const string PATH_EXCEL = "/../Documents/ExcelData/DialogueData.xls";
 	const string PATH_ASSET = "Assets/Resources/GameData/DialogueData.asset";
 	static DialogueDatas dialogueDatas;
 	static DataTable ExcelData;

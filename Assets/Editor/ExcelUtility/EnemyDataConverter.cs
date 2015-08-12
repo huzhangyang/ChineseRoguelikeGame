@@ -8,7 +8,7 @@ using Excel;
 
 public class EnemyDataConvertor : MonoBehaviour
 {
-	const string PATH_EXCEL = "/Res/ExcelData/EnemyData.xls";
+	const string PATH_EXCEL = "/../Documents/ExcelData/EnemyData.xls";
 	const string PATH_ASSET = "Assets/Resources/GameData/EnemyData.asset";
 	static EnemyDatas enemyDatas;
 	static DataTable ExcelData;
