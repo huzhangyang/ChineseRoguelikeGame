@@ -11,12 +11,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07d0b623813b87343ae47dfef0aead06, type: 3}
   m_Name: EnemyData
   m_EditorClassIdentifier: 
-  datas:
+  dataSet:
   - name: "\u54A9\u54A9"
     maxHP: 100
-    currentHP: 102
+    currentHP: 107
     maxMP: 100
-    currentMP: 95
+    currentMP: 88
     power: 8
     skill: 9
     agility: 7

@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9637dbd3965341469c4e904c7d466f4, type: 3}
   m_Name: DialogueData
   m_EditorClassIdentifier: 
-  datas:
+  dataSet:
   - dialogueID: 1001
     sentences:
     - tellerName: "\u841D\u8389"
