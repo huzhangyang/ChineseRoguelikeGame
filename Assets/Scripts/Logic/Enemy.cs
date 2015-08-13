@@ -11,6 +11,7 @@ public class Enemy : BattleObject {
 	void Awake()
 	{
 		data = DataManager.Instance.GetEnemyDataSet ().GetEnemyData (enemyID);
+		SetHPBar ();
 	}
 
 	public EnemyData GetData()

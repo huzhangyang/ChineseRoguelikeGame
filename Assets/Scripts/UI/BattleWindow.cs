@@ -38,8 +38,9 @@ public class BattleWindow: MonoBehaviour {
 
 		if(args.ContainMessage("man"))
 		{
-			GameObject player = Instantiate(Resources.Load("Character/Character00")) as GameObject;
+			GameObject player = Instantiate(Resources.Load(GlobalDataStructure.PATH_BATTLE + "Character00")) as GameObject;
 			player.transform.SetParent(infoPanel.transform);
+			player.transform.localScale = new Vector3(1,1,1);
 			player.transform.localPosition = new Vector3(0,0,0);
 			BattleLogic.players.Add(player.GetComponent<Player>());
 			
@@ -54,8 +55,9 @@ public class BattleWindow: MonoBehaviour {
 		}
 		if(args.ContainMessage("girl"))
 		{
-			GameObject player = Instantiate(Resources.Load("Character/Character01")) as GameObject;
+			GameObject player = Instantiate(Resources.Load(GlobalDataStructure.PATH_BATTLE + "Character01")) as GameObject;
 			player.transform.SetParent(infoPanel.transform);
+			player.transform.localScale = new Vector3(1,1,1);
 			player.transform.localPosition = new Vector3(0,0,0);
 			BattleLogic.players.Add(player.GetComponent<Player>());
 			
@@ -85,10 +87,13 @@ public class BattleWindow: MonoBehaviour {
 	{
 		for(int i = 0; i < enemyIDs.Length; i++)
 		{
-			GameObject enemy = Instantiate(Resources.Load("Enemy/Enemy" + enemyIDs[i])) as GameObject;
+			string loadEnemyPath = GlobalDataStructure.PATH_BATTLE + "Enemy";
+			if(Convert.ToInt32(enemyIDs[i]) < 10) loadEnemyPath += "0";
+			GameObject enemy = Instantiate(Resources.Load(loadEnemyPath + enemyIDs[i])) as GameObject;
 			
 			enemy.transform.SetParent(enemyPanel.transform);
-			enemy.transform.localPosition = new Vector3(0,0,0);
+			enemy.transform.localScale = new Vector3(1,1,1);
+			enemy.transform.localPosition = new Vector3(0, -50 , 0);
 			BattleLogic.enemys.Add(enemy.GetComponent<Enemy>());
 			
 			GameObject avatar = Instantiate(Resources.Load("avatar")) as GameObject;

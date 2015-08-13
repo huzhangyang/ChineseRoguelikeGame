@@ -11,6 +11,7 @@ public class Player : BattleObject {
 	void Start()
 	{
 		data = new PlayerData(playerID);
+		SetHPBar ();
 	}
 	
 	public PlayerData GetData()

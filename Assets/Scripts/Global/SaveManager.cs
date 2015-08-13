@@ -17,48 +17,29 @@ public class SaveManager : MonoBehaviour {
 	public SaveManager() { s_Instance = this; }
 	public static SaveManager Instance { get { return s_Instance; } }
 
-	string PATH_SAVE;
-	string PATH_CONFIG;
-	string ENCRYPT_KEY;
-	bool ENCRYPT_ENABLED = true;
+
 
 	void Start()
 	{
-		//PATH_SAVE = Application.dataPath + "/../GameData/Player.sav";//local, editor only
-		//PATH_CONFIG = Application.dataPath + "/../GameData/Config.sav";//local, editor only
-		PATH_SAVE = Application.persistentDataPath + "/Player.sav";
-		PATH_CONFIG = Application.persistentDataPath + "/Config.sav";
-		ENCRYPT_KEY = "CRGProject";
-		if(Application.platform == RuntimePlatform.Android)
-		{
-			PATH_SAVE = Application.persistentDataPath + "/Player.sav";
-			PATH_CONFIG = Application.persistentDataPath + "/Config.sav";
-			ENCRYPT_KEY = "CRGProject_Android";
-		}
-		else if(Application.platform == RuntimePlatform.IPhonePlayer)
-		{
-			PATH_SAVE = Application.persistentDataPath + "/Player.sav";
-			PATH_CONFIG = Application.persistentDataPath + "/Config.sav";
-			ENCRYPT_KEY = "CRGProject_IOS";
-		}
-
-		if (!Directory.Exists (Path.GetDirectoryName (PATH_SAVE)))
-			Directory.CreateDirectory (Path.GetDirectoryName (PATH_SAVE));
+		if (!Directory.Exists (Path.GetDirectoryName (GlobalDataStructure.PATH_SAVE)))
+			Directory.CreateDirectory (Path.GetDirectoryName (GlobalDataStructure.PATH_SAVE));
+		if (!Directory.Exists (Path.GetDirectoryName (GlobalDataStructure.PATH_CONFIG)))
+			Directory.CreateDirectory (Path.GetDirectoryName (GlobalDataStructure.PATH_CONFIG));
 	}
 
 	public void SaveGame()
 	{
 		PlayerData[] data = DataManager.Instance.GetPlayerDataSet ().dataSet.ToArray ();
 		string playerDatastring = SerializeObject (data, typeof(PlayerData[]));
-		WriteXML (PATH_SAVE, playerDatastring);
+		WriteXML (GlobalDataStructure.PATH_SAVE, playerDatastring);
 	}
 
 	public PlayerDataSet LoadGame()
 	{
-		if (!File.Exists (PATH_SAVE))
+		if (!File.Exists (GlobalDataStructure.PATH_SAVE))
 			return null;
 
-		string playerDatastring = ReadXML (PATH_SAVE);
+		string playerDatastring = ReadXML (GlobalDataStructure.PATH_SAVE);
 		PlayerData[] data = DeserializeObject(playerDatastring, typeof(PlayerData[])) as PlayerData[];
 		PlayerDataSet dataSet = new PlayerDataSet();
 		dataSet.dataSet = new List<PlayerData>(data);
@@ -69,15 +50,15 @@ public class SaveManager : MonoBehaviour {
 	{
 		ConfigData data = DataManager.Instance.GetConfigData ();
 		string configDatastring = SerializeObject (data, typeof(ConfigData));
-		WriteXML (PATH_CONFIG, configDatastring);
+		WriteXML (GlobalDataStructure.PATH_CONFIG, configDatastring);
 	}
 	
 	public ConfigData LoadConfig()
 	{
-		if (!File.Exists (PATH_CONFIG))
+		if (!File.Exists (GlobalDataStructure.PATH_CONFIG))
 			return null;
 		
-		string configDatastring = ReadXML (PATH_CONFIG);
+		string configDatastring = ReadXML (GlobalDataStructure.PATH_CONFIG);
 		return DeserializeObject(configDatastring, typeof(ConfigData)) as ConfigData;
 	}
 	
@@ -123,7 +104,7 @@ public class SaveManager : MonoBehaviour {
 			writer = t.CreateText();
 		}
 		
-		if( ENCRYPT_ENABLED )
+		if( GlobalDataStructure.ENCRYPT_ENABLED )
 			writer.Write(Encrypt(data));
 		else
 			writer.Write(data);
@@ -137,7 +118,7 @@ public class SaveManager : MonoBehaviour {
 		string data = r.ReadToEnd();
 		r.Close();
 		
-		if( ENCRYPT_ENABLED )
+		if( GlobalDataStructure.ENCRYPT_ENABLED )
 			data = Decrypt(data);
 
 		return data;
@@ -148,7 +129,7 @@ public class SaveManager : MonoBehaviour {
 		byte[] toEncryptArray = UTF8Encoding.UTF8.GetBytes(toEncrypt);
 		
 		MD5CryptoServiceProvider hashmd5 = new MD5CryptoServiceProvider();
-		byte[] keyArray = hashmd5.ComputeHash(UTF8Encoding.UTF8.GetBytes(ENCRYPT_KEY));
+		byte[] keyArray = hashmd5.ComputeHash(UTF8Encoding.UTF8.GetBytes(GlobalDataStructure.ENCRYPT_KEY));
 		
 		hashmd5.Clear();
 		
@@ -169,7 +150,7 @@ public class SaveManager : MonoBehaviour {
 		byte[] toEncryptArray = Convert.FromBase64String(cipherString);
 		
 		MD5CryptoServiceProvider hashmd5 = new MD5CryptoServiceProvider();
-		byte[] keyArray = hashmd5.ComputeHash(UTF8Encoding.UTF8.GetBytes(ENCRYPT_KEY));
+		byte[] keyArray = hashmd5.ComputeHash(UTF8Encoding.UTF8.GetBytes(GlobalDataStructure.ENCRYPT_KEY));
 		
 		hashmd5.Clear();
 		

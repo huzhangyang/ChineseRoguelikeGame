@@ -20,12 +20,12 @@ public abstract class BattleObject : MonoBehaviour {
 
 	protected ObjectData data;
 	protected Image timelineAvatar;
+	protected Slider HPBar;
 
 	void OnEnable() 
 	{
 		EventManager.Instance.RegisterEvent (EventDefine.StartBattle, OnStartBattle);
-		EventManager.Instance.RegisterEvent (EventDefine.UpdateTimeline, OnUpdateTimeline);
-		
+		EventManager.Instance.RegisterEvent (EventDefine.UpdateTimeline, OnUpdateTimeline);		
 	}
 	
 	void OnDisable () 
@@ -47,6 +47,13 @@ public abstract class BattleObject : MonoBehaviour {
 		{
 			battleStatus = BattleObject.BattleStatus.Ready;
 		}
+	}
+
+	protected void SetHPBar()
+	{
+		HPBar = this.gameObject.GetComponentInChildren<Slider> ();
+		HPBar.maxValue = data.maxHP;
+		HPBar.value = data.currentHP;
 	}
 
 	public void SetAvatar(GameObject avatar)

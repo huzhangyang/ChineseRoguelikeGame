@@ -20,7 +20,7 @@ public class DataManager : MonoBehaviour {
 	public void LoadAllData()
 	{
 		//enemyData
-		enemyDataSet = Resources.Load ("GameData/EnemyData", typeof(EnemyDataSet)) as EnemyDataSet;
+		enemyDataSet = Resources.Load (GlobalDataStructure.PATH_GAMEDATA + "EnemyData", typeof(EnemyDataSet)) as EnemyDataSet;
 		if (enemyDataSet == null)
 		{
 			Debug.LogWarning ("Load EnemyData Failed.");
@@ -28,7 +28,7 @@ public class DataManager : MonoBehaviour {
 			enemyDataSet.dataSet = new List<EnemyData>();
 		}
 		//dialogueData
-		dialogueDataSet = Resources.Load ("GameData/DialogueData", typeof(DialogueDataSet)) as DialogueDataSet;
+		dialogueDataSet = Resources.Load (GlobalDataStructure.PATH_GAMEDATA + "DialogueData", typeof(DialogueDataSet)) as DialogueDataSet;
 		if (dialogueDataSet == null)
 		{
 			Debug.LogWarning ("Load DialogueData Failed.");
