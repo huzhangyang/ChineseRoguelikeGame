@@ -5,10 +5,12 @@ using UnityEngine.UI;
 public class BattleMessage : MonoBehaviour {
 
 	Text message;
+	Scrollbar messageBar;
 
 	void Start()
 	{
-		message = this.GetComponent<Text>();
+		message = this.GetComponentInChildren<Text>();
+		messageBar = this.GetComponentInChildren<Scrollbar>();
 		ClearMessage();
 	}
 
@@ -52,5 +54,6 @@ public class BattleMessage : MonoBehaviour {
 	void AddMessage(string msg)
 	{
 		message.text += msg +"\n";
+		messageBar.value = 0;
 	}
 }
