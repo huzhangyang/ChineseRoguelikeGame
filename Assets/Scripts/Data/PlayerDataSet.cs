@@ -10,7 +10,7 @@ public class PlayerDataSet
 	{
 		foreach (PlayerData data in dataSet)
 		{
-			if (data.playerID == playerID)
+			if (data.id == playerID)
 				return data;
 		}
 		Debug.LogError("Asking for an non-exist player:" + playerID);
@@ -23,53 +23,50 @@ public class PlayerData : ObjectData {
 /*
  * 玩家数据。除了通用属性外，还有一些玩家独有的属性。
 */
-	public int playerID;
 	//attribute exp
-	public int expMaxHP;//最大生命值
-	public int expMaxMP;//最大灵力值
-	public int expPower;//力量
-	public int expSkill;//技术
-	public int expAgility;//敏捷
-	public int expToughness;//韧性
-	public int expLuck;//运气
-	//for adventure
-
-	//Equipment
-	public Ring ring1;
-	public Ring ring2;
+	public int expMaxHP;//生命成长值
+	public int expPower;//力量成长值
+	public int expAgility;//敏捷成长值
+	public int expToughness;//韧性成长值
+	public int expInsight;//洞察成长值
+	public int expSkill;//技术成长值
+	public int expLuck;//运气成长值
+	public int expEloquence;//口才成长值
 
 	public PlayerData(int playerID)
 	{
 		switch(playerID)
 		{
 		case 0:	name = "Man";
-				maxHP = 200;
-				maxMP = 100;
+				maxHP = 150;
 				power = 15;
-				skill = 15;
 				agility = 10;
 				toughness = 15;
+				insight = 10; 
+				skill = 15;
 				luck = 5;
+				eloquence = 5;
 				break;
 		case 1: name = "Girl";
 				maxHP = 100;
-				maxMP = 200;
-				power = 5;
-				skill = 15;
-				agility = 20;
+				power = 10;
+				agility = 15;
 				toughness = 10;
-				luck = 10;
+				insight = 15; 
+				skill = 5;
+				luck = 15;
+				eloquence = 10;
 				break;
 		}
-		this.playerID = playerID;
+		this.id = playerID;
 		currentHP = maxHP;
-		currentMP = maxMP;
 		expMaxHP = 0;
-		expMaxMP = 0;
 		expPower = 0;
-		expSkill = 0;
 		expAgility = 0;
 		expToughness = 0;
+		expInsight = 0;
+		expSkill = 0;
 		expLuck = 0;
+		expEloquence = 0;
 	}
 }

@@ -13,13 +13,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dataSet:
   - name: "\u54A9\u54A9"
+    id: 10
+    talentID: 0
+    natureID: 0
+    battleType: 0
     maxHP: 100
-    currentHP: 107
-    maxMP: 100
-    currentMP: 88
     power: 8
-    skill: 9
     agility: 7
-    toughness: 10
-    luck: 10
-    enemyID: 10
+    toughness: 9
+    insight: 6
+    skill: 10
+    luck: 5
+    eloquence: 0
+    currentHP: 100
+    hitPercent: 0
+    evadePercent: 0
+    criticalPercent: 0
+    weaponID: 0
+    ring1ID: 0
+    ring2ID: 0
