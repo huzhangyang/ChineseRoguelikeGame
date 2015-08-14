@@ -20,14 +20,16 @@ public class BattleLogic : MonoBehaviour {
 	{
 		EventManager.Instance.RegisterEvent (EventDefine.StartBattle, OnStartBattle);
 		EventManager.Instance.RegisterEvent (EventDefine.PlayerReady, OnPlayerReady);
-		EventManager.Instance.RegisterEvent (EventDefine.DecideCommand, OnDecideCommand);
+		EventManager.Instance.RegisterEvent (EventDefine.SelectCommand, OnSelectCommand);
+		EventManager.Instance.RegisterEvent (EventDefine.ExecuteCommand, OnExecuteCommand);
 	}
 	
 	void OnDisable () 
 	{
 		EventManager.Instance.UnRegisterEvent (EventDefine.EnterBattle, OnStartBattle);
 		EventManager.Instance.UnRegisterEvent (EventDefine.PlayerReady, OnPlayerReady);
-		EventManager.Instance.UnRegisterEvent (EventDefine.DecideCommand, OnDecideCommand);
+		EventManager.Instance.UnRegisterEvent (EventDefine.SelectCommand, OnSelectCommand);
+		EventManager.Instance.UnRegisterEvent (EventDefine.ExecuteCommand, OnExecuteCommand);
 	}
 
 	public void EnterBattle()
@@ -59,16 +61,54 @@ public class BattleLogic : MonoBehaviour {
 		case Level1Command.Strategy:
 			break;
 		}
-		Debug.Log("Command" + commandID);
-		EventManager.Instance.PostEvent (EventDefine.DecideCommand);
+		EventManager.Instance.PostEvent (EventDefine.SelectCommand);
 	}
 
 	void OnStartBattle(MessageEventArgs args)
 	{
 		GlobalManager.Instance.gameStatus = GlobalManager.GameStatus.Battle;
+		ResumeEveryOne();
 	}
 
 	void OnPlayerReady(MessageEventArgs args)
+	{
+		PauseEveryOne();
+	}
+
+	void OnSelectCommand(MessageEventArgs args)
+	{
+		ResumeEveryOne();
+		foreach(Enemy enemy in enemys)
+		{
+			if(enemy.battleStatus == BattleObject.BattleStatus.Ready)
+			{
+				//TODO store this enemy's command
+				enemy.battleStatus = BattleObject.BattleStatus.Action;
+			}
+		}
+		foreach(Player player in players)
+		{
+			if(player.battleStatus == BattleObject.BattleStatus.Ready)
+			{
+				//TODO store this player's command
+				player.battleStatus = BattleObject.BattleStatus.Action;
+			}
+		}
+	}
+
+	void OnExecuteCommand(MessageEventArgs args)
+	{
+		StartCoroutine(WaitEveryOne(1));
+	}
+
+	IEnumerator WaitEveryOne(float seconds)
+	{
+		PauseEveryOne();
+		yield return new WaitForSeconds(seconds);
+		ResumeEveryOne();
+	}
+
+	void PauseEveryOne()
 	{
 		foreach(Enemy enemy in enemys)
 		{
@@ -80,26 +120,15 @@ public class BattleLogic : MonoBehaviour {
 		}
 	}
 
-	void OnDecideCommand(MessageEventArgs args)
+	void ResumeEveryOne()
 	{
-		Debug.Log("OnDecideCommand_logic");
 		foreach(Enemy enemy in enemys)
 		{
 			enemy.isPaused = false;
-			if(enemy.battleStatus == BattleObject.BattleStatus.Ready)
-			{
-				//TODO store this enemy's command
-				enemy.battleStatus = BattleObject.BattleStatus.Action;
-			}
 		}
 		foreach(Player player in players)
 		{
 			player.isPaused = false;
-			if(player.battleStatus == BattleObject.BattleStatus.Ready)
-			{
-				//TODO store this player's command
-				player.battleStatus = BattleObject.BattleStatus.Action;
-			}
 		}
 	}
 

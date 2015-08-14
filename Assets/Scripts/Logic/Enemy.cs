@@ -23,6 +23,6 @@ public class Enemy : BattleObject {
 	{
 		base.SelectCommand();
 		//TODO AISelectCommand();
-		EventManager.Instance.PostEvent(EventDefine.DecideCommand);
+		EventManager.Instance.PostEvent(EventDefine.SelectCommand);
 	}
 }

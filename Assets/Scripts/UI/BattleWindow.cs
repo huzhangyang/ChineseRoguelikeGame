@@ -24,14 +24,14 @@ public class BattleWindow: MonoBehaviour {
 	{
 		EventManager.Instance.RegisterEvent (EventDefine.EnterBattle, OnEnterBattle);
 		EventManager.Instance.RegisterEvent (EventDefine.PlayerReady, OnPlayerReady);
-		EventManager.Instance.RegisterEvent (EventDefine.DecideCommand, OnDecideCommand);
+		EventManager.Instance.RegisterEvent (EventDefine.SelectCommand, OnSelectCommand);
 	}
 	
 	void OnDisable () 
 	{
 		EventManager.Instance.UnRegisterEvent (EventDefine.EnterBattle, OnEnterBattle);
 		EventManager.Instance.UnRegisterEvent (EventDefine.PlayerReady, OnPlayerReady);
-		EventManager.Instance.UnRegisterEvent (EventDefine.DecideCommand, OnDecideCommand);
+		EventManager.Instance.UnRegisterEvent (EventDefine.SelectCommand, OnSelectCommand);
 	}
 
 	void OnEnterBattle(MessageEventArgs args)
@@ -85,7 +85,7 @@ public class BattleWindow: MonoBehaviour {
 		commandPanel.SetActive(true);
 	}
 
-	void OnDecideCommand(MessageEventArgs args)
+	void OnSelectCommand(MessageEventArgs args)
 	{
 		commandPanel.SetActive(false);
 	}

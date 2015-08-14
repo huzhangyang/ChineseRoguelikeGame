@@ -27,19 +27,12 @@ public abstract class BattleObject : MonoBehaviour {
 
 	void OnEnable() 
 	{
-		EventManager.Instance.RegisterEvent (EventDefine.StartBattle, OnStartBattle);
 		EventManager.Instance.RegisterEvent (EventDefine.UpdateTimeline, OnUpdateTimeline);		
 	}
 	
 	void OnDisable () 
 	{
-		EventManager.Instance.UnRegisterEvent (EventDefine.EnterBattle, OnStartBattle);
 		EventManager.Instance.UnRegisterEvent (EventDefine.UpdateTimeline, OnUpdateTimeline);
-	}
-
-	void OnStartBattle(MessageEventArgs args)
-	{
-		this.isPaused = false;
 	}
 
 	protected void OnUpdateTimeline(MessageEventArgs args)
@@ -64,6 +57,7 @@ public abstract class BattleObject : MonoBehaviour {
 
 	protected virtual void ExecuteCommand()
 	{
+		EventManager.Instance.PostEvent(EventDefine.ExecuteCommand);
 		timelinePosition = 0;
 		battleStatus = BattleStatus.Prepare;
 	}
