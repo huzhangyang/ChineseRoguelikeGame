@@ -18,4 +18,11 @@ public class Enemy : BattleObject {
 	{
 		return (EnemyData)data;
 	}
+
+	protected override void SelectCommand()
+	{
+		base.SelectCommand();
+		//TODO AISelectCommand();
+		EventManager.Instance.PostEvent(EventDefine.DecideCommand);
+	}
 }

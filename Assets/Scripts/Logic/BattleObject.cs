@@ -6,14 +6,17 @@ public abstract class BattleObject : MonoBehaviour {
 /*
  * 所有参战物体共有的数据与逻辑。
  * */	
-	public BattleStatus battleStatus = BattleStatus.BattleNotStart;
+	public BattleStatus battleStatus = BattleObject.BattleStatus.Prepare;
+	public bool isPaused = true;
 
 	public int timelinePosition
 	{
-		set{
+		set
+		{
 			timelineAvatar.rectTransform.anchoredPosition = new Vector2(value, 0);
 		}
-		get{
+		get
+		{
 			return (int)timelineAvatar.rectTransform.anchoredPosition.x;
 		}
 	}//max:500
@@ -36,17 +39,33 @@ public abstract class BattleObject : MonoBehaviour {
 
 	void OnStartBattle(MessageEventArgs args)
 	{
-		this.battleStatus = BattleObject.BattleStatus.Prepare;
+		this.isPaused = false;
 	}
 
-	protected virtual void OnUpdateTimeline(MessageEventArgs args)
+	protected void OnUpdateTimeline(MessageEventArgs args)
 	{
-		if(this.battleStatus == BattleObject.BattleStatus.Prepare)
+		if(!this.isPaused)
 			this.timelinePosition += data.agility;
-		if(timelinePosition >= 400)
+		if(timelinePosition >= 400 && battleStatus == BattleStatus.Prepare)
 		{
-			battleStatus = BattleObject.BattleStatus.Ready;
+			SelectCommand();
 		}
+		if(timelinePosition >= 500 && battleStatus == BattleStatus.Action)
+		{
+			ExecuteCommand();
+		}
+	}
+
+	protected virtual void SelectCommand()
+	{
+		timelinePosition = 400;
+		battleStatus = BattleStatus.Ready;
+	}
+
+	protected virtual void ExecuteCommand()
+	{
+		timelinePosition = 0;
+		battleStatus = BattleStatus.Prepare;
 	}
 
 	protected void SetHPBar()
@@ -65,11 +84,9 @@ public abstract class BattleObject : MonoBehaviour {
 
 	public enum BattleStatus
 	{
-		BattleNotStart,//战斗尚未开始
-		Prepare,//等待选择行动
-		Ready,//选择行动中
-		Action,//即将行动
-		Pause,//暂时无法行动
+		Prepare,//等待选择行动(0~400)
+		Ready,//选择行动中(400)
+		Action,//即将行动(400~500)
 	}
 }
 

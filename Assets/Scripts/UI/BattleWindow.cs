@@ -24,12 +24,14 @@ public class BattleWindow: MonoBehaviour {
 	{
 		EventManager.Instance.RegisterEvent (EventDefine.EnterBattle, OnEnterBattle);
 		EventManager.Instance.RegisterEvent (EventDefine.PlayerReady, OnPlayerReady);
+		EventManager.Instance.RegisterEvent (EventDefine.DecideCommand, OnDecideCommand);
 	}
 	
 	void OnDisable () 
 	{
 		EventManager.Instance.UnRegisterEvent (EventDefine.EnterBattle, OnEnterBattle);
-		EventManager.Instance.RegisterEvent (EventDefine.PlayerReady, OnPlayerReady);
+		EventManager.Instance.UnRegisterEvent (EventDefine.PlayerReady, OnPlayerReady);
+		EventManager.Instance.UnRegisterEvent (EventDefine.DecideCommand, OnDecideCommand);
 	}
 
 	void OnEnterBattle(MessageEventArgs args)
@@ -81,6 +83,11 @@ public class BattleWindow: MonoBehaviour {
 	void OnPlayerReady(MessageEventArgs args)
 	{
 		commandPanel.SetActive(true);
+	}
+
+	void OnDecideCommand(MessageEventArgs args)
+	{
+		commandPanel.SetActive(false);
 	}
 
 	IEnumerator LoadEnemy(string[] enemyIDs)

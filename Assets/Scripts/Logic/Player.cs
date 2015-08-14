@@ -19,14 +19,10 @@ public class Player : BattleObject {
 		return (PlayerData)data;
 	}
 
-	protected override void OnUpdateTimeline(MessageEventArgs args)
+	protected override void SelectCommand()
 	{
-		base.OnUpdateTimeline(args);
-		if(timelinePosition >= 400)
-		{
-			MessageEventArgs _args = new MessageEventArgs();
-			_args.AddMessage("PlayerName",data.name);
-			EventManager.Instance.PostEvent(EventDefine.PlayerReady,_args);
-		}	
+		base.SelectCommand();
+		EventManager.Instance.PostEvent(EventDefine.PlayerReady);
 	}
+
 }
