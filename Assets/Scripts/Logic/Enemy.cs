@@ -8,10 +8,14 @@ public class Enemy : BattleObject {
  * */
 	public int enemyID;
 
-	void Awake()
+	void Start()
 	{
 		data = DataManager.Instance.GetEnemyDataSet ().GetEnemyData (enemyID);
 		SetHPBar ();
+
+		MessageEventArgs args = new MessageEventArgs();
+		args.AddMessage("EnemyName", data.name);
+		EventManager.Instance.PostEvent(EventDefine.EnemySpawn,args);
 	}
 
 	public EnemyData GetData()

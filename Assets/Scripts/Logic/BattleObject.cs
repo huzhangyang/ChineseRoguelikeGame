@@ -57,7 +57,9 @@ public abstract class BattleObject : MonoBehaviour {
 
 	protected virtual void ExecuteCommand()
 	{
-		EventManager.Instance.PostEvent(EventDefine.ExecuteCommand);
+		MessageEventArgs args = new MessageEventArgs();
+		args.AddMessage("Name", data.name);
+		EventManager.Instance.PostEvent(EventDefine.ExecuteCommand, args);
 		timelinePosition = 0;
 		battleStatus = BattleStatus.Prepare;
 	}

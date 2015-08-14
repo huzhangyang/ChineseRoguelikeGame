@@ -22,7 +22,9 @@ public class Player : BattleObject {
 	protected override void SelectCommand()
 	{
 		base.SelectCommand();
-		EventManager.Instance.PostEvent(EventDefine.PlayerReady);
+		MessageEventArgs args = new MessageEventArgs();
+		args.AddMessage("PlayerName", data.name);
+		EventManager.Instance.PostEvent(EventDefine.PlayerReady, args);
 	}
 
 }

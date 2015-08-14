@@ -5,8 +5,7 @@ using UnityEngine.UI;
 using DG.Tweening;
 
 public class BattleWindow: MonoBehaviour {
-	
-	public Text message;
+
 	GameObject enemyPanel;
 	GameObject infoPanel;
 	GameObject commandPanel;
@@ -36,8 +35,6 @@ public class BattleWindow: MonoBehaviour {
 
 	void OnEnterBattle(MessageEventArgs args)
 	{
-		message.text = "";
-
 		if(args.ContainMessage("man"))
 		{
 			GameObject player = Instantiate(Resources.Load(GlobalDataStructure.PATH_BATTLE + "Character00")) as GameObject;
@@ -106,8 +103,7 @@ public class BattleWindow: MonoBehaviour {
 			GameObject avatar = Instantiate(Resources.Load("avatar")) as GameObject;
 			avatar.transform.SetParent(timeLine.transform);
 			enemy.GetComponent<Enemy>().SetAvatar(avatar);
-			
-			AddMessage(enemy.GetComponent<Enemy>().GetData().name + "出现了！");
+
 			enemy.transform.DOShakeScale(1);
 			yield return new WaitForSeconds(1f);
 			switch(enemyIDs.Length)
@@ -128,8 +124,5 @@ public class BattleWindow: MonoBehaviour {
 		EventManager.Instance.PostEvent (EventDefine.StartBattle);
 	}
 
-	public void AddMessage(string msg)
-	{
-		message.text += msg +"\n";
-	}
+
 }
