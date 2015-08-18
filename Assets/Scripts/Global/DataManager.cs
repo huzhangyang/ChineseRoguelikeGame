@@ -13,8 +13,10 @@ public class DataManager : MonoBehaviour {
 	public static DataManager Instance { get { return s_Instance; } }
 
 	EnemyDataSet enemyDataSet;
-	PlayerDataSet playerDataSet;
 	DialogueDataSet dialogueDataSet;
+	ItemDataSet itemDataSet;
+	SkillDataSet skillDataSet;
+	PlayerDataSet playerDataSet;
 	ConfigData configData;
 
 	public void LoadAllData()
@@ -25,7 +27,6 @@ public class DataManager : MonoBehaviour {
 		{
 			Debug.LogWarning ("Load EnemyData Failed.");
 			enemyDataSet = new EnemyDataSet();
-			enemyDataSet.dataSet = new List<EnemyData>();
 		}
 		//dialogueData
 		dialogueDataSet = Resources.Load (GlobalDataStructure.PATH_GAMEDATA + "DialogueData", typeof(DialogueDataSet)) as DialogueDataSet;
@@ -33,7 +34,20 @@ public class DataManager : MonoBehaviour {
 		{
 			Debug.LogWarning ("Load DialogueData Failed.");
 			dialogueDataSet = new DialogueDataSet();
-			dialogueDataSet.dataSet = new List<DialogueData>();
+		}
+		//itemData
+		itemDataSet = Resources.Load (GlobalDataStructure.PATH_GAMEDATA + "ItemData", typeof(ItemDataSet)) as ItemDataSet;
+		if (itemDataSet == null)
+		{
+			Debug.LogWarning ("Load ItemData Failed.");
+			itemDataSet = new ItemDataSet();
+		}
+		//skillData
+		skillDataSet = Resources.Load (GlobalDataStructure.PATH_GAMEDATA + "SkillData", typeof(SkillDataSet)) as SkillDataSet;
+		if (skillDataSet == null)
+		{
+			Debug.LogWarning ("Load SkillData Failed.");
+			skillDataSet = new SkillDataSet();
 		}
 		//playerData
 		playerDataSet = SaveManager.Instance.LoadGame ();
@@ -41,7 +55,6 @@ public class DataManager : MonoBehaviour {
 		{
 			Debug.LogWarning ("Load PlayerData Failed.");
 			playerDataSet = new PlayerDataSet();
-			playerDataSet.dataSet = new List<PlayerData>();
 			playerDataSet.dataSet.Add(new PlayerData(0));
 			playerDataSet.dataSet.Add(new PlayerData(1));
 		}
@@ -57,6 +70,8 @@ public class DataManager : MonoBehaviour {
 	public void UnLoadAllData()
 	{
 		enemyDataSet = new EnemyDataSet ();
+		dialogueDataSet = new DialogueDataSet();
+		//is save need to be unloaded?
 	}
 
 	public EnemyDataSet GetEnemyDataSet()

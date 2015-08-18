@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class DialogueDataSet : ScriptableObject 
 {
-	public List<DialogueData> dataSet;
+	public List<DialogueData> dataSet = new List<DialogueData>();
 	
 	public DialogueData GetDialogueData(int dialogueID)
 	{

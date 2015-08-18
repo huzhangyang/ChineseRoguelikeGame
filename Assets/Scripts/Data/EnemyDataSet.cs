@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class EnemyDataSet : ScriptableObject 
 {
-	public List<EnemyData> dataSet;
+	public List<EnemyData> dataSet = new List<EnemyData>();
 	
 	public EnemyData GetEnemyData(int enemyID)
 	{

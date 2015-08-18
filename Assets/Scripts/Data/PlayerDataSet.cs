@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class PlayerDataSet
 {
-	public List<PlayerData> dataSet;
+	public List<PlayerData> dataSet = new List<PlayerData>();
 	
 	public PlayerData GetPlayerData(int playerID)
 	{
