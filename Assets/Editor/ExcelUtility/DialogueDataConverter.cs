@@ -8,39 +8,35 @@ using Excel;
 
 public class DialogueDataConvertor : MonoBehaviour
 {
-	const string PATH_EXCEL = "/../Documents/ExcelData/DialogueData.xls";
+	const string PATH_EXCEL = "/../Documents/ExcelData/DialogueData.xlsx";
 	const string PATH_ASSET = "Assets/Resources/GameData/DialogueData.asset";
-	static DialogueDataSet dialogueDatas;
+	static DialogueDataSet dialogueDataSet;
 	static DataTable ExcelData;
 
 	[MenuItem("CRGTools/DialogueDataConverter")]
 	public static void ProcessConvert()
 	{		
 		FileStream stream = File.Open(Application.dataPath + PATH_EXCEL, FileMode.Open, FileAccess.Read);
-		IExcelDataReader excelReader = ExcelReaderFactory.CreateBinaryReader(stream);
+		IExcelDataReader excelReader = ExcelReaderFactory.CreateOpenXmlReader(stream);
 		ExcelData = excelReader.AsDataSet ().Tables["Dialogue"];
 		excelReader.Dispose ();
-		dialogueDatas = ScriptableObject.CreateInstance<DialogueDataSet>();
-		dialogueDatas.dataSet = new List<DialogueData>();
+		dialogueDataSet = ScriptableObject.CreateInstance<DialogueDataSet>();
 		
 		if (ExcelData != null)
 		{
 			LoadData();
-			AssetDatabase.CreateAsset(dialogueDatas, PATH_ASSET);
+			AssetDatabase.CreateAsset(dialogueDataSet, PATH_ASSET);
 		}
 	}
 
 	static void LoadData()
-	{
-		DialogueData data = null;
-		
+	{		
 		for (int i = 1; i < ExcelData.Rows.Count;)
 		{
-			int dialogueID = ExcelUtility.GetIntCell(ExcelData, i, 0);
+			DialogueData data = new DialogueData();
+			dialogueDataSet.dataSet.Add(data);
 
-			data = new DialogueData(dialogueID);
-			dialogueDatas.dataSet.Add(data);
-
+			data.dialogueID = ExcelUtility.GetIntCell(ExcelData, i, 0);
 			SentenceData sentence;
 			sentence.tellerName = ExcelUtility.GetCell(ExcelData, i, 1);
 			sentence.avatarID = ExcelUtility.GetIntCell(ExcelData, i, 2);

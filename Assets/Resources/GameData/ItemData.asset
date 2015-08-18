@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 844b83cf3e7ef50468f2ee9fbc6f5f2f, type: 3}
+  m_Name: ItemData
+  m_EditorClassIdentifier: 
+  dataSet:
+  - id: 1000
+    name: "\u65E0"
+    type: 1
+  - id: 1100
+    name: "\u77ED\u5251"
+    type: 1
+  - id: 1101
+    name: "\u9C7C\u80A0\u5251"
+    type: 1
+  - id: 1200
+    name: "\u957F\u5251"
+    type: 1
+  - id: 1201
+    name: "\u6E5B\u5362\u5251"
+    type: 1
+  - id: 1300
+    name: "\u5200"
+    type: 1
+  - id: 1301
+    name: "\u9E23\u9E3F\u5200"
+    type: 1
+  - id: 1400
+    name: "\u65A7"
+    type: 1
+  - id: 1401
+    name: "\u5211\u5929\u621A"
+    type: 1
+  - id: 1500
+    name: "\u5F13"
+    type: 1
+  - id: 1501
+    name: "\u8F69\u8F95\u5F13"
+    type: 1

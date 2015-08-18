@@ -11,6 +11,7 @@ public class Enemy : BattleObject {
 	void Start()
 	{
 		data = DataManager.Instance.GetEnemyDataSet ().GetEnemyData (enemyID);
+		data.currentHP = data.maxHP;
 		SetHPBar ();
 
 		MessageEventArgs args = new MessageEventArgs();

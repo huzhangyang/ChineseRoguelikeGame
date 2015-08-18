@@ -29,8 +29,9 @@ public class ItemDataSet : ScriptableObject
 	}
 }
 
-public enum ItemType{Weapon, Ring, NormalItem}
+public enum ItemType{NormalItem, Weapon, Ring}
 
+[System.Serializable]
 public class ItemData{
 /*
  * 道具类。包括武器、饰品等。
@@ -40,6 +41,7 @@ public class ItemData{
 	public ItemType type;
 }
 
+[System.Serializable]
 public class WeaponData:ItemData{
 /*
  * 道具类。包括装备。

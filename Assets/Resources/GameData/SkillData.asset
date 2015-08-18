@@ -1,0 +1,182 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abd888a162cb0b34a8824bea0a1ada2d, type: 3}
+  m_Name: SkillData
+  m_EditorClassIdentifier: 
+  dataSet:
+  - id: 0
+    name: "\u65E0"
+    ATKMultiplier: 0
+    ACCMultiplier: 0
+    CRTMultiplier: 0
+    preSPDMultiplier: 0
+    postSPDMultiplier: 0
+    cooldownTurn: 0
+  - id: 1
+    name: "\u5355\u624B\u6233\u523A"
+    ATKMultiplier: 1
+    ACCMultiplier: 1
+    CRTMultiplier: 1
+    preSPDMultiplier: 1
+    postSPDMultiplier: 1
+    cooldownTurn: 0
+  - id: 2
+    name: "\u8FDE\u7EED\u7A81\u523A"
+    ATKMultiplier: 1.20000005
+    ACCMultiplier: 1
+    CRTMultiplier: 1
+    preSPDMultiplier: 1
+    postSPDMultiplier: 1
+    cooldownTurn: 1
+  - id: 3
+    name: "\u53CC\u624B\u6233\u523A"
+    ATKMultiplier: 1
+    ACCMultiplier: 1
+    CRTMultiplier: 1
+    preSPDMultiplier: 1
+    postSPDMultiplier: 1
+    cooldownTurn: 0
+  - id: 4
+    name: "\u53CC\u624B\u5288\u780D"
+    ATKMultiplier: 1.5
+    ACCMultiplier: 1
+    CRTMultiplier: 1
+    preSPDMultiplier: 1
+    postSPDMultiplier: 1
+    cooldownTurn: 1
+  - id: 5
+    name: "\u6A2A\u626B"
+    ATKMultiplier: 1
+    ACCMultiplier: 1
+    CRTMultiplier: 1
+    preSPDMultiplier: 1
+    postSPDMultiplier: 1
+    cooldownTurn: 0
+  - id: 6
+    name: "\u7EB5\u65A9"
+    ATKMultiplier: 1.10000002
+    ACCMultiplier: 1
+    CRTMultiplier: 1
+    preSPDMultiplier: 1
+    postSPDMultiplier: 1
+    cooldownTurn: 1
+  - id: 7
+    name: "\u6A2A\u780D"
+    ATKMultiplier: 1
+    ACCMultiplier: 1
+    CRTMultiplier: 1
+    preSPDMultiplier: 1
+    postSPDMultiplier: 1
+    cooldownTurn: 0
+  - id: 8
+    name: "\u84C4\u529B\u91CD\u51FB"
+    ATKMultiplier: 1.79999995
+    ACCMultiplier: .600000024
+    CRTMultiplier: 1.20000005
+    preSPDMultiplier: 1
+    postSPDMultiplier: 1
+    cooldownTurn: 1
+  - id: 9
+    name: "\u8FDE\u53D1\u5C04\u51FB"
+    ATKMultiplier: 1
+    ACCMultiplier: 1
+    CRTMultiplier: 1
+    preSPDMultiplier: 1
+    postSPDMultiplier: 1
+    cooldownTurn: 2
+  - id: 10
+    name: "\u7CBE\u786E\u6253\u51FB"
+    ATKMultiplier: 1
+    ACCMultiplier: 1
+    CRTMultiplier: 1
+    preSPDMultiplier: 1
+    postSPDMultiplier: 1
+    cooldownTurn: 2
+  - id: 101
+    name: "\u80CC\u523A"
+    ATKMultiplier: 1
+    ACCMultiplier: 1
+    CRTMultiplier: 1
+    preSPDMultiplier: 1
+    postSPDMultiplier: 1
+    cooldownTurn: 2
+  - id: 102
+    name: "\u8FDE\u73AF\u65A9"
+    ATKMultiplier: 1
+    ACCMultiplier: 1
+    CRTMultiplier: 1
+    preSPDMultiplier: 1
+    postSPDMultiplier: 1
+    cooldownTurn: 2
+  - id: 103
+    name: "\u5C45\u5408\u65A9"
+    ATKMultiplier: 1
+    ACCMultiplier: 1
+    CRTMultiplier: 1
+    preSPDMultiplier: 1
+    postSPDMultiplier: 1
+    cooldownTurn: 2
+  - id: 104
+    name: "\u8DF3\u5288"
+    ATKMultiplier: 1
+    ACCMultiplier: 1
+    CRTMultiplier: 1
+    preSPDMultiplier: 1
+    postSPDMultiplier: 1
+    cooldownTurn: 2
+  - id: 105
+    name: "\u591A\u91CD\u5C04\u51FB"
+    ATKMultiplier: 1
+    ACCMultiplier: 1
+    CRTMultiplier: 1
+    preSPDMultiplier: 1
+    postSPDMultiplier: 1
+    cooldownTurn: 3
+  - id: 106
+    name: "\u4E00\u5251\u5C01\u5589"
+    ATKMultiplier: 1
+    ACCMultiplier: 1
+    CRTMultiplier: 1
+    preSPDMultiplier: 1
+    postSPDMultiplier: 1
+    cooldownTurn: 3
+  - id: 107
+    name: "\u5343\u519B\u7834"
+    ATKMultiplier: 1
+    ACCMultiplier: 1
+    CRTMultiplier: 1
+    preSPDMultiplier: 1
+    postSPDMultiplier: 1
+    cooldownTurn: 3
+  - id: 108
+    name: "\u767E\u5C06\u9E23"
+    ATKMultiplier: 1
+    ACCMultiplier: 1
+    CRTMultiplier: 1
+    preSPDMultiplier: 1
+    postSPDMultiplier: 1
+    cooldownTurn: 3
+  - id: 109
+    name: "\u5F00\u5929\u8F9F\u5730"
+    ATKMultiplier: 1
+    ACCMultiplier: 1
+    CRTMultiplier: 1
+    preSPDMultiplier: 1
+    postSPDMultiplier: 1
+    cooldownTurn: 3
+  - id: 110
+    name: "\u5C04\u65E5\u51FB"
+    ATKMultiplier: 1
+    ACCMultiplier: 1
+    CRTMultiplier: 1
+    preSPDMultiplier: 1
+    postSPDMultiplier: 1
+    cooldownTurn: 3

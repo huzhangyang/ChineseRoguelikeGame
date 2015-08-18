@@ -24,12 +24,7 @@ public class DialogueData {
  * 对话数据。
 */
 	public int dialogueID;
-	public List<SentenceData> sentences;
-	public DialogueData(int dialogueID)
-	{
-		this.dialogueID = dialogueID;
-		sentences = new List<SentenceData> ();
-	}
+	public List<SentenceData> sentences = new List<SentenceData> ();
 }
 
 [System.Serializable]

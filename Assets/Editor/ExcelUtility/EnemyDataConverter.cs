@@ -8,39 +8,35 @@ using Excel;
 
 public class EnemyDataConvertor : MonoBehaviour
 {
-	const string PATH_EXCEL = "/../Documents/ExcelData/EnemyData.xls";
+	const string PATH_EXCEL = "/../Documents/ExcelData/EnemyData.xlsx";
 	const string PATH_ASSET = "Assets/Resources/GameData/EnemyData.asset";
-	static EnemyDataSet enemyDatas;
+	static EnemyDataSet enemyDataSet;
 	static DataTable ExcelData;
 
 	[MenuItem("CRGTools/EnemyDataConverter")]
 	public static void ProcessConvert()
 	{		
 		FileStream stream = File.Open(Application.dataPath + PATH_EXCEL, FileMode.Open, FileAccess.Read);
-		IExcelDataReader excelReader = ExcelReaderFactory.CreateBinaryReader(stream);
+		IExcelDataReader excelReader = ExcelReaderFactory.CreateOpenXmlReader(stream);
 		ExcelData = excelReader.AsDataSet ().Tables["Enemy"];
 		excelReader.Dispose ();
-		enemyDatas = ScriptableObject.CreateInstance<EnemyDataSet>();
-		enemyDatas.dataSet = new List<EnemyData>();
+		enemyDataSet = ScriptableObject.CreateInstance<EnemyDataSet>();
 		
 		if (ExcelData != null)
 		{
 			LoadData();
-			AssetDatabase.CreateAsset(enemyDatas, PATH_ASSET);
+			AssetDatabase.CreateAsset(enemyDataSet, PATH_ASSET);
 		}
 	}
 
 	static void LoadData()
-	{
-		EnemyData data = null;
-		
+	{		
 		for (int i = 1; i < ExcelData.Rows.Count; i++)
 		{
-			int enemyID = ExcelUtility.GetIntCell(ExcelData, i, 0);
+			EnemyData data = new EnemyData();
+			enemyDataSet.dataSet.Add(data);
 
-			data = new EnemyData(enemyID);
-			enemyDatas.dataSet.Add(data);
-
+			data.id = ExcelUtility.GetIntCell(ExcelData, i, 0);
 			data.name = ExcelUtility.GetCell(ExcelData, i, 1);
 			data.maxHP = ExcelUtility.GetIntCell(ExcelData, i, 2);
 			data.power = ExcelUtility.GetIntCell(ExcelData, i, 3);
@@ -56,8 +52,6 @@ public class EnemyDataConvertor : MonoBehaviour
 			data.weaponID = ExcelUtility.GetIntCell(ExcelData, i, 13);
 			data.ring1ID = ExcelUtility.GetIntCell(ExcelData, i, 14);
 			data.ring2ID = ExcelUtility.GetIntCell(ExcelData, i, 15);
-
-			data.currentHP = data.maxHP;
 		}
 	}
 	

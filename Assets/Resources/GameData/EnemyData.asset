@@ -25,7 +25,7 @@ MonoBehaviour:
     skill: 10
     luck: 5
     eloquence: 0
-    currentHP: 100
+    currentHP: 0
     hitPercent: 0
     evadePercent: 0
     criticalPercent: 0

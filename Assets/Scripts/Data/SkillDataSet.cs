@@ -18,7 +18,7 @@ public class SkillDataSet : ScriptableObject
 	}
 }
 
-
+[System.Serializable]
 public class SkillData{
 /*
  * 技能类。
