@@ -9,6 +9,7 @@ public class BattleWindow: MonoBehaviour {
 	GameObject enemyPanel;
 	GameObject infoPanel;
 	GameObject commandPanel;
+	GameObject subcommandPanel;
 	GameObject timeLine;
 
 	void Awake () 
@@ -16,6 +17,7 @@ public class BattleWindow: MonoBehaviour {
 		enemyPanel = this.transform.FindChild ("EnemyPanel").gameObject;
 		infoPanel = this.transform.FindChild("InfoPanel").gameObject;
 		commandPanel = this.transform.FindChild("CommandPanel").gameObject;
+		subcommandPanel = this.transform.FindChild("SubCommandPanel").gameObject;
 		timeLine = this.transform.FindChild ("TimeLine").gameObject;
 	}
 	
@@ -23,6 +25,7 @@ public class BattleWindow: MonoBehaviour {
 	{
 		EventManager.Instance.RegisterEvent (EventDefine.EnterBattle, OnEnterBattle);
 		EventManager.Instance.RegisterEvent (EventDefine.PlayerReady, OnPlayerReady);
+		EventManager.Instance.RegisterEvent (EventDefine.ShowAvailableCommands, OnShowAvailableCommands);
 		EventManager.Instance.RegisterEvent (EventDefine.SelectCommand, OnSelectCommand);
 	}
 	
@@ -30,6 +33,7 @@ public class BattleWindow: MonoBehaviour {
 	{
 		EventManager.Instance.UnRegisterEvent (EventDefine.EnterBattle, OnEnterBattle);
 		EventManager.Instance.UnRegisterEvent (EventDefine.PlayerReady, OnPlayerReady);
+		EventManager.Instance.UnRegisterEvent (EventDefine.ShowAvailableCommands, OnShowAvailableCommands);
 		EventManager.Instance.UnRegisterEvent (EventDefine.SelectCommand, OnSelectCommand);
 	}
 
@@ -60,7 +64,7 @@ public class BattleWindow: MonoBehaviour {
 			player.transform.localPosition = new Vector3(0,0,0);
 			BattleLogic.players.Add(player.GetComponent<Player>());
 			
-			GameObject avatar = Instantiate(Resources.Load("avatar")) as GameObject;
+			GameObject avatar = Instantiate(Resources.Load("UI/TimelineAvatar")) as GameObject;
 			avatar.transform.SetParent(timeLine.transform);
 			player.GetComponent<Player>().SetAvatar(avatar);
 
@@ -82,9 +86,25 @@ public class BattleWindow: MonoBehaviour {
 		commandPanel.SetActive(true);
 	}
 
+	void OnShowAvailableCommands(MessageEventArgs args)
+	{
+		int commandCount = Convert.ToInt32(args.GetMessage ("commandCount"));
+		for(int i = 0 ; i < commandCount; i++)
+		{
+			string commandType = args.GetMessage ("command" + i +"Type");
+			string commandName = args.GetMessage ("command" + i +"Name");
+			string commandDescription = args.GetMessage ("command" + i +"Description");
+
+			//TODO add commandUI
+		}
+		subcommandPanel.SetActive (true);
+	}
+
+
 	void OnSelectCommand(MessageEventArgs args)
 	{
 		commandPanel.SetActive(false);
+		subcommandPanel.SetActive (false);
 	}
 
 	IEnumerator LoadEnemy(string[] enemyIDs)

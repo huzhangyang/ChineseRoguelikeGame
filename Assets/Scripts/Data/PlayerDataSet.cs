@@ -59,6 +59,7 @@ public class PlayerData : ObjectData {
 				break;
 		}
 		this.id = playerID;
+		weaponID = 1100;
 		currentHP = maxHP;
 		expMaxHP = 0;
 		expPower = 0;

@@ -1,12 +1,21 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Collections.Generic;
+
+public enum BasicCommand {Attack,Defence,Item,Strategy}
+public enum BattleStatus
+{
+	Prepare,//等待选择行动(0~400)
+	Ready,//选择行动中(400)
+	Action,//即将行动(400~500)
+}
 
 public abstract class BattleObject : MonoBehaviour {
 /*
  * 所有参战物体共有的数据与逻辑。
  * */	
-	public BattleStatus battleStatus = BattleObject.BattleStatus.Prepare;
+	public BattleStatus battleStatus = BattleStatus.Prepare;
 	public bool isPaused = true;
 
 	public int timelinePosition
@@ -78,11 +87,26 @@ public abstract class BattleObject : MonoBehaviour {
 		timelineAvatar.rectTransform.anchoredPosition = Vector2.zero;
 	}
 
-	public enum BattleStatus
+	public  List<Command> GetAvailableCommands(BasicCommand basicCommand)
 	{
-		Prepare,//等待选择行动(0~400)
-		Ready,//选择行动中(400)
-		Action,//即将行动(400~500)
+		List<Command> availableCommands = new List<Command> ();
+		switch(basicCommand)
+		{
+		case BasicCommand.Attack:
+			WeaponData weaponData = DataManager.Instance.GetItemDataSet().GetWeaponData(data.weaponID);
+			availableCommands.Add(Command.BuildWithSkillID(weaponData.skill1ID));
+			availableCommands.Add(Command.BuildWithSkillID(weaponData.skill2ID));
+			availableCommands.Add(Command.BuildWithSkillID(weaponData.skill3ID));
+			break;
+		case BasicCommand.Defence:
+			break;
+		case BasicCommand.Item:
+			break;
+		case BasicCommand.Strategy:
+			break;
+		}
+		return availableCommands;
 	}
+
 }
 

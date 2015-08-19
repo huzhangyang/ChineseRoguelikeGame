@@ -34,7 +34,7 @@ public class ItemDataConverter : MonoBehaviour {
 		for (int i = 1; i < ExcelData.Rows.Count; i++)
 		{			
 			WeaponData data = new WeaponData();
-			itemDataSet.dataSet.Add(data);
+			itemDataSet.weaponDataSet.Add(data);
 
 			data.id = ExcelUtility.GetIntCell(ExcelData, i, 0);
 			data.name = ExcelUtility.GetCell(ExcelData, i, 1);

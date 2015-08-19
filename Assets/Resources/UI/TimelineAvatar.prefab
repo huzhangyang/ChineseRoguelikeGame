@@ -11,7 +11,7 @@ GameObject:
   - 222: {fileID: 22261538}
   - 114: {fileID: 11439630}
   m_Layer: 5
-  m_Name: avatar
+  m_Name: TimelineAvatar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

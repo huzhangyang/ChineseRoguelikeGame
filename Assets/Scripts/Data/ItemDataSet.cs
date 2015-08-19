@@ -4,11 +4,12 @@ using System.Collections.Generic;
 
 public class ItemDataSet : ScriptableObject 
 {
-	public List<ItemData> dataSet = new List<ItemData>();
+	public List<ItemData> itemDataSet = new List<ItemData> ();
+	public List<WeaponData> weaponDataSet = new List<WeaponData>();
 	
 	public ItemData GetItemData(int itemID)
 	{
-		foreach (ItemData data in dataSet)
+		foreach (ItemData data in itemDataSet)
 		{
 			if (data.id == itemID)
 				return data;
@@ -19,10 +20,10 @@ public class ItemDataSet : ScriptableObject
 
 	public WeaponData GetWeaponData(int weaponID)
 	{
-		foreach (ItemData data in dataSet)
+		foreach (WeaponData data in weaponDataSet)
 		{
 			if (data.id == weaponID)
-				return (WeaponData)data;
+				return data;
 		}
 		Debug.LogError("Asking for an non-exist weapon:" + weaponID);
 		return null;

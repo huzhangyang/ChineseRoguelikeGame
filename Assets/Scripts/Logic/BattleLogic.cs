@@ -10,12 +10,6 @@ public class BattleLogic : MonoBehaviour {
 	public Canvas battleCanvas;
 	public Canvas mapCanvas;
 
-	public enum Level1Command {Attack,Defence,Item,Strategy}
-	public enum Level2AttackCommand{}
-	public enum Level2DefenceCommand{}
-	public enum Level2ItemCommand{}
-	public enum Level2StrategyCommand{}
-
 	void OnEnable() 
 	{
 		EventManager.Instance.RegisterEvent (EventDefine.StartBattle, OnStartBattle);
@@ -32,6 +26,12 @@ public class BattleLogic : MonoBehaviour {
 		EventManager.Instance.UnRegisterEvent (EventDefine.ExecuteCommand, OnExecuteCommand);
 	}
 
+	void Update()
+	{
+		if(GlobalManager.Instance.gameStatus == GlobalManager.GameStatus.Battle)
+			EventManager.Instance.PostEvent (EventDefine.UpdateTimeline);
+	}
+	
 	public void EnterBattle()
 	{
 		mapCanvas.gameObject.SetActive (false);
@@ -47,21 +47,33 @@ public class BattleLogic : MonoBehaviour {
 		EventManager.Instance.PostEvent (EventDefine.EnterBattle, args);
 	}
 
-	public void SelectLevel1Command(int commandID)
+	public void SelectBasicCommand(int commandID)
 	{
-		Level1Command command = (Level1Command)commandID;
-		switch(command)
+		BasicCommand basicCommand = (BasicCommand)commandID;
+		List<Command> commands = GetCurrentPlayer ().GetAvailableCommands (basicCommand);
+		MessageEventArgs args = new MessageEventArgs ();
+		args.AddMessage ("commandCount", commands.Count.ToString ());
+		for(int i = 0 ; i < commands.Count; i++)
 		{
-		case Level1Command.Attack:
-			break;
-		case Level1Command.Defence:
-			break;
-		case Level1Command.Item:
-			break;
-		case Level1Command.Strategy:
-			break;
+			args.AddMessage ("command" + i +"Type", commands[i].commandType);
+			args.AddMessage ("command" + i +"Name", commands[i].commandName);
+			args.AddMessage ("command" + i +"Description", commands[i].commandDescription);
 		}
-		EventManager.Instance.PostEvent (EventDefine.SelectCommand);
+		EventManager.Instance.PostEvent (EventDefine.ShowAvailableCommands, args);
+		//EventManager.Instance.PostEvent (EventDefine.SelectCommand);
+	}
+
+	public Player GetCurrentPlayer()
+	{
+		foreach(Player player in players)
+		{
+			if(player.battleStatus == BattleStatus.Ready)
+			{
+				return player;
+			}
+		}
+		Debug.LogError("There is no player ready.");
+		return null;
 	}
 
 	void OnStartBattle(MessageEventArgs args)
@@ -80,18 +92,18 @@ public class BattleLogic : MonoBehaviour {
 		ResumeEveryOne();
 		foreach(Enemy enemy in enemys)
 		{
-			if(enemy.battleStatus == BattleObject.BattleStatus.Ready)
+			if(enemy.battleStatus == BattleStatus.Ready)
 			{
 				//TODO store this enemy's command
-				enemy.battleStatus = BattleObject.BattleStatus.Action;
+				enemy.battleStatus = BattleStatus.Action;
 			}
 		}
 		foreach(Player player in players)
 		{
-			if(player.battleStatus == BattleObject.BattleStatus.Ready)
+			if(player.battleStatus == BattleStatus.Ready)
 			{
 				//TODO store this player's command
-				player.battleStatus = BattleObject.BattleStatus.Action;
+				player.battleStatus = BattleStatus.Action;
 			}
 		}
 	}
@@ -132,10 +144,6 @@ public class BattleLogic : MonoBehaviour {
 		}
 	}
 
-	void Update()
-	{
-		if(GlobalManager.Instance.gameStatus == GlobalManager.GameStatus.Battle)
-			EventManager.Instance.PostEvent (EventDefine.UpdateTimeline);
-	}
+
 
 }

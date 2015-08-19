@@ -84,6 +84,16 @@ public class DataManager : MonoBehaviour {
 		return dialogueDataSet; 
 	}
 
+	public ItemDataSet GetItemDataSet()
+	{
+		return itemDataSet; 
+	}
+	
+	public SkillDataSet GetSkillDataSet()
+	{
+		return skillDataSet; 
+	}
+
 	public PlayerDataSet GetPlayerDataSet()
 	{
 		return playerDataSet;
