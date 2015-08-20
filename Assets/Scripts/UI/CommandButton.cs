@@ -4,27 +4,25 @@ using System.Collections;
 
 public class CommandButton : MonoBehaviour {
 	
-	string commandType;
+	int commandID;
 	string commandName;
-	string commandDescription;
+	string description;
 
-	public void Init(string type, string name, string desc)
+	public void Init(int commandID, string name, string description)
 	{
-		commandType = type;
-		commandName = name;
-		commandDescription = desc;
+		this.commandID = commandID;
+		this.commandName = name;
+		this.description = description;
 
 		GetComponentInChildren<Text>().text = commandName;
 	}
 	public void OnClickCommandButton()
 	{
 		Text descText = transform.parent.parent.FindChild("CommandDescription").GetComponent<Text>();
-		descText.text = commandDescription;
+		descText.text = description;
 
 		MessageEventArgs args = new MessageEventArgs ();
-		args.AddMessage ("CommandType", commandType);
-		args.AddMessage ("CommandName", commandName);
-		args.AddMessage ("CommandDescription", commandDescription);
+		args.AddMessage ("CommandID", commandID.ToString());
 		EventManager.Instance.PostEvent (EventDefine.ClickCommand, args);
 	}
 

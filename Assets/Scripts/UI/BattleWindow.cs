@@ -93,17 +93,14 @@ public class BattleWindow: MonoBehaviour {
 		{
 			Destroy(child.gameObject);
 		}
-		int commandCount = Convert.ToInt32(args.GetMessage ("CommandCount"));
-		for(int i = 0 ; i < commandCount; i++)
-		{
-			string commandType = args.GetMessage ("Command" + i +"Type");
-			string commandName = args.GetMessage ("Command" + i +"Name");
-			string commandDescription = args.GetMessage ("Command" + i +"Description");
 
+		var commands = BattleLogic.GetCurrentPlayer().availableCommands;
+		for(int i = 0 ; i < commands.Count; i++)
+		{
 			GameObject commandButton = Instantiate(Resources.Load("UI/CommandButton")) as GameObject;
 			commandButton.transform.SetParent(subCommandPanel.transform.FindChild("SubCommandButtonPanel"));
 			commandButton.transform.localScale = new Vector3(1,1,1);
-			commandButton.GetComponent<CommandButton>().Init(commandType, commandName, commandDescription);
+			commandButton.GetComponent<CommandButton>().Init(commands[i].commandID, commands[i].commandName, commands[i].commandDescription);
 		}
 	}
 

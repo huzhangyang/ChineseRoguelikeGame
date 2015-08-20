@@ -1,16 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
+using System;
 
 public class BattleLogic : MonoBehaviour {
 
 	public static List<Enemy> enemys;
 	public static List<Player> players;
+	public static Command currentCommand;
 
 	public Canvas battleCanvas;
 	public Canvas mapCanvas;
-
-	private string currentCommandName;
 
 	/*LIFE CYCLE */
 	void OnEnable() 
@@ -56,17 +56,8 @@ public class BattleLogic : MonoBehaviour {
 	public void SelectBasicCommand(int commandID)
 	{
 		BasicCommand basicCommand = (BasicCommand)commandID;
-		List<Command> commands = GetCurrentPlayer ().GetAvailableCommands (basicCommand);
-		MessageEventArgs args = new MessageEventArgs ();
-		args.AddMessage ("CommandCount", commands.Count.ToString ());
-		for(int i = 0 ; i < commands.Count; i++)
-		{
-			args.AddMessage ("Command" + i +"Type", commands[i].commandType);
-			args.AddMessage ("Command" + i +"Name", commands[i].commandName);
-			args.AddMessage ("Command" + i +"Description", commands[i].commandDescription);
-		}
-		EventManager.Instance.PostEvent (EventDefine.ShowAvailableCommands, args);
-		currentCommandName = "";
+		GetCurrentPlayer ().RefreshAvailableCommands (basicCommand);
+		EventManager.Instance.PostEvent (EventDefine.ShowAvailableCommands, null);
 	}
 
 	/*EVENT CALLBACK*/
@@ -84,24 +75,15 @@ public class BattleLogic : MonoBehaviour {
 
 	void OnClickCommand(MessageEventArgs args)
 	{
-		string commandName = args.GetMessage("CommandName");
-		if(currentCommandName == commandName)
-		{
-			EventManager.Instance.PostEvent (EventDefine.SelectCommand, args);
-		}
-		else
-		{
-			currentCommandName = commandName;
-		}
+		int commandID = Convert.ToInt32(args.GetMessage("CommandID"));
+		currentCommand = GetCurrentPlayer ().availableCommands.Find((Command cmd)=>{return cmd.commandID == commandID;});
+		//available for click
 	}
 
 	void OnSelectCommand(MessageEventArgs args)
 	{
 		ResumeEveryOne();
-		string commandType = args.GetMessage("CommandType");
-		string commandName = args.GetMessage("CommandName");
-		string commandDescription = args.GetMessage("CommandDescription");
-		GetCurrentPlayer().commandToExecute = Command.Build(commandType, commandName, commandDescription);
+		GetCurrentPlayer().commandToExecute = currentCommand;
 		GetCurrentPlayer().battleStatus = BattleStatus.Action;
 	}
 
@@ -112,7 +94,7 @@ public class BattleLogic : MonoBehaviour {
 
 	/*CUSTOM METHOD*/
 
-	public Player GetCurrentPlayer()
+	public static Player GetCurrentPlayer()
 	{
 		foreach(Player player in players)
 		{

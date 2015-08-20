@@ -16,6 +16,7 @@ public abstract class BattleObject : MonoBehaviour {
  * 所有参战物体共有的数据与逻辑。
  * */	
 	public BattleStatus battleStatus = BattleStatus.Prepare;
+	public List<Command> availableCommands;
 	public Command commandToExecute = Command.None();
 	public bool isPaused = true;
 
@@ -69,7 +70,7 @@ public abstract class BattleObject : MonoBehaviour {
 	{
 		MessageEventArgs args = new MessageEventArgs();
 		args.AddMessage("Name", data.name);
-		args.AddMessage("CommandType", commandToExecute.commandType);
+		args.AddMessage("CommandType", commandToExecute.commandType.ToString());
 		args.AddMessage("CommandName", commandToExecute.commandName);
 		EventManager.Instance.PostEvent(EventDefine.ExecuteCommand, args);
 
@@ -92,9 +93,9 @@ public abstract class BattleObject : MonoBehaviour {
 		timelineAvatar.rectTransform.anchoredPosition = Vector2.zero;
 	}
 
-	public List<Command> GetAvailableCommands(BasicCommand basicCommand)
+	public void RefreshAvailableCommands(BasicCommand basicCommand)
 	{
-		List<Command> availableCommands = new List<Command> ();
+		availableCommands = new List<Command> ();
 		switch(basicCommand)
 		{
 		case BasicCommand.Attack:
@@ -110,7 +111,10 @@ public abstract class BattleObject : MonoBehaviour {
 		case BasicCommand.Strategy:
 			break;
 		}
-		return availableCommands;
+		for(int i = 0; i < availableCommands.Count; i++)
+		{
+			availableCommands[i].commandID = i;
+		}
 	}
 
 }
