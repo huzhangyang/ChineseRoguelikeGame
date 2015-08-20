@@ -27,7 +27,11 @@ public class Enemy : BattleObject {
 	protected override void SelectCommand()
 	{
 		base.SelectCommand();
-		//TODO AISelectCommand();
-		EventManager.Instance.PostEvent(EventDefine.SelectCommand);
+		AISelectCommand();
+	}
+
+	void AISelectCommand()
+	{
+		battleStatus = BattleStatus.Action;
 	}
 }

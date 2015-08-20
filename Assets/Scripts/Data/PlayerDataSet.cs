@@ -46,6 +46,8 @@ public class PlayerData : ObjectData {
 				skill = 15;
 				luck = 5;
 				eloquence = 5;
+
+				weaponID = 1301;
 				break;
 		case 1: name = "Girl";
 				maxHP = 100;
@@ -56,10 +58,11 @@ public class PlayerData : ObjectData {
 				skill = 5;
 				luck = 15;
 				eloquence = 10;
+
+				weaponID = 1100;
 				break;
 		}
 		this.id = playerID;
-		weaponID = 1100;
 		currentHP = maxHP;
 		expMaxHP = 0;
 		expPower = 0;

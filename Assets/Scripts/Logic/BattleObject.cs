@@ -16,6 +16,7 @@ public abstract class BattleObject : MonoBehaviour {
  * 所有参战物体共有的数据与逻辑。
  * */	
 	public BattleStatus battleStatus = BattleStatus.Prepare;
+	public Command commandToExecute = Command.None();
 	public bool isPaused = true;
 
 	public int timelinePosition
@@ -68,9 +69,13 @@ public abstract class BattleObject : MonoBehaviour {
 	{
 		MessageEventArgs args = new MessageEventArgs();
 		args.AddMessage("Name", data.name);
+		args.AddMessage("CommandType", commandToExecute.commandType);
+		args.AddMessage("CommandName", commandToExecute.commandName);
 		EventManager.Instance.PostEvent(EventDefine.ExecuteCommand, args);
+
 		timelinePosition = 0;
 		battleStatus = BattleStatus.Prepare;
+		commandToExecute = Command.None();
 	}
 
 	protected void SetHPBar()
@@ -87,7 +92,7 @@ public abstract class BattleObject : MonoBehaviour {
 		timelineAvatar.rectTransform.anchoredPosition = Vector2.zero;
 	}
 
-	public  List<Command> GetAvailableCommands(BasicCommand basicCommand)
+	public List<Command> GetAvailableCommands(BasicCommand basicCommand)
 	{
 		List<Command> availableCommands = new List<Command> ();
 		switch(basicCommand)

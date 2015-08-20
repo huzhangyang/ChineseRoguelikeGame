@@ -47,9 +47,9 @@ public class BattleLogic : MonoBehaviour {
 		players = new List<Player>();
 
 		MessageEventArgs args = new MessageEventArgs ();
-		args.AddMessage("man","1");
-		args.AddMessage("girl","1");
-		args.AddMessage("enemy","10,10,10");
+		args.AddMessage("Man","1");
+		args.AddMessage("Girl","1");
+		args.AddMessage("Enemy","10,10,10");
 		EventManager.Instance.PostEvent (EventDefine.EnterBattle, args);
 	}
 	
@@ -58,12 +58,12 @@ public class BattleLogic : MonoBehaviour {
 		BasicCommand basicCommand = (BasicCommand)commandID;
 		List<Command> commands = GetCurrentPlayer ().GetAvailableCommands (basicCommand);
 		MessageEventArgs args = new MessageEventArgs ();
-		args.AddMessage ("commandCount", commands.Count.ToString ());
+		args.AddMessage ("CommandCount", commands.Count.ToString ());
 		for(int i = 0 ; i < commands.Count; i++)
 		{
-			args.AddMessage ("command" + i +"Type", commands[i].commandType);
-			args.AddMessage ("command" + i +"Name", commands[i].commandName);
-			args.AddMessage ("command" + i +"Description", commands[i].commandDescription);
+			args.AddMessage ("Command" + i +"Type", commands[i].commandType);
+			args.AddMessage ("Command" + i +"Name", commands[i].commandName);
+			args.AddMessage ("Command" + i +"Description", commands[i].commandDescription);
 		}
 		EventManager.Instance.PostEvent (EventDefine.ShowAvailableCommands, args);
 		currentCommandName = "";
@@ -84,7 +84,7 @@ public class BattleLogic : MonoBehaviour {
 
 	void OnClickCommand(MessageEventArgs args)
 	{
-		string commandName = args.GetMessage("commandName");
+		string commandName = args.GetMessage("CommandName");
 		if(currentCommandName == commandName)
 		{
 			EventManager.Instance.PostEvent (EventDefine.SelectCommand, args);
@@ -98,22 +98,11 @@ public class BattleLogic : MonoBehaviour {
 	void OnSelectCommand(MessageEventArgs args)
 	{
 		ResumeEveryOne();
-		foreach(Enemy enemy in enemys)
-		{
-			if(enemy.battleStatus == BattleStatus.Ready)
-			{
-				//TODO store this enemy's command
-				enemy.battleStatus = BattleStatus.Action;
-			}
-		}
-		foreach(Player player in players)
-		{
-			if(player.battleStatus == BattleStatus.Ready)
-			{
-				//TODO store this player's command
-				player.battleStatus = BattleStatus.Action;
-			}
-		}
+		string commandType = args.GetMessage("CommandType");
+		string commandName = args.GetMessage("CommandName");
+		string commandDescription = args.GetMessage("CommandDescription");
+		GetCurrentPlayer().commandToExecute = Command.Build(commandType, commandName, commandDescription);
+		GetCurrentPlayer().battleStatus = BattleStatus.Action;
 	}
 
 	void OnExecuteCommand(MessageEventArgs args)

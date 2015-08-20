@@ -43,7 +43,17 @@ public class BattleMessage : MonoBehaviour {
 	void OnExecuteCommand(MessageEventArgs args)
 	{
 		string name = args.GetMessage("Name");
-		AddMessage(name + " 做出行动！");
+		string commandType = args.GetMessage("CommandType");
+		string commandName = args.GetMessage("CommandName");
+		if(commandType == "Skill")
+		{
+			AddMessage(name + " 使用了 " + commandName + "!");
+		}
+		else if(commandType == "None")
+		{
+			AddMessage(name + " 什么也没做!");
+		}
+
 	}
 
 	void ClearMessage()

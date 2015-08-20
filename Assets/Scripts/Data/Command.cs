@@ -7,6 +7,24 @@ public class Command {
 	public string commandName;
 	public string commandDescription;
 
+	public static Command None()
+	{
+		Command command = new Command ();
+		command.commandType = "None";
+		command.commandName = "None";
+		command.commandDescription = "None";
+		return command;
+	}
+
+	public static Command Build(string type, string name, string desc)
+	{
+		Command command = new Command ();
+		command.commandType = type;
+		command.commandName = name;
+		command.commandDescription = desc;
+		return command;
+	}
+
 	public static Command BuildWithSkillID(int skillID)
 	{
 		SkillData skillData = DataManager.Instance.GetSkillDataSet ().GetSkillData (skillID);

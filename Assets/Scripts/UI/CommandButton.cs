@@ -22,9 +22,9 @@ public class CommandButton : MonoBehaviour {
 		descText.text = commandDescription;
 
 		MessageEventArgs args = new MessageEventArgs ();
-		args.AddMessage ("commandType", commandType);
-		args.AddMessage ("commandName", commandName);
-		args.AddMessage ("commandDescription", commandDescription);
+		args.AddMessage ("CommandType", commandType);
+		args.AddMessage ("CommandName", commandName);
+		args.AddMessage ("CommandDescription", commandDescription);
 		EventManager.Instance.PostEvent (EventDefine.ClickCommand, args);
 	}
 

@@ -39,7 +39,7 @@ public class BattleWindow: MonoBehaviour {
 
 	void OnEnterBattle(MessageEventArgs args)
 	{
-		if(args.ContainMessage("man"))
+		if(args.ContainMessage("Man"))
 		{
 			GameObject player = Instantiate(Resources.Load(GlobalDataStructure.PATH_BATTLE + "Character00")) as GameObject;
 			player.transform.SetParent(infoPanel.transform);
@@ -51,12 +51,12 @@ public class BattleWindow: MonoBehaviour {
 			avatar.transform.SetParent(timeLine.transform);
 			player.GetComponent<Player>().SetAvatar(avatar);
 
-			if(args.ContainMessage("girl"))
+			if(args.ContainMessage("Girl"))
 			{
 				player.transform.DOLocalMoveX(-200,0.5f);
 			}
 		}
-		if(args.ContainMessage("girl"))
+		if(args.ContainMessage("Girl"))
 		{
 			GameObject player = Instantiate(Resources.Load(GlobalDataStructure.PATH_BATTLE + "Character01")) as GameObject;
 			player.transform.SetParent(infoPanel.transform);
@@ -68,15 +68,15 @@ public class BattleWindow: MonoBehaviour {
 			avatar.transform.SetParent(timeLine.transform);
 			player.GetComponent<Player>().SetAvatar(avatar);
 
-			if(args.ContainMessage("man"))
+			if(args.ContainMessage("Man"))
 			{
 				player.transform.DOLocalMoveX(200,0.5f);
 			}
 		}
 
-		if(args.ContainMessage("enemy"))
+		if(args.ContainMessage("Enemy"))
 		{
-			string[] enemyIDs = args.GetMessage("enemy").Split(',');
+			string[] enemyIDs = args.GetMessage("Enemy").Split(',');
 			StartCoroutine(LoadEnemy(enemyIDs));
 		}
 	}
@@ -93,12 +93,12 @@ public class BattleWindow: MonoBehaviour {
 		{
 			Destroy(child.gameObject);
 		}
-		int commandCount = Convert.ToInt32(args.GetMessage ("commandCount"));
+		int commandCount = Convert.ToInt32(args.GetMessage ("CommandCount"));
 		for(int i = 0 ; i < commandCount; i++)
 		{
-			string commandType = args.GetMessage ("command" + i +"Type");
-			string commandName = args.GetMessage ("command" + i +"Name");
-			string commandDescription = args.GetMessage ("command" + i +"Description");
+			string commandType = args.GetMessage ("Command" + i +"Type");
+			string commandName = args.GetMessage ("Command" + i +"Name");
+			string commandDescription = args.GetMessage ("Command" + i +"Description");
 
 			GameObject commandButton = Instantiate(Resources.Load("UI/CommandButton")) as GameObject;
 			commandButton.transform.SetParent(subCommandPanel.transform.FindChild("SubCommandButtonPanel"));
@@ -106,7 +106,6 @@ public class BattleWindow: MonoBehaviour {
 			commandButton.GetComponent<CommandButton>().Init(commandType, commandName, commandDescription);
 		}
 	}
-
 
 	void OnSelectCommand(MessageEventArgs args)
 	{
@@ -150,6 +149,4 @@ public class BattleWindow: MonoBehaviour {
 		yield return new WaitForSeconds(1f);
 		EventManager.Instance.PostEvent (EventDefine.StartBattle);
 	}
-
-
 }
