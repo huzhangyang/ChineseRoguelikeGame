@@ -14,7 +14,7 @@ public class Command {
 		Command command = new Command ();
 		command.commandType = "Skill";
 		command.commandName = skillData.name;
-		command.commandDescription = "技能描述";
+		command.commandDescription = skillData.name + "技能描述";
 		return command;
 	}
 }

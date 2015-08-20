@@ -10,10 +10,14 @@ public class BattleLogic : MonoBehaviour {
 	public Canvas battleCanvas;
 	public Canvas mapCanvas;
 
+	private string currentCommandName;
+
+	/*LIFE CYCLE */
 	void OnEnable() 
 	{
 		EventManager.Instance.RegisterEvent (EventDefine.StartBattle, OnStartBattle);
 		EventManager.Instance.RegisterEvent (EventDefine.PlayerReady, OnPlayerReady);
+		EventManager.Instance.RegisterEvent (EventDefine.ClickCommand, OnClickCommand);
 		EventManager.Instance.RegisterEvent (EventDefine.SelectCommand, OnSelectCommand);
 		EventManager.Instance.RegisterEvent (EventDefine.ExecuteCommand, OnExecuteCommand);
 	}
@@ -22,6 +26,7 @@ public class BattleLogic : MonoBehaviour {
 	{
 		EventManager.Instance.UnRegisterEvent (EventDefine.EnterBattle, OnStartBattle);
 		EventManager.Instance.UnRegisterEvent (EventDefine.PlayerReady, OnPlayerReady);
+		EventManager.Instance.UnRegisterEvent (EventDefine.ClickCommand, OnClickCommand);
 		EventManager.Instance.UnRegisterEvent (EventDefine.SelectCommand, OnSelectCommand);
 		EventManager.Instance.UnRegisterEvent (EventDefine.ExecuteCommand, OnExecuteCommand);
 	}
@@ -31,7 +36,8 @@ public class BattleLogic : MonoBehaviour {
 		if(GlobalManager.Instance.gameStatus == GlobalManager.GameStatus.Battle)
 			EventManager.Instance.PostEvent (EventDefine.UpdateTimeline);
 	}
-	
+
+	/*UI CALLBACK*/
 	public void EnterBattle()
 	{
 		mapCanvas.gameObject.SetActive (false);
@@ -46,7 +52,7 @@ public class BattleLogic : MonoBehaviour {
 		args.AddMessage("enemy","10,10,10");
 		EventManager.Instance.PostEvent (EventDefine.EnterBattle, args);
 	}
-
+	
 	public void SelectBasicCommand(int commandID)
 	{
 		BasicCommand basicCommand = (BasicCommand)commandID;
@@ -60,21 +66,10 @@ public class BattleLogic : MonoBehaviour {
 			args.AddMessage ("command" + i +"Description", commands[i].commandDescription);
 		}
 		EventManager.Instance.PostEvent (EventDefine.ShowAvailableCommands, args);
-		//EventManager.Instance.PostEvent (EventDefine.SelectCommand);
+		currentCommandName = "";
 	}
 
-	public Player GetCurrentPlayer()
-	{
-		foreach(Player player in players)
-		{
-			if(player.battleStatus == BattleStatus.Ready)
-			{
-				return player;
-			}
-		}
-		Debug.LogError("There is no player ready.");
-		return null;
-	}
+	/*EVENT CALLBACK*/
 
 	void OnStartBattle(MessageEventArgs args)
 	{
@@ -85,6 +80,19 @@ public class BattleLogic : MonoBehaviour {
 	void OnPlayerReady(MessageEventArgs args)
 	{
 		PauseEveryOne();
+	}
+
+	void OnClickCommand(MessageEventArgs args)
+	{
+		string commandName = args.GetMessage("commandName");
+		if(currentCommandName == commandName)
+		{
+			EventManager.Instance.PostEvent (EventDefine.SelectCommand, args);
+		}
+		else
+		{
+			currentCommandName = commandName;
+		}
 	}
 
 	void OnSelectCommand(MessageEventArgs args)
@@ -111,6 +119,21 @@ public class BattleLogic : MonoBehaviour {
 	void OnExecuteCommand(MessageEventArgs args)
 	{
 		StartCoroutine(WaitEveryOne(1));
+	}
+
+	/*CUSTOM METHOD*/
+
+	public Player GetCurrentPlayer()
+	{
+		foreach(Player player in players)
+		{
+			if(player.battleStatus == BattleStatus.Ready)
+			{
+				return player;
+			}
+		}
+		Debug.LogError("There is no player ready.");
+		return null;
 	}
 
 	IEnumerator WaitEveryOne(float seconds)
@@ -143,7 +166,4 @@ public class BattleLogic : MonoBehaviour {
 			player.isPaused = false;
 		}
 	}
-
-
-
 }

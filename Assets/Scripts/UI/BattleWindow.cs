@@ -9,7 +9,7 @@ public class BattleWindow: MonoBehaviour {
 	GameObject enemyPanel;
 	GameObject infoPanel;
 	GameObject commandPanel;
-	GameObject subcommandPanel;
+	GameObject subCommandPanel;
 	GameObject timeLine;
 
 	void Awake () 
@@ -17,7 +17,7 @@ public class BattleWindow: MonoBehaviour {
 		enemyPanel = this.transform.FindChild ("EnemyPanel").gameObject;
 		infoPanel = this.transform.FindChild("InfoPanel").gameObject;
 		commandPanel = this.transform.FindChild("CommandPanel").gameObject;
-		subcommandPanel = this.transform.FindChild("SubCommandPanel").gameObject;
+		subCommandPanel = this.transform.FindChild("SubCommandPanel").gameObject;
 		timeLine = this.transform.FindChild ("TimeLine").gameObject;
 	}
 	
@@ -47,7 +47,7 @@ public class BattleWindow: MonoBehaviour {
 			player.transform.localPosition = new Vector3(0,0,0);
 			BattleLogic.players.Add(player.GetComponent<Player>());
 			
-			GameObject avatar = Instantiate(Resources.Load("avatar")) as GameObject;
+			GameObject avatar = Instantiate(Resources.Load("UI/TimelineAvatar")) as GameObject;
 			avatar.transform.SetParent(timeLine.transform);
 			player.GetComponent<Player>().SetAvatar(avatar);
 
@@ -88,6 +88,11 @@ public class BattleWindow: MonoBehaviour {
 
 	void OnShowAvailableCommands(MessageEventArgs args)
 	{
+		subCommandPanel.SetActive (true);
+		foreach(Transform child in subCommandPanel.transform.FindChild("SubCommandButtonPanel"))
+		{
+			Destroy(child.gameObject);
+		}
 		int commandCount = Convert.ToInt32(args.GetMessage ("commandCount"));
 		for(int i = 0 ; i < commandCount; i++)
 		{
@@ -95,16 +100,18 @@ public class BattleWindow: MonoBehaviour {
 			string commandName = args.GetMessage ("command" + i +"Name");
 			string commandDescription = args.GetMessage ("command" + i +"Description");
 
-			//TODO add commandUI
+			GameObject commandButton = Instantiate(Resources.Load("UI/CommandButton")) as GameObject;
+			commandButton.transform.SetParent(subCommandPanel.transform.FindChild("SubCommandButtonPanel"));
+			commandButton.transform.localScale = new Vector3(1,1,1);
+			commandButton.GetComponent<CommandButton>().Init(commandType, commandName, commandDescription);
 		}
-		subcommandPanel.SetActive (true);
 	}
 
 
 	void OnSelectCommand(MessageEventArgs args)
 	{
 		commandPanel.SetActive(false);
-		subcommandPanel.SetActive (false);
+		subCommandPanel.SetActive (false);
 	}
 
 	IEnumerator LoadEnemy(string[] enemyIDs)
@@ -120,7 +127,7 @@ public class BattleWindow: MonoBehaviour {
 			enemy.transform.localPosition = new Vector3(0, -50 , 0);
 			BattleLogic.enemys.Add(enemy.GetComponent<Enemy>());
 			
-			GameObject avatar = Instantiate(Resources.Load("avatar")) as GameObject;
+			GameObject avatar = Instantiate(Resources.Load("UI/TimelineAvatar")) as GameObject;
 			avatar.transform.SetParent(timeLine.transform);
 			enemy.GetComponent<Enemy>().SetAvatar(avatar);
 
