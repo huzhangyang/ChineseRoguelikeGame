@@ -38,12 +38,13 @@ public class SkillDataConverter : MonoBehaviour {
 
 			data.id = ExcelUtility.GetIntCell(ExcelData, i, 0);
 			data.name = ExcelUtility.GetCell(ExcelData, i, 1);
-			data.ATKMultiplier = ExcelUtility.GetFloatCell(ExcelData, i, 2);
-			data.ACCMultiplier = ExcelUtility.GetFloatCell(ExcelData, i, 3);
-			data.CRTMultiplier = ExcelUtility.GetFloatCell(ExcelData, i, 4);
-			data.preSPDMultiplier = ExcelUtility.GetFloatCell(ExcelData, i, 5);
-			data.postSPDMultiplier = ExcelUtility.GetFloatCell(ExcelData, i, 6);
-			data.cooldownTurn = ExcelUtility.GetIntCell(ExcelData, i, 7);
+			data.targetType = (TargetType)ExcelUtility.GetIntCell(ExcelData, i, 2);
+			data.ATKMultiplier = ExcelUtility.GetFloatCell(ExcelData, i, 3);
+			data.ACCMultiplier = ExcelUtility.GetFloatCell(ExcelData, i, 4);
+			data.CRTMultiplier = ExcelUtility.GetFloatCell(ExcelData, i, 5);
+			data.preSPDMultiplier = ExcelUtility.GetFloatCell(ExcelData, i, 6);
+			data.postSPDMultiplier = ExcelUtility.GetFloatCell(ExcelData, i, 7);
+			data.cooldownTurn = ExcelUtility.GetIntCell(ExcelData, i, 8);
 		}
 	}
 }
