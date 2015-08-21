@@ -8,7 +8,7 @@ public class LoadingWindow : MonoBehaviour {
 
 	void Start () {
 		tips.text = "Tips：击败BOSS卷毛咩，有可能掉落大量珍贵毛皮！";
-		GlobalManager.Instance.gameStatus = GlobalManager.GameStatus.Loading;
+		GlobalManager.Instance.gameStatus = GameStatus.Loading;
 		StartCoroutine (LoadScene ());
 	}
 
@@ -19,6 +19,7 @@ public class LoadingWindow : MonoBehaviour {
 		AsyncOperation asyncOp = Application.LoadLevelAsync("GameScene");
 		yield return asyncOp;
 		Application.LoadLevel("GameScene");
+		GlobalManager.Instance.gameStatus = GameStatus.Map;
 	}
 
 }

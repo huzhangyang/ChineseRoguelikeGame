@@ -8,29 +8,37 @@ public class BattleMessage : MonoBehaviour {
 	Text message;
 	Scrollbar messageBar;
 
-	void Start()
+	void Awake()
 	{
 		message = this.GetComponentInChildren<Text>();
 		messageBar = this.GetComponentInChildren<Scrollbar>();
-		ClearMessage();
 	}
 
 	void OnEnable() 
 	{
+		EventManager.Instance.RegisterEvent (EventDefine.EnterBattle, OnEnterBattle);
 		EventManager.Instance.RegisterEvent (EventDefine.EnemySpawn, OnEnemySpawn);
 		EventManager.Instance.RegisterEvent (EventDefine.PlayerReady, OnPlayerReady);
 		EventManager.Instance.RegisterEvent (EventDefine.ExecuteCommand, OnExecuteCommand);
 		EventManager.Instance.RegisterEvent(EventDefine.BattleObjectHurt, OnBattleObjectHurt);
 		EventManager.Instance.RegisterEvent(EventDefine.BattleObjectDied, OnBattleObjectDied);
+		EventManager.Instance.RegisterEvent(EventDefine.BattleWin, OnBattleWin);
 	}
 	
 	void OnDisable () 
 	{
+		EventManager.Instance.UnRegisterEvent (EventDefine.EnterBattle, OnEnterBattle);
 		EventManager.Instance.UnRegisterEvent (EventDefine.EnemySpawn, OnEnemySpawn);
 		EventManager.Instance.UnRegisterEvent (EventDefine.PlayerReady, OnPlayerReady);
 		EventManager.Instance.UnRegisterEvent (EventDefine.ExecuteCommand, OnExecuteCommand);
 		EventManager.Instance.UnRegisterEvent(EventDefine.BattleObjectHurt, OnBattleObjectHurt);
 		EventManager.Instance.UnRegisterEvent(EventDefine.BattleObjectDied, OnBattleObjectDied);
+		EventManager.Instance.UnRegisterEvent(EventDefine.BattleWin, OnBattleWin);
+	}
+
+	void OnEnterBattle(MessageEventArgs args)
+	{
+		ClearMessage();
 	}
 
 	void OnEnemySpawn(MessageEventArgs args)
@@ -72,6 +80,11 @@ public class BattleMessage : MonoBehaviour {
 	{
 		string name = args.GetMessage("Name");
 		AddMessage(name + " 不敌！");
+	}
+
+	void OnBattleWin(MessageEventArgs args)
+	{
+		AddMessage("战斗胜利！");
 	}
 
 	void ClearMessage()

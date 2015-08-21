@@ -31,13 +31,13 @@ public class GlobalManager : MonoBehaviour {
 
 		}
 	}
+}
 
-	public enum GameStatus
-	{
-		Title,
-		Loading,
-		Map,
-		Battle,
-		Pause
-	}
+public enum GameStatus
+{
+	Title,
+	Loading,
+	Map,
+	Battle,
+	Pause
 }

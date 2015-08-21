@@ -52,42 +52,7 @@ public class BattleWindow: MonoBehaviour {
 			Destroy(child.gameObject);
 		}
 
-		if(args.ContainMessage("Man"))
-		{
-			GameObject player = Instantiate(Resources.Load(GlobalDataStructure.PATH_BATTLE + "Character00")) as GameObject;
-			player.transform.SetParent(infoPanel.transform, false);
-			BattleLogic.players.Add(player.GetComponent<Player>());
-			
-			GameObject avatar = Instantiate(Resources.Load("UI/TimelineAvatar")) as GameObject;
-			avatar.transform.SetParent(timeLine.transform, false);
-			player.GetComponent<BattleObjectUIEvent>().SetAvatar(avatar);
-
-			if(args.ContainMessage("Girl"))
-			{
-				player.transform.DOLocalMoveX(-200,0.5f);
-			}
-		}
-		if(args.ContainMessage("Girl"))
-		{
-			GameObject player = Instantiate(Resources.Load(GlobalDataStructure.PATH_BATTLE + "Character01")) as GameObject;
-			player.transform.SetParent(infoPanel.transform, false);
-			BattleLogic.players.Add(player.GetComponent<Player>());
-			
-			GameObject avatar = Instantiate(Resources.Load("UI/TimelineAvatar")) as GameObject;
-			avatar.transform.SetParent(timeLine.transform, false);
-			player.GetComponent<BattleObjectUIEvent>().SetAvatar(avatar);
-
-			if(args.ContainMessage("Man"))
-			{
-				player.transform.DOLocalMoveX(200,0.5f);
-			}
-		}
-
-		if(args.ContainMessage("Enemy"))
-		{
-			string[] enemyIDs = args.GetMessage("Enemy").Split(',');
-			StartCoroutine(LoadEnemy(enemyIDs));
-		}
+		StartCoroutine(StartBattle(args));
 	}
 
 	void OnPlayerReady(MessageEventArgs args)
@@ -119,38 +84,74 @@ public class BattleWindow: MonoBehaviour {
 		subCommandPanel.SetActive (false);
 	}
 
-	IEnumerator LoadEnemy(string[] enemyIDs)
+	IEnumerator StartBattle(MessageEventArgs args)
 	{
-		for(int i = 0; i < enemyIDs.Length; i++)
+		if(args.ContainMessage("Man"))
 		{
-			string loadEnemyPath = GlobalDataStructure.PATH_BATTLE + "Enemy";
-			if(Convert.ToInt32(enemyIDs[i]) < 10) loadEnemyPath += "0";
-
-			GameObject enemy = Instantiate(Resources.Load(loadEnemyPath + enemyIDs[i])) as GameObject;			
-			enemy.transform.SetParent(enemyPanel.transform, false);
-			BattleLogic.enemys.Add(enemy.GetComponent<Enemy>());
+			GameObject player = Instantiate(Resources.Load(GlobalDataStructure.PATH_BATTLE + "Character00")) as GameObject;
+			player.transform.SetParent(infoPanel.transform, false);
+			BattleLogic.players.Add(player.GetComponent<Player>());
 			
 			GameObject avatar = Instantiate(Resources.Load("UI/TimelineAvatar")) as GameObject;
 			avatar.transform.SetParent(timeLine.transform, false);
-			enemy.GetComponent<BattleObjectUIEvent>().SetAvatar(avatar);
-
-			enemy.transform.DOShakeScale(1);
-			yield return new WaitForSeconds(1f);
-			switch(enemyIDs.Length)
+			player.GetComponent<BattleObjectUIEvent>().SetAvatar(avatar);
+			
+			if(args.ContainMessage("Girl"))
 			{
-			case 2: if(i == 0)
-					enemy.transform.DOLocalMoveX(-150,0.5f);
-				else if(i == 1)
-					enemy.transform.DOLocalMoveX(150,0.5f);
-				break;
-			case 3:	if(i == 0)
-					enemy.transform.DOLocalMoveX(-200,0.5f);
-				else if(i == 2)
-					enemy.transform.DOLocalMoveX(200,0.5f);
-				break;
+				player.transform.DOLocalMoveX(-200,0.5f);
 			}
 		}
-		yield return new WaitForSeconds(1f);
+
+		if(args.ContainMessage("Girl"))
+		{
+			GameObject player = Instantiate(Resources.Load(GlobalDataStructure.PATH_BATTLE + "Character01")) as GameObject;
+			player.transform.SetParent(infoPanel.transform, false);
+			BattleLogic.players.Add(player.GetComponent<Player>());
+			
+			GameObject avatar = Instantiate(Resources.Load("UI/TimelineAvatar")) as GameObject;
+			avatar.transform.SetParent(timeLine.transform, false);
+			player.GetComponent<BattleObjectUIEvent>().SetAvatar(avatar);
+			
+			if(args.ContainMessage("Man"))
+			{
+				player.transform.DOLocalMoveX(200,0.5f);
+			}
+		}
+
+		if(args.ContainMessage("Enemy"))
+		{
+			string[] enemyIDs = args.GetMessage("Enemy").Split(',');
+			for(int i = 0; i < enemyIDs.Length; i++)
+			{
+				string loadEnemyPath = GlobalDataStructure.PATH_BATTLE + "Enemy";
+				if(Convert.ToInt32(enemyIDs[i]) < 10) loadEnemyPath += "0";
+				
+				GameObject enemy = Instantiate(Resources.Load(loadEnemyPath + enemyIDs[i])) as GameObject;			
+				enemy.transform.SetParent(enemyPanel.transform, false);
+				BattleLogic.enemys.Add(enemy.GetComponent<Enemy>());
+				
+				GameObject avatar = Instantiate(Resources.Load("UI/TimelineAvatar")) as GameObject;
+				avatar.transform.SetParent(timeLine.transform, false);
+				enemy.GetComponent<BattleObjectUIEvent>().SetAvatar(avatar);
+				
+				enemy.transform.DOShakeScale(1);
+				yield return new WaitForSeconds(1f);
+				switch(enemyIDs.Length)
+				{
+				case 2: if(i == 0)
+						enemy.transform.DOLocalMoveX(-150,0.5f);
+					else if(i == 1)
+						enemy.transform.DOLocalMoveX(150,0.5f);
+					break;
+				case 3:	if(i == 0)
+						enemy.transform.DOLocalMoveX(-200,0.5f);
+					else if(i == 1)
+						enemy.transform.DOLocalMoveX(200,0.5f);
+					break;
+				}
+			}
+		}
+
 		EventManager.Instance.PostEvent (EventDefine.StartBattle);
 	}
 }

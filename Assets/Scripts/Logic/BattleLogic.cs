@@ -35,7 +35,7 @@ public class BattleLogic : MonoBehaviour {
 
 	void Update()
 	{
-		if(GlobalManager.Instance.gameStatus == GlobalManager.GameStatus.Battle)
+		if(GlobalManager.Instance.gameStatus == GameStatus.Battle)
 			EventManager.Instance.PostEvent (EventDefine.UpdateTimeline);
 	}
 
@@ -70,7 +70,7 @@ public class BattleLogic : MonoBehaviour {
 
 	void OnStartBattle(MessageEventArgs args)
 	{
-		GlobalManager.Instance.gameStatus = GlobalManager.GameStatus.Battle;
+		GlobalManager.Instance.gameStatus = GameStatus.Battle;
 		ResumeEveryOne();
 	}
 
@@ -115,8 +115,8 @@ public class BattleLogic : MonoBehaviour {
 		if(enemys.Count == 0 || players.Count == 0)
 		{
 			EventManager.Instance.PostEvent(EventDefine.BattleWin);
-			mapCanvas.gameObject.SetActive (true);
-			battleCanvas.gameObject.SetActive (false);
+			GlobalManager.Instance.gameStatus = GameStatus.Map;
+			StartCoroutine(FinishBattle());
 		}
 	}
 
@@ -140,6 +140,13 @@ public class BattleLogic : MonoBehaviour {
 		PauseEveryOne();
 		yield return new WaitForSeconds(seconds);
 		ResumeEveryOne();
+	}
+
+	IEnumerator FinishBattle()
+	{
+		yield return new WaitForSeconds(3);
+		mapCanvas.gameObject.SetActive (true);
+		battleCanvas.gameObject.SetActive (false);
 	}
 
 	void PauseEveryOne()
