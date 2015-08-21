@@ -58,6 +58,10 @@ public class BattleLogic : MonoBehaviour {
 		BasicCommand basicCommand = (BasicCommand)commandID;
 		GetCurrentPlayer ().RefreshAvailableCommands (basicCommand);
 		EventManager.Instance.PostEvent (EventDefine.ShowAvailableCommands, null);
+		foreach(Enemy enemy in enemys)
+		{
+			enemy.GetComponent<BattleObjectUIEvent>().allowClick = false;
+		}
 	}
 
 	/*EVENT CALLBACK*/
@@ -77,6 +81,19 @@ public class BattleLogic : MonoBehaviour {
 	{
 		int commandID = Convert.ToInt32(args.GetMessage("CommandID"));
 		currentCommand = GetCurrentPlayer ().availableCommands.Find((Command cmd)=>{return cmd.commandID == commandID;});
+		if(currentCommand.commandType == CommandType.UseSkill)
+		{
+			switch(DataManager.Instance.GetSkillDataSet().GetSkillData(currentCommand.skillID).targetType)
+			{
+			case TargetType.SingleEnemy:
+			case TargetType.AllEnemies:
+				foreach(Enemy enemy in enemys)
+				{
+					enemy.GetComponent<BattleObjectUIEvent>().allowClick = true;
+				}
+				break;
+			}
+		}
 		//available for click
 	}
 

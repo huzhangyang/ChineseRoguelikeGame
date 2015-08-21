@@ -2,21 +2,18 @@
 using UnityEngine.UI;
 using System.Collections;
 
-public class CommandButton : MonoBehaviour {
-	
-	int commandID;
-	string commandName;
-	string description;
+public class CommandButtonUIEvent : MonoBehaviour {
 
 	public void Init(int commandID, string name, string description)
 	{
-		this.commandID = commandID;
-		this.commandName = name;
-		this.description = description;
-
-		GetComponentInChildren<Text>().text = commandName;
+		GetComponentInChildren<Text>().text = name;
+		GetComponent<Button>().onClick.AddListener(delegate()  
+		{  
+			OnClick(commandID, description);  
+		});		  
 	}
-	public void OnClickCommandButton()
+
+	void OnClick(int commandID, string description)
 	{
 		Text descText = transform.parent.parent.FindChild("CommandDescription").GetComponent<Text>();
 		descText.text = description;

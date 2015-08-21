@@ -100,7 +100,7 @@ public class BattleWindow: MonoBehaviour {
 			GameObject commandButton = Instantiate(Resources.Load("UI/CommandButton")) as GameObject;
 			commandButton.transform.SetParent(subCommandPanel.transform.FindChild("SubCommandButtonPanel"));
 			commandButton.transform.localScale = new Vector3(1,1,1);
-			commandButton.GetComponent<CommandButton>().Init(commands[i].commandID, commands[i].commandName, commands[i].commandDescription);
+			commandButton.GetComponent<CommandButtonUIEvent>().Init(commands[i].commandID, commands[i].commandName, commands[i].commandDescription);
 		}
 	}
 
