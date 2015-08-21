@@ -39,6 +39,11 @@ public class BattleWindow: MonoBehaviour {
 
 	void OnEnterBattle(MessageEventArgs args)
 	{
+		foreach(Transform child in timeLine.transform)
+		{
+			Destroy(child.gameObject);
+		}
+
 		if(args.ContainMessage("Man"))
 		{
 			GameObject player = Instantiate(Resources.Load(GlobalDataStructure.PATH_BATTLE + "Character00")) as GameObject;

@@ -20,6 +20,7 @@ public class BattleLogic : MonoBehaviour {
 		EventManager.Instance.RegisterEvent (EventDefine.ClickCommand, OnClickCommand);
 		EventManager.Instance.RegisterEvent (EventDefine.SelectCommand, OnSelectCommand);
 		EventManager.Instance.RegisterEvent (EventDefine.ExecuteCommand, OnExecuteCommand);
+		EventManager.Instance.RegisterEvent (EventDefine.BattleObjectDied, OnBattleObjectDied);
 	}
 	
 	void OnDisable () 
@@ -29,6 +30,7 @@ public class BattleLogic : MonoBehaviour {
 		EventManager.Instance.UnRegisterEvent (EventDefine.ClickCommand, OnClickCommand);
 		EventManager.Instance.UnRegisterEvent (EventDefine.SelectCommand, OnSelectCommand);
 		EventManager.Instance.UnRegisterEvent (EventDefine.ExecuteCommand, OnExecuteCommand);
+		EventManager.Instance.UnRegisterEvent (EventDefine.BattleObjectDied, OnBattleObjectDied);
 	}
 
 	void Update()
@@ -107,6 +109,16 @@ public class BattleLogic : MonoBehaviour {
 	void OnExecuteCommand(MessageEventArgs args)
 	{
 		StartCoroutine(WaitEveryOne(1));
+	}
+
+	void OnBattleObjectDied(MessageEventArgs args)
+	{
+		if(enemys.Count == 0 || players.Count == 0)
+		{
+			EventManager.Instance.PostEvent(EventDefine.BattleWin);
+			mapCanvas.gameObject.SetActive (true);
+			battleCanvas.gameObject.SetActive (false);
+		}
 	}
 
 	/*CUSTOM METHOD*/

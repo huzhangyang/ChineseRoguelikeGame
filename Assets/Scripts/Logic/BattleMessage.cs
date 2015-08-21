@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
 using UnityEngine.UI;
 
@@ -19,6 +20,7 @@ public class BattleMessage : MonoBehaviour {
 		EventManager.Instance.RegisterEvent (EventDefine.EnemySpawn, OnEnemySpawn);
 		EventManager.Instance.RegisterEvent (EventDefine.PlayerReady, OnPlayerReady);
 		EventManager.Instance.RegisterEvent (EventDefine.ExecuteCommand, OnExecuteCommand);
+		EventManager.Instance.RegisterEvent(EventDefine.BattleObjectDied, OnBattleObjectDied);
 	}
 	
 	void OnDisable () 
@@ -26,6 +28,7 @@ public class BattleMessage : MonoBehaviour {
 		EventManager.Instance.UnRegisterEvent (EventDefine.EnemySpawn, OnEnemySpawn);
 		EventManager.Instance.UnRegisterEvent (EventDefine.PlayerReady, OnPlayerReady);
 		EventManager.Instance.UnRegisterEvent (EventDefine.ExecuteCommand, OnExecuteCommand);
+		EventManager.Instance.UnRegisterEvent(EventDefine.BattleObjectDied, OnBattleObjectDied);
 	}
 
 	void OnEnemySpawn(MessageEventArgs args)
@@ -43,17 +46,21 @@ public class BattleMessage : MonoBehaviour {
 	void OnExecuteCommand(MessageEventArgs args)
 	{
 		string name = args.GetMessage("Name");
-		string commandType = args.GetMessage("CommandType");
+		CommandType commandType = (CommandType)Convert.ToInt32(args.GetMessage("CommandType"));
 		string commandName = args.GetMessage("CommandName");
-		if(commandType == "Skill")
+		if(commandType == CommandType.UseSkill)
 		{
 			AddMessage(name + " 使用了 " + commandName + "!");
 		}
-		else if(commandType == "None")
+		else if(commandType ==  CommandType.None)
 		{
 			AddMessage(name + " 什么也没做!");
 		}
-
+	}
+	void OnBattleObjectDied(MessageEventArgs args)
+	{
+		string name = args.GetMessage("Name");
+		AddMessage(name + " 不敌！");
 	}
 
 	void ClearMessage()

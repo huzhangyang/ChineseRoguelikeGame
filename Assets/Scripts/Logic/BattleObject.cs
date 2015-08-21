@@ -19,6 +19,7 @@ public abstract class BattleObject : MonoBehaviour {
 	public List<Command> availableCommands;
 	public Command commandToExecute = Command.None();
 	public bool isPaused = true;
+	public bool isDied = false;
 
 	public int timelinePosition
 	{
@@ -70,9 +71,15 @@ public abstract class BattleObject : MonoBehaviour {
 	{
 		MessageEventArgs args = new MessageEventArgs();
 		args.AddMessage("Name", data.name);
-		args.AddMessage("CommandType", commandToExecute.commandType.ToString());
+		args.AddMessage("CommandType", ((int)commandToExecute.commandType).ToString());
 		args.AddMessage("CommandName", commandToExecute.commandName);
 		EventManager.Instance.PostEvent(EventDefine.ExecuteCommand, args);
+
+		//very temp handle!!
+		if(commandToExecute.commandType == CommandType.UseSkill)
+		{
+			commandToExecute.target.ChangeCurrentHP(Random.Range(-100,0));
+		}
 
 		timelinePosition = 0;
 		battleStatus = BattleStatus.Prepare;
@@ -117,5 +124,26 @@ public abstract class BattleObject : MonoBehaviour {
 		}
 	}
 
+	public void ChangeCurrentHP(int hpDelta)
+	{
+		data.currentHP += hpDelta;
+		if(data.currentHP > data.maxHP)
+			data.currentHP = data.maxHP;
+		if(data.currentHP <= 0)
+		{
+			data.currentHP = 0;
+			isDied = true;
+			if(this is Enemy)
+				BattleLogic.enemys.Remove((Enemy)this);
+			else
+				BattleLogic.players.Remove((Player)this);
+			MessageEventArgs args = new MessageEventArgs();
+			args.AddMessage("Name", data.name);
+			EventManager.Instance.PostEvent(EventDefine.BattleObjectDied, args);
+			Destroy(timelineAvatar.gameObject);
+			Destroy(this.gameObject);
+		}
+		HPBar.value = data.currentHP;
+	}
 }
 
