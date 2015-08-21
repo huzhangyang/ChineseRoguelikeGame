@@ -47,13 +47,11 @@ public class BattleWindow: MonoBehaviour {
 		if(args.ContainMessage("Man"))
 		{
 			GameObject player = Instantiate(Resources.Load(GlobalDataStructure.PATH_BATTLE + "Character00")) as GameObject;
-			player.transform.SetParent(infoPanel.transform);
-			player.transform.localScale = new Vector3(1,1,1);
-			player.transform.localPosition = new Vector3(0,0,0);
+			player.transform.SetParent(infoPanel.transform, false);
 			BattleLogic.players.Add(player.GetComponent<Player>());
 			
 			GameObject avatar = Instantiate(Resources.Load("UI/TimelineAvatar")) as GameObject;
-			avatar.transform.SetParent(timeLine.transform);
+			avatar.transform.SetParent(timeLine.transform, false);
 			player.GetComponent<Player>().SetAvatar(avatar);
 
 			if(args.ContainMessage("Girl"))
@@ -64,13 +62,11 @@ public class BattleWindow: MonoBehaviour {
 		if(args.ContainMessage("Girl"))
 		{
 			GameObject player = Instantiate(Resources.Load(GlobalDataStructure.PATH_BATTLE + "Character01")) as GameObject;
-			player.transform.SetParent(infoPanel.transform);
-			player.transform.localScale = new Vector3(1,1,1);
-			player.transform.localPosition = new Vector3(0,0,0);
+			player.transform.SetParent(infoPanel.transform, false);
 			BattleLogic.players.Add(player.GetComponent<Player>());
 			
 			GameObject avatar = Instantiate(Resources.Load("UI/TimelineAvatar")) as GameObject;
-			avatar.transform.SetParent(timeLine.transform);
+			avatar.transform.SetParent(timeLine.transform, false);
 			player.GetComponent<Player>().SetAvatar(avatar);
 
 			if(args.ContainMessage("Man"))
@@ -103,8 +99,7 @@ public class BattleWindow: MonoBehaviour {
 		for(int i = 0 ; i < commands.Count; i++)
 		{
 			GameObject commandButton = Instantiate(Resources.Load("UI/CommandButton")) as GameObject;
-			commandButton.transform.SetParent(subCommandPanel.transform.FindChild("SubCommandButtonPanel"));
-			commandButton.transform.localScale = new Vector3(1,1,1);
+			commandButton.transform.SetParent(subCommandPanel.transform.FindChild("SubCommandButtonPanel"), false);
 			commandButton.GetComponent<CommandButtonUIEvent>().Init(commands[i].commandID, commands[i].commandName, commands[i].commandDescription);
 		}
 	}
@@ -123,13 +118,11 @@ public class BattleWindow: MonoBehaviour {
 			if(Convert.ToInt32(enemyIDs[i]) < 10) loadEnemyPath += "0";
 			GameObject enemy = Instantiate(Resources.Load(loadEnemyPath + enemyIDs[i])) as GameObject;
 			
-			enemy.transform.SetParent(enemyPanel.transform);
-			enemy.transform.localScale = new Vector3(1,1,1);
-			enemy.transform.localPosition = new Vector3(0, -50 , 0);
+			enemy.transform.SetParent(enemyPanel.transform, false);
 			BattleLogic.enemys.Add(enemy.GetComponent<Enemy>());
 			
 			GameObject avatar = Instantiate(Resources.Load("UI/TimelineAvatar")) as GameObject;
-			avatar.transform.SetParent(timeLine.transform);
+			avatar.transform.SetParent(timeLine.transform, false);
 			enemy.GetComponent<Enemy>().SetAvatar(avatar);
 
 			enemy.transform.DOShakeScale(1);
