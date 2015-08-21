@@ -52,7 +52,7 @@ public class BattleWindow: MonoBehaviour {
 			
 			GameObject avatar = Instantiate(Resources.Load("UI/TimelineAvatar")) as GameObject;
 			avatar.transform.SetParent(timeLine.transform, false);
-			player.GetComponent<Player>().SetAvatar(avatar);
+			player.GetComponent<BattleObjectUIEvent>().SetAvatar(avatar);
 
 			if(args.ContainMessage("Girl"))
 			{
@@ -67,7 +67,7 @@ public class BattleWindow: MonoBehaviour {
 			
 			GameObject avatar = Instantiate(Resources.Load("UI/TimelineAvatar")) as GameObject;
 			avatar.transform.SetParent(timeLine.transform, false);
-			player.GetComponent<Player>().SetAvatar(avatar);
+			player.GetComponent<BattleObjectUIEvent>().SetAvatar(avatar);
 
 			if(args.ContainMessage("Man"))
 			{
@@ -116,14 +116,14 @@ public class BattleWindow: MonoBehaviour {
 		{
 			string loadEnemyPath = GlobalDataStructure.PATH_BATTLE + "Enemy";
 			if(Convert.ToInt32(enemyIDs[i]) < 10) loadEnemyPath += "0";
-			GameObject enemy = Instantiate(Resources.Load(loadEnemyPath + enemyIDs[i])) as GameObject;
-			
+
+			GameObject enemy = Instantiate(Resources.Load(loadEnemyPath + enemyIDs[i])) as GameObject;			
 			enemy.transform.SetParent(enemyPanel.transform, false);
 			BattleLogic.enemys.Add(enemy.GetComponent<Enemy>());
 			
 			GameObject avatar = Instantiate(Resources.Load("UI/TimelineAvatar")) as GameObject;
 			avatar.transform.SetParent(timeLine.transform, false);
-			enemy.GetComponent<Enemy>().SetAvatar(avatar);
+			enemy.GetComponent<BattleObjectUIEvent>().SetAvatar(avatar);
 
 			enemy.transform.DOShakeScale(1);
 			yield return new WaitForSeconds(1f);

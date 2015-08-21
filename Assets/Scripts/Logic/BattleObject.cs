@@ -20,22 +20,22 @@ public abstract class BattleObject : MonoBehaviour {
 	public Command commandToExecute = Command.None();
 	public bool isPaused = true;
 	public bool isDied = false;
-
-	public int timelinePosition
+	private int timelinePosition;
+	public int TimelinePosition//max:10000
 	{
 		set
 		{
-			timelineAvatar.rectTransform.anchoredPosition = new Vector2(value, 0);
+			timelinePosition = value;
+			GetComponent<BattleObjectUIEvent>().SetAvatarPositionX(value / 20);//max:500
 		}
 		get
 		{
-			return (int)timelineAvatar.rectTransform.anchoredPosition.x;
+			return timelinePosition;
 		}
-	}//max:500
+	}
+
 
 	protected ObjectData data;
-	protected Image timelineAvatar;
-	protected Slider HPBar;
 
 	void OnEnable() 
 	{
@@ -50,12 +50,12 @@ public abstract class BattleObject : MonoBehaviour {
 	protected void OnUpdateTimeline(MessageEventArgs args)
 	{
 		if(!this.isPaused)
-			this.timelinePosition += data.agility;
-		if(timelinePosition >= 400 && battleStatus == BattleStatus.Prepare)
+			this.TimelinePosition += data.agility * 10;
+		if(TimelinePosition >= 8000 && battleStatus == BattleStatus.Prepare)
 		{
 			SelectCommand();
 		}
-		if(timelinePosition >= 500 && battleStatus == BattleStatus.Action)
+		if(TimelinePosition >= 10000 && battleStatus == BattleStatus.Action)
 		{
 			ExecuteCommand();
 		}
@@ -63,7 +63,7 @@ public abstract class BattleObject : MonoBehaviour {
 
 	protected virtual void SelectCommand()
 	{
-		timelinePosition = 400;
+		TimelinePosition = 8000;
 		battleStatus = BattleStatus.Ready;
 	}
 
@@ -81,23 +81,9 @@ public abstract class BattleObject : MonoBehaviour {
 			commandToExecute.target.ChangeCurrentHP(Random.Range(-100,0));
 		}
 
-		timelinePosition = 0;
+		TimelinePosition = 0;
 		battleStatus = BattleStatus.Prepare;
 		commandToExecute = Command.None();
-	}
-
-	protected void SetHPBar()
-	{
-		HPBar = this.gameObject.GetComponentInChildren<Slider> ();
-		HPBar.maxValue = data.maxHP;
-		HPBar.value = data.currentHP;
-	}
-
-	public void SetAvatar(GameObject avatar)
-	{
-		timelineAvatar = avatar.GetComponent<Image>();
-		timelineAvatar.sprite = this.GetComponent<Image> ().sprite;
-		timelineAvatar.rectTransform.anchoredPosition = Vector2.zero;
 	}
 
 	public void RefreshAvailableCommands(BasicCommand basicCommand)
@@ -140,10 +126,10 @@ public abstract class BattleObject : MonoBehaviour {
 			MessageEventArgs args = new MessageEventArgs();
 			args.AddMessage("Name", data.name);
 			EventManager.Instance.PostEvent(EventDefine.BattleObjectDied, args);
-			Destroy(timelineAvatar.gameObject);
+			GetComponent<BattleObjectUIEvent>().DestroyAvatar();
 			Destroy(this.gameObject);
 		}
-		HPBar.value = data.currentHP;
+		GetComponent<BattleObjectUIEvent>().SetHPBar(data.currentHP, data.maxHP);
 	}
 }
 

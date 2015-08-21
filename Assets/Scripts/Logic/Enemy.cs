@@ -12,7 +12,7 @@ public class Enemy : BattleObject {
 	{
 		data = DataManager.Instance.GetEnemyDataSet ().GetEnemyData (enemyID);
 		data.currentHP = data.maxHP;
-		SetHPBar ();
+		GetComponent<BattleObjectUIEvent>().SetHPBar(data.currentHP, data.maxHP);
 
 		MessageEventArgs args = new MessageEventArgs();
 		args.AddMessage("EnemyName", data.name);

@@ -11,7 +11,7 @@ public class Player : BattleObject {
 	void Start()
 	{
 		data = new PlayerData(playerID);
-		SetHPBar ();
+		GetComponent<BattleObjectUIEvent>().SetHPBar(data.currentHP, data.maxHP);
 	}
 	
 	public PlayerData GetData()
