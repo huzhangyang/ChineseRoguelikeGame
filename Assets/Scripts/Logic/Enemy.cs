@@ -27,11 +27,7 @@ public class Enemy : BattleObject {
 	protected override void SelectCommand()
 	{
 		base.SelectCommand();
-		AISelectCommand();
-	}
-
-	void AISelectCommand()
-	{
+		commandToExecute = GetComponent<EnemyAI>().AISelectCommand();
 		battleStatus = BattleStatus.Action;
 	}
 }

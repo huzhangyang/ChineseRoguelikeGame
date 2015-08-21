@@ -116,6 +116,10 @@ public abstract class BattleObject : MonoBehaviour {
 		data.currentHP += hpDelta;
 		if(data.currentHP > data.maxHP)
 			data.currentHP = data.maxHP;
+		MessageEventArgs args = new MessageEventArgs();
+		args.AddMessage("Name", data.name);
+		args.AddMessage("Damage", (-hpDelta).ToString());
+		EventManager.Instance.PostEvent(EventDefine.BattleObjectHurt, args);
 		if(data.currentHP <= 0)
 		{
 			data.currentHP = 0;
@@ -124,9 +128,9 @@ public abstract class BattleObject : MonoBehaviour {
 				BattleLogic.enemys.Remove((Enemy)this);
 			else
 				BattleLogic.players.Remove((Player)this);
-			MessageEventArgs args = new MessageEventArgs();
-			args.AddMessage("Name", data.name);
-			EventManager.Instance.PostEvent(EventDefine.BattleObjectDied, args);
+			MessageEventArgs args2 = new MessageEventArgs();
+			args2.AddMessage("Name", data.name);
+			EventManager.Instance.PostEvent(EventDefine.BattleObjectDied, args2);
 			GetComponent<BattleObjectUIEvent>().DestroyAvatar();
 			Destroy(this.gameObject);
 		}
