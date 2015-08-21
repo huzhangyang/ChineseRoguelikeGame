@@ -112,10 +112,15 @@ public class BattleLogic : MonoBehaviour {
 
 	void OnBattleObjectDied(MessageEventArgs args)
 	{
-		if(enemys.Count == 0 || players.Count == 0)
+		if(enemys.Count == 0)
 		{
 			EventManager.Instance.PostEvent(EventDefine.BattleWin);
-			GlobalManager.Instance.gameStatus = GameStatus.Map;
+
+			StartCoroutine(FinishBattle());
+		}
+		else if(players.Count == 0)
+		{
+			EventManager.Instance.PostEvent(EventDefine.BattleLose);
 			StartCoroutine(FinishBattle());
 		}
 	}
@@ -144,6 +149,7 @@ public class BattleLogic : MonoBehaviour {
 
 	IEnumerator FinishBattle()
 	{
+		GlobalManager.Instance.gameStatus = GameStatus.Map;
 		yield return new WaitForSeconds(3);
 		mapCanvas.gameObject.SetActive (true);
 		battleCanvas.gameObject.SetActive (false);

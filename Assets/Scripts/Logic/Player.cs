@@ -10,7 +10,7 @@ public class Player : BattleObject {
 
 	void Start()
 	{
-		data = new PlayerData(playerID);
+		data = DataManager.Instance.GetPlayerDataSet().GetPlayerData(playerID);
 		GetComponent<BattleObjectUIEvent>().SetHPBar(data.currentHP, data.maxHP);
 	}
 	

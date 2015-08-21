@@ -23,6 +23,7 @@ public class BattleMessage : MonoBehaviour {
 		EventManager.Instance.RegisterEvent(EventDefine.BattleObjectHurt, OnBattleObjectHurt);
 		EventManager.Instance.RegisterEvent(EventDefine.BattleObjectDied, OnBattleObjectDied);
 		EventManager.Instance.RegisterEvent(EventDefine.BattleWin, OnBattleWin);
+		EventManager.Instance.RegisterEvent(EventDefine.BattleLose, OnBattleLose);
 	}
 	
 	void OnDisable () 
@@ -34,6 +35,7 @@ public class BattleMessage : MonoBehaviour {
 		EventManager.Instance.UnRegisterEvent(EventDefine.BattleObjectHurt, OnBattleObjectHurt);
 		EventManager.Instance.UnRegisterEvent(EventDefine.BattleObjectDied, OnBattleObjectDied);
 		EventManager.Instance.UnRegisterEvent(EventDefine.BattleWin, OnBattleWin);
+		EventManager.Instance.UnRegisterEvent(EventDefine.BattleLose, OnBattleLose);
 	}
 
 	void OnEnterBattle(MessageEventArgs args)
@@ -85,6 +87,11 @@ public class BattleMessage : MonoBehaviour {
 	void OnBattleWin(MessageEventArgs args)
 	{
 		AddMessage("战斗胜利！");
+	}
+
+	void OnBattleLose(MessageEventArgs args)
+	{
+		AddMessage("战斗失败。");
 	}
 
 	void ClearMessage()

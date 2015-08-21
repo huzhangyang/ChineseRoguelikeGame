@@ -15,4 +15,5 @@ public enum EventDefine
 	BattleObjectHurt,//有玩家或敌人受伤
 	BattleObjectDied,//有玩家或敌人死亡
 	BattleWin,//战斗胜利
+	BattleLose,//战斗失败
 }
