@@ -59,7 +59,7 @@ public class BattleLogic : MonoBehaviour {
 	{
 		BasicCommand basicCommand = (BasicCommand)commandID;
 		GetCurrentPlayer ().RefreshAvailableCommands (basicCommand);
-		EventManager.Instance.PostEvent (EventDefine.ShowAvailableCommands, null);
+		EventManager.Instance.PostEvent(EventDefine.ShowAvailableCommands);
 		foreach(Enemy enemy in enemys)
 		{
 			enemy.GetComponent<BattleObjectUIEvent>().allowClick = false;
@@ -96,7 +96,6 @@ public class BattleLogic : MonoBehaviour {
 				break;
 			}
 		}
-		//available for click
 	}
 
 	void OnSelectCommand(MessageEventArgs args)

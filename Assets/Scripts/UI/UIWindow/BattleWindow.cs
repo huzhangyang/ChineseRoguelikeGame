@@ -39,6 +39,14 @@ public class BattleWindow: MonoBehaviour {
 
 	void OnEnterBattle(MessageEventArgs args)
 	{
+		foreach(Transform child in enemyPanel.transform)
+		{
+			Destroy(child.gameObject);
+		}
+		foreach(Transform child in infoPanel.transform)
+		{
+			Destroy(child.gameObject);
+		}
 		foreach(Transform child in timeLine.transform)
 		{
 			Destroy(child.gameObject);
@@ -90,6 +98,7 @@ public class BattleWindow: MonoBehaviour {
 	void OnShowAvailableCommands(MessageEventArgs args)
 	{
 		subCommandPanel.SetActive (true);
+		subCommandPanel.transform.FindChild("CommandDescription").GetComponent<Text>().text = "";
 		foreach(Transform child in subCommandPanel.transform.FindChild("SubCommandButtonPanel"))
 		{
 			Destroy(child.gameObject);

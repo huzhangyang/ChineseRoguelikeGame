@@ -78,7 +78,8 @@ public abstract class BattleObject : MonoBehaviour {
 		//very temp handle!!
 		if(commandToExecute.commandType == CommandType.UseSkill)
 		{
-			commandToExecute.target.ChangeCurrentHP(Random.Range(-100,0));
+			if(commandToExecute.target != null)
+				commandToExecute.target.ChangeCurrentHP(Random.Range(-100,0));
 		}
 
 		TimelinePosition = 0;

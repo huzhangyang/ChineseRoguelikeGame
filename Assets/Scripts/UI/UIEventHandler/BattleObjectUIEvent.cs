@@ -44,6 +44,7 @@ public class BattleObjectUIEvent : MonoBehaviour {
 		{
 			BattleLogic.currentCommand.target = this.GetComponent<BattleObject>();
 			EventManager.Instance.PostEvent(EventDefine.SelectCommand);
+			allowClick = false;
 		}
 	}
 
