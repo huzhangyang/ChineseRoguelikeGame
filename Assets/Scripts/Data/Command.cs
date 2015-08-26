@@ -14,8 +14,8 @@ public class Command {
 	{
 		Command command = new Command ();
 		command.commandType = CommandType.None;
-		command.commandName = "None";
-		command.commandDescription = "None";
+		command.commandName = "跳过";
+		command.commandDescription = "什么也不做";
 		return command;
 	}
 

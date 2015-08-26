@@ -103,6 +103,7 @@ public abstract class BattleObject : MonoBehaviour {
 		case BasicCommand.Item:
 			break;
 		case BasicCommand.Strategy:
+			availableCommands.Add(Command.None());
 			break;
 		}
 		for(int i = 0; i < availableCommands.Count; i++)

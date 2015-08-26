@@ -83,8 +83,9 @@ public class BattleLogic : MonoBehaviour {
 	{
 		int commandID = Convert.ToInt32(args.GetMessage("CommandID"));
 		currentCommand = GetCurrentPlayer ().availableCommands.Find((Command cmd)=>{return cmd.commandID == commandID;});
-		if(currentCommand.commandType == CommandType.UseSkill)
+		switch(currentCommand.commandType)
 		{
+		case CommandType.UseSkill:
 			switch(DataManager.Instance.GetSkillDataSet().GetSkillData(currentCommand.skillID).targetType)
 			{
 			case TargetType.SingleEnemy:
@@ -95,6 +96,10 @@ public class BattleLogic : MonoBehaviour {
 				}
 				break;
 			}
+			break;
+		case CommandType.None:
+			EventManager.Instance.PostEvent(EventDefine.SelectCommand);
+			break;
 		}
 	}
 
