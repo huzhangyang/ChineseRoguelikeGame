@@ -10,7 +10,7 @@ public class Enemy : BattleObject {
 
 	void Start()
 	{
-		data = DataManager.Instance.GetEnemyDataSet ().GetEnemyData (enemyID);
+		data = DataManager.Instance.GetEnemyDataSet ().GetEnemyData (enemyID).Clone();
 		data.currentHP = data.maxHP;
 		GetComponent<BattleObjectUIEvent>().SetHPBar(data.currentHP, data.maxHP);
 

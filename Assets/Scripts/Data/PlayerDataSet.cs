@@ -73,4 +73,9 @@ public class PlayerData : ObjectData {
 		expLuck = 0;
 		expEloquence = 0;
 	}
+
+	public PlayerData Clone()
+	{
+		return(PlayerData)this.MemberwiseClone();
+	}
 }
