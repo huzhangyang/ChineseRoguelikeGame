@@ -26,7 +26,7 @@ public class Command {
 		Command command = new Command ();
 		command.commandType = CommandType.UseSkill;
 		command.commandName = skillData.name;
-		command.commandDescription = skillData.name + "技能描述";
+		command.commandDescription = skillData.description;
 		command.skillID = skillID;
 		return command;
 	}

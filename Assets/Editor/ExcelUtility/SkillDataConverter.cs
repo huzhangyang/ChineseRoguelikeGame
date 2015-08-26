@@ -45,6 +45,7 @@ public class SkillDataConverter : MonoBehaviour {
 			data.preSPDMultiplier = ExcelUtility.GetFloatCell(ExcelData, i, 6);
 			data.postSPDMultiplier = ExcelUtility.GetFloatCell(ExcelData, i, 7);
 			data.cooldownTurn = ExcelUtility.GetIntCell(ExcelData, i, 8);
+			data.description = ExcelUtility.GetCell(ExcelData, i, 9);
 		}
 	}
 }

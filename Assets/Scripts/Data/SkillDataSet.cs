@@ -32,6 +32,7 @@ public class SkillData{
 	public float preSPDMultiplier;//前摇速度倍数
 	public float postSPDMultiplier;//后摇速度倍数
 	public int cooldownTurn;//技能冷却回合数
+	public string description;//技能描述
 }
 
 public enum TargetType{ None, SingleEnemy, AllEnemies, SingleAlly, AllAllies}
