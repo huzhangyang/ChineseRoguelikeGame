@@ -14,6 +14,7 @@ MonoBehaviour:
   dataSet:
   - id: 0
     name: "\u65E0"
+    skillType: 0
     targetType: 0
     ATKMultiplier: 0
     ACCMultiplier: 0
@@ -24,6 +25,7 @@ MonoBehaviour:
     description: "\u65E0\u62DB\u5373\u662F\u6709\u62DB"
   - id: 1
     name: "\u5355\u624B\u6233\u523A"
+    skillType: 0
     targetType: 1
     ATKMultiplier: 1
     ACCMultiplier: 1
@@ -34,6 +36,7 @@ MonoBehaviour:
     description: "\u5355\u624B\u6233\u523A"
   - id: 2
     name: "\u8FDE\u7EED\u7A81\u523A"
+    skillType: 0
     targetType: 1
     ATKMultiplier: 1.20000005
     ACCMultiplier: 1
@@ -44,6 +47,7 @@ MonoBehaviour:
     description: "\u8FDE\u7EED\u7A81\u523A"
   - id: 3
     name: "\u53CC\u624B\u6233\u523A"
+    skillType: 0
     targetType: 1
     ATKMultiplier: 1
     ACCMultiplier: 1
@@ -54,6 +58,7 @@ MonoBehaviour:
     description: "\u53CC\u624B\u6233\u523A"
   - id: 4
     name: "\u53CC\u624B\u5288\u780D"
+    skillType: 0
     targetType: 1
     ATKMultiplier: 1.5
     ACCMultiplier: 1
@@ -64,6 +69,7 @@ MonoBehaviour:
     description: "\u53CC\u624B\u5288\u780D"
   - id: 5
     name: "\u6A2A\u626B"
+    skillType: 0
     targetType: 1
     ATKMultiplier: 1
     ACCMultiplier: 1
@@ -74,6 +80,7 @@ MonoBehaviour:
     description: "\u6A2A\u626B"
   - id: 6
     name: "\u7EB5\u65A9"
+    skillType: 0
     targetType: 1
     ATKMultiplier: 1.10000002
     ACCMultiplier: 1
@@ -84,6 +91,7 @@ MonoBehaviour:
     description: "\u7EB5\u65A9"
   - id: 7
     name: "\u6A2A\u780D"
+    skillType: 0
     targetType: 1
     ATKMultiplier: 1
     ACCMultiplier: 1
@@ -94,6 +102,7 @@ MonoBehaviour:
     description: "\u6A2A\u780D"
   - id: 8
     name: "\u84C4\u529B\u91CD\u51FB"
+    skillType: 0
     targetType: 1
     ATKMultiplier: 1.79999995
     ACCMultiplier: .600000024
@@ -104,6 +113,7 @@ MonoBehaviour:
     description: "\u84C4\u529B\u91CD\u51FB"
   - id: 9
     name: "\u8FDE\u53D1\u5C04\u51FB"
+    skillType: 0
     targetType: 1
     ATKMultiplier: 1
     ACCMultiplier: 1
@@ -114,6 +124,7 @@ MonoBehaviour:
     description: "\u8FDE\u53D1\u5C04\u51FB"
   - id: 10
     name: "\u7CBE\u786E\u6253\u51FB"
+    skillType: 0
     targetType: 1
     ATKMultiplier: 1
     ACCMultiplier: 1
@@ -124,6 +135,7 @@ MonoBehaviour:
     description: "\u7CBE\u786E\u6253\u51FB"
   - id: 101
     name: "\u80CC\u523A"
+    skillType: 0
     targetType: 1
     ATKMultiplier: 1
     ACCMultiplier: 1
@@ -134,6 +146,7 @@ MonoBehaviour:
     description: "\u4ECE\u80CC\u540E\u6084\u6084\u63A5\u8FD1\u5E76\u653B\u51FB\uFF0C\u5BB9\u6613\u9020\u6210\u81F4\u547D\u4E00\u51FB"
   - id: 102
     name: "\u8FDE\u73AF\u65A9"
+    skillType: 0
     targetType: 1
     ATKMultiplier: 1
     ACCMultiplier: 1
@@ -144,6 +157,7 @@ MonoBehaviour:
     description: "\u5FEB\u901F\u8FDE\u7EED\u65A9\u5411\u5BF9\u624B\uFF0C\u5BF9\u65F6\u95F4\u8F74\u9020\u6210\u5F3A\u70C8\u5F71\u54CD"
   - id: 103
     name: "\u5C45\u5408\u65A9"
+    skillType: 0
     targetType: 1
     ATKMultiplier: 1
     ACCMultiplier: 1
@@ -154,6 +168,7 @@ MonoBehaviour:
     description: "\u4EE5\u9000\u4E3A\u8FDB\uFF0C\u77AC\u95F4\u5236\u654C\uFF0C\u53EF\u89E6\u53D1\u9632\u5B88\u53CD\u51FB"
   - id: 104
     name: "\u8DF3\u5288"
+    skillType: 0
     targetType: 1
     ATKMultiplier: 1
     ACCMultiplier: 1
@@ -164,6 +179,7 @@ MonoBehaviour:
     description: "\u594B\u529B\u4E00\u8DC3\uFF0C\u4F7F\u7528\u5168\u529B\u4ECE\u9AD8\u5904\u5236\u654C\uFF0C\u9020\u6210\u5DE8\u5927\u4F24\u5BB3"
   - id: 105
     name: "\u591A\u91CD\u5C04\u51FB"
+    skillType: 0
     targetType: 2
     ATKMultiplier: 1
     ACCMultiplier: 1
@@ -174,6 +190,7 @@ MonoBehaviour:
     description: "\u6570\u7BAD\u9F50\u53D1\uFF0C\u540C\u65F6\u5C04\u51FB\u573A\u4E0A\u5168\u90E8\u654C\u4EBA"
   - id: 106
     name: "\u4E00\u5251\u5C01\u5589"
+    skillType: 0
     targetType: 1
     ATKMultiplier: 1
     ACCMultiplier: 1
@@ -184,6 +201,7 @@ MonoBehaviour:
     description: "\u4E00\u5251\u5C01\u5589"
   - id: 107
     name: "\u5343\u519B\u7834"
+    skillType: 0
     targetType: 2
     ATKMultiplier: 1
     ACCMultiplier: 1
@@ -194,6 +212,7 @@ MonoBehaviour:
     description: "\u5343\u519B\u7834"
   - id: 108
     name: "\u767E\u5C06\u9E23"
+    skillType: 0
     targetType: 2
     ATKMultiplier: 1
     ACCMultiplier: 1
@@ -204,6 +223,7 @@ MonoBehaviour:
     description: "\u767E\u5C06\u9E23"
   - id: 109
     name: "\u5F00\u5929\u8F9F\u5730"
+    skillType: 0
     targetType: 2
     ATKMultiplier: 1
     ACCMultiplier: 1
@@ -214,6 +234,7 @@ MonoBehaviour:
     description: "\u5F00\u5929\u8F9F\u5730"
   - id: 110
     name: "\u6D41\u661F\u8FFD\u6708"
+    skillType: 0
     targetType: 1
     ATKMultiplier: 1
     ACCMultiplier: 1
@@ -224,6 +245,7 @@ MonoBehaviour:
     description: "\u6D41\u661F\u8FFD\u6708"
   - id: 201
     name: "\u706B\u7403\u672F"
+    skillType: 1
     targetType: 1
     ATKMultiplier: 1
     ACCMultiplier: 1
@@ -234,6 +256,7 @@ MonoBehaviour:
     description: "\u5728\u90A3\u4E2A\u65F6\u4EE3\u4EBA\u4EBA\u90FD\u4F1A\u7684\u706B\u7403\u672F"
   - id: 202
     name: "\u51B0\u5F39\u672F"
+    skillType: 1
     targetType: 1
     ATKMultiplier: 1
     ACCMultiplier: 1
@@ -244,6 +267,7 @@ MonoBehaviour:
     description: "\u5728\u90A3\u4E2A\u65F6\u4EE3\u4EBA\u4EBA\u90FD\u4F1A\u7684\u51B0\u5F39\u672F"
   - id: 203
     name: "\u95EA\u7535\u672F"
+    skillType: 1
     targetType: 1
     ATKMultiplier: 1
     ACCMultiplier: 1

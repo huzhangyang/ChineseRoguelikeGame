@@ -94,10 +94,16 @@ public abstract class BattleObject : MonoBehaviour {
 			targetList.Add(commandToExecute.target);
 			break;
 		case TargetType.AllEnemies:
-			targetList = new List<BattleObject>(BattleLogic.enemys.ToArray());
+			if(this is Enemy)
+				targetList = new List<BattleObject>(BattleLogic.players.ToArray());
+			else
+				targetList = new List<BattleObject>(BattleLogic.enemys.ToArray());
 			break;
 		case TargetType.AllAllies:
-			targetList = new List<BattleObject>(BattleLogic.players.ToArray());
+			if(this is Enemy)
+				targetList = new List<BattleObject>(BattleLogic.enemys.ToArray());
+			else
+				targetList = new List<BattleObject>(BattleLogic.players.ToArray());
 			break;
 		}
 		//decide command
@@ -179,19 +185,34 @@ public abstract class BattleObject : MonoBehaviour {
 				EventManager.Instance.PostEvent(EventDefine.BattleObjectCounter, args);
 			}
 			//计算是否命中，是否暴击
-			WeaponData weaponData = DataManager.Instance.GetItemDataSet().GetWeaponData(data.weaponID);
 			SkillData skillData = DataManager.Instance.GetSkillDataSet().GetSkillData(skillID);
-			float hitPercent = data.skill + data.luck / 10 + weaponData.basicACC * skillData.ACCMultiplier;//命中率
-			float evadePercent = target.data.skill + target.data.luck / 10;//闪避率
-			if(target.isEvading) evadePercent += 50;
-			float criticalPercent = target.data.skill + target.data.luck / 10 + weaponData.basicCRT * skillData.CRTMultiplier / 100;//暴击率
+			float hitPercent = 0;
+			float evadePercent = 0;
+			float criticalPercent = 0;
+			float damage = 0;
+			if(skillData.skillType == SkillType.Physical)
+			{
+				WeaponData weaponData = DataManager.Instance.GetItemDataSet().GetWeaponData(data.weaponID);
+				hitPercent = data.skill + data.luck / 10 + weaponData.basicACC * skillData.ACCMultiplier;//命中率
+				evadePercent = target.data.skill + target.data.luck / 10;//闪避率
+				criticalPercent = target.data.skill + target.data.luck / 10 + weaponData.basicCRT * skillData.CRTMultiplier / 100;//暴击率
+				damage = data.power * weaponData.basicATK * skillData.ATKMultiplier / target.data.toughness;//伤害值
+			}
+			else if(skillData.skillType == SkillType.Magical)
+			{
+				MagicData magicData = DataManager.Instance.GetItemDataSet().magicDataSet.Find((MagicData _data)=>{return _data.skillID == skillID;});
+				hitPercent = data.skill + data.luck / 10 + magicData.basicACC * skillData.ACCMultiplier;//命中率
+				evadePercent = target.data.skill + target.data.luck / 10;//闪避率
+				criticalPercent = target.data.skill + target.data.luck / 10 + magicData.basicCRT * skillData.CRTMultiplier / 100;//暴击率
+				damage = data.power * magicData.basicATK * skillData.ATKMultiplier / target.data.insight;//伤害值
+			}
 			//如果命中，则对方受伤
+			if(target.isEvading) evadePercent += 50;
 			bool hit = Random.Range(0,101) <= (hitPercent - evadePercent)?true:false;
 			if(hit)
-			{
-				float damage = data.power / target.data.toughness * weaponData.basicATK * skillData.ATKMultiplier;
-				bool critical = Random.Range(0,101) <= criticalPercent?true:false;
+			{		
 				if(target.isGuarding) damage /= 2;
+				bool critical = Random.Range(0,101) <= criticalPercent?true:false;
 				if(critical)
 				{
 					damage *= 2;
@@ -207,6 +228,9 @@ public abstract class BattleObject : MonoBehaviour {
 				args.AddMessage("Name", target.data.name);
 				EventManager.Instance.PostEvent(EventDefine.BattleObjectMiss, args);
 			}
+
+
+
 		}
 	}
 
