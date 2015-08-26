@@ -1,11 +1,11 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class EnemyAI : MonoBehaviour {
 
 	public Command AISelectCommand()
 	{
-		Command command= Command.BuildWithSkillID(Random.Range(1,11));
+		Command command= Command.UseSkill(Random.Range(1,11));
 		command.target = AISelectTarget();
 		return command;
 	}

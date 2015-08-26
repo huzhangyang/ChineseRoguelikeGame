@@ -60,13 +60,20 @@ public class BattleMessage : MonoBehaviour {
 		string name = args.GetMessage("Name");
 		CommandType commandType = (CommandType)Convert.ToInt32(args.GetMessage("CommandType"));
 		string commandName = args.GetMessage("CommandName");
-		if(commandType == CommandType.UseSkill)
-		{
+		switch(commandType)
+		{//very temp handle!!
+		case CommandType.UseSkill:
 			AddMessage(name + " 使用了 " + commandName + "!");
-		}
-		else if(commandType ==  CommandType.None)
-		{
+			break;
+		case CommandType.Defence:
+			break;
+		case CommandType.UseItem:
+			break;
+		case CommandType.Strategy:
+			break;
+		case CommandType.None:
 			AddMessage(name + " 什么也没做!");
+			break;
 		}
 	}
 

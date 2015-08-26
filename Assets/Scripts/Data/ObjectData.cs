@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 [System.Serializable]
 public abstract class ObjectData{
@@ -30,6 +31,8 @@ public abstract class ObjectData{
 	public float criticalPercent;//暴击率
 	//Equipment
 	public int weaponID;
+	public List<int> magicIDs = new List<int>();
+	public Dictionary<int, int> items = new Dictionary<int, int>();//id, amount
 	public int ring1ID;
 	public int ring2ID;
 }

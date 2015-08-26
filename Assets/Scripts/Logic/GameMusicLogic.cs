@@ -9,12 +9,14 @@ public class GameMusicLogic : MonoBehaviour {
 	{
 		EventManager.Instance.RegisterEvent (EventDefine.EnterBattle, PlayBattleBGM);
 		EventManager.Instance.RegisterEvent (EventDefine.BattleWin, PlayIntro);
+		EventManager.Instance.RegisterEvent (EventDefine.BattleLose, PlayIntro);
 	}
 
 	void OnDisable () 
 	{
 		EventManager.Instance.UnRegisterEvent (EventDefine.EnterBattle, PlayBattleBGM);
-		EventManager.Instance.RegisterEvent (EventDefine.BattleWin, PlayIntro);
+		EventManager.Instance.UnRegisterEvent (EventDefine.BattleWin, PlayIntro);
+		EventManager.Instance.UnRegisterEvent (EventDefine.BattleLose, PlayIntro);
 	}
 
 	void PlayBattleBGM(MessageEventArgs args)

@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
@@ -25,6 +25,8 @@ public abstract class BattleObject : MonoBehaviour {
 	{
 		set
 		{
+			if(value < 0) value = 0;
+			if(value > 10000) value = 10000;
 			timelinePosition = value;
 			GetComponent<BattleObjectUIEvent>().SetAvatarPositionX(value / 20);//max:500
 		}
@@ -75,13 +77,21 @@ public abstract class BattleObject : MonoBehaviour {
 		args.AddMessage("CommandName", commandToExecute.commandName);
 		EventManager.Instance.PostEvent(EventDefine.ExecuteCommand, args);
 
-		//very temp handle!!
-		if(commandToExecute.commandType == CommandType.UseSkill)
-		{
+		switch(commandToExecute.commandType)
+		{//very temp handle!!
+		case CommandType.UseSkill:
 			if(commandToExecute.target != null)
 				commandToExecute.target.ChangeCurrentHP(Random.Range(-100,0));
+			break;
+		case CommandType.Defence:
+			break;
+		case CommandType.UseItem:
+			break;
+		case CommandType.Strategy:
+			break;
+		case CommandType.None:
+			break;
 		}
-
 		TimelinePosition = 0;
 		battleStatus = BattleStatus.Prepare;
 		commandToExecute = Command.None();
@@ -93,14 +103,29 @@ public abstract class BattleObject : MonoBehaviour {
 		switch(basicCommand)
 		{
 		case BasicCommand.Attack:
-			WeaponData weaponData = DataManager.Instance.GetItemDataSet().GetWeaponData(data.weaponID);
-			availableCommands.Add(Command.BuildWithSkillID(weaponData.skill1ID));
-			availableCommands.Add(Command.BuildWithSkillID(weaponData.skill2ID));
-			availableCommands.Add(Command.BuildWithSkillID(weaponData.skill3ID));
+			if(data.battleType != BattleType.Magical)
+			{
+				WeaponData weaponData = DataManager.Instance.GetItemDataSet().GetWeaponData(data.weaponID);
+				availableCommands.Add(Command.UseSkill(weaponData.skill1ID));
+				availableCommands.Add(Command.UseSkill(weaponData.skill2ID));
+				availableCommands.Add(Command.UseSkill(weaponData.skill3ID));
+			}
+			if(data.battleType != BattleType.Physical)
+			{
+				foreach(int magicID in data.magicIDs)
+				{
+					MagicData magicData = DataManager.Instance.GetItemDataSet().GetMagicData(magicID);
+					availableCommands.Add(Command.UseSkill(magicData.skillID));
+				}
+			}
 			break;
 		case BasicCommand.Defence:
+			availableCommands.Add(Command.Guard());
+			availableCommands.Add(Command.Evade());
 			break;
 		case BasicCommand.Item:
+			availableCommands.Add(Command.SwitchWeapon());
+			availableCommands.Add(Command.Healing());
 			break;
 		case BasicCommand.Strategy:
 			availableCommands.Add(Command.None());

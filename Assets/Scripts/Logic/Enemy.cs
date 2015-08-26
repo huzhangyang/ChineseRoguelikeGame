@@ -12,6 +12,7 @@ public class Enemy : BattleObject {
 	{
 		data = DataManager.Instance.GetEnemyDataSet ().GetEnemyData (enemyID).Clone();
 		data.currentHP = data.maxHP;
+		data.battleType = BattleType.Both;
 		GetComponent<BattleObjectUIEvent>().SetHPBar(data.currentHP, data.maxHP);
 
 		MessageEventArgs args = new MessageEventArgs();

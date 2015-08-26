@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
 using System;
@@ -64,6 +64,10 @@ public class BattleLogic : MonoBehaviour {
 		{
 			enemy.GetComponent<BattleObjectUIEvent>().allowClick = false;
 		}
+		foreach(Player player in players)
+		{
+			player.GetComponent<BattleObjectUIEvent>().allowClick = false;
+		}
 	}
 
 	/*EVENT CALLBACK*/
@@ -83,21 +87,23 @@ public class BattleLogic : MonoBehaviour {
 	{
 		int commandID = Convert.ToInt32(args.GetMessage("CommandID"));
 		currentCommand = GetCurrentPlayer ().availableCommands.Find((Command cmd)=>{return cmd.commandID == commandID;});
-		switch(currentCommand.commandType)
+		switch(currentCommand.targetType)
 		{
-		case CommandType.UseSkill:
-			switch(DataManager.Instance.GetSkillDataSet().GetSkillData(currentCommand.skillID).targetType)
+		case TargetType.SingleEnemy:
+		case TargetType.AllEnemies:
+			foreach(Enemy enemy in enemys)
 			{
-			case TargetType.SingleEnemy:
-			case TargetType.AllEnemies:
-				foreach(Enemy enemy in enemys)
-				{
-					enemy.GetComponent<BattleObjectUIEvent>().allowClick = true;
-				}
-				break;
+				enemy.GetComponent<BattleObjectUIEvent>().allowClick = true;
 			}
 			break;
-		case CommandType.None:
+		case TargetType.SingleAlly:
+		case TargetType.AllAllies:
+			foreach(Player player in players)
+			{
+				player.GetComponent<BattleObjectUIEvent>().allowClick = true;
+			}
+			break;
+		case TargetType.Self:
 			EventManager.Instance.PostEvent(EventDefine.SelectCommand);
 			break;
 		}

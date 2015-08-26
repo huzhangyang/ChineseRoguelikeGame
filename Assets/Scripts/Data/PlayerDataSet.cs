@@ -46,6 +46,10 @@ public class PlayerData : ObjectData {
 				skill = 15;
 				luck = 5;
 				eloquence = 5;
+
+				battleType = BattleType.Physical;
+				weaponID = 1000 + Random.Range(1,6) * 100;
+				
 				break;
 		case 1: name = "Girl";
 				maxHP = 100;
@@ -56,9 +60,14 @@ public class PlayerData : ObjectData {
 				skill = 5;
 				luck = 15;
 				eloquence = 10;
+
+				battleType = BattleType.Magical;
+				magicIDs.Add(2001);
+				magicIDs.Add(2002);
+				magicIDs.Add(2003);
 				break;
 		}
-		weaponID = 1000 + Random.Range(1,6) * 100 + Random.Range(0,2);
+		items.Add(1,3);
 		this.id = playerID;
 		currentHP = maxHP;
 		expMaxHP = 0;

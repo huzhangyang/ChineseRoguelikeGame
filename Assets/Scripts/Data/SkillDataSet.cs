@@ -34,5 +34,3 @@ public class SkillData{
 	public int cooldownTurn;//技能冷却回合数
 	public string description;//技能描述
 }
-
-public enum TargetType{ None, SingleEnemy, AllEnemies, SingleAlly, AllAllies}
