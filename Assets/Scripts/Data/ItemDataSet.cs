@@ -40,6 +40,23 @@ public class ItemDataSet : ScriptableObject
 		Debug.LogError("Asking for an non-exist magic:" + magicID);
 		return null;
 	}
+
+	public bool IsWeapon(int itemID)
+	{
+		if(itemID >= 1000 && itemID < 2000)
+			return true;
+		else
+			return false;
+	}
+
+	public bool IsMagic(int itemID)
+	{
+		if(itemID >= 2000 && itemID < 3000)
+			return true;
+		else
+			return false;
+	}
+
 }
 
 [System.Serializable]

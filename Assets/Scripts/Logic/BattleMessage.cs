@@ -21,6 +21,8 @@ public class BattleMessage : MonoBehaviour {
 		EventManager.Instance.RegisterEvent (EventDefine.PlayerReady, OnPlayerReady);
 		EventManager.Instance.RegisterEvent (EventDefine.ExecuteCommand, OnExecuteCommand);
 		EventManager.Instance.RegisterEvent(EventDefine.BattleObjectHurt, OnBattleObjectHurt);
+		EventManager.Instance.RegisterEvent(EventDefine.BattleObjectHeal, OnBattleObjectHeal);
+		EventManager.Instance.RegisterEvent(EventDefine.BattleObjectCounter, OnBattleObjectCounter);
 		EventManager.Instance.RegisterEvent(EventDefine.BattleObjectDied, OnBattleObjectDied);
 		EventManager.Instance.RegisterEvent(EventDefine.BattleWin, OnBattleWin);
 		EventManager.Instance.RegisterEvent(EventDefine.BattleLose, OnBattleLose);
@@ -33,6 +35,8 @@ public class BattleMessage : MonoBehaviour {
 		EventManager.Instance.UnRegisterEvent (EventDefine.PlayerReady, OnPlayerReady);
 		EventManager.Instance.UnRegisterEvent (EventDefine.ExecuteCommand, OnExecuteCommand);
 		EventManager.Instance.UnRegisterEvent(EventDefine.BattleObjectHurt, OnBattleObjectHurt);
+		EventManager.Instance.UnRegisterEvent(EventDefine.BattleObjectHeal, OnBattleObjectHeal);
+		EventManager.Instance.UnRegisterEvent(EventDefine.BattleObjectCounter, OnBattleObjectCounter);
 		EventManager.Instance.UnRegisterEvent(EventDefine.BattleObjectDied, OnBattleObjectDied);
 		EventManager.Instance.UnRegisterEvent(EventDefine.BattleWin, OnBattleWin);
 		EventManager.Instance.UnRegisterEvent(EventDefine.BattleLose, OnBattleLose);
@@ -60,14 +64,20 @@ public class BattleMessage : MonoBehaviour {
 		string name = args.GetMessage("Name");
 		CommandType commandType = (CommandType)Convert.ToInt32(args.GetMessage("CommandType"));
 		string commandName = args.GetMessage("CommandName");
+		int skillOrItemID = Convert.ToInt32(args.GetMessage("SkillOrItemID"));
 		switch(commandType)
 		{//very temp handle!!
 		case CommandType.UseSkill:
-			AddMessage(name + " 使用了 " + commandName + "!");
+			AddMessage(name + " 使用了 " + DataManager.Instance.GetSkillDataSet().GetSkillData(skillOrItemID).name + "!");
 			break;
 		case CommandType.Defence:
+			AddMessage(name + " 正在 " + commandName + "!");
 			break;
 		case CommandType.UseItem:
+			if(DataManager.Instance.GetItemDataSet().IsWeapon(skillOrItemID))
+				AddMessage(name + " 将武器更换为 " + DataManager.Instance.GetItemDataSet().GetWeaponData(skillOrItemID).name + "!");
+			else
+				AddMessage(name + " 使用了 " + DataManager.Instance.GetItemDataSet().GetItemData(skillOrItemID).name + "!");				
 			break;
 		case CommandType.Strategy:
 			break;
@@ -80,10 +90,23 @@ public class BattleMessage : MonoBehaviour {
 	void OnBattleObjectHurt(MessageEventArgs args)
 	{
 		string name = args.GetMessage("Name");
-		int number = Convert.ToInt32(args.GetMessage("Damage"));
-		AddMessage(name + " 受到" + number + "点伤害！");
+		int damage = Convert.ToInt32(args.GetMessage("Damage"));
+		AddMessage(name + " 受到" + damage + "点伤害！");
 	}
 
+	void OnBattleObjectHeal(MessageEventArgs args)
+	{
+		string name = args.GetMessage("Name");
+		int amount = Convert.ToInt32(args.GetMessage("Amount"));
+		int curHP = Convert.ToInt32(args.GetMessage("CurrentHP"));
+		AddMessage(name + " 回复了 " + amount + "点生命，现在生命值为 " + curHP + "!");
+	}
+
+	void OnBattleObjectCounter(MessageEventArgs args)
+	{
+		string name = args.GetMessage("Name");
+		AddMessage(name + " 完全预料到了此次攻击，并做出反击！");
+	}
 
 	void OnBattleObjectDied(MessageEventArgs args)
 	{

@@ -9,7 +9,7 @@ public class Command {
 	public string commandName;//指令名称
 	public string commandDescription;
 	public int skillOrItemID;
-	public BattleObject target;
+	public BattleObject target;//目标（仅在单个目标时生效）
 
 	public static Command None()
 	{
@@ -52,12 +52,12 @@ public class Command {
 		return command;
 	}
 
-	public static Command Healing()
+	public static Command Healing(int itemCount)
 	{
 		Command command = new Command ();
 		command.commandType = CommandType.UseItem;
 		command.targetType = TargetType.SingleAlly;
-		command.commandName = "原力之瓶";
+		command.commandName = "原力之瓶(" + itemCount + ")";
 		command.commandDescription = "使用原力之瓶来回复生命值";
 		command.skillOrItemID = 1;
 		return command;
