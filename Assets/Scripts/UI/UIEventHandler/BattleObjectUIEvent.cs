@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 using System.Collections;
 
 public class BattleObjectUIEvent : MonoBehaviour {
@@ -18,8 +19,16 @@ public class BattleObjectUIEvent : MonoBehaviour {
 	{
 		if(HPBar == null)
 			HPBar = this.gameObject.GetComponentInChildren<Slider> ();
-		HPBar.maxValue = max;
-		HPBar.value = current;
+		if(HPBar.maxValue != max)
+		{
+			HPBar.maxValue = max;
+			HPBar.value = current;
+		}
+		else
+		{
+			HPBar.DOValue(current, 1).SetEase(Ease.OutSine);
+		}
+
 	}
 	
 	public void SetAvatar(GameObject avatar)
@@ -30,7 +39,10 @@ public class BattleObjectUIEvent : MonoBehaviour {
 
 	public void SetAvatarPositionX(float posX)
 	{
-		avatarImage.rectTransform.anchoredPosition = new Vector2(posX, 0);
+		if(posX > 0 && Mathf.Abs(posX - avatarImage.rectTransform.anchoredPosition.x) > 10)
+			avatarImage.rectTransform.DOLocalMoveX(posX - 250, 1).SetEase(Ease.OutSine);
+		else
+			avatarImage.rectTransform.anchoredPosition = new Vector2(posX, 0);
 	}
 
 	public void DestroyAvatar()

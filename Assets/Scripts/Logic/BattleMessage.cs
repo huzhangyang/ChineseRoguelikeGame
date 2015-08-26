@@ -16,10 +16,10 @@ public class BattleMessage : MonoBehaviour {
 
 	void OnEnable() 
 	{
-		EventManager.Instance.RegisterEvent (EventDefine.EnterBattle, OnEnterBattle);
-		EventManager.Instance.RegisterEvent (EventDefine.EnemySpawn, OnEnemySpawn);
-		EventManager.Instance.RegisterEvent (EventDefine.PlayerReady, OnPlayerReady);
-		EventManager.Instance.RegisterEvent (EventDefine.ExecuteCommand, OnExecuteCommand);
+		EventManager.Instance.RegisterEvent(EventDefine.EnterBattle, OnEnterBattle);
+		EventManager.Instance.RegisterEvent(EventDefine.EnemySpawn, OnEnemySpawn);
+		EventManager.Instance.RegisterEvent(EventDefine.PlayerReady, OnPlayerReady);
+		EventManager.Instance.RegisterEvent(EventDefine.ExecuteCommand, OnExecuteCommand);
 		EventManager.Instance.RegisterEvent(EventDefine.BattleObjectMiss, OnBattleObjectMiss);
 		EventManager.Instance.RegisterEvent(EventDefine.BattleObjectCritical, OnBattleObjectCritical);
 		EventManager.Instance.RegisterEvent(EventDefine.BattleObjectHurt, OnBattleObjectHurt);
@@ -32,10 +32,10 @@ public class BattleMessage : MonoBehaviour {
 	
 	void OnDisable () 
 	{
-		EventManager.Instance.UnRegisterEvent (EventDefine.EnterBattle, OnEnterBattle);
-		EventManager.Instance.UnRegisterEvent (EventDefine.EnemySpawn, OnEnemySpawn);
-		EventManager.Instance.UnRegisterEvent (EventDefine.PlayerReady, OnPlayerReady);
-		EventManager.Instance.UnRegisterEvent (EventDefine.ExecuteCommand, OnExecuteCommand);
+		EventManager.Instance.UnRegisterEvent(EventDefine.EnterBattle, OnEnterBattle);
+		EventManager.Instance.UnRegisterEvent(EventDefine.EnemySpawn, OnEnemySpawn);
+		EventManager.Instance.UnRegisterEvent(EventDefine.PlayerReady, OnPlayerReady);
+		EventManager.Instance.UnRegisterEvent(EventDefine.ExecuteCommand, OnExecuteCommand);
 		EventManager.Instance.UnRegisterEvent(EventDefine.BattleObjectMiss, OnBattleObjectMiss);
 		EventManager.Instance.UnRegisterEvent(EventDefine.BattleObjectCritical, OnBattleObjectCritical);
 		EventManager.Instance.UnRegisterEvent(EventDefine.BattleObjectHurt, OnBattleObjectHurt);
@@ -120,7 +120,7 @@ public class BattleMessage : MonoBehaviour {
 	void OnBattleObjectCounter(MessageEventArgs args)
 	{
 		string name = args.GetMessage("Name");
-		AddMessage(name + " 完全预料到了此次攻击，并做出反击！");
+		AddMessage(name + " 看穿了攻击，并做出反击！");
 	}
 
 	void OnBattleObjectDied(MessageEventArgs args)

@@ -38,7 +38,6 @@ public abstract class BattleObject : MonoBehaviour {
 		}
 	}
 
-
 	protected ObjectData data;
 
 	void OnEnable() 
@@ -181,7 +180,7 @@ public abstract class BattleObject : MonoBehaviour {
 				this.InflictDamage(Random.Range(0,100));
 
 				MessageEventArgs args = new MessageEventArgs();
-				args.AddMessage("Name", data.name);
+				args.AddMessage("Name", target.name);
 				EventManager.Instance.PostEvent(EventDefine.BattleObjectCounter, args);
 			}
 			//计算是否命中，是否暴击
@@ -264,6 +263,10 @@ public abstract class BattleObject : MonoBehaviour {
 	public void InflictDamage(int damage)
 	{
 		data.currentHP -= damage;
+		if(battleStatus == BattleStatus.Action)
+			TimelinePosition -= damage * 50;
+		else
+			TimelinePosition -= damage * 20;
 
 		MessageEventArgs args = new MessageEventArgs();
 		args.AddMessage("Name", data.name);
