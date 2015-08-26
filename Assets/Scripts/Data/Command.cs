@@ -63,6 +63,16 @@ public class Command {
 		return command;
 	}
 
+	public static Command Escape()
+	{
+		Command command = new Command ();
+		command.commandType = CommandType.Strategy;
+		command.targetType = TargetType.Self;
+		command.commandName = "逃跑";
+		command.commandDescription = "逃命！";
+		return command;
+	}
+
 	public static Command UseSkill(int skillID)
 	{
 		SkillData skillData = DataManager.Instance.GetSkillDataSet ().GetSkillData (skillID);

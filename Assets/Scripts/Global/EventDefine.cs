@@ -18,6 +18,7 @@ public enum EventDefine
 	BattleObjectHeal,//有玩家或敌人恢复生命
 	BattleObjectCounter,//有玩家或敌人反击
 	BattleObjectDied,//有玩家或敌人死亡
+	BattleObjectEscape,//有玩家或敌人逃跑
 	BattleWin,//战斗胜利
 	BattleLose,//战斗失败
 }

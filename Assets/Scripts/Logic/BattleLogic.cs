@@ -21,6 +21,7 @@ public class BattleLogic : MonoBehaviour {
 		EventManager.Instance.RegisterEvent (EventDefine.SelectCommand, OnSelectCommand);
 		EventManager.Instance.RegisterEvent (EventDefine.ExecuteCommand, OnExecuteCommand);
 		EventManager.Instance.RegisterEvent (EventDefine.BattleObjectDied, OnBattleObjectDied);
+		EventManager.Instance.RegisterEvent (EventDefine.BattleObjectEscape, OnBattleObjectEscape);
 	}
 	
 	void OnDisable () 
@@ -31,6 +32,7 @@ public class BattleLogic : MonoBehaviour {
 		EventManager.Instance.UnRegisterEvent (EventDefine.SelectCommand, OnSelectCommand);
 		EventManager.Instance.UnRegisterEvent (EventDefine.ExecuteCommand, OnExecuteCommand);
 		EventManager.Instance.UnRegisterEvent (EventDefine.BattleObjectDied, OnBattleObjectDied);
+		EventManager.Instance.UnRegisterEvent (EventDefine.BattleObjectEscape, OnBattleObjectEscape);
 	}
 
 	void Update()
@@ -134,6 +136,12 @@ public class BattleLogic : MonoBehaviour {
 			EventManager.Instance.PostEvent(EventDefine.BattleLose);
 			StartCoroutine(FinishBattle());
 		}
+	}
+
+	void OnBattleObjectEscape(MessageEventArgs args)
+	{
+		EventManager.Instance.PostEvent(EventDefine.BattleLose);
+		StartCoroutine(FinishBattle());
 	}
 
 	/*CUSTOM METHOD*/

@@ -118,6 +118,7 @@ public abstract class BattleObject : MonoBehaviour {
 			UseItem(commandToExecute.skillOrItemID, targetList);
 			break;
 		case CommandType.Strategy:
+			UseStrategy(commandToExecute.commandName);
 			break;
 		case CommandType.None:
 			break;
@@ -162,6 +163,7 @@ public abstract class BattleObject : MonoBehaviour {
 			break;
 		case BasicCommand.Strategy:
 			availableCommands.Add(Command.None());
+			availableCommands.Add(Command.Escape());
 			break;
 		}
 		for(int i = 0; i < availableCommands.Count; i++)
@@ -227,9 +229,6 @@ public abstract class BattleObject : MonoBehaviour {
 				args.AddMessage("Name", target.data.name);
 				EventManager.Instance.PostEvent(EventDefine.BattleObjectMiss, args);
 			}
-
-
-
 		}
 	}
 
@@ -257,6 +256,14 @@ public abstract class BattleObject : MonoBehaviour {
 				target.data.ConsumeItem(itemID);
 				return;
 			}
+		}
+	}
+
+	public void UseStrategy(string commandName)
+	{
+		if(commandName == "逃跑")
+		{
+			EventManager.Instance.PostEvent(EventDefine.BattleObjectEscape);
 		}
 	}
 
