@@ -62,6 +62,7 @@ public class PlayerData : ObjectData {
 				eloquence = 10;
 
 				battleType = BattleType.Magical;
+				weaponID = 1000;
 				magicIDs.Add(2001);
 				magicIDs.Add(2002);
 				magicIDs.Add(2003);

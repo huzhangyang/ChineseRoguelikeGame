@@ -12,6 +12,8 @@ public enum EventDefine
 	ClickCommand,//玩家点击了一个指令
 	SelectCommand,//玩家或敌方选定了一个指令
 	ExecuteCommand,//玩家或敌方执行了一个指令
+	BattleObjectMiss,//有玩家或敌人未击中
+	BattleObjectCritical,//有玩家或敌人造成暴击
 	BattleObjectHurt,//有玩家或敌人受伤
 	BattleObjectHeal,//有玩家或敌人恢复生命
 	BattleObjectCounter,//有玩家或敌人反击

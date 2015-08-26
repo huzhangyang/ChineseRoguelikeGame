@@ -192,8 +192,20 @@ public abstract class BattleObject : MonoBehaviour {
 				float damage = data.power / target.data.toughness * weaponData.basicATK * skillData.ATKMultiplier;
 				bool critical = Random.Range(0,101) <= criticalPercent?true:false;
 				if(target.isGuarding) damage /= 2;
-				if(critical) damage *= 2;
+				if(critical)
+				{
+					damage *= 2;
+					MessageEventArgs args = new MessageEventArgs();
+					args.AddMessage("Name", data.name);
+					EventManager.Instance.PostEvent(EventDefine.BattleObjectCritical, args);
+				}
 				target.InflictDamage((int)damage);
+			}
+			else
+			{
+				MessageEventArgs args = new MessageEventArgs();
+				args.AddMessage("Name", target.data.name);
+				EventManager.Instance.PostEvent(EventDefine.BattleObjectMiss, args);
 			}
 		}
 	}
