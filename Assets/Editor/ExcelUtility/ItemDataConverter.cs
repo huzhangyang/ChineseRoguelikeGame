@@ -18,14 +18,33 @@ public class ItemDataConverter : MonoBehaviour {
 	{		
 		FileStream stream = File.Open(Application.dataPath + PATH_EXCEL, FileMode.Open, FileAccess.Read);
 		IExcelDataReader excelReader = ExcelReaderFactory.CreateOpenXmlReader(stream);
-		ExcelData = excelReader.AsDataSet ().Tables["Weapon"];
-		excelReader.Dispose ();
 		itemDataSet = ScriptableObject.CreateInstance<ItemDataSet>();
 		
-		if (ExcelData != null)
+		if (excelReader.AsDataSet () != null)
 		{
+			ExcelData = excelReader.AsDataSet ().Tables["Item"];
+			LoadItemData();
+			ExcelData = excelReader.AsDataSet ().Tables["Weapon"];
 			LoadWeaponData();
+			ExcelData = excelReader.AsDataSet ().Tables["Magic"];
+			LoadMagicData();
 			AssetDatabase.CreateAsset(itemDataSet, PATH_ASSET);
+		}
+		excelReader.Dispose ();
+	}
+
+	static void LoadItemData()
+	{
+		for (int i = 1; i < ExcelData.Rows.Count; i++)
+		{			
+			ItemData data = new ItemData();
+			itemDataSet.itemDataSet.Add(data);
+			
+			data.id = ExcelUtility.GetIntCell(ExcelData, i, 0);
+			data.name = ExcelUtility.GetCell(ExcelData, i, 1);
+			data.description = ExcelUtility.GetCell(ExcelData, i, 2);
+			
+			data.type = ItemType.NormalItem;
 		}
 	}
 	
@@ -45,8 +64,29 @@ public class ItemDataConverter : MonoBehaviour {
 			data.skill1ID = ExcelUtility.GetIntCell(ExcelData, i, 6);
 			data.skill2ID = ExcelUtility.GetIntCell(ExcelData, i, 7);
 			data.skill3ID = ExcelUtility.GetIntCell(ExcelData, i, 8);
+			data.description = ExcelUtility.GetCell(ExcelData, i, 9);
 
 			data.type = ItemType.Weapon;
+		}
+	}
+
+	static void LoadMagicData()
+	{
+		for (int i = 1; i < ExcelData.Rows.Count; i++)
+		{			
+			MagicData data = new MagicData();
+			itemDataSet.magicDataSet.Add(data);
+			
+			data.id = ExcelUtility.GetIntCell(ExcelData, i, 0);
+			data.name = ExcelUtility.GetCell(ExcelData, i, 1);
+			data.basicATK = ExcelUtility.GetIntCell(ExcelData, i, 2);
+			data.basicSPD = ExcelUtility.GetIntCell(ExcelData, i, 3);
+			data.basicACC = ExcelUtility.GetIntCell(ExcelData, i, 4);
+			data.basicCRT = ExcelUtility.GetIntCell(ExcelData, i, 5);
+			data.skillID = ExcelUtility.GetIntCell(ExcelData, i, 6);
+			data.description = ExcelUtility.GetCell(ExcelData, i, 7);
+			
+			data.type = ItemType.Magic;
 		}
 	}
 }

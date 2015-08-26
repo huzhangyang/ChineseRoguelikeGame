@@ -222,3 +222,33 @@ MonoBehaviour:
     postSPDMultiplier: 1
     cooldownTurn: 3
     description: "\u6D41\u661F\u8FFD\u6708"
+  - id: 201
+    name: "\u706B\u7403\u672F"
+    targetType: 1
+    ATKMultiplier: 1
+    ACCMultiplier: 1
+    CRTMultiplier: 1
+    preSPDMultiplier: 1
+    postSPDMultiplier: 1
+    cooldownTurn: 0
+    description: "\u5728\u90A3\u4E2A\u65F6\u4EE3\u4EBA\u4EBA\u90FD\u4F1A\u7684\u706B\u7403\u672F"
+  - id: 202
+    name: "\u51B0\u5F39\u672F"
+    targetType: 1
+    ATKMultiplier: 1
+    ACCMultiplier: 1
+    CRTMultiplier: 1
+    preSPDMultiplier: 1
+    postSPDMultiplier: 1
+    cooldownTurn: 0
+    description: "\u5728\u90A3\u4E2A\u65F6\u4EE3\u4EBA\u4EBA\u90FD\u4F1A\u7684\u51B0\u5F39\u672F"
+  - id: 203
+    name: "\u95EA\u7535\u672F"
+    targetType: 1
+    ATKMultiplier: 1
+    ACCMultiplier: 1
+    CRTMultiplier: 1
+    preSPDMultiplier: 1
+    postSPDMultiplier: 1
+    cooldownTurn: 0
+    description: "\u5728\u90A3\u4E2A\u65F6\u4EE3\u4EBA\u4EBA\u90FD\u4F1A\u7684\u95EA\u7535\u672F"
