@@ -179,11 +179,12 @@ public abstract class BattleObject : MonoBehaviour {
 			//判断是否触发防御反击
 			if(target.commandToExecute.commandType == CommandType.Defence)
 			{
-				this.InflictDamage(Random.Range(0,100));
-
 				MessageEventArgs args = new MessageEventArgs();
-				args.AddMessage("Name", target.name);
+				args.AddMessage("Name", target.data.name);
 				EventManager.Instance.PostEvent(EventDefine.BattleObjectCounter, args);
+
+				this.InflictDamage(Random.Range(0,100));
+				continue;
 			}
 			//计算是否命中，是否暴击
 			SkillData skillData = DataManager.Instance.GetSkillDataSet().GetSkillData(skillID);
