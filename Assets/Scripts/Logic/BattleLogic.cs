@@ -169,7 +169,7 @@ public class BattleLogic : MonoBehaviour {
 	IEnumerator FinishBattle()
 	{
 		GlobalManager.Instance.gameStatus = GameStatus.Map;
-		yield return new WaitForSeconds(3);
+		yield return new WaitForSeconds(5);
 		mapCanvas.gameObject.SetActive (true);
 		battleCanvas.gameObject.SetActive (false);
 	}

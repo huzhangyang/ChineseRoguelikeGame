@@ -33,9 +33,9 @@ public class AudioManager : MonoBehaviour {
 		volumeSE = 1;
 	}
 
-	public void PlayBGM(string path)
+	public void PlayBGM(string name)
 	{
-		AudioClip clip = Resources.Load (path, typeof(AudioClip)) as AudioClip;
+		AudioClip clip = Resources.Load ("Music/" + name, typeof(AudioClip)) as AudioClip;
 		BGM.clip = clip;
 		BGM.Play ();
 	}
@@ -55,11 +55,11 @@ public class AudioManager : MonoBehaviour {
 		BGM.Stop ();
 	}
 
-	public void PlaySE(string path, GameObject go = null)
+	public void PlaySE(string name, GameObject go = null)
 	{
 		if (go == null)
 			go = this.gameObject;
-		AudioClip clip = Resources.Load (path, typeof(AudioClip)) as AudioClip;
+		AudioClip clip = Resources.Load ("SE/" + name, typeof(AudioClip)) as AudioClip;
 		AudioSource source = go.AddComponent<AudioSource>();
 		source.clip = clip;
 		source.volume = volumeSE;

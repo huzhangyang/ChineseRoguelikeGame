@@ -21,4 +21,5 @@ public enum EventDefine
 	BattleObjectEscape,//有玩家或敌人逃跑
 	BattleWin,//战斗胜利
 	BattleLose,//战斗失败
+	FinishBattle,//离开战斗
 }

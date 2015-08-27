@@ -9,7 +9,7 @@ public class IntroWindow : MonoBehaviour {
 
 	void Start () 
 	{
-		AudioManager.Instance.PlayBGM ("Music/Theme");
+		AudioManager.Instance.PlayBGM ("Theme");
 		DOTween.ToAlpha(()=>bookLight.color, (x)=> bookLight.color = x , 0 , 2).SetLoops(-1, LoopType.Yoyo);
 	}
 
