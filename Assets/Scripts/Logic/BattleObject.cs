@@ -90,7 +90,8 @@ public abstract class BattleObject : MonoBehaviour {
 			break;
 		case TargetType.SingleEnemy:
 		case TargetType.SingleAlly:
-			targetList.Add(commandToExecute.target);
+			if(commandToExecute.target != null)
+				targetList.Add(commandToExecute.target);
 			break;
 		case TargetType.AllEnemies:
 			if(this is Enemy)
@@ -210,18 +211,27 @@ public abstract class BattleObject : MonoBehaviour {
 			}
 			//如果命中，则对方受伤
 			if(target.isEvading) evadePercent += 50;
+			string SEName = "hit";
 			bool hit = Random.Range(0,101) <= (hitPercent - evadePercent)?true:false;
 			if(hit)
 			{		
-				if(target.isGuarding) damage /= 2;
 				bool critical = Random.Range(0,101) <= criticalPercent?true:false;
+				if(target.isGuarding)
+				{
+					damage /= 2;
+					critical = false;
+					SEName = "guard";
+				}
 				if(critical)
 				{
 					damage *= 2;
+					SEName = "critical";
+
 					MessageEventArgs args = new MessageEventArgs();
 					args.AddMessage("Name", data.name);
 					EventManager.Instance.PostEvent(EventDefine.BattleObjectCritical, args);
 				}
+				AudioManager.Instance.PlaySE(SEName);
 				target.InflictDamage((int)damage);
 			}
 			else

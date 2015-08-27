@@ -27,12 +27,14 @@ public class BattleObjectUIEvent : MonoBehaviour {
 		else
 		{
 			HPBar.DOValue(current, 1).SetEase(Ease.OutSine);
+			this.transform.DOPunchScale(new Vector2(0.1f, 0.1f), 1);
 		}
 
 		if(current == 0)
 		{
 			avatarImage.DOFade(0,1).SetDelay(1).OnComplete(()=>Destroy(avatarImage.gameObject));
 			this.GetComponent<Image>().DOFade(0,1).SetDelay(1).OnComplete(()=>Destroy(this.gameObject));
+			Destroy(HPBar,1);
 		}
 
 	}

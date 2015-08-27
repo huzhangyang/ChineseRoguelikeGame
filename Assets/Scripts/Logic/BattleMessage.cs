@@ -18,7 +18,6 @@ public class BattleMessage : MonoBehaviour {
 	{
 		EventManager.Instance.RegisterEvent(EventDefine.EnterBattle, OnEnterBattle);
 		EventManager.Instance.RegisterEvent(EventDefine.EnemySpawn, OnEnemySpawn);
-		EventManager.Instance.RegisterEvent(EventDefine.PlayerReady, OnPlayerReady);
 		EventManager.Instance.RegisterEvent(EventDefine.ExecuteCommand, OnExecuteCommand);
 		EventManager.Instance.RegisterEvent(EventDefine.BattleObjectMiss, OnBattleObjectMiss);
 		EventManager.Instance.RegisterEvent(EventDefine.BattleObjectCritical, OnBattleObjectCritical);
@@ -34,7 +33,6 @@ public class BattleMessage : MonoBehaviour {
 	{
 		EventManager.Instance.UnRegisterEvent(EventDefine.EnterBattle, OnEnterBattle);
 		EventManager.Instance.UnRegisterEvent(EventDefine.EnemySpawn, OnEnemySpawn);
-		EventManager.Instance.UnRegisterEvent(EventDefine.PlayerReady, OnPlayerReady);
 		EventManager.Instance.UnRegisterEvent(EventDefine.ExecuteCommand, OnExecuteCommand);
 		EventManager.Instance.UnRegisterEvent(EventDefine.BattleObjectMiss, OnBattleObjectMiss);
 		EventManager.Instance.UnRegisterEvent(EventDefine.BattleObjectCritical, OnBattleObjectCritical);
@@ -55,12 +53,6 @@ public class BattleMessage : MonoBehaviour {
 	{
 		string name = args.GetMessage("EnemyName");
 		AddMessage(name + " 出现了！");
-	}
-
-	void OnPlayerReady(MessageEventArgs args)
-	{
-		string name = args.GetMessage("PlayerName");
-		AddMessage(name + " 将作何选择？");
 	}
 
 	void OnExecuteCommand(MessageEventArgs args)

@@ -58,12 +58,15 @@ public class BattleWindow: MonoBehaviour {
 	void OnPlayerReady(MessageEventArgs args)
 	{
 		commandPanel.SetActive(true);
+		subCommandPanel.SetActive (true);
+		string playerName = args.GetMessage("PlayerName");
+		subCommandPanel.transform.FindChild("CommandDescription").GetComponent<Text>().text = playerName + "如何决策？";
 	}
 
 	void OnShowAvailableCommands(MessageEventArgs args)
 	{
-		subCommandPanel.SetActive (true);
-		subCommandPanel.transform.FindChild("CommandDescription").GetComponent<Text>().text = "";
+		string playerName = args.GetMessage("PlayerName");
+		subCommandPanel.transform.FindChild("CommandDescription").GetComponent<Text>().text = playerName + "如何决策？";
 		foreach(Transform child in subCommandPanel.transform.FindChild("SubCommandButtonPanel"))
 		{
 			Destroy(child.gameObject);
@@ -81,7 +84,7 @@ public class BattleWindow: MonoBehaviour {
 	void OnSelectCommand(MessageEventArgs args)
 	{
 		commandPanel.SetActive(false);
-		subCommandPanel.SetActive (false);
+		subCommandPanel.SetActive(false);
 	}
 
 	IEnumerator StartBattle(MessageEventArgs args)

@@ -61,7 +61,9 @@ public class BattleLogic : MonoBehaviour {
 	{
 		BasicCommand basicCommand = (BasicCommand)commandID;
 		GetCurrentPlayer ().RefreshAvailableCommands (basicCommand);
-		EventManager.Instance.PostEvent(EventDefine.ShowAvailableCommands);
+		MessageEventArgs args = new MessageEventArgs ();
+		args.AddMessage("PlayerName",GetCurrentPlayer ().GetData().name);
+		EventManager.Instance.PostEvent(EventDefine.ShowAvailableCommands, args);
 		foreach(Enemy enemy in enemys)
 		{
 			enemy.GetComponent<BattleObjectUIEvent>().allowClick = false;
@@ -172,6 +174,7 @@ public class BattleLogic : MonoBehaviour {
 		yield return new WaitForSeconds(5);
 		mapCanvas.gameObject.SetActive (true);
 		battleCanvas.gameObject.SetActive (false);
+		EventManager.Instance.PostEvent(EventDefine.FinishBattle);
 	}
 
 	void PauseEveryOne()
