@@ -85,6 +85,10 @@ public class BattleWindow: MonoBehaviour {
 	{
 		commandPanel.SetActive(false);
 		subCommandPanel.SetActive(false);
+		foreach(Transform child in subCommandPanel.transform.FindChild("SubCommandButtonPanel"))
+		{
+			Destroy(child.gameObject);
+		}
 	}
 
 	IEnumerator StartBattle(MessageEventArgs args)

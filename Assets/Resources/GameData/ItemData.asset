@@ -41,7 +41,7 @@ MonoBehaviour:
     basicACC: 100
     basicCRT: 100
     skill1ID: 1
-    skill2ID: 6
+    skill2ID: 2
     skill3ID: 101
   - id: 1101
     name: "\u9C7C\u80A0\u5251"
@@ -52,7 +52,7 @@ MonoBehaviour:
     basicACC: 100
     basicCRT: 102
     skill1ID: 1
-    skill2ID: 6
+    skill2ID: 2
     skill3ID: 106
   - id: 1200
     name: "\u957F\u5251"
@@ -62,8 +62,8 @@ MonoBehaviour:
     basicSPD: 100
     basicACC: 100
     basicCRT: 100
-    skill1ID: 2
-    skill2ID: 7
+    skill1ID: 3
+    skill2ID: 4
     skill3ID: 102
   - id: 1201
     name: "\u6E5B\u5362\u5251"
@@ -73,8 +73,8 @@ MonoBehaviour:
     basicSPD: 110
     basicACC: 105
     basicCRT: 100
-    skill1ID: 2
-    skill2ID: 7
+    skill1ID: 3
+    skill2ID: 4
     skill3ID: 107
   - id: 1300
     name: "\u5200"
@@ -84,8 +84,8 @@ MonoBehaviour:
     basicSPD: 120
     basicACC: 100
     basicCRT: 90
-    skill1ID: 3
-    skill2ID: 8
+    skill1ID: 5
+    skill2ID: 6
     skill3ID: 103
   - id: 1301
     name: "\u9E23\u9E3F\u5200"
@@ -95,8 +95,8 @@ MonoBehaviour:
     basicSPD: 125
     basicACC: 105
     basicCRT: 100
-    skill1ID: 3
-    skill2ID: 8
+    skill1ID: 5
+    skill2ID: 6
     skill3ID: 108
   - id: 1400
     name: "\u65A7"
@@ -106,8 +106,8 @@ MonoBehaviour:
     basicSPD: 75
     basicACC: 90
     basicCRT: 100
-    skill1ID: 4
-    skill2ID: 9
+    skill1ID: 7
+    skill2ID: 8
     skill3ID: 104
   - id: 1401
     name: "\u5211\u5929\u621A"
@@ -117,8 +117,8 @@ MonoBehaviour:
     basicSPD: 82
     basicACC: 90
     basicCRT: 105
-    skill1ID: 4
-    skill2ID: 9
+    skill1ID: 7
+    skill2ID: 8
     skill3ID: 109
   - id: 1500
     name: "\u5F13"
@@ -128,7 +128,7 @@ MonoBehaviour:
     basicSPD: 80
     basicACC: 100
     basicCRT: 100
-    skill1ID: 5
+    skill1ID: 9
     skill2ID: 10
     skill3ID: 105
   - id: 1501
@@ -139,7 +139,7 @@ MonoBehaviour:
     basicSPD: 90
     basicACC: 100
     basicCRT: 110
-    skill1ID: 5
+    skill1ID: 9
     skill2ID: 10
     skill3ID: 110
   magicDataSet:

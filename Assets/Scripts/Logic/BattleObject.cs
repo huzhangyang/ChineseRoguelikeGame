@@ -278,7 +278,7 @@ public abstract class BattleObject : MonoBehaviour {
 		}
 	}
 
-	public void InflictDamage(int damage)
+	void InflictDamage(int damage)
 	{
 		data.currentHP -= damage;
 		if(battleStatus == BattleStatus.Action)
@@ -307,7 +307,7 @@ public abstract class BattleObject : MonoBehaviour {
 		GetComponent<BattleObjectUIEvent>().SetHPBar(data.currentHP, data.maxHP);
 	}
 
-	public void Heal(int amount)
+	void Heal(int amount)
 	{
 		data.currentHP += amount;
 		if(data.currentHP > data.maxHP)
