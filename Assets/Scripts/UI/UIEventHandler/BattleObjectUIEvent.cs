@@ -29,6 +29,12 @@ public class BattleObjectUIEvent : MonoBehaviour {
 			HPBar.DOValue(current, 1).SetEase(Ease.OutSine);
 		}
 
+		if(current == 0)
+		{
+			avatarImage.DOFade(0,1).SetDelay(1).OnComplete(()=>Destroy(avatarImage.gameObject));
+			this.GetComponent<Image>().DOFade(0,1).SetDelay(1).OnComplete(()=>Destroy(this.gameObject));
+		}
+
 	}
 	
 	public void SetAvatar(GameObject avatar)
@@ -43,11 +49,6 @@ public class BattleObjectUIEvent : MonoBehaviour {
 			avatarImage.rectTransform.DOLocalMoveX(posX - 250, 1).SetEase(Ease.OutSine);
 		else
 			avatarImage.rectTransform.anchoredPosition = new Vector2(posX, 0);
-	}
-
-	public void DestroyAvatar()
-	{
-		Destroy(avatarImage.gameObject);
 	}
 
 	void OnClick()

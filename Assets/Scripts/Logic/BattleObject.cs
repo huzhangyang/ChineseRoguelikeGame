@@ -22,19 +22,19 @@ public abstract class BattleObject : MonoBehaviour {
 	public bool isGuarding = false;
 	public bool isEvading = false;
 	public bool isDied = false;
-	private int timelinePosition;
-	public int TimelinePosition//max:10000
+	private int _timelinePosition;
+	public int timelinePosition//max:10000
 	{
 		set
 		{
 			if(value < 0) value = 0;
 			if(value > 10000) value = 10000;
-			timelinePosition = value;
+			_timelinePosition = value;
 			GetComponent<BattleObjectUIEvent>().SetAvatarPositionX(value / 20);//max:500
 		}
 		get
 		{
-			return timelinePosition;
+			return _timelinePosition;
 		}
 	}
 
@@ -52,13 +52,13 @@ public abstract class BattleObject : MonoBehaviour {
 
 	protected void OnUpdateTimeline(MessageEventArgs args)
 	{
-		if(!this.isPaused)
-			this.TimelinePosition += data.agility * 10;
-		if(TimelinePosition >= 8000 && battleStatus == BattleStatus.Prepare)
+		if(!isPaused && !isDied)
+			timelinePosition += data.agility * 10;
+		if(timelinePosition >= 8000 && battleStatus == BattleStatus.Prepare)
 		{
 			SelectCommand();
 		}
-		if(TimelinePosition >= 10000 && battleStatus == BattleStatus.Action)
+		if(timelinePosition >= 10000 && battleStatus == BattleStatus.Action)
 		{
 			ExecuteCommand();
 		}
@@ -66,7 +66,7 @@ public abstract class BattleObject : MonoBehaviour {
 
 	protected virtual void SelectCommand()
 	{
-		TimelinePosition = 8000;
+		timelinePosition = 8000;
 		isGuarding = false;
 		isEvading = false;
 		battleStatus = BattleStatus.Ready;
@@ -124,7 +124,7 @@ public abstract class BattleObject : MonoBehaviour {
 			break;
 		}
 		//post process
-		TimelinePosition = 0;
+		timelinePosition = 0;
 		battleStatus = BattleStatus.Prepare;
 		commandToExecute = Command.None();
 	}
@@ -272,9 +272,9 @@ public abstract class BattleObject : MonoBehaviour {
 	{
 		data.currentHP -= damage;
 		if(battleStatus == BattleStatus.Action)
-			TimelinePosition -= damage * 50;
+			timelinePosition -= damage * 50;
 		else
-			TimelinePosition -= damage * 20;
+			timelinePosition -= damage * 20;
 
 		MessageEventArgs args = new MessageEventArgs();
 		args.AddMessage("Name", data.name);
@@ -292,8 +292,6 @@ public abstract class BattleObject : MonoBehaviour {
 			MessageEventArgs args2 = new MessageEventArgs();
 			args2.AddMessage("Name", data.name);
 			EventManager.Instance.PostEvent(EventDefine.BattleObjectDied, args2);
-			GetComponent<BattleObjectUIEvent>().DestroyAvatar();
-			Destroy(this.gameObject);
 		}
 
 		GetComponent<BattleObjectUIEvent>().SetHPBar(data.currentHP, data.maxHP);
