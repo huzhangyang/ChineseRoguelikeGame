@@ -45,12 +45,12 @@ public class BattleObjectUIEvent : MonoBehaviour {
 		avatarImage.sprite = this.GetComponent<Image> ().sprite;
 	}
 
-	public void SetAvatarPositionX(float posX)
+	public void SetAvatarPositionX(float posX, bool smooth)
 	{
-		if(posX > 0 && Mathf.Abs(posX - avatarImage.rectTransform.anchoredPosition.x) > 10)
+		if(smooth)
 			avatarImage.rectTransform.DOLocalMoveX(posX - 250, 1).SetEase(Ease.OutSine);
 		else
-			avatarImage.rectTransform.anchoredPosition = new Vector2(posX, 0);
+			avatarImage.rectTransform.anchoredPosition = new Vector2(posX, 0);			
 	}
 
 	void OnClick()

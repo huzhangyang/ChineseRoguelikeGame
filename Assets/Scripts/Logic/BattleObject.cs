@@ -31,7 +31,7 @@ public abstract class BattleObject : MonoBehaviour {
 			if(value < 0) value = 0;
 			if(value > 10000) value = 10000;
 			_timelinePosition = value;
-			GetComponent<BattleObjectUIEvent>().SetAvatarPositionX(value / 20);//max:500
+			GetComponent<BattleObjectUIEvent>().SetAvatarPositionX(value / 20, isPaused);//max:500
 		}
 		get
 		{
@@ -291,6 +291,7 @@ public abstract class BattleObject : MonoBehaviour {
 	void InflictDamage(int damage)
 	{
 		data.currentHP -= damage;
+		isPaused = true;// so that timeline adjust is smooth
 		if(battleStatus == BattleStatus.Action)
 			timelinePosition -= damage * 50;
 		else
