@@ -22,6 +22,7 @@ public abstract class BattleObject : MonoBehaviour {
 	public bool isGuarding = false;
 	public bool isEvading = false;
 	public bool isDied = false;
+	public int recoverTime;
 	private int _timelinePosition;
 	public int timelinePosition//max:10000
 	{
@@ -53,7 +54,15 @@ public abstract class BattleObject : MonoBehaviour {
 	protected void OnUpdateTimeline(MessageEventArgs args)
 	{
 		if(!isPaused && !isDied)
-			timelinePosition += data.agility * 10;
+		{
+			if(recoverTime > 0)
+				recoverTime--;
+			else if(battleStatus == BattleStatus.Prepare)
+				timelinePosition += data.agility * 10;
+			else if(battleStatus == BattleStatus.Action)
+				timelinePosition += commandToExecute.preExecutionSpeed;
+		}
+
 		if(timelinePosition >= 8000 && battleStatus == BattleStatus.Prepare)
 		{
 			SelectCommand();
@@ -125,6 +134,7 @@ public abstract class BattleObject : MonoBehaviour {
 			break;
 		}
 		//post process
+		recoverTime = commandToExecute.postExecutionRecover;
 		timelinePosition = 0;
 		battleStatus = BattleStatus.Prepare;
 		commandToExecute = Command.None();
@@ -139,16 +149,16 @@ public abstract class BattleObject : MonoBehaviour {
 			if(data.battleType != BattleType.Magical)
 			{
 				WeaponData weaponData = DataManager.Instance.GetItemDataSet().GetWeaponData(data.weaponID);
-				availableCommands.Add(Command.UseSkill(weaponData.skill1ID));
-				availableCommands.Add(Command.UseSkill(weaponData.skill2ID));
-				availableCommands.Add(Command.UseSkill(weaponData.skill3ID));
+				availableCommands.Add(Command.UseWeaponSkill(weaponData, weaponData.skill1ID));
+				availableCommands.Add(Command.UseWeaponSkill(weaponData, weaponData.skill2ID));
+				availableCommands.Add(Command.UseWeaponSkill(weaponData, weaponData.skill3ID));
 			}
 			if(data.battleType != BattleType.Physical)
 			{
 				foreach(int magicID in data.magicIDs)
 				{
 					MagicData magicData = DataManager.Instance.GetItemDataSet().GetMagicData(magicID);
-					availableCommands.Add(Command.UseSkill(magicData.skillID));
+					availableCommands.Add(Command.UseMagicSkill(magicData, magicData.skillID));
 				}
 			}
 			break;

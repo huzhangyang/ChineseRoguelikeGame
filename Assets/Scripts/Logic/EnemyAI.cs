@@ -53,16 +53,16 @@ public class EnemyAI : MonoBehaviour {
 		if(data.battleType != BattleType.Magical)
 		{
 			WeaponData weaponData = DataManager.Instance.GetItemDataSet().GetWeaponData(data.weaponID);
-			availableCommands.Add(Command.UseSkill(weaponData.skill1ID));
-			availableCommands.Add(Command.UseSkill(weaponData.skill2ID));
-			availableCommands.Add(Command.UseSkill(weaponData.skill3ID));
+			availableCommands.Add(Command.UseWeaponSkill(weaponData, weaponData.skill1ID));
+			availableCommands.Add(Command.UseWeaponSkill(weaponData, weaponData.skill2ID));
+			availableCommands.Add(Command.UseWeaponSkill(weaponData, weaponData.skill3ID));
 		}
 		if(data.battleType != BattleType.Physical)
 		{
 			foreach(int magicID in data.magicIDs)
 			{
 				MagicData magicData = DataManager.Instance.GetItemDataSet().GetMagicData(magicID);
-				availableCommands.Add(Command.UseSkill(magicData.skillID));
+				availableCommands.Add(Command.UseMagicSkill(magicData, magicData.skillID));
 			}
 		}
 		Command command = availableCommands[Random.Range(0, availableCommands.Count)];

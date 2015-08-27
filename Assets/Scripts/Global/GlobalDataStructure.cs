@@ -14,4 +14,8 @@ public class GlobalDataStructure{
 	//encrypt
 	public const string ENCRYPT_KEY = "CRGProject";
 	public static bool ENCRYPT_ENABLED = true;
+	//battle
+	public const int BATTLE_MINSPEED = 50;
+	public const int BATTLE_STANDARDSPEED = 100;
+	public const int BATTLE_MAXSPEED = 2000;
 }
