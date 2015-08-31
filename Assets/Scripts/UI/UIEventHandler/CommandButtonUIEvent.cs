@@ -15,7 +15,7 @@ public class CommandButtonUIEvent : MonoBehaviour {
 
 	void OnClick(int commandID, string description)
 	{
-		Text descText = transform.parent.parent.FindChild("CommandDescription").GetComponent<Text>();
+		Text descText = transform.parent.parent.parent.FindChild("CommandDescription").GetComponent<Text>();
 		descText.text = description;
 
 		MessageEventArgs args = new MessageEventArgs ();

@@ -10,6 +10,8 @@ public class BattleWindow: MonoBehaviour {
 	GameObject playerPanel;
 	GameObject commandPanel;
 	GameObject subCommandPanel;
+	GameObject commandDescrpition;
+	Transform commandButtonPanel;
 	GameObject timeLine;
 
 	void Awake () 
@@ -18,6 +20,8 @@ public class BattleWindow: MonoBehaviour {
 		playerPanel = this.transform.FindChild("PlayerPanel").gameObject;
 		commandPanel = this.transform.FindChild("CommandPanel").gameObject;
 		subCommandPanel = this.transform.FindChild("SubCommandPanel").gameObject;
+		commandDescrpition = subCommandPanel.transform.FindChild("CommandDescription").gameObject;
+		commandButtonPanel =  subCommandPanel.transform.FindChild("SubCommandButton").FindChild("Panel");
 		timeLine = this.transform.FindChild("TimeLine").gameObject;
 	}
 	
@@ -60,15 +64,15 @@ public class BattleWindow: MonoBehaviour {
 		commandPanel.SetActive(true);
 		subCommandPanel.SetActive (true);
 		string playerName = args.GetMessage("PlayerName");
-		subCommandPanel.transform.FindChild("CommandDescription").GetComponent<Text>().text = playerName + "如何决策？";
+		commandDescrpition.GetComponent<Text>().text = playerName + "如何决策？";
 	}
 
 	void OnShowAvailableCommands(MessageEventArgs args)
 	{
 		string playerName = args.GetMessage("PlayerName");
-		subCommandPanel.transform.FindChild("CommandDescription").GetComponent<Text>().text = playerName + "如何决策？";
-		subCommandPanel.transform.FindChild("SubCommandButtonPanel").DOLocalMoveX(0, 0.2f);
-		foreach(Transform child in subCommandPanel.transform.FindChild("SubCommandButtonPanel"))
+		commandDescrpition.GetComponent<Text>().text = playerName + "如何决策？";
+		commandButtonPanel.DOLocalMoveX(0, 0.2f);
+		foreach(Transform child in commandButtonPanel)
 		{
 			Destroy(child.gameObject);
 		}
@@ -77,7 +81,7 @@ public class BattleWindow: MonoBehaviour {
 		for(int i = 0 ; i < commands.Count; i++)
 		{
 			GameObject commandButton = Instantiate(Resources.Load("Battle/CommandButton")) as GameObject;
-			commandButton.transform.SetParent(subCommandPanel.transform.FindChild("SubCommandButtonPanel"), false);
+			commandButton.transform.SetParent(commandButtonPanel, false);
 			commandButton.GetComponent<CommandButtonUIEvent>().Init(commands[i].commandID, commands[i].commandName, commands[i].commandDescription);
 		}
 	}
