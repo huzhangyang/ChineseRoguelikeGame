@@ -280,7 +280,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d8642be92bb9a24a8c97af5936f1420, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bookLight: {fileID: 0}
+  bookLight: {fileID: 11491924}
 --- !u!114 &11470206
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -435,10 +435,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 22454546}
   m_RootOrder: 0
-  m_AnchorMin: {x: .5, y: .5}
-  m_AnchorMax: {x: .5, y: .5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 720, y: 1280}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22454546
 RectTransform:
