@@ -7,18 +7,18 @@ using DG.Tweening;
 public class BattleWindow: MonoBehaviour {
 
 	GameObject enemyPanel;
-	GameObject infoPanel;
+	GameObject playerPanel;
 	GameObject commandPanel;
 	GameObject subCommandPanel;
 	GameObject timeLine;
 
 	void Awake () 
 	{
-		enemyPanel = this.transform.FindChild ("EnemyPanel").gameObject;
-		infoPanel = this.transform.FindChild("InfoPanel").gameObject;
+		enemyPanel = this.transform.FindChild("EnemyPanel").gameObject;
+		playerPanel = this.transform.FindChild("PlayerPanel").gameObject;
 		commandPanel = this.transform.FindChild("CommandPanel").gameObject;
 		subCommandPanel = this.transform.FindChild("SubCommandPanel").gameObject;
-		timeLine = this.transform.FindChild ("TimeLine").gameObject;
+		timeLine = this.transform.FindChild("TimeLine").gameObject;
 	}
 	
 	void OnEnable() 
@@ -43,7 +43,7 @@ public class BattleWindow: MonoBehaviour {
 		{
 			Destroy(child.gameObject);
 		}
-		foreach(Transform child in infoPanel.transform)
+		foreach(Transform child in playerPanel.transform)
 		{
 			Destroy(child.gameObject);
 		}
@@ -76,7 +76,7 @@ public class BattleWindow: MonoBehaviour {
 		var commands = BattleLogic.GetCurrentPlayer().availableCommands;
 		for(int i = 0 ; i < commands.Count; i++)
 		{
-			GameObject commandButton = Instantiate(Resources.Load("UI/CommandButton")) as GameObject;
+			GameObject commandButton = Instantiate(Resources.Load("Battle/CommandButton")) as GameObject;
 			commandButton.transform.SetParent(subCommandPanel.transform.FindChild("SubCommandButtonPanel"), false);
 			commandButton.GetComponent<CommandButtonUIEvent>().Init(commands[i].commandID, commands[i].commandName, commands[i].commandDescription);
 		}
@@ -96,13 +96,9 @@ public class BattleWindow: MonoBehaviour {
 	{
 		if(args.ContainMessage("Man"))
 		{
-			GameObject player = Instantiate(Resources.Load(GlobalDataStructure.PATH_BATTLE + "Character00")) as GameObject;
-			player.transform.SetParent(infoPanel.transform, false);
-			BattleLogic.players.Add(player.GetComponent<Player>());
-			
-			GameObject avatar = Instantiate(Resources.Load("UI/TimelineAvatar")) as GameObject;
-			avatar.transform.SetParent(timeLine.transform, false);
-			player.GetComponent<BattleObjectUIEvent>().SetAvatar(avatar);
+			GameObject player = Instantiate(Resources.Load(GlobalDataStructure.PATH_BATTLE + "Character")) as GameObject;
+			player.transform.SetParent(playerPanel.transform, false);
+			player.GetComponent<Player>().Init(0);			
 			
 			if(args.ContainMessage("Girl"))
 			{
@@ -112,13 +108,11 @@ public class BattleWindow: MonoBehaviour {
 
 		if(args.ContainMessage("Girl"))
 		{
-			GameObject player = Instantiate(Resources.Load(GlobalDataStructure.PATH_BATTLE + "Character01")) as GameObject;
-			player.transform.SetParent(infoPanel.transform, false);
-			BattleLogic.players.Add(player.GetComponent<Player>());
+			GameObject player = Instantiate(Resources.Load(GlobalDataStructure.PATH_BATTLE + "Character")) as GameObject;
+			player.transform.SetParent(playerPanel.transform, false);
+			player.GetComponent<Player>().Init(1);
 			
-			GameObject avatar = Instantiate(Resources.Load("UI/TimelineAvatar")) as GameObject;
-			avatar.transform.SetParent(timeLine.transform, false);
-			player.GetComponent<BattleObjectUIEvent>().SetAvatar(avatar);
+
 			
 			if(args.ContainMessage("Man"))
 			{
@@ -130,17 +124,10 @@ public class BattleWindow: MonoBehaviour {
 		{
 			string[] enemyIDs = args.GetMessage("Enemy").Split(',');
 			for(int i = 0; i < enemyIDs.Length; i++)
-			{
-				string loadEnemyPath = GlobalDataStructure.PATH_BATTLE + "Enemy";
-				if(Convert.ToInt32(enemyIDs[i]) < 10) loadEnemyPath += "0";
-				
-				GameObject enemy = Instantiate(Resources.Load(loadEnemyPath + enemyIDs[i])) as GameObject;			
+			{				
+				GameObject enemy = Instantiate(Resources.Load(GlobalDataStructure.PATH_BATTLE + "Enemy")) as GameObject;			
 				enemy.transform.SetParent(enemyPanel.transform, false);
-				BattleLogic.enemys.Add(enemy.GetComponent<Enemy>());
-				
-				GameObject avatar = Instantiate(Resources.Load("UI/TimelineAvatar")) as GameObject;
-				avatar.transform.SetParent(timeLine.transform, false);
-				enemy.GetComponent<BattleObjectUIEvent>().SetAvatar(avatar);
+				enemy.GetComponent<Enemy>().Init(Convert.ToInt32(enemyIDs[i]));
 				
 				enemy.transform.DOShakeScale(1);
 				yield return new WaitForSeconds(1f);

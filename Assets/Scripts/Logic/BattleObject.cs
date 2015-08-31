@@ -22,7 +22,7 @@ public abstract class BattleObject : MonoBehaviour {
 	public bool isGuarding = false;
 	public bool isEvading = false;
 	public bool isDied = false;
-	public int recoverTime;
+	private int recoverTime;
 	private int _timelinePosition;
 	public int timelinePosition//max:10000
 	{
@@ -39,6 +39,7 @@ public abstract class BattleObject : MonoBehaviour {
 		}
 	}
 
+	protected BattleObjectUIEvent UIEvent;
 	protected ObjectData data;
 
 	void OnEnable() 
@@ -58,7 +59,7 @@ public abstract class BattleObject : MonoBehaviour {
 			if(recoverTime > 0)
 				recoverTime--;
 			else if(battleStatus == BattleStatus.Prepare)
-				timelinePosition += data.agility * 10;
+				timelinePosition += data.agility;
 			else if(battleStatus == BattleStatus.Action)
 				timelinePosition += commandToExecute.preExecutionSpeed;
 		}
@@ -316,7 +317,7 @@ public abstract class BattleObject : MonoBehaviour {
 			EventManager.Instance.PostEvent(EventDefine.BattleObjectDied, args2);
 		}
 
-		GetComponent<BattleObjectUIEvent>().SetHPBar(data.currentHP, data.maxHP);
+		GetComponent<BattleObjectUIEvent>().SetHPBar(data.currentHP);
 	}
 
 	void Heal(int amount)
@@ -332,7 +333,7 @@ public abstract class BattleObject : MonoBehaviour {
 		args.AddMessage("CurrentHP", data.currentHP.ToString());
 		EventManager.Instance.PostEvent(EventDefine.BattleObjectHeal, args);
 
-		GetComponent<BattleObjectUIEvent>().SetHPBar(data.currentHP, data.maxHP);
+		GetComponent<BattleObjectUIEvent>().SetHPBar(data.currentHP);
 	}
 }
 

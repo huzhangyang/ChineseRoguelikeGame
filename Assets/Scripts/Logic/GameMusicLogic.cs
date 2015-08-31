@@ -23,7 +23,13 @@ public class GameMusicLogic : MonoBehaviour {
 
 	void PlayBattleBGM(MessageEventArgs args)
 	{
-		AudioManager.Instance.PlayBGM ("Battle0" + UnityEngine.Random.Range(1,4));
+		int battleType = Convert.ToInt32(args.GetMessage("BattleType"));
+		if(battleType == 0)
+			AudioManager.Instance.PlayBGM ("Battle0" + UnityEngine.Random.Range(1,4));
+		else if(battleType == 1)
+			AudioManager.Instance.PlayBGM ("Boss0" + UnityEngine.Random.Range(1,3));
+		else if(battleType == 2)
+			AudioManager.Instance.PlayBGM ("FinalBoss");
 	}
 
 	void PlayIntro(MessageEventArgs args)

@@ -39,27 +39,27 @@ public class PlayerData : ObjectData {
 		{
 		case 0:	name = "Man";
 				maxHP = 150;
-				power = 15;
-				agility = 10;
-				toughness = 15;
-				insight = 10; 
-				skill = 15;
-				luck = 5;
-				eloquence = 5;
+				power = 150;
+				agility = 100;
+				toughness = 150;
+				insight = 100; 
+				skill = 150;
+				luck = 50;
+				eloquence = 50;
 
 				battleType = BattleType.Physical;
-				weaponID = 1000 + Random.Range(1,6) * 100;
+				weaponID = 1000 + Random.Range(1,6) * 100 + 1;
 				
 				break;
 		case 1: name = "Girl";
 				maxHP = 100;
-				power = 10;
-				agility = 15;
-				toughness = 10;
-				insight = 15; 
-				skill = 5;
-				luck = 15;
-				eloquence = 10;
+				power = 100;
+				agility = 150;
+				toughness = 100;
+				insight = 150; 
+				skill = 50;
+				luck = 150;
+				eloquence = 100;
 
 				battleType = BattleType.Magical;
 				weaponID = 1000;

@@ -36,22 +36,25 @@ public class EnemyDataConvertor : MonoBehaviour
 			EnemyData data = new EnemyData();
 			enemyDataSet.dataSet.Add(data);
 
-			data.id = ExcelUtility.GetIntCell(ExcelData, i, 0);
-			data.name = ExcelUtility.GetCell(ExcelData, i, 1);
-			data.maxHP = ExcelUtility.GetIntCell(ExcelData, i, 2);
-			data.power = ExcelUtility.GetIntCell(ExcelData, i, 3);
-			data.agility = ExcelUtility.GetIntCell(ExcelData, i, 4);
-			data.toughness = ExcelUtility.GetIntCell(ExcelData, i, 5);
-			data.insight = ExcelUtility.GetIntCell(ExcelData, i, 6);
-			data.skill = ExcelUtility.GetIntCell(ExcelData, i, 7);
-			data.luck = ExcelUtility.GetIntCell(ExcelData, i, 8);
-			data.eloquence = ExcelUtility.GetIntCell(ExcelData, i, 9);
-			data.talentID = ExcelUtility.GetIntCell(ExcelData, i, 10);
-			data.natureID = ExcelUtility.GetIntCell(ExcelData, i, 11);
-			data.battleType = (BattleType)ExcelUtility.GetIntCell(ExcelData, i, 12);
-			data.weaponID = ExcelUtility.GetIntCell(ExcelData, i, 13);
-			data.ring1ID = ExcelUtility.GetIntCell(ExcelData, i, 14);
-			data.ring2ID = ExcelUtility.GetIntCell(ExcelData, i, 15);
+			int j = 0;
+
+			data.id = ExcelUtility.GetIntCell(ExcelData, i, j++);
+			data.name = ExcelUtility.GetCell(ExcelData, i, j++);
+			data.isBoss = ExcelUtility.GetBoolCell(ExcelData, i, j++);
+			data.maxHP = ExcelUtility.GetIntCell(ExcelData, i, j++);
+			data.power = ExcelUtility.GetIntCell(ExcelData, i, j++);
+			data.agility = ExcelUtility.GetIntCell(ExcelData, i, j++);
+			data.toughness = ExcelUtility.GetIntCell(ExcelData, i, j++);
+			data.insight = ExcelUtility.GetIntCell(ExcelData, i, j++);
+			data.skill = ExcelUtility.GetIntCell(ExcelData, i, j++);
+			data.luck = ExcelUtility.GetIntCell(ExcelData, i, j++);
+			data.eloquence = ExcelUtility.GetIntCell(ExcelData, i, j++);
+			data.talentID = ExcelUtility.GetIntCell(ExcelData, i, j++);
+			data.natureID = ExcelUtility.GetIntCell(ExcelData, i, j++);
+			data.battleType = (BattleType)ExcelUtility.GetIntCell(ExcelData, i, j++);
+			data.weaponID = ExcelUtility.GetIntCell(ExcelData, i, j++);
+			data.ring1ID = ExcelUtility.GetIntCell(ExcelData, i, j++);
+			data.ring2ID = ExcelUtility.GetIntCell(ExcelData, i, j++);
 		}
 	}
 	

@@ -24,6 +24,10 @@ public class StatusPanel : MonoBehaviour {
 		manInfo.text += "Luck:" + mandata.luck.ToString() + "\n";
 		manInfo.text += "Eloquence:" + mandata.eloquence.ToString() + "\n";
 		manInfo.text += "Weapon:" + DataManager.Instance.GetItemDataSet().GetWeaponData(mandata.weaponID).name + "\n";
+		for(int i = 0;  i < mandata.magicIDs.Count; i++)
+		{
+			manInfo.text += "Magic" + (i + 1) + ":" + DataManager.Instance.GetItemDataSet().GetMagicData(mandata.magicIDs[i]).name + "\n";
+		}
 
 		PlayerData girldata = DataManager.Instance.GetPlayerDataSet().GetPlayerData(1);
 		girlInfo.text = "";
@@ -40,6 +44,11 @@ public class StatusPanel : MonoBehaviour {
 		girlInfo.text += "Luck:" + girldata.luck.ToString() + "\n";
 		girlInfo.text += "Eloquence:" + girldata.eloquence.ToString() + "\n";
 		girlInfo.text += "Weapon:" + DataManager.Instance.GetItemDataSet().GetWeaponData(girldata.weaponID).name + "\n";
+
+		for(int i = 0;  i < girldata.magicIDs.Count; i++)
+		{
+			girlInfo.text += "Magic" + (i + 1) + ":" + DataManager.Instance.GetItemDataSet().GetMagicData(girldata.magicIDs[i]).name + "\n";
+		}
 	}
 
 }

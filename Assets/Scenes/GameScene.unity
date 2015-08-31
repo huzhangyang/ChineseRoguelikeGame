@@ -189,8 +189,30 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1064106737}
-    - target: {fileID: 122160, guid: ec3c5652b022f614a8d0d1f166ffa2b2, type: 2}
-      propertyPath: m_IsActive
+    - target: {fileID: 11482558, guid: ec3c5652b022f614a8d0d1f166ffa2b2, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 34e60dd446a8ea94c8b504356463839d,
+        type: 3}
+    - target: {fileID: 11471470, guid: ec3c5652b022f614a8d0d1f166ffa2b2, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0d3ceaf38df18944b87d1fe0cbf99824,
+        type: 3}
+    - target: {fileID: 11404918, guid: ec3c5652b022f614a8d0d1f166ffa2b2, type: 2}
+      propertyPath: m_FontData.m_FontSize
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 11475454, guid: ec3c5652b022f614a8d0d1f166ffa2b2, type: 2}
+      propertyPath: m_FontData.m_FontSize
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 11475454, guid: ec3c5652b022f614a8d0d1f166ffa2b2, type: 2}
+      propertyPath: m_FontData.m_Alignment
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11404918, guid: ec3c5652b022f614a8d0d1f166ffa2b2, type: 2}
+      propertyPath: m_FontData.m_Alignment
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -279,46 +301,6 @@ Prefab:
       propertyPath: mapCanvas
       value: 
       objectReference: {fileID: 688854419}
-    - target: {fileID: 117098, guid: 47fee7b792e109d468c169948b3a7735, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 22495410, guid: 47fee7b792e109d468c169948b3a7735, type: 2}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 22495410, guid: 47fee7b792e109d468c169948b3a7735, type: 2}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 22421886, guid: 47fee7b792e109d468c169948b3a7735, type: 2}
-      propertyPath: m_SizeDelta.y
-      value: -383.365936
-      objectReference: {fileID: 0}
-    - target: {fileID: 22492328, guid: 47fee7b792e109d468c169948b3a7735, type: 2}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 22492328, guid: 47fee7b792e109d468c169948b3a7735, type: 2}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 22492328, guid: 47fee7b792e109d468c169948b3a7735, type: 2}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 22436330, guid: 47fee7b792e109d468c169948b3a7735, type: 2}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 22436330, guid: 47fee7b792e109d468c169948b3a7735, type: 2}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 22436330, guid: 47fee7b792e109d468c169948b3a7735, type: 2}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 47fee7b792e109d468c169948b3a7735, type: 2}
   m_IsPrefabParent: 0

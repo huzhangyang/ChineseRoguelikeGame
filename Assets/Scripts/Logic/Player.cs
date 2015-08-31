@@ -6,12 +6,13 @@ public class Player : BattleObject {
 /*
  * 角色在战斗中的数据实体与逻辑。
  * */	
-	public int playerID;
-
-	void Start()
+	public void Init(int playerID)
 	{
 		data = DataManager.Instance.GetPlayerDataSet().GetPlayerData(playerID).Clone();
-		GetComponent<BattleObjectUIEvent>().SetHPBar(data.currentHP, data.maxHP);
+		UIEvent = this.GetComponent<BattleObjectUIEvent>();
+		UIEvent.Init(playerID);
+		UIEvent.InitHPBar(data.currentHP, data.maxHP, true);
+		BattleLogic.players.Add(this);
 	}
 	
 	public PlayerData GetData()

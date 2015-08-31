@@ -18,17 +18,54 @@ MonoBehaviour:
     natureID: 0
     battleType: 0
     maxHP: 100
-    power: 8
-    agility: 7
-    toughness: 9
-    insight: 6
-    skill: 10
-    luck: 5
-    eloquence: 0
+    power: 80
+    agility: 70
+    toughness: 90
+    insight: 60
+    skill: 100
+    luck: 50
+    eloquence: 60
     currentHP: 0
-    hitPercent: 0
-    evadePercent: 0
-    criticalPercent: 0
     weaponID: 0
     ring1ID: 0
     ring2ID: 0
+    magicIDs: 
+    isBoss: 0
+  - name: "\u9ED1\xB7\u54A9\u54A9"
+    id: 11
+    talentID: 0
+    natureID: 0
+    battleType: 0
+    maxHP: 1500
+    power: 306
+    agility: 150
+    toughness: 123
+    insight: 777
+    skill: 99
+    luck: 0
+    eloquence: 9
+    currentHP: 0
+    weaponID: 0
+    ring1ID: 0
+    ring2ID: 0
+    magicIDs: 
+    isBoss: 1
+  - name: "\u771F\xB7\u7231\u65B0\u89C9\u841D\u8389"
+    id: 12
+    talentID: 0
+    natureID: 0
+    battleType: 0
+    maxHP: 9999
+    power: 1231
+    agility: 250
+    toughness: 666
+    insight: 666
+    skill: 99
+    luck: 0
+    eloquence: 9999
+    currentHP: 0
+    weaponID: 0
+    ring1ID: 0
+    ring2ID: 0
+    magicIDs: 
+    isBoss: 1

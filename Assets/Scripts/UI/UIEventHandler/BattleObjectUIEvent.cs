@@ -10,27 +10,33 @@ public class BattleObjectUIEvent : MonoBehaviour {
 	private Image objectImage;
 	private Slider HPBar;
 
-	void Start () 
+	public void Init(int playerID) 
 	{
 		allowClick = false;
 		objectImage = this.GetComponent<Image>();
+		if(playerID < 10)
+			objectImage.sprite = Resources.Load("UI/Battle/Avatar0" + playerID, typeof(Sprite)) as Sprite;
+		else
+			objectImage.sprite = Resources.Load("UI/Battle/Avatar" + playerID, typeof(Sprite)) as Sprite;
+		InitAvatar();
 		GetComponent<Button>().onClick.AddListener(delegate(){OnClick();});		
 	}
 
-	public void SetHPBar(int current, int max)
+	public void InitHPBar(int current, int max, bool large)
 	{
-		if(HPBar == null)
-			HPBar = this.gameObject.GetComponentInChildren<Slider> ();
-		if(HPBar.maxValue != max)
-		{
-			HPBar.maxValue = max;
-			HPBar.value = current;
-		}
-		else
-		{
-			HPBar.DOValue(current, 1).SetEase(Ease.OutSine);
-			this.transform.DOPunchScale(new Vector2(0.1f, 0.1f), 1);
-		}
+		GameObject bar = Instantiate(Resources.Load("Battle/HPBar")) as GameObject;
+		bar.transform.SetParent(this.transform, false);
+		bar.transform.localPosition = new Vector3(0, objectImage.rectTransform.sizeDelta.y / 2, 0); 
+		if(!large)bar.transform.localScale = new Vector3(0.5f, 1);
+		HPBar = bar.GetComponent<Slider>();
+		HPBar.maxValue = max;
+		HPBar.value = current;
+	}
+
+	public void SetHPBar(int current)
+	{
+		HPBar.DOValue(current, 1).SetEase(Ease.OutSine);
+		this.transform.DOPunchScale(new Vector2(0.1f, 0.1f), 1);
 
 		if(current == 0)
 		{
@@ -38,13 +44,14 @@ public class BattleObjectUIEvent : MonoBehaviour {
 			objectImage.DOFade(0,1).SetDelay(1).OnComplete(()=>Destroy(this.gameObject));
 			Destroy(HPBar,1);
 		}
-
 	}
 	
-	public void SetAvatar(GameObject avatar)
+	public void InitAvatar()
 	{
+		GameObject avatar = Instantiate(Resources.Load("Battle/Avatar")) as GameObject;
+		avatar.transform.SetParent(GameObject.Find("TimeLine").transform, false);
 		avatarImage = avatar.GetComponent<Image>();
-		avatarImage.sprite = this.GetComponent<Image> ().sprite;
+		avatarImage.sprite = objectImage.sprite;
 	}
 
 	public void SetAvatarPositionX(float posX, bool smooth)

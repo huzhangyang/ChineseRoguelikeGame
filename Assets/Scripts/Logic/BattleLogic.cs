@@ -42,7 +42,7 @@ public class BattleLogic : MonoBehaviour {
 	}
 
 	/*UI CALLBACK*/
-	public void EnterBattle()
+	public void EnterBattle(int battleType)
 	{
 		mapCanvas.gameObject.SetActive (false);
 		battleCanvas.gameObject.SetActive (true);
@@ -51,9 +51,24 @@ public class BattleLogic : MonoBehaviour {
 		players = new List<Player>();
 
 		MessageEventArgs args = new MessageEventArgs ();
-		args.AddMessage("Man","1");
-		args.AddMessage("Girl","1");
-		args.AddMessage("Enemy","10,10,10");
+		args.AddMessage("BattleType",battleType.ToString());
+		if(battleType == 0)
+		{
+			args.AddMessage("Man","1");
+			args.AddMessage("Girl","1");
+			args.AddMessage("Enemy","10,10,10");
+		}
+		else if(battleType == 1)
+		{
+			args.AddMessage("Man","1");
+			args.AddMessage("Girl","1");
+			args.AddMessage("Enemy","11");
+		}
+		else 
+		{
+			args.AddMessage("Man","1");
+			args.AddMessage("Enemy","12");
+		}
 		EventManager.Instance.PostEvent (EventDefine.EnterBattle, args);
 	}
 	

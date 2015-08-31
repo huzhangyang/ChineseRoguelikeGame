@@ -155,7 +155,7 @@ GameObject:
   - 222: {fileID: 22276556}
   - 114: {fileID: 11455062}
   m_Layer: 5
-  m_Name: InfoPanel
+  m_Name: PlayerPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1456,7 +1456,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: -383.222015}
+  m_SizeDelta: {x: 0, y: -383.365936}
   m_Pivot: {x: 0, y: 1}
 --- !u!224 &22424156
 RectTransform:
@@ -1511,10 +1511,10 @@ RectTransform:
   - {fileID: 22464266}
   m_Father: {fileID: 22486304}
   m_RootOrder: 2
-  m_AnchorMin: {x: .5, y: .5}
-  m_AnchorMax: {x: .5, y: .5}
+  m_AnchorMin: {x: 0, y: .5}
+  m_AnchorMax: {x: 1, y: .5}
   m_AnchoredPosition: {x: 0, y: -380}
-  m_SizeDelta: {x: 720, y: 520}
+  m_SizeDelta: {x: 0, y: 520}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22439528
 RectTransform:
@@ -1674,10 +1674,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 22486304}
   m_RootOrder: 0
-  m_AnchorMin: {x: .5, y: 1}
-  m_AnchorMax: {x: .5, y: 1}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: -200}
-  m_SizeDelta: {x: 720, y: 400}
+  m_SizeDelta: {x: 0, y: 400}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22492576
 RectTransform:
