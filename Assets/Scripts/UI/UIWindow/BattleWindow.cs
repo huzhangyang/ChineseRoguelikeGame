@@ -67,6 +67,7 @@ public class BattleWindow: MonoBehaviour {
 	{
 		string playerName = args.GetMessage("PlayerName");
 		subCommandPanel.transform.FindChild("CommandDescription").GetComponent<Text>().text = playerName + "如何决策？";
+		subCommandPanel.transform.FindChild("SubCommandButtonPanel").DOLocalMoveX(0, 0.2f);
 		foreach(Transform child in subCommandPanel.transform.FindChild("SubCommandButtonPanel"))
 		{
 			Destroy(child.gameObject);

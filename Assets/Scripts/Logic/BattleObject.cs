@@ -221,6 +221,7 @@ public abstract class BattleObject : MonoBehaviour {
 			}
 			//如果命中，则对方受伤
 			if(target.isEvading) evadePercent += 50;
+			Debug.Log("Name:" + skillData.name + " Hit:" + hitPercent + " Evade:" + evadePercent + " Crit:" + criticalPercent);
 			string SEName = "hit";
 			bool hit = Random.Range(0,101) <= (hitPercent - evadePercent)?true:false;
 			if(hit)
@@ -267,14 +268,14 @@ public abstract class BattleObject : MonoBehaviour {
 		{
 			if(DataManager.Instance.GetItemDataSet().IsWeapon(itemID))
 			{
-				target.data.weaponID = itemID;
+				data.weaponID = itemID;
 				return;
 			}
 			
 			if(itemID == 1)
 			{
 				target.Heal((int)(target.data.maxHP * 0.8f - target.data.currentHP));
-				target.data.ConsumeItem(itemID);
+				data.ConsumeItem(itemID);
 				return;
 			}
 		}
@@ -293,9 +294,9 @@ public abstract class BattleObject : MonoBehaviour {
 		data.currentHP -= damage;
 		isPaused = true;// so that timeline adjust is smooth
 		if(battleStatus == BattleStatus.Action)
-			timelinePosition -= damage * 50;
+			timelinePosition -= damage * 20000 / data.maxHP;
 		else
-			timelinePosition -= damage * 20;
+			timelinePosition -= damage * 10000 / data.maxHP;
 
 		MessageEventArgs args = new MessageEventArgs();
 		args.AddMessage("Name", data.name);
@@ -320,6 +321,7 @@ public abstract class BattleObject : MonoBehaviour {
 
 	void Heal(int amount)
 	{
+		if(amount < 0) amount = 0;
 		data.currentHP += amount;
 		if(data.currentHP > data.maxHP)
 			data.currentHP = data.maxHP;

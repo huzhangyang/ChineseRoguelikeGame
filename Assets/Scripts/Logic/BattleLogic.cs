@@ -66,11 +66,11 @@ public class BattleLogic : MonoBehaviour {
 		EventManager.Instance.PostEvent(EventDefine.ShowAvailableCommands, args);
 		foreach(Enemy enemy in enemys)
 		{
-			enemy.GetComponent<BattleObjectUIEvent>().allowClick = false;
+			enemy.GetComponent<BattleObjectUIEvent>().DisableClick();
 		}
 		foreach(Player player in players)
 		{
-			player.GetComponent<BattleObjectUIEvent>().allowClick = false;
+			player.GetComponent<BattleObjectUIEvent>().DisableClick();
 		}
 	}
 
@@ -97,14 +97,14 @@ public class BattleLogic : MonoBehaviour {
 		case TargetType.AllEnemies:
 			foreach(Enemy enemy in enemys)
 			{
-				enemy.GetComponent<BattleObjectUIEvent>().allowClick = true;
+				enemy.GetComponent<BattleObjectUIEvent>().EnableClick();
 			}
 			break;
 		case TargetType.SingleAlly:
 		case TargetType.AllAllies:
 			foreach(Player player in players)
 			{
-				player.GetComponent<BattleObjectUIEvent>().allowClick = true;
+				player.GetComponent<BattleObjectUIEvent>().EnableClick();
 			}
 			break;
 		case TargetType.Self:
@@ -118,6 +118,14 @@ public class BattleLogic : MonoBehaviour {
 		ResumeEveryOne();
 		GetCurrentPlayer().commandToExecute = currentCommand;
 		GetCurrentPlayer().battleStatus = BattleStatus.Action;
+		foreach(Enemy enemy in enemys)
+		{
+			enemy.GetComponent<BattleObjectUIEvent>().DisableClick();
+		}
+		foreach(Player player in players)
+		{
+			player.GetComponent<BattleObjectUIEvent>().DisableClick();
+		}
 	}
 
 	void OnExecuteCommand(MessageEventArgs args)
