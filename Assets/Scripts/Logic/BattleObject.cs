@@ -31,7 +31,7 @@ public abstract class BattleObject : MonoBehaviour {
 			if(value < 0) value = 0;
 			if(value > 10000) value = 10000;
 			_timelinePosition = value;
-			GetComponent<BattleObjectUIEvent>().SetAvatarPositionX(value / 20, isPaused);//max:500
+			UIEvent.SetAvatarPositionX(value / 20, isPaused);//max:500
 		}
 		get
 		{
@@ -207,17 +207,17 @@ public abstract class BattleObject : MonoBehaviour {
 			if(skillData.skillType == SkillType.Physical)
 			{
 				WeaponData weaponData = DataManager.Instance.GetItemDataSet().GetWeaponData(data.weaponID);
-				hitPercent = data.skill + data.luck / 10 + weaponData.basicACC * skillData.ACCMultiplier;//命中率
-				evadePercent = target.data.skill + target.data.luck / 10;//闪避率
-				criticalPercent = target.data.skill + target.data.luck / 10 + weaponData.basicCRT * skillData.CRTMultiplier / 100;//暴击率
+				hitPercent = data.skill / 10.0f + data.luck / 100.0f + weaponData.basicACC * skillData.ACCMultiplier;//命中率
+				evadePercent = target.data.skill / 10.0f + target.data.luck / 100.0f;//闪避率
+				criticalPercent = target.data.skill / 10.0f + target.data.luck / 100.0f + weaponData.basicCRT * skillData.CRTMultiplier / 100.0f;//暴击率
 				damage = data.power * weaponData.basicATK * skillData.ATKMultiplier / target.data.toughness;//伤害值
 			}
 			else if(skillData.skillType == SkillType.Magical)
 			{
 				MagicData magicData = DataManager.Instance.GetItemDataSet().magicDataSet.Find((MagicData _data)=>{return _data.skillID == skillID;});
-				hitPercent = data.skill + data.luck / 10 + magicData.basicACC * skillData.ACCMultiplier;//命中率
-				evadePercent = target.data.skill + target.data.luck / 10;//闪避率
-				criticalPercent = target.data.skill + target.data.luck / 10 + magicData.basicCRT * skillData.CRTMultiplier / 100;//暴击率
+				hitPercent = data.skill / 10.0f + data.luck / 100.0f + magicData.basicACC * skillData.ACCMultiplier;//命中率
+				evadePercent = target.data.skill / 10.0f + target.data.luck / 100.0f;//闪避率
+				criticalPercent = target.data.skill / 10.0f + target.data.luck / 100.0f + magicData.basicCRT * skillData.CRTMultiplier / 100.0f;//暴击率
 				damage = data.power * magicData.basicATK * skillData.ATKMultiplier / target.data.insight;//伤害值
 			}
 			//如果命中，则对方受伤
@@ -317,7 +317,7 @@ public abstract class BattleObject : MonoBehaviour {
 			EventManager.Instance.PostEvent(EventDefine.BattleObjectDied, args2);
 		}
 
-		GetComponent<BattleObjectUIEvent>().SetHPBar(data.currentHP);
+		UIEvent.SetHPBar(data.currentHP);
 	}
 
 	void Heal(int amount)
@@ -333,7 +333,7 @@ public abstract class BattleObject : MonoBehaviour {
 		args.AddMessage("CurrentHP", data.currentHP.ToString());
 		EventManager.Instance.PostEvent(EventDefine.BattleObjectHeal, args);
 
-		GetComponent<BattleObjectUIEvent>().SetHPBar(data.currentHP);
+		UIEvent.SetHPBar(data.currentHP);
 	}
 }
 

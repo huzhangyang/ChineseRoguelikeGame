@@ -20,12 +20,11 @@ public class Enemy : BattleObject {
 		BattleLogic.enemys.Add(this);
 
 		//temp
-		data.battleType = BattleType.Both;
 		data.weaponID = 1000 + Random.Range(1,6) * 100;
 		data.magicIDs.Add(2001);
 		data.magicIDs.Add(2002);
 		data.magicIDs.Add(2003);
-		data.AcquireItem(1,3);
+		data.AcquireItem(1,1);
 
 		MessageEventArgs args = new MessageEventArgs();
 		args.AddMessage("EnemyName", data.name);

@@ -16,7 +16,7 @@ MonoBehaviour:
     id: 10
     talentID: 0
     natureID: 0
-    battleType: 0
+    battleType: 2
     maxHP: 100
     power: 80
     agility: 70
@@ -54,13 +54,13 @@ MonoBehaviour:
     id: 12
     talentID: 0
     natureID: 0
-    battleType: 0
+    battleType: 1
     maxHP: 9999
-    power: 1231
+    power: 9999
     agility: 250
     toughness: 666
     insight: 666
-    skill: 99
+    skill: 0
     luck: 0
     eloquence: 9999
     currentHP: 0
