@@ -61,6 +61,11 @@ public class SaveManager : MonoBehaviour {
 		string configDatastring = ReadXML (GlobalDataStructure.PATH_CONFIG);
 		return DeserializeObject(configDatastring, typeof(ConfigData)) as ConfigData;
 	}
+
+	public bool IsSaveExist()
+	{
+		return File.Exists (GlobalDataStructure.PATH_SAVE);
+	}
 	
 	string SerializeObject(object pObject, System.Type userType)
 	{
@@ -78,10 +83,11 @@ public class SaveManager : MonoBehaviour {
 	object DeserializeObject(string data, System.Type userType)
 	{
 		XmlSerializer xs = new XmlSerializer(userType);
-		MemoryStream memoryStream = new MemoryStream(StringToUTF8ByteArray(data));
-		new XmlTextWriter(memoryStream, Encoding.UTF8);
-		memoryStream.Close ();
-		return xs.Deserialize(memoryStream);
+		using (MemoryStream memoryStream = new MemoryStream(StringToUTF8ByteArray(data)))
+		{
+			new XmlTextWriter(memoryStream, Encoding.UTF8);
+			return xs.Deserialize(memoryStream);
+		}
 	}
 
 	void WriteXML(string path, string data)

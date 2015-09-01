@@ -49,22 +49,44 @@ public class DataManager : MonoBehaviour {
 			Debug.LogWarning ("Load SkillData Failed.");
 			skillDataSet = new SkillDataSet();
 		}
-		//playerData
+	}
+
+	public void LoadSave()
+	{
 		playerDataSet = SaveManager.Instance.LoadGame ();
 		if(playerDataSet == null)
 		{
-			Debug.LogWarning ("Load PlayerData Failed.");
-			playerDataSet = new PlayerDataSet();
-			playerDataSet.dataSet.Add(new PlayerData(0));
-			playerDataSet.dataSet.Add(new PlayerData(1));
+			Debug.LogWarning ("Load PlayerData Failed. Creating New Instead.");
+			CreateNewSave();
 		}
-		//configData
+	}
+
+	public void CreateNewSave()
+	{
+		playerDataSet = new PlayerDataSet();
+		PlayerData data0 = new PlayerData();
+		data0.InitWithID(0);
+		PlayerData data1 = new PlayerData();
+		data1.InitWithID(1);
+		playerDataSet.dataSet.Add(data0);
+		playerDataSet.dataSet.Add(data1);
+		SaveManager.Instance.SaveGame();
+	}
+
+	public void LoadConfig()
+	{
 		configData = SaveManager.Instance.LoadConfig ();
 		if(configData == null)
 		{
-			Debug.LogWarning ("Load ConfigData Failed.");
-			configData = new ConfigData();
+			Debug.LogWarning ("Load ConfigData Failed. Creating New Instead.");
+			CreateNewConfig();
 		}
+	}
+
+	public void CreateNewConfig()
+	{
+		configData = new ConfigData();
+		SaveManager.Instance.SaveConfig();
 	}
 
 	public void UnLoadAllData()

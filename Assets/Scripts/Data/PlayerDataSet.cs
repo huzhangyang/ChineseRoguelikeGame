@@ -33,40 +33,40 @@ public class PlayerData : ObjectData {
 	public int expLuck;//运气成长值
 	public int expEloquence;//口才成长值
 
-	public PlayerData(int playerID)
+	public void InitWithID(int playerID)
 	{
 		switch(playerID)
 		{
 		case 0:	name = "Man";
-				maxHP = 150;
-				power = 150;
-				agility = 100;
-				toughness = 150;
-				insight = 100; 
-				skill = 150;
-				luck = 50;
-				eloquence = 50;
-
-				battleType = BattleType.Physical;
-				weaponID = 1000 + Random.Range(1,6) * 100 + 1;
-				
-				break;
+			maxHP = 1500;
+			power = 1500;
+			agility = 100;
+			toughness = 1500;
+			insight = 1000; 
+			skill = 150;
+			luck = 50;
+			eloquence = 500;
+			
+			battleType = BattleType.Physical;
+			weaponID = 1000 + Random.Range(1,6) * 100 + 1;
+			
+			break;
 		case 1: name = "Girl";
-				maxHP = 100;
-				power = 100;
-				agility = 150;
-				toughness = 100;
-				insight = 150; 
-				skill = 50;
-				luck = 150;
-				eloquence = 100;
-
-				battleType = BattleType.Magical;
-				weaponID = 1000;
-				magicIDs.Add(2001);
-				magicIDs.Add(2002);
-				magicIDs.Add(2003);
-				break;
+			maxHP = 1000;
+			power = 1000;
+			agility = 150;
+			toughness = 1000;
+			insight = 1500; 
+			skill = 50;
+			luck = 150;
+			eloquence = 1000;
+			
+			battleType = BattleType.Magical;
+			weaponID = 1000;
+			magicIDs.Add(2001);
+			magicIDs.Add(2002);
+			magicIDs.Add(2003);
+			break;
 		}
 		AcquireItem(1,3);
 		this.id = playerID;

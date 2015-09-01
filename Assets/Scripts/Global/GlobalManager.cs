@@ -36,6 +36,7 @@ public class GlobalManager : MonoBehaviour {
 public enum GameStatus
 {
 	Title,
+	StartNewGame,
 	Loading,
 	Map,
 	Battle,
