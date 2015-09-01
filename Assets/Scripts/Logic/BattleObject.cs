@@ -22,15 +22,14 @@ public abstract class BattleObject : MonoBehaviour {
 	public bool isGuarding = false;
 	public bool isEvading = false;
 	public bool isDied = false;
-	private int recoverTime;
 	private int _timelinePosition;
 	public int timelinePosition//max:10000
 	{
 		set
 		{
-			if(value < 0) value = 0;
 			if(value > 10000) value = 10000;
 			_timelinePosition = value;
+			if(value < 0) value = 0;
 			UIEvent.SetAvatarPositionX(value / 20, isPaused);//max:500
 		}
 		get
@@ -55,10 +54,8 @@ public abstract class BattleObject : MonoBehaviour {
 	protected void OnUpdateTimeline(MessageEventArgs args)
 	{
 		if(!isPaused && !isDied)
-		{
-			if(recoverTime > 0)
-				recoverTime--;
-			else if(battleStatus == BattleStatus.Prepare)
+		{	
+			if(battleStatus == BattleStatus.Prepare)
 				timelinePosition += data.agility;
 			else if(battleStatus == BattleStatus.Action)
 				timelinePosition += commandToExecute.preExecutionSpeed;
@@ -135,8 +132,7 @@ public abstract class BattleObject : MonoBehaviour {
 			break;
 		}
 		//post process
-		recoverTime = commandToExecute.postExecutionRecover;
-		timelinePosition = 0;
+		timelinePosition =  -commandToExecute.postExecutionRecover;
 		battleStatus = BattleStatus.Prepare;
 		commandToExecute = Command.None();
 	}

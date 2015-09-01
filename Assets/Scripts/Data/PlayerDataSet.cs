@@ -68,7 +68,6 @@ public class PlayerData : ObjectData {
 			magicIDs.Add(2003);
 			break;
 		}
-		AcquireItem(1,3);
 		this.id = playerID;
 		currentHP = maxHP;
 		expMaxHP = 0;
