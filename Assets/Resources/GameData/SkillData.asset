@@ -30,8 +30,8 @@ MonoBehaviour:
     ATKMultiplier: 1
     ACCMultiplier: 1
     CRTMultiplier: 1
-    preSPDMultiplier: 1
-    postSPDMultiplier: 1
+    preSPDMultiplier: 2
+    postSPDMultiplier: 2
     cooldownTurn: 0
     description: "\u5355\u624B\u6233\u523A"
   - id: 2
@@ -42,7 +42,7 @@ MonoBehaviour:
     ACCMultiplier: 1
     CRTMultiplier: 1
     preSPDMultiplier: 1
-    postSPDMultiplier: 1
+    postSPDMultiplier: .5
     cooldownTurn: 1
     description: "\u8FDE\u7EED\u7A81\u523A"
   - id: 3
@@ -74,8 +74,8 @@ MonoBehaviour:
     ATKMultiplier: 1
     ACCMultiplier: 1
     CRTMultiplier: 1
-    preSPDMultiplier: 1
-    postSPDMultiplier: 1
+    preSPDMultiplier: 1.20000005
+    postSPDMultiplier: 1.20000005
     cooldownTurn: 0
     description: "\u6A2A\u626B"
   - id: 6
@@ -85,8 +85,8 @@ MonoBehaviour:
     ATKMultiplier: 1.10000002
     ACCMultiplier: 1
     CRTMultiplier: 1
-    preSPDMultiplier: 1
-    postSPDMultiplier: 1
+    preSPDMultiplier: .899999976
+    postSPDMultiplier: .899999976
     cooldownTurn: 1
     description: "\u7EB5\u65A9"
   - id: 7

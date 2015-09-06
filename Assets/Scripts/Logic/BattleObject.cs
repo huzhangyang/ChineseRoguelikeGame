@@ -56,7 +56,7 @@ public abstract class BattleObject : MonoBehaviour {
 		if(!isPaused && !isDied)
 		{	
 			if(battleStatus == BattleStatus.Prepare)
-				timelinePosition += data.agility;
+				timelinePosition += (int)(Mathf.Log10(data.agility) * 100);
 			else if(battleStatus == BattleStatus.Action)
 				timelinePosition += commandToExecute.preExecutionSpeed;
 		}
@@ -132,7 +132,7 @@ public abstract class BattleObject : MonoBehaviour {
 			break;
 		}
 		//post process
-		timelinePosition =  -commandToExecute.postExecutionRecover;
+			timelinePosition =  -commandToExecute.postExecutionRecover;
 		battleStatus = BattleStatus.Prepare;
 		commandToExecute = Command.None();
 	}
@@ -203,18 +203,18 @@ public abstract class BattleObject : MonoBehaviour {
 			if(skillData.skillType == SkillType.Physical)
 			{
 				WeaponData weaponData = DataManager.Instance.GetItemDataSet().GetWeaponData(data.weaponID);
-				hitPercent = data.skill / 10.0f + data.luck / 100.0f + weaponData.basicACC * skillData.ACCMultiplier;//命中率
-				evadePercent = target.data.skill / 10.0f + target.data.luck / 100.0f;//闪避率
-				criticalPercent = target.data.skill / 10.0f + target.data.luck / 100.0f + weaponData.basicCRT * skillData.CRTMultiplier / 100.0f;//暴击率
-				damage = data.power * weaponData.basicATK * skillData.ATKMultiplier / target.data.toughness;//伤害值
+				hitPercent = data.skill + data.luck / 10.0f + weaponData.basicACC * skillData.ACCMultiplier;//命中率
+				evadePercent = target.data.skill + target.data.luck / 10.0f;//闪避率
+				criticalPercent = data.skill / 10.0f + data.luck / 10.0f + weaponData.basicCRT * skillData.CRTMultiplier / 100.0f - target.data.skill / 10.0f - target.data.luck / 10.0f;//暴击率
+				damage = (data.power + weaponData.basicATK) * skillData.ATKMultiplier * (1 - target.data.toughness / 250.0f);//伤害值
 			}
 			else if(skillData.skillType == SkillType.Magical)
 			{
 				MagicData magicData = DataManager.Instance.GetItemDataSet().magicDataSet.Find((MagicData _data)=>{return _data.skillID == skillID;});
-				hitPercent = data.skill / 10.0f + data.luck / 100.0f + magicData.basicACC * skillData.ACCMultiplier;//命中率
-				evadePercent = target.data.skill / 10.0f + target.data.luck / 100.0f;//闪避率
-				criticalPercent = target.data.skill / 10.0f + target.data.luck / 100.0f + magicData.basicCRT * skillData.CRTMultiplier / 100.0f;//暴击率
-				damage = data.power * magicData.basicATK * skillData.ATKMultiplier / target.data.insight;//伤害值
+				hitPercent = data.skill + data.luck / 10.0f + magicData.basicACC * skillData.ACCMultiplier;//命中率
+				evadePercent = target.data.skill + target.data.luck / 10.0f;//闪避率
+				criticalPercent = data.skill / 10.0f + data.luck / 10.0f + magicData.basicCRT * skillData.CRTMultiplier / 100.0f - target.data.skill / 10.0f - target.data.luck / 10.0f;//暴击率
+				damage = (data.power + magicData.basicATK) * skillData.ATKMultiplier * (1 - target.data.insight / 250.0f);//伤害值
 			}
 			//如果命中，则对方受伤
 			if(target.isEvading) evadePercent += 50;
@@ -291,9 +291,9 @@ public abstract class BattleObject : MonoBehaviour {
 		data.currentHP -= damage;
 		isPaused = true;// so that timeline adjust is smooth
 		if(battleStatus == BattleStatus.Action)
-			timelinePosition -= damage * 20000 / data.maxHP;
-		else
 			timelinePosition -= damage * 10000 / data.maxHP;
+		else
+			timelinePosition -= damage * 5000 / data.maxHP;
 
 		MessageEventArgs args = new MessageEventArgs();
 		args.AddMessage("Name", data.name);

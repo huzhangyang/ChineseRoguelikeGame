@@ -36,7 +36,7 @@ MonoBehaviour:
     name: "\u77ED\u5251"
     type: 1
     description: "\u77ED\u5251"
-    basicATK: 20
+    basicATK: 4
     basicSPD: 150
     basicACC: 100
     basicCRT: 100
@@ -50,7 +50,7 @@ MonoBehaviour:
     basicATK: 99
     basicSPD: 160
     basicACC: 100
-    basicCRT: 102
+    basicCRT: 120
     skill1ID: 1
     skill2ID: 2
     skill3ID: 106
@@ -58,7 +58,7 @@ MonoBehaviour:
     name: "\u957F\u5251"
     type: 1
     description: "\u957F\u5251"
-    basicATK: 40
+    basicATK: 10
     basicSPD: 100
     basicACC: 100
     basicCRT: 100
@@ -80,7 +80,7 @@ MonoBehaviour:
     name: "\u5200"
     type: 1
     description: "\u5200"
-    basicATK: 30
+    basicATK: 7
     basicSPD: 120
     basicACC: 100
     basicCRT: 90
@@ -102,7 +102,7 @@ MonoBehaviour:
     name: "\u65A7"
     type: 1
     description: "\u65A7"
-    basicATK: 60
+    basicATK: 18
     basicSPD: 75
     basicACC: 90
     basicCRT: 100
@@ -124,7 +124,7 @@ MonoBehaviour:
     name: "\u5F13"
     type: 1
     description: "\u5F13"
-    basicATK: 50
+    basicATK: 13
     basicSPD: 80
     basicACC: 100
     basicCRT: 100
@@ -156,7 +156,7 @@ MonoBehaviour:
     name: "\u706B\u7403\u4E4B\u4E66"
     type: 2
     description: "\u8BB0\u8F7D\u4E86\u706B\u7403\u672F\u7528\u6CD5\u7684\u53E4\u8001\u4E66\u7C4D"
-    basicATK: 50
+    basicATK: 10
     basicSPD: 70
     basicACC: 80
     basicCRT: 100
@@ -165,7 +165,7 @@ MonoBehaviour:
     name: "\u51B0\u5F39\u4E4B\u4E66"
     type: 2
     description: "\u8BB0\u8F7D\u4E86\u51B0\u5F39\u672F\u7528\u6CD5\u7684\u53E4\u8001\u4E66\u7C4D"
-    basicATK: 25
+    basicATK: 5
     basicSPD: 90
     basicACC: 100
     basicCRT: 100
@@ -174,7 +174,7 @@ MonoBehaviour:
     name: "\u95EA\u7535\u4E4B\u4E66"
     type: 2
     description: "\u8BB0\u8F7D\u4E86\u95EA\u7535\u672F\u7528\u6CD5\u7684\u53E4\u8001\u4E66\u7C4D"
-    basicATK: 40
+    basicATK: 8
     basicSPD: 80
     basicACC: 90
     basicCRT: 110

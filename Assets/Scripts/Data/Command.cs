@@ -101,7 +101,7 @@ public class Command {
 		command.commandDescription = skillData.description;
 		command.targetType = skillData.targetType;
 		command.preExecutionSpeed = (int)(weaponData.basicSPD * skillData.preSPDMultiplier);
-		command.postExecutionRecover = (int)(weaponData.basicSPD * skillData.postSPDMultiplier);
+		command.postExecutionRecover = (int)(6000 / weaponData.basicSPD * skillData.postSPDMultiplier);
 
 		command.skillOrItemID = skillID;
 		return command;
@@ -117,7 +117,7 @@ public class Command {
 		command.commandDescription = skillData.description;
 		command.targetType = skillData.targetType;
 		command.preExecutionSpeed = (int)(magicData.basicSPD * skillData.preSPDMultiplier);
-		command.postExecutionRecover = (int)(magicData.basicSPD * skillData.postSPDMultiplier);
+		command.postExecutionRecover = (int)(6000 / magicData.basicSPD * skillData.postSPDMultiplier);
 
 		command.skillOrItemID = skillID;
 		return command;
