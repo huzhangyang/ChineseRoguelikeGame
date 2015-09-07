@@ -160,6 +160,64 @@ public abstract class BattleObject : MonoBehaviour {
 		}
 	}
 
+	public void OnBeHit(BattleObject source, SkillType type, float hit, float crit, float damage)
+	{
+		//判断防反
+		if(commandToExecute.commandType == CommandType.Defence)
+		{
+			MessageEventArgs args = new MessageEventArgs();
+			args.AddMessage("Name",data.name);
+			EventManager.Instance.PostEvent(EventDefine.BattleObjectCounter, args);
+			
+			source.InflictDamage(Random.Range(0,100));//TODO改进反击算法
+			return;
+		}
+		//计算真实命中、暴击、伤害
+		hit -= (data.skill + data.luck / 10.0f);
+		if(isEvading) hit -= 50;
+		crit -= (data.skill / 10.0f + data.luck / 10.0f);
+		if(isGuarding) hit = 0;
+		switch(type)
+		{
+		case SkillType.Magical:
+			damage *= (1 - data.insight / 250);
+			break;
+		case SkillType.Physical:
+			damage *= (1 - data.toughness / 250);
+			break;
+		}
+		if(isGuarding) damage /= 2;
+		//判断是否命中，是否暴击
+		bool isHit = Random.Range(0,101) <= hit?true:false;
+		bool isCrit = Random.Range(0,101) <= crit?true:false;
+
+		string SEName = "hit";
+		if(isHit)
+		{		
+			if(isGuarding)
+			{
+				SEName = "guard";
+			}
+			if(isCrit)
+			{
+				damage *= 2;
+				SEName = "critical";
+				
+				MessageEventArgs args = new MessageEventArgs();
+				args.AddMessage("Name", data.name);
+				EventManager.Instance.PostEvent(EventDefine.BattleObjectCritical, args);
+			}
+			AudioManager.Instance.PlaySE(SEName);
+			InflictDamage((int)damage);
+		}
+		else
+		{
+			MessageEventArgs args = new MessageEventArgs();
+			args.AddMessage("Name", data.name);
+			EventManager.Instance.PostEvent(EventDefine.BattleObjectMiss, args);
+		}
+	}
+
 	public void InflictDamage(int damage)
 	{
 		data.currentHP -= damage;

@@ -14,9 +14,9 @@ public abstract class Command {
 
 	public int skillID;//对应的技能ID(仅在使用技能时生效)
 	public int itemID;//对应的物品ID(仅在使用物品时生效)
-	public BattleObject source;
-	public List<BattleObject> targetList = new List<BattleObject>();
-	public string executeMessage;
+	public BattleObject source;//执行者
+	public List<BattleObject> targetList = new List<BattleObject>();//执行目标
+	public string executeMessage;//执行时显示的信息
 
 	public virtual void Execute()
 	{
