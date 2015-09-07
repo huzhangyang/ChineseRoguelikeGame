@@ -17,7 +17,7 @@ public abstract class BattleObject : MonoBehaviour {
  * */	
 	public BattleStatus battleStatus = BattleStatus.Prepare;
 	public List<Command> availableCommands;
-	public Command commandToExecute = Command.None();
+	public Command commandToExecute = new CommandNone();
 	public bool isPaused = true;
 	public bool isGuarding = false;
 	public bool isEvading = false;
@@ -71,6 +71,11 @@ public abstract class BattleObject : MonoBehaviour {
 		}
 	}
 
+	public virtual ObjectData GetData()
+	{
+		return data;
+	}
+
 	protected virtual void SelectCommand()
 	{
 		timelinePosition = 8000;
@@ -81,60 +86,35 @@ public abstract class BattleObject : MonoBehaviour {
 
 	protected virtual void ExecuteCommand()
 	{
-		//send message
-		MessageEventArgs args = new MessageEventArgs();
-		args.AddMessage("Name", data.name);
-		args.AddMessage("CommandType", ((int)commandToExecute.commandType).ToString());
-		args.AddMessage("SkillOrItemID", commandToExecute.skillOrItemID.ToString());
-		args.AddMessage("CommandName", commandToExecute.commandName);
-		EventManager.Instance.PostEvent(EventDefine.ExecuteCommand, args);
 		//decide target
-		List<BattleObject> targetList = new List<BattleObject>();
 		switch(commandToExecute.targetType)
 		{
 		case TargetType.Self:
-			targetList.Add(this);
+			commandToExecute.targetList.Add(this);
 			break;
 		case TargetType.SingleEnemy:
 		case TargetType.SingleAlly:
-			if(commandToExecute.target != null)
-				targetList.Add(commandToExecute.target);
 			break;
 		case TargetType.AllEnemies:
 			if(this is Enemy)
-				targetList = new List<BattleObject>(BattleLogic.players.ToArray());
+				commandToExecute.targetList = new List<BattleObject>(BattleLogic.players.ToArray());
 			else
-				targetList = new List<BattleObject>(BattleLogic.enemys.ToArray());
+				commandToExecute.targetList = new List<BattleObject>(BattleLogic.enemys.ToArray());
 			break;
 		case TargetType.AllAllies:
 			if(this is Enemy)
-				targetList = new List<BattleObject>(BattleLogic.enemys.ToArray());
+				commandToExecute.targetList = new List<BattleObject>(BattleLogic.enemys.ToArray());
 			else
-				targetList = new List<BattleObject>(BattleLogic.players.ToArray());
+				commandToExecute.targetList = new List<BattleObject>(BattleLogic.players.ToArray());
 			break;
 		}
 		//decide command
-		switch(commandToExecute.commandType)
-		{
-		case CommandType.UseSkill:
-			UseSkill(commandToExecute.skillOrItemID, targetList);
-			break;
-		case CommandType.Defence:
-			Defend(commandToExecute.commandName);
-			break;
-		case CommandType.UseItem:
-			UseItem(commandToExecute.skillOrItemID, targetList);
-			break;
-		case CommandType.Strategy:
-			UseStrategy(commandToExecute.commandName);
-			break;
-		case CommandType.None:
-			break;
-		}
+		commandToExecute.source = this;
+		commandToExecute.Execute();
 		//post process
-			timelinePosition =  -commandToExecute.postExecutionRecover;
+		timelinePosition =  -commandToExecute.postExecutionRecover;
 		battleStatus = BattleStatus.Prepare;
-		commandToExecute = Command.None();
+		commandToExecute = new CommandNone();
 	}
 
 	public void RefreshAvailableCommands(BasicCommand basicCommand)
@@ -146,32 +126,32 @@ public abstract class BattleObject : MonoBehaviour {
 			if(data.battleType != BattleType.Magical)
 			{
 				WeaponData weaponData = DataManager.Instance.GetItemDataSet().GetWeaponData(data.weaponID);
-				availableCommands.Add(Command.UseWeaponSkill(weaponData, weaponData.skill1ID));
-				availableCommands.Add(Command.UseWeaponSkill(weaponData, weaponData.skill2ID));
-				availableCommands.Add(Command.UseWeaponSkill(weaponData, weaponData.skill3ID));
+				availableCommands.Add(new CommandUseWeaponSkill(weaponData, weaponData.skill1ID));
+				availableCommands.Add(new CommandUseWeaponSkill(weaponData, weaponData.skill2ID));
+				availableCommands.Add(new CommandUseWeaponSkill(weaponData, weaponData.skill3ID));
 			}
 			if(data.battleType != BattleType.Physical)
 			{
 				foreach(int magicID in data.magicIDs)
 				{
 					MagicData magicData = DataManager.Instance.GetItemDataSet().GetMagicData(magicID);
-					availableCommands.Add(Command.UseMagicSkill(magicData, magicData.skillID));
+					availableCommands.Add(new CommandUseMagicSkill(magicData, magicData.skillID));
 				}
 			}
 			break;
 		case BasicCommand.Defence:
-			availableCommands.Add(Command.Guard());
-			availableCommands.Add(Command.Evade());
+			availableCommands.Add(new CommandGuard());
+			availableCommands.Add(new CommandEvade());
 			break;
 		case BasicCommand.Item:
 			if(data.battleType != BattleType.Magical)
-				availableCommands.Add(Command.SwitchWeapon());
+				availableCommands.Add(new CommandSwitchWeapon());
 			if(data.GetItemCount(1) > 0)
-				availableCommands.Add(Command.Healing(data.GetItemCount(1)));
+				availableCommands.Add(new CommandUseHealing(data.GetItemCount(1)));
 			break;
 		case BasicCommand.Strategy:
-			availableCommands.Add(Command.None());
-			availableCommands.Add(Command.Escape());
+			availableCommands.Add(new CommandNone());
+			availableCommands.Add(new CommandEscape());
 			break;
 		}
 		for(int i = 0; i < availableCommands.Count; i++)
@@ -180,113 +160,7 @@ public abstract class BattleObject : MonoBehaviour {
 		}
 	}
 
-	public void UseSkill(int skillID, List<BattleObject> targetList)
-	{
-		foreach(BattleObject target in targetList)
-		{
-			//判断是否触发防御反击
-			if(target.commandToExecute.commandType == CommandType.Defence)
-			{
-				MessageEventArgs args = new MessageEventArgs();
-				args.AddMessage("Name", target.data.name);
-				EventManager.Instance.PostEvent(EventDefine.BattleObjectCounter, args);
-
-				this.InflictDamage(Random.Range(0,100));
-				continue;
-			}
-			//计算是否命中，是否暴击
-			SkillData skillData = DataManager.Instance.GetSkillDataSet().GetSkillData(skillID);
-			float hitPercent = 0;
-			float evadePercent = 0;
-			float criticalPercent = 0;
-			float damage = 0;
-			if(skillData.skillType == SkillType.Physical)
-			{
-				WeaponData weaponData = DataManager.Instance.GetItemDataSet().GetWeaponData(data.weaponID);
-				hitPercent = data.skill + data.luck / 10.0f + weaponData.basicACC * skillData.ACCMultiplier;//命中率
-				evadePercent = target.data.skill + target.data.luck / 10.0f;//闪避率
-				criticalPercent = data.skill / 10.0f + data.luck / 10.0f + weaponData.basicCRT * skillData.CRTMultiplier / 100.0f - target.data.skill / 10.0f - target.data.luck / 10.0f;//暴击率
-				damage = (data.power + weaponData.basicATK) * skillData.ATKMultiplier * (1 - target.data.toughness / 250.0f);//伤害值
-			}
-			else if(skillData.skillType == SkillType.Magical)
-			{
-				MagicData magicData = DataManager.Instance.GetItemDataSet().magicDataSet.Find((MagicData _data)=>{return _data.skillID == skillID;});
-				hitPercent = data.skill + data.luck / 10.0f + magicData.basicACC * skillData.ACCMultiplier;//命中率
-				evadePercent = target.data.skill + target.data.luck / 10.0f;//闪避率
-				criticalPercent = data.skill / 10.0f + data.luck / 10.0f + magicData.basicCRT * skillData.CRTMultiplier / 100.0f - target.data.skill / 10.0f - target.data.luck / 10.0f;//暴击率
-				damage = (data.power + magicData.basicATK) * skillData.ATKMultiplier * (1 - target.data.insight / 250.0f);//伤害值
-			}
-			//如果命中，则对方受伤
-			if(target.isEvading) evadePercent += 50;
-			Debug.Log("Name:" + skillData.name + " Hit:" + hitPercent + " Evade:" + evadePercent + " Crit:" + criticalPercent);
-			string SEName = "hit";
-			bool hit = Random.Range(0,101) <= (hitPercent - evadePercent)?true:false;
-			if(hit)
-			{		
-				bool critical = Random.Range(0,101) <= criticalPercent?true:false;
-				if(target.isGuarding)
-				{
-					damage /= 2;
-					critical = false;
-					SEName = "guard";
-				}
-				if(critical)
-				{
-					damage *= 2;
-					SEName = "critical";
-
-					MessageEventArgs args = new MessageEventArgs();
-					args.AddMessage("Name", data.name);
-					EventManager.Instance.PostEvent(EventDefine.BattleObjectCritical, args);
-				}
-				AudioManager.Instance.PlaySE(SEName);
-				target.InflictDamage((int)damage);
-			}
-			else
-			{
-				MessageEventArgs args = new MessageEventArgs();
-				args.AddMessage("Name", target.data.name);
-				EventManager.Instance.PostEvent(EventDefine.BattleObjectMiss, args);
-			}
-		}
-	}
-
-	public void Defend(string commandName)
-	{
-		if(commandName == "格挡")
-			isGuarding = true;
-		if(commandName == "闪避")
-			isEvading = true;
-	}
-
-	public void UseItem(int itemID, List<BattleObject> targetList)
-	{
-		foreach(BattleObject target in targetList)
-		{
-			if(DataManager.Instance.GetItemDataSet().IsWeapon(itemID))
-			{
-				data.weaponID = itemID;
-				return;
-			}
-			
-			if(itemID == 1)
-			{
-				target.Heal((int)(target.data.maxHP * 0.8f - target.data.currentHP));
-				data.ConsumeItem(itemID);
-				return;
-			}
-		}
-	}
-
-	public void UseStrategy(string commandName)
-	{
-		if(commandName == "逃跑")
-		{
-			EventManager.Instance.PostEvent(EventDefine.BattleObjectEscape);
-		}
-	}
-
-	void InflictDamage(int damage)
+	public void InflictDamage(int damage)
 	{
 		data.currentHP -= damage;
 		isPaused = true;// so that timeline adjust is smooth
@@ -316,7 +190,7 @@ public abstract class BattleObject : MonoBehaviour {
 		UIEvent.SetHPBar(data.currentHP);
 	}
 
-	void Heal(int amount)
+	public void Heal(int amount)
 	{
 		if(amount < 0) amount = 0;
 		data.currentHP += amount;

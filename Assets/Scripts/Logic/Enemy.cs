@@ -31,7 +31,7 @@ public class Enemy : BattleObject {
 		EventManager.Instance.PostEvent(EventDefine.EnemySpawn,args);
 	}
 
-	public EnemyData GetData()
+	public new EnemyData GetData()
 	{
 		return (EnemyData)data;
 	}

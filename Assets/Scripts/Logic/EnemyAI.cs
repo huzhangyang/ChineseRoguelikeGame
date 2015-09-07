@@ -16,7 +16,7 @@ public class EnemyAI : MonoBehaviour {
 	public Command AISelectCommand()
 	{
 		float hpPercent = data.currentHP / (float)data.maxHP;
-		Command command = Command.None();
+		Command command = new CommandNone();
 		if(hpPercent > 0.8)
 		{
 			command = AIAttack();	
@@ -53,35 +53,35 @@ public class EnemyAI : MonoBehaviour {
 		if(data.battleType != BattleType.Magical)
 		{
 			WeaponData weaponData = DataManager.Instance.GetItemDataSet().GetWeaponData(data.weaponID);
-			availableCommands.Add(Command.UseWeaponSkill(weaponData, weaponData.skill1ID));
-			availableCommands.Add(Command.UseWeaponSkill(weaponData, weaponData.skill2ID));
-			availableCommands.Add(Command.UseWeaponSkill(weaponData, weaponData.skill3ID));
+			availableCommands.Add(new CommandUseWeaponSkill(weaponData, weaponData.skill1ID));
+			availableCommands.Add(new CommandUseWeaponSkill(weaponData, weaponData.skill2ID));
+			availableCommands.Add(new CommandUseWeaponSkill(weaponData, weaponData.skill3ID));
 		}
 		if(data.battleType != BattleType.Physical)
 		{
 			foreach(int magicID in data.magicIDs)
 			{
 				MagicData magicData = DataManager.Instance.GetItemDataSet().GetMagicData(magicID);
-				availableCommands.Add(Command.UseMagicSkill(magicData, magicData.skillID));
+				availableCommands.Add(new CommandUseMagicSkill(magicData, magicData.skillID));
 			}
 		}
 		Command command = availableCommands[Random.Range(0, availableCommands.Count)];
-		command.target = AISelectTarget();
+		command.targetList.Add(AISelectTarget());
 		return command;
 	}
 
 	public Command AIDefence()
 	{
 		if(Random.Range(0,2) > 0)
-			return Command.Guard();
+			return new CommandGuard();
 		else
-			return Command.Evade();
+			return new CommandEvade();
 	}
 
 	public Command AIHeal()
 	{
-		Command command = Command.Healing(data.GetItemCount(1));
-		command.target = self;
+		Command command = new CommandUseHealing(data.GetItemCount(1));
+		command.targetList.Add(self);
 		return command;
 	}
 

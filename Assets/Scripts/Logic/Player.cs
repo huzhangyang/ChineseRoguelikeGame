@@ -16,7 +16,7 @@ public class Player : BattleObject {
 		BattleLogic.players.Add(this);
 	}
 	
-	public PlayerData GetData()
+	public new PlayerData GetData()
 	{
 		return (PlayerData)data;
 	}
