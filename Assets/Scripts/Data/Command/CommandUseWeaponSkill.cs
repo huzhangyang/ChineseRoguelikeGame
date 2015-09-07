@@ -14,11 +14,13 @@ public class CommandUseWeaponSkill : Command
 		preExecutionSpeed = (int)(weaponData.basicSPD * skillData.preSPDMultiplier);
 		postExecutionRecover = (int)(6000 / weaponData.basicSPD * skillData.postSPDMultiplier);
 		
-		itemID = skillID;
+		this.skillID = skillID;
 	}
 
 	public override void Execute()
 	{
+		SkillData skillData = DataManager.Instance.GetSkillDataSet().GetSkillData(skillID);
+		executeMessage = source.GetData().name + "使用了" + skillData.name + "!";
 		base.Execute();
 		ObjectData data = source.GetData();
 		foreach(BattleObject target in targetList)
@@ -35,7 +37,6 @@ public class CommandUseWeaponSkill : Command
 				continue;
 			}
 			//计算是否命中，是否暴击
-			SkillData skillData = DataManager.Instance.GetSkillDataSet().GetSkillData(skillID);
 			WeaponData weaponData = DataManager.Instance.GetItemDataSet().GetWeaponData(data.weaponID);
 			float hitPercent = data.skill + data.luck / 10.0f + weaponData.basicACC * skillData.ACCMultiplier;//命中率
 			float evadePercent = targetData.skill + targetData.luck / 10.0f;//闪避率

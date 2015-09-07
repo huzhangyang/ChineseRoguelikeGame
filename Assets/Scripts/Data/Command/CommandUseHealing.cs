@@ -17,6 +17,10 @@ public class CommandUseHealing : Command
 
 	public override void Execute()
 	{
+		if(targetList.Equals(source))
+			executeMessage = source.GetData().name + "喝下了原力之瓶！";
+		else
+			executeMessage = source.GetData().name + "给" + targetList[0].GetData().name +"喝下了原力之瓶！";
 		base.Execute();
 		foreach(BattleObject target in targetList)
 		{

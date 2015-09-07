@@ -55,30 +55,8 @@ public class BattleMessage : MonoBehaviour {
 
 	void OnExecuteCommand(MessageEventArgs args)
 	{
-		string name = args.GetMessage("Name");
-		CommandType commandType = (CommandType)Convert.ToInt32(args.GetMessage("CommandType"));
-		string commandName = args.GetMessage("CommandName");
-		int skillOrItemID = Convert.ToInt32(args.GetMessage("SkillOrItemID"));
-		switch(commandType)
-		{//very temp handle!!
-		case CommandType.UseSkill:
-			AddMessage(name + " 使用了 " + DataManager.Instance.GetSkillDataSet().GetSkillData(skillOrItemID).name + "!");
-			break;
-		case CommandType.Defence:
-			AddMessage(name + " 正在 " + commandName + "!");
-			break;
-		case CommandType.UseItem:
-			if(DataManager.Instance.GetItemDataSet().IsWeapon(skillOrItemID))
-				AddMessage(name + " 将武器更换为 " + DataManager.Instance.GetItemDataSet().GetWeaponData(skillOrItemID).name + "!");
-			else
-				AddMessage(name + " 使用了 " + DataManager.Instance.GetItemDataSet().GetItemData(skillOrItemID).name + "!");				
-			break;
-		case CommandType.Strategy:
-			break;
-		case CommandType.None:
-			AddMessage(name + " 什么也没做!");
-			break;
-		}
+		string message = args.GetMessage("Message");
+		AddMessage(message);
 	}
 
 	void OnBattleObjectMiss(MessageEventArgs args)

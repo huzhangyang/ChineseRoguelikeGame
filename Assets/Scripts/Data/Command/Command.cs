@@ -15,12 +15,14 @@ public abstract class Command {
 	public int skillID;//对应的技能ID(仅在使用技能时生效)
 	public int itemID;//对应的物品ID(仅在使用物品时生效)
 	public BattleObject source;
-	public List<BattleObject> targetList;
+	public List<BattleObject> targetList = new List<BattleObject>();
+	public string executeMessage;
 
 	public virtual void Execute()
 	{
 		//send message
 		MessageEventArgs args = new MessageEventArgs();
+		args.AddMessage("Message", executeMessage);
 		EventManager.Instance.PostEvent(EventDefine.ExecuteCommand, args);
 	}
 }

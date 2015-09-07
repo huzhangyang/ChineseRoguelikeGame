@@ -12,4 +12,10 @@ public class CommandNone : Command
 		preExecutionSpeed = GlobalDataStructure.BATTLE_MAXSPEED;
 		postExecutionRecover = 0;
 	}
+
+	public override void Execute()
+	{
+		executeMessage = source.GetData().name + "按兵不动！";
+		base.Execute();
+	}
 }
