@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abd888a162cb0b34a8824bea0a1ada2d, type: 3}
   m_Name: SkillData
   m_EditorClassIdentifier: 
-  dataSet:
+  skillDataSet:
   - id: 0
     name: "\u65E0"
     skillType: 0
@@ -21,7 +21,7 @@ MonoBehaviour:
     CRTMultiplier: 0
     preSPDMultiplier: 0
     postSPDMultiplier: 0
-    cooldownTurn: 0
+    buffID: 0
     description: "\u65E0\u62DB\u5373\u662F\u6709\u62DB"
   - id: 1
     name: "\u5355\u624B\u6233\u523A"
@@ -32,7 +32,7 @@ MonoBehaviour:
     CRTMultiplier: 1
     preSPDMultiplier: 2
     postSPDMultiplier: 2
-    cooldownTurn: 0
+    buffID: 0
     description: "\u5355\u624B\u6233\u523A"
   - id: 2
     name: "\u8FDE\u7EED\u7A81\u523A"
@@ -43,7 +43,7 @@ MonoBehaviour:
     CRTMultiplier: 1
     preSPDMultiplier: 1
     postSPDMultiplier: .5
-    cooldownTurn: 1
+    buffID: 0
     description: "\u8FDE\u7EED\u7A81\u523A"
   - id: 3
     name: "\u53CC\u624B\u6233\u523A"
@@ -54,7 +54,7 @@ MonoBehaviour:
     CRTMultiplier: 1
     preSPDMultiplier: 1
     postSPDMultiplier: 1
-    cooldownTurn: 0
+    buffID: 0
     description: "\u53CC\u624B\u6233\u523A"
   - id: 4
     name: "\u53CC\u624B\u5288\u780D"
@@ -65,7 +65,7 @@ MonoBehaviour:
     CRTMultiplier: 1
     preSPDMultiplier: 1
     postSPDMultiplier: 1
-    cooldownTurn: 1
+    buffID: 0
     description: "\u53CC\u624B\u5288\u780D"
   - id: 5
     name: "\u6A2A\u626B"
@@ -76,7 +76,7 @@ MonoBehaviour:
     CRTMultiplier: 1
     preSPDMultiplier: 1.20000005
     postSPDMultiplier: 1.20000005
-    cooldownTurn: 0
+    buffID: 0
     description: "\u6A2A\u626B"
   - id: 6
     name: "\u7EB5\u65A9"
@@ -87,7 +87,7 @@ MonoBehaviour:
     CRTMultiplier: 1
     preSPDMultiplier: .899999976
     postSPDMultiplier: .899999976
-    cooldownTurn: 1
+    buffID: 0
     description: "\u7EB5\u65A9"
   - id: 7
     name: "\u6A2A\u780D"
@@ -98,7 +98,7 @@ MonoBehaviour:
     CRTMultiplier: 1
     preSPDMultiplier: 1
     postSPDMultiplier: 1
-    cooldownTurn: 0
+    buffID: 0
     description: "\u6A2A\u780D"
   - id: 8
     name: "\u84C4\u529B\u91CD\u51FB"
@@ -109,7 +109,7 @@ MonoBehaviour:
     CRTMultiplier: 1.20000005
     preSPDMultiplier: 1
     postSPDMultiplier: 1
-    cooldownTurn: 1
+    buffID: 0
     description: "\u84C4\u529B\u91CD\u51FB"
   - id: 9
     name: "\u8FDE\u53D1\u5C04\u51FB"
@@ -120,29 +120,29 @@ MonoBehaviour:
     CRTMultiplier: 1
     preSPDMultiplier: 1
     postSPDMultiplier: 1
-    cooldownTurn: 2
+    buffID: 0
     description: "\u8FDE\u53D1\u5C04\u51FB"
   - id: 10
-    name: "\u7CBE\u786E\u6253\u51FB"
+    name: "\u591A\u91CD\u5C04\u51FB"
     skillType: 0
-    targetType: 1
+    targetType: 2
     ATKMultiplier: 1
     ACCMultiplier: 1
     CRTMultiplier: 1
     preSPDMultiplier: 1
     postSPDMultiplier: 1
-    cooldownTurn: 2
-    description: "\u7CBE\u786E\u6253\u51FB"
+    buffID: 0
+    description: "\u6570\u7BAD\u9F50\u53D1\uFF0C\u540C\u65F6\u5C04\u51FB\u573A\u4E0A\u5168\u90E8\u654C\u4EBA"
   - id: 101
     name: "\u80CC\u523A"
     skillType: 0
     targetType: 1
     ATKMultiplier: 1
     ACCMultiplier: 1
-    CRTMultiplier: 1
+    CRTMultiplier: 10
     preSPDMultiplier: 1
     postSPDMultiplier: 1
-    cooldownTurn: 2
+    buffID: 0
     description: "\u4ECE\u80CC\u540E\u6084\u6084\u63A5\u8FD1\u5E76\u653B\u51FB\uFF0C\u5BB9\u6613\u9020\u6210\u81F4\u547D\u4E00\u51FB"
   - id: 102
     name: "\u8FDE\u73AF\u65A9"
@@ -153,7 +153,7 @@ MonoBehaviour:
     CRTMultiplier: 1
     preSPDMultiplier: 1
     postSPDMultiplier: 1
-    cooldownTurn: 2
+    buffID: 1
     description: "\u5FEB\u901F\u8FDE\u7EED\u65A9\u5411\u5BF9\u624B\uFF0C\u5BF9\u65F6\u95F4\u8F74\u9020\u6210\u5F3A\u70C8\u5F71\u54CD"
   - id: 103
     name: "\u5C45\u5408\u65A9"
@@ -164,7 +164,7 @@ MonoBehaviour:
     CRTMultiplier: 1
     preSPDMultiplier: 1
     postSPDMultiplier: 1
-    cooldownTurn: 2
+    buffID: 5
     description: "\u4EE5\u9000\u4E3A\u8FDB\uFF0C\u77AC\u95F4\u5236\u654C\uFF0C\u53EF\u89E6\u53D1\u9632\u5B88\u53CD\u51FB"
   - id: 104
     name: "\u8DF3\u5288"
@@ -175,19 +175,19 @@ MonoBehaviour:
     CRTMultiplier: 1
     preSPDMultiplier: 1
     postSPDMultiplier: 1
-    cooldownTurn: 2
-    description: "\u594B\u529B\u4E00\u8DC3\uFF0C\u4F7F\u7528\u5168\u529B\u4ECE\u9AD8\u5904\u5236\u654C\uFF0C\u9020\u6210\u5DE8\u5927\u4F24\u5BB3"
+    buffID: 2
+    description: "\u594B\u529B\u4E00\u8DC3\uFF0C\u4F7F\u7528\u5168\u529B\u4ECE\u9AD8\u5904\u5236\u654C\uFF0C\u65E0\u89C6\u5BF9\u65B9\u9632\u5B88"
   - id: 105
-    name: "\u591A\u91CD\u5C04\u51FB"
+    name: "\u7CBE\u786E\u6253\u51FB"
     skillType: 0
-    targetType: 2
+    targetType: 1
     ATKMultiplier: 1
     ACCMultiplier: 1
     CRTMultiplier: 1
     preSPDMultiplier: 1
     postSPDMultiplier: 1
-    cooldownTurn: 3
-    description: "\u6570\u7BAD\u9F50\u53D1\uFF0C\u540C\u65F6\u5C04\u51FB\u573A\u4E0A\u5168\u90E8\u654C\u4EBA"
+    buffID: 6
+    description: "\u7784\u51C6\u540E\u7684\u4E00\u51FB\uFF0C\u5FC5\u5B9A\u547D\u4E2D"
   - id: 106
     name: "\u4E00\u5251\u5C01\u5589"
     skillType: 0
@@ -197,8 +197,8 @@ MonoBehaviour:
     CRTMultiplier: 1
     preSPDMultiplier: 1
     postSPDMultiplier: 1
-    cooldownTurn: 3
-    description: "\u4E00\u5251\u5C01\u5589"
+    buffID: 3
+    description: "\u4E00\u5251\u5C01\u5589\uFF0C\u5C0F\u6982\u7387\u79D2\u6740\u5BF9\u65B9"
   - id: 107
     name: "\u5343\u519B\u7834"
     skillType: 0
@@ -208,8 +208,8 @@ MonoBehaviour:
     CRTMultiplier: 1
     preSPDMultiplier: 1
     postSPDMultiplier: 1
-    cooldownTurn: 3
-    description: "\u5343\u519B\u7834"
+    buffID: 0
+    description: "\u5343\u519B\u7834\uFF0C\u653B\u51FB\u654C\u65B9\u5168\u4F53"
   - id: 108
     name: "\u767E\u5C06\u9E23"
     skillType: 0
@@ -219,8 +219,8 @@ MonoBehaviour:
     CRTMultiplier: 1
     preSPDMultiplier: 1
     postSPDMultiplier: 1
-    cooldownTurn: 3
-    description: "\u767E\u5C06\u9E23"
+    buffID: 0
+    description: "\u767E\u5C06\u9E23\uFF0C\u653B\u51FB\u654C\u65B9\u5168\u4F53"
   - id: 109
     name: "\u5F00\u5929\u8F9F\u5730"
     skillType: 0
@@ -230,8 +230,8 @@ MonoBehaviour:
     CRTMultiplier: 1
     preSPDMultiplier: 1
     postSPDMultiplier: 1
-    cooldownTurn: 3
-    description: "\u5F00\u5929\u8F9F\u5730"
+    buffID: 0
+    description: "\u5F00\u5929\u8F9F\u5730\uFF0C\u653B\u51FB\u654C\u65B9\u5168\u4F53"
   - id: 110
     name: "\u6D41\u661F\u8FFD\u6708"
     skillType: 0
@@ -241,7 +241,7 @@ MonoBehaviour:
     CRTMultiplier: 1
     preSPDMultiplier: 1
     postSPDMultiplier: 1
-    cooldownTurn: 3
+    buffID: 0
     description: "\u6D41\u661F\u8FFD\u6708"
   - id: 201
     name: "\u706B\u7403\u672F"
@@ -252,8 +252,8 @@ MonoBehaviour:
     CRTMultiplier: 1
     preSPDMultiplier: 1
     postSPDMultiplier: 1
-    cooldownTurn: 0
-    description: "\u5728\u90A3\u4E2A\u65F6\u4EE3\u4EBA\u4EBA\u90FD\u4F1A\u7684\u706B\u7403\u672F"
+    buffID: 7
+    description: "\u5728\u90A3\u4E2A\u65F6\u4EE3\u4EBA\u4EBA\u90FD\u4F1A\u7684\u706B\u7403\u672F\uFF0C\u4EE4\u654C\u4EBA\u70E7\u4F24"
   - id: 202
     name: "\u51B0\u5F39\u672F"
     skillType: 1
@@ -263,8 +263,8 @@ MonoBehaviour:
     CRTMultiplier: 1
     preSPDMultiplier: 1
     postSPDMultiplier: 1
-    cooldownTurn: 0
-    description: "\u5728\u90A3\u4E2A\u65F6\u4EE3\u4EBA\u4EBA\u90FD\u4F1A\u7684\u51B0\u5F39\u672F"
+    buffID: 8
+    description: "\u5728\u90A3\u4E2A\u65F6\u4EE3\u4EBA\u4EBA\u90FD\u4F1A\u7684\u51B0\u5F39\u672F\uFF0C\u4EE4\u654C\u4EBA\u51CF\u901F"
   - id: 203
     name: "\u95EA\u7535\u672F"
     skillType: 1
@@ -274,5 +274,87 @@ MonoBehaviour:
     CRTMultiplier: 1
     preSPDMultiplier: 1
     postSPDMultiplier: 1
-    cooldownTurn: 0
-    description: "\u5728\u90A3\u4E2A\u65F6\u4EE3\u4EBA\u4EBA\u90FD\u4F1A\u7684\u95EA\u7535\u672F"
+    buffID: 4
+    description: "\u5728\u90A3\u4E2A\u65F6\u4EE3\u4EBA\u4EBA\u90FD\u4F1A\u7684\u95EA\u7535\u672F\uFF0C\u5438\u53D6\u654C\u4EBA\u751F\u547D\uFF1F"
+  buffDataSet:
+  - id: 0
+    name: "\u65E0"
+    description: "\u5E76\u6CA1\u6709\u7279\u6B8A\u6548\u679C"
+    percentage: 0
+    lastTurns: 0
+    trigger: 0
+    triggerOps: None
+    addOps: None
+    removeOps: None
+  - id: 1
+    name: "\u8FDE\u53D1"
+    description: "3\u8FDE\u51FB"
+    percentage: 100
+    lastTurns: 0
+    trigger: 1
+    triggerOps: AddAtk:2
+    addOps: None
+    removeOps: None
+  - id: 2
+    name: "\u7834\u9632"
+    description: "\u65E0\u89C6\u5BF9\u65B9\u683C\u6321"
+    percentage: 100
+    lastTurns: 0
+    trigger: 1
+    triggerOps: IgnoreDefence
+    addOps: None
+    removeOps: None
+  - id: 3
+    name: "\u77AC\u6740"
+    description: "\u654C\u4EBA\u5373\u6B7B,BOSS\u65E0\u6548"
+    percentage: 10
+    lastTurns: 0
+    trigger: 1
+    triggerOps: InstantDie
+    addOps: None
+    removeOps: None
+  - id: 4
+    name: "\u5438\u53D6"
+    description: "\u5438\u53D6\u4F24\u5BB3\u768450%\u56DE\u590D\u5230\u81EA\u5DF1\u751F\u547D"
+    percentage: 100
+    lastTurns: 0
+    trigger: 1
+    triggerOps: AbsorbDamage:0.5
+    addOps: None
+    removeOps: None
+  - id: 5
+    name: "\u56FA\u5B88"
+    description: "\u5728\u53D1\u52A8\u524D\u53EF\u89E6\u53D1\u9632\u5FA1\u53CD\u51FB"
+    percentage: 100
+    lastTurns: 0
+    trigger: 2
+    triggerOps: Counter
+    addOps: None
+    removeOps: None
+  - id: 6
+    name: "\u5FC5\u4E2D"
+    description: "\u65E0\u89C6\u5BF9\u65B9\u56DE\u907F\u5FC5\u5B9A\u547D\u4E2D"
+    percentage: 100
+    lastTurns: 0
+    trigger: 1
+    triggerOps: MustHit
+    addOps: None
+    removeOps: None
+  - id: 7
+    name: "\u70E7\u4F24"
+    description: "3\u56DE\u5408\u5185\u884C\u52A8\u524D\u53D7\u5230\u4E00\u5B9A\u4F24\u5BB3"
+    percentage: 100
+    lastTurns: 3
+    trigger: 3
+    triggerOps: DamageSelf:0.1
+    addOps: None
+    removeOps: None
+  - id: 8
+    name: "\u51CF\u901F"
+    description: "1\u56DE\u5408\u5185\u884C\u52A8\u901F\u5EA6\u964D\u4F4E50%"
+    percentage: 100
+    lastTurns: 1
+    trigger: 0
+    triggerOps: None
+    addOps: PropMulti:speed,-0.5
+    removeOps: PropMulti:speed,1
