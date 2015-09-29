@@ -14,7 +14,55 @@ public enum BattleStatus
 public abstract class BattleObject : MonoBehaviour {
 /*
  * 所有参战物体共有的数据与逻辑。
- * */	
+ * */
+	public int maxHP{get{return data.maxHP * maxHPMulti + maxHPInc;}}
+	public int maxHPInc = 0;
+	public int maxHPMulti = 1;
+
+	private int _currentHP;
+	public int currentHP
+	{
+		set
+		{
+			if(value > maxHP) value = maxHP;
+			if(value < 0) value = 0;
+			_currentHP = value;
+			UIEvent.SetHPBar(_currentHP);
+		}
+		get
+		{
+			return _currentHP;
+		}
+	}
+
+	public int power{get{return data.power * powerMulti + powerInc;}}
+	public int powerInc = 0;
+	public int powerMulti = 1;
+	
+	public int agility{get{return data.agility * agilityMulti + agilityInc;}}
+	public int agilityInc = 0;
+	public int agilityMulti = 1;
+	
+	public int toughness{get{return data.toughness * toughnessInc + toughnessMulti;}}
+	public int toughnessInc = 0;
+	public int toughnessMulti = 1;
+	
+	public int insight{get{return data.insight * insightInc + insightMulti;}}
+	public int insightInc = 0;
+	public int insightMulti = 1;
+	
+	public int skill{get{return data.skill * skillInc + skillMulti;}}
+	public int skillInc = 0;
+	public int skillMulti = 1;
+	
+	public int luck{get{return data.luck * luckInc + luckMulti;}}
+	public int luckInc = 0;
+	public int luckMulti = 1;
+	
+	public int eloquence{get{return data.eloquence * eloquenceInc + eloquenceMulti;}}
+	public int eloquenceInc = 0;
+	public int eloquenceMulti = 1;	
+
 	public BattleStatus battleStatus = BattleStatus.Prepare;
 	public List<Command> availableCommands;
 	public List<Buff> buffList;
@@ -52,6 +100,7 @@ public abstract class BattleObject : MonoBehaviour {
 		EventManager.Instance.UnRegisterEvent (EventDefine.UpdateTimeline, OnUpdateTimeline);
 	}
 
+	/*更新时间轴*/
 	protected void OnUpdateTimeline(MessageEventArgs args)
 	{
 		if(!isPaused && !isDied)
@@ -70,11 +119,6 @@ public abstract class BattleObject : MonoBehaviour {
 		{
 			ExecuteCommand();
 		}
-	}
-
-	public virtual ObjectData GetData()
-	{
-		return data;
 	}
 
 	protected virtual void SelectCommand()
@@ -147,8 +191,8 @@ public abstract class BattleObject : MonoBehaviour {
 		case BasicCommand.Item:
 			if(data.battleType != BattleType.Magical)
 				availableCommands.Add(new CommandSwitchWeapon());
-			if(data.GetItemCount(1) > 0)
-				availableCommands.Add(new CommandUseHealing(data.GetItemCount(1)));
+			if(GetItemCount(1) > 0)
+				availableCommands.Add(new CommandUseHealing(GetItemCount(1)));
 			break;
 		case BasicCommand.Strategy:
 			availableCommands.Add(new CommandNone());
@@ -161,115 +205,64 @@ public abstract class BattleObject : MonoBehaviour {
 		}
 	}
 
-	public void OnBeHit(BattleObject source, SkillType type, float hit, float crit, float damage)
-	{
-		//判断防反
-		if(commandToExecute.commandType == CommandType.Defence)
-		{
-			MessageEventArgs args = new MessageEventArgs();
-			args.AddMessage("Name",data.name);
-			EventManager.Instance.PostEvent(EventDefine.BattleObjectCounter, args);
-			
-			source.InflictDamage(Random.Range(0,100));//TODO改进反击算法
-			return;
-		}
-		//计算真实命中、暴击、伤害
-		hit -= (data.skill + data.luck / 10.0f);
-		if(isEvading) hit -= 50;
-		crit -= (data.skill / 10.0f + data.luck / 10.0f);
-		if(isGuarding) hit = 0;
-		switch(type)
-		{
-		case SkillType.Magical:
-			damage *= (1 - data.insight / 250);
-			break;
-		case SkillType.Physical:
-			damage *= (1 - data.toughness / 250);
-			break;
-		}
-		if(isGuarding) damage /= 2;
-		//判断是否命中，是否暴击
-		bool isHit = Random.Range(0,101) <= hit?true:false;
-		bool isCrit = Random.Range(0,101) <= crit?true:false;
-
-		string SEName = "hit";
-		if(isHit)
-		{		
-			if(isGuarding)
-			{
-				SEName = "guard";
-			}
-			if(isCrit)
-			{
-				damage *= 2;
-				SEName = "critical";
-				
-				MessageEventArgs args = new MessageEventArgs();
-				args.AddMessage("Name", data.name);
-				EventManager.Instance.PostEvent(EventDefine.BattleObjectCritical, args);
-			}
-			AudioManager.Instance.PlaySE(SEName);
-			InflictDamage((int)damage);
-		}
-		else
-		{
-			MessageEventArgs args = new MessageEventArgs();
-			args.AddMessage("Name", data.name);
-			EventManager.Instance.PostEvent(EventDefine.BattleObjectMiss, args);
-		}
-	}
-
-	public void InflictDamage(int damage)
-	{
-		data.currentHP -= damage;
-		isPaused = true;// so that timeline adjust is smooth
-		if(battleStatus == BattleStatus.Action)
-			timelinePosition -= damage * 10000 / data.maxHP;
-		else
-			timelinePosition -= damage * 5000 / data.maxHP;
-
-		MessageEventArgs args = new MessageEventArgs();
-		args.AddMessage("Name", data.name);
-		args.AddMessage("Damage", damage.ToString());
-		EventManager.Instance.PostEvent(EventDefine.BattleObjectHurt, args);
-
-		if(data.currentHP <= 0)
-		{
-			data.currentHP = 0;
-			isDied = true;
-			if(this is Enemy)
-				BattleLogic.enemys.Remove((Enemy)this);
-			else
-				BattleLogic.players.Remove((Player)this);
-			MessageEventArgs args2 = new MessageEventArgs();
-			args2.AddMessage("Name", data.name);
-			EventManager.Instance.PostEvent(EventDefine.BattleObjectDied, args2);
-		}
-
-		UIEvent.SetHPBar(data.currentHP);
-	}
-
-	public void Heal(int amount)
-	{
-		if(amount < 0) amount = 0;
-		data.currentHP += amount;
-		if(data.currentHP > data.maxHP)
-			data.currentHP = data.maxHP;
-
-		MessageEventArgs args = new MessageEventArgs();
-		args.AddMessage("Name", data.name);
-		args.AddMessage("Amount", amount.ToString());
-		args.AddMessage("CurrentHP", data.currentHP.ToString());
-		EventManager.Instance.PostEvent(EventDefine.BattleObjectHeal, args);
-
-		UIEvent.SetHPBar(data.currentHP);
-	}
-
 	public void AddBuff(int id)
 	{
 		BuffData data = DataManager.Instance.GetSkillDataSet().GetBuffData(id);
 		Buff buff = new Buff(data);
 		buffList.Add(buff);
+	}
+
+	public string GetName()
+	{
+		return data.name;
+	}
+
+	public void SetWeapon(int weaponID)
+	{
+		data.weaponID = weaponID;
+	}
+
+	public int GetWeapon()
+	{
+		return data.weaponID;
+	}
+
+	public List<int> GetMagic()
+	{
+		return data.magicIDs;
+	}
+
+	public BattleType GetBattleType()
+	{
+		return data.battleType;
+	}
+
+	public int GetItemCount(int itemID)
+	{
+		if( !data.items.ContainsKey(itemID))
+		{
+			return 0;
+		}
+		
+		return data.items[itemID];
+	}
+
+	public void ConsumeItem(int itemID)
+	{
+		if(!data.items.ContainsKey(itemID) ||data.items[itemID] <= 0)
+		{
+			Debug.LogError("Consume an nonexisting item " + itemID + "!");
+			return;
+		}
+		data.items[itemID]--;
+	}
+	
+	public void AcquireItem(int itemID, int count)
+	{
+		if(!data.items.ContainsKey(itemID))
+			data.items.Add(itemID,count);
+		else
+			data.items[itemID] += count;
 	}
 }
 

@@ -18,14 +18,14 @@ public class CommandUseHealing : Command
 	public override void Execute()
 	{
 		if(targetList.Equals(source))
-			executeMessage = source.GetData().name + "喝下了原力之瓶！";
+			executeMessage = source.GetName() + "喝下了原力之瓶！";
 		else
-			executeMessage = source.GetData().name + "给" + targetList[0].GetData().name +"喝下了原力之瓶！";
+			executeMessage = source.GetName() + "给" + targetList[0].GetName() +"喝下了原力之瓶！";
 		base.Execute();
 		foreach(BattleObject target in targetList)
 		{
-			target.Heal((int)(target.GetData().maxHP * 0.8f - target.GetData().currentHP));
-			source.GetData().ConsumeItem(itemID);
+			//target.Heal((int)(target.GetData().maxHP * 0.8f - target.GetData().currentHP));
+			//source.GetData().ConsumeItem(itemID);
 		}
 	}
 }

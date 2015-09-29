@@ -9,16 +9,15 @@ public class Player : BattleObject {
 	public void Init(int playerID)
 	{
 		data = DataManager.Instance.GetPlayerDataSet().GetPlayerData(playerID).Clone();
-		data.AcquireItem(1,3);
+		currentHP = ((PlayerData)data).currentHP;
+		BattleLogic.players.Add(this);
+
 		UIEvent = this.GetComponent<BattleObjectUIEvent>();
 		UIEvent.Init(playerID);
-		UIEvent.InitHPBar(data.currentHP, data.maxHP, true);
-		BattleLogic.players.Add(this);
-	}
-	
-	public new PlayerData GetData()
-	{
-		return (PlayerData)data;
+		UIEvent.InitHPBar(currentHP, data.maxHP, true);
+
+		//temp
+		AcquireItem(1,3);
 	}
 
 	protected override void SelectCommand()

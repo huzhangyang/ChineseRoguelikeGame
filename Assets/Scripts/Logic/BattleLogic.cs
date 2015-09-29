@@ -77,7 +77,7 @@ public class BattleLogic : MonoBehaviour {
 		BasicCommand basicCommand = (BasicCommand)commandID;
 		GetCurrentPlayer ().RefreshAvailableCommands (basicCommand);
 		MessageEventArgs args = new MessageEventArgs ();
-		args.AddMessage("PlayerName",GetCurrentPlayer ().GetData().name);
+		args.AddMessage("PlayerName",GetCurrentPlayer ().GetName());
 		EventManager.Instance.PostEvent(EventDefine.ShowAvailableCommands, args);
 		foreach(Enemy enemy in enemys)
 		{

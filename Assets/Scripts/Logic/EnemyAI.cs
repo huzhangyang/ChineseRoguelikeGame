@@ -5,17 +5,15 @@ using System.Collections.Generic;
 public class EnemyAI : MonoBehaviour {
 
 	Enemy self;
-	EnemyData data;
 
 	public void InitAI()
 	{
 		self = GetComponent<Enemy>();
-		data = self.GetData();
 	}
 
 	public Command AISelectCommand()
 	{
-		float hpPercent = data.currentHP / (float)data.maxHP;
+		float hpPercent = self.currentHP / (float)self.maxHP;
 		Command command = new CommandNone();
 		if(hpPercent > 0.8)
 		{
@@ -30,14 +28,14 @@ public class EnemyAI : MonoBehaviour {
 		}
 		else if(hpPercent > 0.2)
 		{
-			if(Random.Range(0,2) > 0 && data.GetItemCount(1) > 0)
+			if(Random.Range(0,2) > 0 && self.GetItemCount(1) > 0)
 				command = AIHeal();
 			else
 				command = AIDefence();
 		}
 		else
 		{
-			if(self.GetData().GetItemCount(1) > 0)
+			if(self.GetItemCount(1) > 0)
 				command = AIHeal();
 			else if(Random.Range(0,2) > 0)
 				command = AIDefence();
@@ -50,16 +48,16 @@ public class EnemyAI : MonoBehaviour {
 	public Command AIAttack()
 	{
 		List<Command> availableCommands = new List<Command> ();
-		if(data.battleType != BattleType.Magical)
+		if(self.GetBattleType() != BattleType.Magical)
 		{
-			WeaponData weaponData = DataManager.Instance.GetItemDataSet().GetWeaponData(data.weaponID);
+			WeaponData weaponData = DataManager.Instance.GetItemDataSet().GetWeaponData(self.GetWeapon());
 			availableCommands.Add(new CommandUseWeaponSkill(weaponData, weaponData.skill1ID));
 			availableCommands.Add(new CommandUseWeaponSkill(weaponData, weaponData.skill2ID));
 			availableCommands.Add(new CommandUseWeaponSkill(weaponData, weaponData.skill3ID));
 		}
-		if(data.battleType != BattleType.Physical)
+		if(self.GetBattleType() != BattleType.Physical)
 		{
-			foreach(int magicID in data.magicIDs)
+			foreach(int magicID in self.GetMagic())
 			{
 				MagicData magicData = DataManager.Instance.GetItemDataSet().GetMagicData(magicID);
 				availableCommands.Add(new CommandUseMagicSkill(magicData, magicData.skillID));
@@ -80,7 +78,7 @@ public class EnemyAI : MonoBehaviour {
 
 	public Command AIHeal()
 	{
-		Command command = new CommandUseHealing(data.GetItemCount(1));
+		Command command = new CommandUseHealing(self.GetItemCount(1));
 		command.targetList.Add(self);
 		return command;
 	}

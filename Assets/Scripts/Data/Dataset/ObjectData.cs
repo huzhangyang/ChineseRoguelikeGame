@@ -24,42 +24,12 @@ public abstract class ObjectData{
 	public int skill;//技术
 	public int luck;//运气
 	public int eloquence;//口才
-	//battle attribute
-	public int currentHP;//当前生命值
 	//Equipment
 	public int weaponID;
 	public int ring1ID;
 	public int ring2ID;
 	public List<int> magicIDs = new List<int>();
-	protected Dictionary<int, int> items = new Dictionary<int, int>();//id, amount
-
-	public int GetItemCount(int itemID)
-	{
-		if( !items.ContainsKey(itemID))
-		{
-			return 0;
-		}
-			
-		return items[itemID];
-	}
-
-	public void ConsumeItem(int itemID)
-	{
-		if(!items.ContainsKey(itemID) ||items[itemID] <= 0)
-		{
-			Debug.LogError("Consume an nonexisting item " + itemID + "!");
-			return;
-		}
-		items[itemID]--;
-	}
-
-	public void AcquireItem(int itemID, int count)
-	{
-		if(!items.ContainsKey(itemID))
-			items.Add(itemID,count);
-		else
-			items[itemID] += count;
-	}
+	public Dictionary<int, int> items = new Dictionary<int, int>();//id, amount
 }
 
 public enum BattleType{Physical, Magical, Both}

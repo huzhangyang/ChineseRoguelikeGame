@@ -15,7 +15,7 @@ public class CommandEscape : Command
 
 	public override void Execute()
 	{
-		executeMessage = source.GetData().name + "逃跑了！";
+		executeMessage = source.GetName() + "逃跑了！";
 		base.Execute();
 		EventManager.Instance.PostEvent(EventDefine.BattleObjectEscape);
 	}

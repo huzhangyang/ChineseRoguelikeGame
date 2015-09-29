@@ -32,6 +32,8 @@ public class PlayerData : ObjectData {
 	public int expSkill;//技术成长值
 	public int expLuck;//运气成长值
 	public int expEloquence;//口才成长值
+	//saved attribute
+	public int currentHP;//当前生命值,用于战斗外保存
 
 	public void InitWithID(int playerID)
 	{

@@ -15,7 +15,7 @@ public class CommandGuard : Command
 
 	public override void Execute()
 	{
-		executeMessage = source.GetData().name + "试图格挡！";
+		executeMessage = source.GetName() + "试图格挡！";
 		base.Execute();
 		source.isGuarding = true;
 	}
