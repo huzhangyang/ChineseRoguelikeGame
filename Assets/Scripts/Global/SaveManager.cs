@@ -29,8 +29,18 @@ public class SaveManager : MonoBehaviour {
 
 	public void SaveGame()
 	{
-		PlayerData[] data = DataManager.Instance.GetPlayerDataSet ().dataSet.ToArray ();
-		string playerDatastring = SerializeObject (data, typeof(PlayerData[]));
+		PlayerData[] datas = DataManager.Instance.GetPlayerDataSet ().dataSet.ToArray ();
+		foreach (var data in datas)
+		{
+			data.itemKeys.Clear();
+			data.itemValues.Clear();
+			foreach (var itemData in data.items)
+			{
+				data.itemKeys.Add(itemData.Key);
+				data.itemValues.Add(itemData.Value);
+			}
+		}
+		string playerDatastring = SerializeObject (datas, typeof(PlayerData[]));
 		WriteXML (GlobalDataStructure.PATH_SAVE, playerDatastring);
 	}
 
@@ -40,9 +50,19 @@ public class SaveManager : MonoBehaviour {
 			return null;
 
 		string playerDatastring = ReadXML (GlobalDataStructure.PATH_SAVE);
-		PlayerData[] data = DeserializeObject(playerDatastring, typeof(PlayerData[])) as PlayerData[];
+		PlayerData[] datas = DeserializeObject(playerDatastring, typeof(PlayerData[])) as PlayerData[];
+
+		foreach (var data in datas)
+		{
+			data.items.Clear();
+			for (int i = 0; i != Math.Min(data.itemKeys.Count, data.itemValues.Count); i++)
+			{
+				data.items.Add(data.itemKeys[i], data.itemValues[i]);
+			}
+		}
+
 		PlayerDataSet dataSet = new PlayerDataSet();
-		dataSet.dataSet = new List<PlayerData>(data);
+		dataSet.dataSet = new List<PlayerData>(datas);
 		return dataSet;
 	}
 

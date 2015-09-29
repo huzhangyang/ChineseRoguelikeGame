@@ -79,6 +79,8 @@ public class PlayerData : ObjectData {
 		expSkill = 0;
 		expLuck = 0;
 		expEloquence = 0;
+
+		AcquireItem(1,3);
 	}
 
 	public PlayerData Clone()

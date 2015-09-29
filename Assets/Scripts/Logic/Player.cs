@@ -15,9 +15,6 @@ public class Player : BattleObject {
 		UIEvent = this.GetComponent<BattleObjectUIEvent>();
 		UIEvent.Init(playerID);
 		UIEvent.InitHPBar(currentHP, data.maxHP, true);
-
-		//temp
-		AcquireItem(1,3);
 	}
 
 	protected override void SelectCommand()

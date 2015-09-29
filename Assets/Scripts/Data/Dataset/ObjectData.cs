@@ -29,6 +29,8 @@ public abstract class ObjectData{
 	public int ring1ID;
 	public int ring2ID;
 	public List<int> magicIDs = new List<int>();
+	public List<int> itemKeys = new List<int>();
+	public List<int> itemValues = new List<int>();
 	public Dictionary<int, int> items = new Dictionary<int, int>();//id, amount
 }
 
