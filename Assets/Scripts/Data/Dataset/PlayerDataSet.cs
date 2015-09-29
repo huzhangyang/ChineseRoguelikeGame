@@ -80,7 +80,7 @@ public class PlayerData : ObjectData {
 		expLuck = 0;
 		expEloquence = 0;
 
-		AcquireItem(1,3);
+		items.Add(1,3);
 	}
 
 	public PlayerData Clone()
