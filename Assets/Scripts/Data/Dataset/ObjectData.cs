@@ -30,8 +30,28 @@ public abstract class ObjectData{
 	public int ring2ID;
 	public List<int> magicIDs = new List<int>();
 	public List<int> itemKeys = new List<int>();
-	public List<int> itemValues = new List<int>();
-	public Dictionary<int, int> items = new Dictionary<int, int>();//id, amount
+	public List<int> itemValues = new List<int>();	
+	protected Dictionary<int, int> items = new Dictionary<int, int>();//id, amount
+
+	public void OnSerialize()
+	{
+		itemKeys = new List<int>(items.Keys);
+		itemValues = new List<int>(items.Values);
+	}
+
+	public void OnDeSerialize()
+	{
+		items.Clear();
+		for (int i = 0; i != System.Math.Min(itemKeys.Count, itemValues.Count); i++)
+		{
+			items.Add(itemKeys[i], itemValues[i]);
+		}
+	}
+
+	public Dictionary<int, int> GetItem()
+	{
+		return items;
+	}
 }
 
 public enum BattleType{Physical, Magical, Both}

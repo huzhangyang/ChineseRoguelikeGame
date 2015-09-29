@@ -11,11 +11,11 @@ public class Enemy : BattleObject {
 	public void Init(int enemyID)
 	{
 		data = DataManager.Instance.GetEnemyDataSet ().GetEnemyData (enemyID).Clone();
-		currentHP = data.maxHP;
 		BattleLogic.enemys.Add(this);
 
 		UIEvent = this.GetComponent<BattleObjectUIEvent>();
 		UIEvent.Init(enemyID);
+		currentHP = data.maxHP;
 		UIEvent.InitHPBar(currentHP, data.maxHP, ((EnemyData)data).isBoss);
 
 		AI = this.GetComponent<EnemyAI>();

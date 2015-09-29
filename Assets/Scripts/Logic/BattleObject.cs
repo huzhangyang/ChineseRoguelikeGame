@@ -239,30 +239,30 @@ public abstract class BattleObject : MonoBehaviour {
 
 	public int GetItemCount(int itemID)
 	{
-		if( !data.items.ContainsKey(itemID))
+		if( !data.GetItem().ContainsKey(itemID))
 		{
 			return 0;
 		}
 		
-		return data.items[itemID];
+		return data.GetItem()[itemID];
 	}
 
 	public void ConsumeItem(int itemID)
 	{
-		if(!data.items.ContainsKey(itemID) ||data.items[itemID] <= 0)
+		if(!data.GetItem().ContainsKey(itemID) ||data.GetItem()[itemID] <= 0)
 		{
 			Debug.LogError("Consume an nonexisting item " + itemID + "!");
 			return;
 		}
-		data.items[itemID]--;
+		data.GetItem()[itemID]--;
 	}
 	
 	public void AcquireItem(int itemID, int count)
 	{
-		if(!data.items.ContainsKey(itemID))
-			data.items.Add(itemID,count);
+		if(!data.GetItem().ContainsKey(itemID))
+			data.GetItem().Add(itemID,count);
 		else
-			data.items[itemID] += count;
+			data.GetItem()[itemID] += count;
 	}
 }
 

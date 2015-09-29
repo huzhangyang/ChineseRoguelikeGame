@@ -9,11 +9,11 @@ public class Player : BattleObject {
 	public void Init(int playerID)
 	{
 		data = DataManager.Instance.GetPlayerDataSet().GetPlayerData(playerID).Clone();
-		currentHP = ((PlayerData)data).currentHP;
 		BattleLogic.players.Add(this);
 
 		UIEvent = this.GetComponent<BattleObjectUIEvent>();
 		UIEvent.Init(playerID);
+		currentHP = ((PlayerData)data).currentHP;
 		UIEvent.InitHPBar(currentHP, data.maxHP, true);
 	}
 
