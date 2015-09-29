@@ -58,10 +58,9 @@ public class BuffData{
 	public string description;
 	public int percentage;//触发概率
 	public int lastTurns;//持续回合数
+	public TargetType targetType;//目标类型
 	public BuffTrigger trigger;//触发时机
-	public string triggerOps;//触发操作
-	public string addOps;//上buff操作
-	public string removeOps;//下buff操作
+	public string buffEffect;//buff效果
 }
 
 public enum SkillType{Physical, Magical, Hybrid, IgnoreDefence} 

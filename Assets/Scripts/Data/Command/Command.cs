@@ -28,4 +28,4 @@ public abstract class Command {
 }
 
 public enum CommandType{None, UseSkill, Defence, UseItem, Strategy}
-public enum TargetType{Self, SingleEnemy, AllEnemies, SingleAlly, AllAllies}
+public enum TargetType{Self, SingleEnemy, AllEnemies, SingleAlly, AllAllies, FollowCommand}

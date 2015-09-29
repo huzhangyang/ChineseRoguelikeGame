@@ -65,11 +65,9 @@ public class SkillDataConverter : MonoBehaviour {
 			data.description = ExcelUtility.GetCell(ExcelData, i, 2);
 			data.percentage = ExcelUtility.GetIntCell(ExcelData, i, 3);
 			data.lastTurns = ExcelUtility.GetIntCell(ExcelData, i, 4);
-			data.trigger = (BuffTrigger)System.Enum.Parse(typeof(BuffTrigger),ExcelUtility.GetCell(ExcelData, i, 5));
-			data.triggerOps = ExcelUtility.GetCell(ExcelData, i, 6);
-			data.addOps = ExcelUtility.GetCell(ExcelData, i, 7);
-			data.removeOps = ExcelUtility.GetCell(ExcelData, i, 8);
-
+			data.targetType = (TargetType)System.Enum.Parse(typeof(TargetType),ExcelUtility.GetCell(ExcelData, i, 5));
+			data.trigger = (BuffTrigger)System.Enum.Parse(typeof(BuffTrigger),ExcelUtility.GetCell(ExcelData, i, 6));
+			data.buffEffect = ExcelUtility.GetCell(ExcelData, i, 7);
 		}
 	}
 }

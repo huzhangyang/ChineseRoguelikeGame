@@ -17,6 +17,7 @@ public abstract class BattleObject : MonoBehaviour {
  * */	
 	public BattleStatus battleStatus = BattleStatus.Prepare;
 	public List<Command> availableCommands;
+	public List<Buff> buffList;
 	public Command commandToExecute = new CommandNone();
 	public bool isPaused = true;
 	public bool isGuarding = false;
@@ -262,6 +263,13 @@ public abstract class BattleObject : MonoBehaviour {
 		EventManager.Instance.PostEvent(EventDefine.BattleObjectHeal, args);
 
 		UIEvent.SetHPBar(data.currentHP);
+	}
+
+	public void AddBuff(int id)
+	{
+		BuffData data = DataManager.Instance.GetSkillDataSet().GetBuffData(id);
+		Buff buff = new Buff(data);
+		buffList.Add(buff);
 	}
 }
 

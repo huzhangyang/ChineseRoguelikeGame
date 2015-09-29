@@ -282,79 +282,70 @@ MonoBehaviour:
     description: "\u5E76\u6CA1\u6709\u7279\u6B8A\u6548\u679C"
     percentage: 0
     lastTurns: 0
+    targetType: 0
     trigger: 0
-    triggerOps: None
-    addOps: None
-    removeOps: None
+    buffEffect: None
   - id: 1
     name: "\u8FDE\u53D1"
     description: "3\u8FDE\u51FB"
     percentage: 100
     lastTurns: 0
+    targetType: 0
     trigger: 1
-    triggerOps: AddAtk:2
-    addOps: None
-    removeOps: None
+    buffEffect: AddAtk:2
   - id: 2
     name: "\u7834\u9632"
     description: "\u65E0\u89C6\u5BF9\u65B9\u683C\u6321"
     percentage: 100
     lastTurns: 0
+    targetType: 0
     trigger: 1
-    triggerOps: IgnoreDefence
-    addOps: None
-    removeOps: None
+    buffEffect: IgnoreDefence
   - id: 3
     name: "\u77AC\u6740"
     description: "\u654C\u4EBA\u5373\u6B7B,BOSS\u65E0\u6548"
     percentage: 10
     lastTurns: 0
+    targetType: 5
     trigger: 1
-    triggerOps: InstantDie
-    addOps: None
-    removeOps: None
+    buffEffect: InstantDie
   - id: 4
     name: "\u5438\u53D6"
     description: "\u5438\u53D6\u4F24\u5BB3\u768450%\u56DE\u590D\u5230\u81EA\u5DF1\u751F\u547D"
     percentage: 100
     lastTurns: 0
+    targetType: 0
     trigger: 1
-    triggerOps: AbsorbDamage:0.5
-    addOps: None
-    removeOps: None
+    buffEffect: AbsorbDamage:0.5
   - id: 5
     name: "\u56FA\u5B88"
     description: "\u5728\u53D1\u52A8\u524D\u53EF\u89E6\u53D1\u9632\u5FA1\u53CD\u51FB"
     percentage: 100
     lastTurns: 0
+    targetType: 0
     trigger: 2
-    triggerOps: Counter
-    addOps: None
-    removeOps: None
+    buffEffect: Counter
   - id: 6
     name: "\u5FC5\u4E2D"
     description: "\u65E0\u89C6\u5BF9\u65B9\u56DE\u907F\u5FC5\u5B9A\u547D\u4E2D"
     percentage: 100
     lastTurns: 0
+    targetType: 0
     trigger: 1
-    triggerOps: MustHit
-    addOps: None
-    removeOps: None
+    buffEffect: MustHit
   - id: 7
     name: "\u70E7\u4F24"
     description: "3\u56DE\u5408\u5185\u884C\u52A8\u524D\u53D7\u5230\u4E00\u5B9A\u4F24\u5BB3"
     percentage: 100
     lastTurns: 3
+    targetType: 5
     trigger: 3
-    triggerOps: DamageSelf:0.1
-    addOps: None
-    removeOps: None
+    buffEffect: DamageSelf:0.1
   - id: 8
     name: "\u51CF\u901F"
     description: "1\u56DE\u5408\u5185\u884C\u52A8\u901F\u5EA6\u964D\u4F4E50%"
     percentage: 100
     lastTurns: 1
+    targetType: 5
     trigger: 0
-    triggerOps: None
-    addOps: PropMulti:speed,-0.5
-    removeOps: PropMulti:speed,1
+    buffEffect: PropMulti:speed,-0.5
