@@ -48,9 +48,32 @@ public abstract class ObjectData{
 		}
 	}
 
-	public Dictionary<int, int> GetItem()
+	public int GetItemCount(int itemID)
 	{
-		return items;
+		if( !items.ContainsKey(itemID))
+		{
+			return 0;
+		}
+		
+		return items[itemID];
+	}
+	
+	public void ConsumeItem(int itemID)
+	{
+		if(!items.ContainsKey(itemID) ||items[itemID] <= 0)
+		{
+			Debug.LogError("Consume an nonexisting item " + itemID + "!");
+			return;
+		}
+		items[itemID]--;
+	}
+	
+	public void AcquireItem(int itemID, int count)
+	{
+		if(!items.ContainsKey(itemID))
+			items.Add(itemID,count);
+		else
+			items[itemID] += count;
 	}
 }
 

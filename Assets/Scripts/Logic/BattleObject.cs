@@ -127,10 +127,26 @@ public abstract class BattleObject : MonoBehaviour {
 		isGuarding = false;
 		isEvading = false;
 		battleStatus = BattleStatus.Ready;
+
+		foreach(Buff buff in buffList)
+		{
+			if(buff.Tick() <= 0)
+			{
+				buffList.Remove(buff);
+			}
+			else
+			{
+				buff.OnReady();
+			}				
+		}
 	}
 
 	protected virtual void ExecuteCommand()
 	{
+		foreach(Buff buff in buffList)
+		{
+			buff.OnAction();
+		}
 		//decide target
 		switch(commandToExecute.targetType)
 		{
@@ -239,30 +255,17 @@ public abstract class BattleObject : MonoBehaviour {
 
 	public int GetItemCount(int itemID)
 	{
-		if( !data.GetItem().ContainsKey(itemID))
-		{
-			return 0;
-		}
-		
-		return data.GetItem()[itemID];
+		return data.GetItemCount(itemID);
 	}
 
 	public void ConsumeItem(int itemID)
 	{
-		if(!data.GetItem().ContainsKey(itemID) ||data.GetItem()[itemID] <= 0)
-		{
-			Debug.LogError("Consume an nonexisting item " + itemID + "!");
-			return;
-		}
-		data.GetItem()[itemID]--;
+		data.ConsumeItem(itemID);
 	}
 	
 	public void AcquireItem(int itemID, int count)
 	{
-		if(!data.GetItem().ContainsKey(itemID))
-			data.GetItem().Add(itemID,count);
-		else
-			data.GetItem()[itemID] += count;
+		data.AcquireItem(itemID, count);
 	}
 }
 
