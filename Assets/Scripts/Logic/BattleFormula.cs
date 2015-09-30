@@ -15,11 +15,6 @@ public class BattleFormula {
 		WeaponData weaponData = DataManager.Instance.GetItemDataSet().GetWeaponData(source.GetWeapon());
 		string SEName = "hit";
 
-		foreach(Buff buff in source.buffList)
-		{
-			buff.OnHit();
-		}
-
 		//计算击出命中、暴击、伤害
 		float hit = source.skill + source.luck / 10.0f + weaponData.basicACC * skillData.ACCMultiplier;//命中率
 		float crit = source.skill / 10.0f + source.luck / 10.0f + weaponData.basicCRT * skillData.CRTMultiplier / 100.0f;//暴击率
@@ -55,7 +50,11 @@ public class BattleFormula {
 		//判断是否命中，是否暴击
 		bool isHit = Random.Range(0,101) <= hit?true:false;
 		bool isCrit = Random.Range(0,101) <= crit?true:false;
-
+		//处理buff
+		foreach(Buff buff in source.buffList)
+		{
+			buff.OnHit();
+		}
 		foreach(Buff buff in target.buffList)
 		{
 			buff.OnBeHit();

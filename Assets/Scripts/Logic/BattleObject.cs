@@ -64,8 +64,8 @@ public abstract class BattleObject : MonoBehaviour {
 	public int eloquenceMulti = 1;	
 
 	public BattleStatus battleStatus = BattleStatus.Prepare;
-	public List<Command> availableCommands;
-	public List<Buff> buffList;
+	public List<Command> availableCommands = new List<Command>();
+	public List<Buff> buffList = new List<Buff>();
 	public Command commandToExecute = new CommandNone();
 	public bool isPaused = true;
 	public bool isGuarding = false;
@@ -224,8 +224,11 @@ public abstract class BattleObject : MonoBehaviour {
 	public void AddBuff(int id)
 	{
 		BuffData data = DataManager.Instance.GetSkillDataSet().GetBuffData(id);
-		Buff buff = new Buff(data);
-		buffList.Add(buff);
+		if(Random.Range(0,101) <= data.percentage)
+		{
+			Buff buff = new Buff(data);
+			buffList.Add(buff);
+		}
 	}
 
 	public string GetName()

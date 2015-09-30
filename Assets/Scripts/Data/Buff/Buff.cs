@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 
 public class Buff {
 
@@ -25,11 +26,10 @@ public class Buff {
 		name = splitedString[0].Trim();
 		args = splitedString[1].Split(',');
 
-		if (name.Equals(""))
-		{
-			effect = new BuffEffectNone();
-		}
-		else
+
+		effect = (BuffEffect)Assembly.GetExecutingAssembly().CreateInstance("BuffEffect" + name);
+
+		if(effect == null)
 		{
 			effect = new BuffEffectNone();
 		}
