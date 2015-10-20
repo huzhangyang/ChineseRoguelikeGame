@@ -15,9 +15,9 @@ public abstract class BattleObject : MonoBehaviour {
 /*
  * 所有参战物体共有的数据与逻辑。
  * */
-	public int maxHP{get{return data.maxHP * maxHPMulti + maxHPInc;}}
+	public int maxHP{get{return (int)(data.maxHP * (1 + maxHPMulti) + maxHPInc);}}
 	public int maxHPInc = 0;
-	public int maxHPMulti = 1;
+	public int maxHPMulti = 0;
 
 	private int _currentHP;
 	public int currentHP
@@ -35,33 +35,33 @@ public abstract class BattleObject : MonoBehaviour {
 		}
 	}
 
-	public int power{get{return data.power * powerMulti + powerInc;}}
+	public int power{get{return (int)(data.power * (1 + powerMulti) + powerInc);}}
 	public int powerInc = 0;
-	public int powerMulti = 1;
+	public float powerMulti = 0;
 	
-	public int agility{get{return data.agility * agilityMulti + agilityInc;}}
+	public int agility{get{return (int)(data.agility * (1 + agilityMulti) + agilityInc);}}
 	public int agilityInc = 0;
-	public int agilityMulti = 1;
+	public float agilityMulti = 0;
 	
-	public int toughness{get{return data.toughness * toughnessInc + toughnessMulti;}}
+	public int toughness{get{return (int)(data.toughness * (1 + toughnessMulti) + toughnessInc);}}
 	public int toughnessInc = 0;
-	public int toughnessMulti = 1;
+	public float toughnessMulti = 0;
 	
-	public int insight{get{return data.insight * insightInc + insightMulti;}}
+	public int insight{get{return (int)(data.insight * (1 + insightMulti) + insightInc);}}
 	public int insightInc = 0;
-	public int insightMulti = 1;
+	public float insightMulti = 0;
 	
-	public int skill{get{return data.skill * skillInc + skillMulti;}}
+	public int skill{get{return (int)(data.skill * (1 + skillMulti) + skillInc);}}
 	public int skillInc = 0;
-	public int skillMulti = 1;
+	public float skillMulti = 0;
 	
-	public int luck{get{return data.luck * luckInc + luckMulti;}}
+	public int luck{get{return (int)(data.luck * (1 + luckMulti) + luckInc);}}
 	public int luckInc = 0;
-	public int luckMulti = 1;
+	public float luckMulti = 0;
 	
-	public int eloquence{get{return data.eloquence * eloquenceInc + eloquenceMulti;}}
+	public int eloquence{get{return (int)(data.eloquence * (1 + eloquenceMulti) + eloquenceInc);}}
 	public int eloquenceInc = 0;
-	public int eloquenceMulti = 1;	
+	public float eloquenceMulti = 0;	
 
 	public BattleStatus battleStatus = BattleStatus.Prepare;
 	public List<Command> availableCommands = new List<Command>();
@@ -71,6 +71,7 @@ public abstract class BattleObject : MonoBehaviour {
 	public bool isGuarding = false;
 	public bool isEvading = false;
 	public bool isDied = false;
+
 	private int _timelinePosition;
 	public int timelinePosition//max:10000
 	{
