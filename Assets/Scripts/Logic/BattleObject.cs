@@ -64,9 +64,11 @@ public abstract class BattleObject : MonoBehaviour {
 	public float eloquenceMulti = 0;	
 
 	public BattleStatus battleStatus = BattleStatus.Prepare;
+	public Command commandToExecute = new CommandNone();
+	public Damage damage = new Damage();//伤害值
 	public List<Command> availableCommands = new List<Command>();
 	public List<Buff> buffList = new List<Buff>();
-	public Command commandToExecute = new CommandNone();
+
 	public bool isPaused = true;
 	public bool isGuarding = false;
 	public bool isEvading = false;
