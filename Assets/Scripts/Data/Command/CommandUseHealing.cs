@@ -24,8 +24,8 @@ public class CommandUseHealing : Command
 		base.Execute();
 		foreach(BattleObject target in targetList)
 		{
-			//target.Heal((int)(target.GetData().maxHP * 0.8f - target.GetData().currentHP));
-			//source.GetData().ConsumeItem(itemID);
+			BattleFormula.Heal(target, (int)(target.maxHP * 0.8f - target.currentHP));
+			source.ConsumeItem(itemID);
 		}
 	}
 }
