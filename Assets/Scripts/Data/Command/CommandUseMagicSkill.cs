@@ -11,7 +11,7 @@ public class CommandUseMagicSkill : Command
 		commandName = skillData.name;
 		commandDescription = skillData.description;
 		targetType = skillData.targetType;
-		preExecutionSpeed = (int)(magicData.basicSPD * skillData.preSPDMultiplier);
+		preExecutionSpeed = (int)(magicData.basicSPD * skillData.preSPDMultiplier / 3);
 		postExecutionRecover = (int)(6000 / magicData.basicSPD * skillData.postSPDMultiplier);
 		
 		this.skillID = skillID;

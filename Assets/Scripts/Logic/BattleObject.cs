@@ -84,8 +84,7 @@ public abstract class BattleObject : MonoBehaviour {
 		{
 			if(value > 10000) value = 10000;
 			_timelinePosition = value;
-			if(value < 0) value = 0;
-			UIEvent.SetAvatarPositionX(value / 20, isPaused);//max:500
+			UIEvent.SetAvatarPositionX(value <= 0 ? 0 : value / 20, isPaused);//max:500
 		}
 		get
 		{
@@ -112,7 +111,7 @@ public abstract class BattleObject : MonoBehaviour {
 		if(!isPaused && !isDied)
 		{	
 			if(battleStatus == BattleStatus.Prepare)
-				timelinePosition += (int)(Mathf.Log10(data.agility) * 100);
+				timelinePosition += BattleFormula.GetTimelineStep(this);
 			else if(battleStatus == BattleStatus.Action)
 				timelinePosition += commandToExecute.preExecutionSpeed;
 		}
@@ -179,7 +178,7 @@ public abstract class BattleObject : MonoBehaviour {
 		commandToExecute.source = this;
 		commandToExecute.Execute();
 		//post process
-		timelinePosition =  -commandToExecute.postExecutionRecover;
+		timelinePosition = -commandToExecute.postExecutionRecover * BattleFormula.GetTimelineStep(this);//后退距离 = 帧 * 步进
 		battleStatus = BattleStatus.Prepare;
 		commandToExecute = new CommandNone();
 	}

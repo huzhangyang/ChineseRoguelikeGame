@@ -11,7 +11,7 @@ public class CommandUseWeaponSkill : Command
 		commandName = skillData.name;
 		commandDescription = skillData.description;
 		targetType = skillData.targetType;
-		preExecutionSpeed = (int)(weaponData.basicSPD * skillData.preSPDMultiplier);
+		preExecutionSpeed = (int)(weaponData.basicSPD * skillData.preSPDMultiplier / 3);
 		postExecutionRecover = (int)(6000 / weaponData.basicSPD * skillData.postSPDMultiplier);
 		
 		this.skillID = skillID;

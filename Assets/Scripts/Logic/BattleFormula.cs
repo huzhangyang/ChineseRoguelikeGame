@@ -16,7 +16,8 @@ public class Damage
 public class BattleFormula {
 /*
  * 战斗计算公式相关
- * */
+ * */	
+	//最大生命值
 	public static int GetMaxHP(BattleObject bo)
 	{
 		if(bo.GetBattleType() == BattleType.Physical)
@@ -25,6 +26,7 @@ public class BattleFormula {
 			return (int)(Mathf.Pow(bo.stamina, 1.4f) * 4);
 	}
 
+	//时间轴步进
 	public static int GetTimelineStep(BattleObject bo)
 	{
 		return (int)(Mathf.Log10(bo.agility) * 80);
@@ -41,12 +43,12 @@ public class BattleFormula {
 		damagePack = new Damage();
 		//计算击出命中、暴击、伤害
 		damagePack.dmg = (source.power + weaponData.basicATK) * skillData.ATKMultiplier;//伤害值
-		damagePack.hit = source.skill + source.luck / 10.0f + weaponData.basicACC * skillData.ACCMultiplier;//命中率
-		damagePack.crit = source.skill / 10.0f + source.luck / 10.0f + weaponData.basicCRT * skillData.CRTMultiplier / 100.0f;//暴击率
+		damagePack.hit = weaponData.basicACC * skillData.ACCMultiplier + source.skill + source.luck / 9.0f;//命中率
+		damagePack.crit = weaponData.basicCRT * skillData.CRTMultiplier * (source.skill / 2 + 50)/ 1000.0f + source.luck / 9.0f;//暴击率
 		//计算真实命中、暴击、伤害
-		damagePack.dmg *= (1 - target.toughness / 250);
-		damagePack.hit -= (target.skill + target.luck / 10.0f);
-		damagePack.crit -= (target.skill / 10.0f + target.luck / 10.0f);
+		damagePack.dmg *= (1 - target.toughness / 250.0f);
+		damagePack.hit -= (target.skill * 0.9f + target.luck / 4.5f + 20);
+		damagePack.crit *= (100 - target.skill * 0.7f - target.luck * 0.3f) / 100.0f;
 		//判断防御反击
 		if(target.commandToExecute.commandType == CommandType.Defence)
 		{
@@ -55,7 +57,7 @@ public class BattleFormula {
 		//加入防御效果
 		if(target.isEvading)
 		{
-			damagePack.hit -= 50;
+			damagePack.hit /= 2;
 		}
 		if(target.isGuarding)
 		{
@@ -107,12 +109,12 @@ public class BattleFormula {
 		damagePack = new Damage();
 		//计算击出命中、暴击、伤害
 		damagePack.dmg = (source.power + magicData.basicATK) * skillData.ATKMultiplier;//伤害值
-		damagePack.hit = source.skill + source.luck / 10.0f + magicData.basicACC * skillData.ACCMultiplier;//命中率
-		damagePack.crit = source.skill / 10.0f + source.luck / 10.0f + magicData.basicCRT * skillData.CRTMultiplier / 100.0f;//暴击率
+		damagePack.hit = magicData.basicACC * skillData.ACCMultiplier + source.skill + source.luck / 9.0f;//命中率
+		damagePack.crit = magicData.basicCRT * skillData.CRTMultiplier * (source.skill / 2 + 50)/ 1000.0f + source.luck / 9.0f;//暴击率
 		//计算真实命中、暴击、伤害
-		damagePack.dmg *= (1 - target.insight / 250);
-		damagePack.hit -= (target.skill + target.luck / 10.0f);
-		damagePack.crit -= (target.skill / 10.0f + target.luck / 10.0f);
+		damagePack.dmg *= (1 - target.toughness / 250.0f);
+		damagePack.hit -= (target.skill * 0.9f + target.luck / 4.5f + 20);
+		damagePack.crit *= (100 - target.skill * 0.7f - target.luck * 0.3f) / 100.0f;
 		//判断防御反击
 		if(target.commandToExecute.commandType == CommandType.Defence)
 		{
@@ -121,7 +123,7 @@ public class BattleFormula {
 		//加入防御效果
 		if(target.isEvading)
 		{
-			damagePack.hit -= 50;
+			damagePack.hit /= 2;
 		}
 		if(target.isGuarding)
 		{
