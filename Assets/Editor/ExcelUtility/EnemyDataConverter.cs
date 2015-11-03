@@ -41,7 +41,7 @@ public class EnemyDataConvertor : MonoBehaviour
 			data.id = ExcelUtility.GetIntCell(ExcelData, i, j++);
 			data.name = ExcelUtility.GetCell(ExcelData, i, j++);
 			data.isBoss = ExcelUtility.GetBoolCell(ExcelData, i, j++);
-			data.maxHP = ExcelUtility.GetIntCell(ExcelData, i, j++);
+			data.stamina = ExcelUtility.GetIntCell(ExcelData, i, j++);
 			data.power = ExcelUtility.GetIntCell(ExcelData, i, j++);
 			data.agility = ExcelUtility.GetIntCell(ExcelData, i, j++);
 			data.toughness = ExcelUtility.GetIntCell(ExcelData, i, j++);

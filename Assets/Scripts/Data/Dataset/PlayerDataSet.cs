@@ -24,7 +24,7 @@ public class PlayerData : ObjectData {
  * 玩家数据。除了通用属性外，还有一些玩家独有的属性。
 */
 	//attribute exp
-	public int expMaxHP;//生命成长值
+	public int expStamina;//体力成长值
 	public int expPower;//力量成长值
 	public int expAgility;//敏捷成长值
 	public int expToughness;//韧性成长值
@@ -40,28 +40,26 @@ public class PlayerData : ObjectData {
 		switch(playerID)
 		{
 		case 0:	name = "Man";
-			maxHP = 120;
+			stamina = 12;
 			power = 15;
 			agility = 8;
 			toughness = 12;
 			insight = 6; 
 			skill = 13;
 			luck = 10;
-			eloquence = 7;
-			
+			eloquence = 7;			
 			battleType = BattleType.Physical;
 			weaponID = 1000 + Random.Range(1,6) * 100;			
 			break;
 		case 1: name = "Girl";
-			maxHP = 80;
+			stamina = 8;
 			power = 18;
 			agility = 12;
 			toughness = 6;
 			insight = 16; 
 			skill = 5;
 			luck = 10;
-			eloquence = 14;
-			
+			eloquence = 14;			
 			battleType = BattleType.Magical;
 			weaponID = 1000;
 			magicIDs.Add(2001);
@@ -70,8 +68,7 @@ public class PlayerData : ObjectData {
 			break;
 		}
 		this.id = playerID;
-		currentHP = maxHP;
-		expMaxHP = 0;
+		expStamina = 0;
 		expPower = 0;
 		expAgility = 0;
 		expToughness = 0;

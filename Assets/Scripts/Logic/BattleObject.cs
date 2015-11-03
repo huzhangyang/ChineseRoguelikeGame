@@ -3,7 +3,6 @@ using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 
-public enum BasicCommand {Attack,Defence,Item,Strategy}
 public enum BattleStatus
 {
 	Prepare,//等待选择行动(0~8000)
@@ -15,7 +14,7 @@ public abstract class BattleObject : MonoBehaviour {
 /*
  * 所有参战物体共有的数据与逻辑。
  * */
-	public int maxHP{get{return (int)(data.maxHP * (1 + maxHPMulti) + maxHPInc);}}
+	public int maxHP{get{return BattleFormula.GetMaxHP(this);}}
 	public int maxHPInc = 0;
 	public int maxHPMulti = 0;
 
@@ -34,6 +33,10 @@ public abstract class BattleObject : MonoBehaviour {
 			return _currentHP;
 		}
 	}
+
+	public int stamina{get{return (int)(data.stamina * (1 + staminaMulti) + staminaInc);}}
+	public int staminaInc = 0;
+	public float staminaMulti = 0;
 
 	public int power{get{return (int)(data.power * (1 + powerMulti) + powerInc);}}
 	public int powerInc = 0;

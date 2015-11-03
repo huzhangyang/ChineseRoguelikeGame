@@ -26,6 +26,3 @@ public abstract class Command {
 		EventManager.Instance.PostEvent(EventDefine.ExecuteCommand, args);
 	}
 }
-
-public enum CommandType{None, UseSkill, Defence, UseItem, Strategy}
-public enum TargetType{Self, SingleEnemy, AllEnemies, SingleAlly, AllAllies, FollowCommand}

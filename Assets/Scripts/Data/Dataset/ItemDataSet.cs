@@ -95,5 +95,3 @@ public class MagicData:ItemData{
 	public int basicCRT;//基准暴击率
 	public int skillID;
 }
-
-public enum ItemType{NormalItem, Weapon, Magic, Ring}

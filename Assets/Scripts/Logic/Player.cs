@@ -13,8 +13,8 @@ public class Player : BattleObject {
 
 		UIEvent = this.GetComponent<BattleObjectUIEvent>();
 		UIEvent.Init(playerID);
-		currentHP = ((PlayerData)data).currentHP;
-		UIEvent.InitHPBar(currentHP, data.maxHP, true);
+		currentHP = maxHP;
+		UIEvent.InitHPBar(currentHP, maxHP, true);
 	}
 
 	protected override void SelectCommand()

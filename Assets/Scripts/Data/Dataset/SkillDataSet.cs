@@ -63,5 +63,3 @@ public class BuffData{
 	public string buffEffect;//buff效果
 }
 
-public enum SkillType{Physical, Magical, Hybrid, IgnoreDefence} 
-public enum BuffTrigger{Always,Hit,Behit,Ready,Action} 

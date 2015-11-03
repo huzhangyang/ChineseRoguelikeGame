@@ -17,6 +17,18 @@ public class BattleFormula {
 /*
  * 战斗计算公式相关
  * */
+	public static int GetMaxHP(BattleObject bo)
+	{
+		if(bo.GetBattleType() == BattleType.Physical)
+			return (int)(Mathf.Pow(bo.stamina, 1.5f) * 3);
+		else
+			return (int)(Mathf.Pow(bo.stamina, 1.4f) * 4);
+	}
+
+	public static int GetTimelineStep(BattleObject bo)
+	{
+		return (int)(Mathf.Log10(bo.agility) * 80);
+	}
 
 	/*计算武器伤害*/
 	public static void CalculateWeaponSkill(BattleObject source, BattleObject target, int skillID)
