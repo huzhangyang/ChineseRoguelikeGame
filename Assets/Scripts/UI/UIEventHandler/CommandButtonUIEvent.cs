@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
@@ -20,7 +20,7 @@ public class CommandButtonUIEvent : MonoBehaviour {
 
 		MessageEventArgs args = new MessageEventArgs ();
 		args.AddMessage ("CommandID", commandID);
-		EventManager.Instance.PostEvent (EventDefine.ClickCommand, args);
+		EventManager.Instance.PostEvent (BattleEvent.OnCommandClicked, args);
 	}
 
 }

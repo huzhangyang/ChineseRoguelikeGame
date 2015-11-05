@@ -15,30 +15,30 @@ public class BattleLogic : MonoBehaviour {
 	/*LIFE CYCLE */
 	void OnEnable() 
 	{
-		EventManager.Instance.RegisterEvent (EventDefine.StartBattle, OnStartBattle);
-		EventManager.Instance.RegisterEvent (EventDefine.PlayerReady, OnPlayerReady);
-		EventManager.Instance.RegisterEvent (EventDefine.ClickCommand, OnClickCommand);
-		EventManager.Instance.RegisterEvent (EventDefine.SelectCommand, OnSelectCommand);
-		EventManager.Instance.RegisterEvent (EventDefine.ExecuteCommand, OnExecuteCommand);
-		EventManager.Instance.RegisterEvent (EventDefine.BattleObjectDied, OnBattleObjectDied);
-		EventManager.Instance.RegisterEvent (EventDefine.BattleObjectEscape, OnBattleObjectEscape);
+		EventManager.Instance.RegisterEvent (BattleEvent.OnBattleStart, OnBattleStart);
+		EventManager.Instance.RegisterEvent (BattleEvent.OnPlayerReady, OnPlayerReady);
+		EventManager.Instance.RegisterEvent (BattleEvent.OnCommandClicked, OnCommandClicked);
+		EventManager.Instance.RegisterEvent (BattleEvent.OnCommandSelected, OnCommandSelected);
+		EventManager.Instance.RegisterEvent (BattleEvent.OnCommandExecute, OnExecuteCommand);
+		EventManager.Instance.RegisterEvent (BattleEvent.BattleObjectDied, OnBattleObjectDied);
+		EventManager.Instance.RegisterEvent (BattleEvent.BattleObjectEscape, OnBattleObjectEscape);
 	}
 	
 	void OnDisable () 
 	{
-		EventManager.Instance.UnRegisterEvent (EventDefine.EnterBattle, OnStartBattle);
-		EventManager.Instance.UnRegisterEvent (EventDefine.PlayerReady, OnPlayerReady);
-		EventManager.Instance.UnRegisterEvent (EventDefine.ClickCommand, OnClickCommand);
-		EventManager.Instance.UnRegisterEvent (EventDefine.SelectCommand, OnSelectCommand);
-		EventManager.Instance.UnRegisterEvent (EventDefine.ExecuteCommand, OnExecuteCommand);
-		EventManager.Instance.UnRegisterEvent (EventDefine.BattleObjectDied, OnBattleObjectDied);
-		EventManager.Instance.UnRegisterEvent (EventDefine.BattleObjectEscape, OnBattleObjectEscape);
+		EventManager.Instance.UnRegisterEvent (BattleEvent.OnBattleEnter, OnBattleStart);
+		EventManager.Instance.UnRegisterEvent (BattleEvent.OnPlayerReady, OnPlayerReady);
+		EventManager.Instance.UnRegisterEvent (BattleEvent.OnCommandClicked, OnCommandClicked);
+		EventManager.Instance.UnRegisterEvent (BattleEvent.OnCommandSelected, OnCommandSelected);
+		EventManager.Instance.UnRegisterEvent (BattleEvent.OnCommandExecute, OnExecuteCommand);
+		EventManager.Instance.UnRegisterEvent (BattleEvent.BattleObjectDied, OnBattleObjectDied);
+		EventManager.Instance.UnRegisterEvent (BattleEvent.BattleObjectEscape, OnBattleObjectEscape);
 	}
 
 	void Update()
 	{
 		if(GlobalManager.Instance.gameStatus == GameStatus.Battle)
-			EventManager.Instance.PostEvent (EventDefine.UpdateTimeline);
+			EventManager.Instance.PostEvent (BattleEvent.OnTimelineUpdate);
 	}
 
 	/*UI CALLBACK*/
@@ -69,7 +69,7 @@ public class BattleLogic : MonoBehaviour {
 			args.AddMessage("Man",true);
 			args.AddMessage("Enemy",new int[1]{12});
 		}
-		EventManager.Instance.PostEvent (EventDefine.EnterBattle, args);
+		EventManager.Instance.PostEvent (BattleEvent.OnBattleEnter, args);
 	}
 	
 	public void SelectBasicCommand(int commandID)
@@ -78,7 +78,7 @@ public class BattleLogic : MonoBehaviour {
 		GetCurrentPlayer().RefreshAvailableCommands(basicCommand);
 		MessageEventArgs args = new MessageEventArgs();
 		args.AddMessage("PlayerName", GetCurrentPlayer().GetName());
-		EventManager.Instance.PostEvent(EventDefine.ShowAvailableCommands, args);
+		EventManager.Instance.PostEvent(BattleEvent.OnBasicCommandSelected, args);
 		foreach(Enemy enemy in enemys)
 		{
 			enemy.GetComponent<BattleObjectUIEvent>().DisableClick();
@@ -91,7 +91,7 @@ public class BattleLogic : MonoBehaviour {
 
 	/*EVENT CALLBACK*/
 
-	void OnStartBattle(MessageEventArgs args)
+	void OnBattleStart(MessageEventArgs args)
 	{
 		GlobalManager.Instance.gameStatus = GameStatus.Battle;
 		ResumeEveryOne();
@@ -102,7 +102,7 @@ public class BattleLogic : MonoBehaviour {
 		PauseEveryOne();
 	}
 
-	void OnClickCommand(MessageEventArgs args)
+	void OnCommandClicked(MessageEventArgs args)
 	{
 		int commandID = args.GetMessage<int>("CommandID");
 		currentCommand = GetCurrentPlayer ().availableCommands.Find((Command cmd)=>{return cmd.commandID == commandID;});
@@ -123,12 +123,12 @@ public class BattleLogic : MonoBehaviour {
 			}
 			break;
 		case TargetType.Self:
-			EventManager.Instance.PostEvent(EventDefine.SelectCommand);
+			EventManager.Instance.PostEvent(BattleEvent.OnCommandSelected);
 			break;
 		}
 	}
 
-	void OnSelectCommand(MessageEventArgs args)
+	void OnCommandSelected(MessageEventArgs args)
 	{
 		ResumeEveryOne();
 		GetCurrentPlayer().commandToExecute = currentCommand;
@@ -152,20 +152,20 @@ public class BattleLogic : MonoBehaviour {
 	{
 		if(enemys.Count == 0)
 		{
-			EventManager.Instance.PostEvent(EventDefine.BattleWin);
+			EventManager.Instance.PostEvent(BattleEvent.OnBattleWin);
 
 			StartCoroutine(FinishBattle());
 		}
 		else if(players.Count == 0)
 		{
-			EventManager.Instance.PostEvent(EventDefine.BattleLose);
+			EventManager.Instance.PostEvent(BattleEvent.OnBattleLose);
 			StartCoroutine(FinishBattle());
 		}
 	}
 
 	void OnBattleObjectEscape(MessageEventArgs args)
 	{
-		EventManager.Instance.PostEvent(EventDefine.BattleLose);
+		EventManager.Instance.PostEvent(BattleEvent.OnBattleLose);
 		StartCoroutine(FinishBattle());
 	}
 
@@ -197,7 +197,7 @@ public class BattleLogic : MonoBehaviour {
 		yield return new WaitForSeconds(5);
 		mapCanvas.gameObject.SetActive (true);
 		battleCanvas.gameObject.SetActive (false);
-		EventManager.Instance.PostEvent(EventDefine.FinishBattle);
+		EventManager.Instance.PostEvent(BattleEvent.OnBattleFinish);
 	}
 
 	void PauseEveryOne()

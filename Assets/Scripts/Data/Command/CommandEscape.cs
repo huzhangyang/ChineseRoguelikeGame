@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class CommandEscape : Command
@@ -17,6 +17,6 @@ public class CommandEscape : Command
 	{
 		executeMessage = source.GetName() + "逃跑了！";
 		base.Execute();
-		EventManager.Instance.PostEvent(EventDefine.BattleObjectEscape);
+		EventManager.Instance.PostEvent(BattleEvent.BattleObjectEscape);
 	}
 }

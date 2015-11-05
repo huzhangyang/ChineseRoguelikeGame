@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 using System.Collections;
@@ -80,7 +80,7 @@ public class BattleObjectUIEvent : MonoBehaviour {
 		if(allowClick)
 		{
 			BattleLogic.currentCommand.targetList.Add(this.GetComponent<BattleObject>());
-			EventManager.Instance.PostEvent(EventDefine.SelectCommand);
+			EventManager.Instance.PostEvent(BattleEvent.OnCommandSelected);
 		}
 	}
 

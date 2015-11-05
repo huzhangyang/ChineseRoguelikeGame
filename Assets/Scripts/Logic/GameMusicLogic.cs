@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,18 +7,18 @@ public class GameMusicLogic : MonoBehaviour {
 	
 	void OnEnable() 
 	{
-		EventManager.Instance.RegisterEvent (EventDefine.EnterBattle, PlayBattleBGM);
-		EventManager.Instance.RegisterEvent (EventDefine.FinishBattle, PlayIntro);
-		EventManager.Instance.RegisterEvent (EventDefine.BattleWin, PlayWin);
-		EventManager.Instance.RegisterEvent (EventDefine.BattleLose, PlayLose);
+		EventManager.Instance.RegisterEvent (BattleEvent.OnBattleEnter, PlayBattleBGM);
+		EventManager.Instance.RegisterEvent (BattleEvent.OnBattleFinish, PlayIntro);
+		EventManager.Instance.RegisterEvent (BattleEvent.OnBattleWin, PlayWin);
+		EventManager.Instance.RegisterEvent (BattleEvent.OnBattleLose, PlayLose);
 	}
 
 	void OnDisable () 
 	{
-		EventManager.Instance.UnRegisterEvent (EventDefine.EnterBattle, PlayBattleBGM);
-		EventManager.Instance.UnRegisterEvent (EventDefine.FinishBattle, PlayIntro);
-		EventManager.Instance.UnRegisterEvent (EventDefine.BattleWin, PlayWin);
-		EventManager.Instance.UnRegisterEvent (EventDefine.BattleLose, PlayLose);
+		EventManager.Instance.UnRegisterEvent (BattleEvent.OnBattleEnter, PlayBattleBGM);
+		EventManager.Instance.UnRegisterEvent (BattleEvent.OnBattleFinish, PlayIntro);
+		EventManager.Instance.UnRegisterEvent (BattleEvent.OnBattleWin, PlayWin);
+		EventManager.Instance.UnRegisterEvent (BattleEvent.OnBattleLose, PlayLose);
 	}
 
 	void PlayBattleBGM(MessageEventArgs args)

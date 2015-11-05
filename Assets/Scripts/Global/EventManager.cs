@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -59,19 +59,19 @@ public class EventManager : MonoBehaviour{
 	}
 		
 	// 将事件加入消息队列
-	public void PostEvent(EventDefine evt, MessageEventArgs args)
+	public void PostEvent(BattleEvent evt, MessageEventArgs args)
 	{
 		waitEvent.Add(new InvokeParam((int)evt, args));
 	}
 
-	public void PostEvent(EventDefine evt)
+	public void PostEvent(BattleEvent evt)
 	{
 		MessageEventArgs args = new MessageEventArgs();
 		waitEvent.Add(new InvokeParam((int)evt, args));
 	}
 
 	// 立即执行事件
-	public void InvokeEvent(EventDefine evt, MessageEventArgs args)
+	public void InvokeEvent(BattleEvent evt, MessageEventArgs args)
 	{
 		int _event = (int)evt;
 		List<EventHandler> handlerList;
@@ -85,7 +85,7 @@ public class EventManager : MonoBehaviour{
 	}
 		
 	// 注册事件		
-	public void RegisterEvent(EventDefine evt, EventHandler handler)
+	public void RegisterEvent(BattleEvent evt, EventHandler handler)
 	{
 		int _event = (int)evt;
 		if (events.ContainsKey(_event) == false)
@@ -96,7 +96,7 @@ public class EventManager : MonoBehaviour{
 	}
 		
 	// 取消注册事件
-	public void UnRegisterEvent(EventDefine evt, EventHandler handler)
+	public void UnRegisterEvent(BattleEvent evt, EventHandler handler)
 	{
 		int _event = (int)evt;
 		if (events.ContainsKey(_event) == false)

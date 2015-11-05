@@ -97,16 +97,16 @@ public abstract class BattleObject : MonoBehaviour {
 
 	void OnEnable() 
 	{
-		EventManager.Instance.RegisterEvent (EventDefine.UpdateTimeline, OnUpdateTimeline);		
+		EventManager.Instance.RegisterEvent (BattleEvent.OnTimelineUpdate, OnTimelineUpdate);		
 	}
 	
 	void OnDisable () 
 	{
-		EventManager.Instance.UnRegisterEvent (EventDefine.UpdateTimeline, OnUpdateTimeline);
+		EventManager.Instance.UnRegisterEvent (BattleEvent.OnTimelineUpdate, OnTimelineUpdate);
 	}
 
 	/*更新时间轴*/
-	protected void OnUpdateTimeline(MessageEventArgs args)
+	protected void OnTimelineUpdate(MessageEventArgs args)
 	{
 		if(!isPaused && !isDied)
 		{	

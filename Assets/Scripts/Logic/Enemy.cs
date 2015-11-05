@@ -30,7 +30,7 @@ public class Enemy : BattleObject {
 
 		MessageEventArgs args = new MessageEventArgs();
 		args.AddMessage("EnemyName", data.name);
-		EventManager.Instance.PostEvent(EventDefine.EnemySpawn,args);
+		EventManager.Instance.PostEvent(BattleEvent.OnEnemySpawn, args);
 	}
 
 	protected override void SelectCommand()

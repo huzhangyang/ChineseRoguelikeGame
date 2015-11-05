@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
@@ -15,6 +15,10 @@ public class Player : BattleObject {
 		UIEvent.Init(playerID);
 		currentHP = maxHP;
 		UIEvent.InitHPBar(currentHP, maxHP, true);
+
+		MessageEventArgs args = new MessageEventArgs();
+		args.AddMessage("PlayerName", data.name);
+		EventManager.Instance.PostEvent(BattleEvent.OnPlayerSpawn, args);
 	}
 
 	protected override void SelectCommand()
@@ -22,7 +26,7 @@ public class Player : BattleObject {
 		base.SelectCommand();
 		MessageEventArgs args = new MessageEventArgs();
 		args.AddMessage("PlayerName", data.name);
-		EventManager.Instance.PostEvent(EventDefine.PlayerReady, args);
+		EventManager.Instance.PostEvent(BattleEvent.OnPlayerReady, args);
 	}
 
 }

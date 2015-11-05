@@ -173,7 +173,7 @@ public class BattleFormula {
 		args.AddMessage("Name", target.GetName());
 		args.AddMessage("Amount", amount);
 		args.AddMessage("CurrentHP", target.currentHP);
-		EventManager.Instance.PostEvent(EventDefine.BattleObjectHeal, args);
+		EventManager.Instance.PostEvent(BattleEvent.BattleObjectHeal, args);
 	}
 
 	/*---------- Internal Operation ----------*/
@@ -182,7 +182,7 @@ public class BattleFormula {
 	{
 		MessageEventArgs args = new MessageEventArgs();
 		args.AddMessage("Name",source.GetName());
-		EventManager.Instance.PostEvent(EventDefine.BattleObjectCounter, args);
+		EventManager.Instance.PostEvent(BattleEvent.BattleObjectCounter, args);
 		
 		OnDamage(source, Random.Range(0,100));//TODO 改进反击算法
 	}
@@ -201,7 +201,7 @@ public class BattleFormula {
 
 		MessageEventArgs args = new MessageEventArgs();
 		args.AddMessage("Name", target.GetName());
-		EventManager.Instance.PostEvent(EventDefine.BattleObjectCritical, args);
+		EventManager.Instance.PostEvent(BattleEvent.BattleObjectCritical, args);
 
 		OnDamage(target, (int)damage.dmg);
 	}
@@ -216,7 +216,7 @@ public class BattleFormula {
 	{
 		MessageEventArgs args = new MessageEventArgs();
 		args.AddMessage("Name", target.GetName());
-		EventManager.Instance.PostEvent(EventDefine.BattleObjectMiss, args);
+		EventManager.Instance.PostEvent(BattleEvent.BattleObjectMiss, args);
 	}
 
 	private static void OnDamage(BattleObject target, int damage)
@@ -232,7 +232,7 @@ public class BattleFormula {
 		MessageEventArgs args = new MessageEventArgs();
 		args.AddMessage("Name", target.GetName());
 		args.AddMessage("Damage", damage);
-		EventManager.Instance.PostEvent(EventDefine.BattleObjectHurt, args);
+		EventManager.Instance.PostEvent(BattleEvent.BattleObjectHurt, args);
 		//calculate die event
 		if(target.currentHP <= 0)
 		{
@@ -244,7 +244,7 @@ public class BattleFormula {
 			
 			MessageEventArgs args2 = new MessageEventArgs();
 			args2.AddMessage("Name", target.GetName());
-			EventManager.Instance.PostEvent(EventDefine.BattleObjectDied, args2);
+			EventManager.Instance.PostEvent(BattleEvent.BattleObjectDied, args2);
 		}
 	}
 }

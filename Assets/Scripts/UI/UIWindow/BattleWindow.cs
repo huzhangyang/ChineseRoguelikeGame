@@ -28,18 +28,18 @@ public class BattleWindow: MonoBehaviour {
 	
 	void OnEnable() 
 	{
-		EventManager.Instance.RegisterEvent (EventDefine.EnterBattle, OnEnterBattle);
-		EventManager.Instance.RegisterEvent (EventDefine.PlayerReady, OnPlayerReady);
-		EventManager.Instance.RegisterEvent (EventDefine.ShowAvailableCommands, OnShowAvailableCommands);
-		EventManager.Instance.RegisterEvent (EventDefine.SelectCommand, OnSelectCommand);
+		EventManager.Instance.RegisterEvent (BattleEvent.OnBattleEnter, OnEnterBattle);
+		EventManager.Instance.RegisterEvent (BattleEvent.OnPlayerReady, OnPlayerReady);
+		EventManager.Instance.RegisterEvent (BattleEvent.OnBasicCommandSelected, OnBasicCommandSelected);
+		EventManager.Instance.RegisterEvent (BattleEvent.OnCommandSelected, OnCommandSelected);
 	}
 	
 	void OnDisable () 
 	{
-		EventManager.Instance.UnRegisterEvent (EventDefine.EnterBattle, OnEnterBattle);
-		EventManager.Instance.UnRegisterEvent (EventDefine.PlayerReady, OnPlayerReady);
-		EventManager.Instance.UnRegisterEvent (EventDefine.ShowAvailableCommands, OnShowAvailableCommands);
-		EventManager.Instance.UnRegisterEvent (EventDefine.SelectCommand, OnSelectCommand);
+		EventManager.Instance.UnRegisterEvent (BattleEvent.OnBattleEnter, OnEnterBattle);
+		EventManager.Instance.UnRegisterEvent (BattleEvent.OnPlayerReady, OnPlayerReady);
+		EventManager.Instance.UnRegisterEvent (BattleEvent.OnBasicCommandSelected, OnBasicCommandSelected);
+		EventManager.Instance.UnRegisterEvent (BattleEvent.OnCommandSelected, OnCommandSelected);
 	}
 
 	void OnEnterBattle(MessageEventArgs args)
@@ -68,7 +68,7 @@ public class BattleWindow: MonoBehaviour {
 		commandDescrpition.GetComponent<Text>().text = playerName + "如何决策？";
 	}
 
-	void OnShowAvailableCommands(MessageEventArgs args)
+	void OnBasicCommandSelected(MessageEventArgs args)
 	{
 		string playerName = args.GetMessage<string>("PlayerName");
 		commandDescrpition.GetComponent<Text>().text = playerName + "如何决策？";
@@ -87,7 +87,7 @@ public class BattleWindow: MonoBehaviour {
 		}
 	}
 
-	void OnSelectCommand(MessageEventArgs args)
+	void OnCommandSelected(MessageEventArgs args)
 	{
 		commandPanel.SetActive(false);
 		subCommandPanel.SetActive(false);
@@ -152,6 +152,6 @@ public class BattleWindow: MonoBehaviour {
 			}
 		}
 
-		EventManager.Instance.PostEvent (EventDefine.StartBattle);
+		EventManager.Instance.PostEvent (BattleEvent.OnBattleStart);
 	}
 }

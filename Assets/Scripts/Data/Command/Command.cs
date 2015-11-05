@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -23,6 +23,6 @@ public abstract class Command {
 		//send message
 		MessageEventArgs args = new MessageEventArgs();
 		args.AddMessage("Message", executeMessage);
-		EventManager.Instance.PostEvent(EventDefine.ExecuteCommand, args);
+		EventManager.Instance.PostEvent(BattleEvent.OnCommandExecute, args);
 	}
 }

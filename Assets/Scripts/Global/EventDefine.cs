@@ -1,17 +1,24 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public enum EventDefine
+public enum BattleEvent
 {
-	EnterBattle,//进入战斗
-	EnemySpawn,//敌人出现
-	StartBattle,//开始战斗
-	UpdateTimeline,//更新时间轴
-	PlayerReady,//玩家就绪
-	ShowAvailableCommands,//显示全部可用指令
-	ClickCommand,//玩家点击了一个指令
-	SelectCommand,//玩家或敌方选定了一个指令
-	ExecuteCommand,//玩家或敌方执行了一个指令
+	OnBattleEnter,//进入战斗
+	OnBattleStart,//开始战斗
+	OnBattleWin,//战斗胜利
+	OnBattleLose,//战斗失败
+	OnBattleFinish,//离开战斗
+
+	OnPlayerSpawn,//敌人出现
+	OnEnemySpawn,//敌人出现
+	OnTimelineUpdate,//更新时间轴
+
+	OnPlayerReady,//玩家就绪
+	OnBasicCommandSelected,//玩家点击了一个指令类别
+	OnCommandClicked,//玩家点击了一个指令
+	OnCommandSelected,//玩家或敌方选定了一个指令
+	OnCommandExecute,//玩家或敌方执行了一个指令
+
 	BattleObjectMiss,//有玩家或敌人未击中
 	BattleObjectCritical,//有玩家或敌人造成暴击
 	BattleObjectHurt,//有玩家或敌人受伤
@@ -19,7 +26,4 @@ public enum EventDefine
 	BattleObjectCounter,//有玩家或敌人反击
 	BattleObjectDied,//有玩家或敌人死亡
 	BattleObjectEscape,//有玩家或敌人逃跑
-	BattleWin,//战斗胜利
-	BattleLose,//战斗失败
-	FinishBattle,//离开战斗
 }
