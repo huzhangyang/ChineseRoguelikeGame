@@ -19,7 +19,7 @@ public class CommandButtonUIEvent : MonoBehaviour {
 		descText.text = description;
 
 		MessageEventArgs args = new MessageEventArgs ();
-		args.AddMessage ("CommandID", commandID.ToString());
+		args.AddMessage ("CommandID", commandID);
 		EventManager.Instance.PostEvent (EventDefine.ClickCommand, args);
 	}
 

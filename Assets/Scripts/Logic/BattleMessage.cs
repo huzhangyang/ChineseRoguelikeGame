@@ -49,19 +49,19 @@ public class BattleMessage : MonoBehaviour {
 
 	void OnEnemySpawn(MessageEventArgs args)
 	{
-		string name = args.GetMessage("EnemyName");
+		string name = args.GetMessage<string>("EnemyName");
 		AddMessage(name + " 出现了！");
 	}
 
 	void OnExecuteCommand(MessageEventArgs args)
 	{
-		string message = args.GetMessage("Message");
+		string message = args.GetMessage<string>("Message");
 		AddMessage(message);
 	}
 
 	void OnBattleObjectMiss(MessageEventArgs args)
 	{
-		string name = args.GetMessage("Name");
+		string name = args.GetMessage<string>("Name");
 		AddMessage("被" + name + "躲开了！");
 	}
 
@@ -72,28 +72,28 @@ public class BattleMessage : MonoBehaviour {
 
 	void OnBattleObjectHurt(MessageEventArgs args)
 	{
-		string name = args.GetMessage("Name");
-		int damage = Convert.ToInt32(args.GetMessage("Damage"));
+		string name = args.GetMessage<string>("Name");
+		int damage = args.GetMessage<int>("Damage");
 		AddMessage(name + " 受到" + damage + "点伤害！");
 	}
 
 	void OnBattleObjectHeal(MessageEventArgs args)
 	{
-		string name = args.GetMessage("Name");
-		int amount = Convert.ToInt32(args.GetMessage("Amount"));
-		int curHP = Convert.ToInt32(args.GetMessage("CurrentHP"));
+		string name = args.GetMessage<string>("Name");
+		int amount = args.GetMessage<int>("Amount");
+		int curHP = args.GetMessage<int>("CurrentHP");
 		AddMessage(name + " 回复了 " + amount + "点生命，现在生命值为 " + curHP + "!");
 	}
 
 	void OnBattleObjectCounter(MessageEventArgs args)
 	{
-		string name = args.GetMessage("Name");
+		string name = args.GetMessage<string>("Name");
 		AddMessage(name + " 看穿了攻击，并做出反击！");
 	}
 
 	void OnBattleObjectDied(MessageEventArgs args)
 	{
-		string name = args.GetMessage("Name");
+		string name = args.GetMessage<string>("Name");
 		AddMessage(name + " 不敌！");
 	}
 

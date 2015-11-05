@@ -51,23 +51,23 @@ public class BattleLogic : MonoBehaviour {
 		players = new List<Player>();
 
 		MessageEventArgs args = new MessageEventArgs ();
-		args.AddMessage("BattleType",battleType.ToString());
+		args.AddMessage("BattleType",battleType);
 		if(battleType == 0)
 		{
-			args.AddMessage("Man","1");
-			args.AddMessage("Girl","1");
-			args.AddMessage("Enemy","10,10,10");
+			args.AddMessage("Man",true);
+			args.AddMessage("Girl",true);
+			args.AddMessage("Enemy",new int[3]{10,10,10});
 		}
 		else if(battleType == 1)
 		{
-			args.AddMessage("Man","1");
-			args.AddMessage("Girl","1");
-			args.AddMessage("Enemy","11");
+			args.AddMessage("Man",true);
+			args.AddMessage("Girl",true);
+			args.AddMessage("Enemy",new int[1]{11});
 		}
 		else 
 		{
-			args.AddMessage("Man","1");
-			args.AddMessage("Enemy","12");
+			args.AddMessage("Man",true);
+			args.AddMessage("Enemy",new int[1]{12});
 		}
 		EventManager.Instance.PostEvent (EventDefine.EnterBattle, args);
 	}
@@ -75,9 +75,9 @@ public class BattleLogic : MonoBehaviour {
 	public void SelectBasicCommand(int commandID)
 	{
 		BasicCommand basicCommand = (BasicCommand)commandID;
-		GetCurrentPlayer ().RefreshAvailableCommands (basicCommand);
-		MessageEventArgs args = new MessageEventArgs ();
-		args.AddMessage("PlayerName",GetCurrentPlayer ().GetName());
+		GetCurrentPlayer().RefreshAvailableCommands(basicCommand);
+		MessageEventArgs args = new MessageEventArgs();
+		args.AddMessage("PlayerName", GetCurrentPlayer().GetName());
 		EventManager.Instance.PostEvent(EventDefine.ShowAvailableCommands, args);
 		foreach(Enemy enemy in enemys)
 		{
@@ -104,7 +104,7 @@ public class BattleLogic : MonoBehaviour {
 
 	void OnClickCommand(MessageEventArgs args)
 	{
-		int commandID = Convert.ToInt32(args.GetMessage("CommandID"));
+		int commandID = args.GetMessage<int>("CommandID");
 		currentCommand = GetCurrentPlayer ().availableCommands.Find((Command cmd)=>{return cmd.commandID == commandID;});
 		switch(currentCommand.targetType)
 		{

@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.UI;
 using DG.Tweening;
 
@@ -63,13 +64,13 @@ public class BattleWindow: MonoBehaviour {
 	{
 		commandPanel.SetActive(true);
 		subCommandPanel.SetActive (true);
-		string playerName = args.GetMessage("PlayerName");
+		string playerName = args.GetMessage<string>("PlayerName");
 		commandDescrpition.GetComponent<Text>().text = playerName + "如何决策？";
 	}
 
 	void OnShowAvailableCommands(MessageEventArgs args)
 	{
-		string playerName = args.GetMessage("PlayerName");
+		string playerName = args.GetMessage<string>("PlayerName");
 		commandDescrpition.GetComponent<Text>().text = playerName + "如何决策？";
 		commandButtonPanel.DOLocalMoveX(-360, 0.2f);
 		foreach(Transform child in commandButtonPanel)
@@ -98,19 +99,19 @@ public class BattleWindow: MonoBehaviour {
 
 	IEnumerator StartBattle(MessageEventArgs args)
 	{
-		if(args.ContainMessage("Man"))
+		if(args.ContainsMessage("Man"))
 		{
 			GameObject player = Instantiate(Resources.Load(GlobalDataStructure.PATH_BATTLE + "Character")) as GameObject;
 			player.transform.SetParent(playerPanel.transform, false);
 			player.GetComponent<Player>().Init(0);			
 			
-			if(args.ContainMessage("Girl"))
+			if(args.ContainsMessage("Girl"))
 			{
 				player.transform.DOLocalMoveX(-200,0.5f);
 			}
 		}
 
-		if(args.ContainMessage("Girl"))
+		if(args.ContainsMessage("Girl"))
 		{
 			GameObject player = Instantiate(Resources.Load(GlobalDataStructure.PATH_BATTLE + "Character")) as GameObject;
 			player.transform.SetParent(playerPanel.transform, false);
@@ -118,20 +119,20 @@ public class BattleWindow: MonoBehaviour {
 			
 
 			
-			if(args.ContainMessage("Man"))
+			if(args.ContainsMessage("Man"))
 			{
 				player.transform.DOLocalMoveX(200,0.5f);
 			}
 		}
 
-		if(args.ContainMessage("Enemy"))
+		if(args.ContainsMessage("Enemy"))
 		{
-			string[] enemyIDs = args.GetMessage("Enemy").Split(',');
+			int[] enemyIDs = args.GetMessage<int[]>("Enemy");
 			for(int i = 0; i < enemyIDs.Length; i++)
 			{				
 				GameObject enemy = Instantiate(Resources.Load(GlobalDataStructure.PATH_BATTLE + "Enemy")) as GameObject;			
 				enemy.transform.SetParent(enemyPanel.transform, false);
-				enemy.GetComponent<Enemy>().Init(Convert.ToInt32(enemyIDs[i]));
+				enemy.GetComponent<Enemy>().Init(enemyIDs[i]);
 				
 				enemy.transform.DOShakeScale(1);
 				yield return new WaitForSeconds(1f);

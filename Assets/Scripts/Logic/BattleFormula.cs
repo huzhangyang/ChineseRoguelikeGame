@@ -171,8 +171,8 @@ public class BattleFormula {
 		
 		MessageEventArgs args = new MessageEventArgs();
 		args.AddMessage("Name", target.GetName());
-		args.AddMessage("Amount", amount.ToString());
-		args.AddMessage("CurrentHP", target.currentHP.ToString());
+		args.AddMessage("Amount", amount);
+		args.AddMessage("CurrentHP", target.currentHP);
 		EventManager.Instance.PostEvent(EventDefine.BattleObjectHeal, args);
 	}
 
@@ -231,7 +231,7 @@ public class BattleFormula {
 		//send message
 		MessageEventArgs args = new MessageEventArgs();
 		args.AddMessage("Name", target.GetName());
-		args.AddMessage("Damage", damage.ToString());
+		args.AddMessage("Damage", damage);
 		EventManager.Instance.PostEvent(EventDefine.BattleObjectHurt, args);
 		//calculate die event
 		if(target.currentHP <= 0)

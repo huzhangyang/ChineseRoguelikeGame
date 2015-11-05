@@ -109,24 +109,14 @@ public class EventManager : MonoBehaviour{
 
 public class MessageEventArgs : EventArgs
 {
+	public Dictionary<string, object> messages;
+
 	public MessageEventArgs()
 	{
-		messages = new Dictionary<string, string>();
+		messages = new Dictionary<string, object>();
 	}
 	
-	public MessageEventArgs(MessageEventArgs copy)
-	{
-		messages =  new Dictionary<string, string>(copy.messages);
-	}
-	
-	public Dictionary<string, string> messages;
-	
-	public void AddMessage(string _key, string _value)
-	{
-		messages.Add(_key, _value);
-	}
-	
-	public void AddMessageReplace( string _key , string _value)
+	public void AddMessage(string _key, object _value)
 	{
 		if ( messages.ContainsKey( _key ))
 			messages[_key]= _value;
@@ -134,17 +124,7 @@ public class MessageEventArgs : EventArgs
 			messages.Add( _key , _value );
 	}
 	
-	public void SetMessage(string _key, string _value)
-	{
-		messages[_key] = _value;
-	}
-	
-	public void RemoveMessage(string _key)
-	{
-		messages.Remove(_key);
-	}
-	
-	public bool ContainMessage( string _key )
+	public bool ContainsMessage(string _key)
 	{
 		if( messages.ContainsKey(_key) )
 		{
@@ -154,18 +134,14 @@ public class MessageEventArgs : EventArgs
 		return false;		
 	}
 	
-	public string GetMessage(string _key)
+	public T GetMessage<T>(string _key)
 	{
-		if( !messages.ContainsKey(_key) )
+		T ret = default(T);
+		if(messages.ContainsKey(_key) && messages[_key] is T)
 		{
-			return null;
+			ret = (T)messages[_key];
 		}
 		
-		return messages[_key];
-	}
-	
-	public void ClearMessage()
-	{
-		messages.Clear();
+		return ret;
 	}
 }
