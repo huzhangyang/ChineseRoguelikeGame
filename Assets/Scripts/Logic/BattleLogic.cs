@@ -104,8 +104,8 @@ public class BattleLogic : MonoBehaviour {
 
 	void OnCommandClicked(MessageEventArgs args)
 	{
-		int commandID = args.GetMessage<int>("CommandID");
-		currentCommand = GetCurrentPlayer ().availableCommands.Find((Command cmd)=>{return cmd.commandID == commandID;});
+		string commandName = args.GetMessage<string>("CommandName");
+		currentCommand = GetCurrentPlayer ().availableCommands.Find((Command cmd)=>{return cmd.commandName == commandName;});
 		switch(currentCommand.targetType)
 		{
 		case TargetType.SingleEnemy:

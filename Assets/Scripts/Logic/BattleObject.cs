@@ -220,10 +220,6 @@ public abstract class BattleObject : MonoBehaviour {
 			availableCommands.Add(new CommandEscape());
 			break;
 		}
-		for(int i = 0; i < availableCommands.Count; i++)
-		{
-			availableCommands[i].commandID = i;
-		}
 	}
 
 	public void AddBuff(int id)

@@ -3,8 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 public abstract class Command {
-
-	public int commandID;//用于唯一标识指令（在点击基本命令后会重置）
+	
 	public CommandType commandType;//指令类型
 	public string commandName;//指令名称
 	public string commandDescription;//指令描述

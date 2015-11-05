@@ -83,7 +83,7 @@ public class BattleWindow: MonoBehaviour {
 		{
 			GameObject commandButton = Instantiate(Resources.Load("Battle/CommandButton")) as GameObject;
 			commandButton.transform.SetParent(commandButtonPanel, false);
-			commandButton.GetComponent<CommandButtonUIEvent>().Init(commands[i].commandID, commands[i].commandName, commands[i].commandDescription);
+			commandButton.GetComponent<CommandButtonUIEvent>().Init(commands[i].commandName, commands[i].commandDescription);
 		}
 	}
 
