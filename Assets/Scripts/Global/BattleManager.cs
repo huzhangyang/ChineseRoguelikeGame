@@ -16,6 +16,7 @@ public class BattleManager : MonoBehaviour {
 	private List<Enemy> enemys;
 	private List<Player> players;
 	private Command currentCommand;
+	private bool isPaused;//战斗是否暂停
 
 	/*LIFE CYCLE */
 	void OnEnable() 
@@ -50,7 +51,7 @@ public class BattleManager : MonoBehaviour {
 
 	void Update()
 	{
-		if(GlobalManager.Instance.gameStatus == GameStatus.Battle)
+		if(GlobalManager.Instance.gameStatus == GameStatus.Battle && !isPaused)
 			EventManager.Instance.PostEvent (BattleEvent.OnTimelineUpdate);
 	}
 	
@@ -75,6 +76,8 @@ public class BattleManager : MonoBehaviour {
 
 	void OnBattleEnter(MessageEventArgs args)
 	{		
+		GlobalManager.Instance.gameStatus = GameStatus.Battle;
+		isPaused = true;
 		enemys = new List<Enemy>();
 		players = new List<Player>();
 	}
@@ -93,8 +96,7 @@ public class BattleManager : MonoBehaviour {
 
 	void OnBattleStart(MessageEventArgs args)
 	{
-		GlobalManager.Instance.gameStatus = GameStatus.Battle;
-		ResumeEveryOne();
+		isPaused = false;
 	}
 
 	void OnPlayerReady(MessageEventArgs args)
@@ -240,6 +242,11 @@ public class BattleManager : MonoBehaviour {
 		return enemys;
 	}
 
+	public bool GetPauseCondition()
+	{
+		return isPaused;
+	}
+
 	IEnumerator WaitEveryOne(float seconds)
 	{
 		PauseEveryOne();
@@ -250,31 +257,18 @@ public class BattleManager : MonoBehaviour {
 	IEnumerator FinishBattle()
 	{
 		GlobalManager.Instance.gameStatus = GameStatus.Map;
+		isPaused = true;
 		yield return new WaitForSeconds(5);
 		EventManager.Instance.PostEvent(BattleEvent.OnBattleFinish);
 	}
 
 	void PauseEveryOne()
 	{
-		foreach(Enemy enemy in enemys)
-		{
-			enemy.isPaused = true;
-		}
-		foreach(Player player in players)
-		{
-			player.isPaused = true;
-		}
+		isPaused = true;
 	}
 
 	void ResumeEveryOne()
 	{
-		foreach(Enemy enemy in enemys)
-		{
-			enemy.isPaused = false;
-		}
-		foreach(Player player in players)
-		{
-			player.isPaused = false;
-		}
+		isPaused = false;
 	}
 }

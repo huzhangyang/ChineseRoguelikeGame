@@ -222,7 +222,6 @@ public class BattleFormula {
 	private static void OnDamage(BattleObject target, int damage)
 	{
 		target.currentHP -= damage;
-		target.isPaused = true;// so that timeline adjust is smooth
 		//timeline drawback
 		if(target.battleStatus == BattleStatus.Action)
 			target.timelinePosition -= damage * 10000 / target.maxHP;
@@ -235,9 +234,7 @@ public class BattleFormula {
 		EventManager.Instance.PostEvent(BattleEvent.BattleObjectHurt, args);
 		//calculate die event
 		if(target.currentHP <= 0)
-		{
-			target.isDied = true;
-			
+		{			
 			MessageEventArgs args2 = new MessageEventArgs();
 			args2.AddMessage("Object", target);
 			EventManager.Instance.PostEvent(BattleEvent.BattleObjectDied, args2);

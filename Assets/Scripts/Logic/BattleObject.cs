@@ -71,11 +71,9 @@ public abstract class BattleObject : MonoBehaviour {
 	public Damage damage = new Damage();//伤害值
 	public List<Command> availableCommands = new List<Command>();
 	public List<Buff> buffList = new List<Buff>();
-
-	public bool isPaused = true;
+	
 	public bool isGuarding = false;
 	public bool isEvading = false;
-	public bool isDied = false;
 
 	private int _timelinePosition;
 	public int timelinePosition//max:10000
@@ -84,7 +82,7 @@ public abstract class BattleObject : MonoBehaviour {
 		{
 			if(value > 10000) value = 10000;
 			_timelinePosition = value;
-			UIEvent.SetAvatarPositionX(value <= 0 ? 0 : value / 20, isPaused);//max:500
+			UIEvent.SetAvatarPositionX(value <= 0 ? 0 : value / 20, BattleManager.Instance.GetPauseCondition());//max:500
 		}
 		get
 		{
@@ -108,13 +106,10 @@ public abstract class BattleObject : MonoBehaviour {
 	/*更新时间轴*/
 	protected void OnTimelineUpdate(MessageEventArgs args)
 	{
-		if(!isPaused && !isDied)
-		{	
-			if(battleStatus == BattleStatus.Prepare)
-				timelinePosition += BattleFormula.GetTimelineStep(this);
-			else if(battleStatus == BattleStatus.Action)
-				timelinePosition += commandToExecute.preExecutionSpeed;
-		}
+		if(battleStatus == BattleStatus.Prepare)
+			timelinePosition += BattleFormula.GetTimelineStep(this);
+		else if(battleStatus == BattleStatus.Action)
+			timelinePosition += commandToExecute.preExecutionSpeed;
 
 		if(timelinePosition >= 8000 && battleStatus == BattleStatus.Prepare)
 		{
