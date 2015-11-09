@@ -312,7 +312,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 11458610}
         m_MethodName: EnterBattle
         m_Mode: 3
         m_Arguments:
@@ -432,7 +432,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 11458610}
         m_MethodName: EnterBattle
         m_Mode: 3
         m_Arguments:
@@ -456,6 +456,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4312e7b3dfb61a647b31ce80adfac548, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  battleCanvas: {fileID: 0}
+  mapCanvas: {fileID: 22353840}
   manInfo: {fileID: 11404918}
   girlInfo: {fileID: 11475454}
 --- !u!114 &11466712
@@ -593,7 +595,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 11458610}
         m_MethodName: EnterBattle
         m_Mode: 3
         m_Arguments:

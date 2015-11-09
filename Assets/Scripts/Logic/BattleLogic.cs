@@ -9,12 +9,12 @@ public class BattleLogic : MonoBehaviour {
 	public static List<Player> players;
 	public static Command currentCommand;
 
-	public Canvas battleCanvas;
-	public Canvas mapCanvas;
+
 
 	/*LIFE CYCLE */
 	void OnEnable() 
 	{
+		EventManager.Instance.RegisterEvent (BattleEvent.OnBattleEnter, OnBattleEnter);
 		EventManager.Instance.RegisterEvent (BattleEvent.OnBattleStart, OnBattleStart);
 		EventManager.Instance.RegisterEvent (BattleEvent.OnPlayerReady, OnPlayerReady);
 		EventManager.Instance.RegisterEvent (BattleEvent.OnCommandClicked, OnCommandClicked);
@@ -26,6 +26,7 @@ public class BattleLogic : MonoBehaviour {
 	
 	void OnDisable () 
 	{
+		EventManager.Instance.UnRegisterEvent (BattleEvent.OnBattleEnter, OnBattleEnter);
 		EventManager.Instance.UnRegisterEvent (BattleEvent.OnBattleEnter, OnBattleStart);
 		EventManager.Instance.UnRegisterEvent (BattleEvent.OnPlayerReady, OnPlayerReady);
 		EventManager.Instance.UnRegisterEvent (BattleEvent.OnCommandClicked, OnCommandClicked);
@@ -39,37 +40,6 @@ public class BattleLogic : MonoBehaviour {
 	{
 		if(GlobalManager.Instance.gameStatus == GameStatus.Battle)
 			EventManager.Instance.PostEvent (BattleEvent.OnTimelineUpdate);
-	}
-
-	/*UI CALLBACK*/
-	public void EnterBattle(int battleType)
-	{
-		mapCanvas.gameObject.SetActive (false);
-		battleCanvas.gameObject.SetActive (true);
-
-		enemys = new List<Enemy>();
-		players = new List<Player>();
-
-		MessageEventArgs args = new MessageEventArgs ();
-		args.AddMessage("BattleType",battleType);
-		if(battleType == 0)
-		{
-			args.AddMessage("Man",true);
-			args.AddMessage("Girl",true);
-			args.AddMessage("Enemy",new int[3]{10,10,10});
-		}
-		else if(battleType == 1)
-		{
-			args.AddMessage("Man",true);
-			args.AddMessage("Girl",true);
-			args.AddMessage("Enemy",new int[1]{11});
-		}
-		else 
-		{
-			args.AddMessage("Man",true);
-			args.AddMessage("Enemy",new int[1]{12});
-		}
-		EventManager.Instance.PostEvent (BattleEvent.OnBattleEnter, args);
 	}
 	
 	public void SelectBasicCommand(int commandID)
@@ -90,6 +60,13 @@ public class BattleLogic : MonoBehaviour {
 	}
 
 	/*EVENT CALLBACK*/
+
+	void OnBattleEnter(MessageEventArgs args)
+	{		
+		enemys = new List<Enemy>();
+		players = new List<Player>();
+	}
+
 
 	void OnBattleStart(MessageEventArgs args)
 	{
@@ -195,8 +172,6 @@ public class BattleLogic : MonoBehaviour {
 	{
 		GlobalManager.Instance.gameStatus = GameStatus.Map;
 		yield return new WaitForSeconds(5);
-		mapCanvas.gameObject.SetActive (true);
-		battleCanvas.gameObject.SetActive (false);
 		EventManager.Instance.PostEvent(BattleEvent.OnBattleFinish);
 	}
 
