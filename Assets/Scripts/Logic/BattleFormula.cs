@@ -237,13 +237,9 @@ public class BattleFormula {
 		if(target.currentHP <= 0)
 		{
 			target.isDied = true;
-			if(target is Enemy)
-				BattleLogic.enemys.Remove((Enemy)target);
-			else
-				BattleLogic.players.Remove((Player)target);
 			
 			MessageEventArgs args2 = new MessageEventArgs();
-			args2.AddMessage("Name", target.GetName());
+			args2.AddMessage("Object", target);
 			EventManager.Instance.PostEvent(BattleEvent.BattleObjectDied, args2);
 		}
 	}

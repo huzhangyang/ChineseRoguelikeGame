@@ -49,8 +49,8 @@ public class BattleMessage : MonoBehaviour {
 
 	void OnEnemySpawn(MessageEventArgs args)
 	{
-		string name = args.GetMessage<string>("EnemyName");
-		AddMessage(name + " 出现了！");
+		BattleObject bo = args.GetMessage<BattleObject>("Object");
+		AddMessage(bo.GetName() + " 出现了！");
 	}
 
 	void OnExecuteCommand(MessageEventArgs args)
@@ -93,8 +93,8 @@ public class BattleMessage : MonoBehaviour {
 
 	void OnBattleObjectDied(MessageEventArgs args)
 	{
-		string name = args.GetMessage<string>("Name");
-		AddMessage(name + " 不敌！");
+		BattleObject bo = args.GetMessage<BattleObject>("Object");
+		AddMessage(bo.GetName() + " 不敌！");
 	}
 
 	void OnBattleWin(MessageEventArgs args)

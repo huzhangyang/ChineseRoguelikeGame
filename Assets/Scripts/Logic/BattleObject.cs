@@ -152,28 +152,6 @@ public abstract class BattleObject : MonoBehaviour {
 		{
 			buff.OnAction();
 		}
-		//decide target
-		switch(commandToExecute.targetType)
-		{
-		case TargetType.Self:
-			commandToExecute.targetList.Add(this);
-			break;
-		case TargetType.SingleEnemy:
-		case TargetType.SingleAlly:
-			break;
-		case TargetType.AllEnemies:
-			if(this is Enemy)
-				commandToExecute.targetList = new List<BattleObject>(BattleLogic.players.ToArray());
-			else
-				commandToExecute.targetList = new List<BattleObject>(BattleLogic.enemys.ToArray());
-			break;
-		case TargetType.AllAllies:
-			if(this is Enemy)
-				commandToExecute.targetList = new List<BattleObject>(BattleLogic.enemys.ToArray());
-			else
-				commandToExecute.targetList = new List<BattleObject>(BattleLogic.players.ToArray());
-			break;
-		}
 		//decide command
 		commandToExecute.source = this;
 		commandToExecute.Execute();

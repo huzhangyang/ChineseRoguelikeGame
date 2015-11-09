@@ -11,7 +11,6 @@ public class Enemy : BattleObject {
 	public void Init(int enemyID)
 	{
 		data = DataManager.Instance.GetEnemyDataSet ().GetEnemyData (enemyID).Clone();
-		BattleLogic.enemys.Add(this);
 
 		UIEvent = this.GetComponent<BattleObjectUIEvent>();
 		UIEvent.Init(enemyID);
@@ -29,7 +28,7 @@ public class Enemy : BattleObject {
 		AcquireItem(1,1);
 
 		MessageEventArgs args = new MessageEventArgs();
-		args.AddMessage("EnemyName", data.name);
+		args.AddMessage("Object", this);
 		EventManager.Instance.PostEvent(BattleEvent.OnEnemySpawn, args);
 	}
 

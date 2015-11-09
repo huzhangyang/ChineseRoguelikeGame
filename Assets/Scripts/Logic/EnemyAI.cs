@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class EnemyAI : MonoBehaviour {
 
 	Enemy self;
+	Command command = new CommandNone();
 
 	public void InitAI()
 	{
@@ -14,7 +15,7 @@ public class EnemyAI : MonoBehaviour {
 	public Command AISelectCommand()
 	{
 		float hpPercent = self.currentHP / (float)self.maxHP;
-		Command command = new CommandNone();
+
 		if(hpPercent > 0.8)
 		{
 			command = AIAttack();	
@@ -42,6 +43,23 @@ public class EnemyAI : MonoBehaviour {
 			else
 				command = AIAttack();
 		}
+
+		switch(command.targetType)
+		{
+		case TargetType.Self:
+			command.targetList.Add(this.GetComponent<BattleObject>());
+			break;
+		case TargetType.SingleEnemy:
+		case TargetType.SingleAlly:
+			command.targetList.Add(AISelectTarget());
+			break;
+		case TargetType.AllEnemies:
+			command.targetList = new List<BattleObject>(BattleManager.Instance.GetEnemyList().ToArray());
+			break;
+		case TargetType.AllAllies:
+			command.targetList = new List<BattleObject>(BattleManager.Instance.GetPlayerList().ToArray());
+			break;
+		}
 		return command;
 	}
 
@@ -64,7 +82,6 @@ public class EnemyAI : MonoBehaviour {
 			}
 		}
 		Command command = availableCommands[Random.Range(0, availableCommands.Count)];
-		command.targetList.Add(AISelectTarget());
 		return command;
 	}
 
@@ -87,7 +104,7 @@ public class EnemyAI : MonoBehaviour {
 	{
 		while(true)
 		{
-			foreach(Player player in BattleLogic.players)
+			foreach(Player player in BattleManager.Instance.GetPlayerList())
 			{
 				if(Random.Range(0,2) > 0)
 					return player;

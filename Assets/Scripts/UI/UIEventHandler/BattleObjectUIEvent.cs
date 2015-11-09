@@ -79,8 +79,9 @@ public class BattleObjectUIEvent : MonoBehaviour {
 	{
 		if(allowClick)
 		{
-			BattleLogic.currentCommand.targetList.Add(this.GetComponent<BattleObject>());
-			EventManager.Instance.PostEvent(BattleEvent.OnCommandSelected);
+			MessageEventArgs args = new MessageEventArgs();
+			args.AddMessage("Target", this.GetComponent<BattleObject>());
+			EventManager.Instance.PostEvent(BattleEvent.OnCommandSelected, args);
 		}
 	}
 
