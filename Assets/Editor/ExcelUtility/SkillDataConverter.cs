@@ -33,7 +33,7 @@ public class SkillDataConverter : MonoBehaviour {
 	
 	static void LoadSkillData()
 	{		
-		for (int i = 1; i < ExcelData.Rows.Count; i++)
+		for (int i = 2; i < ExcelData.Rows.Count; i++)
 		{
 			SkillData data = new SkillData();
 			skillDataSet.skillDataSet.Add(data);
@@ -48,14 +48,16 @@ public class SkillDataConverter : MonoBehaviour {
 			data.CRTMultiplier = ExcelUtility.GetFloatCell(ExcelData, i, 7);
 			data.preSPDMultiplier = ExcelUtility.GetFloatCell(ExcelData, i, 8);
 			data.postSPDMultiplier = ExcelUtility.GetFloatCell(ExcelData, i, 9);
-			data.buffID = ExcelUtility.GetIntCell(ExcelData, i, 10);
-
+			data.interruptMultiplier = ExcelUtility.GetFloatCell(ExcelData, i, 10);
+			data.maxCombo = ExcelUtility.GetIntCell(ExcelData, i, 11);
+			data.buffID = ExcelUtility.GetIntCell(ExcelData, i, 12, true, 0);
+			data.buffPercentage = ExcelUtility.GetIntCell(ExcelData, i, 13, true, 0);
 		}
 	}
 
 	static void LoadBuffData()
 	{		
-		for (int i = 1; i < ExcelData.Rows.Count; i++)
+		for (int i = 2; i < ExcelData.Rows.Count; i++)
 		{
 			BuffData data = new BuffData();
 			skillDataSet.buffDataSet.Add(data);

@@ -42,7 +42,7 @@ public class BattleFormula {
 		Damage damagePack = source.damage;
 		damagePack = new Damage();
 		//计算击出命中、暴击、伤害
-		damagePack.dmg = (source.power + weaponData.basicATK) * skillData.ATKMultiplier;//伤害值
+		damagePack.dmg = (source.power + Random.Range(weaponData.basicATKMin, weaponData.basicATKMax + 1)) * skillData.ATKMultiplier;//伤害值
 		damagePack.hit = weaponData.basicACC * skillData.ACCMultiplier + source.skill + source.luck / 9.0f;//命中率
 		damagePack.crit = weaponData.basicCRT * skillData.CRTMultiplier * (source.skill / 2 + 50)/ 1000.0f + source.luck / 9.0f;//暴击率
 		//计算真实命中、暴击、伤害

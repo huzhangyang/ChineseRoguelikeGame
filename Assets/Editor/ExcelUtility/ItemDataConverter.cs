@@ -35,7 +35,7 @@ public class ItemDataConverter : MonoBehaviour {
 
 	static void LoadItemData()
 	{
-		for (int i = 1; i < ExcelData.Rows.Count; i++)
+		for (int i = 2; i < ExcelData.Rows.Count; i++)
 		{			
 			ItemData data = new ItemData();
 			itemDataSet.itemDataSet.Add(data);
@@ -50,21 +50,25 @@ public class ItemDataConverter : MonoBehaviour {
 	
 	static void LoadWeaponData()
 	{
-		for (int i = 1; i < ExcelData.Rows.Count; i++)
+		for (int i = 2; i < ExcelData.Rows.Count; i++)
 		{			
 			WeaponData data = new WeaponData();
 			itemDataSet.weaponDataSet.Add(data);
 
 			data.id = ExcelUtility.GetIntCell(ExcelData, i, 0);
 			data.name = ExcelUtility.GetCell(ExcelData, i, 1);
-			data.basicATK = ExcelUtility.GetIntCell(ExcelData, i, 2);
-			data.basicSPD = ExcelUtility.GetIntCell(ExcelData, i, 3);
-			data.basicACC = ExcelUtility.GetIntCell(ExcelData, i, 4);
-			data.basicCRT = ExcelUtility.GetIntCell(ExcelData, i, 5);
-			data.skill1ID = ExcelUtility.GetIntCell(ExcelData, i, 6);
-			data.skill2ID = ExcelUtility.GetIntCell(ExcelData, i, 7);
-			data.skill3ID = ExcelUtility.GetIntCell(ExcelData, i, 8);
-			data.description = ExcelUtility.GetCell(ExcelData, i, 9);
+			data.description = ExcelUtility.GetCell(ExcelData, i, 2);
+			data.basicATKMin = ExcelUtility.GetIntCell(ExcelData, i, 3);
+			data.basicATKMax = ExcelUtility.GetIntCell(ExcelData, i, 4);
+			data.basicACC = ExcelUtility.GetIntCell(ExcelData, i, 5);
+			data.basicCRT = ExcelUtility.GetIntCell(ExcelData, i, 6);
+			data.basicSPD = ExcelUtility.GetIntCell(ExcelData, i, 7);
+			data.interrupt = ExcelUtility.GetIntCell(ExcelData, i, 8);
+			data.skill1ID = ExcelUtility.GetIntCell(ExcelData, i, 9);
+			data.skill2ID = ExcelUtility.GetIntCell(ExcelData, i, 10);
+			data.skill3ID = ExcelUtility.GetIntCell(ExcelData, i, 11);
+			data.buffID = ExcelUtility.GetIntCell(ExcelData, i, 12, true, 0);
+			data.buffPercentage = ExcelUtility.GetIntCell(ExcelData, i, 13, true, 0);
 
 			data.type = ItemType.Weapon;
 		}
@@ -72,7 +76,7 @@ public class ItemDataConverter : MonoBehaviour {
 
 	static void LoadMagicData()
 	{
-		for (int i = 1; i < ExcelData.Rows.Count; i++)
+		for (int i = 2; i < ExcelData.Rows.Count; i++)
 		{			
 			MagicData data = new MagicData();
 			itemDataSet.magicDataSet.Add(data);

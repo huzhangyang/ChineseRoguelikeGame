@@ -75,13 +75,17 @@ public class WeaponData:ItemData{
 /*
  * 武器类。
 */
-	public int basicATK;//基准攻击力
-	public int basicSPD;//基准攻击速度
+	public int basicATKMin;//攻击下限
+	public int basicATKMax;//攻击上限
 	public int basicACC;//基准命中率
 	public int basicCRT;//基准暴击率
+	public int basicSPD;//基准攻击速度
+	public int interrupt;//武器打断值
 	public int skill1ID;
 	public int skill2ID;
 	public int skill3ID;
+	public int buffID;
+	public int buffPercentage;
 }
 
 [System.Serializable]
