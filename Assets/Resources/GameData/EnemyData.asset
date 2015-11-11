@@ -12,6 +12,26 @@ MonoBehaviour:
   m_Name: EnemyData
   m_EditorClassIdentifier: 
   dataSet:
+  - name: "\u65E0"
+    id: 0
+    talentID: 0
+    natureID: 0
+    battleType: 0
+    stamina: 0
+    power: 0
+    agility: 0
+    skill: 0
+    toughness: 0
+    insight: 0
+    eloquence: 0
+    luck: 0
+    weaponID: 0
+    ring1ID: 0
+    ring2ID: 0
+    magicIDs: 
+    itemKeys: 
+    itemValues: 
+    isBoss: 0
   - name: "\u54A9\u54A9"
     id: 10
     talentID: 0

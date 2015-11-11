@@ -10,83 +10,29 @@ public class ItemDataConverter : MonoBehaviour {
 
 	const string PATH_EXCEL = "/../Documents/ExcelData/ItemData.xlsx";
 	const string PATH_ASSET = "Assets/Resources/GameData/ItemData.asset";
-	static ItemDataSet itemDataSet;
-	static DataTable ExcelData;
 	
 	[MenuItem("CRGTools/ItemDataConverter")]
 	public static void ProcessConvert()
 	{		
 		FileStream stream = File.Open(Application.dataPath + PATH_EXCEL, FileMode.Open, FileAccess.Read);
 		IExcelDataReader excelReader = ExcelReaderFactory.CreateOpenXmlReader(stream);
-		itemDataSet = ScriptableObject.CreateInstance<ItemDataSet>();
+		ItemDataSet itemDataSet = ScriptableObject.CreateInstance<ItemDataSet>();
+		DataTable dataTable;
+		ExcelLoader loader;
 		
 		if (excelReader.AsDataSet () != null)
 		{
-			ExcelData = excelReader.AsDataSet ().Tables["Item"];
-			LoadItemData();
-			ExcelData = excelReader.AsDataSet ().Tables["Weapon"];
-			LoadWeaponData();
-			ExcelData = excelReader.AsDataSet ().Tables["Magic"];
-			LoadMagicData();
+			dataTable = excelReader.AsDataSet ().Tables["Item"];
+			loader = new ExcelLoader(dataTable);
+			itemDataSet.itemDataSet = loader.CreateDataList<ItemData>();
+			dataTable = excelReader.AsDataSet ().Tables["Weapon"];
+			loader = new ExcelLoader(dataTable);
+			itemDataSet.weaponDataSet = loader.CreateDataList<WeaponData>();
+			dataTable = excelReader.AsDataSet ().Tables["Magic"];
+			loader = new ExcelLoader(dataTable);
+			itemDataSet.magicDataSet = loader.CreateDataList<MagicData>();
 			AssetDatabase.CreateAsset(itemDataSet, PATH_ASSET);
 		}
 		excelReader.Dispose ();
-	}
-
-	static void LoadItemData()
-	{
-		for (int i = 1; i < ExcelData.Rows.Count; i++)
-		{			
-			ItemData data = new ItemData();
-			itemDataSet.itemDataSet.Add(data);
-			
-			data.id = ExcelUtility.GetIntCell(ExcelData, i, 0);
-			data.name = ExcelUtility.GetCell(ExcelData, i, 1);
-			data.description = ExcelUtility.GetCell(ExcelData, i, 2);
-			
-			data.type = ItemType.NormalItem;
-		}
-	}
-	
-	static void LoadWeaponData()
-	{
-		for (int i = 1; i < ExcelData.Rows.Count; i++)
-		{			
-			WeaponData data = new WeaponData();
-			itemDataSet.weaponDataSet.Add(data);
-
-			data.id = ExcelUtility.GetIntCell(ExcelData, i, 0);
-			data.name = ExcelUtility.GetCell(ExcelData, i, 1);
-			data.basicATK = ExcelUtility.GetIntCell(ExcelData, i, 2);
-			data.basicSPD = ExcelUtility.GetIntCell(ExcelData, i, 3);
-			data.basicACC = ExcelUtility.GetIntCell(ExcelData, i, 4);
-			data.basicCRT = ExcelUtility.GetIntCell(ExcelData, i, 5);
-			data.skill1ID = ExcelUtility.GetIntCell(ExcelData, i, 6);
-			data.skill2ID = ExcelUtility.GetIntCell(ExcelData, i, 7);
-			data.skill3ID = ExcelUtility.GetIntCell(ExcelData, i, 8);
-			data.description = ExcelUtility.GetCell(ExcelData, i, 9);
-
-			data.type = ItemType.Weapon;
-		}
-	}
-
-	static void LoadMagicData()
-	{
-		for (int i = 1; i < ExcelData.Rows.Count; i++)
-		{			
-			MagicData data = new MagicData();
-			itemDataSet.magicDataSet.Add(data);
-			
-			data.id = ExcelUtility.GetIntCell(ExcelData, i, 0);
-			data.name = ExcelUtility.GetCell(ExcelData, i, 1);
-			data.basicATK = ExcelUtility.GetIntCell(ExcelData, i, 2);
-			data.basicSPD = ExcelUtility.GetIntCell(ExcelData, i, 3);
-			data.basicACC = ExcelUtility.GetIntCell(ExcelData, i, 4);
-			data.basicCRT = ExcelUtility.GetIntCell(ExcelData, i, 5);
-			data.skillID = ExcelUtility.GetIntCell(ExcelData, i, 6);
-			data.description = ExcelUtility.GetCell(ExcelData, i, 7);
-			
-			data.type = ItemType.Magic;
-		}
 	}
 }

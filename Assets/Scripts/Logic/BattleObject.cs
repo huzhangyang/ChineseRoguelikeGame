@@ -71,11 +71,9 @@ public abstract class BattleObject : MonoBehaviour {
 	public Damage damage = new Damage();//伤害值
 	public List<Command> availableCommands = new List<Command>();
 	public List<Buff> buffList = new List<Buff>();
-
-	public bool isPaused = true;
+	
 	public bool isGuarding = false;
 	public bool isEvading = false;
-	public bool isDied = false;
 
 	private int _timelinePosition;
 	public int timelinePosition//max:10000
@@ -84,7 +82,7 @@ public abstract class BattleObject : MonoBehaviour {
 		{
 			if(value > 10000) value = 10000;
 			_timelinePosition = value;
-			UIEvent.SetAvatarPositionX(value <= 0 ? 0 : value / 20, isPaused);//max:500
+			UIEvent.SetAvatarPositionX(value <= 0 ? 0 : value / 20, BattleManager.Instance.GetPauseCondition());//max:500
 		}
 		get
 		{
@@ -108,13 +106,10 @@ public abstract class BattleObject : MonoBehaviour {
 	/*更新时间轴*/
 	protected void OnTimelineUpdate(MessageEventArgs args)
 	{
-		if(!isPaused && !isDied)
-		{	
-			if(battleStatus == BattleStatus.Prepare)
-				timelinePosition += BattleFormula.GetTimelineStep(this);
-			else if(battleStatus == BattleStatus.Action)
-				timelinePosition += commandToExecute.preExecutionSpeed;
-		}
+		if(battleStatus == BattleStatus.Prepare)
+			timelinePosition += BattleFormula.GetTimelineStep(this);
+		else if(battleStatus == BattleStatus.Action)
+			timelinePosition += commandToExecute.preExecutionSpeed;
 
 		if(timelinePosition >= 8000 && battleStatus == BattleStatus.Prepare)
 		{
@@ -151,28 +146,6 @@ public abstract class BattleObject : MonoBehaviour {
 		foreach(Buff buff in buffList)
 		{
 			buff.OnAction();
-		}
-		//decide target
-		switch(commandToExecute.targetType)
-		{
-		case TargetType.Self:
-			commandToExecute.targetList.Add(this);
-			break;
-		case TargetType.SingleEnemy:
-		case TargetType.SingleAlly:
-			break;
-		case TargetType.AllEnemies:
-			if(this is Enemy)
-				commandToExecute.targetList = new List<BattleObject>(BattleLogic.players.ToArray());
-			else
-				commandToExecute.targetList = new List<BattleObject>(BattleLogic.enemys.ToArray());
-			break;
-		case TargetType.AllAllies:
-			if(this is Enemy)
-				commandToExecute.targetList = new List<BattleObject>(BattleLogic.enemys.ToArray());
-			else
-				commandToExecute.targetList = new List<BattleObject>(BattleLogic.players.ToArray());
-			break;
 		}
 		//decide command
 		commandToExecute.source = this;
@@ -225,11 +198,8 @@ public abstract class BattleObject : MonoBehaviour {
 	public void AddBuff(int id)
 	{
 		BuffData data = DataManager.Instance.GetSkillDataSet().GetBuffData(id);
-		if(Random.Range(0,101) <= data.percentage)
-		{
-			Buff buff = new Buff(data);
-			buffList.Add(buff);
-		}
+		Buff buff = new Buff(data);
+		buffList.Add(buff);
 	}
 
 	public string GetName()

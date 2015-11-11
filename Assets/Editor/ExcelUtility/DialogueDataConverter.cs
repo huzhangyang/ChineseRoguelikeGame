@@ -36,18 +36,18 @@ public class DialogueDataConvertor : MonoBehaviour
 			DialogueData data = new DialogueData();
 			dialogueDataSet.dataSet.Add(data);
 
-			data.dialogueID = ExcelUtility.GetIntCell(ExcelData, i, 0);
+			data.dialogueID = ExcelLoader.GetIntCell(ExcelData, i, 0);
 			SentenceData sentence;
-			sentence.tellerName = ExcelUtility.GetCell(ExcelData, i, 1);
-			sentence.avatarID = ExcelUtility.GetIntCell(ExcelData, i, 2);
-			sentence.content = ExcelUtility.GetCell(ExcelData, i, 3);
+			sentence.tellerName = ExcelLoader.GetCell(ExcelData, i, 1);
+			sentence.avatarID = ExcelLoader.GetIntCell(ExcelData, i, 2);
+			sentence.content = ExcelLoader.GetCell(ExcelData, i, 3);
 			data.sentences.Add(sentence);
 
-			while(++i < ExcelData.Rows.Count && ExcelUtility.GetIntCell(ExcelData, i, 0, true, 0) == 0)
+			while(++i < ExcelData.Rows.Count && ExcelLoader.GetIntCell(ExcelData, i, 0, true, 0) == 0)
 			{
-				sentence.tellerName = ExcelUtility.GetCell(ExcelData, i, 1);
-				sentence.avatarID = ExcelUtility.GetIntCell(ExcelData, i, 2);
-				sentence.content = ExcelUtility.GetCell(ExcelData, i, 3);
+				sentence.tellerName = ExcelLoader.GetCell(ExcelData, i, 1);
+				sentence.avatarID = ExcelLoader.GetIntCell(ExcelData, i, 2);
+				sentence.content = ExcelLoader.GetCell(ExcelData, i, 3);
 				data.sentences.Add(sentence);
 			}
 		}

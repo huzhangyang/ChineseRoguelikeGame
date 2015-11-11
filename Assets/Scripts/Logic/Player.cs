@@ -9,7 +9,6 @@ public class Player : BattleObject {
 	public void Init(int playerID)
 	{
 		data = DataManager.Instance.GetPlayerDataSet().GetPlayerData(playerID).Clone();
-		BattleLogic.players.Add(this);
 
 		UIEvent = this.GetComponent<BattleObjectUIEvent>();
 		UIEvent.Init(playerID);
@@ -17,7 +16,7 @@ public class Player : BattleObject {
 		UIEvent.InitHPBar(currentHP, maxHP, true);
 
 		MessageEventArgs args = new MessageEventArgs();
-		args.AddMessage("PlayerName", data.name);
+		args.AddMessage("Object", this);
 		EventManager.Instance.PostEvent(BattleEvent.OnPlayerSpawn, args);
 	}
 

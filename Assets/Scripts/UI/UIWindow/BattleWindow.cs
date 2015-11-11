@@ -42,6 +42,13 @@ public class BattleWindow: MonoBehaviour {
 		EventManager.Instance.UnRegisterEvent (BattleEvent.OnCommandSelected, OnCommandSelected);
 	}
 
+	public void SelectBasicCommand(int commandID)
+	{
+		MessageEventArgs args = new MessageEventArgs();
+		args.AddMessage("CommandID", commandID);
+		EventManager.Instance.PostEvent(BattleEvent.OnBasicCommandSelected, args);
+	}
+
 	void OnEnterBattle(MessageEventArgs args)
 	{
 		foreach(Transform child in enemyPanel.transform)
@@ -70,20 +77,19 @@ public class BattleWindow: MonoBehaviour {
 
 	void OnBasicCommandSelected(MessageEventArgs args)
 	{
-		string playerName = args.GetMessage<string>("PlayerName");
-		commandDescrpition.GetComponent<Text>().text = playerName + "如何决策？";
+		Player player = BattleManager.Instance.GetCurrentPlayer();
+		commandDescrpition.GetComponent<Text>().text = player.GetName() + "如何决策？";
 		commandButtonPanel.DOLocalMoveX(-360, 0.2f);
 		foreach(Transform child in commandButtonPanel)
 		{
 			Destroy(child.gameObject);
 		}
 
-		var commands = BattleLogic.GetCurrentPlayer().availableCommands;
-		for(int i = 0 ; i < commands.Count; i++)
+		for(int i = 0 ; i < player.availableCommands.Count; i++)
 		{
 			GameObject commandButton = Instantiate(Resources.Load("Battle/CommandButton")) as GameObject;
 			commandButton.transform.SetParent(commandButtonPanel, false);
-			commandButton.GetComponent<CommandButtonUIEvent>().Init(commands[i].commandName, commands[i].commandDescription);
+			commandButton.GetComponent<CommandButtonUIEvent>().Init(player.availableCommands[i].commandName, player.availableCommands[i].commandDescription);
 		}
 	}
 

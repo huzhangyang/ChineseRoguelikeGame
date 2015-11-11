@@ -3,20 +3,30 @@ using System.Collections.Generic;
 using System.Collections;
 using System;
 
-public class BattleLogic : MonoBehaviour {
+public class BattleManager : MonoBehaviour {
 
-	public static List<Enemy> enemys;
-	public static List<Player> players;
-	public static Command currentCommand;
+/*
+战斗管理器
+*/
 
-	public Canvas battleCanvas;
-	public Canvas mapCanvas;
+	private static BattleManager s_Instance;
+	public BattleManager() { s_Instance = this; }
+	public static BattleManager Instance { get { return s_Instance; } }
+
+	private List<Enemy> enemys;
+	private List<Player> players;
+	private Command currentCommand;
+	private bool isPaused;//战斗是否暂停
 
 	/*LIFE CYCLE */
 	void OnEnable() 
 	{
+		EventManager.Instance.RegisterEvent (BattleEvent.OnBattleEnter, OnBattleEnter);
+		EventManager.Instance.RegisterEvent (BattleEvent.OnEnemySpawn, OnEnemySpawn);
+		EventManager.Instance.RegisterEvent (BattleEvent.OnPlayerSpawn, OnPlayerSpawn);
 		EventManager.Instance.RegisterEvent (BattleEvent.OnBattleStart, OnBattleStart);
 		EventManager.Instance.RegisterEvent (BattleEvent.OnPlayerReady, OnPlayerReady);
+		EventManager.Instance.RegisterEvent (BattleEvent.OnBasicCommandSelected, OnBasicCommandSelected);
 		EventManager.Instance.RegisterEvent (BattleEvent.OnCommandClicked, OnCommandClicked);
 		EventManager.Instance.RegisterEvent (BattleEvent.OnCommandSelected, OnCommandSelected);
 		EventManager.Instance.RegisterEvent (BattleEvent.OnCommandExecute, OnExecuteCommand);
@@ -26,8 +36,12 @@ public class BattleLogic : MonoBehaviour {
 	
 	void OnDisable () 
 	{
+		EventManager.Instance.UnRegisterEvent (BattleEvent.OnBattleEnter, OnBattleEnter);		
+		EventManager.Instance.UnRegisterEvent (BattleEvent.OnEnemySpawn, OnEnemySpawn);
+		EventManager.Instance.UnRegisterEvent (BattleEvent.OnPlayerSpawn, OnPlayerSpawn);
 		EventManager.Instance.UnRegisterEvent (BattleEvent.OnBattleEnter, OnBattleStart);
 		EventManager.Instance.UnRegisterEvent (BattleEvent.OnPlayerReady, OnPlayerReady);
+		EventManager.Instance.UnRegisterEvent (BattleEvent.OnBasicCommandSelected, OnBasicCommandSelected);
 		EventManager.Instance.UnRegisterEvent (BattleEvent.OnCommandClicked, OnCommandClicked);
 		EventManager.Instance.UnRegisterEvent (BattleEvent.OnCommandSelected, OnCommandSelected);
 		EventManager.Instance.UnRegisterEvent (BattleEvent.OnCommandExecute, OnExecuteCommand);
@@ -37,48 +51,47 @@ public class BattleLogic : MonoBehaviour {
 
 	void Update()
 	{
-		if(GlobalManager.Instance.gameStatus == GameStatus.Battle)
+		if(GlobalManager.Instance.gameStatus == GameStatus.Battle && !isPaused)
 			EventManager.Instance.PostEvent (BattleEvent.OnTimelineUpdate);
 	}
 
-	/*UI CALLBACK*/
-	public void EnterBattle(int battleType)
-	{
-		mapCanvas.gameObject.SetActive (false);
-		battleCanvas.gameObject.SetActive (true);
+	/*EVENT CALLBACK*/
 
+	void OnBattleEnter(MessageEventArgs args)
+	{		
+		GlobalManager.Instance.gameStatus = GameStatus.Battle;
+		isPaused = true;
 		enemys = new List<Enemy>();
 		players = new List<Player>();
-
-		MessageEventArgs args = new MessageEventArgs ();
-		args.AddMessage("BattleType",battleType);
-		if(battleType == 0)
-		{
-			args.AddMessage("Man",true);
-			args.AddMessage("Girl",true);
-			args.AddMessage("Enemy",new int[3]{10,10,10});
-		}
-		else if(battleType == 1)
-		{
-			args.AddMessage("Man",true);
-			args.AddMessage("Girl",true);
-			args.AddMessage("Enemy",new int[1]{11});
-		}
-		else 
-		{
-			args.AddMessage("Man",true);
-			args.AddMessage("Enemy",new int[1]{12});
-		}
-		EventManager.Instance.PostEvent (BattleEvent.OnBattleEnter, args);
 	}
-	
-	public void SelectBasicCommand(int commandID)
+
+	void OnEnemySpawn(MessageEventArgs args)
+	{		
+		BattleObject bo = args.GetMessage<BattleObject>("Object");
+		enemys.Add(bo as Enemy);
+	}
+
+	void OnPlayerSpawn(MessageEventArgs args)
+	{		
+		BattleObject bo = args.GetMessage<BattleObject>("Object");
+		players.Add(bo as Player);
+	}
+
+	void OnBattleStart(MessageEventArgs args)
 	{
-		BasicCommand basicCommand = (BasicCommand)commandID;
+		isPaused = false;
+	}
+
+	void OnPlayerReady(MessageEventArgs args)
+	{
+		PauseEveryOne();
+	}
+
+	void OnBasicCommandSelected(MessageEventArgs args)
+	{
+		BasicCommand basicCommand = (BasicCommand)args.GetMessage<int>("CommandID");
 		GetCurrentPlayer().RefreshAvailableCommands(basicCommand);
-		MessageEventArgs args = new MessageEventArgs();
-		args.AddMessage("PlayerName", GetCurrentPlayer().GetName());
-		EventManager.Instance.PostEvent(BattleEvent.OnBasicCommandSelected, args);
+
 		foreach(Enemy enemy in enemys)
 		{
 			enemy.GetComponent<BattleObjectUIEvent>().DisableClick();
@@ -87,19 +100,6 @@ public class BattleLogic : MonoBehaviour {
 		{
 			player.GetComponent<BattleObjectUIEvent>().DisableClick();
 		}
-	}
-
-	/*EVENT CALLBACK*/
-
-	void OnBattleStart(MessageEventArgs args)
-	{
-		GlobalManager.Instance.gameStatus = GameStatus.Battle;
-		ResumeEveryOne();
-	}
-
-	void OnPlayerReady(MessageEventArgs args)
-	{
-		PauseEveryOne();
 	}
 
 	void OnCommandClicked(MessageEventArgs args)
@@ -131,6 +131,28 @@ public class BattleLogic : MonoBehaviour {
 	void OnCommandSelected(MessageEventArgs args)
 	{
 		ResumeEveryOne();
+
+		switch(currentCommand.targetType)
+		{
+		case TargetType.Self:
+			currentCommand.targetList.Add(GetCurrentPlayer());
+			break;
+		case TargetType.SingleEnemy:
+		case TargetType.SingleAlly:
+			if(args.ContainsMessage("Target"))
+			{
+				BattleObject bo = args.GetMessage<BattleObject>("Target");
+				currentCommand.targetList.Add(bo);
+			}
+			break;
+		case TargetType.AllEnemies:
+			currentCommand.targetList = new List<BattleObject>(enemys.ToArray());
+			break;
+		case TargetType.AllAllies:
+			currentCommand.targetList = new List<BattleObject>(players.ToArray());
+			break;
+		}
+
 		GetCurrentPlayer().commandToExecute = currentCommand;
 		GetCurrentPlayer().battleStatus = BattleStatus.Action;
 		foreach(Enemy enemy in enemys)
@@ -150,16 +172,25 @@ public class BattleLogic : MonoBehaviour {
 
 	void OnBattleObjectDied(MessageEventArgs args)
 	{
-		if(enemys.Count == 0)
+		BattleObject bo = args.GetMessage<BattleObject>("Object");
+		if(bo is Enemy)
 		{
-			EventManager.Instance.PostEvent(BattleEvent.OnBattleWin);
-
-			StartCoroutine(FinishBattle());
+			enemys.Remove((Enemy)bo);
+			if(enemys.Count == 0)
+			{
+				EventManager.Instance.PostEvent(BattleEvent.OnBattleWin);
+				
+				StartCoroutine(FinishBattle());
+			}
 		}
-		else if(players.Count == 0)
+		else
 		{
-			EventManager.Instance.PostEvent(BattleEvent.OnBattleLose);
-			StartCoroutine(FinishBattle());
+			players.Remove((Player)bo);
+			if(players.Count == 0)
+			{
+				EventManager.Instance.PostEvent(BattleEvent.OnBattleLose);
+				StartCoroutine(FinishBattle());
+			}
 		}
 	}
 
@@ -171,7 +202,7 @@ public class BattleLogic : MonoBehaviour {
 
 	/*CUSTOM METHOD*/
 
-	public static Player GetCurrentPlayer()
+	public Player GetCurrentPlayer()
 	{
 		foreach(Player player in players)
 		{
@@ -184,6 +215,21 @@ public class BattleLogic : MonoBehaviour {
 		return null;
 	}
 
+	public List<Player> GetPlayerList()
+	{
+		return players;
+	}
+
+	public List<Enemy> GetEnemyList()
+	{
+		return enemys;
+	}
+
+	public bool GetPauseCondition()
+	{
+		return isPaused;
+	}
+
 	IEnumerator WaitEveryOne(float seconds)
 	{
 		PauseEveryOne();
@@ -194,33 +240,18 @@ public class BattleLogic : MonoBehaviour {
 	IEnumerator FinishBattle()
 	{
 		GlobalManager.Instance.gameStatus = GameStatus.Map;
+		isPaused = true;
 		yield return new WaitForSeconds(5);
-		mapCanvas.gameObject.SetActive (true);
-		battleCanvas.gameObject.SetActive (false);
 		EventManager.Instance.PostEvent(BattleEvent.OnBattleFinish);
 	}
 
 	void PauseEveryOne()
 	{
-		foreach(Enemy enemy in enemys)
-		{
-			enemy.isPaused = true;
-		}
-		foreach(Player player in players)
-		{
-			player.isPaused = true;
-		}
+		isPaused = true;
 	}
 
 	void ResumeEveryOne()
 	{
-		foreach(Enemy enemy in enemys)
-		{
-			enemy.isPaused = false;
-		}
-		foreach(Player player in players)
-		{
-			player.isPaused = false;
-		}
+		isPaused = false;
 	}
 }

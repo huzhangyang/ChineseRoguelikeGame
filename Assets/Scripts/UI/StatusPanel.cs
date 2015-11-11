@@ -4,10 +4,17 @@ using UnityEngine.UI;
 
 public class StatusPanel : MonoBehaviour {
 
+	public Canvas battleCanvas;
+	public Canvas mapCanvas;
 	public Text manInfo;
 	public Text girlInfo;
 
-	void OnEnable () 
+	void OnEnable() 
+	{
+		EventManager.Instance.RegisterEvent (BattleEvent.OnBattleFinish, OnBattleFinish);
+	}
+
+	void Start () 
 	{
 		PlayerData mandata = DataManager.Instance.GetPlayerDataSet().GetPlayerData(0);
 		manInfo.text = "";
@@ -51,4 +58,37 @@ public class StatusPanel : MonoBehaviour {
 		}
 	}
 
+	/*UI CALLBACK*/
+	public void EnterBattle(int battleType)
+	{
+		mapCanvas.gameObject.SetActive (false);
+		battleCanvas.gameObject.SetActive (true);
+		
+		MessageEventArgs args = new MessageEventArgs ();
+		args.AddMessage("BattleType",battleType);
+		if(battleType == 0)
+		{
+			args.AddMessage("Man",true);
+			args.AddMessage("Girl",true);
+			args.AddMessage("Enemy",new int[3]{10,10,10});
+		}
+		else if(battleType == 1)
+		{
+			args.AddMessage("Man",true);
+			args.AddMessage("Girl",true);
+			args.AddMessage("Enemy",new int[1]{11});
+		}
+		else 
+		{
+			args.AddMessage("Man",true);
+			args.AddMessage("Enemy",new int[1]{12});
+		}
+		EventManager.Instance.PostEvent (BattleEvent.OnBattleEnter, args);
+	}
+
+	void OnBattleFinish(MessageEventArgs args)
+	{
+		mapCanvas.gameObject.SetActive (true);
+		battleCanvas.gameObject.SetActive (false);
+	}
 }

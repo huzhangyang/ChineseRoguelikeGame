@@ -81,7 +81,6 @@ GameObject:
   - 114: {fileID: 11449530}
   - 114: {fileID: 11418640}
   - 114: {fileID: 11415328}
-  - 114: {fileID: 11451562}
   m_Layer: 5
   m_Name: BattleWindow
   m_TagString: Untagged
@@ -492,7 +491,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11451562}
+      - m_Target: {fileID: 11415328}
         m_MethodName: SelectBasicCommand
         m_Mode: 3
         m_Arguments:
@@ -544,7 +543,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11451562}
+      - m_Target: {fileID: 11415328}
         m_MethodName: SelectBasicCommand
         m_Mode: 3
         m_Arguments:
@@ -643,7 +642,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11451562}
+      - m_Target: {fileID: 11415328}
         m_MethodName: SelectBasicCommand
         m_Mode: 3
         m_Arguments:
@@ -813,19 +812,6 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.ScrollRect+ScrollRectEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &11451562
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 117098}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5bf5c266890adb4c9925a5840dd9b36, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  battleCanvas: {fileID: 22309710}
-  mapCanvas: {fileID: 0}
 --- !u!114 &11455062
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1063,7 +1049,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11451562}
+      - m_Target: {fileID: 11415328}
         m_MethodName: SelectBasicCommand
         m_Mode: 3
         m_Arguments:

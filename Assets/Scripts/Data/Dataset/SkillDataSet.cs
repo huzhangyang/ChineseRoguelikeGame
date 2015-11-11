@@ -37,6 +37,7 @@ public class SkillData{
 */
 	public int id;
 	public string name;
+	public string description;//技能描述
 	public SkillType skillType;//技能类型
 	public TargetType targetType;//目标类型
 	public float ATKMultiplier;//技能攻击力倍数
@@ -44,19 +45,20 @@ public class SkillData{
 	public float CRTMultiplier;//技能暴击倍数
 	public float preSPDMultiplier;//前摇速度倍数
 	public float postSPDMultiplier;//后摇速度倍数
+	public float interruptMultiplier;//打断倍数
+	public int maxCombo;//最大连击数
 	public int buffID;//技能对应的BUFFID
-	public string description;//技能描述
+	public int buffPercentage;//BUFF出现率
 }
 
 [System.Serializable]
 public class BuffData{
-	/*
+/*
  * BUFF类。
 */
 	public int id;
 	public string name;
 	public string description;
-	public int percentage;//触发概率
 	public int lastTurns;//持续回合数
 	public TargetType targetType;//目标类型
 	public BuffTrigger trigger;//触发时机
