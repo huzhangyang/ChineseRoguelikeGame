@@ -23,7 +23,7 @@ public class ItemDataSet : ScriptableObject
 	{
 		foreach (WeaponData data in weaponDataSet)
 		{
-			if (data.id == weaponID && data.type == ItemType.Weapon)
+			if (data.id == weaponID)
 				return data;
 		}
 		Debug.LogError("Asking for an non-exist weapon:" + weaponID);
@@ -34,7 +34,7 @@ public class ItemDataSet : ScriptableObject
 	{
 		foreach (MagicData data in magicDataSet)
 		{
-			if (data.id == magicID && data.type == ItemType.Magic)
+			if (data.id == magicID)
 				return data;
 		}
 		Debug.LogError("Asking for an non-exist magic:" + magicID);

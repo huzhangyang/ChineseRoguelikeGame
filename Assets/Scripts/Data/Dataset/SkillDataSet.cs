@@ -53,13 +53,12 @@ public class SkillData{
 
 [System.Serializable]
 public class BuffData{
-	/*
+/*
  * BUFF类。
 */
 	public int id;
 	public string name;
 	public string description;
-	public int percentage;//触发概率
 	public int lastTurns;//持续回合数
 	public TargetType targetType;//目标类型
 	public BuffTrigger trigger;//触发时机

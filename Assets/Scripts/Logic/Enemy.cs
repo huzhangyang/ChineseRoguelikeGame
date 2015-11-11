@@ -21,7 +21,7 @@ public class Enemy : BattleObject {
 		AI.InitAI();
 
 		//temp
-		data.weaponID = 1000 + Random.Range(1,6) * 100;
+		data.weaponID = 1000 + Random.Range(1,9) * 100;
 		data.magicIDs.Add(2001);
 		data.magicIDs.Add(2002);
 		data.magicIDs.Add(2003);

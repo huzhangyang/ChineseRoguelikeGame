@@ -23,129 +23,143 @@ MonoBehaviour:
   weaponDataSet:
   - id: 1000
     name: "\u65E0"
-    type: 1
-    description: "\u7A7A\u624B"
-    basicATK: 0
-    basicSPD: 0
+    type: 0
+    description: "\u65E0"
+    basicATKMin: 0
+    basicATKMax: 0
     basicACC: 0
     basicCRT: 0
+    basicSPD: 0
+    interrupt: 0
     skill1ID: 0
     skill2ID: 0
     skill3ID: 0
+    buffID: 0
+    buffPercentage: 0
   - id: 1100
     name: "\u77ED\u5251"
-    type: 1
-    description: "\u77ED\u5251"
-    basicATK: 4
-    basicSPD: 150
+    type: 0
+    description: "\u666E\u901A\u7684\u77ED\u5251\u3002"
+    basicATKMin: 3
+    basicATKMax: 5
     basicACC: 100
-    basicCRT: 100
-    skill1ID: 1
-    skill2ID: 2
-    skill3ID: 101
-  - id: 1101
-    name: "\u9C7C\u80A0\u5251"
-    type: 1
-    description: "\u9C7C\u80A0\u5251"
-    basicATK: 99
-    basicSPD: 160
+    basicCRT: 150
+    basicSPD: 150
+    interrupt: 2
+    skill1ID: 1101
+    skill2ID: 1102
+    skill3ID: 1103
+    buffID: 0
+    buffPercentage: 0
+  - id: 1200
+    name: "\u5510\u5200"
+    type: 0
+    description: "\u6B66\u58EB\u5E38\u7528\u7684\u5200\u3002"
+    basicATKMin: 6
+    basicATKMax: 10
     basicACC: 100
     basicCRT: 120
-    skill1ID: 1
-    skill2ID: 2
-    skill3ID: 106
-  - id: 1200
-    name: "\u957F\u5251"
-    type: 1
-    description: "\u957F\u5251"
-    basicATK: 10
-    basicSPD: 100
-    basicACC: 100
-    basicCRT: 100
-    skill1ID: 3
-    skill2ID: 4
-    skill3ID: 102
-  - id: 1201
-    name: "\u6E5B\u5362\u5251"
-    type: 1
-    description: "\u6E5B\u5362\u5251"
-    basicATK: 160
-    basicSPD: 110
-    basicACC: 105
-    basicCRT: 100
-    skill1ID: 3
-    skill2ID: 4
-    skill3ID: 107
-  - id: 1300
-    name: "\u5200"
-    type: 1
-    description: "\u5200"
-    basicATK: 7
     basicSPD: 120
-    basicACC: 100
+    interrupt: 7
+    skill1ID: 1201
+    skill2ID: 1202
+    skill3ID: 1203
+    buffID: 0
+    buffPercentage: 0
+  - id: 1300
+    name: "\u957F\u67AA"
+    type: 0
+    description: "\u67C4\u5F88\u957F\u7684\u67AA\uFF0C\u4E0D\u662F\u5F88\u597D\u7528\u3002"
+    basicATKMin: 9
+    basicATKMax: 11
+    basicACC: 90
     basicCRT: 90
-    skill1ID: 5
-    skill2ID: 6
-    skill3ID: 103
-  - id: 1301
-    name: "\u9E23\u9E3F\u5200"
-    type: 1
-    description: "\u9E23\u9E3F\u5200"
-    basicATK: 142
-    basicSPD: 125
-    basicACC: 105
-    basicCRT: 100
-    skill1ID: 5
-    skill2ID: 6
-    skill3ID: 108
-  - id: 1400
-    name: "\u65A7"
-    type: 1
-    description: "\u65A7"
-    basicATK: 18
-    basicSPD: 75
-    basicACC: 90
-    basicCRT: 100
-    skill1ID: 7
-    skill2ID: 8
-    skill3ID: 104
-  - id: 1401
-    name: "\u5211\u5929\u621A"
-    type: 1
-    description: "\u5211\u5929\u621A"
-    basicATK: 206
-    basicSPD: 82
-    basicACC: 90
-    basicCRT: 105
-    skill1ID: 7
-    skill2ID: 8
-    skill3ID: 109
-  - id: 1500
-    name: "\u5F13"
-    type: 1
-    description: "\u5F13"
-    basicATK: 13
-    basicSPD: 80
-    basicACC: 100
-    basicCRT: 100
-    skill1ID: 9
-    skill2ID: 10
-    skill3ID: 105
-  - id: 1501
-    name: "\u8F69\u8F95\u5F13"
-    type: 1
-    description: "\u8F69\u8F95\u5F13"
-    basicATK: 188
     basicSPD: 90
+    interrupt: 15
+    skill1ID: 1301
+    skill2ID: 1302
+    skill3ID: 1303
+    buffID: 0
+    buffPercentage: 0
+  - id: 1400
+    name: "\u957F\u5251"
+    type: 0
+    description: "\u6218\u58EB\u7684\u6807\u51C6\u6B66\u5668\u3002"
+    basicATKMin: 8
+    basicATKMax: 12
     basicACC: 100
+    basicCRT: 100
+    basicSPD: 100
+    interrupt: 10
+    skill1ID: 1401
+    skill2ID: 1402
+    skill3ID: 1403
+    buffID: 0
+    buffPercentage: 0
+  - id: 1500
+    name: "\u5927\u65A7"
+    type: 0
+    description: "\u4F7F\u7528\u8D77\u6765\u6709\u4E9B\u5403\u529B\u7684\u5927\u65A7\u3002"
+    basicATKMin: 12
+    basicATKMax: 18
+    basicACC: 80
+    basicCRT: 100
+    basicSPD: 75
+    interrupt: 12
+    skill1ID: 1501
+    skill2ID: 1502
+    skill3ID: 1503
+    buffID: 0
+    buffPercentage: 0
+  - id: 1600
+    name: "\u5DE8\u9524"
+    type: 0
+    description: "\u53EF\u80FD\u662F\u4EBA\u7C7B\u80FD\u591F\u62FF\u8D77\u7684\u6700\u5927\u6B66\u5668\u3002"
+    basicATKMin: 16
+    basicATKMax: 24
+    basicACC: 75
+    basicCRT: 100
+    basicSPD: 65
+    interrupt: 20
+    skill1ID: 1601
+    skill2ID: 1602
+    skill3ID: 1603
+    buffID: 0
+    buffPercentage: 0
+  - id: 1700
+    name: "\u77ED\u5F13"
+    type: 0
+    description: "\u5E38\u7528\u7684\u77ED\u5F13\uFF0C\u53EF\u4EE5\u968F\u8EAB\u643A\u5E26\u3002"
+    basicATKMin: 11
+    basicATKMax: 15
+    basicACC: 110
     basicCRT: 110
-    skill1ID: 9
-    skill2ID: 10
-    skill3ID: 110
+    basicSPD: 80
+    interrupt: 10
+    skill1ID: 1701
+    skill2ID: 1702
+    skill3ID: 1703
+    buffID: 0
+    buffPercentage: 0
+  - id: 1800
+    name: "\u5F29"
+    type: 0
+    description: "\u4E0D\u5C5E\u4E8E\u8FD9\u4E2A\u65F6\u4EE3\u7684\u8BE1\u5F02\u6B66\u5668\u3002"
+    basicATKMin: 16
+    basicATKMax: 16
+    basicACC: 85
+    basicCRT: 85
+    basicSPD: 110
+    interrupt: 10
+    skill1ID: 1801
+    skill2ID: 1802
+    skill3ID: 1803
+    buffID: 0
+    buffPercentage: 0
   magicDataSet:
   - id: 2000
     name: "\u65E0"
-    type: 2
+    type: 0
     description: "\u6216\u8BB8\u662F\u67D0\u79CD\u795E\u79D8\u7684\u7075\u6C14\u4E4B\u529B"
     basicATK: 0
     basicSPD: 0
@@ -154,28 +168,28 @@ MonoBehaviour:
     skillID: 0
   - id: 2001
     name: "\u706B\u7403\u4E4B\u4E66"
-    type: 2
+    type: 0
     description: "\u8BB0\u8F7D\u4E86\u706B\u7403\u672F\u7528\u6CD5\u7684\u53E4\u8001\u4E66\u7C4D"
     basicATK: 10
     basicSPD: 70
     basicACC: 80
     basicCRT: 100
-    skillID: 201
+    skillID: 1101
   - id: 2002
     name: "\u51B0\u5F39\u4E4B\u4E66"
-    type: 2
+    type: 0
     description: "\u8BB0\u8F7D\u4E86\u51B0\u5F39\u672F\u7528\u6CD5\u7684\u53E4\u8001\u4E66\u7C4D"
     basicATK: 5
     basicSPD: 90
     basicACC: 100
     basicCRT: 100
-    skillID: 202
+    skillID: 1301
   - id: 2003
     name: "\u95EA\u7535\u4E4B\u4E66"
-    type: 2
+    type: 0
     description: "\u8BB0\u8F7D\u4E86\u95EA\u7535\u672F\u7528\u6CD5\u7684\u53E4\u8001\u4E66\u7C4D"
     basicATK: 8
     basicSPD: 80
     basicACC: 90
     basicCRT: 110
-    skillID: 203
+    skillID: 1501

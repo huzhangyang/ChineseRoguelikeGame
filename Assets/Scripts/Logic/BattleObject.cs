@@ -198,11 +198,8 @@ public abstract class BattleObject : MonoBehaviour {
 	public void AddBuff(int id)
 	{
 		BuffData data = DataManager.Instance.GetSkillDataSet().GetBuffData(id);
-		if(Random.Range(0,101) <= data.percentage)
-		{
-			Buff buff = new Buff(data);
-			buffList.Add(buff);
-		}
+		Buff buff = new Buff(data);
+		buffList.Add(buff);
 	}
 
 	public string GetName()

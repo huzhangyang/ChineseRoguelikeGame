@@ -327,8 +327,7 @@ public class ExcelLoader
 	// 解析行ID值
 	private void ParseIdInfo()
 	{
-		int DATA_START_ROW_INDEX = 4;
-		//Debug.Log("###行数：" + configData.Rows.Count);
+		int DATA_START_ROW_INDEX = 3;
 		for (int rowIndex = DATA_START_ROW_INDEX; rowIndex < dataTable.Rows.Count; rowIndex++)
 		{
 			int ID_COL_INDEX = 0;
@@ -341,7 +340,6 @@ public class ExcelLoader
 			}
 
 			// 不是空行
-			//int id = ExcelUtility.GetIntCell(configData, rowIndex, ID_COL_INDEX);
 			object id = GetInternalData(rowIndex, ID_COL_INDEX);
 
 			if (!dictID2RowIndex.ContainsKey(id))
