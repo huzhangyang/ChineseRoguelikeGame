@@ -45,10 +45,12 @@ public class BattleFormula {
 		damagePack.dmg = (source.power + Random.Range(weaponData.basicATKMin, weaponData.basicATKMax + 1)) * skillData.ATKMultiplier;//伤害值
 		damagePack.hit = weaponData.basicACC * skillData.ACCMultiplier + source.skill + source.luck / 9.0f;//命中率
 		damagePack.crit = weaponData.basicCRT * skillData.CRTMultiplier * (source.skill / 2 + 50)/ 1000.0f + source.luck / 9.0f;//暴击率
+		Debug.Log (source.GetName() + "用" + weaponData.name + "攻击" +  target.GetName() + ". Dmg: " + damagePack.dmg + " Hit:" + damagePack.hit + " Crit:" + damagePack.crit);
 		//计算真实命中、暴击、伤害
 		damagePack.dmg *= (1 - target.toughness / 250.0f);
 		damagePack.hit -= (target.skill * 0.9f + target.luck / 4.5f + 20);
 		damagePack.crit *= (100 - target.skill * 0.7f - target.luck * 0.3f) / 100.0f;
+		Debug.Log ("RealDmg: " + damagePack.dmg + " RealHit:" + damagePack.hit + " RealCrit:" + damagePack.crit);
 		//判断防御反击
 		if(target.commandToExecute.commandType == CommandType.Defence)
 		{
@@ -111,10 +113,12 @@ public class BattleFormula {
 		damagePack.dmg = (source.power + magicData.basicATK) * skillData.ATKMultiplier;//伤害值
 		damagePack.hit = magicData.basicACC * skillData.ACCMultiplier + source.skill + source.luck / 9.0f;//命中率
 		damagePack.crit = magicData.basicCRT * skillData.CRTMultiplier * (source.skill / 2 + 50)/ 1000.0f + source.luck / 9.0f;//暴击率
+		Debug.Log (source.GetName() + "用" + magicData.name + "攻击" +  target.GetName() + ". Dmg: " + damagePack.dmg + " Hit:" + damagePack.hit + " Crit:" + damagePack.crit);
 		//计算真实命中、暴击、伤害
 		damagePack.dmg *= (1 - target.toughness / 250.0f);
 		damagePack.hit -= (target.skill * 0.9f + target.luck / 4.5f + 20);
 		damagePack.crit *= (100 - target.skill * 0.7f - target.luck * 0.3f) / 100.0f;
+		Debug.Log ("RealDmg: " + damagePack.dmg + " RealHit:" + damagePack.hit + " RealCrit:" + damagePack.crit);
 		//判断防御反击
 		if(target.commandToExecute.commandType == CommandType.Defence)
 		{

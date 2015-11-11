@@ -46,7 +46,7 @@ public class BattleWindow: MonoBehaviour {
 	{
 		MessageEventArgs args = new MessageEventArgs();
 		args.AddMessage("CommandID", commandID);
-		EventManager.Instance.PostEvent(BattleEvent.OnBasicCommandSelected);
+		EventManager.Instance.PostEvent(BattleEvent.OnBasicCommandSelected, args);
 	}
 
 	void OnEnterBattle(MessageEventArgs args)

@@ -54,23 +54,6 @@ public class BattleManager : MonoBehaviour {
 		if(GlobalManager.Instance.gameStatus == GameStatus.Battle && !isPaused)
 			EventManager.Instance.PostEvent (BattleEvent.OnTimelineUpdate);
 	}
-	
-	public void SelectBasicCommand(int commandID)
-	{
-		BasicCommand basicCommand = (BasicCommand)commandID;
-		GetCurrentPlayer().RefreshAvailableCommands(basicCommand);
-		MessageEventArgs args = new MessageEventArgs();
-		args.AddMessage("PlayerName", GetCurrentPlayer().GetName());
-		EventManager.Instance.PostEvent(BattleEvent.OnBasicCommandSelected, args);
-		foreach(Enemy enemy in enemys)
-		{
-			enemy.GetComponent<BattleObjectUIEvent>().DisableClick();
-		}
-		foreach(Player player in players)
-		{
-			player.GetComponent<BattleObjectUIEvent>().DisableClick();
-		}
-	}
 
 	/*EVENT CALLBACK*/
 
