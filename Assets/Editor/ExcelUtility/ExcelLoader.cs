@@ -123,9 +123,11 @@ public class ExcelLoader
 					ret = ParseListData(dictDefaultVal2ColIndex[colIndex]);
 					break;
 				default:
-					Debug.LogWarning("警告：未知的数据类型 " + dataType);
-					Type type = Assembly.GetExecutingAssembly().GetType(dataType);
-					ret = Enum.Parse(type, dictDefaultVal2ColIndex[colIndex]); 
+					Type type = Assembly.Load("Assembly-CSharp").GetType(dataType, false, true);
+					if(type != null)
+						ret = Enum.Parse(type, dictDefaultVal2ColIndex[colIndex]); 
+					else
+						Debug.LogError("错误：未知的数据类型 " + dataType);
 					break;
 			}
 
@@ -152,9 +154,11 @@ public class ExcelLoader
 				ret = ParseListData(data);
 				break;
 			default:
-				Debug.LogWarning("警告：未知的数据类型 " + dataType);
-				Type type = Assembly.GetExecutingAssembly().GetType(dataType);
-				ret = GetEnumCell(dataTable, rowIndex, colIndex, type);
+				Type type = Assembly.Load("Assembly-CSharp").GetType(dataType, false, true);
+				if(type != null)
+					ret = GetEnumCell(dataTable, rowIndex, colIndex, type);
+				else
+					Debug.LogError("错误：未知的数据类型 " + dataType);
 				break;
 		}
 

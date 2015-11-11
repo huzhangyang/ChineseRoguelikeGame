@@ -7,7 +7,7 @@ using System.Collections;
 public enum CommandType{None, UseSkill, Defence, UseItem, Strategy}
 public enum TargetType{Self, SingleEnemy, AllEnemies, SingleAlly, AllAllies, FollowCommand}
 public enum BattleType{Physical, Magical, Both}
-public enum SkillType{Physical, Magical, Hybrid, IgnoreDefence} 
+public enum SkillType{Melee, Range, Magic} 
 public enum BuffTrigger{Always,Hit,Behit,Ready,Action} 
 public enum ItemType{NormalItem, Weapon, Magic, Ring}
 public enum BasicCommand {Attack,Defence,Item,Strategy}
