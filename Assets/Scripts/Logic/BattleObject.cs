@@ -198,7 +198,7 @@ public abstract class BattleObject : MonoBehaviour {
 	public void AddBuff(int id)
 	{
 		BuffData data = DataManager.Instance.GetSkillDataSet().GetBuffData(id);
-		Buff buff = new Buff(data);
+		Buff buff = new Buff(this, data);
 		buffList.Add(buff);
 	}
 
