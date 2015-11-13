@@ -5,16 +5,8 @@ using UnityEngine.UI;
 
 public class BattleMessage : MonoBehaviour {
 
-	Text message;
-
-	void Awake()
-	{
-		message = this.GetComponentInChildren<Text>();
-	}
-
 	void OnEnable() 
 	{
-		EventManager.Instance.RegisterEvent(BattleEvent.OnBattleEnter, OnBattleEnter);
 		EventManager.Instance.RegisterEvent(BattleEvent.OnEnemySpawn, OnEnemySpawn);
 		EventManager.Instance.RegisterEvent(BattleEvent.OnCommandExecute, OnExecuteCommand);
 		EventManager.Instance.RegisterEvent(BattleEvent.BattleObjectMiss, OnBattleObjectMiss);
@@ -29,7 +21,6 @@ public class BattleMessage : MonoBehaviour {
 	
 	void OnDisable () 
 	{
-		EventManager.Instance.UnRegisterEvent(BattleEvent.OnBattleEnter, OnBattleEnter);
 		EventManager.Instance.UnRegisterEvent(BattleEvent.OnEnemySpawn, OnEnemySpawn);
 		EventManager.Instance.UnRegisterEvent(BattleEvent.OnCommandExecute, OnExecuteCommand);
 		EventManager.Instance.UnRegisterEvent(BattleEvent.BattleObjectMiss, OnBattleObjectMiss);
@@ -40,11 +31,6 @@ public class BattleMessage : MonoBehaviour {
 		EventManager.Instance.UnRegisterEvent(BattleEvent.BattleObjectDied, OnBattleObjectDied);
 		EventManager.Instance.UnRegisterEvent(BattleEvent.OnBattleWin, OnBattleWin);
 		EventManager.Instance.UnRegisterEvent(BattleEvent.OnBattleLose, OnBattleLose);
-	}
-
-	void OnBattleEnter(MessageEventArgs args)
-	{
-		ClearMessage();
 	}
 
 	void OnEnemySpawn(MessageEventArgs args)
@@ -107,13 +93,10 @@ public class BattleMessage : MonoBehaviour {
 		AddMessage("战斗失败。");
 	}
 
-	void ClearMessage()
-	{
-		message.text = "";
-	}
-
 	void AddMessage(string msg)
 	{
-		message.text += msg +"\n";
+		MessageEventArgs args = new MessageEventArgs ();
+		args.AddMessage("Message",msg);
+		EventManager.Instance.PostEvent (BattleEvent.OnMessageUpdate, args);
 	}
 }
