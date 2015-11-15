@@ -15,7 +15,8 @@ public class BattleManager : MonoBehaviour {
 
 	private List<Enemy> enemys;
 	private List<Player> players;
-	private Command currentCommand;
+	private Command currentCommand;//当前玩家选择的指令
+	private Queue commandQueue = new Queue();//指令序列
 	private bool isPaused;//战斗是否暂停
 
 	/*LIFE CYCLE */
@@ -51,8 +52,13 @@ public class BattleManager : MonoBehaviour {
 
 	void Update()
 	{
-		if(GlobalManager.Instance.gameStatus == GameStatus.Battle && !isPaused)
-			EventManager.Instance.PostEvent (BattleEvent.OnTimelineUpdate);
+		if(!isPaused && GlobalManager.Instance.gameStatus == GameStatus.Battle)//若游戏未开始、暂停，或正在处理命令队列，则跳过帧循环
+		{
+			if(commandQueue.Count > 0)
+				StartCoroutine(HandleCommandQueue());
+			else
+				EventManager.Instance.PostEvent (BattleEvent.OnTimelineUpdate);
+		}
 	}
 
 	/*EVENT CALLBACK*/
@@ -225,9 +231,20 @@ public class BattleManager : MonoBehaviour {
 		return enemys;
 	}
 
-	public bool GetPauseCondition()
+	public void AddToCommandQueue(Command cmd)
 	{
-		return isPaused;
+		commandQueue.Enqueue (cmd);
+	}
+
+	IEnumerator HandleCommandQueue()
+	{
+		PauseEveryOne();
+		for (int i = 0; i < commandQueue.Count; i++) {
+			Command cmd = commandQueue.Dequeue() as Command;
+			cmd.Execute();
+			yield return new WaitForSeconds(1);
+		}
+		ResumeEveryOne();
 	}
 
 	IEnumerator WaitEveryOne(float seconds)

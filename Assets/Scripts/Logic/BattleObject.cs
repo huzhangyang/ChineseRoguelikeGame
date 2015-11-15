@@ -82,7 +82,7 @@ public abstract class BattleObject : MonoBehaviour {
 		{
 			if(value > 10000) value = 10000;
 			_timelinePosition = value;
-			UIEvent.SetAvatarPositionX(value <= 0 ? 0 : value / 20, BattleManager.Instance.GetPauseCondition());//max:500
+			UIEvent.SetAvatarPositionX(value <= 0 ? 0 : value / 20, false);//max:500
 		}
 		get
 		{
@@ -149,7 +149,7 @@ public abstract class BattleObject : MonoBehaviour {
 		}
 		//decide command
 		commandToExecute.source = this;
-		commandToExecute.Execute();
+		BattleManager.Instance.AddToCommandQueue (commandToExecute);
 		//post process
 		timelinePosition = -commandToExecute.postExecutionRecover * BattleFormula.GetTimelineStep(this);//后退距离 = 帧 * 步进
 		battleStatus = BattleStatus.Prepare;
@@ -198,7 +198,7 @@ public abstract class BattleObject : MonoBehaviour {
 	public void AddBuff(int id)
 	{
 		BuffData data = DataManager.Instance.GetSkillDataSet().GetBuffData(id);
-		Buff buff = new Buff(data);
+		Buff buff = new Buff(this, data);
 		buffList.Add(buff);
 	}
 

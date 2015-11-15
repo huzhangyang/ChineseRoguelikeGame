@@ -12,6 +12,7 @@ public enum BattleEvent
 	OnPlayerSpawn,//敌人出现
 	OnEnemySpawn,//敌人出现
 	OnTimelineUpdate,//更新时间轴
+	OnMessageUpdate,//更新战斗信息
 
 	OnPlayerReady,//玩家就绪
 	OnBasicCommandSelected,//玩家点击了一个指令类别
