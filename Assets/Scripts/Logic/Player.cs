@@ -13,7 +13,7 @@ public class Player : BattleObject {
 		UIEvent = this.GetComponent<BattleObjectUIEvent>();
 		UIEvent.Init(playerID);
 		currentHP = maxHP;
-		UIEvent.InitHPBar(currentHP, maxHP, true);
+		UIEvent.InitHPBar(currentHP, maxHP, data.battleType);
 
 		MessageEventArgs args = new MessageEventArgs();
 		args.AddMessage("Object", this);

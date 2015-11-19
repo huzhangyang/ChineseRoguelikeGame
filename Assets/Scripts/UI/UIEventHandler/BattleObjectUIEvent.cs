@@ -22,15 +22,35 @@ public class BattleObjectUIEvent : MonoBehaviour {
 		GetComponent<Button>().onClick.AddListener(delegate(){OnClick();});		
 	}
 
-	public void InitHPBar(int current, int max, bool large)
+	public void InitHPBar(int current, int max, BattleType type)
 	{
 		GameObject bar = Instantiate(Resources.Load("Battle/HPBar")) as GameObject;
 		bar.transform.SetParent(this.transform, false);
 		bar.transform.localPosition = new Vector3(0, objectImage.rectTransform.sizeDelta.y / 2, 0); 
-		if(!large)bar.transform.localScale = new Vector3(0.5f, 1);
 		HPBar = bar.GetComponent<Slider>();
 		HPBar.maxValue = max;
 		HPBar.value = current;
+
+		Color hpColor = Color.green;
+		if(type == BattleType.Physical) hpColor = Color.red;
+		else if(type == BattleType.Magical) hpColor = Color.blue;
+		HPBar.transform.FindChild("Fill Area").GetComponentInChildren<Image>().color = hpColor;
+	}
+
+	public void InitEnemyHPBar(int current, int max, BattleType type)
+	{
+		GameObject bar = Instantiate(Resources.Load("Battle/HPBar")) as GameObject;
+		bar.transform.SetParent(this.transform, false);
+		bar.transform.localPosition = new Vector3(0, objectImage.rectTransform.sizeDelta.y / 2, 0); 
+		bar.transform.localScale = new Vector3(objectImage.rectTransform.sizeDelta.x / 600, 1);
+		HPBar = bar.GetComponent<Slider>();
+		HPBar.maxValue = max;
+		HPBar.value = current;
+
+		Color hpColor = Color.green;
+		if(type == BattleType.Physical) hpColor = Color.red;
+		else if(type == BattleType.Magical) hpColor = Color.blue;
+		HPBar.transform.FindChild("Fill Area").GetComponentInChildren<Image>().color = hpColor;
 	}
 
 	public void SetHPBar(int current)
