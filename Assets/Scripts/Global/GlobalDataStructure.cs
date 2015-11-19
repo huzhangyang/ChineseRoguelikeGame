@@ -14,15 +14,21 @@ public enum BasicCommand {Attack,Defence,Item,Strategy}
 
 public class GlobalDataStructure{
 	//path
-	public const string PATH_GAMEDATA = "GameData/";
-	public const string PATH_BATTLE = "Battle/";
-	public static string PATH_SAVE = Application.persistentDataPath + "/Player.sav";
-	public static string PATH_CONFIG = Application.persistentDataPath + "/Config.sav";
+	public const string PATH_GAMEDATA = "GameData/";//数据文件夹
+	public const string PATH_BATTLE = "Battle/";//战斗相关素材文件夹
+	public const string PATH_MUSIC = "Music/";//音乐相关素材文件夹
+	public const string PATH_SE = "SE/";//音效相关素材文件夹
+	public static string PATH_SAVE = Application.persistentDataPath + "/Player.sav";//游戏存档存放路径
+	public static string PATH_CONFIG = Application.persistentDataPath + "/Config.sav";//游戏设置存放路径
 	//encrypt
-	public const string ENCRYPT_KEY = "CRGProject";
-	public static bool ENCRYPT_ENABLED = true;
+	public const string ENCRYPT_KEY = "CRGProject";//存档加密Key
+	public static bool ENCRYPT_ENABLED = true;//存档是否加密
 	//battle
-	public const int BATTLE_MINSPEED = 50;
-	public const int BATTLE_STANDARDSPEED = 100;
-	public const int BATTLE_MAXSPEED = 2000;
+	public const int BATTLE_MINSPEED = 50;//战斗策略最慢执行速度
+	public const int BATTLE_STANDARDSPEED = 100;//战斗策略标准执行速度
+	public const int BATTLE_MAXSPEED = 2000;//战斗策略最快执行速度
+	public const float HP_RECOVER_THRESHOLD = 0.8f;//HP恢复阈值（元素瓶恢复量，以及自动回血阈值）
+	public const float HP_RECOVER_AMOUNT = 0.2f;//灵力每回合的恢复量
+	public const float HP_WEAKEN_THRESHOLD = 0.5f;//HP虚弱阈值（降低力技速）
+	public const float HP_WEAKEN_AMOUNT = 0.25f;//HP对力技速的最大削弱比
 }

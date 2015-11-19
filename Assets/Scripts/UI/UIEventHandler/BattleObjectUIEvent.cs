@@ -24,7 +24,7 @@ public class BattleObjectUIEvent : MonoBehaviour {
 
 	public void InitHPBar(int current, int max, BattleType type)
 	{
-		GameObject bar = Instantiate(Resources.Load("Battle/HPBar")) as GameObject;
+		GameObject bar = Instantiate(Resources.Load(GlobalDataStructure.PATH_BATTLE + "HPBar")) as GameObject;
 		bar.transform.SetParent(this.transform, false);
 		bar.transform.localPosition = new Vector3(0, objectImage.rectTransform.sizeDelta.y / 2, 0); 
 		HPBar = bar.GetComponent<Slider>();
@@ -39,7 +39,7 @@ public class BattleObjectUIEvent : MonoBehaviour {
 
 	public void InitEnemyHPBar(int current, int max, BattleType type)
 	{
-		GameObject bar = Instantiate(Resources.Load("Battle/HPBar")) as GameObject;
+		GameObject bar = Instantiate(Resources.Load(GlobalDataStructure.PATH_BATTLE + "HPBar")) as GameObject;
 		bar.transform.SetParent(this.transform, false);
 		bar.transform.localPosition = new Vector3(0, objectImage.rectTransform.sizeDelta.y / 2, 0); 
 		bar.transform.localScale = new Vector3(objectImage.rectTransform.sizeDelta.x / 600, 1);
@@ -68,7 +68,7 @@ public class BattleObjectUIEvent : MonoBehaviour {
 	
 	public void InitAvatar()
 	{
-		GameObject avatar = Instantiate(Resources.Load("Battle/Avatar")) as GameObject;
+		GameObject avatar = Instantiate(Resources.Load(GlobalDataStructure.PATH_BATTLE + "Avatar")) as GameObject;
 		avatar.transform.SetParent(GameObject.Find("TimeLine").transform, false);
 		avatarImage = avatar.GetComponent<Image>();
 		avatarImage.sprite = objectImage.sprite;

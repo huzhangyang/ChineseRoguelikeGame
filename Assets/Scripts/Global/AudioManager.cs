@@ -35,7 +35,7 @@ public class AudioManager : MonoBehaviour {
 
 	public void PlayBGM(string name)
 	{
-		AudioClip clip = Resources.Load ("Music/" + name, typeof(AudioClip)) as AudioClip;
+		AudioClip clip = Resources.Load (GlobalDataStructure.PATH_MUSIC + name, typeof(AudioClip)) as AudioClip;
 		BGM.clip = clip;
 		BGM.Play ();
 	}
@@ -59,7 +59,7 @@ public class AudioManager : MonoBehaviour {
 	{
 		if (go == null)
 			go = this.gameObject;
-		AudioClip clip = Resources.Load ("SE/" + name, typeof(AudioClip)) as AudioClip;
+		AudioClip clip = Resources.Load (GlobalDataStructure.PATH_SE + name, typeof(AudioClip)) as AudioClip;
 		AudioSource source = go.AddComponent<AudioSource>();
 		source.clip = clip;
 		source.volume = volumeSE;
