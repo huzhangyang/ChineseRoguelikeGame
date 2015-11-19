@@ -38,11 +38,21 @@ public abstract class BattleObject : MonoBehaviour {
 	public int staminaInc = 0;
 	public float staminaMulti = 0;
 
-	public int power{get{return (int)(data.power * (1 + powerMulti) + powerInc);}}
+	public int power{get{
+			float normalAmount = data.power * (1 + powerMulti) + powerInc;
+			if(data.battleType == BattleType.Physical && currentHP < maxHP * GlobalDataStructure.HP_WEAKEN_THRESHOLD)
+				normalAmount *= (1 - GlobalDataStructure.HP_WEAKEN_AMOUNT * (1 - currentHP / maxHP * GlobalDataStructure.HP_WEAKEN_THRESHOLD));
+			return (int)(normalAmount);
+		}}
 	public int powerInc = 0;
 	public float powerMulti = 0;
 	
-	public int agility{get{return (int)(data.agility * (1 + agilityMulti) + agilityInc);}}
+	public int agility{get{
+			float normalAmount = data.agility * (1 + agilityMulti) + agilityInc;
+			if(data.battleType == BattleType.Physical && currentHP < maxHP * GlobalDataStructure.HP_WEAKEN_THRESHOLD)
+				normalAmount *= (1 - GlobalDataStructure.HP_WEAKEN_AMOUNT * (1 - currentHP / maxHP * GlobalDataStructure.HP_WEAKEN_THRESHOLD));
+			return (int)(normalAmount);
+		}}
 	public int agilityInc = 0;
 	public float agilityMulti = 0;
 	
@@ -54,7 +64,12 @@ public abstract class BattleObject : MonoBehaviour {
 	public int insightInc = 0;
 	public float insightMulti = 0;
 	
-	public int skill{get{return (int)(data.skill * (1 + skillMulti) + skillInc);}}
+	public int skill{get{
+			float normalAmount = data.skill * (1 + skillMulti) + skillInc;
+			if(data.battleType == BattleType.Physical && currentHP < maxHP * GlobalDataStructure.HP_WEAKEN_THRESHOLD)
+				normalAmount *= (1 - GlobalDataStructure.HP_WEAKEN_AMOUNT * (1 - currentHP / maxHP * GlobalDataStructure.HP_WEAKEN_THRESHOLD));
+			return (int)(normalAmount);
+		}}
 	public int skillInc = 0;
 	public float skillMulti = 0;
 	
