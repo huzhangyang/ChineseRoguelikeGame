@@ -54,10 +54,10 @@ public class EnemyAI : MonoBehaviour {
 			command.targetList.Add(AISelectTarget());
 			break;
 		case TargetType.AllEnemies:
-			command.targetList = new List<BattleObject>(BattleManager.Instance.GetEnemyList().ToArray());
+			command.targetList = new List<BattleObject>(BattleManager.Instance.GetPlayerList().ToArray());
 			break;
 		case TargetType.AllAllies:
-			command.targetList = new List<BattleObject>(BattleManager.Instance.GetPlayerList().ToArray());
+			command.targetList = new List<BattleObject>(BattleManager.Instance.GetEnemyList().ToArray());
 			break;
 		}
 		return command;
