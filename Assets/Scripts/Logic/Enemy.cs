@@ -14,8 +14,8 @@ public class Enemy : BattleObject {
 
 		UIEvent = this.GetComponent<BattleObjectUIEvent>();
 		UIEvent.Init(enemyID);
+		UIEvent.InitEnemyHPBar(maxHP, data.battleType);
 		currentHP = maxHP;
-		UIEvent.InitEnemyHPBar(currentHP, maxHP, data.battleType);
 
 		AI = this.GetComponent<EnemyAI>();
 		AI.InitAI();

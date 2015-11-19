@@ -12,8 +12,8 @@ public class Player : BattleObject {
 
 		UIEvent = this.GetComponent<BattleObjectUIEvent>();
 		UIEvent.Init(playerID);
+		UIEvent.InitHPBar(maxHP, data.battleType);
 		currentHP = maxHP;
-		UIEvent.InitHPBar(currentHP, maxHP, data.battleType);
 
 		MessageEventArgs args = new MessageEventArgs();
 		args.AddMessage("Object", this);

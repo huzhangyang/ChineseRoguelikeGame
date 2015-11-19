@@ -9,6 +9,7 @@ public class BattleObjectUIEvent : MonoBehaviour {
 	private Image avatarImage;
 	private Image objectImage;
 	private Slider HPBar;
+	private Text HPText;
 
 	public void Init(int playerID) 
 	{
@@ -22,14 +23,15 @@ public class BattleObjectUIEvent : MonoBehaviour {
 		GetComponent<Button>().onClick.AddListener(delegate(){OnClick();});		
 	}
 
-	public void InitHPBar(int current, int max, BattleType type)
+	public void InitHPBar(int max, BattleType type)
 	{
 		GameObject bar = Instantiate(Resources.Load(GlobalDataStructure.PATH_BATTLE + "HPBar")) as GameObject;
 		bar.transform.SetParent(this.transform, false);
-		bar.transform.localPosition = new Vector3(0, objectImage.rectTransform.sizeDelta.y / 2, 0); 
 		HPBar = bar.GetComponent<Slider>();
 		HPBar.maxValue = max;
-		HPBar.value = current;
+		HPBar.value = max;
+		HPText = bar.GetComponentInChildren<Text>();
+		HPText.text = HPBar.value + "/" + HPBar.maxValue;
 
 		Color hpColor = Color.green;
 		if(type == BattleType.Physical) hpColor = Color.red;
@@ -37,15 +39,18 @@ public class BattleObjectUIEvent : MonoBehaviour {
 		HPBar.transform.FindChild("Fill Area").GetComponentInChildren<Image>().color = hpColor;
 	}
 
-	public void InitEnemyHPBar(int current, int max, BattleType type)
+	public void InitEnemyHPBar(int max, BattleType type)
 	{
-		GameObject bar = Instantiate(Resources.Load(GlobalDataStructure.PATH_BATTLE + "HPBar")) as GameObject;
+		GameObject bar = Instantiate(Resources.Load(GlobalDataStructure.PATH_BATTLE + "EnemyHPBar")) as GameObject;
 		bar.transform.SetParent(this.transform, false);
 		bar.transform.localPosition = new Vector3(0, objectImage.rectTransform.sizeDelta.y / 2, 0); 
 		bar.transform.localScale = new Vector3(objectImage.rectTransform.sizeDelta.x / 600, 1);
 		HPBar = bar.GetComponent<Slider>();
 		HPBar.maxValue = max;
-		HPBar.value = current;
+		HPBar.value = max;
+		HPText = bar.GetComponentInChildren<Text>();
+		HPText.gameObject.SetActive(false);
+		HPText.text = HPBar.value + "/" + HPBar.maxValue;
 
 		Color hpColor = Color.green;
 		if(type == BattleType.Physical) hpColor = Color.red;
@@ -56,6 +61,7 @@ public class BattleObjectUIEvent : MonoBehaviour {
 	public void SetHPBar(int current)
 	{
 		HPBar.DOValue(current, 1).SetEase(Ease.OutSine);
+		HPText.text = current + "/" + HPBar.maxValue;
 		this.transform.DOPunchScale(new Vector2(0.1f, 0.1f), 1);
 
 		if(current == 0)
