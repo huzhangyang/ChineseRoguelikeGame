@@ -28,7 +28,8 @@ public class GlobalDataStructure{
 	public const int BATTLE_STANDARDSPEED = 100;//战斗策略标准执行速度
 	public const int BATTLE_MAXSPEED = 2000;//战斗策略最快执行速度
 	public const float HP_RECOVER_THRESHOLD = 0.8f;//HP恢复阈值（元素瓶恢复量，以及自动回血阈值）
-	public const float HP_RECOVER_AMOUNT = 0.2f;//灵力每回合的恢复量
+	public const float HP_RECOVER_AMOUNT = 0.05f;//灵力每回合的恢复量
+	public const float MP_RECOVER_AMOUNT = 0.2f;//灵力每回合的恢复量
 	public const float HP_WEAKEN_THRESHOLD = 0.5f;//HP虚弱阈值（降低力技速）
 	public const float HP_WEAKEN_AMOUNT = 0.25f;//HP对力技速的最大削弱比
 }

@@ -14,6 +14,9 @@ public enum BattleEvent
 	OnTimelineUpdate,//更新时间轴
 	OnMessageUpdate,//更新战斗信息
 
+	OnHPAutoRecover,//HP自动恢复
+	OnMPAutoRecover,//MP自动恢复
+
 	OnPlayerReady,//玩家就绪
 	OnBasicCommandSelected,//玩家点击了一个指令类别
 	OnCommandClicked,//玩家点击了一个指令

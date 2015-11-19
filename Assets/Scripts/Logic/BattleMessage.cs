@@ -9,6 +9,8 @@ public class BattleMessage : MonoBehaviour {
 	{
 		EventManager.Instance.RegisterEvent(BattleEvent.OnEnemySpawn, OnEnemySpawn);
 		EventManager.Instance.RegisterEvent(BattleEvent.OnCommandExecute, OnExecuteCommand);
+		EventManager.Instance.RegisterEvent(BattleEvent.OnHPAutoRecover, OnHPAutoRecover);
+		EventManager.Instance.RegisterEvent(BattleEvent.OnMPAutoRecover, OnMPAutoRecover);
 		EventManager.Instance.RegisterEvent(BattleEvent.BattleObjectMiss, OnBattleObjectMiss);
 		EventManager.Instance.RegisterEvent(BattleEvent.BattleObjectCritical, OnBattleObjectCritical);
 		EventManager.Instance.RegisterEvent(BattleEvent.BattleObjectHurt, OnBattleObjectHurt);
@@ -23,6 +25,8 @@ public class BattleMessage : MonoBehaviour {
 	{
 		EventManager.Instance.UnRegisterEvent(BattleEvent.OnEnemySpawn, OnEnemySpawn);
 		EventManager.Instance.UnRegisterEvent(BattleEvent.OnCommandExecute, OnExecuteCommand);
+		EventManager.Instance.UnRegisterEvent(BattleEvent.OnHPAutoRecover, OnHPAutoRecover);
+		EventManager.Instance.UnRegisterEvent(BattleEvent.OnMPAutoRecover, OnMPAutoRecover);
 		EventManager.Instance.UnRegisterEvent(BattleEvent.BattleObjectMiss, OnBattleObjectMiss);
 		EventManager.Instance.UnRegisterEvent(BattleEvent.BattleObjectCritical, OnBattleObjectCritical);
 		EventManager.Instance.UnRegisterEvent(BattleEvent.BattleObjectHurt, OnBattleObjectHurt);
@@ -37,6 +41,20 @@ public class BattleMessage : MonoBehaviour {
 	{
 		BattleObject bo = args.GetMessage<BattleObject>("Object");
 		AddMessage(bo.GetName() + " 出现了！");
+	}
+
+	void OnHPAutoRecover(MessageEventArgs args)
+	{
+		string name = args.GetMessage<string>("Name");
+		int amount = args.GetMessage<int>("Amount");
+		AddMessage(name + "的伤口正在痊愈， 恢复了" + amount + "点生命！");
+	}
+
+	void OnMPAutoRecover(MessageEventArgs args)
+	{
+		string name = args.GetMessage<string>("Name");
+		int amount = args.GetMessage<int>("Amount");
+		AddMessage(name + "的灵力自动恢复了" + amount + "点！");
 	}
 
 	void OnExecuteCommand(MessageEventArgs args)

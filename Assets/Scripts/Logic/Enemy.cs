@@ -34,7 +34,6 @@ public class Enemy : BattleObject {
 
 	protected override void SelectCommand()
 	{
-		base.SelectCommand();
 		commandToExecute = AI.AISelectCommand();
 		battleStatus = BattleStatus.Action;
 	}

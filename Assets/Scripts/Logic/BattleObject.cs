@@ -113,6 +113,7 @@ public abstract class BattleObject : MonoBehaviour {
 
 		if(timelinePosition >= 8000 && battleStatus == BattleStatus.Prepare)
 		{
+			OnReady();
 			SelectCommand();
 		}
 		if(timelinePosition >= 10000 && battleStatus == BattleStatus.Action)
@@ -121,13 +122,42 @@ public abstract class BattleObject : MonoBehaviour {
 		}
 	}
 
-	protected virtual void SelectCommand()
+	protected void OnReady()
 	{
 		timelinePosition = 8000;
 		isGuarding = false;
 		isEvading = false;
 		battleStatus = BattleStatus.Ready;
 
+		if(data.battleType == BattleType.Physical)
+		{//自愈机制
+			if(currentHP >= maxHP * GlobalDataStructure.HP_RECOVER_THRESHOLD && currentHP < maxHP)
+			{
+				int recoverAmount = currentHP;
+				currentHP += (int) (maxHP * GlobalDataStructure.HP_RECOVER_AMOUNT);
+				recoverAmount = currentHP - recoverAmount;
+
+				MessageEventArgs args = new MessageEventArgs();
+				args.AddMessage("Name", GetName());
+				args.AddMessage("Amount", recoverAmount);
+				EventManager.Instance.PostEvent (BattleEvent.OnHPAutoRecover, args);
+			}
+		}
+		else if(data.battleType == BattleType.Magical)
+		{//回复机制
+			if( currentHP < maxHP)
+			{
+				int recoverAmount = currentHP;
+				currentHP += (int) (maxHP * GlobalDataStructure.MP_RECOVER_AMOUNT);
+				recoverAmount = currentHP - recoverAmount;
+				
+				MessageEventArgs args = new MessageEventArgs();
+				args.AddMessage("Name", GetName());
+				args.AddMessage("Amount", recoverAmount);
+				EventManager.Instance.PostEvent (BattleEvent.OnMPAutoRecover, args);
+			}
+		}
+		
 		foreach(Buff buff in buffList)
 		{
 			if(buff.Tick() <= 0)
@@ -140,6 +170,8 @@ public abstract class BattleObject : MonoBehaviour {
 			}				
 		}
 	}
+
+	protected abstract void SelectCommand();
 
 	protected virtual void ExecuteCommand()
 	{
