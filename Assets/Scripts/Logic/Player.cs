@@ -18,6 +18,12 @@ public class Player : BattleObject {
 		MessageEventArgs args = new MessageEventArgs();
 		args.AddMessage("Object", this);
 		EventManager.Instance.PostEvent(BattleEvent.OnPlayerSpawn, args);
+
+
+		if(playerID == 1)
+		{
+			AddBuff(1);//为妹子添加不死buff
+		}
 	}
 
 	protected override void SelectCommand()

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public abstract class BuffEffect 
 {
-	protected BattleObject source;
+	protected BattleObject buffSource;
 
 	public abstract void Init(BattleObject source, string Argument);
 	public abstract void Execute();

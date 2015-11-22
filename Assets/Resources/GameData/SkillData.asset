@@ -66,7 +66,7 @@ MonoBehaviour:
     postSPDMultiplier: 1.20000005
     interruptMultiplier: .5
     maxCombo: 1
-    buffID: 1
+    buffID: 2
     buffPercentage: 100
   - id: 1201
     name: "\u5510\u5200\u8F7B\u653B\u51FB"
@@ -108,7 +108,7 @@ MonoBehaviour:
     postSPDMultiplier: 1
     interruptMultiplier: 1.5
     maxCombo: 1
-    buffID: 2
+    buffID: 3
     buffPercentage: 100
   - id: 1301
     name: "\u67AA\u7C7B\u8F7B\u653B\u51FB"
@@ -150,7 +150,7 @@ MonoBehaviour:
     postSPDMultiplier: .699999988
     interruptMultiplier: .699999988
     maxCombo: 1
-    buffID: 3
+    buffID: 4
     buffPercentage: 100
   - id: 1401
     name: "\u957F\u5251\u8F7B\u653B\u51FB"
@@ -192,7 +192,7 @@ MonoBehaviour:
     postSPDMultiplier: 1.20000005
     interruptMultiplier: 1
     maxCombo: 1
-    buffID: 4
+    buffID: 5
     buffPercentage: 100
   - id: 1501
     name: "\u5927\u65A7\u8F7B\u653B\u51FB"
@@ -234,7 +234,7 @@ MonoBehaviour:
     postSPDMultiplier: 1
     interruptMultiplier: 1
     maxCombo: 1
-    buffID: 5
+    buffID: 6
     buffPercentage: 100
   - id: 1601
     name: "\u5DE8\u9524\u8F7B\u653B\u51FB"
@@ -276,7 +276,7 @@ MonoBehaviour:
     postSPDMultiplier: .5
     interruptMultiplier: 2
     maxCombo: 1
-    buffID: 6
+    buffID: 7
     buffPercentage: 100
   - id: 1701
     name: "\u77ED\u5F13\u8F7B\u653B\u51FB"
@@ -346,7 +346,7 @@ MonoBehaviour:
     postSPDMultiplier: .200000003
     interruptMultiplier: 1
     maxCombo: 1
-    buffID: 3
+    buffID: 4
     buffPercentage: 100
   - id: 1803
     name: "\u5F29\u7C7B\u7279\u6B8A\u6280"
@@ -371,41 +371,48 @@ MonoBehaviour:
     trigger: 0
     buffEffect: None
   - id: 1
+    name: "\u4E0D\u6B7B"
+    description: "\u65E0\u8BBA\u5982\u4F55\u4E5F\u4E0D\u4F1A\u6B7B\u4EA1"
+    lastTurns: -1
+    targetType: 0
+    trigger: 5
+    buffEffect: Revive
+  - id: 2
     name: "\u5FC5\u4E2D"
     description: "\u65E0\u89C6\u5BF9\u65B9\u56DE\u907F\u5FC5\u5B9A\u547D\u4E2D"
     lastTurns: 0
     targetType: 0
     trigger: 1
     buffEffect: MustHit
-  - id: 2
+  - id: 3
     name: "\u65E0\u6CD5\u683C\u6321"
     description: "\u65E0\u89C6\u5BF9\u65B9\u683C\u6321"
     lastTurns: 0
     targetType: 0
     trigger: 1
     buffEffect: None
-  - id: 3
+  - id: 4
     name: "\u4E09\u8FDE\u51FB"
     description: "\u4E09\u6B21\u4F24\u5BB3"
     lastTurns: 0
     targetType: 0
     trigger: 1
     buffEffect: None
-  - id: 4
+  - id: 5
     name: "\u524A\u5F31"
     description: "\u654C\u51CF\u4F24\u6548\u679C\u53D8\u4E3A80%"
     lastTurns: 3
     targetType: 0
     trigger: 1
     buffEffect: None
-  - id: 5
+  - id: 6
     name: "\u72C2\u66B4"
     description: "\u8FDE\u7EED\u653B\u51FB\u540C\u4E00\u654C\u4EBA"
     lastTurns: 0
     targetType: 0
     trigger: 1
     buffEffect: None
-  - id: 6
+  - id: 7
     name: "\u51FB\u5012"
     description: "\u5C06\u654C\u4EBA\u51FB\u5012\uFF0C\u4EE4\u654C\u4EBA\u8DF3\u8FC7\u4E0B\u56DE\u5408"
     lastTurns: 0

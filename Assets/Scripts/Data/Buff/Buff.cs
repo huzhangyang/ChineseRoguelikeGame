@@ -40,8 +40,12 @@ public class Buff {
 	//check on every turn, see if buff still valid
 	public int Tick()
 	{
-		effectTurns--;
-		if(effectTurns <= 0)
+		if(effectTurns > 0)
+		{
+			effectTurns--;
+		}
+
+		if(effectTurns == 0)
 		{
 			effect.Revert();			
 		}
@@ -76,6 +80,12 @@ public class Buff {
 	public void OnAction()
 	{
 		if(data.trigger == BuffTrigger.Action)
+			effect.Execute();
+	}
+
+	public void OnDead()
+	{
+		if(data.trigger == BuffTrigger.Dead)
 			effect.Execute();
 	}
 }

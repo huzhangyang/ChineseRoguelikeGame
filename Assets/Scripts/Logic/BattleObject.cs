@@ -110,12 +110,14 @@ public abstract class BattleObject : MonoBehaviour {
 
 	void OnEnable() 
 	{
-		EventManager.Instance.RegisterEvent (BattleEvent.OnTimelineUpdate, OnTimelineUpdate);		
+		EventManager.Instance.RegisterEvent (BattleEvent.OnTimelineUpdate, OnTimelineUpdate);
+		EventManager.Instance.RegisterEvent(BattleEvent.BattleObjectDied, OnBattleObjectDied);
 	}
 	
 	void OnDisable () 
 	{
 		EventManager.Instance.UnRegisterEvent (BattleEvent.OnTimelineUpdate, OnTimelineUpdate);
+		EventManager.Instance.UnRegisterEvent(BattleEvent.BattleObjectDied, OnBattleObjectDied);
 	}
 
 	/*更新时间轴*/
@@ -134,6 +136,15 @@ public abstract class BattleObject : MonoBehaviour {
 		if(timelinePosition >= 10000 && battleStatus == BattleStatus.Action)
 		{
 			ExecuteCommand();
+		}
+	}
+
+	protected void OnBattleObjectDied(MessageEventArgs args)
+	{
+		BattleObject bo = args.GetMessage<BattleObject> ("Object");
+		if(this == bo)
+		{
+			UIEvent.DestoryUI ();
 		}
 	}
 
@@ -175,7 +186,7 @@ public abstract class BattleObject : MonoBehaviour {
 		
 		foreach(Buff buff in buffList)
 		{
-			if(buff.Tick() <= 0)
+			if(buff.Tick() == 0)
 			{
 				buffList.Remove(buff);
 			}
