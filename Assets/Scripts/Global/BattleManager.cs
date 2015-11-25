@@ -160,6 +160,7 @@ public class BattleManager : MonoBehaviour {
 		}
 
 		GetCurrentPlayer().commandToExecute = currentCommand;
+		GetCurrentPlayer().GetComponent<BattleObjectUIEvent>().SetPlayerIdle();
 		GetCurrentPlayer().battleStatus = BattleStatus.Action;
 		foreach(Enemy enemy in enemys)
 		{

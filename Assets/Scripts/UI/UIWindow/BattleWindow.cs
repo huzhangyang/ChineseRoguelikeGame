@@ -11,7 +11,6 @@ public class BattleWindow: MonoBehaviour {
 	GameObject playerPanel;
 	GameObject commandPanel;
 	GameObject subCommandPanel;
-	GameObject commandDescrpition;
 	Transform commandButtonPanel;
 	GameObject timeLine;
 
@@ -21,7 +20,6 @@ public class BattleWindow: MonoBehaviour {
 		playerPanel = this.transform.FindChild("PlayerPanel").gameObject;
 		commandPanel = this.transform.FindChild("CommandPanel").gameObject;
 		subCommandPanel = this.transform.FindChild("SubCommandPanel").gameObject;
-		commandDescrpition = subCommandPanel.transform.FindChild("CommandDescription").gameObject;
 		commandButtonPanel =  subCommandPanel.transform.FindChild("SubCommandButton").FindChild("Panel");
 		timeLine = this.transform.FindChild("TimeLine").gameObject;
 	}
@@ -71,14 +69,11 @@ public class BattleWindow: MonoBehaviour {
 	{
 		commandPanel.SetActive(true);
 		subCommandPanel.SetActive (true);
-		string playerName = args.GetMessage<string>("PlayerName");
-		commandDescrpition.GetComponent<Text>().text = playerName + "如何决策？";
 	}
 
 	void OnBasicCommandSelected(MessageEventArgs args)
 	{
 		Player player = BattleManager.Instance.GetCurrentPlayer();
-		commandDescrpition.GetComponent<Text>().text = player.GetName() + "如何决策？";
 		foreach(Transform child in commandButtonPanel)
 		{
 			Destroy(child.gameObject);

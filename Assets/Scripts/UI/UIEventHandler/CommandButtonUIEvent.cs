@@ -4,20 +4,21 @@ using System.Collections;
 
 public class CommandButtonUIEvent : MonoBehaviour {
 
+	public Text nameText;
+	public Text descriptionText;
+
 	public void Init(string name, string description)
 	{
-		GetComponentInChildren<Text>().text = name;
+		nameText.text = name;
+		descriptionText.text = description;
 		GetComponent<Button>().onClick.AddListener(delegate()  
 		{  
-			OnClick(name, description);  
+			OnClick(name);  
 		});		  
 	}
 
-	void OnClick(string name, string description)
+	void OnClick(string name)
 	{
-		Text descText = transform.parent.parent.parent.FindChild("CommandDescription").GetComponent<Text>();
-		descText.text = description;
-
 		MessageEventArgs args = new MessageEventArgs ();
 		args.AddMessage ("CommandName", name);
 		EventManager.Instance.PostEvent (BattleEvent.OnCommandClicked, args);

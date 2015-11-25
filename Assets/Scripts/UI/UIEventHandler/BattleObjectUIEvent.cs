@@ -93,6 +93,17 @@ public class BattleObjectUIEvent : MonoBehaviour {
 			avatarImage.rectTransform.anchoredPosition = new Vector2(posX, 0);			
 	}
 
+	public void SetPlayerReady()
+	{
+		avatarImage.transform.DOScale(new Vector3(1.2f, 1.2f), 1).SetLoops(-1,LoopType.Yoyo);
+		avatarImage.transform.SetAsLastSibling ();
+	}
+
+	public void SetPlayerIdle()
+	{
+		avatarImage.transform.DOKill ();
+	}
+
 	public void EnableClick()
 	{
 		objectImage.DOColor(new Color(0.5f,0.5f,0.5f), 1f).SetLoops(-1,LoopType.Yoyo);
