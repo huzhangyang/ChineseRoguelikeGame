@@ -18,8 +18,10 @@ public class BattleObjectUIEvent : MonoBehaviour {
 		if(playerID < 10)
 			objectImage.sprite = Resources.Load("UI/Battle/Avatar0" + playerID, typeof(Sprite)) as Sprite;
 		else
+		{
 			objectImage.sprite = Resources.Load("UI/Battle/Avatar" + playerID, typeof(Sprite)) as Sprite;
-		objectImage.rectTransform.sizeDelta = new Vector2 (objectImage.sprite.rect.width, objectImage.sprite.rect.height);
+			objectImage.rectTransform.sizeDelta = new Vector2 (objectImage.sprite.rect.width, objectImage.sprite.rect.height);
+		}
 		InitAvatar();
 		GetComponent<Button>().onClick.AddListener(delegate(){OnClick();});		
 	}

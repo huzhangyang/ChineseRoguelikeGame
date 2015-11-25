@@ -112,7 +112,7 @@ public class BattleWindow: MonoBehaviour {
 			
 			if(args.ContainsMessage("Girl"))
 			{
-				player.transform.DOLocalMoveX(-200,0.5f);
+				player.transform.DOLocalMoveX(-240,0.5f);
 			}
 		}
 
@@ -126,7 +126,7 @@ public class BattleWindow: MonoBehaviour {
 			
 			if(args.ContainsMessage("Man"))
 			{
-				player.transform.DOLocalMoveX(200,0.5f);
+				player.transform.DOLocalMoveX(240,0.5f);
 			}
 		}
 
