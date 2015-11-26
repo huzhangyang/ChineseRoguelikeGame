@@ -14,7 +14,7 @@ public class BuffEffectRevive:BuffEffect
 		buffSource.timelinePosition = -10000;
 		MessageEventArgs args = new MessageEventArgs ();
 		args.AddMessage("Message",buffSource.GetName() + "的‘不死’使她复活了！");
-		EventManager.Instance.PostEvent (BattleEvent.OnMessageUpdate, args);
+		EventManager.Instance.PostEvent (BattleEvent.OnBuffActivated, args);
 	}
 	
 	public override void Revert()

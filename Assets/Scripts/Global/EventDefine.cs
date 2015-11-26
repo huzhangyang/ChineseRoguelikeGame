@@ -14,6 +14,7 @@ public enum BattleEvent
 	OnTimelineUpdate,//更新时间轴
 	OnMessageUpdate,//更新战斗信息
 
+	OnBuffActivated,//有BUFF被激活
 	OnHPAutoRecover,//HP自动恢复
 	OnMPAutoRecover,//MP自动恢复
 

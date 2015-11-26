@@ -11,6 +11,7 @@ public class BattleMessage : MonoBehaviour {
 		EventManager.Instance.RegisterEvent(BattleEvent.OnCommandExecute, OnExecuteCommand);
 		EventManager.Instance.RegisterEvent(BattleEvent.OnHPAutoRecover, OnHPAutoRecover);
 		EventManager.Instance.RegisterEvent(BattleEvent.OnMPAutoRecover, OnMPAutoRecover);
+		EventManager.Instance.RegisterEvent(BattleEvent.OnBuffActivated, OnBuffActivated);
 		EventManager.Instance.RegisterEvent(BattleEvent.BattleObjectMiss, OnBattleObjectMiss);
 		EventManager.Instance.RegisterEvent(BattleEvent.BattleObjectCritical, OnBattleObjectCritical);
 		EventManager.Instance.RegisterEvent(BattleEvent.BattleObjectHurt, OnBattleObjectHurt);
@@ -27,6 +28,7 @@ public class BattleMessage : MonoBehaviour {
 		EventManager.Instance.UnRegisterEvent(BattleEvent.OnCommandExecute, OnExecuteCommand);
 		EventManager.Instance.UnRegisterEvent(BattleEvent.OnHPAutoRecover, OnHPAutoRecover);
 		EventManager.Instance.UnRegisterEvent(BattleEvent.OnMPAutoRecover, OnMPAutoRecover);
+		EventManager.Instance.UnRegisterEvent(BattleEvent.OnBuffActivated, OnBuffActivated);
 		EventManager.Instance.UnRegisterEvent(BattleEvent.BattleObjectMiss, OnBattleObjectMiss);
 		EventManager.Instance.UnRegisterEvent(BattleEvent.BattleObjectCritical, OnBattleObjectCritical);
 		EventManager.Instance.UnRegisterEvent(BattleEvent.BattleObjectHurt, OnBattleObjectHurt);
@@ -55,6 +57,12 @@ public class BattleMessage : MonoBehaviour {
 		string name = args.GetMessage<string>("Name");
 		int amount = args.GetMessage<int>("Amount");
 		AddMessage(name + "的灵力自动恢复了" + amount + "点！");
+	}
+
+	void OnBuffActivated(MessageEventArgs args)
+	{
+		string message = args.GetMessage<string>("Message");
+		AddMessage(message);
 	}
 
 	void OnExecuteCommand(MessageEventArgs args)

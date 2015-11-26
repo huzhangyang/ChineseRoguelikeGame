@@ -39,7 +39,7 @@ public class PlayerData : ObjectData {
 	{
 		switch(playerID)
 		{
-		case 0:	name = "Man";
+		case 0:	name = "麓元";
 			stamina = 12;
 			power = 15;
 			agility = 8;
@@ -51,7 +51,7 @@ public class PlayerData : ObjectData {
 			battleType = BattleType.Physical;
 			weaponID = 1000 + Random.Range(1,9) * 100;			
 			break;
-		case 1: name = "Girl";
+		case 1: name = "澪";
 			stamina = 8;
 			power = 18;
 			agility = 12;

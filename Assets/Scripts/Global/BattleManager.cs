@@ -192,12 +192,8 @@ public class BattleManager : MonoBehaviour {
 		}
 		else
 		{
-			players.Remove((Player)bo);
-			if(players.Count == 0)
-			{
-				EventManager.Instance.PostEvent(BattleEvent.OnBattleLose);
-				StartCoroutine(FinishBattle());
-			}
+			EventManager.Instance.PostEvent(BattleEvent.OnBattleLose);
+			StartCoroutine(FinishBattle());
 		}
 	}
 
@@ -241,9 +237,10 @@ public class BattleManager : MonoBehaviour {
 	{
 		PauseEveryOne();
 		for (int i = 0; i < commandQueue.Count; i++) {
-			Command cmd = commandQueue.Dequeue() as Command;
+			Command cmd = commandQueue.Peek() as Command;
 			cmd.Execute();
 			yield return new WaitForSeconds(1);
+			commandQueue.Dequeue();
 		}
 		ResumeEveryOne();
 	}
