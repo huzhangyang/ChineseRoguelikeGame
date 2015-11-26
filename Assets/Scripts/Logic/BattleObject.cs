@@ -97,7 +97,7 @@ public abstract class BattleObject : MonoBehaviour {
 		{
 			if(value > 10000) value = 10000;
 			_timelinePosition = value;
-			UIEvent.SetAvatarPositionX(value <= 0 ? 0 : value / 20, false);//max:500
+			UIEvent.SetAvatarPositionX(value <= 0 ? 0 : value / 20);//max:500
 		}
 		get
 		{

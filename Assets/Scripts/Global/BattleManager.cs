@@ -233,6 +233,11 @@ public class BattleManager : MonoBehaviour {
 		commandQueue.Enqueue (cmd);
 	}
 
+	public bool IsBattlePaused()
+	{
+		return isPaused;
+	}
+
 	IEnumerator HandleCommandQueue()
 	{
 		PauseEveryOne();

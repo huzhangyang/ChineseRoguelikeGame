@@ -85,9 +85,9 @@ public class BattleObjectUIEvent : MonoBehaviour {
 		avatarImage.rectTransform.sizeDelta = new Vector2 (50 * objectImage.sprite.rect.width / objectImage.sprite.rect.height, 50);
 	}
 
-	public void SetAvatarPositionX(float posX, bool smooth)
+	public void SetAvatarPositionX(float posX)
 	{
-		if(smooth)
+		if(BattleManager.Instance.IsBattlePaused())
 			avatarImage.rectTransform.DOLocalMoveX(posX - 250, 1).SetEase(Ease.OutSine);
 		else
 			avatarImage.rectTransform.anchoredPosition = new Vector2(posX, 0);			

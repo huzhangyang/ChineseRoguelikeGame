@@ -50,6 +50,7 @@ public class PlayerData : ObjectData {
 			eloquence = 7;			
 			battleType = BattleType.Physical;
 			weaponID = 1000 + Random.Range(1,9) * 100;			
+			items.Add(1,3);
 			break;
 		case 1: name = "澪";
 			stamina = 8;
@@ -76,8 +77,6 @@ public class PlayerData : ObjectData {
 		expSkill = 0;
 		expLuck = 0;
 		expEloquence = 0;
-
-		items.Add(1,3);
 	}
 
 	public PlayerData Clone()
