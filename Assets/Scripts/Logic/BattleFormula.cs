@@ -21,8 +21,10 @@ public class BattleFormula {
 	//最大生命值
 	public static int GetMaxHP(BattleObject bo)
 	{
-		if(bo.GetBattleType() == BattleType.Physical)
+		if(bo.GetBattleType() == BattleType.Magical)
 			return (int)Mathf.Round(Mathf.Pow(bo.stamina, 1.5f) * 3);
+		else if(bo.GetBattleType() == BattleType.Physical)
+			return (int)Mathf.Round(Mathf.Pow(bo.stamina, 1.3f) * 5);
 		else
 			return (int)Mathf.Round(Mathf.Pow(bo.stamina, 1.4f) * 4);
 	}

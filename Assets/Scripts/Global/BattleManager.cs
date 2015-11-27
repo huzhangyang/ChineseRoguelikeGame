@@ -261,7 +261,7 @@ public class BattleManager : MonoBehaviour {
 	{
 		GlobalManager.Instance.gameStatus = GameStatus.Map;
 		isPaused = true;
-		yield return new WaitForSeconds(5);
+		yield return new WaitForSeconds(10);
 		EventManager.Instance.PostEvent(BattleEvent.OnBattleFinish);
 	}
 
