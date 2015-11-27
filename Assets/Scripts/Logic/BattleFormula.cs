@@ -239,7 +239,7 @@ public class BattleFormula {
 		//send message
 		MessageEventArgs args = new MessageEventArgs();
 		args.AddMessage("Name", target.GetName());
-		args.AddMessage("Damage", damage);
+		args.AddMessage("Damage", (int)Mathf.Round(damage));
 		EventManager.Instance.PostEvent(BattleEvent.BattleObjectHurt, args);
 		//calculate die event
 		if(target.currentHP <= 0)
