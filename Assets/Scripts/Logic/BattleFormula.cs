@@ -7,7 +7,7 @@ public class Damage
 	public float dmg;//伤害值
 	public float hit;//命中率[0..100]
 	public float crit;//暴击率[0..100]
-	public int interrupt;
+	public float interrupt;
 	public bool isCountered;//是否遭到反击
 	public bool isGuarded;//是否遭到格挡
 	public bool isHit;//是否最终命中
@@ -22,15 +22,15 @@ public class BattleFormula {
 	public static int GetMaxHP(BattleObject bo)
 	{
 		if(bo.GetBattleType() == BattleType.Physical)
-			return (int)(Mathf.Pow(bo.stamina, 1.5f) * 3);
+			return (int)Mathf.Round(Mathf.Pow(bo.stamina, 1.5f) * 3);
 		else
-			return (int)(Mathf.Pow(bo.stamina, 1.4f) * 4);
+			return (int)Mathf.Round(Mathf.Pow(bo.stamina, 1.4f) * 4);
 	}
 
 	//时间轴步进
 	public static int GetTimelineStep(BattleObject bo)
 	{
-		return (int)(Mathf.Log10(bo.agility) * 80);
+		return (int)Mathf.Round(Mathf.Log10(bo.agility) * 80);
 	}
 
 	/*计算武器伤害*/
@@ -66,7 +66,7 @@ public class BattleFormula {
 		{
 			damagePack.isGuarded = true;
 		}
-		damagePack.interrupt = (int)(weaponData.interrupt * skillData.interruptMultiplier * 100);
+		damagePack.interrupt = weaponData.interrupt * skillData.interruptMultiplier * 100;
 		//判断是否命中，是否暴击
 		damagePack.isHit = Random.Range(0,101) <= damagePack.hit?true:false;
 		damagePack.isCrit = Random.Range(0,101) <= damagePack.crit?true:false;
@@ -191,7 +191,7 @@ public class BattleFormula {
 		args.AddMessage("Name",source.GetName());
 		EventManager.Instance.PostEvent(BattleEvent.BattleObjectCounter, args);
 		
-		OnDamage(source, (int)damage.dmg, damage.interrupt);
+		OnDamage(source, damage.dmg, damage.interrupt);
 	}
 
 	private static void OnGuarded(BattleObject target, Damage damage)
@@ -199,7 +199,7 @@ public class BattleFormula {
 		damage.dmg /= 2;
 		damage.interrupt /= 2;
 		AudioManager.Instance.PlaySE("guard");
-		OnDamage(target, (int)damage.dmg, damage.interrupt);
+		OnDamage(target, damage.dmg, damage.interrupt);
 	}
 
 	private static void OnCriticalHit(BattleObject target, Damage damage)
@@ -212,13 +212,13 @@ public class BattleFormula {
 		args.AddMessage("Name", target.GetName());
 		EventManager.Instance.PostEvent(BattleEvent.BattleObjectCritical, args);
 
-		OnDamage(target, (int)damage.dmg, damage.interrupt);
+		OnDamage(target, damage.dmg, damage.interrupt);
 	}
 
 	private static void OnHit(BattleObject target, Damage damage)
 	{
 		AudioManager.Instance.PlaySE("hit");
-		OnDamage(target, (int)damage.dmg, damage.interrupt);
+		OnDamage(target, damage.dmg, damage.interrupt);
 	}
 
 	private static void OnMiss(BattleObject target)
@@ -228,14 +228,14 @@ public class BattleFormula {
 		EventManager.Instance.PostEvent(BattleEvent.BattleObjectMiss, args);
 	}
 
-	private static void OnDamage(BattleObject target, int damage, int interrupt)
+	private static void OnDamage(BattleObject target, float damage, float interrupt)
 	{
-		target.currentHP -= damage;
+		target.currentHP -= (int)Mathf.Round(damage);
 		//timeline interrupt
 		if(target.battleStatus == BattleStatus.Action)
-			target.timelinePosition -= interrupt * 2;
+			target.timelinePosition -= (int)Mathf.Round(interrupt * 2);
 		else
-			target.timelinePosition -= interrupt;
+			target.timelinePosition -= (int)Mathf.Round(interrupt);
 		//send message
 		MessageEventArgs args = new MessageEventArgs();
 		args.AddMessage("Name", target.GetName());
