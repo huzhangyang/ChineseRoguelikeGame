@@ -114,7 +114,7 @@ public class BattleFormula {
 		Damage damagePack = source.damage;
 		damagePack = new Damage();
 		//计算击出命中、暴击、伤害
-		damagePack.dmg = (source.power + magicData.basicATK) * skillData.ATKMultiplier;//伤害值
+		damagePack.dmg = (source.power + Random.Range(magicData.basicATKMin, magicData.basicATKMax + 1)) * skillData.ATKMultiplier;//伤害值
 		damagePack.hit = magicData.basicACC * skillData.ACCMultiplier + source.skill + source.luck / 9.0f;//命中率
 		damagePack.crit = magicData.basicCRT * skillData.CRTMultiplier * (source.skill / 2 + 50)/ 1000.0f + source.luck / 9.0f;//暴击率
 		Debug.Log (source.GetName() + "用" + magicData.name + "攻击" +  target.GetName() + ". Dmg: " + damagePack.dmg + " Hit:" + damagePack.hit + " Crit:" + damagePack.crit);
@@ -137,7 +137,7 @@ public class BattleFormula {
 		{
 			damagePack.isGuarded = true;
 		}
-		damagePack.interrupt = 0;
+		damagePack.interrupt = magicData.interrupt * skillData.interruptMultiplier * 100;
 		//判断是否命中，是否暴击
 		damagePack.isHit = Random.Range(0,101) <= damagePack.hit?true:false;
 		damagePack.isCrit = Random.Range(0,101) <= damagePack.crit?true:false;

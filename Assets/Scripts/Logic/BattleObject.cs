@@ -3,12 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 
-public enum BattleStatus
-{
-	Prepare,//等待选择行动(0~8000)
-	Ready,//选择行动中(8000)
-	Action,//即将行动(8000~10000)
-}
+
 
 public abstract class BattleObject : MonoBehaviour {
 /*
@@ -91,11 +86,11 @@ public abstract class BattleObject : MonoBehaviour {
 	public bool isEvading = false;
 
 	private int _timelinePosition;
-	public int timelinePosition//max:10000
+	public int timelinePosition
 	{
 		set
 		{
-			if(value > 10000) value = 10000;
+			if(value > GlobalDataStructure.BATTLE_TIMELINE_MAX) value = GlobalDataStructure.BATTLE_TIMELINE_MAX;
 			_timelinePosition = value;
 			UIEvent.SetAvatarPositionX(value <= 0 ? 0 : value / 20);//max:500
 		}
@@ -128,12 +123,12 @@ public abstract class BattleObject : MonoBehaviour {
 		else if(battleStatus == BattleStatus.Action)
 			timelinePosition += commandToExecute.preExecutionSpeed;
 
-		if(timelinePosition >= 8000 && battleStatus == BattleStatus.Prepare)
+		if(timelinePosition >= GlobalDataStructure.BATTLE_TIMELINE_READY && battleStatus == BattleStatus.Prepare)
 		{
 			OnReady();
 			SelectCommand();
 		}
-		if(timelinePosition >= 10000 && battleStatus == BattleStatus.Action)
+		if(timelinePosition >= GlobalDataStructure.BATTLE_TIMELINE_MAX && battleStatus == BattleStatus.Action)
 		{
 			ExecuteCommand();
 		}
@@ -150,7 +145,7 @@ public abstract class BattleObject : MonoBehaviour {
 
 	protected void OnReady()
 	{
-		timelinePosition = 8000;
+		timelinePosition = GlobalDataStructure.BATTLE_TIMELINE_READY;
 		isGuarding = false;
 		isEvading = false;
 		battleStatus = BattleStatus.Ready;

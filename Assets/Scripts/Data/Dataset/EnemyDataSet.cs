@@ -27,6 +27,7 @@ public class EnemyData : ObjectData {
 
 	public EnemyData Clone()
 	{
+		OnDeSerialize();
 		return(EnemyData)this.MemberwiseClone();
 	}
 }

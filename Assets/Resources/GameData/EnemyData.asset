@@ -28,9 +28,9 @@ MonoBehaviour:
     weaponID: 0
     ring1ID: 0
     ring2ID: 0
-    magicIDs: 
-    itemKeys: 
-    itemValues: 
+    magicIDs: 00000000
+    itemKeys: 00000000
+    itemValues: 00000000
     isBoss: 0
   - name: "\u54A9\u54A9"
     id: 10
@@ -45,34 +45,34 @@ MonoBehaviour:
     insight: 10
     eloquence: 10
     luck: 10
-    weaponID: 0
+    weaponID: 3001
     ring1ID: 0
     ring2ID: 0
-    magicIDs: 
-    itemKeys: 
-    itemValues: 
+    magicIDs: a10f0000
+    itemKeys: 01000000
+    itemValues: 03000000
     isBoss: 0
-  - name: "\u9ED1\xB7\u54A9\u54A9"
+  - name: "\u5C71\u795E\u54A9"
     id: 11
     talentID: 0
     natureID: 0
     battleType: 0
     stamina: 99
-    power: 25
-    agility: 25
-    skill: 25
-    toughness: 25
-    insight: 25
-    eloquence: 25
-    luck: 25
-    weaponID: 0
+    power: 50
+    agility: 50
+    skill: 50
+    toughness: 50
+    insight: 50
+    eloquence: 50
+    luck: 50
+    weaponID: 3002
     ring1ID: 0
     ring2ID: 0
-    magicIDs: 
-    itemKeys: 
-    itemValues: 
+    magicIDs: 00000000
+    itemKeys: 01000000
+    itemValues: 01000000
     isBoss: 1
-  - name: "\u771F\xB7\u7231\u65B0\u89C9\u841D\u8389"
+  - name: "\u66B4\u8D70\u6FAA"
     id: 12
     talentID: 0
     natureID: 0
@@ -88,7 +88,7 @@ MonoBehaviour:
     weaponID: 0
     ring1ID: 0
     ring2ID: 0
-    magicIDs: 
-    itemKeys: 
-    itemValues: 
+    magicIDs: a20f0000a30f0000a40f0000
+    itemKeys: 00000000
+    itemValues: 00000000
     isBoss: 1

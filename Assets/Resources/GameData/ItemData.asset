@@ -156,40 +156,122 @@ MonoBehaviour:
     skill3ID: 1803
     buffID: 0
     buffPercentage: 0
+  - id: 3001
+    name: "\u54A9\u54A9\u4E4B\u722A"
+    type: 0
+    description: "\u54A9\u54A9\u7684\u722A\u5B50\uFF0C\u9020\u6210\u7684\u4F24\u5BB3\u4E0D\u53EF\u8F7B\u89C6\u3002"
+    basicATKMin: 1
+    basicATKMax: 25
+    basicACC: 100
+    basicCRT: 100
+    basicSPD: 100
+    interrupt: 10
+    skill1ID: 3001
+    skill2ID: 3002
+    skill3ID: 3003
+    buffID: 0
+    buffPercentage: 0
+  - id: 3002
+    name: "\u54A9\u54A9\u5229\u722A"
+    type: 0
+    description: "\u66F4\u52A0\u950B\u5229\u7684\u54A9\u54A9\u4E4B\u722A"
+    basicATKMin: 25
+    basicATKMax: 99
+    basicACC: 100
+    basicCRT: 100
+    basicSPD: 100
+    interrupt: 10
+    skill1ID: 3001
+    skill2ID: 3002
+    skill3ID: 3004
+    buffID: 0
+    buffPercentage: 0
   magicDataSet:
   - id: 2000
     name: "\u65E0"
     type: 0
     description: "\u6216\u8BB8\u662F\u67D0\u79CD\u795E\u79D8\u7684\u7075\u6C14\u4E4B\u529B"
-    basicATK: 0
+    basicATKMin: 0
+    basicATKMax: 0
     basicSPD: 0
     basicACC: 0
     basicCRT: 0
+    interrupt: 0
     skillID: 0
   - id: 2001
-    name: "\u706B\u7403\u4E4B\u4E66"
+    name: "\u7075\u6C14\u4E4B\u4E66"
     type: 0
-    description: "\u8BB0\u8F7D\u4E86\u706B\u7403\u672F\u7528\u6CD5\u7684\u53E4\u8001\u4E66\u7C4D"
-    basicATK: 10
-    basicSPD: 70
+    description: "\u8BB0\u8F7D\u4E86\u7075\u6C14\u5F39\u7528\u6CD5\u7684\u53E4\u8001\u4E66\u7C4D"
+    basicATKMin: 15
+    basicATKMax: 25
+    basicSPD: 60
     basicACC: 80
-    basicCRT: 100
-    skillID: 1101
+    basicCRT: 0
+    interrupt: 0
+    skillID: 2001
   - id: 2002
-    name: "\u51B0\u5F39\u4E4B\u4E66"
+    name: "\u9634\u6C14\u4E4B\u4E66"
     type: 0
-    description: "\u8BB0\u8F7D\u4E86\u51B0\u5F39\u672F\u7528\u6CD5\u7684\u53E4\u8001\u4E66\u7C4D"
-    basicATK: 5
-    basicSPD: 90
+    description: "\u8BB0\u8F7D\u4E86\u9634\u6C14\u5F39\u7528\u6CD5\u7684\u53E4\u8001\u4E66\u7C4D"
+    basicATKMin: 5
+    basicATKMax: 15
+    basicSPD: 100
     basicACC: 100
-    basicCRT: 100
-    skillID: 1301
+    basicCRT: 0
+    interrupt: 0
+    skillID: 2002
   - id: 2003
-    name: "\u95EA\u7535\u4E4B\u4E66"
+    name: "\u9633\u6C14\u4E4B\u4E66"
     type: 0
-    description: "\u8BB0\u8F7D\u4E86\u95EA\u7535\u672F\u7528\u6CD5\u7684\u53E4\u8001\u4E66\u7C4D"
-    basicATK: 8
+    description: "\u8BB0\u8F7D\u4E86\u9633\u6C14\u5F39\u7528\u6CD5\u7684\u53E4\u8001\u4E66\u7C4D"
+    basicATKMin: 10
+    basicATKMax: 20
     basicSPD: 80
     basicACC: 90
-    basicCRT: 110
-    skillID: 1501
+    basicCRT: 0
+    interrupt: 0
+    skillID: 2003
+  - id: 4001
+    name: "\u54A9\u54A9\u7684\u6124\u6012"
+    type: 0
+    description: "\u7075\u5C5E\u6027\uFF0C\u9020\u6210\u968F\u673A\u4F24\u5BB3"
+    basicATKMin: 1
+    basicATKMax: 99
+    basicSPD: 100
+    basicACC: 100
+    basicCRT: 0
+    interrupt: 0
+    skillID: 4001
+  - id: 4002
+    name: "\u7075\u6C14\u7206\u53D1"
+    type: 0
+    description: "\u7075\u5C5E\u6027\u5927\u62DB"
+    basicATKMin: 200
+    basicATKMax: 255
+    basicSPD: 60
+    basicACC: 80
+    basicCRT: 0
+    interrupt: 0
+    skillID: 4002
+  - id: 4003
+    name: "\u4E07\u9B54\u566C\u9B42"
+    type: 0
+    description: "\u9634\u5C5E\u6027\u5927\u62DB"
+    basicATKMin: 190
+    basicATKMax: 200
+    basicSPD: 100
+    basicACC: 100
+    basicCRT: 0
+    interrupt: 0
+    skillID: 4003
+  - id: 4004
+    name: "\u5938\u7236\u4E4B\u6012"
+    type: 0
+    description: "\u9633\u5C5E\u6027\u5927\u62DB"
+    basicATKMin: 220
+    basicATKMax: 250
+    basicSPD: 80
+    basicACC: 90
+    basicCRT: 0
+    interrupt: 0
+    skillID: 4004
