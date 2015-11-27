@@ -27,7 +27,7 @@ public class BattleWindow: MonoBehaviour {
 	void OnEnable() 
 	{
 		EventManager.Instance.RegisterEvent (BattleEvent.OnBattleEnter, OnEnterBattle);
-		EventManager.Instance.RegisterEvent (BattleEvent.OnPlayerReady, OnPlayerReady);
+		EventManager.Instance.RegisterEvent (BattleEvent.OnCommandShowUp, OnCommandShowUp);
 		EventManager.Instance.RegisterEvent (BattleEvent.OnBasicCommandSelected, OnBasicCommandSelected);
 		EventManager.Instance.RegisterEvent (BattleEvent.OnCommandSelected, OnCommandSelected);
 	}
@@ -35,7 +35,7 @@ public class BattleWindow: MonoBehaviour {
 	void OnDisable () 
 	{
 		EventManager.Instance.UnRegisterEvent (BattleEvent.OnBattleEnter, OnEnterBattle);
-		EventManager.Instance.UnRegisterEvent (BattleEvent.OnPlayerReady, OnPlayerReady);
+		EventManager.Instance.UnRegisterEvent (BattleEvent.OnCommandShowUp, OnCommandShowUp);
 		EventManager.Instance.UnRegisterEvent (BattleEvent.OnBasicCommandSelected, OnBasicCommandSelected);
 		EventManager.Instance.UnRegisterEvent (BattleEvent.OnCommandSelected, OnCommandSelected);
 	}
@@ -65,7 +65,7 @@ public class BattleWindow: MonoBehaviour {
 		StartCoroutine(StartBattle(args));
 	}
 
-	void OnPlayerReady(MessageEventArgs args)
+	void OnCommandShowUp(MessageEventArgs args)
 	{
 		commandPanel.SetActive(true);
 		subCommandPanel.SetActive (true);

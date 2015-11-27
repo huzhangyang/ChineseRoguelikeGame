@@ -17,6 +17,7 @@ public class BattleManager : MonoBehaviour {
 	private List<Player> players;
 	private Command currentCommand;//当前玩家选择的指令
 	private Queue commandQueue = new Queue();//指令序列
+	private Queue readyQueue = new Queue();//Ready序列
 	private bool isPaused;//战斗是否暂停
 
 	/*LIFE CYCLE */
@@ -54,7 +55,9 @@ public class BattleManager : MonoBehaviour {
 	{
 		if(!isPaused && GlobalManager.Instance.gameStatus == GameStatus.Battle)//若游戏未开始、暂停，或正在处理命令队列，则跳过帧循环
 		{
-			if(commandQueue.Count > 0)
+			if(readyQueue.Count > 0)
+				StartCoroutine(HandleReadyQueue());
+			else if(commandQueue.Count > 0)
 				StartCoroutine(HandleCommandQueue());
 			else
 				EventManager.Instance.PostEvent (BattleEvent.OnTimelineUpdate);
@@ -90,7 +93,8 @@ public class BattleManager : MonoBehaviour {
 
 	void OnPlayerReady(MessageEventArgs args)
 	{
-		PauseEveryOne();
+		Player player = args.GetMessage<Player>("Player");
+		readyQueue.Enqueue(player);
 	}
 
 	void OnBasicCommandSelected(MessageEventArgs args)
@@ -136,8 +140,6 @@ public class BattleManager : MonoBehaviour {
 
 	void OnCommandSelected(MessageEventArgs args)
 	{
-		ResumeEveryOne();
-
 		switch(currentCommand.targetType)
 		{
 		case TargetType.Self:
@@ -170,6 +172,8 @@ public class BattleManager : MonoBehaviour {
 		{
 			player.GetComponent<BattleObjectUIEvent>().DisableClick();
 		}
+
+		readyQueue.Dequeue();
 	}
 
 	void OnExecuteCommand(MessageEventArgs args)
@@ -207,15 +211,7 @@ public class BattleManager : MonoBehaviour {
 
 	public Player GetCurrentPlayer()
 	{
-		foreach(Player player in players)
-		{
-			if(player.battleStatus == BattleStatus.Ready)
-			{
-				return player;
-			}
-		}
-		Debug.LogError("There is no player ready.");
-		return null;
+		return readyQueue.Peek() as Player;
 	}
 
 	public List<Player> GetPlayerList()
@@ -241,7 +237,8 @@ public class BattleManager : MonoBehaviour {
 	IEnumerator HandleCommandQueue()
 	{
 		PauseEveryOne();
-		for (int i = 0; i < commandQueue.Count; i++) {
+		for (int i = 0; i < commandQueue.Count; i++) 
+		{
 			Command cmd = commandQueue.Peek() as Command;
 			cmd.Execute();
 			yield return new WaitForSeconds(1);
@@ -249,6 +246,23 @@ public class BattleManager : MonoBehaviour {
 		}
 		ResumeEveryOne();
 	}
+
+	IEnumerator HandleReadyQueue()
+	{
+		PauseEveryOne();
+		while(readyQueue.Count > 0)
+		{
+			EventManager.Instance.PostEvent(BattleEvent.OnCommandShowUp);
+			Player currentPlayer = GetCurrentPlayer();
+			while(readyQueue.Contains(currentPlayer))
+			{
+				yield return 0;
+			}
+		}
+		ResumeEveryOne();
+	}
+
+
 
 	IEnumerator WaitEveryOne(float seconds)
 	{

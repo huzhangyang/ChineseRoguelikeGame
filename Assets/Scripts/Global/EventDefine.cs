@@ -19,6 +19,7 @@ public enum BattleEvent
 	OnMPAutoRecover,//MP自动恢复
 
 	OnPlayerReady,//玩家就绪
+	OnCommandShowUp,//显示指令面板
 	OnBasicCommandSelected,//玩家点击了一个指令类别
 	OnCommandClicked,//玩家点击了一个指令
 	OnCommandSelected,//玩家或敌方选定了一个指令

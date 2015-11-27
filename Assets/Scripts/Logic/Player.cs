@@ -29,7 +29,7 @@ public class Player : BattleObject {
 	protected override void SelectCommand()
 	{
 		MessageEventArgs args = new MessageEventArgs();
-		args.AddMessage("PlayerName", data.name);
+		args.AddMessage("Player", this);
 		EventManager.Instance.PostEvent(BattleEvent.OnPlayerReady, args);
 		UIEvent.SetPlayerReady();
 	}

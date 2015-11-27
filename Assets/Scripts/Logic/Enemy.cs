@@ -20,13 +20,6 @@ public class Enemy : BattleObject {
 		AI = this.GetComponent<EnemyAI>();
 		AI.InitAI();
 
-		//temp
-		data.weaponID = 1000 + Random.Range(1,9) * 100;
-		data.magicIDs.Add(2001);
-		data.magicIDs.Add(2002);
-		data.magicIDs.Add(2003);
-		AcquireItem(1,1);
-
 		MessageEventArgs args = new MessageEventArgs();
 		args.AddMessage("Object", this);
 		EventManager.Instance.PostEvent(BattleEvent.OnEnemySpawn, args);
