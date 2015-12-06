@@ -37,10 +37,10 @@ public class BattleObjectUIEvent : MonoBehaviour {
 		HPText = bar.GetComponentInChildren<Text>();
 		HPText.text = HPBar.value + "/" + HPBar.maxValue;
 
-		/*Color hpColor = Color.green;
+		Color hpColor = Color.green;
 		if(type == BattleType.Physical) hpColor = Color.red;
 		else if(type == BattleType.Magical) hpColor = Color.blue;
-		HPBar.transform.FindChild("Fill Area").GetComponentInChildren<Image>().color = hpColor;*/
+		HPBar.transform.FindChild("Fill Area").GetComponentInChildren<Image>().color = hpColor;
 	}
 
 	public void InitEnemyHPBar(int max, BattleType type)
@@ -56,10 +56,10 @@ public class BattleObjectUIEvent : MonoBehaviour {
 		HPText.gameObject.SetActive(false);
 		HPText.text = HPBar.value + "/" + HPBar.maxValue;
 
-		/*Color hpColor = Color.green;
+		Color hpColor = Color.green;
 		if(type == BattleType.Physical) hpColor = Color.red;
 		else if(type == BattleType.Magical) hpColor = Color.blue;
-		HPBar.transform.FindChild("Fill Area").GetComponentInChildren<Image>().color = hpColor;*/
+		HPBar.transform.FindChild("Fill Area").GetComponentInChildren<Image>().color = hpColor;
 	}
 
 	public void SetHPBar(int current)
