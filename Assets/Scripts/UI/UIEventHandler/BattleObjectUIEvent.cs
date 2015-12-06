@@ -21,7 +21,6 @@ public class BattleObjectUIEvent : MonoBehaviour {
 		{
 			objectImage.sprite = Resources.Load("UI/Battle/Avatar" + playerID, typeof(Sprite)) as Sprite;
 			objectImage.rectTransform.sizeDelta = new Vector2 (objectImage.sprite.rect.width, objectImage.sprite.rect.height);
-			objectImage.gameObject.transform.localScale = new Vector2(1, 1);
 		}
 		InitAvatar();
 		GetComponent<Button>().onClick.AddListener(delegate(){OnClick();});		
@@ -82,6 +81,7 @@ public class BattleObjectUIEvent : MonoBehaviour {
 		avatar.transform.SetParent(GameObject.Find("TimeLine").transform, false);
 		avatarImage = avatar.GetComponent<Image>();
 		avatarImage.sprite = objectImage.sprite;
+		avatarImage.rectTransform.anchoredPosition = new Vector2 (0, 35);
 		avatarImage.rectTransform.sizeDelta = new Vector2 (50 * objectImage.sprite.rect.width / objectImage.sprite.rect.height, 50);
 	}
 
@@ -90,7 +90,7 @@ public class BattleObjectUIEvent : MonoBehaviour {
 		if(BattleManager.Instance.IsBattlePaused())
 			avatarImage.rectTransform.DOLocalMoveX(posX - 250, 1).SetEase(Ease.OutSine);
 		else
-			avatarImage.rectTransform.anchoredPosition = new Vector2(posX, 0);			
+			avatarImage.rectTransform.anchoredPosition = new Vector2(posX, 35);			
 	}
 
 	public void SetPlayerReady()
