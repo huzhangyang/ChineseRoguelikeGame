@@ -29,6 +29,11 @@ public class BattleFormula {
 			return (int)Mathf.Round(Mathf.Pow(bo.stamina, 1.4f) * 4);
 	}
 
+	public static int GetCounterDamage(BattleObject bo)
+	{
+		return bo.power * 2;
+	}
+
 	//时间轴步进
 	public static int GetTimelineStep(BattleObject bo)
 	{
@@ -193,7 +198,7 @@ public class BattleFormula {
 		args.AddMessage("Name",source.GetName());
 		EventManager.Instance.PostEvent(BattleEvent.BattleObjectCounter, args);
 		
-		OnDamage(source, damage.dmg, damage.interrupt);
+		OnDamage(source, GetCounterDamage(source), 0);
 	}
 
 	private static void OnGuarded(BattleObject target, Damage damage)

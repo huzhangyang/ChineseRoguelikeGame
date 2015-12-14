@@ -44,9 +44,9 @@ public class SkillData{
 	public float ACCMultiplier;//技能命中率倍数
 	public float CRTMultiplier;//技能暴击倍数
 	public float preSPDMultiplier;//前摇速度倍数
-	public float postSPDMultiplier;//后摇速度倍数
+	public float postSPDMultiplier;//后摇速度倍数or法术消耗
 	public float interruptMultiplier;//打断倍数
-	public int maxCombo;//最大连击数
+	public int maxCombo;//最大连击次数or吟唱等级
 	public int buffID;//技能对应的BUFFID
 	public int buffPercentage;//BUFF出现率
 }

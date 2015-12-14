@@ -198,6 +198,8 @@ MonoBehaviour:
     basicCRT: 0
     interrupt: 0
     skillID: 0
+    buffID: 0
+    buffPercentage: 0
   - id: 2001
     name: "\u7075\u6C14\u4E4B\u4E66"
     type: 0
@@ -209,6 +211,8 @@ MonoBehaviour:
     basicCRT: 0
     interrupt: 0
     skillID: 2001
+    buffID: 0
+    buffPercentage: 0
   - id: 2002
     name: "\u9634\u6C14\u4E4B\u4E66"
     type: 0
@@ -220,6 +224,8 @@ MonoBehaviour:
     basicCRT: 0
     interrupt: 0
     skillID: 2002
+    buffID: 0
+    buffPercentage: 0
   - id: 2003
     name: "\u9633\u6C14\u4E4B\u4E66"
     type: 0
@@ -231,6 +237,8 @@ MonoBehaviour:
     basicCRT: 0
     interrupt: 0
     skillID: 2003
+    buffID: 0
+    buffPercentage: 0
   - id: 4001
     name: "\u54A9\u54A9\u7684\u6124\u6012"
     type: 0
@@ -242,6 +250,8 @@ MonoBehaviour:
     basicCRT: 0
     interrupt: 0
     skillID: 4001
+    buffID: 0
+    buffPercentage: 0
   - id: 4002
     name: "\u7075\u6C14\u7206\u53D1"
     type: 0
@@ -253,6 +263,8 @@ MonoBehaviour:
     basicCRT: 0
     interrupt: 0
     skillID: 4002
+    buffID: 0
+    buffPercentage: 0
   - id: 4003
     name: "\u4E07\u9B54\u566C\u9B42"
     type: 0
@@ -264,6 +276,8 @@ MonoBehaviour:
     basicCRT: 0
     interrupt: 0
     skillID: 4003
+    buffID: 0
+    buffPercentage: 0
   - id: 4004
     name: "\u5938\u7236\u4E4B\u6012"
     type: 0
@@ -275,3 +289,5 @@ MonoBehaviour:
     basicCRT: 0
     interrupt: 0
     skillID: 4004
+    buffID: 0
+    buffPercentage: 0

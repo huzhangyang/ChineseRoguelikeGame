@@ -91,7 +91,7 @@ public class WeaponData:ItemData{
 [System.Serializable]
 public class MagicData:ItemData{
 /*
- * 魔法类。
+ * 法术类。
 */
 	public int basicATKMin;//攻击下限
 	public int basicATKMax;//攻击上限
@@ -100,4 +100,6 @@ public class MagicData:ItemData{
 	public int basicCRT;//基准暴击率
 	public int interrupt;//法术打断值
 	public int skillID;
+	public int buffID;
+	public int buffPercentage;
 }
