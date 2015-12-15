@@ -18,7 +18,7 @@ public class CommandSwitchWeapon : Command
 	public override void Execute()
 	{
 		executeMessage = source.GetName() + "拿出了 " + DataManager.Instance.GetItemDataSet().GetWeaponData(itemID).name + "！";
-		base.Execute();
+		SendExecuteMessage ();
 		source.SetWeapon(itemID);
 	}
 }

@@ -16,7 +16,7 @@ public class CommandEvade : Command
 	public override void Execute()
 	{
 		executeMessage = source.GetName() + "试图躲避！";
-		base.Execute();
+		SendExecuteMessage ();
 		source.isEvading = true;
 	}
 }

@@ -21,7 +21,7 @@ public class CommandUseHealing : Command
 			executeMessage = source.GetName() + "喝下了原力之瓶！";
 		else
 			executeMessage = source.GetName() + "给" + targetList[0].GetName() +"喝下了原力之瓶！";
-		base.Execute();
+		SendExecuteMessage ();
 		foreach(BattleObject target in targetList)
 		{
 			BattleFormula.Heal(target, (int)(target.maxHP * GlobalDataStructure.HP_RECOVER_THRESHOLD - target.currentHP));

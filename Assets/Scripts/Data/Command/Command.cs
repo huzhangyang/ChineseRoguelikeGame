@@ -17,7 +17,13 @@ public abstract class Command {
 	public List<BattleObject> targetList = new List<BattleObject>();//执行目标
 	public string executeMessage;//执行时显示的信息
 
-	public virtual void Execute()
+	public abstract void Execute ();
+	public virtual bool IsAvailable()
+	{
+		return true;
+	}
+
+	protected void SendExecuteMessage()
 	{
 		//send message
 		MessageEventArgs args = new MessageEventArgs();

@@ -21,7 +21,7 @@ public class CommandUseWeaponSkill : Command
 	{
 		SkillData skillData = DataManager.Instance.GetSkillDataSet().GetSkillData(skillID);
 		executeMessage = source.GetName() + "使用了" + skillData.name + "!";
-		base.Execute();
+		SendExecuteMessage ();
 
 		foreach(BattleObject target in targetList)
 		{

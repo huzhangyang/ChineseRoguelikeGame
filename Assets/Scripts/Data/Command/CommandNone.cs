@@ -16,6 +16,6 @@ public class CommandNone : Command
 	public override void Execute()
 	{
 		executeMessage = source.GetName() + "按兵不动！";
-		base.Execute();
+		SendExecuteMessage ();
 	}
 }
