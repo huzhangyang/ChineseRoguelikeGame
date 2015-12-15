@@ -31,7 +31,6 @@ public class Player : BattleObject {
 		MessageEventArgs args = new MessageEventArgs();
 		args.AddMessage("Player", this);
 		EventManager.Instance.PostEvent(BattleEvent.OnPlayerReady, args);
-		UIEvent.SetPlayerReady();
 	}
 
 }

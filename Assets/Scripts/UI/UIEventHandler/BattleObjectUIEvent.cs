@@ -102,6 +102,7 @@ public class BattleObjectUIEvent : MonoBehaviour {
 	public void SetPlayerIdle()
 	{
 		avatarImage.transform.DOKill ();
+		avatarImage.transform.localScale = new Vector3 (1, 1, 1);
 	}
 
 	public void EnableClick()

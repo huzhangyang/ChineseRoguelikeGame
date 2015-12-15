@@ -254,6 +254,7 @@ public class BattleManager : MonoBehaviour {
 		{
 			EventManager.Instance.PostEvent(BattleEvent.OnCommandShowUp);
 			Player currentPlayer = GetCurrentPlayer();
+			currentPlayer.GetComponent<BattleObjectUIEvent>().SetPlayerReady();
 			while(readyQueue.Contains(currentPlayer))
 			{
 				yield return 0;
@@ -261,8 +262,6 @@ public class BattleManager : MonoBehaviour {
 		}
 		ResumeEveryOne();
 	}
-
-
 
 	IEnumerator WaitEveryOne(float seconds)
 	{
