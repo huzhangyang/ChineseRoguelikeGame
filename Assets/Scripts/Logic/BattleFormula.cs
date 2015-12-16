@@ -31,7 +31,7 @@ public class BattleFormula {
 
 	public static int GetCounterDamage(BattleObject bo)
 	{
-		return bo.power * 2;
+		return bo.power + bo.skill;
 	}
 
 	//时间轴步进
@@ -239,10 +239,9 @@ public class BattleFormula {
 	{
 		target.currentHP -= (int)Mathf.Round(damage);
 		//timeline interrupt
-		if(target.battleStatus == BattleStatus.Action)
-			target.timelinePosition -= (int)Mathf.Round(interrupt * 2);
-		else
-			target.timelinePosition -= (int)Mathf.Round(interrupt);
+		target.timelinePosition -= (int)Mathf.Round(interrupt);
+		if(target.timelinePosition < GlobalDataStructure.BATTLE_TIMELINE_READY)
+			target.battleStatus = BattleStatus.Prepare;
 		//send message
 		MessageEventArgs args = new MessageEventArgs();
 		args.AddMessage("Name", target.GetName());
