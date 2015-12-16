@@ -9,10 +9,6 @@ public abstract class BattleObject : MonoBehaviour {
 /*
  * 所有参战物体共有的数据与逻辑。
  * */
-	public int maxHP{get{return BattleFormula.GetMaxHP(this);}}
-	public int maxHPInc = 0;
-	public int maxHPMulti = 0;
-
 	private int _currentHP;
 	public int currentHP
 	{
@@ -29,62 +25,6 @@ public abstract class BattleObject : MonoBehaviour {
 		}
 	}
 
-	public int stamina{get{return (int)(data.stamina * (1 + staminaMulti) + staminaInc);}}
-	public int staminaInc = 0;
-	public float staminaMulti = 0;
-
-	public int power{get{
-			float normalAmount = data.power * (1 + powerMulti) + powerInc;
-			if(data.battleType == BattleType.Physical && currentHP < maxHP * GlobalDataStructure.HP_WEAKEN_THRESHOLD)
-				normalAmount *= (1 - GlobalDataStructure.HP_WEAKEN_AMOUNT * (1 - currentHP / maxHP * GlobalDataStructure.HP_WEAKEN_THRESHOLD));
-			return (int)(normalAmount);
-		}}
-	public int powerInc = 0;
-	public float powerMulti = 0;
-	
-	public int agility{get{
-			float normalAmount = data.agility * (1 + agilityMulti) + agilityInc;
-			if(data.battleType == BattleType.Physical && currentHP < maxHP * GlobalDataStructure.HP_WEAKEN_THRESHOLD)
-				normalAmount *= (1 - GlobalDataStructure.HP_WEAKEN_AMOUNT * (1 - currentHP / maxHP * GlobalDataStructure.HP_WEAKEN_THRESHOLD));
-			return (int)(normalAmount);
-		}}
-	public int agilityInc = 0;
-	public float agilityMulti = 0;
-	
-	public int toughness{get{return (int)(data.toughness * (1 + toughnessMulti) + toughnessInc);}}
-	public int toughnessInc = 0;
-	public float toughnessMulti = 0;
-	
-	public int insight{get{return (int)(data.insight * (1 + insightMulti) + insightInc);}}
-	public int insightInc = 0;
-	public float insightMulti = 0;
-	
-	public int skill{get{
-			float normalAmount = data.skill * (1 + skillMulti) + skillInc;
-			if(data.battleType == BattleType.Physical && currentHP < maxHP * GlobalDataStructure.HP_WEAKEN_THRESHOLD)
-				normalAmount *= (1 - GlobalDataStructure.HP_WEAKEN_AMOUNT * (1 - currentHP / maxHP * GlobalDataStructure.HP_WEAKEN_THRESHOLD));
-			return (int)(normalAmount);
-		}}
-	public int skillInc = 0;
-	public float skillMulti = 0;
-	
-	public int luck{get{return (int)(data.luck * (1 + luckMulti) + luckInc);}}
-	public int luckInc = 0;
-	public float luckMulti = 0;
-	
-	public int eloquence{get{return (int)(data.eloquence * (1 + eloquenceMulti) + eloquenceInc);}}
-	public int eloquenceInc = 0;
-	public float eloquenceMulti = 0;	
-
-	public BattleStatus battleStatus = BattleStatus.Prepare;
-	public Command commandToExecute = new CommandNone();
-	public Damage damage = new Damage();//伤害值
-	public List<Command> availableCommands = new List<Command>();
-	public List<Buff> buffList = new List<Buff>();
-	
-	public bool isGuarding = false;
-	public bool isEvading = false;
-
 	private int _timelinePosition;
 	public int timelinePosition
 	{
@@ -99,6 +39,31 @@ public abstract class BattleObject : MonoBehaviour {
 			return _timelinePosition;
 		}
 	}
+
+	public int maxHP{get{return BattleFormula.GetMaxHP(this);}}
+	public int maxHPInc = 0;
+	public int maxHPMulti = 0;
+
+	public int stamina{get{return data.stamina;}}
+	public int power{get{return data.power;}}
+	public int agility{get{return data.agility;}}
+	public int skill{get{return data.skill;}}
+	public int toughness{get{return data.toughness;}}
+	public int insight{get{return data.insight;}}
+	public int eloquence{get{return data.eloquence;}}
+	public int luck{get{return data.luck;}}
+
+	public int staminaInc = 0;
+	public float staminaMulti = 0;
+
+	public BattleStatus battleStatus = BattleStatus.Prepare;
+	public Command commandToExecute = new CommandNone();
+	public Damage damage = new Damage();//伤害值
+	public List<Command> availableCommands = new List<Command>();
+	public List<Buff> buffList = new List<Buff>();
+	
+	public bool isGuarding = false;
+	public bool isEvading = false;
 
 	protected BattleObjectUIEvent UIEvent;
 	protected ObjectData data;
