@@ -80,14 +80,12 @@ public class BattleWindow: MonoBehaviour {
 		}
 
 		CommandType commandType = (CommandType)args.GetMessage<int>("CommandID");
-		for(int i = 0 ; i < player.availableCommands.Count; i++)
+		List<Command> validCommands = player.availableCommands.FindAll((x)=>{return x.commandType == commandType;});
+		for(int i = 0 ; i < validCommands.Count; i++)
 		{
-			if(player.availableCommands[i].commandType == commandType)
-			{
-				GameObject commandButton = Instantiate(Resources.Load(GlobalDataStructure.PATH_BATTLE + "CommandButton")) as GameObject;
-				commandButton.transform.SetParent(commandButtonPanel, false);
-				commandButton.GetComponent<CommandButtonUIEvent>().Init(player.availableCommands[i].commandName, player.availableCommands[i].commandDescription);
-			}
+			GameObject commandButton = Instantiate(Resources.Load(GlobalDataStructure.PATH_BATTLE + "CommandButton")) as GameObject;
+			commandButton.transform.SetParent(commandButtonPanel, false);
+			commandButton.GetComponent<CommandButtonUIEvent>().Init(validCommands[i].commandName, validCommands[i].commandDescription);
 		}
 	}
 

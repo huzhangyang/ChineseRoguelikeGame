@@ -47,7 +47,7 @@ public class EnemyAI : MonoBehaviour {
 		switch(command.targetType)
 		{
 		case TargetType.Self:
-			command.targetList.Add(this.GetComponent<BattleObject>());
+			command.targetList.Add(self);
 			break;
 		case TargetType.SingleEnemy:
 		case TargetType.SingleAlly:
@@ -65,32 +65,14 @@ public class EnemyAI : MonoBehaviour {
 
 	public Command AIAttack()
 	{
-		List<Command> availableCommands = new List<Command> ();
-		if(self.GetBattleType() != BattleType.Magical)
-		{
-			WeaponData weaponData = DataManager.Instance.GetItemDataSet().GetWeaponData(self.GetWeapon());
-			availableCommands.Add(new CommandUseWeaponSkill(weaponData, weaponData.skill1ID));
-			availableCommands.Add(new CommandUseWeaponSkill(weaponData, weaponData.skill2ID));
-			availableCommands.Add(new CommandUseWeaponSkill(weaponData, weaponData.skill3ID));
-		}
-		if(self.GetBattleType() != BattleType.Physical)
-		{
-			foreach(int magicID in self.GetMagic())
-			{
-				MagicData magicData = DataManager.Instance.GetItemDataSet().GetMagicData(magicID);
-				availableCommands.Add(new CommandUseMagicSkill(magicData, magicData.skillID));
-			}
-		}
-		Command command = availableCommands[Random.Range(0, availableCommands.Count)];
-		return command;
+		List<Command> validCommands = self.availableCommands.FindAll((x)=>{return x.commandType == CommandType.Attack;});
+		return validCommands[Random.Range(0, validCommands.Count)];
 	}
 
 	public Command AIDefence()
 	{
-		if(Random.Range(0,2) > 0)
-			return new CommandGuard();
-		else
-			return new CommandEvade();
+		List<Command> validCommands = self.availableCommands.FindAll((x)=>{return x.commandType == CommandType.Defence;});
+		return validCommands[Random.Range(0, validCommands.Count)];
 	}
 
 	public Command AIHeal()
@@ -102,13 +84,6 @@ public class EnemyAI : MonoBehaviour {
 
 	public BattleObject AISelectTarget()
 	{
-		while(true)
-		{
-			foreach(Player player in BattleManager.Instance.GetPlayerList())
-			{
-				if(Random.Range(0,2) > 0)
-					return player;
-			}
-		}
+		return BattleManager.Instance.GetPlayerList()[Random.Range(0, BattleManager.Instance.GetPlayerList().Count)];
 	}
 }
