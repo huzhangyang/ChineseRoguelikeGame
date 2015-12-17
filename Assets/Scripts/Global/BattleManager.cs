@@ -99,9 +99,6 @@ public class BattleManager : MonoBehaviour {
 
 	void OnBasicCommandSelected(MessageEventArgs args)
 	{
-		BasicCommand basicCommand = (BasicCommand)args.GetMessage<int>("CommandID");
-		GetCurrentPlayer().RefreshAvailableCommands(basicCommand);
-
 		foreach(Enemy enemy in enemys)
 		{
 			enemy.GetComponent<BattleObjectUIEvent>().DisableClick();

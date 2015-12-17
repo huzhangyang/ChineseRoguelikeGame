@@ -79,11 +79,15 @@ public class BattleWindow: MonoBehaviour {
 			Destroy(child.gameObject);
 		}
 
+		CommandType commandType = (CommandType)args.GetMessage<int>("CommandID");
 		for(int i = 0 ; i < player.availableCommands.Count; i++)
 		{
-			GameObject commandButton = Instantiate(Resources.Load(GlobalDataStructure.PATH_BATTLE + "CommandButton")) as GameObject;
-			commandButton.transform.SetParent(commandButtonPanel, false);
-			commandButton.GetComponent<CommandButtonUIEvent>().Init(player.availableCommands[i].commandName, player.availableCommands[i].commandDescription);
+			if(player.availableCommands[i].commandType == commandType)
+			{
+				GameObject commandButton = Instantiate(Resources.Load(GlobalDataStructure.PATH_BATTLE + "CommandButton")) as GameObject;
+				commandButton.transform.SetParent(commandButtonPanel, false);
+				commandButton.GetComponent<CommandButtonUIEvent>().Init(player.availableCommands[i].commandName, player.availableCommands[i].commandDescription);
+			}
 		}
 	}
 

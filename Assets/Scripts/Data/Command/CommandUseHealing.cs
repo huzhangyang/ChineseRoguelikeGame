@@ -5,7 +5,7 @@ public class CommandUseHealing : Command
 {
 	public CommandUseHealing(int itemCount)
 	{
-		commandType = CommandType.UseItem;
+		commandType = CommandType.Item;
 		commandName = "原力之瓶(" + itemCount + ")";
 		commandDescription = "使用原力之瓶来回复生命值";
 		targetType = TargetType.SingleAlly;

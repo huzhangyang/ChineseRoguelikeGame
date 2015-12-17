@@ -4,13 +4,12 @@ using System.Collections;
 /*
 管理全局数据结构,如常量,枚举,结构体等.
 */
-public enum CommandType{None, UseSkill, Defence, UseItem, Strategy}
+public enum CommandType{Attack,Defence,Item,Strategy}
 public enum TargetType{Self, SingleEnemy, AllEnemies, SingleAlly, AllAllies, FollowCommand}
 public enum BattleType{Physical, Magical, Both}
 public enum SkillType{Melee, Range, Neutral, Yin, Yang} 
 public enum BuffTrigger{Always,Hit,Behit,Ready,Action, Dead} 
 public enum ItemType{NormalItem, Weapon, Magic, Ring}
-public enum BasicCommand{Attack,Defence,Item,Strategy}
 public enum BattleStatus{Prepare, Ready, Action}
 
 public class GlobalDataStructure{

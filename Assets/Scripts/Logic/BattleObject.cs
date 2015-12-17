@@ -155,6 +155,8 @@ public abstract class BattleObject : MonoBehaviour {
 				buff.OnReady();
 			}				
 		}
+
+		availableCommands = Command.GetAvailableCommands(this);
 	}
 
 	protected abstract void SelectCommand();
@@ -172,45 +174,6 @@ public abstract class BattleObject : MonoBehaviour {
 		timelinePosition = -commandToExecute.postExecutionRecover * BattleFormula.GetTimelineStep(this);//后退距离 = 帧 * 步进
 		battleStatus = BattleStatus.Prepare;
 		commandToExecute = new CommandNone();
-	}
-
-	public void RefreshAvailableCommands(BasicCommand basicCommand)
-	{
-		availableCommands = new List<Command> ();
-		switch(basicCommand)
-		{
-		case BasicCommand.Attack:
-			if(data.battleType != BattleType.Magical)
-			{
-				WeaponData weaponData = DataManager.Instance.GetItemDataSet().GetWeaponData(data.weaponID);
-				availableCommands.Add(new CommandUseWeaponSkill(weaponData, weaponData.skill1ID));
-				availableCommands.Add(new CommandUseWeaponSkill(weaponData, weaponData.skill2ID));
-				availableCommands.Add(new CommandUseWeaponSkill(weaponData, weaponData.skill3ID));
-			}
-			if(data.battleType != BattleType.Physical)
-			{
-				foreach(int magicID in data.magicIDs)
-				{
-					MagicData magicData = DataManager.Instance.GetItemDataSet().GetMagicData(magicID);
-					availableCommands.Add(new CommandUseMagicSkill(magicData, magicData.skillID));
-				}
-			}
-			break;
-		case BasicCommand.Defence:
-			availableCommands.Add(new CommandGuard());
-			availableCommands.Add(new CommandEvade());
-			break;
-		case BasicCommand.Item:
-			if(data.battleType != BattleType.Magical)
-				availableCommands.Add(new CommandSwitchWeapon());
-			if(GetItemCount(1) > 0)
-				availableCommands.Add(new CommandUseHealing(GetItemCount(1)));
-			break;
-		case BasicCommand.Strategy:
-			availableCommands.Add(new CommandNone());
-			availableCommands.Add(new CommandEscape());
-			break;
-		}
 	}
 
 	public void AddBuff(int id)

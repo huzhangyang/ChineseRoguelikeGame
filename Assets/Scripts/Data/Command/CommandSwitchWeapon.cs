@@ -5,7 +5,7 @@ public class CommandSwitchWeapon : Command
 {
 	public CommandSwitchWeapon()
 	{
-		commandType = CommandType.UseItem;
+		commandType = CommandType.Item;
 		commandName = "切换武器";
 		commandDescription = "切换当前使用的武器";
 		targetType = TargetType.Self;

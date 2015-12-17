@@ -7,7 +7,7 @@ public class CommandUseMagicSkill : Command
 	{
 		SkillData skillData = DataManager.Instance.GetSkillDataSet ().GetSkillData (skillID);
 
-		commandType = CommandType.UseSkill;
+		commandType = CommandType.Attack;
 		commandName = skillData.name;
 		commandDescription = skillData.description;
 		targetType = skillData.targetType;

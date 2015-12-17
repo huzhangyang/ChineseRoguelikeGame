@@ -5,7 +5,7 @@ public class CommandNone : Command
 {
 	public CommandNone()
 	{
-		commandType = CommandType.None;
+		commandType = CommandType.Strategy;
 		commandName = "跳过";
 		commandDescription = "什么也不做";
 		targetType = TargetType.Self;
