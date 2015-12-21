@@ -93,7 +93,11 @@ public class StatusPanel: MonoBehaviour {
 	
 	public void OnSetWeapon(string weaponID)
 	{
-		playerData.weaponID = int.Parse(weaponID);
-		SetBasicView();
+		WeaponData weaponData = DataManager.Instance.GetItemDataSet().GetWeaponData(int.Parse(weaponID));
+		if(weaponData != null)
+		{
+			playerData.weaponID = int.Parse(weaponID);
+			SetBasicView();
+		}
 	}
 }
