@@ -21,7 +21,7 @@ public class StatusPanel: MonoBehaviour {
 	private void SetBasicView()
 	{
 		nameText.text = playerData.name;
-		image.sprite = Resources.Load("UI/Battle/Avatar0" + playerData.id, typeof(Sprite)) as Sprite;
+		image.sprite = Resources.Load("UI/Common/Player0" + playerData.id, typeof(Sprite)) as Sprite;
 		typeText.text = playerData.battleType.ToString();
 
 		WeaponData weaponData = DataManager.Instance.GetItemDataSet().GetWeaponData(playerData.weaponID);
