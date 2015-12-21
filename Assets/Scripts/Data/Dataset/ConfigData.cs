@@ -29,4 +29,6 @@ public class ConfigData{
 			AudioManager.Instance.volumeSE = value;
 		}
 	}
+
+	public int currentLeaderID;
 }

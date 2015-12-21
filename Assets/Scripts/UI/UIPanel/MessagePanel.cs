@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine.UI;
 
-public class MessageWindow : MonoBehaviour {
+public class MessagePanel : MonoBehaviour {
 	
 	Text message;
 	List<string> msgList = new List<string>();
