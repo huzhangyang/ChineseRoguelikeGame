@@ -45,54 +45,63 @@ public class StatusPanel: MonoBehaviour {
 
 	public void OnSetStamina(string value)
 	{
+		if(string.IsNullOrEmpty(value)) return;
 		playerData.stamina = int.Parse(value);
 		SetAttributeView();
 	}
 
 	public void OnSetPower(string value)
 	{
+		if(string.IsNullOrEmpty(value)) return;
 		playerData.power = int.Parse(value);
 		SetAttributeView();
 	}
 
 	public void OnSetAgility(string value)
 	{
+		if(string.IsNullOrEmpty(value)) return;
 		playerData.agility = int.Parse(value);
 		SetAttributeView();
 	}
 
 	public void OnSetSkill(string value)
 	{
+		if(string.IsNullOrEmpty(value)) return;
 		playerData.skill = int.Parse(value);
 		SetAttributeView();
 	}
 
 	public void OnSetToughness(string value)
 	{
+		if(string.IsNullOrEmpty(value)) return;
 		playerData.toughness = int.Parse(value);
 		SetAttributeView();
 	}
 
 	public void OnSetInsight(string value)
 	{
+		if(string.IsNullOrEmpty(value)) return;
 		playerData.insight = int.Parse(value);
 		SetAttributeView();
 	}
 
 	public void OnSetEloquence(string value)
 	{
+		if(string.IsNullOrEmpty(value)) return;
 		playerData.eloquence = int.Parse(value);
 		SetAttributeView();
 	}
 
 	public void OnSetLuck(string value)
 	{
+		if(string.IsNullOrEmpty(value)) return;
 		playerData.luck = int.Parse(value);
 		SetAttributeView();
 	}
 	
 	public void OnSetWeapon(string weaponID)
 	{
+		if(string.IsNullOrEmpty(weaponID)) return;
 		WeaponData weaponData = DataManager.Instance.GetItemDataSet().GetWeaponData(int.Parse(weaponID));
 		if(weaponData != null)
 		{

@@ -40,7 +40,7 @@ public abstract class BattleObject : MonoBehaviour {
 		}
 	}
 
-	public int maxHP{get{return BattleFormula.GetMaxHP(this);}}
+	public int maxHP{get{return BattleAttribute.MaxHP(this);}}
 	public int maxHPInc = 0;
 	public int maxHPMulti = 0;
 
@@ -84,7 +84,7 @@ public abstract class BattleObject : MonoBehaviour {
 	protected void OnTimelineUpdate(MessageEventArgs args)
 	{
 		if(battleStatus == BattleStatus.Prepare)
-			timelinePosition += BattleFormula.GetTimelineStep(this);
+			timelinePosition += BattleAttribute.Speed(this);
 		else if(battleStatus == BattleStatus.Action)
 			timelinePosition += commandToExecute.preExecutionSpeed;
 
@@ -171,7 +171,7 @@ public abstract class BattleObject : MonoBehaviour {
 		commandToExecute.source = this;
 		BattleManager.Instance.AddToCommandQueue (commandToExecute);
 		//post process
-		timelinePosition = -commandToExecute.postExecutionRecover * BattleFormula.GetTimelineStep(this);//后退距离 = 帧 * 步进
+		timelinePosition = -commandToExecute.postExecutionRecover * BattleAttribute.Speed(this);//后退距离 = 帧 * 步进
 		battleStatus = BattleStatus.Prepare;
 		commandToExecute = new CommandNone();
 	}

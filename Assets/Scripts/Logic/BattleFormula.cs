@@ -9,6 +9,7 @@ public class Damage
 	public float crit;//暴击率[0..100]
 	public float interrupt;
 	public bool isCountered;//是否遭到反击
+	public bool isEvaded;//是否遭到闪避
 	public bool isGuarded;//是否遭到格挡
 	public bool isHit;//是否最终命中
 	public bool isCrit;//最终是否暴击
@@ -18,26 +19,11 @@ public class BattleFormula {
 /*
  * 战斗计算公式相关
  * */	
-	//最大生命值
-	public static int GetMaxHP(BattleObject bo)
-	{
-		if(bo.GetBattleType() == BattleType.Magical)
-			return (int)Mathf.Round(Mathf.Pow(bo.stamina, 1.5f) * 3);
-		else if(bo.GetBattleType() == BattleType.Physical)
-			return (int)Mathf.Round(Mathf.Pow(bo.stamina, 1.3f) * 5);
-		else
-			return (int)Mathf.Round(Mathf.Pow(bo.stamina, 1.4f) * 4);
-	}
 
+	//计算防御反击伤害
 	public static int GetCounterDamage(BattleObject bo)
 	{
-		return bo.power + bo.skill;
-	}
-
-	//时间轴步进
-	public static int GetTimelineStep(BattleObject bo)
-	{
-		return (int)Mathf.Round(Mathf.Log10(bo.agility) * 80);
+		return (int)Mathf.Round((bo.power + bo.skill) * BattleAttribute.AttackMulti(bo));
 	}
 
 	/*计算武器伤害*/
@@ -50,14 +36,14 @@ public class BattleFormula {
 		Damage damagePack = source.damage;
 		damagePack = new Damage();
 		//计算击出命中、暴击、伤害
-		damagePack.dmg = (source.power + Random.Range(weaponData.basicATKMin, weaponData.basicATKMax + 1)) * skillData.ATKMultiplier;//伤害值
-		damagePack.hit = weaponData.basicACC * skillData.ACCMultiplier + source.skill + source.luck / 9.0f;//命中率
-		damagePack.crit = weaponData.basicCRT * skillData.CRTMultiplier * (source.skill / 2 + 50)/ 1000.0f + source.luck / 9.0f;//暴击率
+		damagePack.dmg = Random.Range(weaponData.basicATKMin, weaponData.basicATKMax + 1) * skillData.ATKMultiplier * BattleAttribute.AttackMulti(source);//伤害值
+		damagePack.hit = weaponData.basicACC * skillData.ACCMultiplier + BattleAttribute.ExtraAccuracy(source);//命中率
+		damagePack.crit = weaponData.basicCRT * skillData.CRTMultiplier / 10f + BattleAttribute.ExtraCrit(source);//暴击率
 		Debug.Log (source.GetName() + "用" + weaponData.name + "攻击" +  target.GetName() + ". Dmg: " + damagePack.dmg + " Hit:" + damagePack.hit + " Crit:" + damagePack.crit);
 		//计算真实命中、暴击、伤害
-		damagePack.dmg *= (1 - target.toughness / 250.0f);
-		damagePack.hit -= (target.skill * 0.9f + target.luck / 4.5f + 20);
-		damagePack.crit *= (100 - target.skill * 0.7f - target.luck * 0.3f) / 100.0f;
+		damagePack.dmg *= (1 - BattleAttribute.DefenceMulti(target));
+		damagePack.hit -= BattleAttribute.ExtraEvasion(target);
+		damagePack.crit = Mathf.Max(0, damagePack.crit - BattleAttribute.ExtraCritResist(target));
 		Debug.Log ("RealDmg: " + damagePack.dmg + " RealHit:" + damagePack.hit + " RealCrit:" + damagePack.crit);
 		//判断防御反击
 		if(target.commandToExecute.commandType == CommandType.Defence)
@@ -67,6 +53,7 @@ public class BattleFormula {
 		//加入防御效果
 		if(target.isEvading)
 		{
+			damagePack.isEvaded = true;
 			damagePack.hit /= 2;
 		}
 		if(target.isGuarding)
@@ -119,14 +106,14 @@ public class BattleFormula {
 		Damage damagePack = source.damage;
 		damagePack = new Damage();
 		//计算击出命中、暴击、伤害
-		damagePack.dmg = (source.power + Random.Range(magicData.basicATKMin, magicData.basicATKMax + 1)) * skillData.ATKMultiplier;//伤害值
-		damagePack.hit = magicData.basicACC * skillData.ACCMultiplier + source.skill + source.luck / 9.0f;//命中率
-		damagePack.crit = magicData.basicCRT * skillData.CRTMultiplier * (source.skill / 2 + 50)/ 1000.0f + source.luck / 9.0f;//暴击率
+		damagePack.dmg = Random.Range(magicData.basicATKMin, magicData.basicATKMax + 1) * skillData.ATKMultiplier * BattleAttribute.AttackMulti(source);//伤害值
+		damagePack.hit = magicData.basicACC * skillData.ACCMultiplier + BattleAttribute.ExtraAccuracy(source);//命中率
+		damagePack.crit = magicData.basicCRT * skillData.CRTMultiplier / 10f + BattleAttribute.ExtraCrit(source);//暴击率
 		Debug.Log (source.GetName() + "用" + magicData.name + "攻击" +  target.GetName() + ". Dmg: " + damagePack.dmg + " Hit:" + damagePack.hit + " Crit:" + damagePack.crit);
 		//计算真实命中、暴击、伤害
-		damagePack.dmg *= (1 - target.toughness / 250.0f);
-		damagePack.hit -= (target.skill * 0.9f + target.luck / 4.5f + 20);
-		damagePack.crit *= (100 - target.skill * 0.7f - target.luck * 0.3f) / 100.0f;
+		damagePack.dmg *= (1 - BattleAttribute.DefenceMulti(target));
+		damagePack.hit -= BattleAttribute.ExtraEvasion(target);
+		damagePack.crit = Mathf.Max(0, damagePack.crit - BattleAttribute.ExtraCritResist(target));
 		Debug.Log ("RealDmg: " + damagePack.dmg + " RealHit:" + damagePack.hit + " RealCrit:" + damagePack.crit);
 		//判断防御反击
 		if(target.commandToExecute.commandType == CommandType.Defence)
@@ -136,6 +123,7 @@ public class BattleFormula {
 		//加入防御效果
 		if(target.isEvading)
 		{
+			damagePack.isEvaded = true;
 			damagePack.hit /= 2;
 		}
 		if(target.isGuarding)
@@ -204,7 +192,6 @@ public class BattleFormula {
 	private static void OnGuarded(BattleObject target, Damage damage)
 	{
 		damage.dmg /= 2;
-		damage.interrupt /= 2;
 		AudioManager.Instance.PlaySE("guard");
 		OnDamage(target, damage.dmg, damage.interrupt);
 	}
@@ -212,7 +199,6 @@ public class BattleFormula {
 	private static void OnCriticalHit(BattleObject target, Damage damage)
 	{
 		damage.dmg *= 2;
-		damage.interrupt *= 2;
 		AudioManager.Instance.PlaySE("critical");
 
 		MessageEventArgs args = new MessageEventArgs();
@@ -225,7 +211,10 @@ public class BattleFormula {
 	private static void OnHit(BattleObject target, Damage damage)
 	{
 		AudioManager.Instance.PlaySE("hit");
-		OnDamage(target, damage.dmg, damage.interrupt);
+		if(damage.isEvaded)
+			OnDamage(target, damage.dmg, 0);
+		else
+			OnDamage(target, damage.dmg, damage.interrupt);
 	}
 
 	private static void OnMiss(BattleObject target)
