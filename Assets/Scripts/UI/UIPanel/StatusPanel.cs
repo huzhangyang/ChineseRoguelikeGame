@@ -6,6 +6,7 @@ public class StatusPanel: MonoBehaviour {
 
 	public Text nameText;
 	public Text attributeText;
+	public Text moreAttributeText;
 	public Text weaponText;
 	public Text typeText;
 	public Image image;
@@ -39,6 +40,20 @@ public class StatusPanel: MonoBehaviour {
 		attributeText.text += playerData.insight + "\n";
 		attributeText.text += playerData.eloquence + "\n";
 		attributeText.text += playerData.luck + "\n";
+		SetMoreAttributeView();
+	}
+
+	private void SetMoreAttributeView()
+	{
+		moreAttributeText.text = "";
+		moreAttributeText.text += "生命值:" + BattleAttribute.MaxHP(playerData) + "\t\t\t";
+		moreAttributeText.text += "速度:" + BattleAttribute.Speed(playerData) + "\n";
+		moreAttributeText.text += "攻击倍率:" + (int)(BattleAttribute.AttackMulti(playerData) * 100) + "%\t\t";
+		moreAttributeText.text += "免伤率:" + (int)(BattleAttribute.DefenceMulti(playerData) * 100) + "%\n";
+		moreAttributeText.text += "命中率:" + (int)BattleAttribute.ExtraAccuracy(playerData) + "%\t\t\t";
+		moreAttributeText.text += "回避率:" +  (int)BattleAttribute.ExtraEvasion(playerData) + "%\n";
+		moreAttributeText.text += "暴击率:" + (int)BattleAttribute.ExtraCrit(playerData)+ "%\t\t\t";
+		moreAttributeText.text += "抗暴击率:" + (int)BattleAttribute.ExtraCritResist(playerData) + "%\n";
 	}
 	
 	/*UI CALLBACK*/

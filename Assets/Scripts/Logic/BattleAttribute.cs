@@ -59,4 +59,57 @@ public class BattleAttribute {
 	{
 		return bo.skill / 4.5f + bo.luck / 4.5f;
 	}
+
+	//最大生命值
+	public static int MaxHP(ObjectData data)
+	{
+		if(data.battleType == BattleType.Magical)
+			return (int)Mathf.Round(Mathf.Pow(data.stamina, 1.5f) * 3);
+		else if(data.battleType == BattleType.Physical)
+			return (int)Mathf.Round(Mathf.Pow(data.stamina, 1.3f) * 5);
+		else
+			return (int)Mathf.Round(Mathf.Pow(data.stamina, 1.4f) * 4);
+	}
+	
+	//时间轴速度
+	public static int Speed(ObjectData data)
+	{
+		return (int)Mathf.Round(Mathf.Log10(data.agility) * 80);
+	}
+	
+	//攻击倍率
+	public static float AttackMulti(ObjectData data)
+	{
+		return 1 + data.power / 100f;
+	}
+	
+	//防御倍率
+	public static float DefenceMulti(ObjectData data)
+	{
+		return data.toughness / (100f + data.toughness);
+	}
+	
+	//命中率
+	public static float ExtraAccuracy(ObjectData data)
+	{
+		return data.skill + data.luck / 9f;
+	}
+	
+	//回避率
+	public static float ExtraEvasion(ObjectData data)
+	{
+		return data.skill * 0.9f + data.luck / 4.5f + 20;
+	}
+	
+	//暴击率
+	public static float ExtraCrit(ObjectData data)
+	{
+		return data.skill / 4.5f + data.luck / 9f;
+	}
+	
+	//抗暴击率
+	public static float ExtraCritResist(ObjectData data)
+	{
+		return data.skill / 4.5f + data.luck / 4.5f;
+	}
 }

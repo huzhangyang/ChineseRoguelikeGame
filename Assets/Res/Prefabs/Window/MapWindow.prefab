@@ -2817,6 +2817,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameText: {fileID: 11458220}
   attributeText: {fileID: 11422366}
+  moreAttributeText: {fileID: 11446138}
   weaponText: {fileID: 11419170}
   typeText: {fileID: 11444264}
   image: {fileID: 11482558}
