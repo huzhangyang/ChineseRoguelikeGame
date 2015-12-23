@@ -36,7 +36,7 @@ MonoBehaviour:
     id: 10
     talentID: 0
     natureID: 0
-    battleType: 2
+    battleType: 0
     stamina: 10
     power: 10
     agility: 10
@@ -48,7 +48,7 @@ MonoBehaviour:
     weaponID: 3001
     ring1ID: 0
     ring2ID: 0
-    magicIDs: a10f0000
+    magicIDs: 00000000
     itemKeys: 01000000
     itemValues: 03000000
     isBoss: 0
@@ -56,7 +56,7 @@ MonoBehaviour:
     id: 11
     talentID: 0
     natureID: 0
-    battleType: 0
+    battleType: 2
     stamina: 99
     power: 50
     agility: 50
@@ -68,7 +68,7 @@ MonoBehaviour:
     weaponID: 3002
     ring1ID: 0
     ring2ID: 0
-    magicIDs: 00000000
+    magicIDs: a10f0000
     itemKeys: 01000000
     itemValues: 01000000
     isBoss: 1

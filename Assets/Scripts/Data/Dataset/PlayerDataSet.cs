@@ -49,7 +49,7 @@ public class PlayerData : ObjectData {
 			luck = 10;
 			eloquence = 10;			
 			battleType = BattleType.Physical;
-			weaponID = 1000 + Random.Range(1,9) * 100 + Random.Range(0,3) * 10;			
+			weaponID = 1000 + Random.Range(1,7) * 100 + Random.Range(0,3) * 10;			
 			items.Add(1,3);
 			break;
 		case 1: name = "澪";
