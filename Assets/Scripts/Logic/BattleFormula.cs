@@ -38,7 +38,7 @@ public class BattleFormula {
 		//计算击出命中、暴击、伤害
 		damagePack.dmg = Random.Range(weaponData.basicATKMin, weaponData.basicATKMax + 1) * skillData.ATKMultiplier * BattleAttribute.AttackMulti(source);//伤害值
 		damagePack.hit = weaponData.basicACC * skillData.ACCMultiplier + BattleAttribute.ExtraAccuracy(source);//命中率
-		damagePack.crit = weaponData.basicCRT * skillData.CRTMultiplier / 10f + BattleAttribute.ExtraCrit(source);//暴击率
+		damagePack.crit = weaponData.basicCRT * skillData.CRTMultiplier + BattleAttribute.ExtraCrit(source);//暴击率
 		Debug.Log (source.GetName() + "用" + weaponData.name + "攻击" +  target.GetName() + ". Dmg: " + damagePack.dmg + " Hit:" + damagePack.hit + " Crit:" + damagePack.crit);
 		//计算真实命中、暴击、伤害
 		damagePack.dmg *= (1 - BattleAttribute.DefenceMulti(target));
@@ -108,7 +108,7 @@ public class BattleFormula {
 		//计算击出命中、暴击、伤害
 		damagePack.dmg = Random.Range(magicData.basicATKMin, magicData.basicATKMax + 1) * skillData.ATKMultiplier * BattleAttribute.AttackMulti(source);//伤害值
 		damagePack.hit = magicData.basicACC * skillData.ACCMultiplier + BattleAttribute.ExtraAccuracy(source);//命中率
-		damagePack.crit = magicData.basicCRT * skillData.CRTMultiplier / 10f + BattleAttribute.ExtraCrit(source);//暴击率
+		damagePack.crit = magicData.basicCRT * skillData.CRTMultiplier + BattleAttribute.ExtraCrit(source);//暴击率
 		Debug.Log (source.GetName() + "用" + magicData.name + "攻击" +  target.GetName() + ". Dmg: " + damagePack.dmg + " Hit:" + damagePack.hit + " Crit:" + damagePack.crit);
 		//计算真实命中、暴击、伤害
 		damagePack.dmg *= (1 - BattleAttribute.DefenceMulti(target));

@@ -45,7 +45,7 @@ public class BattleAttribute {
 	//回避率
 	public static float ExtraEvasion(BattleObject bo)
 	{
-		return bo.skill * 0.9f + bo.luck / 4.5f + 20;
+		return bo.skill * 0.9f + bo.luck / 4.5f;
 	}
 
 	//暴击率
@@ -98,7 +98,7 @@ public class BattleAttribute {
 	//回避率
 	public static float ExtraEvasion(ObjectData data)
 	{
-		return data.skill * 0.9f + data.luck / 4.5f + 20;
+		return data.skill * 0.9f + data.luck / 4.5f;
 	}
 	
 	//暴击率
