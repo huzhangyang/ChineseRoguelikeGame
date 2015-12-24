@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 
-public class StatusPanel: MonoBehaviour {
+public class PlayerPanel: MonoBehaviour {
 
 	public Text nameText;
 	public Text attributeText;

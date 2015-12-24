@@ -7,8 +7,7 @@ public class MapWindow: MonoBehaviour {
 	public Canvas battleCanvas;
 	public Canvas mapCanvas;
 
-	public GameObject statusPanel;
-	public GameObject upgradePanel;
+	public GameObject playerPanel;
 	public GameObject itemPanel;
 	public GameObject settingPanel;
 
@@ -55,24 +54,19 @@ public class MapWindow: MonoBehaviour {
 		EventManager.Instance.PostEvent (BattleEvent.OnBattleEnter, args);
 	}
 
-	public void OnStatusButtonClick()
+	public void OnPlayerButtonClick()
 	{
-		statusPanel.SetActive(!statusPanel.activeSelf);
-	}
-
-	public void OnUpgradeButtonClick()
-	{
-		
+		playerPanel.SetActive(!playerPanel.activeSelf);
 	}
 
 	public void OnItemButtonClick()
 	{
-		
+		itemPanel.SetActive(!itemPanel.activeSelf);	
 	}
 
 	public void OnSettingButtonClick()
 	{
-
+		settingPanel.SetActive(!settingPanel.activeSelf);
 	}
 
 	public void OnLeaderButtonClick()
