@@ -30,7 +30,9 @@ public class SettingPanel : MonoBehaviour {
 
 	public void OnExitButtonClick()
 	{
-		Application.LoadLevel("IntroScene");
+		MessageEventArgs arg = new MessageEventArgs();
+		arg.AddMessage("WindowID", UIWindowID.IntroWindow);
+		EventManager.Instance.PostEvent(UIEvent.OpenUIWindow, arg);
 	}
 
 }

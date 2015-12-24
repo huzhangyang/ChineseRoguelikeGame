@@ -18,6 +18,11 @@ public class GlobalManager : MonoBehaviour {
 		DontDestroyOnLoad(this.gameObject);
 		Application.runInBackground = false;
 		Screen.sleepTimeout = SleepTimeout.NeverSleep;
+		DataManager.Instance.LoadConfig();
+
+		MessageEventArgs args = new MessageEventArgs();
+		args.AddMessage("WindowID", UIWindowID.IntroWindow);
+		EventManager.Instance.PostEvent(UIEvent.OpenUIWindow, args);
 	}
 	
 	void OnApplicationFocus(bool focusd)

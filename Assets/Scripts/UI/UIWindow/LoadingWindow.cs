@@ -17,7 +17,7 @@ public class LoadingWindow : MonoBehaviour {
 			DataManager.Instance.LoadSave();
 		}			
 		SetTip();
-		StartCoroutine (LoadScene ());
+		StartCoroutine(LoadMainContent());
 	}
 
 	void SetTip()
@@ -25,14 +25,17 @@ public class LoadingWindow : MonoBehaviour {
 		tips.text = "Tips：击败BOSS卷毛咩，有可能掉落大量珍贵毛皮！";
 	}
 
-	IEnumerator LoadScene()
+	IEnumerator LoadMainContent()
 	{
 		GlobalManager.Instance.gameStatus = GameStatus.Loading;
 		DataManager.Instance.LoadAllData ();
-		yield return new WaitForSeconds (1f);//这一行是为了防止乃们看不清Loading过程-_-
-		AsyncOperation asyncOp = Application.LoadLevelAsync("GameScene");
-		yield return asyncOp;
-		Application.LoadLevel("GameScene");
+
+		yield return new WaitForSeconds(1);
+
+		MessageEventArgs args = new MessageEventArgs();
+		args.AddMessage("WindowID", UIWindowID.MapWindow);
+		EventManager.Instance.PostEvent(UIEvent.OpenUIWindow, args);
+
 		GlobalManager.Instance.gameStatus = GameStatus.Map;
 	}
 

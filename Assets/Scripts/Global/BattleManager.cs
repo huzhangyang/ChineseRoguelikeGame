@@ -273,6 +273,10 @@ public class BattleManager : MonoBehaviour {
 		isPaused = true;
 		yield return new WaitForSeconds(10);
 		EventManager.Instance.PostEvent(BattleEvent.OnBattleFinish);
+
+		MessageEventArgs arg = new MessageEventArgs();
+		arg.AddMessage("WindowID", UIWindowID.MapWindow);
+		EventManager.Instance.PostEvent(UIEvent.OpenUIWindow, arg);
 	}
 
 	void PauseEveryOne()

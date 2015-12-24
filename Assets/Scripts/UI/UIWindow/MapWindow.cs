@@ -3,9 +3,6 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class MapWindow: MonoBehaviour {
-	
-	public Canvas battleCanvas;
-	public Canvas mapCanvas;
 
 	public GameObject playerPanel;
 	public GameObject itemPanel;
@@ -16,21 +13,16 @@ public class MapWindow: MonoBehaviour {
 
 	void Start() 
 	{
-		EventManager.Instance.RegisterEvent (BattleEvent.OnBattleFinish, OnBattleFinish);
 		configData = DataManager.Instance.GetConfigData();
-		leaderButton.image.sprite = Resources.Load("UI/Battle/Avatar0" + configData.currentLeaderID, typeof(Sprite)) as Sprite;
-	}
-
-	void OnDestroy()
-	{
-		EventManager.Instance.UnRegisterEvent (BattleEvent.OnBattleFinish, OnBattleFinish);
+		leaderButton.image.sprite = Resources.Load(GlobalDataStructure.PATH_UIIMAGE_BATTLE + "Avatar0" + configData.currentLeaderID, typeof(Sprite)) as Sprite;
 	}
 	
 	/*UI CALLBACK*/
 	public void EnterBattle(int battleType)
 	{
-		mapCanvas.gameObject.SetActive (false);
-		battleCanvas.gameObject.SetActive (true);
+		MessageEventArgs arg = new MessageEventArgs();
+		arg.AddMessage("WindowID", UIWindowID.BattleWindow);
+		EventManager.Instance.PostEvent(UIEvent.OpenUIWindow, arg);
 		
 		MessageEventArgs args = new MessageEventArgs ();
 		args.AddMessage("BattleType",battleType);
@@ -72,13 +64,6 @@ public class MapWindow: MonoBehaviour {
 	public void OnLeaderButtonClick()
 	{
 		configData.currentLeaderID = 1 - configData.currentLeaderID;// 0->1, 1->0
-		leaderButton.image.sprite = Resources.Load("UI/Battle/Avatar0" + configData.currentLeaderID, typeof(Sprite)) as Sprite;
-	}
-
-	/*EVENT CALLBACK*/
-	void OnBattleFinish(MessageEventArgs args)
-	{
-		mapCanvas.gameObject.SetActive (true);
-		battleCanvas.gameObject.SetActive (false);
+		leaderButton.image.sprite = Resources.Load(GlobalDataStructure.PATH_UIIMAGE_BATTLE + "Avatar0" + configData.currentLeaderID, typeof(Sprite)) as Sprite;
 	}
 }

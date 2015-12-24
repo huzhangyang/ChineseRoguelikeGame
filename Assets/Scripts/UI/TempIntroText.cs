@@ -37,7 +37,9 @@ public class TempIntroText : MonoBehaviour {
 		}
 		else
 		{
-			Application.LoadLevel("LoadingScene");
+			MessageEventArgs args = new MessageEventArgs();
+			args.AddMessage("WindowID", UIWindowID.LoadingWindow);
+			EventManager.Instance.PostEvent(UIEvent.OpenUIWindow, args);
 		}
 
 	}

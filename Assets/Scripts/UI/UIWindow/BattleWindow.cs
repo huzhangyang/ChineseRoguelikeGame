@@ -83,7 +83,7 @@ public class BattleWindow: MonoBehaviour {
 		List<Command> validCommands = player.availableCommands.FindAll((x)=>{return x.commandType == commandType;});
 		for(int i = 0 ; i < validCommands.Count; i++)
 		{
-			GameObject commandButton = Instantiate(Resources.Load(GlobalDataStructure.PATH_BATTLE + "CommandButton")) as GameObject;
+			GameObject commandButton = Instantiate(Resources.Load(GlobalDataStructure.PATH_UIPREFAB_BATTLE + "CommandButton")) as GameObject;
 			commandButton.transform.SetParent(commandButtonPanel, false);
 			commandButton.GetComponent<CommandButtonUIEvent>().Init(validCommands[i].commandName, validCommands[i].commandDescription);
 		}
@@ -103,7 +103,7 @@ public class BattleWindow: MonoBehaviour {
 	{
 		if(args.ContainsMessage("Man"))
 		{
-			GameObject player = Instantiate(Resources.Load(GlobalDataStructure.PATH_BATTLE + "Character")) as GameObject;
+			GameObject player = Instantiate(Resources.Load(GlobalDataStructure.PATH_UIPREFAB_BATTLE + "Character")) as GameObject;
 			player.transform.SetParent(playerPanel.transform, false);
 			player.GetComponent<Player>().Init(0);			
 			
@@ -115,7 +115,7 @@ public class BattleWindow: MonoBehaviour {
 
 		if(args.ContainsMessage("Girl"))
 		{
-			GameObject player = Instantiate(Resources.Load(GlobalDataStructure.PATH_BATTLE + "Character")) as GameObject;
+			GameObject player = Instantiate(Resources.Load(GlobalDataStructure.PATH_UIPREFAB_BATTLE + "Character")) as GameObject;
 			player.transform.SetParent(playerPanel.transform, false);
 			player.GetComponent<Player>().Init(1);
 			
@@ -132,7 +132,7 @@ public class BattleWindow: MonoBehaviour {
 			int[] enemyIDs = args.GetMessage<int[]>("Enemy");
 			for(int i = 0; i < enemyIDs.Length; i++)
 			{				
-				GameObject enemy = Instantiate(Resources.Load(GlobalDataStructure.PATH_BATTLE + "Enemy")) as GameObject;			
+				GameObject enemy = Instantiate(Resources.Load(GlobalDataStructure.PATH_UIPREFAB_BATTLE + "Enemy")) as GameObject;			
 				enemy.transform.SetParent(enemyPanel.transform, false);
 				enemy.GetComponent<Enemy>().Init(enemyIDs[i]);
 				

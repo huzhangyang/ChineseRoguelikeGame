@@ -36,5 +36,15 @@ public enum BattleEvent
 
 public enum UIEvent
 {
-	OpenBattleWindow = 100,
+	OpenUIWindow = 100,
+}
+
+public enum UIWindowID
+{
+	IntroWindow,
+	LoadingWindow,
+	MapWindow,
+	BattleWindow,
+	ChatWindow
+
 }

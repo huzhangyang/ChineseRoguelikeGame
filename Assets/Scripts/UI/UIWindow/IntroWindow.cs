@@ -26,7 +26,9 @@ public class IntroWindow : MonoBehaviour {
 	
 	public void OnButtonContinue()
 	{
-		Application.LoadLevel("LoadingScene");
+		MessageEventArgs args = new MessageEventArgs();
+		args.AddMessage("WindowID", UIWindowID.IntroWindow);
+		EventManager.Instance.PostEvent(UIEvent.OpenUIWindow, args);
 	}
 	
 	public void OnButtonSetting()

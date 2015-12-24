@@ -16,10 +16,10 @@ public class BattleObjectUIEvent : MonoBehaviour {
 		allowClick = false;
 		objectImage = this.GetComponent<Image>();
 		if(playerID < 10)
-			objectImage.sprite = Resources.Load("UI/Battle/Avatar0" + playerID, typeof(Sprite)) as Sprite;
+			objectImage.sprite = Resources.Load(GlobalDataStructure.PATH_UIIMAGE_BATTLE + "Avatar0" + playerID, typeof(Sprite)) as Sprite;
 		else
 		{
-			objectImage.sprite = Resources.Load("UI/Battle/Avatar" + playerID, typeof(Sprite)) as Sprite;
+			objectImage.sprite = Resources.Load(GlobalDataStructure.PATH_UIIMAGE_BATTLE + "Avatar" + playerID, typeof(Sprite)) as Sprite;
 			objectImage.rectTransform.sizeDelta = new Vector2 (objectImage.sprite.rect.width, objectImage.sprite.rect.height);
 		}
 		InitAvatar();
@@ -28,7 +28,7 @@ public class BattleObjectUIEvent : MonoBehaviour {
 
 	public void InitHPBar(int max, BattleType type)
 	{
-		GameObject bar = Instantiate(Resources.Load(GlobalDataStructure.PATH_BATTLE + "HPBar")) as GameObject;
+		GameObject bar = Instantiate(Resources.Load(GlobalDataStructure.PATH_UIPREFAB_BATTLE + "HPBar")) as GameObject;
 		bar.transform.SetParent(this.transform, false);
 		HPBar = bar.GetComponent<Slider>();
 		HPBar.maxValue = max;
@@ -44,7 +44,7 @@ public class BattleObjectUIEvent : MonoBehaviour {
 
 	public void InitEnemyHPBar(int max, BattleType type)
 	{
-		GameObject bar = Instantiate(Resources.Load(GlobalDataStructure.PATH_BATTLE + "EnemyHPBar")) as GameObject;
+		GameObject bar = Instantiate(Resources.Load(GlobalDataStructure.PATH_UIPREFAB_BATTLE + "EnemyHPBar")) as GameObject;
 		bar.transform.SetParent(this.transform, false);
 		bar.transform.localPosition = new Vector3(0, objectImage.rectTransform.sizeDelta.y / 2, 0); 
 		((RectTransform)bar.transform).sizeDelta = new Vector2 (objectImage.rectTransform.sizeDelta.x / 2, 32);
@@ -77,7 +77,7 @@ public class BattleObjectUIEvent : MonoBehaviour {
 	
 	public void InitAvatar()
 	{
-		GameObject avatar = Instantiate(Resources.Load(GlobalDataStructure.PATH_BATTLE + "Avatar")) as GameObject;
+		GameObject avatar = Instantiate(Resources.Load(GlobalDataStructure.PATH_UIPREFAB_BATTLE + "Avatar")) as GameObject;
 		avatar.transform.SetParent(GameObject.Find("TimeLine").transform, false);
 		avatarImage = avatar.GetComponent<Image>();
 		avatarImage.sprite = objectImage.sprite;
