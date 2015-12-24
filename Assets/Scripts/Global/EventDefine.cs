@@ -3,7 +3,7 @@ using System.Collections;
 
 public enum BattleEvent
 {
-	OnBattleEnter,//进入战斗
+	OnBattleEnter = 0,//进入战斗
 	OnBattleStart,//开始战斗
 	OnBattleWin,//战斗胜利
 	OnBattleLose,//战斗失败
@@ -32,4 +32,9 @@ public enum BattleEvent
 	BattleObjectCounter,//有玩家或敌人反击
 	BattleObjectDied,//有玩家或敌人死亡
 	BattleObjectEscape,//有玩家或敌人逃跑
+}
+
+public enum UIEvent
+{
+	OpenBattleWindow = 100,
 }

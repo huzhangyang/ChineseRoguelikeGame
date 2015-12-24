@@ -59,23 +59,36 @@ public class EventManager : MonoBehaviour{
 	}
 		
 	// 将事件加入消息队列
+	private void PostEvent(int eventID, MessageEventArgs args)
+	{
+		waitEvent.Add(new InvokeParam(eventID, args));
+	}
+
 	public void PostEvent(BattleEvent evt, MessageEventArgs args)
 	{
-		waitEvent.Add(new InvokeParam((int)evt, args));
+		PostEvent((int)evt, args);
 	}
 
 	public void PostEvent(BattleEvent evt)
 	{
-		MessageEventArgs args = new MessageEventArgs();
-		waitEvent.Add(new InvokeParam((int)evt, args));
+		PostEvent((int)evt, new MessageEventArgs());
+	}
+
+	public void PostEvent(UIEvent evt, MessageEventArgs args)
+	{
+		PostEvent((int)evt, args);
+	}
+
+	public void PostEvent(UIEvent evt)
+	{
+		PostEvent((int)evt, new MessageEventArgs());
 	}
 
 	// 立即执行事件
-	public void InvokeEvent(BattleEvent evt, MessageEventArgs args)
+	public void InvokeEvent(int eventID, MessageEventArgs args)
 	{
-		int _event = (int)evt;
 		List<EventHandler> handlerList;
-		if (events.TryGetValue(_event, out handlerList) == true)
+		if (events.TryGetValue(eventID, out handlerList) == true)
 		{
 			for (int i = 0; i < handlerList.Count; ++i)
 			{
@@ -85,25 +98,43 @@ public class EventManager : MonoBehaviour{
 	}
 		
 	// 注册事件		
+	private void RegisterEvent(int eventID, EventHandler handler)
+	{
+		if (events.ContainsKey(eventID) == false)
+		{
+			events.Add(eventID, new List<EventHandler>());
+		}
+		events[eventID].Add(handler);
+	}
+
 	public void RegisterEvent(BattleEvent evt, EventHandler handler)
 	{
-		int _event = (int)evt;
-		if (events.ContainsKey(_event) == false)
-		{
-			events.Add(_event, new List<EventHandler>());
-		}
-		events[_event].Add(handler);
+		RegisterEvent((int)evt, handler);
+	}
+	
+	public void RegisterEvent(UIEvent evt, EventHandler handler)
+	{
+		RegisterEvent((int)evt, handler);
 	}
 		
 	// 取消注册事件
-	public void UnRegisterEvent(BattleEvent evt, EventHandler handler)
+	private void UnRegisterEvent(int eventID, EventHandler handler)
 	{
-		int _event = (int)evt;
-		if (events.ContainsKey(_event) == false)
+		if (events.ContainsKey(eventID) == false)
 		{
 			return;
 		}
-		events[_event].Remove(handler);
+		events[eventID].Remove(handler);
+	}
+
+	public void UnRegisterEvent(BattleEvent evt, EventHandler handler)
+	{
+		RegisterEvent((int)evt, handler);
+	}
+	
+	public void UnRegisterEvent(UIEvent evt, EventHandler handler)
+	{
+		RegisterEvent((int)evt, handler);
 	}
 }
 
