@@ -27,11 +27,22 @@ public class UIManager : MonoBehaviour {
 	void OpenUIWindow(MessageEventArgs args)
 	{
 		UIWindowID windowID = args.GetMessage<UIWindowID>("WindowID");
-		GameObject window = GameObject.Instantiate(Resources.Load(GlobalDataStructure.PATH_UIPREFAB_WINDOW + windowID.ToString()) as GameObject);
 
 		if(windowStack.Count > 0)
 			windowStack[windowStack.Count - 1].SetActive(false);
-		windowStack.Add(window);
+
+		GameObject window = windowStack.Find((GameObject x)=>{return x.name.Contains(windowID.ToString());});
+		if(window != null)
+		{
+			window.SetActive(true);
+			windowStack.Remove(window);
+			windowStack.Add(window);
+		}
+		else
+		{
+			window = GameObject.Instantiate(Resources.Load(GlobalDataStructure.PATH_UIPREFAB_WINDOW + windowID.ToString()) as GameObject);
+			windowStack.Add(window);
+		}
 	}
 
 }
