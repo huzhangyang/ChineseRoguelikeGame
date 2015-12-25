@@ -37,6 +37,7 @@ public enum BattleEvent
 public enum UIEvent
 {
 	OpenUIWindow = 100,
+	OnItemClicked,
 }
 
 public enum UIWindowID
