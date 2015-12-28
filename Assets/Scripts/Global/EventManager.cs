@@ -129,12 +129,12 @@ public class EventManager : MonoBehaviour{
 
 	public void UnRegisterEvent(BattleEvent evt, EventHandler handler)
 	{
-		RegisterEvent((int)evt, handler);
+		UnRegisterEvent((int)evt, handler);
 	}
 	
 	public void UnRegisterEvent(UIEvent evt, EventHandler handler)
 	{
-		RegisterEvent((int)evt, handler);
+		UnRegisterEvent((int)evt, handler);
 	}
 }
 
