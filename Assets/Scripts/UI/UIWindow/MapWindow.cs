@@ -11,7 +11,7 @@ public class MapWindow: MonoBehaviour {
 	public Button leaderButton;
 	private ConfigData configData;
 
-	void Start() 
+	void OnEnable() 
 	{
 		configData = DataManager.Instance.GetConfigData();
 		leaderButton.image.sprite = Resources.Load(GlobalDataStructure.PATH_UIIMAGE_BATTLE + "Avatar0" + configData.currentLeaderID, typeof(Sprite)) as Sprite;

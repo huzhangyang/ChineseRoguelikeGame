@@ -9,9 +9,8 @@ public class IntroWindow : MonoBehaviour {
 	public GameObject intro;
 	public GameObject continueButton;
 
-	void Start () 
+	void OnEnable() 
 	{
-		AudioManager.Instance.PlayBGM ("Theme");
 		DOTween.ToAlpha(()=>bookLight.color, (x)=> bookLight.color = x , 0 , 2).SetLoops(-1, LoopType.Yoyo);
 		if (!SaveManager.Instance.IsSaveExist())
 			continueButton.SetActive(false);

@@ -3,15 +3,17 @@ using UnityEngine.UI;
 using DG.Tweening;
 using System.Collections;
 
-public class TempIntroText : MonoBehaviour {
+public class IntroPanel : MonoBehaviour {
 
 	Text text;
 	string[] content = new string[5];
 	int currentPlaying = 0;
 
-	void Start()
+	void OnEnable()
 	{
-		text = GetComponent<Text>();
+		AudioManager.Instance.PlayBGM ("Intro");
+
+		text = GetComponentInChildren<Text>();
 		content[0] = "盘古开天辟地，阳清为天，阴浊为地。后而日月更移，天地之间始有生灵。人以天地万物为师，师法自然，脱出兽性，故被尊为万物之灵长。万物生于大地之上，是为地气所化，然长于天穹之下，得造化所钟。";
 		content[1] = "世间清浊之气循环往复；有神山，上达天界，名“天柱”，是为清气运行之枢纽。其时天地间灵气充盈，时有人兽修习驭使灵气之法。驭使灵气者，或为神仙，或为兽怪，各据一方，相争不下。又有魑魅魍魉妖魔精怪，祸乱人间，莫能尽除。";
 		content[2] = "时过千年，修习灵气者日众，终不能共戴一天。是而，神魔作兵，各展其能，以争帝位。开战之时，则翻江倒海，移山裂地，天地为之动摇。一时生灵涂炭，人不得活。";
@@ -40,6 +42,8 @@ public class TempIntroText : MonoBehaviour {
 			MessageEventArgs args = new MessageEventArgs();
 			args.AddMessage("WindowID", UIWindowID.LoadingWindow);
 			EventManager.Instance.PostEvent(UIEvent.OpenUIWindow, args);
+
+			this.gameObject.SetActive(false);
 		}
 
 	}

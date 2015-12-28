@@ -12,7 +12,7 @@ public class ChatWindow : MonoBehaviour {
 	DialogueData dialogueData;
 	int currentTextCount;
 
-	void Start () 
+	void OnEnable() 
 	{
 		dialogueData = DataManager.Instance.GetDialogueDataSet ().GetDialogueData(dialogID);
 		currentTextCount = 1;

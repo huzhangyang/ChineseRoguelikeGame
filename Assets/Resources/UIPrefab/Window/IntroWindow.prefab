@@ -30,6 +30,7 @@ GameObject:
   - 224: {fileID: 22469676}
   - 222: {fileID: 22260594}
   - 114: {fileID: 11462144}
+  - 114: {fileID: 11405176}
   m_Layer: 5
   m_Name: Intro
   m_TagString: Untagged
@@ -47,7 +48,6 @@ GameObject:
   - 224: {fileID: 22470156}
   - 222: {fileID: 22269720}
   - 114: {fileID: 11428100}
-  - 114: {fileID: 11421088}
   - 114: {fileID: 11438606}
   m_Layer: 5
   m_Name: Text
@@ -194,6 +194,17 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &11405176
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 109090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7de612d61c8708048b5a7f680738b897, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11405320
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -314,17 +325,6 @@ MonoBehaviour:
   m_Text: 'Chinese Roguelike Game
 
 '
---- !u!114 &11421088
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 111992}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26dfaf2cc0994a94095bc01bdb1e6871, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11424116
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -496,7 +496,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11421088}
+      - m_Target: {fileID: 11405176}
         m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:

@@ -7,16 +7,16 @@ public class GameMusicLogic : MonoBehaviour {
 	
 	void OnEnable() 
 	{
+		EventManager.Instance.RegisterEvent (UIEvent.OpenUIWindow, PlayBGM);
 		EventManager.Instance.RegisterEvent (BattleEvent.OnBattleEnter, PlayBattleBGM);
-		EventManager.Instance.RegisterEvent (BattleEvent.OnBattleFinish, PlayIntro);
 		EventManager.Instance.RegisterEvent (BattleEvent.OnBattleWin, PlayWin);
 		EventManager.Instance.RegisterEvent (BattleEvent.OnBattleLose, PlayLose);
 	}
 
 	void OnDisable () 
 	{
+		EventManager.Instance.UnRegisterEvent (UIEvent.OpenUIWindow, PlayBGM);
 		EventManager.Instance.UnRegisterEvent (BattleEvent.OnBattleEnter, PlayBattleBGM);
-		EventManager.Instance.UnRegisterEvent (BattleEvent.OnBattleFinish, PlayIntro);
 		EventManager.Instance.UnRegisterEvent (BattleEvent.OnBattleWin, PlayWin);
 		EventManager.Instance.UnRegisterEvent (BattleEvent.OnBattleLose, PlayLose);
 	}
@@ -32,9 +32,17 @@ public class GameMusicLogic : MonoBehaviour {
 			AudioManager.Instance.PlayBGM ("FinalBoss");
 	}
 
-	void PlayIntro(MessageEventArgs args)
+	void PlayBGM(MessageEventArgs args)
 	{
-		AudioManager.Instance.PlayBGM ("Intro");
+		UIWindowID windowID = args.GetMessage<UIWindowID>("WindowID");
+		if(windowID == UIWindowID.IntroWindow)
+		{
+			AudioManager.Instance.PlayBGM ("Theme");
+		}
+		else if(windowID == UIWindowID.MapWindow)
+		{
+			AudioManager.Instance.PlayBGM ("Map");
+		}
 	}
 
 	void PlayWin(MessageEventArgs args)

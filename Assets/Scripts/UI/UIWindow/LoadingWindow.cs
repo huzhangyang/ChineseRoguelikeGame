@@ -6,7 +6,7 @@ public class LoadingWindow : MonoBehaviour {
 
 	public Text tips;
 
-	void Start () 
+	void OnEnable() 
 	{
 		if(GlobalManager.Instance.gameStatus == GameStatus.StartNewGame)
 		{

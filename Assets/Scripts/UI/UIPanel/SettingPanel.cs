@@ -30,6 +30,8 @@ public class SettingPanel : MonoBehaviour {
 
 	public void OnExitButtonClick()
 	{
+		this.gameObject.SetActive(false);
+
 		MessageEventArgs arg = new MessageEventArgs();
 		arg.AddMessage("WindowID", UIWindowID.IntroWindow);
 		EventManager.Instance.PostEvent(UIEvent.OpenUIWindow, arg);
