@@ -11,6 +11,7 @@ GameObject:
   - 223: {fileID: 22330508}
   - 114: {fileID: 11470206}
   - 114: {fileID: 11424116}
+  - 225: {fileID: 22552054}
   - 114: {fileID: 11469094}
   m_Layer: 5
   m_Name: IntroWindow
@@ -977,6 +978,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 100}
   m_SizeDelta: {x: 298, y: 188}
   m_Pivot: {x: .5, y: .5}
+--- !u!225 &22552054
+CanvasGroup:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 101072}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

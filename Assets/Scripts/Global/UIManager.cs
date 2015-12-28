@@ -1,6 +1,8 @@
 using UnityEngine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 
 public class UIManager : MonoBehaviour {
 	
@@ -29,7 +31,12 @@ public class UIManager : MonoBehaviour {
 		UIWindowID windowID = args.GetMessage<UIWindowID>("WindowID");
 
 		if(windowStack.Count > 0)
-			windowStack[windowStack.Count - 1].SetActive(false);
+		{
+			GameObject lastWindow = windowStack[windowStack.Count - 1];
+			CanvasGroup canvasGroup = lastWindow.GetComponent<CanvasGroup>();
+			canvasGroup.alpha = 1;
+			canvasGroup.DOFade(0, 0.25f).OnComplete(()=>{lastWindow.SetActive(false);Debug.Log(lastWindow.name);});
+		}			
 
 		GameObject window = windowStack.Find((GameObject x)=>{return x.name.Contains(windowID.ToString());});
 		if(window != null)
@@ -42,6 +49,28 @@ public class UIManager : MonoBehaviour {
 		{
 			window = GameObject.Instantiate(Resources.Load(GlobalDataStructure.PATH_UIPREFAB_WINDOW + windowID.ToString()) as GameObject);
 			windowStack.Add(window);
+		}
+
+		if(windowStack.Count > 1)
+		{
+			CanvasGroup canvasGroup = window.GetComponent<CanvasGroup>();
+			canvasGroup.alpha = 0;
+			canvasGroup.DOFade(1, 0.5f);
+		}
+	}
+
+	public void PreloadWindow()
+	{
+		string[] windowIDs = Enum.GetNames(typeof(UIWindowID));
+		for(int i = 0; i < windowIDs.Length; i++)
+		{
+			GameObject window = windowStack.Find((GameObject x)=>{return x.name.Contains(windowIDs[i]);});
+			if(window == null)
+			{
+				window = GameObject.Instantiate(Resources.Load(GlobalDataStructure.PATH_UIPREFAB_WINDOW + windowIDs[i]) as GameObject);
+				window.SetActive(false);
+				windowStack.Add(window);
+			}
 		}
 	}
 

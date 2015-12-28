@@ -78,6 +78,7 @@ GameObject:
   - 223: {fileID: 22309710}
   - 114: {fileID: 11449530}
   - 114: {fileID: 11418640}
+  - 225: {fileID: 22546394}
   - 114: {fileID: 11415328}
   m_Layer: 5
   m_Name: BattleWindow
@@ -1406,6 +1407,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 240}
   m_SizeDelta: {x: 0, y: 520}
   m_Pivot: {x: .5, y: .5}
+--- !u!225 &22546394
+CanvasGroup:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 117098}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

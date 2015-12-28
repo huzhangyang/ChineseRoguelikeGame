@@ -371,6 +371,7 @@ GameObject:
   - 223: {fileID: 22353840}
   - 114: {fileID: 11476462}
   - 114: {fileID: 11488394}
+  - 225: {fileID: 22592334}
   - 114: {fileID: 11498968}
   m_Layer: 5
   m_Name: MapWindow
@@ -7027,6 +7028,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: .5, y: .5}
+--- !u!225 &22592334
+CanvasGroup:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 122160}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

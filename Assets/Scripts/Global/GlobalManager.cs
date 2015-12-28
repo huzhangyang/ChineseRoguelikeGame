@@ -20,6 +20,7 @@ public class GlobalManager : MonoBehaviour {
 		Screen.sleepTimeout = SleepTimeout.NeverSleep;
 		DataManager.Instance.LoadConfig();
 
+		UIManager.Instance.PreloadWindow();
 		MessageEventArgs args = new MessageEventArgs();
 		args.AddMessage("WindowID", UIWindowID.IntroWindow);
 		EventManager.Instance.PostEvent(UIEvent.OpenUIWindow, args);
