@@ -45,7 +45,7 @@ public class ItemPanel : MonoBehaviour {
 			ItemData itemData = DataManager.Instance.GetItemDataSet().GetItemData(playerData.itemKeys[i]);
 			GameObject itemButton = Instantiate(Resources.Load(GlobalDataStructure.PATH_UIPREFAB_COMMON + "ItemButton")) as GameObject;
 			itemButton.transform.SetParent(itemList, false);
-			itemButton.GetComponent<CommandButtonUIEvent>().Init(itemData.name, itemData.description);
+			itemButton.GetComponent<ItemButtonUIEvent>().Init(itemData.name, itemData.description);
 		}
 	}
 }

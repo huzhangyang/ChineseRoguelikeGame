@@ -35,7 +35,7 @@ public class UIManager : MonoBehaviour {
 			GameObject lastWindow = windowStack[windowStack.Count - 1];
 			CanvasGroup canvasGroup = lastWindow.GetComponent<CanvasGroup>();
 			canvasGroup.alpha = 1;
-			canvasGroup.DOFade(0, 0.25f).OnComplete(()=>{lastWindow.SetActive(false);Debug.Log(lastWindow.name);});
+			canvasGroup.DOFade(0, 0.25f).OnComplete(()=>{lastWindow.SetActive(false);});
 		}			
 
 		GameObject window = windowStack.Find((GameObject x)=>{return x.name.Contains(windowID.ToString());});
