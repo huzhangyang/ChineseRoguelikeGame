@@ -11,8 +11,28 @@ public class PlayerPanel: MonoBehaviour {
 	public Text typeText;
 	public Image image;
 	private PlayerData playerData;
+
+	void Start()
+	{
+		SetData();
+	}
 	
-	void OnEnable() 
+	void OnEnable()
+	{
+		EventManager.Instance.RegisterEvent(UIEvent.OnSwitchLeader, OnSwitchLeader);
+	}
+	
+	void OnDisable()
+	{
+		EventManager.Instance.UnRegisterEvent(UIEvent.OnSwitchLeader, OnSwitchLeader);
+	}
+	
+	void OnSwitchLeader(MessageEventArgs args)
+	{
+		SetData();
+	}
+
+	void SetData() 
 	{
 		playerData = DataManager.Instance.GetPlayerDataSet().GetPlayerData(DataManager.Instance.GetConfigData().currentLeaderID);
 		SetBasicView();

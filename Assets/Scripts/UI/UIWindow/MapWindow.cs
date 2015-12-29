@@ -49,21 +49,32 @@ public class MapWindow: MonoBehaviour {
 	public void OnPlayerButtonClick()
 	{
 		playerPanel.SetActive(!playerPanel.activeSelf);
+		itemPanel.SetActive(false);	
+		settingPanel.SetActive(false);
 	}
 
 	public void OnItemButtonClick()
 	{
 		itemPanel.SetActive(!itemPanel.activeSelf);	
+		playerPanel.SetActive(false);	
+		settingPanel.SetActive(false);
 	}
 
 	public void OnSettingButtonClick()
 	{
 		settingPanel.SetActive(!settingPanel.activeSelf);
+		playerPanel.SetActive(false);	
+		itemPanel.SetActive(false);
 	}
 
 	public void OnLeaderButtonClick()
 	{
 		configData.currentLeaderID = 1 - configData.currentLeaderID;// 0->1, 1->0
 		leaderButton.image.sprite = Resources.Load(GlobalDataStructure.PATH_UIIMAGE_BATTLE + "Avatar0" + configData.currentLeaderID, typeof(Sprite)) as Sprite;
+		SaveManager.Instance.SaveConfig();
+
+		MessageEventArgs args = new MessageEventArgs ();
+		args.AddMessage("LeaderID",configData.currentLeaderID);
+		EventManager.Instance.PostEvent(UIEvent.OnSwitchLeader, args);
 	}
 }

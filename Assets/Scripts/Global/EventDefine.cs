@@ -38,6 +38,7 @@ public enum UIEvent
 {
 	OpenUIWindow = 100,
 	OnItemClicked,
+	OnSwitchLeader,
 }
 
 public enum UIWindowID
