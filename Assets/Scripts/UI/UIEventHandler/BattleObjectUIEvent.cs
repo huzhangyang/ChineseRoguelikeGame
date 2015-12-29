@@ -16,6 +16,7 @@ public class BattleObjectUIEvent : MonoBehaviour {
 		allowClick = false;
 		objectImage = this.GetComponent<Image>();
 		objectImage.sprite = Resources.Load(GlobalDataStructure.PATH_UIIMAGE_BATTLE + "Avatar" + playerID.ToString("00"), typeof(Sprite)) as Sprite;
+		objectImage.rectTransform.sizeDelta = new Vector2 (objectImage.sprite.rect.width, objectImage.sprite.rect.height);
 		InitAvatar();
 		GetComponent<Button>().onClick.AddListener(delegate(){OnClick();});		
 	}

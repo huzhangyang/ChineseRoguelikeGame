@@ -119,8 +119,6 @@ public class BattleWindow: MonoBehaviour {
 			player.transform.SetParent(playerPanel.transform, false);
 			player.GetComponent<Player>().Init(1);
 			
-
-			
 			if(args.ContainsMessage("Man"))
 			{
 				player.transform.DOLocalMoveX(250,0.5f);
@@ -135,8 +133,7 @@ public class BattleWindow: MonoBehaviour {
 				GameObject enemy = Instantiate(Resources.Load(GlobalDataStructure.PATH_UIPREFAB_BATTLE + "Enemy")) as GameObject;			
 				enemy.transform.SetParent(enemyPanel.transform, false);
 				enemy.GetComponent<Enemy>().Init(enemyIDs[i]);
-				
-				//enemy.transform.DOShakeScale(1);
+
 				yield return new WaitForSeconds(1f);
 				switch(enemyIDs.Length)
 				{
@@ -154,6 +151,7 @@ public class BattleWindow: MonoBehaviour {
 			}
 		}
 
+		yield return new WaitForSeconds(0.5f);
 		EventManager.Instance.PostEvent (BattleEvent.OnBattleStart);
 	}
 }
