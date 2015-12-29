@@ -136,7 +136,7 @@ public class BattleWindow: MonoBehaviour {
 				enemy.transform.SetParent(enemyPanel.transform, false);
 				enemy.GetComponent<Enemy>().Init(enemyIDs[i]);
 				
-				enemy.transform.DOShakeScale(1);
+				//enemy.transform.DOShakeScale(1);
 				yield return new WaitForSeconds(1f);
 				switch(enemyIDs.Length)
 				{

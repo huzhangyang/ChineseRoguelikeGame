@@ -116,19 +116,20 @@ public class BattleManager : MonoBehaviour {
 		switch(currentCommand.targetType)
 		{
 		case TargetType.SingleEnemy:
-		case TargetType.AllEnemies:
 			foreach(Enemy enemy in enemys)
 			{
 				enemy.GetComponent<BattleObjectUIEvent>().EnableClick();
 			}
 			break;
 		case TargetType.SingleAlly:
-		case TargetType.AllAllies:
+
 			foreach(Player player in players)
 			{
 				player.GetComponent<BattleObjectUIEvent>().EnableClick();
 			}
 			break;
+		case TargetType.AllAllies:
+		case TargetType.AllEnemies:
 		case TargetType.Self:
 			EventManager.Instance.PostEvent(BattleEvent.OnCommandSelected);
 			break;
@@ -159,7 +160,7 @@ public class BattleManager : MonoBehaviour {
 		}
 
 		GetCurrentPlayer().commandToExecute = currentCommand;
-		GetCurrentPlayer().GetComponent<BattleObjectUIEvent>().SetPlayerIdle();
+		GetCurrentPlayer().GetComponent<BattleObjectUIEvent>().EndReady();
 		GetCurrentPlayer().battleStatus = BattleStatus.Action;
 		foreach(Enemy enemy in enemys)
 		{
@@ -238,7 +239,9 @@ public class BattleManager : MonoBehaviour {
 		{
 			Command cmd = commandQueue.Peek() as Command;
 			cmd.Execute();
+			cmd.source.GetComponent<BattleObjectUIEvent>().BeginExecute();
 			yield return new WaitForSeconds(1);
+			cmd.source.GetComponent<BattleObjectUIEvent>().EndExecute();
 			commandQueue.Dequeue();
 		}
 		ResumeEveryOne();
@@ -251,7 +254,7 @@ public class BattleManager : MonoBehaviour {
 		{
 			EventManager.Instance.PostEvent(BattleEvent.OnCommandShowUp);
 			Player currentPlayer = GetCurrentPlayer();
-			currentPlayer.GetComponent<BattleObjectUIEvent>().SetPlayerReady();
+			currentPlayer.GetComponent<BattleObjectUIEvent>().BeginReady();
 			while(readyQueue.Contains(currentPlayer))
 			{
 				yield return 0;

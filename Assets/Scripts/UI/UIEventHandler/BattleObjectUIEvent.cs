@@ -15,15 +15,16 @@ public class BattleObjectUIEvent : MonoBehaviour {
 	{
 		allowClick = false;
 		objectImage = this.GetComponent<Image>();
-		if(playerID < 10)
-			objectImage.sprite = Resources.Load(GlobalDataStructure.PATH_UIIMAGE_BATTLE + "Avatar0" + playerID, typeof(Sprite)) as Sprite;
-		else
-		{
-			objectImage.sprite = Resources.Load(GlobalDataStructure.PATH_UIIMAGE_BATTLE + "Avatar" + playerID, typeof(Sprite)) as Sprite;
-			objectImage.rectTransform.sizeDelta = new Vector2 (objectImage.sprite.rect.width, objectImage.sprite.rect.height);
-		}
+		objectImage.sprite = Resources.Load(GlobalDataStructure.PATH_UIIMAGE_BATTLE + "Avatar" + playerID.ToString("00"), typeof(Sprite)) as Sprite;
 		InitAvatar();
 		GetComponent<Button>().onClick.AddListener(delegate(){OnClick();});		
+	}
+
+	public void DestoryUI()
+	{
+		avatarImage.DOFade(0,1).SetDelay(1).OnComplete(()=>Destroy(avatarImage.gameObject));
+		objectImage.DOFade(0,1).SetDelay(1).OnComplete(()=>Destroy(this.gameObject));
+		Destroy(HPBar,1);
 	}
 
 	public void InitHPBar(int max, BattleType type)
@@ -67,13 +68,6 @@ public class BattleObjectUIEvent : MonoBehaviour {
 		HPText.text = current + "/" + HPBar.maxValue;
 		this.transform.DOPunchScale(new Vector2(0.1f, 0.1f), 1);
 	}
-
-	public void DestoryUI()
-	{
-		avatarImage.DOFade(0,1).SetDelay(1).OnComplete(()=>Destroy(avatarImage.gameObject));
-		objectImage.DOFade(0,1).SetDelay(1).OnComplete(()=>Destroy(this.gameObject));
-		Destroy(HPBar,1);
-	}
 	
 	public void InitAvatar()
 	{
@@ -93,16 +87,26 @@ public class BattleObjectUIEvent : MonoBehaviour {
 			avatarImage.rectTransform.anchoredPosition = new Vector2(posX, 35);			
 	}
 
-	public void SetPlayerReady()
+	public void BeginReady()
 	{
 		avatarImage.transform.DOScale(new Vector3(1.2f, 1.2f), 1).SetLoops(-1,LoopType.Yoyo);
 		avatarImage.transform.SetAsLastSibling ();
 	}
 
-	public void SetPlayerIdle()
+	public void EndReady()
 	{
 		avatarImage.transform.DOKill ();
 		avatarImage.transform.localScale = new Vector3 (1, 1, 1);
+	}
+
+	public void BeginExecute()
+	{
+		//objectImage.transform.localScale = new Vector3 (1.2f, 1.2f, 1);
+	}
+
+	public void EndExecute()
+	{
+		//objectImage.transform.localScale = new Vector3 (1, 1, 1);
 	}
 
 	public void EnableClick()

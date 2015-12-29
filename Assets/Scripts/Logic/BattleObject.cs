@@ -41,8 +41,6 @@ public abstract class BattleObject : MonoBehaviour {
 	}
 
 	public int maxHP{get{return BattleAttribute.MaxHP(this);}}
-	public int maxHPInc = 0;
-	public int maxHPMulti = 0;
 
 	public int stamina{get{return data.stamina;}}
 	public int power{get{return data.power;}}
@@ -52,9 +50,6 @@ public abstract class BattleObject : MonoBehaviour {
 	public int insight{get{return data.insight;}}
 	public int eloquence{get{return data.eloquence;}}
 	public int luck{get{return data.luck;}}
-
-	public int staminaInc = 0;
-	public float staminaMulti = 0;
 
 	public BattleStatus battleStatus = BattleStatus.Prepare;
 	public Command commandToExecute = new CommandNone();
