@@ -6,6 +6,7 @@ public class SkillDataSet : ScriptableObject
 {
 	public List<SkillData> skillDataSet = new List<SkillData>();
 	public List<BuffData> buffDataSet = new List<BuffData>();
+	public List<SkillEffectData> effectDataSet = new List<SkillEffectData>();
 	
 	public SkillData GetSkillData(int skillID)
 	{
@@ -26,6 +27,17 @@ public class SkillDataSet : ScriptableObject
 				return data;
 		}
 		Debug.LogError("Asking for an non-exist buff:" + buffID);
+		return null;
+	}
+
+	public SkillEffectData GetEffectData(int effectID)
+	{
+		foreach (SkillEffectData data in effectDataSet)
+		{
+			if (data.id == effectID)
+				return data;
+		}
+		Debug.LogError("Asking for an non-exist effect:" + effectID);
 		return null;
 	}
 }
@@ -59,9 +71,19 @@ public class BuffData{
 	public int id;
 	public string name;
 	public string description;
-	public int lastTurns;//持续回合数
-	public TargetType targetType;//目标类型
 	public BuffTrigger trigger;//触发时机
-	public string buffEffect;//buff效果
+	public string buffEffect;//效果函数名
+}
+
+[System.Serializable]
+public class SkillEffectData{
+/*
+ * SkillEffectData类。
+*/
+	public int id;
+	public string name;
+	public string description;
+	public EffectTrigger trigger;//触发时机
+	public string effectString;//效果函数名
 }
 

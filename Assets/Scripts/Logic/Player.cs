@@ -22,7 +22,7 @@ public class Player : BattleObject {
 
 		if(playerID == 1)
 		{
-			AddBuff(1);//为妹子添加不死buff
+			AddBuff(1, -1);//为妹子添加不死buff
 		}
 	}
 

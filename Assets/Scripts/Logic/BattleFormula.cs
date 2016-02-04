@@ -67,11 +67,11 @@ public class BattleFormula {
 		//处理buff
 		foreach(Buff buff in source.buffList)
 		{
-			buff.OnHit();
+			//buff.OnHit();
 		}
 		foreach(Buff buff in target.buffList)
 		{
-			buff.OnBeHit();
+			//buff.OnBeHit();
 		}
 		//处理最终结果
 		if(damagePack.isCountered)//被反击
@@ -137,11 +137,11 @@ public class BattleFormula {
 		//处理buff
 		foreach(Buff buff in source.buffList)
 		{
-			buff.OnHit();
+			//buff.OnHit();
 		}
 		foreach(Buff buff in target.buffList)
 		{
-			buff.OnBeHit();
+			//buff.OnBeHit();
 		}
 		//处理最终结果
 		if(damagePack.isCountered)//被反击

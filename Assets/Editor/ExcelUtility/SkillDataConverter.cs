@@ -22,12 +22,15 @@ public class SkillDataConverter : MonoBehaviour {
 		
 		if (excelReader.AsDataSet () != null)
 		{
-			dataTable = excelReader.AsDataSet ().Tables["Skill"];
+			dataTable = excelReader.AsDataSet().Tables["Skill"];
 			loader = new ExcelLoader(dataTable);
 			skillDataSet.skillDataSet = loader.CreateDataList<SkillData>();
-			dataTable = excelReader.AsDataSet ().Tables["Buff"];
+			dataTable = excelReader.AsDataSet().Tables["Buff"];
 			loader = new ExcelLoader(dataTable);
 			skillDataSet.buffDataSet = loader.CreateDataList<BuffData>();
+			dataTable = excelReader.AsDataSet().Tables["SkillEffect"];
+			loader = new ExcelLoader(dataTable);
+			skillDataSet.effectDataSet = loader.CreateDataList<SkillEffectData>();
 			AssetDatabase.CreateAsset(skillDataSet, PATH_ASSET);
 		}
 		excelReader.Dispose ();

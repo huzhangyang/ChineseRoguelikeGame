@@ -147,7 +147,7 @@ public abstract class BattleObject : MonoBehaviour {
 			}
 			else
 			{
-				buff.OnReady();
+				//buff.OnReady();
 			}				
 		}
 
@@ -160,7 +160,7 @@ public abstract class BattleObject : MonoBehaviour {
 	{
 		foreach(Buff buff in buffList)
 		{
-			buff.OnAction();
+			//buff.OnAction();
 		}
 		//decide command
 		commandToExecute.source = this;
@@ -171,10 +171,10 @@ public abstract class BattleObject : MonoBehaviour {
 		commandToExecute = new CommandNone();
 	}
 
-	public void AddBuff(int id)
+	public void AddBuff(int id, int effectTurns)
 	{
 		BuffData data = DataManager.Instance.GetSkillDataSet().GetBuffData(id);
-		Buff buff = new Buff(this, data);
+		Buff buff = Buff.CreateBuff(this, data, effectTurns);
 		buffList.Add(buff);
 	}
 
