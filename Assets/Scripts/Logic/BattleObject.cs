@@ -61,6 +61,7 @@ public abstract class BattleObject : MonoBehaviour {
 	
 	public bool isGuarding = false;
 	public bool isEvading = false;
+	public bool isBuffFrozen = false;
 
 	protected BattleObjectUIEvent UIEvent;
 	protected ObjectData data;
@@ -80,7 +81,9 @@ public abstract class BattleObject : MonoBehaviour {
 	/*更新时间轴*/
 	protected void OnTimelineUpdate(MessageEventArgs args)
 	{
-		if(battleStatus == BattleStatus.Prepare)
+		if(isBuffFrozen)
+			timelinePosition += 0;
+		else if(battleStatus == BattleStatus.Prepare)
 			timelinePosition += BattleAttribute.Speed(this);
 		else if(battleStatus == BattleStatus.Action)
 			timelinePosition += commandToExecute.preExecutionSpeed;
