@@ -59,8 +59,11 @@ public class SkillData{
 	public float postSPDMultiplier;//后摇速度倍数or法术消耗
 	public float interruptMultiplier;//打断倍数
 	public int maxCombo;//最大连击次数or吟唱等级
-	public int buffID;//技能对应的BUFFID
-	public int buffPercentage;//BUFF出现率
+	public List<int> buffID;
+	public List<int> buffPercent;
+	public List<int> buffTurns;
+	public List<int> effectID;
+	public List<int> effectPercent;
 }
 
 [System.Serializable]

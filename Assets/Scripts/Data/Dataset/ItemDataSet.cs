@@ -84,8 +84,11 @@ public class WeaponData:ItemData{
 	public int skill1ID;
 	public int skill2ID;
 	public int skill3ID;
-	public int buffID;
-	public int buffPercentage;
+	public List<int> buffID;
+	public List<int> buffPercent;
+	public List<int> buffTurns;
+	public List<int> effectID;
+	public List<int> effectPercent;
 }
 
 [System.Serializable]
@@ -100,6 +103,4 @@ public class MagicData:ItemData{
 	public int basicCRT;//基准暴击率
 	public int interrupt;//法术打断值
 	public int skillID;
-	public int buffID;
-	public int buffPercentage;
 }

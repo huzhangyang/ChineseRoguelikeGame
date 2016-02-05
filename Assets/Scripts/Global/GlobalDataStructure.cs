@@ -5,10 +5,10 @@ using System.Collections;
 管理全局数据结构,如常量,枚举,结构体等.
 */
 public enum CommandType{Attack,Defence,Item,Strategy}
-public enum TargetType{Self, SingleEnemy, AllEnemies, SingleAlly, AllAllies, FollowCommand}
+public enum TargetType{Self, SingleEnemy, AllEnemies, SingleAlly, AllAllies, EveryoneElse, Everyone}
 public enum BattleType{Physical, Magical, Both}
 public enum SkillType{Melee, Range, Neutral, Yin, Yang} 
-public enum BuffTrigger{Always, Dead} 
+public enum BuffTrigger{Always, Dead, Ready} 
 public enum EffectTrigger{SwitchWeapon, OnDamage, BeforeHit, AfterDamage} 
 public enum ItemType{NormalItem, Weapon, Magic, Ring}
 public enum BattleStatus{Prepare, Ready, Action}
