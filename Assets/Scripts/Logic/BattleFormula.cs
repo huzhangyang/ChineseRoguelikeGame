@@ -64,15 +64,6 @@ public class BattleFormula {
 		//判断是否命中，是否暴击
 		damagePack.isHit = Random.Range(0,101) <= damagePack.hit?true:false;
 		damagePack.isCrit = Random.Range(0,101) <= damagePack.crit?true:false;
-		//处理buff
-		foreach(Buff buff in source.buffList)
-		{
-			//buff.OnHit();
-		}
-		foreach(Buff buff in target.buffList)
-		{
-			//buff.OnBeHit();
-		}
 		//处理最终结果
 		if(damagePack.isCountered)//被反击
 		{
@@ -134,15 +125,6 @@ public class BattleFormula {
 		//判断是否命中，是否暴击
 		damagePack.isHit = Random.Range(0,101) <= damagePack.hit?true:false;
 		damagePack.isCrit = Random.Range(0,101) <= damagePack.crit?true:false;
-		//处理buff
-		foreach(Buff buff in source.buffList)
-		{
-			//buff.OnHit();
-		}
-		foreach(Buff buff in target.buffList)
-		{
-			//buff.OnBeHit();
-		}
 		//处理最终结果
 		if(damagePack.isCountered)//被反击
 		{

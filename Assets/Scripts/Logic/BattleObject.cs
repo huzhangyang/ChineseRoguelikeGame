@@ -40,7 +40,9 @@ public abstract class BattleObject : MonoBehaviour {
 		}
 	}
 
-	public int maxHP{get{return BattleAttribute.MaxHP(this);}}
+	public int maxHP{get{return Mathf.RoundToInt((BattleAttribute.MaxHP(this) + maxHPAdd) * (1 + maxHPMulti));}}
+	public int maxHPAdd = 0;
+	public float maxHPMulti = 0;
 
 	public int stamina{get{return data.stamina;}}
 	public int power{get{return data.power;}}
@@ -147,7 +149,7 @@ public abstract class BattleObject : MonoBehaviour {
 			}
 			else
 			{
-				//buff.OnReady();
+				buff.OnReady();
 			}				
 		}
 
@@ -160,7 +162,7 @@ public abstract class BattleObject : MonoBehaviour {
 	{
 		foreach(Buff buff in buffList)
 		{
-			//buff.OnAction();
+			buff.OnAction();
 		}
 		//decide command
 		commandToExecute.source = this;

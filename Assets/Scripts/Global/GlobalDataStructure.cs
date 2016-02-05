@@ -8,7 +8,7 @@ public enum CommandType{Attack,Defence,Item,Strategy}
 public enum TargetType{Self, SingleEnemy, AllEnemies, SingleAlly, AllAllies, EveryoneElse, Everyone}
 public enum BattleType{Physical, Magical, Both}
 public enum SkillType{Melee, Range, Neutral, Yin, Yang} 
-public enum BuffTrigger{Always, Dead, Ready} 
+public enum BuffTrigger{Always, Dead, Ready, Action} 
 public enum EffectTrigger{SwitchWeapon, OnDamage, BeforeHit, AfterDamage} 
 public enum ItemType{NormalItem, Weapon, Magic, Ring}
 public enum BattleStatus{Prepare, Ready, Action}

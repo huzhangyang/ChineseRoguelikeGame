@@ -50,4 +50,16 @@ public abstract class Buff {
 		if(data.trigger == BuffTrigger.Dead)
 			this.Execute();
 	}
+
+	public void OnReady()
+	{
+		if(data.trigger == BuffTrigger.Ready)
+			this.Execute();
+	}
+
+	public void OnAction()
+	{
+		if(data.trigger == BuffTrigger.Ready)
+			this.Execute();
+	}
 }
