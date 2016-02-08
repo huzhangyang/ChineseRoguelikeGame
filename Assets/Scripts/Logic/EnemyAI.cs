@@ -84,6 +84,6 @@ public class EnemyAI : MonoBehaviour {
 
 	public BattleObject AISelectTarget()
 	{
-		return BattleManager.Instance.GetPlayerList()[Random.Range(0, BattleManager.Instance.GetPlayerList().Count)];
+		return BattleManager.Instance.GetARandomEnemy (self);
 	}
 }

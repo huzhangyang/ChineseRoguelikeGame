@@ -5,7 +5,7 @@ using System.Collections;
 管理全局数据结构,如常量,枚举,结构体等.
 */
 public enum CommandType{Attack,Defence,Item,Strategy}
-public enum TargetType{Self, SingleEnemy, AllEnemies, SingleAlly, AllAllies, EveryoneElse, Everyone}
+public enum TargetType{Self, SingleEnemy, AllEnemies, SingleAlly, AllAllies, EveryoneElse, Everyone, Random, Next}
 public enum BattleType{Physical, Magical, Both}
 public enum SkillType{Melee, Range, Neutral, Yin, Yang} 
 public enum BuffTrigger{Always, Dead, Ready, Action} 

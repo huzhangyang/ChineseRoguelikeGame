@@ -8,6 +8,7 @@ public class SkillEffectSwitchAttack:SkillEffect
 		WeaponData weaponData = DataManager.Instance.GetItemDataSet().GetWeaponData(source.GetWeapon());
 		CommandUseWeaponSkill command = new CommandUseWeaponSkill(weaponData, weaponData.skill1ID);
 		command.source = this.source;
+		command.targetList.Add(BattleManager.Instance.GetARandomEnemy(source));
 		command.Execute();
 	}
 }

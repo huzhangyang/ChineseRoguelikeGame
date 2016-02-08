@@ -55,7 +55,7 @@ public abstract class BattleObject : MonoBehaviour {
 
 	public BattleStatus battleStatus = BattleStatus.Prepare;
 	public Command commandToExecute = new CommandNone();
-	public Damage damage = new Damage();//伤害值
+	public Damage damage;//伤害值
 	public List<Command> availableCommands = new List<Command>();
 	public List<Buff> buffList = new List<Buff>();
 	
@@ -149,11 +149,7 @@ public abstract class BattleObject : MonoBehaviour {
 			if(buff.Tick() == 0)
 			{
 				buffList.Remove(buff);
-			}
-			else
-			{
-				buff.OnReady();
-			}				
+			}		
 		}
 
 		availableCommands = Command.GetAvailableCommands(this);
@@ -163,10 +159,7 @@ public abstract class BattleObject : MonoBehaviour {
 
 	protected virtual void ExecuteCommand()
 	{
-		foreach(Buff buff in buffList)
-		{
-			buff.OnAction();
-		}
+		SkillHelper.CheckBuff (BuffTrigger.Action, this);
 		//decide command
 		commandToExecute.source = this;
 		BattleManager.Instance.AddToCommandQueue (commandToExecute);

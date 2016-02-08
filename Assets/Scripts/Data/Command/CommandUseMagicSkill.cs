@@ -28,7 +28,7 @@ public class CommandUseMagicSkill : Command
 
 		foreach(BattleObject target in targetList)
 		{
-			BattleFormula.CalculateMagicSkill(source, target, skillID);
+			BattleFormula.CalculateSkill(source, target, skillID, false);
 		}
 	}
 }

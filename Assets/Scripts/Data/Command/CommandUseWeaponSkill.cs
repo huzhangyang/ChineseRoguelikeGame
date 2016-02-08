@@ -25,7 +25,7 @@ public class CommandUseWeaponSkill : Command
 
 		foreach(BattleObject target in targetList)
 		{
-			BattleFormula.CalculateWeaponSkill(source, target, skillID);
+			BattleFormula.CalculateSkill(source, target, skillID, true);
 		}
 	}
 }

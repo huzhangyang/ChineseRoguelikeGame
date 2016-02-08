@@ -212,6 +212,14 @@ public class BattleManager : MonoBehaviour {
 		return readyQueue.Peek() as Player;
 	}
 
+	public BattleObject GetARandomEnemy(BattleObject bo)
+	{
+		if (bo is Enemy)
+			return players [UnityEngine.Random.Range (0, BattleManager.Instance.GetPlayerList ().Count)];
+		else
+			return enemys[UnityEngine.Random.Range (0, BattleManager.Instance.GetEnemyList ().Count)];
+	}
+
 	public List<Player> GetPlayerList()
 	{
 		return players;

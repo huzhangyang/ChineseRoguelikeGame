@@ -35,21 +35,26 @@ public abstract class Buff {
 		{
 			this.Revert();			
 		}
+		else
+		{
+			Check(BuffTrigger.Ready);
+		}
+
 		return effectTurns;
 	}
 
 	/*-----BUFF CALLBACK-----*/
-	public void OnAddBuff()
+	public void Check(BuffTrigger trigger)
 	{
-		if(data.trigger == BuffTrigger.Always)
+		if(data.trigger == trigger)
 			this.Execute();
 	}
 
-	public void OnDead()
+	private void OnAddBuff()
 	{
-		if(data.trigger == BuffTrigger.Dead)
-			this.Execute();
+		Check(BuffTrigger.Always);
 	}
+
 
 	public void OnReady()
 	{
