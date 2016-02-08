@@ -35,7 +35,7 @@ public abstract class Command {
 	{
 		List<Command> availableCommands = new List<Command>();
 		//检查攻击类技能
-		if(bo.GetBattleType() != BattleType.Magical)
+		if(bo.GetBattleType() != BattleType.Magical && bo.GetWeapon() > 1000)
 		{
 			WeaponData weaponData = DataManager.Instance.GetItemDataSet().GetWeaponData(bo.GetWeapon());
 			availableCommands.Add(new CommandUseWeaponSkill(weaponData, weaponData.skill1ID));

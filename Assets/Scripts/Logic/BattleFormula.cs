@@ -50,23 +50,29 @@ public class BattleFormula {
 		{
 			damagePack.isCountered = true;
 		}
-		//加入防御效果
-		if(target.isEvading)
+
+		if(!damagePack.ignoreDefence)
 		{
-			damagePack.isEvaded = true;
-			damagePack.hit /= 2;
-		}
-		if(target.isGuarding)
-		{
-			damagePack.isGuarded = true;
-			damagePack.dmg /= 2;
-			damagePack.interrupt = 0;
+			//加入防御效果
+			if(target.isEvading)
+			{
+				damagePack.isEvaded = true;
+				damagePack.hit /= 2;
+			}
+			if(target.isGuarding)
+			{
+				damagePack.isGuarded = true;
+				damagePack.dmg /= 2;
+				damagePack.interrupt = 0;
+			}
 		}
 
 		//判断是否命中，是否暴击
 		damagePack.isHit = Random.Range(0,101) <= damagePack.hit?true:false;
 		damagePack.isCrit = Random.Range(0,101) <= damagePack.crit?true:false;
-
+		damagePack.isHit = damagePack.forceHit ? true : damagePack.forceMiss ? false : damagePack.isHit;
+		damagePack.isCrit = damagePack.forceCrit ? true : damagePack.isCrit;
+		
 		SkillHelper.CheckSkillEffect (EffectTrigger.OnDamage, source);//检查命中前生效的特效
 		damagePack.Log ();
 

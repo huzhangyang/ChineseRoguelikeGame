@@ -20,5 +20,7 @@ public class CommandSwitchWeapon : Command
 		executeMessage = source.GetName() + "拿出了 " + DataManager.Instance.GetItemDataSet().GetWeaponData(itemID).name + "！";
 		SendExecuteMessage ();
 		source.SetWeapon(itemID);
+
+		SkillHelper.CheckSkillEffect (EffectTrigger.SwitchWeapon, source);//检查切换武器时生效的特效
 	}
 }

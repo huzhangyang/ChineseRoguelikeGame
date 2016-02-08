@@ -8,6 +8,11 @@ public class Damage
  * 伤害
  * */	
 
+	public BattleObject source;//伤害来源
+	public BattleObject target;//伤害对象
+	public int skillID;//造成伤害的技能ID（如果有）
+	public bool isWeaponDamage;//伤害是通过武器造成的
+
 	public float dmg;//伤害值
 	public float hit;//命中率[0..100]
 	public float crit;//暴击率[0..100]
@@ -18,10 +23,10 @@ public class Damage
 	public bool isHit;//是否最终命中
 	public bool isCrit;//最终是否暴击
 	
-	public BattleObject source;//伤害来源
-	public BattleObject target;//伤害对象
-	public int skillID;//造成伤害的技能ID（如果有）
-	public bool isWeaponDamage;//伤害是通过武器造成的
+	public bool forceHit;//强制命中
+	public bool forceMiss;//强制不中（优先级低于强制命中）
+	public bool forceCrit;//强制暴击
+	public bool ignoreDefence;//无视防御
 	
 	public Damage(BattleObject source, BattleObject target, int skillID, bool isWeaponDamage)
 	{
