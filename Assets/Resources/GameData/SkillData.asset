@@ -1149,12 +1149,12 @@ MonoBehaviour:
     name: "\u5FC5\u4E2D"
     description: "\u5F3A\u5236\u547D\u4E2D"
     trigger: 2
-    effectString: MustHit
+    effectString: ForceHit
   - id: 102
     name: "\u5FC5\u66B4\u51FB"
     description: "\u82E5\u5BF9\u65B9\u672A\u683C\u6321\uFF0C\u5219\u5F3A\u5236\u66B4\u51FB"
     trigger: 1
-    effectString: MustCrit
+    effectString: ForceCrit
   - id: 103
     name: "\u65E0\u89C6\u9632\u5FA1"
     description: "\u65E0\u89C6\u5BF9\u65B9\u7684\u9632\u5FA1\u72B6\u6001\u3002\u547D\u4E2D\u7387\u4E0E\u4F24\u5BB3\u503C\u7167\u5E38\u8BA1\u7B97"
