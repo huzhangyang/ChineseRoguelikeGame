@@ -58,7 +58,8 @@ public class Damage
 	{
 		AudioManager.Instance.PlaySE("guard");
 		BattleFormula.OnDamage(target, this.dmg, this.interrupt);
-		SkillHelper.CheckSkillEffect (EffectTrigger.AfterDamage, source);//检查命中前生效的特效
+		SkillHelper.CheckSkillEffect (EffectTrigger.AfterDamage, source);//检查伤害后生效的特效
+		SkillHelper.CheckBuffAdd (source);//检查附带的BUFF是否命中
 	}
 	
 	public void OnCriticalHit()
@@ -71,7 +72,8 @@ public class Damage
 		EventManager.Instance.PostEvent(BattleEvent.BattleObjectCritical, args);
 		
 		BattleFormula.OnDamage(target, this.dmg, this.interrupt);
-		SkillHelper.CheckSkillEffect (EffectTrigger.AfterDamage, source);//检查命中前生效的特效
+		SkillHelper.CheckSkillEffect (EffectTrigger.AfterDamage, source);//检查伤害后生效的特效
+		SkillHelper.CheckBuffAdd (source);//检查附带的BUFF是否命中
 	}
 	
 	public void OnHit()
@@ -79,7 +81,8 @@ public class Damage
 		AudioManager.Instance.PlaySE("hit");
 
 		BattleFormula.OnDamage(target, this.dmg, this.interrupt);
-		SkillHelper.CheckSkillEffect (EffectTrigger.AfterDamage, source);//检查命中前生效的特效
+		SkillHelper.CheckSkillEffect (EffectTrigger.AfterDamage, source);//检查伤害后生效的特效
+		SkillHelper.CheckBuffAdd (source);//检查附带的BUFF是否命中
 	}
 	
 	public void OnMiss()

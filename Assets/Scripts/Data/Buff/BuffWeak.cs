@@ -9,7 +9,7 @@ public class BuffWeak:Buff
 		{		
 			source.maxHPMulti -= 0.5f;
 			MessageEventArgs args = new MessageEventArgs ();
-			args.AddMessage("Message",string.Format("{0}因为气虚失去了一半生命上限！"));
+			args.AddMessage("Message",string.Format("{0}因为气虚失去了一半生命上限！", source.GetName()));
 			EventManager.Instance.PostEvent (BattleEvent.OnBuffActivated, args);
 		}
 	}

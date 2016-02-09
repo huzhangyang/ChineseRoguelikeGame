@@ -56,5 +56,39 @@ public class SkillHelper
 			source.buffList[i].Check(trigger);
 		}
 	}
+
+	public static void CheckBuffAdd(BattleObject source)
+	{
+		int skillID = source.damage.skillID;
+		bool isWeaponDamage = source.damage.isWeaponDamage;
+
+		SkillData skillData = DataManager.Instance.GetSkillDataSet().GetSkillData(skillID);
+		for(int i = 0; i < skillData.buffID.Count; i++)
+		{
+			if(skillData.buffID[i] == 0)continue;
+			
+			int random = UnityEngine.Random.Range(0, 101);
+			if(random <= skillData.buffPercent[i])
+			{
+				source.damage.target.AddBuff(skillData.buffID[i], skillData.buffTurns[i]);
+			}
+		}
+		
+		if(isWeaponDamage)
+		{
+			WeaponData weaponData = DataManager.Instance.GetItemDataSet().GetWeaponData(source.GetWeapon());
+			
+			for(int i = 0; i < weaponData.buffID.Count; i++)
+			{
+				if(weaponData.buffID[i] == 0)continue;
+				
+				int random = UnityEngine.Random.Range(0, 101);
+				if(random <= weaponData.buffPercent[i])
+				{
+					source.damage.target.AddBuff(weaponData.buffID[i], weaponData.buffTurns[i]);
+				}
+			}
+		}
+	}
 	
 }

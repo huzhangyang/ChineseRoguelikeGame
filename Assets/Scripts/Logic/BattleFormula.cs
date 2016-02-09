@@ -73,7 +73,7 @@ public class BattleFormula {
 		damagePack.isHit = damagePack.forceHit ? true : damagePack.forceMiss ? false : damagePack.isHit;
 		damagePack.isCrit = damagePack.forceCrit ? true : damagePack.isCrit;
 		
-		SkillHelper.CheckSkillEffect (EffectTrigger.OnDamage, source);//检查命中前生效的特效
+		SkillHelper.CheckSkillEffect (EffectTrigger.OnDamage, source);//检查结算中生效的特效
 		//damagePack.Log ();
 
 		//处理最终结果
