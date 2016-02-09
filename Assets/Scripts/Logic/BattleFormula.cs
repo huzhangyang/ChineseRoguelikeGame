@@ -74,7 +74,7 @@ public class BattleFormula {
 		damagePack.isCrit = damagePack.forceCrit ? true : damagePack.isCrit;
 		
 		SkillHelper.CheckSkillEffect (EffectTrigger.OnDamage, source);//检查命中前生效的特效
-		damagePack.Log ();
+		//damagePack.Log ();
 
 		//处理最终结果
 		if(damagePack.isCountered)//被反击

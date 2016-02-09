@@ -12,6 +12,7 @@ public class BattleMessage : MonoBehaviour {
 		EventManager.Instance.RegisterEvent(BattleEvent.OnHPAutoRecover, OnHPAutoRecover);
 		EventManager.Instance.RegisterEvent(BattleEvent.OnMPAutoRecover, OnMPAutoRecover);
 		EventManager.Instance.RegisterEvent(BattleEvent.OnBuffActivated, OnBuffActivated);
+		EventManager.Instance.RegisterEvent(BattleEvent.OnEffectExecuted, OnEffectExecuted);
 		EventManager.Instance.RegisterEvent(BattleEvent.BattleObjectMiss, OnBattleObjectMiss);
 		EventManager.Instance.RegisterEvent(BattleEvent.BattleObjectCritical, OnBattleObjectCritical);
 		EventManager.Instance.RegisterEvent(BattleEvent.BattleObjectHurt, OnBattleObjectHurt);
@@ -29,6 +30,7 @@ public class BattleMessage : MonoBehaviour {
 		EventManager.Instance.UnRegisterEvent(BattleEvent.OnHPAutoRecover, OnHPAutoRecover);
 		EventManager.Instance.UnRegisterEvent(BattleEvent.OnMPAutoRecover, OnMPAutoRecover);
 		EventManager.Instance.UnRegisterEvent(BattleEvent.OnBuffActivated, OnBuffActivated);
+		EventManager.Instance.UnRegisterEvent(BattleEvent.OnEffectExecuted, OnEffectExecuted);
 		EventManager.Instance.UnRegisterEvent(BattleEvent.BattleObjectMiss, OnBattleObjectMiss);
 		EventManager.Instance.UnRegisterEvent(BattleEvent.BattleObjectCritical, OnBattleObjectCritical);
 		EventManager.Instance.UnRegisterEvent(BattleEvent.BattleObjectHurt, OnBattleObjectHurt);
@@ -60,6 +62,12 @@ public class BattleMessage : MonoBehaviour {
 	}
 
 	void OnBuffActivated(MessageEventArgs args)
+	{
+		string message = args.GetMessage<string>("Message");
+		AddMessage(message);
+	}
+
+	void OnEffectExecuted(MessageEventArgs args)
 	{
 		string message = args.GetMessage<string>("Message");
 		AddMessage(message);
