@@ -17,13 +17,13 @@ MonoBehaviour:
     description: "\u65E0\u62DB\u5373\u662F\u6709\u62DB"
     skillType: 0
     targetType: 0
-    ATKMultiplier: 0
-    ACCMultiplier: 0
-    CRTMultiplier: 0
-    preSPDMultiplier: 0
-    postSPDMultiplier: 0
-    interruptMultiplier: 0
-    maxCombo: 0
+    ATKMultiplier: 1
+    ACCMultiplier: 1
+    CRTMultiplier: 1
+    preSPDMultiplier: 1
+    postSPDMultiplier: 1
+    interruptMultiplier: 1
+    maxCombo: 1
     buffID: 
     buffPercent: 
     buffTurns: 
@@ -402,12 +402,12 @@ MonoBehaviour:
     buffPercent: 
     buffTurns: 
     effectID: 09000000
-    effectPercent: 64000000
+    effectPercent: 32000000
   - id: 1404
     name: "\u75AF\u72C2\u4E00\u51FB"
     description: "\u72C2\u4EBA\u4E4B\u65A7\u7684\u7EDD\u6280\u3002\u65E0\u89C6\u654C\u6211\u653B\u51FB\u6218\u573A\u4E0A\u5168\u90E8\u5355\u4F4D\u7684\u4E00\u51FB\u3002"
     skillType: 0
-    targetType: 2
+    targetType: 5
     ATKMultiplier: 2
     ACCMultiplier: 1.25
     CRTMultiplier: 1.25
@@ -424,7 +424,7 @@ MonoBehaviour:
     name: "\u5F00\u5929\u8F9F\u5730"
     description: "\u76D8\u53E4\u5DE8\u65A7\u7684\u7EDD\u6280\u3002\u653B\u51FB\u5168\u4F53\uFF0C\u65E0\u89C6\u5BF9\u65B9\u51CF\u4F24\u4E0E\u9632\u5FA1\u72B6\u6001\u3002"
     skillType: 0
-    targetType: 5
+    targetType: 2
     ATKMultiplier: .800000012
     ACCMultiplier: 1.25
     CRTMultiplier: 1.25
@@ -693,16 +693,16 @@ MonoBehaviour:
     effectID: 
     effectPercent: 
   - id: 2001
-    name: "\u7075\u6C14\u5F39"
-    description: "\u7075\u5C5E\u6027\u57FA\u7840\u653B\u51FB\u3002"
+    name: "\u7075\u6C14\u7BAD"
+    description: "\u6700\u57FA\u7840\u7684\u7075\u5C5E\u6027\u5355\u4F53\u6CD5\u672F"
     skillType: 2
     targetType: 1
     ATKMultiplier: 1
     ACCMultiplier: 1
     CRTMultiplier: 1
     preSPDMultiplier: 1
-    postSPDMultiplier: 0
-    interruptMultiplier: 0
+    postSPDMultiplier: 10
+    interruptMultiplier: 1
     maxCombo: 1
     buffID: 
     buffPercent: 
@@ -710,16 +710,16 @@ MonoBehaviour:
     effectID: 
     effectPercent: 
   - id: 2002
-    name: "\u9634\u6C14\u5F39"
-    description: "\u9634\u5C5E\u6027\u57FA\u7840\u653B\u51FB\u3002"
+    name: "\u5F3A\u529B\u7075\u6C14\u7BAD"
+    description: "\u66F4\u5F3A\u529B\u7684\u7075\u6C14\u7BAD"
     skillType: 2
     targetType: 1
     ATKMultiplier: 1
     ACCMultiplier: 1
     CRTMultiplier: 1
     preSPDMultiplier: 1
-    postSPDMultiplier: 0
-    interruptMultiplier: 0
+    postSPDMultiplier: 30
+    interruptMultiplier: 1
     maxCombo: 1
     buffID: 
     buffPercent: 
@@ -727,16 +727,594 @@ MonoBehaviour:
     effectID: 
     effectPercent: 
   - id: 2003
-    name: "\u9633\u6C14\u5F39"
-    description: "\u9633\u5C5E\u6027\u57FA\u7840\u653B\u51FB\u3002"
+    name: "\u7075\u6C14\u5F39"
+    description: "\u5C06\u7075\u6C14\u6C47\u805A\u6210\u7403\u72B6\uFF0C\u653B\u51FB\u654C\u65B9\u5168\u4F53"
+    skillType: 2
+    targetType: 2
+    ATKMultiplier: 1
+    ACCMultiplier: 1
+    CRTMultiplier: 1
+    preSPDMultiplier: 1
+    postSPDMultiplier: 50
+    interruptMultiplier: 1
+    maxCombo: 1
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    effectID: 
+    effectPercent: 
+  - id: 2004
+    name: "\u7075\u6C14\u4E71\u5C04"
+    description: "\u53D1\u5C04\u5927\u91CF\u4E0D\u7A33\u5B9A\u7684\u7075\u6C14\u7BAD\u968F\u673A\u653B\u51FB\u654C\u4EBA"
+    skillType: 2
+    targetType: 7
+    ATKMultiplier: 1
+    ACCMultiplier: 1
+    CRTMultiplier: 1
+    preSPDMultiplier: 1
+    postSPDMultiplier: 70
+    interruptMultiplier: 1
+    maxCombo: 1
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    effectID: 
+    effectPercent: 
+  - id: 2005
+    name: "\u7075\u6C14\u5FAA\u73AF"
+    description: "\u5149\u73AF\uFF1A\u7075\u529B\u6062\u590D\u901F\u5EA6\u4E0A\u5347"
+    skillType: 2
+    targetType: 0
+    ATKMultiplier: 1
+    ACCMultiplier: 1
+    CRTMultiplier: 1
+    preSPDMultiplier: 1
+    postSPDMultiplier: .200000003
+    interruptMultiplier: 1
+    maxCombo: 1
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    effectID: 
+    effectPercent: 
+  - id: 2006
+    name: "\u7EC8\u6781\u7075\u6C14\u7BAD"
+    description: "\u6700\u4E3A\u5F3A\u529B\u7684\u7075\u6C14\u7BAD"
     skillType: 2
     targetType: 1
     ATKMultiplier: 1
     ACCMultiplier: 1
     CRTMultiplier: 1
     preSPDMultiplier: 1
+    postSPDMultiplier: 100
+    interruptMultiplier: 1
+    maxCombo: 1
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    effectID: 
+    effectPercent: 
+  - id: 2007
+    name: "\u5F3A\u529B\u7075\u6C14\u5F39"
+    description: "\u66F4\u5F3A\u529B\u7684\u7075\u6C14\u5F39"
+    skillType: 2
+    targetType: 2
+    ATKMultiplier: 1
+    ACCMultiplier: 1
+    CRTMultiplier: 1
+    preSPDMultiplier: 1
+    postSPDMultiplier: 120
+    interruptMultiplier: 1
+    maxCombo: 1
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    effectID: 
+    effectPercent: 
+  - id: 2008
+    name: "\u7075\u6C14\u5171\u9E23"
+    description: "\u635F\u593120%\u4F53\u529B\uFF0C\u5BF9\u654C\u5168\u4F53\u9020\u6210\u7B49\u91CF\u4F24\u5BB3\uFF0C\u5BF9\u7075\u529B\u578B\u89D2\u8272\u4F24\u5BB3\u7FFB\u500D"
+    skillType: 2
+    targetType: 2
+    ATKMultiplier: 1
+    ACCMultiplier: 1
+    CRTMultiplier: 1
+    preSPDMultiplier: 1
+    postSPDMultiplier: .200000003
+    interruptMultiplier: 1
+    maxCombo: 1
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    effectID: 
+    effectPercent: 
+  - id: 2009
+    name: "\u72C2\u5316\u7075\u6C14\u4E71\u5C04"
+    description: "\u66F4\u5F3A\u529B\u7684\u7075\u6C14\u4E71\u5C04\uFF0C\u4F46\u53EF\u80FD\u9020\u6210\u81EA\u5DF1\u72C2\u4E71"
+    skillType: 2
+    targetType: 7
+    ATKMultiplier: 1
+    ACCMultiplier: 1
+    CRTMultiplier: 1
+    preSPDMultiplier: 1
+    postSPDMultiplier: 150
+    interruptMultiplier: 1
+    maxCombo: 1
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    effectID: 
+    effectPercent: 
+  - id: 2010
+    name: "\u7075\u4E4B\u5E7B\u5883"
+    description: "\u5E7B\u5883\uFF1A\u6240\u6709\u4EBA\u53EA\u4F1A\u53D7\u5230\u7075\u5C5E\u6027\u653B\u51FB\u7684\u4F24\u5BB3"
+    skillType: 2
+    targetType: 6
+    ATKMultiplier: 1
+    ACCMultiplier: 1
+    CRTMultiplier: 1
+    preSPDMultiplier: 1
+    postSPDMultiplier: .200000003
+    interruptMultiplier: 1
+    maxCombo: 1
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    effectID: 
+    effectPercent: 
+  - id: 2011
+    name: "\u7075\u566C"
+    description: "\u65E0\u62DB\u5373\u662F\u6709\u62DB"
+    skillType: 2
+    targetType: 1
+    ATKMultiplier: 1
+    ACCMultiplier: 1
+    CRTMultiplier: 1
+    preSPDMultiplier: 1
+    postSPDMultiplier: 1
+    interruptMultiplier: 1
+    maxCombo: 1
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    effectID: 
+    effectPercent: 
+  - id: 2012
+    name: "\u7075\u7206"
+    description: "\u65E0\u62DB\u5373\u662F\u6709\u62DB"
+    skillType: 2
+    targetType: 2
+    ATKMultiplier: 1
+    ACCMultiplier: 1
+    CRTMultiplier: 1
+    preSPDMultiplier: 1
+    postSPDMultiplier: 1
+    interruptMultiplier: 1
+    maxCombo: 1
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    effectID: 
+    effectPercent: 
+  - id: 2013
+    name: "\u7075\u529B\u89E3\u653E"
+    description: "\u5149\u73AF\uFF1A\u6CD5\u672F\u5A01\u529B\u3001\u541F\u5531\u901F\u5EA6\u3001\u6D88\u8017\u4E0A\u5347\uFF0C\u547D\u4E2D\u7387\u4E0B\u964D"
+    skillType: 2
+    targetType: 0
+    ATKMultiplier: 1
+    ACCMultiplier: 1
+    CRTMultiplier: 1
+    preSPDMultiplier: 1
+    postSPDMultiplier: 1
+    interruptMultiplier: 1
+    maxCombo: 1
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    effectID: 
+    effectPercent: 
+  - id: 2101
+    name: "\u51B0\u5C01\u672F"
+    description: "\u5229\u7528\u7075\u529B\u51BB\u7ED3\u654C\u4EBA\uFF0C\u53EF\u80FD\u9020\u6210\u51B0\u51BB"
+    skillType: 3
+    targetType: 1
+    ATKMultiplier: 1
+    ACCMultiplier: 1
+    CRTMultiplier: 1
+    preSPDMultiplier: 1
+    postSPDMultiplier: 8
+    interruptMultiplier: 1
+    maxCombo: 1
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    effectID: 
+    effectPercent: 
+  - id: 2102
+    name: "\u5F3A\u529B\u51B0\u5C01\u672F"
+    description: "\u66F4\u5F3A\u529B\u7684\u51B0\u5C01\u672F\uFF0C\u51B0\u51BB\u51E0\u7387\u4E0A\u5347"
+    skillType: 3
+    targetType: 1
+    ATKMultiplier: 1
+    ACCMultiplier: 1
+    CRTMultiplier: 1
+    preSPDMultiplier: 1
+    postSPDMultiplier: 24
+    interruptMultiplier: 1
+    maxCombo: 1
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    effectID: 
+    effectPercent: 
+  - id: 2103
+    name: "\u5438\u661F\u672F"
+    description: "\u5438\u53D6\u654C\u4EBA\u7684\u751F\u547D\u503C"
+    skillType: 3
+    targetType: 2
+    ATKMultiplier: 1
+    ACCMultiplier: 1
+    CRTMultiplier: 1
+    preSPDMultiplier: 1
+    postSPDMultiplier: 36
+    interruptMultiplier: 1
+    maxCombo: 1
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    effectID: 
+    effectPercent: 
+  - id: 2104
+    name: "\u72C2\u98CE\u67AA"
+    description: "\u5FEB\u901F\u800C\u7A33\u5B9A\u7684\u653B\u51FB\uFF0C\u65E0\u89C6\u654C\u65B9\u9632\u5FA1"
+    skillType: 3
+    targetType: 1
+    ATKMultiplier: 1
+    ACCMultiplier: 1
+    CRTMultiplier: 1
+    preSPDMultiplier: 1
+    postSPDMultiplier: 32
+    interruptMultiplier: 1
+    maxCombo: 1
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    effectID: 
+    effectPercent: 
+  - id: 2105
+    name: "\u7075\u529B\u4FB5\u8680"
+    description: "\u5BF9\u654C\u5168\u4F53\u8FDB\u884C\u4FB5\u8680\uFF0C\u4F7F\u654C\u4EBA\u4E2D\u6BD2"
+    skillType: 3
+    targetType: 2
+    ATKMultiplier: 1
+    ACCMultiplier: 1
+    CRTMultiplier: 1
+    preSPDMultiplier: 1
+    postSPDMultiplier: 20
+    interruptMultiplier: 1
+    maxCombo: 1
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    effectID: 
+    effectPercent: 
+  - id: 2106
+    name: "\u7EC8\u6781\u51B0\u5C01\u672F"
+    description: "\u6700\u5F3A\u529B\u7684\u51B0\u5C01\u672F\uFF0C\u53EF\u653B\u51FB\u5168\u90E8\u654C\u4EBA"
+    skillType: 3
+    targetType: 2
+    ATKMultiplier: 1
+    ACCMultiplier: 1
+    CRTMultiplier: 1
+    preSPDMultiplier: 1
+    postSPDMultiplier: 80
+    interruptMultiplier: 1
+    maxCombo: 1
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    effectID: 
+    effectPercent: 
+  - id: 2107
+    name: "\u6697\u4E4B\u539F\u529B"
+    description: "\u9634\u6CD5\u672F\u672C\u8D28\u7684\u4E00\u51FB\uFF0C\u53EF\u80FD\u9020\u6210\u5931\u9B42"
+    skillType: 3
+    targetType: 1
+    ATKMultiplier: 1
+    ACCMultiplier: 1
+    CRTMultiplier: 1
+    preSPDMultiplier: 1
+    postSPDMultiplier: 120
+    interruptMultiplier: 1
+    maxCombo: 1
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    effectID: 
+    effectPercent: 
+  - id: 2108
+    name: "\u6708\u4E4B\u9886\u57DF"
+    description: "\u5E7B\u5883\uFF1A\u6211\u65B9\u514D\u75AB\u9634\u5C5E\u6027\u4F24\u5BB3\uFF0C\u5E76\u4E14\u6240\u6709\u653B\u51FB\u65E0\u89C6\u5BF9\u65B9\u9632\u5FA1\u72B6\u6001"
+    skillType: 3
+    targetType: 6
+    ATKMultiplier: 1
+    ACCMultiplier: 1
+    CRTMultiplier: 1
+    preSPDMultiplier: 1
+    postSPDMultiplier: .200000003
+    interruptMultiplier: 1
+    maxCombo: 1
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    effectID: 
+    effectPercent: 
+  - id: 2109
+    name: "\u8BC5\u5492"
+    description: "\u4EE4\u81EA\u5DF1\u548C\u654C\u65B9\u5168\u4F53\u8FDB\u5165\u8BC5\u5492\u72B6\u6001\uFF0C\u76F4\u5230\u81EA\u8EAB\u5931\u53BB\u6218\u6597\u80FD\u529B"
+    skillType: 3
+    targetType: 2
+    ATKMultiplier: 1
+    ACCMultiplier: 1
+    CRTMultiplier: 1
+    preSPDMultiplier: 1
+    postSPDMultiplier: 88
+    interruptMultiplier: 1
+    maxCombo: 1
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    effectID: 
+    effectPercent: 
+  - id: 2110
+    name: "\u7075\u6C14\u5077\u53D6"
+    description: "\u5077\u53D6\u5BF9\u65B9\u7684\u751F\u547D\u4E0A\u9650\u5E76\u8F6C\u6362\u4E3A\u81EA\u8EAB\u7684\u7075\u6C14"
+    skillType: 3
+    targetType: 1
+    ATKMultiplier: 1
+    ACCMultiplier: 1
+    CRTMultiplier: 1
+    preSPDMultiplier: 1
+    postSPDMultiplier: 66
+    interruptMultiplier: 1
+    maxCombo: 1
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    effectID: 
+    effectPercent: 
+  - id: 2111
+    name: "\u4E07\u9B54\u6563\u9B42"
+    description: "\u65E0\u62DB\u5373\u662F\u6709\u62DB"
+    skillType: 3
+    targetType: 0
+    ATKMultiplier: 1
+    ACCMultiplier: 1
+    CRTMultiplier: 1
+    preSPDMultiplier: 1
+    postSPDMultiplier: 1
+    interruptMultiplier: 1
+    maxCombo: 1
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    effectID: 
+    effectPercent: 
+  - id: 2112
+    name: "\u6697\u6708\u5F71"
+    description: "\u65E0\u62DB\u5373\u662F\u6709\u62DB"
+    skillType: 3
+    targetType: 0
+    ATKMultiplier: 1
+    ACCMultiplier: 1
+    CRTMultiplier: 1
+    preSPDMultiplier: 1
+    postSPDMultiplier: 1
+    interruptMultiplier: 1
+    maxCombo: 1
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    effectID: 
+    effectPercent: 
+  - id: 2201
+    name: "\u9633\u708E\u672F"
+    description: "\u5229\u7528\u7075\u529B\u71C3\u70E7\u654C\u4EBA\uFF0C\u53EF\u80FD\u9020\u6210\u70B9\u71C3"
+    skillType: 4
+    targetType: 1
+    ATKMultiplier: 1
+    ACCMultiplier: 1
+    CRTMultiplier: 1
+    preSPDMultiplier: 1
+    postSPDMultiplier: 9
+    interruptMultiplier: 1
+    maxCombo: 1
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    effectID: 
+    effectPercent: 
+  - id: 2202
+    name: "\u5F3A\u529B\u9633\u708E\u672F"
+    description: "\u66F4\u5F3A\u529B\u7684\u9633\u708E\u672F\uFF0C\u70B9\u71C3\u51E0\u7387\u4E0A\u5347"
+    skillType: 4
+    targetType: 1
+    ATKMultiplier: 1
+    ACCMultiplier: 1
+    CRTMultiplier: 1
+    preSPDMultiplier: 1
+    postSPDMultiplier: 25
+    interruptMultiplier: 1
+    maxCombo: 1
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    effectID: 
+    effectPercent: 
+  - id: 2203
+    name: "\u96F7\u66B4\u672F"
+    description: "\u96F7\u7535\u653B\u51FB\u5168\u4F53\uFF0C\u547D\u4E2D\u7387\u8F83\u4F4E\u4F46\u9AD8\u51E0\u7387\u9020\u6210\u9EBB\u75F9\u6548\u679C"
+    skillType: 4
+    targetType: 2
+    ATKMultiplier: 1
+    ACCMultiplier: 1
+    CRTMultiplier: 1
+    preSPDMultiplier: 1
+    postSPDMultiplier: 36
+    interruptMultiplier: 1
+    maxCombo: 1
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    effectID: 
+    effectPercent: 
+  - id: 2204
+    name: "\u5723\u5149"
+    description: "\u4EE4\u89D2\u8272\u8FDB\u5165\u6FC0\u6602\u72B6\u6001\uFF0C\u653B\u9632\u901F\u4E0A\u5347"
+    skillType: 4
+    targetType: 3
+    ATKMultiplier: 1
+    ACCMultiplier: 1
+    CRTMultiplier: 1
+    preSPDMultiplier: 1
+    postSPDMultiplier: 24
+    interruptMultiplier: 1
+    maxCombo: 1
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    effectID: 
+    effectPercent: 
+  - id: 2205
+    name: "\u7075\u6C14\u51C0\u5316"
+    description: "\u53D6\u6D88\u76EE\u6807\u8EAB\u4E0A\u9644\u5E26\u7684\u4E00\u5207\u6548\u679C\uFF0C\u5E76\u6839\u636E\u6570\u91CF\u56DE\u590D\u751F\u547D"
+    skillType: 4
+    targetType: 3
+    ATKMultiplier: 1
+    ACCMultiplier: 1
+    CRTMultiplier: 1
+    preSPDMultiplier: 1
+    postSPDMultiplier: 50
+    interruptMultiplier: 1
+    maxCombo: 1
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    effectID: 
+    effectPercent: 
+  - id: 2206
+    name: "\u7EC8\u6781\u9633\u708E\u672F"
+    description: "\u6700\u5F3A\u529B\u7684\u9633\u708E\u672F\uFF0C\u53EF\u653B\u51FB\u5168\u90E8\u654C\u4EBA"
+    skillType: 4
+    targetType: 2
+    ATKMultiplier: 1
+    ACCMultiplier: 1
+    CRTMultiplier: 1
+    preSPDMultiplier: 1
+    postSPDMultiplier: 90
+    interruptMultiplier: 1
+    maxCombo: 1
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    effectID: 
+    effectPercent: 
+  - id: 2207
+    name: "\u5149\u4E4B\u539F\u529B"
+    description: "\u9633\u6CD5\u672F\u672C\u8D28\u7684\u4E00\u51FB\uFF0C\u53EF\u80FD\u4EE4\u81EA\u5DF1\u795D\u798F"
+    skillType: 4
+    targetType: 1
+    ATKMultiplier: 1
+    ACCMultiplier: 1
+    CRTMultiplier: 1
+    preSPDMultiplier: 1
+    postSPDMultiplier: 120
+    interruptMultiplier: 1
+    maxCombo: 1
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    effectID: 
+    effectPercent: 
+  - id: 2208
+    name: "\u65E5\u4E4B\u9886\u57DF"
+    description: "\u5E7B\u5883\uFF1A\u6211\u65B9\u514D\u75AB\u9634\u5C5E\u6027\u4F24\u5BB3\uFF0C\u5E76\u4E14\u6240\u6709\u653B\u51FB\u5FC5\u5B9A\u5C06\u654C\u65B9\u6253\u65AD"
+    skillType: 4
+    targetType: 6
+    ATKMultiplier: 1
+    ACCMultiplier: 1
+    CRTMultiplier: 1
+    preSPDMultiplier: 1
+    postSPDMultiplier: .200000003
+    interruptMultiplier: 1
+    maxCombo: 1
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    effectID: 
+    effectPercent: 
+  - id: 2209
+    name: "\u5929\u542F"
+    description: "\u53EC\u5524\u9668\u77F3\u653B\u51FB\u6218\u573A\u5168\u4F53\uFF0C\u84C4\u529B\u901F\u5EA6\u6781\u5FEB"
+    skillType: 4
+    targetType: 6
+    ATKMultiplier: 1
+    ACCMultiplier: 1
+    CRTMultiplier: 1
+    preSPDMultiplier: 1
+    postSPDMultiplier: 150
+    interruptMultiplier: 1
+    maxCombo: 1
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    effectID: 
+    effectPercent: 
+  - id: 2210
+    name: "\u7075\u6C14\u8FC7\u8F7D"
+    description: "\u5149\u73AF\uFF1A\u7075\u529B\u65E0\u7A77\uFF0C\u4F463\u56DE\u5408\u540E\u5931\u53BB\u6218\u6597\u529B"
+    skillType: 4
+    targetType: 0
+    ATKMultiplier: 1
+    ACCMultiplier: 1
+    CRTMultiplier: 1
+    preSPDMultiplier: 1
     postSPDMultiplier: 0
-    interruptMultiplier: 0
+    interruptMultiplier: 1
+    maxCombo: 1
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    effectID: 
+    effectPercent: 
+  - id: 2211
+    name: "\u5938\u7236\u4E4B\u6012"
+    description: "\u65E0\u62DB\u5373\u662F\u6709\u62DB"
+    skillType: 4
+    targetType: 0
+    ATKMultiplier: 1
+    ACCMultiplier: 1
+    CRTMultiplier: 1
+    preSPDMultiplier: 1
+    postSPDMultiplier: 1
+    interruptMultiplier: 1
+    maxCombo: 1
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    effectID: 
+    effectPercent: 
+  - id: 2212
+    name: "\u9633\u5149\u76FE"
+    description: "\u65E0\u62DB\u5373\u662F\u6709\u62DB"
+    skillType: 4
+    targetType: 0
+    ATKMultiplier: 1
+    ACCMultiplier: 1
+    CRTMultiplier: 1
+    preSPDMultiplier: 1
+    postSPDMultiplier: 1
+    interruptMultiplier: 1
     maxCombo: 1
     buffID: 
     buffPercent: 
@@ -828,69 +1406,18 @@ MonoBehaviour:
     buffTurns: 
     effectID: 
     effectPercent: 
-  - id: 4002
-    name: "\u7075\u6C14\u7206\u53D1"
-    description: "\u7075\u5C5E\u6027\u5927\u62DB"
-    skillType: 2
-    targetType: 2
-    ATKMultiplier: 1
-    ACCMultiplier: 1
-    CRTMultiplier: 1
-    preSPDMultiplier: 1
-    postSPDMultiplier: 0
-    interruptMultiplier: 0
-    maxCombo: 1
-    buffID: 
-    buffPercent: 
-    buffTurns: 
-    effectID: 
-    effectPercent: 
-  - id: 4003
-    name: "\u4E07\u9B54\u566C\u9B42"
-    description: "\u9634\u5C5E\u6027\u5927\u62DB"
-    skillType: 2
-    targetType: 1
-    ATKMultiplier: 1
-    ACCMultiplier: 1
-    CRTMultiplier: 1
-    preSPDMultiplier: 1
-    postSPDMultiplier: 0
-    interruptMultiplier: 0
-    maxCombo: 1
-    buffID: 
-    buffPercent: 
-    buffTurns: 
-    effectID: 
-    effectPercent: 
-  - id: 4004
-    name: "\u5938\u7236\u4E4B\u6012"
-    description: "\u9633\u5C5E\u6027\u5927\u62DB"
-    skillType: 2
-    targetType: 1
-    ATKMultiplier: 1
-    ACCMultiplier: 1
-    CRTMultiplier: 1
-    preSPDMultiplier: 1
-    postSPDMultiplier: 0
-    interruptMultiplier: 0
-    maxCombo: 1
-    buffID: 
-    buffPercent: 
-    buffTurns: 
-    effectID: 
-    effectPercent: 
   - id: 3005
     name: "\u5438\u6C34\u63D0\u5362\u67AA\u8F7B\u653B\u51FB"
     description: "\u65E0\u62DB\u5373\u662F\u6709\u62DB"
     skillType: 0
     targetType: 0
-    ATKMultiplier: 0
-    ACCMultiplier: 0
-    CRTMultiplier: 0
-    preSPDMultiplier: 0
-    postSPDMultiplier: 0
-    interruptMultiplier: 0
-    maxCombo: 0
+    ATKMultiplier: 1
+    ACCMultiplier: 1
+    CRTMultiplier: 1
+    preSPDMultiplier: 1
+    postSPDMultiplier: 1
+    interruptMultiplier: 1
+    maxCombo: 1
     buffID: 
     buffPercent: 
     buffTurns: 
@@ -901,13 +1428,13 @@ MonoBehaviour:
     description: "\u65E0\u62DB\u5373\u662F\u6709\u62DB"
     skillType: 0
     targetType: 0
-    ATKMultiplier: 0
-    ACCMultiplier: 0
-    CRTMultiplier: 0
-    preSPDMultiplier: 0
-    postSPDMultiplier: 0
-    interruptMultiplier: 0
-    maxCombo: 0
+    ATKMultiplier: 1
+    ACCMultiplier: 1
+    CRTMultiplier: 1
+    preSPDMultiplier: 1
+    postSPDMultiplier: 1
+    interruptMultiplier: 1
+    maxCombo: 1
     buffID: 
     buffPercent: 
     buffTurns: 
@@ -918,13 +1445,13 @@ MonoBehaviour:
     description: "\u65E0\u62DB\u5373\u662F\u6709\u62DB"
     skillType: 0
     targetType: 0
-    ATKMultiplier: 0
-    ACCMultiplier: 0
-    CRTMultiplier: 0
-    preSPDMultiplier: 0
-    postSPDMultiplier: 0
-    interruptMultiplier: 0
-    maxCombo: 0
+    ATKMultiplier: 1
+    ACCMultiplier: 1
+    CRTMultiplier: 1
+    preSPDMultiplier: 1
+    postSPDMultiplier: 1
+    interruptMultiplier: 1
+    maxCombo: 1
     buffID: 
     buffPercent: 
     buffTurns: 
@@ -935,13 +1462,13 @@ MonoBehaviour:
     description: "\u65E0\u62DB\u5373\u662F\u6709\u62DB"
     skillType: 0
     targetType: 0
-    ATKMultiplier: 0
-    ACCMultiplier: 0
-    CRTMultiplier: 0
-    preSPDMultiplier: 0
-    postSPDMultiplier: 0
-    interruptMultiplier: 0
-    maxCombo: 0
+    ATKMultiplier: 1
+    ACCMultiplier: 1
+    CRTMultiplier: 1
+    preSPDMultiplier: 1
+    postSPDMultiplier: 1
+    interruptMultiplier: 1
+    maxCombo: 1
     buffID: 
     buffPercent: 
     buffTurns: 
@@ -952,13 +1479,13 @@ MonoBehaviour:
     description: "\u65E0\u62DB\u5373\u662F\u6709\u62DB"
     skillType: 0
     targetType: 0
-    ATKMultiplier: 0
-    ACCMultiplier: 0
-    CRTMultiplier: 0
-    preSPDMultiplier: 0
-    postSPDMultiplier: 0
-    interruptMultiplier: 0
-    maxCombo: 0
+    ATKMultiplier: 1
+    ACCMultiplier: 1
+    CRTMultiplier: 1
+    preSPDMultiplier: 1
+    postSPDMultiplier: 1
+    interruptMultiplier: 1
+    maxCombo: 1
     buffID: 
     buffPercent: 
     buffTurns: 
@@ -969,13 +1496,13 @@ MonoBehaviour:
     description: "\u65E0\u62DB\u5373\u662F\u6709\u62DB"
     skillType: 0
     targetType: 0
-    ATKMultiplier: 0
-    ACCMultiplier: 0
-    CRTMultiplier: 0
-    preSPDMultiplier: 0
-    postSPDMultiplier: 0
-    interruptMultiplier: 0
-    maxCombo: 0
+    ATKMultiplier: 1
+    ACCMultiplier: 1
+    CRTMultiplier: 1
+    preSPDMultiplier: 1
+    postSPDMultiplier: 1
+    interruptMultiplier: 1
+    maxCombo: 1
     buffID: 
     buffPercent: 
     buffTurns: 
@@ -986,13 +1513,13 @@ MonoBehaviour:
     description: "\u5C06\u8EAB\u4F53\u7F29\u5165\u58F3\u4E2D\uFF0C\u53EF\u4EE5\u56DE\u590D\u4F53\u529B\uFF0C\u5E76\u4E14\u9632\u5FA1\u529B\u5927\u589E"
     skillType: 0
     targetType: 0
-    ATKMultiplier: 0
-    ACCMultiplier: 0
-    CRTMultiplier: 0
-    preSPDMultiplier: 0
-    postSPDMultiplier: 0
-    interruptMultiplier: 0
-    maxCombo: 0
+    ATKMultiplier: 1
+    ACCMultiplier: 1
+    CRTMultiplier: 1
+    preSPDMultiplier: 1
+    postSPDMultiplier: 1
+    interruptMultiplier: 1
+    maxCombo: 1
     buffID: 
     buffPercent: 
     buffTurns: 
@@ -1003,13 +1530,13 @@ MonoBehaviour:
     description: "\u7528\u5C16\u5229\u7684\u7F8A\u89D2\u51B2\u649E\u5BF9\u624B"
     skillType: 0
     targetType: 0
-    ATKMultiplier: 0
-    ACCMultiplier: 0
-    CRTMultiplier: 0
-    preSPDMultiplier: 0
-    postSPDMultiplier: 0
-    interruptMultiplier: 0
-    maxCombo: 0
+    ATKMultiplier: 1
+    ACCMultiplier: 1
+    CRTMultiplier: 1
+    preSPDMultiplier: 1
+    postSPDMultiplier: 1
+    interruptMultiplier: 1
+    maxCombo: 1
     buffID: 
     buffPercent: 
     buffTurns: 
@@ -1020,13 +1547,13 @@ MonoBehaviour:
     description: "\u7528\u4E5D\u6761\u5C3E\u5DF4\u6A2A\u626B\u5BF9\u624B"
     skillType: 0
     targetType: 0
-    ATKMultiplier: 0
-    ACCMultiplier: 0
-    CRTMultiplier: 0
-    preSPDMultiplier: 0
-    postSPDMultiplier: 0
-    interruptMultiplier: 0
-    maxCombo: 0
+    ATKMultiplier: 1
+    ACCMultiplier: 1
+    CRTMultiplier: 1
+    preSPDMultiplier: 1
+    postSPDMultiplier: 1
+    interruptMultiplier: 1
+    maxCombo: 1
     buffID: 
     buffPercent: 
     buffTurns: 
@@ -1037,13 +1564,13 @@ MonoBehaviour:
     description: "\u7528\u6709\u529B\u7684\u540E\u8E44\u8E22\u5BF9\u624B\uFF0C\u975E\u5E38\u5F3A\u529B"
     skillType: 0
     targetType: 0
-    ATKMultiplier: 0
-    ACCMultiplier: 0
-    CRTMultiplier: 0
-    preSPDMultiplier: 0
-    postSPDMultiplier: 0
-    interruptMultiplier: 0
-    maxCombo: 0
+    ATKMultiplier: 1
+    ACCMultiplier: 1
+    CRTMultiplier: 1
+    preSPDMultiplier: 1
+    postSPDMultiplier: 1
+    interruptMultiplier: 1
+    maxCombo: 1
     buffID: 
     buffPercent: 
     buffTurns: 
@@ -1054,13 +1581,13 @@ MonoBehaviour:
     description: "\u201C\u88AB\u5E7D\u7075\u6CE8\u89C6\u7740\uFF0C\u4E0D\u81EA\u89C9\u5730\u5168\u8EAB\u9165\u9EBB\uFF0C\u7EF5\u8F6F\u65E0\u529B\u201D"
     skillType: 0
     targetType: 0
-    ATKMultiplier: 0
-    ACCMultiplier: 0
-    CRTMultiplier: 0
-    preSPDMultiplier: 0
-    postSPDMultiplier: 0
-    interruptMultiplier: 0
-    maxCombo: 0
+    ATKMultiplier: 1
+    ACCMultiplier: 1
+    CRTMultiplier: 1
+    preSPDMultiplier: 1
+    postSPDMultiplier: 1
+    interruptMultiplier: 1
+    maxCombo: 1
     buffID: 
     buffPercent: 
     buffTurns: 

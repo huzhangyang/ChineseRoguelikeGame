@@ -505,39 +505,413 @@ MonoBehaviour:
     basicCRT: 0
     interrupt: 0
     skillID: 0
-  - id: 2001
-    name: "\u7075\u6C14\u4E4B\u4E66"
+  - id: 2010
+    name: "\u7075\u6C14\u7BAD\u5377\u8F74"
     type: 0
-    description: "\u8BB0\u8F7D\u4E86\u7075\u6C14\u5F39\u7528\u6CD5\u7684\u53E4\u8001\u4E66\u7C4D"
+    description: "\u8BB0\u8F7D\u7740\u6CD5\u672F\u3010\u7075\u6C14\u7BAD\u3011\u7684\u5377\u8F74\u3002\u7075\u6C14\u7BAD\u662F\u6700\u7B80\u5355\u4E5F\u662F\u6700\u7EAF\u51C0\u7684\u7075\u6C14\u6CD5\u672F\uFF0C\u4F46\u5DF2\u5177\u6709\u4E00\u5B9A\u7684\u7834\u574F\u529B\u3002"
     basicATKMin: 15
     basicATKMax: 25
     basicSPD: 60
     basicACC: 80
-    basicCRT: 0
-    interrupt: 0
+    basicCRT: 10
+    interrupt: 10
     skillID: 2001
-  - id: 2002
-    name: "\u9634\u6C14\u4E4B\u4E66"
+  - id: 2110
+    name: "\u51B0\u5C01\u672F\u5377\u8F74"
     type: 0
-    description: "\u8BB0\u8F7D\u4E86\u9634\u6C14\u5F39\u7528\u6CD5\u7684\u53E4\u8001\u4E66\u7C4D"
-    basicATKMin: 5
-    basicATKMax: 15
+    description: "\u8BB0\u8F7D\u7740\u6CD5\u672F\u3010\u51B0\u5C01\u672F\u3011\u7684\u5377\u8F74\u3002\u51B0\u5C01\u672F\u662F\u6700\u57FA\u7840\u7684\u9634\u5C5E\u6027\u6CD5\u672F\uFF0C\u5229\u7528\u4E86\u4E16\u95F4\u7684\u9634\u6C14\u4E4B\u529B\u3002"
+    basicATKMin: 10
+    basicATKMax: 16
     basicSPD: 100
     basicACC: 100
-    basicCRT: 0
-    interrupt: 0
-    skillID: 2002
-  - id: 2003
-    name: "\u9633\u6C14\u4E4B\u4E66"
+    basicCRT: 8
+    interrupt: 8
+    skillID: 2101
+  - id: 2210
+    name: "\u9633\u708E\u672F\u5377\u8F74"
     type: 0
-    description: "\u8BB0\u8F7D\u4E86\u9633\u6C14\u5F39\u7528\u6CD5\u7684\u53E4\u8001\u4E66\u7C4D"
-    basicATKMin: 10
+    description: "\u8BB0\u8F7D\u7740\u6CD5\u672F\u3010\u9633\u708E\u672F\u3011\u7684\u5377\u8F74\u3002\u9633\u708E\u672F\u662F\u6700\u57FA\u7840\u7684\u9633\u5C5E\u6027\u6CD5\u672F\uFF0C\u5229\u7528\u4E86\u4E16\u95F4\u7684\u9633\u6C14\u4E4B\u529B\u3002"
+    basicATKMin: 12
     basicATKMax: 20
     basicSPD: 80
     basicACC: 90
+    basicCRT: 12
+    interrupt: 12
+    skillID: 2201
+  - id: 2020
+    name: "\u5F3A\u529B\u7075\u6C14\u7BAD\u4E4B\u4E66"
+    type: 0
+    description: "\u8BB0\u8F7D\u7740\u6CD5\u672F\u3010\u5F3A\u529B\u7075\u6C14\u7BAD\u3011\u7684\u53E4\u4E66\u3002\u5F3A\u529B\u7075\u6C14\u7BAD\u7684\u5A01\u529B\u6BD4\u4E00\u822C\u7684\u7075\u6C14\u7BAD\u8981\u66F4\u5F3A\uFF0C\u529B\u91CF\u4E5F\u66F4\u7EAF\u51C0\u3002"
+    basicATKMin: 66
+    basicATKMax: 99
+    basicSPD: 60
+    basicACC: 80
+    basicCRT: 10
+    interrupt: 10
+    skillID: 2002
+  - id: 2021
+    name: "\u7075\u6C14\u5F39\u4E4B\u4E66"
+    type: 0
+    description: "\u8BB0\u8F7D\u7740\u6CD5\u672F\u3010\u7075\u6C14\u5F39\u3011\u7684\u53E4\u4E66\u3002\u7075\u6C14\u5F39\u662F\u4EBA\u4EEC\u5C06\u7075\u6C14\u7BAD\u8FDB\u884C\u6539\u9020\u7684\u6210\u679C\uFF0C\u5176\u9002\u7528\u8303\u56F4\u66F4\u5E7F\u3002"
+    basicATKMin: 30
+    basicATKMax: 60
+    basicSPD: 50
+    basicACC: 70
+    basicCRT: 6
+    interrupt: 6
+    skillID: 2003
+  - id: 2022
+    name: "\u7075\u6C14\u4E71\u5C04\u5377\u8F74"
+    type: 0
+    description: "\u8BB0\u8F7D\u7740\u6CD5\u672F\u3010\u7075\u6C14\u4E71\u5C04\u3011\u7684\u5377\u8F74\u3002\u7075\u6C14\u4E71\u5C04\u867D\u7136\u5A01\u529B\u4E0D\u51E1\uFF0C\u4F46\u5176\u4E0D\u53D7\u65BD\u6CD5\u8005\u63A7\u5236\uFF0C\u5F88\u662F\u5371\u9669\u3002"
+    basicATKMin: 1
+    basicATKMax: 50
+    basicSPD: 120
+    basicACC: 60
+    basicCRT: 25
+    interrupt: 10
+    skillID: 2004
+  - id: 2023
+    name: "\u7075\u6C14\u5FAA\u73AF\u5377\u8F74"
+    type: 0
+    description: "\u8BB0\u8F7D\u7740\u6CD5\u672F\u3010\u7075\u6C14\u5FAA\u73AF\u3011\u7684\u5377\u8F74\u3002\u7075\u6C14\u5B58\u4E8E\u4E16\u95F4\uFF0C\u820D\u4E4B\u5F97\u4E4B\u3002"
+    basicATKMin: 0
+    basicATKMax: 0
+    basicSPD: 25
+    basicACC: 100
     basicCRT: 0
     interrupt: 0
-    skillID: 2003
+    skillID: 2005
+  - id: 2120
+    name: "\u5F3A\u529B\u51B0\u5C01\u672F\u4E4B\u4E66"
+    type: 0
+    description: "\u8BB0\u8F7D\u7740\u6CD5\u672F\u3010\u5F3A\u529B\u51B0\u5C01\u672F\u3011\u7684\u53E4\u4E66\u3002\u6BD4\u4E00\u822C\u7684\u51B0\u5C01\u672F\u66F4\u5F3A\uFF0C\u66F4\u5BB9\u6613\u4F7F\u654C\u4EBA\u51B0\u51BB\u3002"
+    basicATKMin: 35
+    basicATKMax: 70
+    basicSPD: 95
+    basicACC: 95
+    basicCRT: 9
+    interrupt: 8
+    skillID: 2102
+  - id: 2121
+    name: "\u5438\u661F\u672F\u4E4B\u4E66"
+    type: 0
+    description: "\u8BB0\u8F7D\u7740\u6CD5\u672F\u3010\u5438\u661F\u672F\u3011\u7684\u53E4\u4E66\u3002\u6B64\u672F\u53EF\u5438\u53D6\u76EE\u6807\u7075\u6C14\uFF0C\u89C6\u4E3A\u7981\u672F\uFF0C\u7136\u800C\u4ECD\u6709\u4EBA\u5077\u5077\u7EC3\u4E60\u3002"
+    basicATKMin: 25
+    basicATKMax: 50
+    basicSPD: 80
+    basicACC: 75
+    basicCRT: 0
+    interrupt: 0
+    skillID: 2103
+  - id: 2122
+    name: "\u72C2\u98CE\u67AA\u5377\u8F74"
+    type: 0
+    description: "\u8BB0\u8F7D\u7740\u6CD5\u672F\u3010\u72C2\u98CE\u67AA\u3011\u7684\u5377\u8F74\u3002\u5C06\u7075\u529B\u878D\u8FDB\u98CE\u4E4B\u529B\u5316\u4E3A\u5C16\u67AA\u63B7\u51FA\uFF0C\u4F24\u5BB3\u53EF\u89C2\u3002"
+    basicATKMin: 55
+    basicATKMax: 65
+    basicSPD: 90
+    basicACC: 120
+    basicCRT: 20
+    interrupt: 20
+    skillID: 2104
+  - id: 2123
+    name: "\u7075\u529B\u4FB5\u8680\u5377\u8F74"
+    type: 0
+    description: "\u8BB0\u8F7D\u7740\u6CD5\u672F\u3010\u7075\u529B\u4FB5\u8680\u3011\u7684\u5377\u8F74\u3002\u4E0D\u77E5\u4F55\u4EBA\u521B\u9020\u7684\u90AA\u6076\u6CD5\u672F\uFF0C\u4E0E\u3010\u5438\u661F\u672F\u3011\u540C\u4E3A\u7981\u672F\u3002"
+    basicATKMin: 0
+    basicATKMax: 0
+    basicSPD: 50
+    basicACC: 90
+    basicCRT: 0
+    interrupt: 0
+    skillID: 2105
+  - id: 2220
+    name: "\u5F3A\u529B\u9633\u708E\u672F\u4E4B\u4E66"
+    type: 0
+    description: "\u8BB0\u8F7D\u7740\u6CD5\u672F\u3010\u5F3A\u529B\u9633\u708E\u672F\u3011\u7684\u5377\u53E4\u4E66\u3002\u6BD4\u4E00\u822C\u7684\u9633\u708E\u672F\u66F4\u5F3A\uFF0C\u66F4\u5BB9\u6613\u4F7F\u654C\u4EBA\u70B9\u71C3\u3002"
+    basicATKMin: 40
+    basicATKMax: 80
+    basicSPD: 80
+    basicACC: 90
+    basicCRT: 12
+    interrupt: 12
+    skillID: 2202
+  - id: 2221
+    name: "\u96F7\u66B4\u672F\u4E4B\u4E66"
+    type: 0
+    description: "\u8BB0\u8F7D\u7740\u6CD5\u672F\u3010\u96F7\u66B4\u672F\u3011\u7684\u53E4\u4E66\u3002\u5A01\u529B\u867D\u9AD8\u4F46\u4E0D\u7A33\u5B9A\uFF0C\u4F1A\u4F7F\u654C\u4EBA\u9EBB\u75F9\u3002"
+    basicATKMin: 60
+    basicATKMax: 120
+    basicSPD: 60
+    basicACC: 50
+    basicCRT: 25
+    interrupt: 8
+    skillID: 2203
+  - id: 2222
+    name: "\u5723\u5149\u5377\u8F74"
+    type: 0
+    description: "\u8BB0\u8F7D\u7740\u6CD5\u672F\u3010\u5723\u5149\u3011\u7684\u5377\u8F74\u3002\u65E7\u65F6\u4EBA\u4EEC\u4FEE\u70BC\u8FD9\u4E00\u6CD5\u672F\u4EE5\u5F3A\u5065\u81EA\u5DF1\u7684\u4F53\u9B44\uFF0C\u5176\u4F5C\u7528\u6709\u4EBA\u8BF4\u6548\u679C\u5F88\u660E\u663E\uFF0C\u4E5F\u6709\u4EBA\u8BF4\u6CA1\u6709\u611F\u89C9\u5230\u3002"
+    basicATKMin: 0
+    basicATKMax: 0
+    basicSPD: 35
+    basicACC: 100
+    basicCRT: 0
+    interrupt: 0
+    skillID: 2204
+  - id: 2223
+    name: "\u7075\u6C14\u51C0\u5316\u5377\u8F74"
+    type: 0
+    description: "\u8BB0\u8F7D\u7740\u6CD5\u672F\u3010\u7075\u6C14\u51C0\u5316\u3011\u7684\u5377\u8F74\u3002\u5229\u7528\u9633\u4E4B\u6C14\u5C06\u4EBA\u7684\u8EAB\u4F53\u5F97\u4EE5\u51C0\u5316\uFF0C\u867D\u7136\u53EF\u4EE5\u53BB\u9664\u8EAB\u4E0A\u7684\u8BC5\u5492\uFF0C\u4F46\u4E00\u4E9B\u597D\u7684\u6548\u679C\u4E5F\u540C\u65F6\u6D41\u5931\u4E86\uFF0C\u6240\u4EE5\u4E0D\u77E5\u662F\u597D\u662F\u574F\u3002"
+    basicATKMin: 0
+    basicATKMax: 0
+    basicSPD: 25
+    basicACC: 100
+    basicCRT: 0
+    interrupt: 0
+    skillID: 2205
+  - id: 2030
+    name: "\u7EC8\u6781\u7075\u6C14\u7BAD\u4E4B\u4E66"
+    type: 0
+    description: "\u8BB0\u8F7D\u7740\u6CD5\u672F\u3010\u7EC8\u6781\u7075\u6C14\u7BAD\u3011\u7684\u53E4\u4E66\u3002\u9633\u708E\u672F\u662F\u6700\u57FA\u7840\u7684\u9633\u5C5E\u6027\u6CD5\u672F\uFF0C\u5229\u7528\u4E86\u4E16\u95F4\u7684\u9633\u6C14\u4E4B\u529B\u3002"
+    basicATKMin: 0
+    basicATKMax: 0
+    basicSPD: 0
+    basicACC: 0
+    basicCRT: 0
+    interrupt: 0
+    skillID: 2006
+  - id: 2031
+    name: "\u5F3A\u529B\u7075\u6C14\u5F39\u4E4B\u4E66"
+    type: 0
+    description: "\u8BB0\u8F7D\u7740\u6CD5\u672F\u3010\u5F3A\u529B\u7075\u6C14\u5F39\u3011\u7684\u53E4\u4E66\u3002\u9633\u708E\u672F\u662F\u6700\u57FA\u7840\u7684\u9633\u5C5E\u6027\u6CD5\u672F\uFF0C\u5229\u7528\u4E86\u4E16\u95F4\u7684\u9633\u6C14\u4E4B\u529B\u3002"
+    basicATKMin: 0
+    basicATKMax: 0
+    basicSPD: 0
+    basicACC: 0
+    basicCRT: 0
+    interrupt: 0
+    skillID: 2007
+  - id: 2032
+    name: "\u7075\u6C14\u5171\u9E23\u4E4B\u4E66"
+    type: 0
+    description: "\u8BB0\u8F7D\u7740\u6CD5\u672F\u3010\u7075\u6C14\u5171\u9E23\u3011\u7684\u53E4\u4E66\u3002\u91CA\u653E\u5927\u91CF\u7075\u6C14\u5BF9\u654C\u65B9\u9020\u6210\u4F24\u5BB3\uFF0C\u867D\u7136\u5BF9\u7075\u529B\u5F3A\u7684\u4EBA\u5F88\u6709\u6548\uFF0C\u4F46\u603B\u6709\u6740\u654C\u4E00\u5343\u81EA\u635F\u516B\u767E\u7684\u611F\u89C9\u3002"
+    basicATKMin: 0
+    basicATKMax: 0
+    basicSPD: 0
+    basicACC: 0
+    basicCRT: 0
+    interrupt: 0
+    skillID: 2008
+  - id: 2033
+    name: "\u72C2\u5316\u7075\u6C14\u4E71\u5C04\u4E4B\u4E66"
+    type: 0
+    description: "\u8BB0\u8F7D\u7740\u6CD5\u672F\u3010\u72C2\u5316\u7075\u6C14\u4E71\u5C04\u3011\u7684\u53E4\u4E66\u3002\u5A01\u529B\u5927\u7684\u6050\u6016\uFF0C\u4F46\u5982\u679C\u81EA\u8EAB\u610F\u5FD7\u4E0D\u591F\u5F3A\u5927\uFF0C\u4F1A\u88AB\u6CD5\u672F\u7684\u529B\u91CF\u672C\u8EAB\u53CD\u566C\u3002"
+    basicATKMin: 0
+    basicATKMax: 0
+    basicSPD: 0
+    basicACC: 0
+    basicCRT: 0
+    interrupt: 0
+    skillID: 2009
+  - id: 2034
+    name: "\u7075\u4E4B\u5E7B\u5883\u5377\u8F74"
+    type: 0
+    description: "\u8BB0\u8F7D\u7740\u6CD5\u672F\u3010\u7075\u4E4B\u5E7B\u5883\u3011\u7684\u5377\u8F74\u3002\u5F3A\u5927\u7684\u7075\u6C14\u4E4B\u529B\u53EF\u4EE5\u4EA7\u751F\u5E7B\u5883\uFF0C\u4EE5\u7075\u6C14\u4E3B\u4EBA\u7684\u610F\u5FD7\u9644\u52A0\u529B\u91CF\uFF0C\u4F46\u5176\u6D88\u8017\u4E5F\u662F\u76F8\u5F53\u53EF\u89C2\u7684\u3002"
+    basicATKMin: 0
+    basicATKMax: 0
+    basicSPD: 0
+    basicACC: 0
+    basicCRT: 0
+    interrupt: 0
+    skillID: 2010
+  - id: 2130
+    name: "\u7EC8\u6781\u51B0\u5C01\u672F\u4E4B\u4E66"
+    type: 0
+    description: "\u8BB0\u8F7D\u7740\u6CD5\u672F\u3010\u7EC8\u6781\u51B0\u5C01\u672F\u3011\u7684\u53E4\u4E66\u3002\u6700\u5F3A\u7684\u51B0\u5C01\u672F\u53EF\u4EE5\u540C\u65F6\u5BF9\u6240\u6709\u4EBA\u4EA7\u751F\u4F24\u5BB3\u3002"
+    basicATKMin: 0
+    basicATKMax: 0
+    basicSPD: 0
+    basicACC: 0
+    basicCRT: 0
+    interrupt: 0
+    skillID: 2106
+  - id: 2131
+    name: "\u6697\u4E4B\u539F\u529B\u4E4B\u4E66"
+    type: 0
+    description: "\u8BB0\u8F7D\u7740\u6CD5\u672F\u3010\u6697\u4E4B\u539F\u529B\u3011\u7684\u53E4\u4E66\u3002\u636E\u8BF4\u6697\u662F\u9634\u6CD5\u672F\u7684\u672C\u8D28\uFF0C\u53EF\u6697\u672C\u8EAB\u7A76\u7ADF\u662F\u4EC0\u4E48\u5462\uFF1F"
+    basicATKMin: 0
+    basicATKMax: 0
+    basicSPD: 0
+    basicACC: 0
+    basicCRT: 0
+    interrupt: 0
+    skillID: 2107
+  - id: 2132
+    name: "\u6708\u4E4B\u9886\u57DF\u4E4B\u4E66"
+    type: 0
+    description: "\u8BB0\u8F7D\u7740\u6CD5\u672F\u3010\u6708\u4E4B\u9886\u57DF\u3011\u7684\u53E4\u4E66\u3002\u5F3A\u5927\u7684\u7075\u6C14\u4E4B\u529B\u53EF\u4EE5\u4EA7\u751F\u5E7B\u5883\uFF0C\u4EE5\u7075\u6C14\u4E3B\u4EBA\u7684\u610F\u5FD7\u9644\u52A0\u529B\u91CF\uFF0C\u4F46\u5176\u6D88\u8017\u4E5F\u662F\u76F8\u5F53\u53EF\u89C2\u7684\u3002"
+    basicATKMin: 0
+    basicATKMax: 0
+    basicSPD: 0
+    basicACC: 0
+    basicCRT: 0
+    interrupt: 0
+    skillID: 2108
+  - id: 2133
+    name: "\u8BC5\u5492\u5377\u8F74"
+    type: 0
+    description: "\u8BB0\u8F7D\u7740\u6CD5\u672F\u3010\u8BC5\u5492\u3011\u7684\u5377\u8F74\u3002\u8FD9\u4E00\u65E0\u6BD4\u9ED1\u6697\u7684\u6CD5\u672F\u4E0D\u77E5\u4E3A\u4F55\u4EBA\u53D1\u660E\uFF0C\u4E5F\u4E0D\u77E5\u6700\u521D\u662F\u7528\u4E8E\u4F55\u5904\uFF0C\u8FD8\u662F\u4E0D\u8981\u7EC6\u60F3\u4E3A\u597D\u3002"
+    basicATKMin: 0
+    basicATKMax: 0
+    basicSPD: 0
+    basicACC: 0
+    basicCRT: 0
+    interrupt: 0
+    skillID: 2109
+  - id: 2134
+    name: "\u7075\u6C14\u5077\u53D6\u5377\u8F74"
+    type: 0
+    description: "\u8BB0\u8F7D\u7740\u6CD5\u672F\u3010\u7075\u6C14\u5077\u53D6\u3011\u7684\u5377\u8F74\u3002\u79D8\u5BC6\u7814\u7A76\u3010\u5438\u661F\u672F\u3011\u7684\u5B66\u5F92\u5728\u5176\u57FA\u7840\u4E0A\u7814\u5236\u6210\u7684\u6CD5\u672F\uFF0C\u80FD\u591F\u5B9E\u73B0\u66F4\u4E3A\u5F7B\u5E95\u7684\u7075\u529B\u5438\u53D6\u3002"
+    basicATKMin: 0
+    basicATKMax: 0
+    basicSPD: 0
+    basicACC: 0
+    basicCRT: 0
+    interrupt: 0
+    skillID: 2110
+  - id: 2230
+    name: "\u7EC8\u6781\u9633\u708E\u672F\u4E4B\u4E66"
+    type: 0
+    description: "\u8BB0\u8F7D\u7740\u6CD5\u672F\u3010\u7EC8\u6781\u9633\u708E\u672F\u3011\u7684\u53E4\u4E66\u3002\u6700\u5F3A\u7684\u9633\u708E\u672F\u53EF\u4EE5\u540C\u65F6\u5BF9\u6240\u6709\u4EBA\u4EA7\u751F\u4F24\u5BB3\u3002"
+    basicATKMin: 0
+    basicATKMax: 0
+    basicSPD: 0
+    basicACC: 0
+    basicCRT: 0
+    interrupt: 0
+    skillID: 2206
+  - id: 2231
+    name: "\u5149\u4E4B\u539F\u529B\u4E4B\u4E66"
+    type: 0
+    description: "\u8BB0\u8F7D\u7740\u6CD5\u672F\u3010\u5149\u4E4B\u539F\u529B\u3011\u7684\u53E4\u4E66\u3002\u636E\u8BF4\u5149\u662F\u9633\u6CD5\u672F\u7684\u672C\u8D28\uFF0C\u53EF\u5149\u672C\u8EAB\u7A76\u7ADF\u662F\u4EC0\u4E48\u5462\uFF1F"
+    basicATKMin: 0
+    basicATKMax: 0
+    basicSPD: 0
+    basicACC: 0
+    basicCRT: 0
+    interrupt: 0
+    skillID: 2207
+  - id: 2232
+    name: "\u65E5\u4E4B\u9886\u57DF\u4E4B\u4E66"
+    type: 0
+    description: "\u8BB0\u8F7D\u7740\u6CD5\u672F\u3010\u65E5\u4E4B\u9886\u57DF\u3011\u7684\u53E4\u4E66\u3002\u5F3A\u5927\u7684\u7075\u6C14\u4E4B\u529B\u53EF\u4EE5\u4EA7\u751F\u5E7B\u5883\uFF0C\u4EE5\u7075\u6C14\u4E3B\u4EBA\u7684\u610F\u5FD7\u9644\u52A0\u529B\u91CF\uFF0C\u4F46\u5176\u6D88\u8017\u4E5F\u662F\u76F8\u5F53\u53EF\u89C2\u7684\u3002"
+    basicATKMin: 0
+    basicATKMax: 0
+    basicSPD: 0
+    basicACC: 0
+    basicCRT: 0
+    interrupt: 0
+    skillID: 2208
+  - id: 2233
+    name: "\u5929\u542F\u5377\u8F74"
+    type: 0
+    description: "\u8BB0\u8F7D\u7740\u6CD5\u672F\u3010\u5929\u542F\u3011\u7684\u5377\u8F74\u3002\u53EC\u5524\u795E\u7684\u6124\u6012\uFF0C\u65E0\u5DEE\u522B\u5730\u653B\u51FB\u6240\u6709\u4EBA\u3002"
+    basicATKMin: 0
+    basicATKMax: 0
+    basicSPD: 0
+    basicACC: 0
+    basicCRT: 0
+    interrupt: 0
+    skillID: 2209
+  - id: 2234
+    name: "\u7075\u6C14\u8FC7\u8F7D\u5377\u8F74"
+    type: 0
+    description: "\u8BB0\u8F7D\u7740\u6CD5\u672F\u3010\u7075\u6C14\u8FC7\u8F7D\u3011\u7684\u5377\u8F74\u3002\u8FD9\u4E00\u6CD5\u672F\u867D\u7136\u53EF\u4EE5\u6682\u65F6\u4F7F\u7075\u529B\u8005\u53D8\u5F97\u65E0\u6BD4\u5F3A\u5927\uFF0C\u5374\u4E5F\u4F1A\u4ECE\u5185\u90E8\u5C06\u5176\u541E\u566C\uFF0C\u8FD9\u4FBF\u662F\u529B\u91CF\u672C\u8EAB\u7684\u4EE3\u4EF7\u5417\u3002"
+    basicATKMin: 0
+    basicATKMax: 0
+    basicSPD: 0
+    basicACC: 0
+    basicCRT: 0
+    interrupt: 0
+    skillID: 2210
+  - id: 2040
+    name: "\u7075\u566C\u4E4B\u5370"
+    type: 0
+    description: "\u638C\u63E1\u4E86\u79D8\u672F\u3010\u7075\u566C\u3011\u7684\u6807\u8BC6\u3002"
+    basicATKMin: 0
+    basicATKMax: 0
+    basicSPD: 0
+    basicACC: 0
+    basicCRT: 0
+    interrupt: 0
+    skillID: 2011
+  - id: 2041
+    name: "\u7075\u7206\u4E4B\u5370"
+    type: 0
+    description: "\u638C\u63E1\u4E86\u79D8\u672F\u3010\u7075\u7206\u3011\u7684\u6807\u8BC6\u3002"
+    basicATKMin: 0
+    basicATKMax: 0
+    basicSPD: 0
+    basicACC: 0
+    basicCRT: 0
+    interrupt: 0
+    skillID: 2012
+  - id: 2042
+    name: "\u7075\u529B\u89E3\u653E\u4E4B\u5370"
+    type: 0
+    description: "\u638C\u63E1\u4E86\u79D8\u672F\u3010\u7075\u529B\u89E3\u653E\u3011\u7684\u6807\u8BC6\u3002"
+    basicATKMin: 0
+    basicATKMax: 0
+    basicSPD: 0
+    basicACC: 0
+    basicCRT: 0
+    interrupt: 0
+    skillID: 2013
+  - id: 2140
+    name: "\u4E07\u9B54\u6563\u9B42\u4E4B\u5370"
+    type: 0
+    description: "\u638C\u63E1\u4E86\u79D8\u672F\u3010\u4E07\u9B54\u6563\u9B42\u3011\u7684\u6807\u8BC6\u3002"
+    basicATKMin: 0
+    basicATKMax: 0
+    basicSPD: 0
+    basicACC: 0
+    basicCRT: 0
+    interrupt: 0
+    skillID: 2111
+  - id: 2141
+    name: "\u6697\u6708\u5F71\u4E4B\u5370"
+    type: 0
+    description: "\u638C\u63E1\u4E86\u79D8\u672F\u3010\u6697\u6708\u5F71\u3011\u7684\u6807\u8BC6\u3002"
+    basicATKMin: 0
+    basicATKMax: 0
+    basicSPD: 0
+    basicACC: 0
+    basicCRT: 0
+    interrupt: 0
+    skillID: 2112
+  - id: 2240
+    name: "\u5938\u7236\u4E4B\u6012\u4E4B\u5370"
+    type: 0
+    description: "\u638C\u63E1\u4E86\u79D8\u672F\u3010\u5938\u7236\u4E4B\u6012\u3011\u7684\u6807\u8BC6\u3002"
+    basicATKMin: 0
+    basicATKMax: 0
+    basicSPD: 0
+    basicACC: 0
+    basicCRT: 0
+    interrupt: 0
+    skillID: 2211
+  - id: 2241
+    name: "\u9633\u5149\u76FE\u4E4B\u5370"
+    type: 0
+    description: "\u638C\u63E1\u4E86\u79D8\u672F\u3010\u9633\u5149\u76FE\u3011\u7684\u6807\u8BC6\u3002"
+    basicATKMin: 0
+    basicATKMax: 0
+    basicSPD: 0
+    basicACC: 0
+    basicCRT: 0
+    interrupt: 0
+    skillID: 2212
   - id: 4001
     name: "\u54A9\u54A9\u7684\u6124\u6012"
     type: 0
@@ -549,39 +923,6 @@ MonoBehaviour:
     basicCRT: 0
     interrupt: 0
     skillID: 4001
-  - id: 4002
-    name: "\u7075\u6C14\u7206\u53D1"
-    type: 0
-    description: "\u7075\u5C5E\u6027\u5927\u62DB"
-    basicATKMin: 200
-    basicATKMax: 255
-    basicSPD: 60
-    basicACC: 80
-    basicCRT: 0
-    interrupt: 0
-    skillID: 4002
-  - id: 4003
-    name: "\u4E07\u9B54\u566C\u9B42"
-    type: 0
-    description: "\u9634\u5C5E\u6027\u5927\u62DB"
-    basicATKMin: 190
-    basicATKMax: 200
-    basicSPD: 100
-    basicACC: 100
-    basicCRT: 0
-    interrupt: 0
-    skillID: 4003
-  - id: 4004
-    name: "\u5938\u7236\u4E4B\u6012"
-    type: 0
-    description: "\u9633\u5C5E\u6027\u5927\u62DB"
-    basicATKMin: 220
-    basicATKMax: 250
-    basicSPD: 80
-    basicACC: 90
-    basicCRT: 0
-    interrupt: 0
-    skillID: 4004
   - id: 4005
     name: "\u7EA2\u5149\u7B2C\u4E00\u4E2A\u6CD5\u672F"
     type: 0
