@@ -5,9 +5,10 @@ using System.Reflection;
 
 public abstract class Buff {
 
+	public int id{get{return data.id;}}
+	public int effectTurns;
 	protected BuffData data;
 	protected BattleObject source;
-	protected int effectTurns;
 
 	protected abstract void Execute();
 	protected abstract void Revert();	
@@ -24,7 +25,7 @@ public abstract class Buff {
 	}
 	
 	//check on every turn, see if buff still valid
-	public int Tick()
+	public void Tick()
 	{
 		if(effectTurns > 0)
 		{
@@ -39,8 +40,6 @@ public abstract class Buff {
 		{
 			Check(BuffTrigger.Ready);
 		}
-
-		return effectTurns;
 	}
 
 	/*-----BUFF CALLBACK-----*/

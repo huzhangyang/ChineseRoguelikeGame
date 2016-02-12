@@ -81,6 +81,10 @@ public class BattleFormula {
 		{
 			damagePack.OnCounter();
 		}
+		else if(!damagePack.isHit)//被闪避
+		{
+			damagePack.OnMiss();
+		}
 		else if(damagePack.isGuarded)//被防御[被防御，就不会被暴击]
 		{
 			damagePack.OnGuarded();
@@ -89,13 +93,9 @@ public class BattleFormula {
 		{
 			damagePack.OnCriticalHit();
 		}
-		else if(damagePack.isHit)//正常命中
+		else//正常命中
 		{
 			damagePack.OnHit();
-		}
-		else//被闪避
-		{
-			damagePack.OnMiss();
 		}
 	}
 	

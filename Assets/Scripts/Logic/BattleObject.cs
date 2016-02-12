@@ -143,13 +143,19 @@ public abstract class BattleObject : MonoBehaviour {
 				EventManager.Instance.PostEvent (BattleEvent.OnMPAutoRecover, args);
 			}
 		}
-		
+
+		List<Buff> toRemoveList = new List<Buff>();
 		foreach(Buff buff in buffList)
 		{
-			if(buff.Tick() == 0)
+			buff.Tick();
+			if(buff.effectTurns == 0)
 			{
-				buffList.Remove(buff);
-			}		
+				toRemoveList.Add(buff);
+			}
+		}
+		foreach(Buff buff in toRemoveList)
+		{
+			buffList.Remove(buff);	
 		}
 
 		availableCommands = Command.GetAvailableCommands(this);
@@ -173,7 +179,16 @@ public abstract class BattleObject : MonoBehaviour {
 	{
 		BuffData data = DataManager.Instance.GetSkillDataSet().GetBuffData(id);
 		Buff buff = Buff.CreateBuff(this, data, effectTurns);
-		buffList.Add(buff);
+
+		Buff duplicatedBuff = buffList.Find((Buff temp)=>{return temp.id == id;});
+		if(duplicatedBuff != null)
+		{
+			duplicatedBuff.effectTurns = Mathf.Max(effectTurns, duplicatedBuff.effectTurns);
+		}
+		else
+		{
+			buffList.Add(buff);
+		}
 	}
 
 	public string GetName()
