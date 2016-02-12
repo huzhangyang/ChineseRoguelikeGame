@@ -1650,11 +1650,11 @@ MonoBehaviour:
     type: 0
     description: "\u56DB\u5468\u9644\u6709\u73AF\u72B6\u5C16\u523A\u7684\u76FE\u3002\u5728\u4E0E\u517D\u6F2B\u957F\u7684\u6297\u4E89\u8FC7\u7A0B\u4E2D\u6709\u4EBA\u53D1\u660E\u4E86\u6B64\u7269\uFF0C\u60F3\u8981\u8BC1\u660E\u6BD4\u8D77\u8FDB\u653B\uFF0C\u9632\u5B88\u624D\u662F\u4E0E\u517D\u6218\u6597\u4E2D\u66F4\u91CD\u8981\u7684\uFF0C\u5374\u88AB\u5632\u7B11\u4E3A\u80C6\u5C0F\u9B3C\uFF0C\u6B66\u5668\u4E5F\u968F\u4E4B\u5931\u843D\u3002"
     basicATKMin: 32
-    basicATKMax: 55
+    basicATKMax: 40
     basicACC: 60
     basicCRT: 12
     basicSPD: 80
-    interrupt: 15
+    interrupt: 20
     skill1ID: 1604
     skill2ID: 1605
     skill3ID: 1606
@@ -1667,12 +1667,12 @@ MonoBehaviour:
     name: "\u5723\u76FE\u4E4B\u73AF+2"
     type: 0
     description: "\u56DB\u5468\u9644\u6709\u73AF\u72B6\u5C16\u523A\u7684\u76FE\u3002\u5728\u4E0E\u517D\u6F2B\u957F\u7684\u6297\u4E89\u8FC7\u7A0B\u4E2D\u6709\u4EBA\u53D1\u660E\u4E86\u6B64\u7269\uFF0C\u60F3\u8981\u8BC1\u660E\u6BD4\u8D77\u8FDB\u653B\uFF0C\u9632\u5B88\u624D\u662F\u4E0E\u517D\u6218\u6597\u4E2D\u66F4\u91CD\u8981\u7684\uFF0C\u5374\u88AB\u5632\u7B11\u4E3A\u80C6\u5C0F\u9B3C\uFF0C\u6B66\u5668\u4E5F\u968F\u4E4B\u5931\u843D\u3002"
-    basicATKMin: 64
-    basicATKMax: 90
+    basicATKMin: 48
+    basicATKMax: 60
     basicACC: 60
     basicCRT: 14
     basicSPD: 80
-    interrupt: 15
+    interrupt: 25
     skill1ID: 1604
     skill2ID: 1605
     skill3ID: 1606
@@ -1685,12 +1685,12 @@ MonoBehaviour:
     name: "\u5723\u76FE\u4E4B\u73AF+3"
     type: 0
     description: "\u56DB\u5468\u9644\u6709\u73AF\u72B6\u5C16\u523A\u7684\u76FE\u3002\u5728\u4E0E\u517D\u6F2B\u957F\u7684\u6297\u4E89\u8FC7\u7A0B\u4E2D\u6709\u4EBA\u53D1\u660E\u4E86\u6B64\u7269\uFF0C\u60F3\u8981\u8BC1\u660E\u6BD4\u8D77\u8FDB\u653B\uFF0C\u9632\u5B88\u624D\u662F\u4E0E\u517D\u6218\u6597\u4E2D\u66F4\u91CD\u8981\u7684\uFF0C\u5374\u88AB\u5632\u7B11\u4E3A\u80C6\u5C0F\u9B3C\uFF0C\u6B66\u5668\u4E5F\u968F\u4E4B\u5931\u843D\u3002"
-    basicATKMin: 96
-    basicATKMax: 125
+    basicATKMin: 64
+    basicATKMax: 80
     basicACC: 60
     basicCRT: 16
     basicSPD: 80
-    interrupt: 15
+    interrupt: 30
     skill1ID: 1604
     skill2ID: 1605
     skill3ID: 1606
@@ -1703,12 +1703,12 @@ MonoBehaviour:
     name: "\u5723\u76FE\u4E4B\u73AF+4"
     type: 0
     description: "\u56DB\u5468\u9644\u6709\u73AF\u72B6\u5C16\u523A\u7684\u76FE\u3002\u5728\u4E0E\u517D\u6F2B\u957F\u7684\u6297\u4E89\u8FC7\u7A0B\u4E2D\u6709\u4EBA\u53D1\u660E\u4E86\u6B64\u7269\uFF0C\u60F3\u8981\u8BC1\u660E\u6BD4\u8D77\u8FDB\u653B\uFF0C\u9632\u5B88\u624D\u662F\u4E0E\u517D\u6218\u6597\u4E2D\u66F4\u91CD\u8981\u7684\uFF0C\u5374\u88AB\u5632\u7B11\u4E3A\u80C6\u5C0F\u9B3C\uFF0C\u6B66\u5668\u4E5F\u968F\u4E4B\u5931\u843D\u3002"
-    basicATKMin: 128
-    basicATKMax: 160
+    basicATKMin: 72
+    basicATKMax: 100
     basicACC: 60
     basicCRT: 18
     basicSPD: 80
-    interrupt: 15
+    interrupt: 35
     skill1ID: 1604
     skill2ID: 1605
     skill3ID: 1606
@@ -1721,12 +1721,12 @@ MonoBehaviour:
     name: "\u5723\u76FE\u4E4B\u73AF+5"
     type: 0
     description: "\u56DB\u5468\u9644\u6709\u73AF\u72B6\u5C16\u523A\u7684\u76FE\u3002\u5728\u4E0E\u517D\u6F2B\u957F\u7684\u6297\u4E89\u8FC7\u7A0B\u4E2D\u6709\u4EBA\u53D1\u660E\u4E86\u6B64\u7269\uFF0C\u60F3\u8981\u8BC1\u660E\u6BD4\u8D77\u8FDB\u653B\uFF0C\u9632\u5B88\u624D\u662F\u4E0E\u517D\u6218\u6597\u4E2D\u66F4\u91CD\u8981\u7684\uFF0C\u5374\u88AB\u5632\u7B11\u4E3A\u80C6\u5C0F\u9B3C\uFF0C\u6B66\u5668\u4E5F\u968F\u4E4B\u5931\u843D\u3002"
-    basicATKMin: 160
-    basicATKMax: 195
+    basicATKMin: 108
+    basicATKMax: 140
     basicACC: 60
     basicCRT: 20
     basicSPD: 80
-    interrupt: 15
+    interrupt: 40
     skill1ID: 1604
     skill2ID: 1605
     skill3ID: 1606
