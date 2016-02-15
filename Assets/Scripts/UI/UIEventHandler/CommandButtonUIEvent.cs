@@ -7,14 +7,22 @@ public class CommandButtonUIEvent : MonoBehaviour {
 	public Text nameText;
 	public Text descriptionText;
 
-	public void Init(string name, string description)
+	public void Init(string name, string description, bool availAble)
 	{
 		nameText.text = name;
 		descriptionText.text = description;
-		GetComponent<Button>().onClick.AddListener(delegate()  
-		{  
-			OnClick(name);  
-		});		  
+
+		if(availAble)
+		{
+			GetComponent<Button>().onClick.AddListener(delegate(){OnClick(name);});	
+			nameText.color = Color.black;
+			descriptionText.color = Color.black;
+		}
+		else
+		{
+			nameText.color = Color.gray;
+			descriptionText.color = Color.gray;
+		}  
 	}
 
 	void OnClick(string name)

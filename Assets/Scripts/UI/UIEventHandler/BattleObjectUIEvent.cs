@@ -69,6 +69,12 @@ public class BattleObjectUIEvent : MonoBehaviour {
 		HPText.text = current + "/" + HPBar.maxValue;
 		this.transform.DOPunchScale(new Vector2(0.1f, 0.1f), 1);
 	}
+
+	public void SetHPBar(int current, int max)
+	{
+		HPBar.maxValue = max;
+		SetHPBar(current);
+	}
 	
 	public void InitAvatar()
 	{

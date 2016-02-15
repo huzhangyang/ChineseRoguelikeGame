@@ -42,9 +42,17 @@ public abstract class BattleObject : MonoBehaviour {
 
 	public int maxHP{get{return BattleAttribute.MaxHP(this);}}
 
-	public int maxHPAdd = 0;
-	public float maxHPMulti = 0;
-	public int speedAdd = 0;
+	private float _maxHPMulti;
+	public float maxHPMulti
+	{
+		get{return _maxHPMulti;}
+		set{
+			float previousMulti = 1 + _maxHPMulti;
+			_maxHPMulti = value;
+			currentHP = Mathf.RoundToInt(currentHP * (1 + _maxHPMulti) / previousMulti);
+			UIEvent.SetHPBar(currentHP, maxHP);
+		}
+	}
 	public float speedMulti = 0;
 	public float attackMulti = 0;
 	public float defenceMulti = 0;
@@ -68,10 +76,11 @@ public abstract class BattleObject : MonoBehaviour {
 	public List<Command> availableCommands = new List<Command>();
 	public List<Buff> buffList = new List<Buff>();
 	
-	public bool isGuarding = false;
-	public bool isEvading = false;
-	public bool isEnemy = false;
-	public float buffFrozenTime = 0;
+	public bool isGuarding = false;//是否正在防御
+	public bool isEvading = false;//是否正在躲避
+	public bool isEnemy = false;//是否敌人
+	public bool isHealingBottleUsed = false;//是否使用过元素瓶
+	public float buffFrozenTime = 0;//冰冻BUFF剩余时间
 
 	protected BattleObjectUIEvent UIEvent;
 	protected ObjectData data;
@@ -177,7 +186,6 @@ public abstract class BattleObject : MonoBehaviour {
 	{
 		SkillHelper.CheckBuff (BuffTrigger.Action, this);
 		//decide command
-		commandToExecute.source = this;
 		BattleManager.Instance.AddToCommandQueue (commandToExecute);
 		//post process
 		timelinePosition = -commandToExecute.postExecutionRecover * BattleAttribute.Speed(this);//后退距离 = 帧 * 步进

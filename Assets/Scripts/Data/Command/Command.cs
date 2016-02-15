@@ -62,6 +62,11 @@ public abstract class Command {
 		availableCommands.Add(new CommandNone());
 		availableCommands.Add(new CommandEscape());
 
+		foreach(Command command in availableCommands)
+		{
+			command.source = bo;
+		}
+
 		return availableCommands;
 	}
 }
