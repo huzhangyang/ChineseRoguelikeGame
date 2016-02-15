@@ -1,29 +1,30 @@
 using UnityEngine;
-using System;
 using System.Collections;
 
-public class BuffFrozen:Buff
+public class BuffBurnt:Buff
 {	
 	protected override void Init()
-	{	
-		source.buffFrozenTime = 5;
-		
+	{
+		source.attackMulti -= 0.5f;
+		source.defenceMulti -= 0.5f;
+
 		MessageEventArgs args = new MessageEventArgs ();
-		args.AddMessage("Message",string.Format("{0}被冰冻了！", source.GetName()));
+		args.AddMessage("Message",string.Format("{0}因为烧伤，攻防下降！", source.GetName()));
 		EventManager.Instance.PostEvent (BattleEvent.OnBuffActivated, args);
 	}
-
+	
 	protected override void Execute()
 	{
-
+		
 	}
 	
 	protected override void Revert()
-	{	
-		source.buffFrozenTime = 0;
-
+	{
+		source.attackMulti += 0.5f;
+		source.defenceMulti += 0.5f;
+		
 		MessageEventArgs args = new MessageEventArgs ();
-		args.AddMessage("Message",string.Format("{0}解除了冰冻！", source.GetName()));
+		args.AddMessage("Message",string.Format("{0}不再烧伤了！", source.GetName()));
 		EventManager.Instance.PostEvent (BattleEvent.OnBuffDeactivated, args);
 	}
 }

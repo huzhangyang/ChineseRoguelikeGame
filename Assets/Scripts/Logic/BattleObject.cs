@@ -40,9 +40,18 @@ public abstract class BattleObject : MonoBehaviour {
 		}
 	}
 
-	public int maxHP{get{return Mathf.RoundToInt((BattleAttribute.MaxHP(this) + maxHPAdd) * (1 + maxHPMulti));}}
+	public int maxHP{get{return BattleAttribute.MaxHP(this);}}
+
 	public int maxHPAdd = 0;
 	public float maxHPMulti = 0;
+	public int speedAdd = 0;
+	public float speedMulti = 0;
+	public float attackMulti = 0;
+	public float defenceMulti = 0;
+	public float accuracyMulti = 0;
+	public float evasionMulti = 0;
+	public float critMulti = 0;
+	public float critResistMulti = 0;
 
 	public int stamina{get{return data.stamina;}}
 	public int power{get{return data.power;}}
@@ -61,7 +70,7 @@ public abstract class BattleObject : MonoBehaviour {
 	
 	public bool isGuarding = false;
 	public bool isEvading = false;
-	public bool isBuffFrozen = false;
+	public float buffFrozenTime = 0;
 
 	protected BattleObjectUIEvent UIEvent;
 	protected ObjectData data;
@@ -81,8 +90,8 @@ public abstract class BattleObject : MonoBehaviour {
 	/*更新时间轴*/
 	protected void OnTimelineUpdate(MessageEventArgs args)
 	{
-		if(isBuffFrozen)
-			timelinePosition += 0;
+		if(buffFrozenTime > 0)
+			buffFrozenTime -= Time.deltaTime;
 		else if(battleStatus == BattleStatus.Prepare)
 			timelinePosition += BattleAttribute.Speed(this);
 		else if(battleStatus == BattleStatus.Action)

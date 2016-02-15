@@ -26,7 +26,7 @@ public class BuffWeak:Buff
 			source.maxHPMulti += 0.5f;
 			MessageEventArgs args = new MessageEventArgs ();
 			args.AddMessage("Message",string.Format("{0}不再气虚了！", source.GetName()));
-			EventManager.Instance.PostEvent (BattleEvent.OnBuffActivated, args);
+			EventManager.Instance.PostEvent (BattleEvent.OnBuffDeactivated, args);
 		}
 	}
 }
