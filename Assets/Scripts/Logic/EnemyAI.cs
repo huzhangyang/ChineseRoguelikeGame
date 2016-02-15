@@ -12,7 +12,7 @@ public class EnemyAI : MonoBehaviour {
 		self = GetComponent<Enemy>();
 	}
 
-	public Command AISelectCommand()
+	public void AISelectCommand()
 	{
 		float hpPercent = self.currentHP / (float)self.maxHP;
 
@@ -44,23 +44,20 @@ public class EnemyAI : MonoBehaviour {
 				command = AIAttack();
 		}
 
-		switch(command.targetType)
+		self.commandToExecute = command;
+		AISelectTarget();
+	}
+
+	public void AISelectTarget()
+	{
+		bool result = SkillHelper.FillCommandTarget(self);
+		if(!result)
 		{
-		case TargetType.Self:
-			command.targetList.Add(self);
-			break;
-		case TargetType.SingleEnemy:
-		case TargetType.SingleAlly:
-			command.targetList.Add(AISelectTarget());
-			break;
-		case TargetType.AllEnemies:
-			command.targetList = new List<BattleObject>(BattleManager.Instance.GetPlayerList().ToArray());
-			break;
-		case TargetType.AllAllies:
-			command.targetList = new List<BattleObject>(BattleManager.Instance.GetEnemyList().ToArray());
-			break;
+			if(self.commandToExecute.targetType == TargetType.SingleEnemy)
+				self.commandToExecute.targetList.Add(BattleManager.Instance.GetARandomEnemy(self));
+			else
+				self.commandToExecute.targetList.Add(self);
 		}
-		return command;
 	}
 
 	public Command AIAttack()
@@ -80,10 +77,5 @@ public class EnemyAI : MonoBehaviour {
 		Command command = new CommandUseHealing(self.GetItemCount(1));
 		command.targetList.Add(self);
 		return command;
-	}
-
-	public BattleObject AISelectTarget()
-	{
-		return BattleManager.Instance.GetARandomEnemy (self);
 	}
 }

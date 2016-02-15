@@ -90,5 +90,33 @@ public class SkillHelper
 			}
 		}
 	}
-	
+
+	public static bool FillCommandTarget(BattleObject source)
+	{
+		switch(source.commandToExecute.targetType)
+		{
+		case TargetType.SingleEnemy:
+		case TargetType.SingleAlly:
+			return false;
+		case TargetType.Self:
+			source.commandToExecute.targetList.Add(source);
+			break;
+		case TargetType.AllEnemies:
+			source.commandToExecute.targetList = BattleManager.Instance.GetAllEnemies(source);
+			break;
+		case TargetType.AllAllies:
+			source.commandToExecute.targetList = BattleManager.Instance.GetAllAllies(source);
+			break;
+		case TargetType.EveryoneElse:
+			source.commandToExecute.targetList = BattleManager.Instance.GetEveryoneElse(source);
+			break;
+		case TargetType.Everyone:
+			source.commandToExecute.targetList = BattleManager.Instance.GetEveryone();
+			break;
+		case TargetType.Random:
+			source.commandToExecute.targetList.Add(BattleManager.Instance.GetARandomEnemy(source));
+			break;
+		}
+		return true;
+	}
 }

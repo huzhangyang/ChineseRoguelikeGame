@@ -70,6 +70,7 @@ public abstract class BattleObject : MonoBehaviour {
 	
 	public bool isGuarding = false;
 	public bool isEvading = false;
+	public bool isEnemy = false;
 	public float buffFrozenTime = 0;
 
 	protected BattleObjectUIEvent UIEvent;

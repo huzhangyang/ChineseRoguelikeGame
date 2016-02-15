@@ -11,6 +11,7 @@ public class Enemy : BattleObject {
 	public void Init(int enemyID)
 	{
 		data = DataManager.Instance.GetEnemyDataSet ().GetEnemyData (enemyID).Clone();
+		isEnemy = true;
 
 		UIEvent = this.GetComponent<BattleObjectUIEvent>();
 		UIEvent.Init(enemyID);
@@ -27,7 +28,7 @@ public class Enemy : BattleObject {
 
 	protected override void SelectCommand()
 	{
-		commandToExecute = AI.AISelectCommand();
+		AI.AISelectCommand();
 		battleStatus = BattleStatus.Action;
 	}
 }
