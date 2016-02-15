@@ -42,9 +42,17 @@ public abstract class BattleObject : MonoBehaviour {
 
 	public int maxHP{get{return BattleAttribute.MaxHP(this);}}
 
-	public int maxHPAdd = 0;
-	public float maxHPMulti = 0;
-	public int speedAdd = 0;
+	private float _maxHPMulti;
+	public float maxHPMulti
+	{
+		get{return _maxHPMulti;}
+		set{
+			float previousMulti = 1 + _maxHPMulti;
+			_maxHPMulti = value;
+			currentHP = Mathf.RoundToInt(currentHP * (1 + _maxHPMulti) / previousMulti);
+			UIEvent.SetHPBar(currentHP, maxHP);
+		}
+	}
 	public float speedMulti = 0;
 	public float attackMulti = 0;
 	public float defenceMulti = 0;

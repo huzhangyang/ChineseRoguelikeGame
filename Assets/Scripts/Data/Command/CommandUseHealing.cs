@@ -6,9 +6,9 @@ public class CommandUseHealing : Command
 	public CommandUseHealing(int itemCount)
 	{
 		commandType = CommandType.Item;
-		commandName = "原力之瓶(" + itemCount + ")";
-		commandDescription = "使用原力之瓶来回复生命值";
-		targetType = TargetType.SingleAlly;
+		commandName = "灵气之壶(" + itemCount + ")";
+		commandDescription = "服下灵气结晶，提升生命力";
+		targetType = TargetType.Self;
 		preExecutionSpeed = GlobalDataStructure.BATTLE_MINSPEED;
 		postExecutionRecover = 0;
 		
@@ -17,14 +17,18 @@ public class CommandUseHealing : Command
 
 	public override void Execute()
 	{
-		if(targetList.Equals(source))
-			executeMessage = source.GetName() + "喝下了原力之瓶！";
-		else
-			executeMessage = source.GetName() + "给" + targetList[0].GetName() +"喝下了原力之瓶！";
+		executeMessage = source.GetName() + "服下了灵气结晶！";
 		SendExecuteMessage ();
 		foreach(BattleObject target in targetList)
 		{
-			BattleFormula.Heal(target, (int)(target.maxHP * GlobalDataStructure.HP_RECOVER_THRESHOLD - target.currentHP));
+			if(target.GetBattleType() == BattleType.Magical)
+			{
+				target.maxHPMulti += 0.5f;
+			}
+			else
+			{
+				BattleFormula.Heal(target, (int)(target.maxHP * GlobalDataStructure.HP_RECOVER_THRESHOLD - target.currentHP));
+			}
 			source.ConsumeItem(itemID);
 		}
 	}

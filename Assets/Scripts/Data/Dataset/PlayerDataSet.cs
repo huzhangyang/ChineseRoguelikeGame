@@ -66,6 +66,7 @@ public class PlayerData : ObjectData {
 			magicIDs.Add(2010);
 			magicIDs.Add(2110);
 			magicIDs.Add(2210);
+			items.Add(1,3);
 			break;
 		}
 		this.id = playerID;

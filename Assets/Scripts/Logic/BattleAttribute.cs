@@ -10,15 +10,15 @@ public class BattleAttribute {
 	//最大生命值
 	public static int MaxHP(BattleObject bo)
 	{
-		float maxHP = Mathf.Pow(bo.stamina, 1.4f) * 4;
-		return Mathf.RoundToInt((maxHP + bo.maxHPAdd) * (1 + bo.maxHPMulti));
+		int maxHP = Mathf.RoundToInt(Mathf.Pow(bo.stamina, 1.4f) * 4);
+		return Mathf.RoundToInt(maxHP * (1 + bo.maxHPMulti));
 	}
 
 	//时间轴速度
 	public static int Speed(BattleObject bo)
 	{
-		float speed = Mathf.Log10(bo.agility) * 80;
-		return Mathf.RoundToInt((speed + bo.speedAdd) * (1 + bo.speedMulti));
+		int speed = Mathf.RoundToInt(Mathf.Log10(bo.agility) * 80);
+		return Mathf.RoundToInt(speed * (1 + bo.speedMulti));
 	}
 
 	//攻击倍率
