@@ -14,7 +14,7 @@ public class Enemy : BattleObject {
 		isEnemy = true;
 
 		UIEvent = this.GetComponent<BattleObjectUIEvent>();
-		UIEvent.Init(enemyID);
+		UIEvent.Init(((EnemyData)data).imageID);
 		UIEvent.InitEnemyHPBar(maxHP, data.battleType);
 		currentHP = maxHP;
 

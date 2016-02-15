@@ -30,18 +30,18 @@ public class MapWindow: MonoBehaviour {
 		{
 			args.AddMessage("Man",true);
 			args.AddMessage("Girl",true);
-			args.AddMessage("Enemy",new int[3]{10,10,10});
+			args.AddMessage("Enemy",new int[3]{101,102,103});
 		}
 		else if(battleType == 1)
 		{
 			args.AddMessage("Man",true);
 			args.AddMessage("Girl",true);
-			args.AddMessage("Enemy",new int[1]{11});
+			args.AddMessage("Enemy",new int[1]{104});
 		}
 		else 
 		{
 			args.AddMessage("Man",true);
-			args.AddMessage("Enemy",new int[1]{12});
+			args.AddMessage("Enemy",new int[1]{105});
 		}
 		EventManager.Instance.PostEvent (BattleEvent.OnBattleEnter, args);
 	}
