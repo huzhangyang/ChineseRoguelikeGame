@@ -31,7 +31,7 @@ public class BattleFormula {
 		}
 		else
 		{
-			MagicData magicData = DataManager.Instance.GetItemDataSet().magicDataSet.Find((MagicData _data)=>{return _data.skillID == skillID;});
+			MagicData magicData = DataManager.Instance.GetItemDataSet().GetMagicDataBySkillID(skillID);
 			damagePack.dmg = Random.Range(magicData.basicATKMin, magicData.basicATKMax + 1) * skillData.ATKMultiplier * BattleAttribute.AttackMulti(source);//伤害值
 			damagePack.hit = magicData.basicACC * skillData.ACCMultiplier + BattleAttribute.ExtraAccuracy(source);//命中率
 			damagePack.crit = magicData.basicCRT * skillData.CRTMultiplier + BattleAttribute.ExtraCrit(source);//暴击率

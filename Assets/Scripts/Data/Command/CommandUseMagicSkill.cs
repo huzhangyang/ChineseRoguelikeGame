@@ -19,9 +19,10 @@ public class CommandUseMagicSkill : Command
 
 	public override void Execute()
 	{
-		SkillData skillData = DataManager.Instance.GetSkillDataSet ().GetSkillData (skillID);
-		float cost = skillData.postSPDMultiplier >= 1 ? skillData.postSPDMultiplier :source.maxHP * skillData.postSPDMultiplier;
-		source.currentHP -= (int)Mathf.Round(cost);
+		MagicData magicData = DataManager.Instance.GetItemDataSet().GetMagicDataBySkillID(skillID);
+		SkillData skillData = DataManager.Instance.GetSkillDataSet().GetSkillData(skillID);
+		float cost = magicData.cost >= 1 ? magicData.cost :source.maxHP * magicData.cost;
+		source.currentHP -= Mathf.RoundToInt(cost);
 
 		executeMessage = source.GetName() + "使用了" + skillData.name + "!\n" + "消耗了" + cost + "点灵力!" ;
 		SendExecuteMessage ();

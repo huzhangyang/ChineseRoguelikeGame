@@ -41,6 +41,11 @@ public class ItemDataSet : ScriptableObject
 		return null;
 	}
 
+	public MagicData GetMagicDataBySkillID(int skillID)
+	{
+		return magicDataSet.Find((MagicData _data)=>{return _data.skillID == skillID;});
+	}
+
 	public bool IsWeapon(int itemID)
 	{
 		if(itemID >= 1000 && itemID < 2000)
@@ -102,5 +107,6 @@ public class MagicData:ItemData{
 	public int basicACC;//基准命中率
 	public int basicCRT;//基准暴击率
 	public int interrupt;//法术打断值
+	public float cost;//法术消耗
 	public int skillID;
 }
