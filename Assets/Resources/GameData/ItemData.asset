@@ -1866,7 +1866,7 @@ MonoBehaviour:
     basicACC: 80
     basicCRT: 10
     interrupt: 10
-    cost: 10
+    cost: 5
     skillID: 2001
   - id: 2110
     name: "\u51B0\u5C01\u672F\u5377\u8F74"
@@ -1878,7 +1878,7 @@ MonoBehaviour:
     basicACC: 100
     basicCRT: 8
     interrupt: 8
-    cost: 8
+    cost: 3
     skillID: 2101
   - id: 2210
     name: "\u9633\u708E\u672F\u5377\u8F74"
@@ -1890,7 +1890,7 @@ MonoBehaviour:
     basicACC: 90
     basicCRT: 12
     interrupt: 12
-    cost: 9
+    cost: 4
     skillID: 2201
   - id: 2020
     name: "\u5F3A\u529B\u7075\u6C14\u7BAD\u4E4B\u4E66"
@@ -1902,7 +1902,7 @@ MonoBehaviour:
     basicACC: 80
     basicCRT: 10
     interrupt: 10
-    cost: 30
+    cost: 20
     skillID: 2002
   - id: 2021
     name: "\u7075\u6C14\u5F39\u4E4B\u4E66"
@@ -1914,7 +1914,7 @@ MonoBehaviour:
     basicACC: 70
     basicCRT: 6
     interrupt: 6
-    cost: 50
+    cost: 30
     skillID: 2003
   - id: 2022
     name: "\u7075\u6C14\u4E71\u5C04\u5377\u8F74"
@@ -1926,7 +1926,7 @@ MonoBehaviour:
     basicACC: 60
     basicCRT: 25
     interrupt: 10
-    cost: 70
+    cost: 50
     skillID: 2004
   - id: 2023
     name: "\u7075\u6C14\u5FAA\u73AF\u5377\u8F74"
@@ -1950,7 +1950,7 @@ MonoBehaviour:
     basicACC: 95
     basicCRT: 9
     interrupt: 8
-    cost: 24
+    cost: 12
     skillID: 2102
   - id: 2121
     name: "\u5438\u661F\u672F\u4E4B\u4E66"
@@ -1962,7 +1962,7 @@ MonoBehaviour:
     basicACC: 75
     basicCRT: 0
     interrupt: 0
-    cost: 36
+    cost: 18
     skillID: 2103
   - id: 2122
     name: "\u72C2\u98CE\u67AA\u5377\u8F74"
@@ -1974,7 +1974,7 @@ MonoBehaviour:
     basicACC: 120
     basicCRT: 20
     interrupt: 20
-    cost: 48
+    cost: 24
     skillID: 2104
   - id: 2123
     name: "\u7075\u529B\u4FB5\u8680\u5377\u8F74"
@@ -1998,7 +1998,7 @@ MonoBehaviour:
     basicACC: 90
     basicCRT: 12
     interrupt: 12
-    cost: 25
+    cost: 16
     skillID: 2202
   - id: 2221
     name: "\u96F7\u66B4\u672F\u4E4B\u4E66"
@@ -2010,7 +2010,7 @@ MonoBehaviour:
     basicACC: 50
     basicCRT: 25
     interrupt: 8
-    cost: 36
+    cost: 32
     skillID: 2203
   - id: 2222
     name: "\u5723\u5149\u5377\u8F74"
@@ -2046,7 +2046,7 @@ MonoBehaviour:
     basicACC: 80
     basicCRT: 10
     interrupt: 10
-    cost: 100
+    cost: 80
     skillID: 2006
   - id: 2031
     name: "\u5F3A\u529B\u7075\u6C14\u5F39\u4E4B\u4E66"
@@ -2058,7 +2058,7 @@ MonoBehaviour:
     basicACC: 70
     basicCRT: 6
     interrupt: 6
-    cost: 120
+    cost: 100
     skillID: 2007
   - id: 2032
     name: "\u7075\u6C14\u5171\u9E23\u4E4B\u4E66"
@@ -2106,7 +2106,7 @@ MonoBehaviour:
     basicACC: 105
     basicCRT: 9
     interrupt: 8
-    cost: 120
+    cost: 48
     skillID: 2106
   - id: 2131
     name: "\u6697\u4E4B\u539F\u529B\u4E4B\u4E66"
@@ -2142,7 +2142,7 @@ MonoBehaviour:
     basicACC: 100
     basicCRT: 0
     interrupt: 0
-    cost: 88
+    cost: 66
     skillID: 2109
   - id: 2134
     name: "\u7075\u6C14\u5077\u53D6\u5377\u8F74"
@@ -2154,7 +2154,7 @@ MonoBehaviour:
     basicACC: 80
     basicCRT: 0
     interrupt: 180
-    cost: 66
+    cost: 0
     skillID: 2110
   - id: 2230
     name: "\u7EC8\u6781\u9633\u708E\u672F\u4E4B\u4E66"
@@ -2166,7 +2166,7 @@ MonoBehaviour:
     basicACC: 95
     basicCRT: 12
     interrupt: 12
-    cost: 120
+    cost: 64
     skillID: 2206
   - id: 2231
     name: "\u5149\u4E4B\u539F\u529B\u4E4B\u4E66"
@@ -2178,7 +2178,7 @@ MonoBehaviour:
     basicACC: 75
     basicCRT: 28
     interrupt: 19
-    cost: 90
+    cost: 80
     skillID: 2207
   - id: 2232
     name: "\u65E5\u4E4B\u9886\u57DF\u4E4B\u4E66"
@@ -2202,7 +2202,7 @@ MonoBehaviour:
     basicACC: 66
     basicCRT: 0
     interrupt: 12
-    cost: 150
+    cost: 120
     skillID: 2209
   - id: 2234
     name: "\u7075\u6C14\u8FC7\u8F7D\u5377\u8F74"
@@ -2304,13 +2304,13 @@ MonoBehaviour:
     name: "\u54A9\u54A9\u7684\u6124\u6012"
     type: 0
     description: "\u7075\u5C5E\u6027\uFF0C\u9020\u6210\u968F\u673A\u4F24\u5BB3"
-    basicATKMin: 1
-    basicATKMax: 99
+    basicATKMin: 10
+    basicATKMax: 30
     basicSPD: 100
     basicACC: 100
     basicCRT: 0
     interrupt: 0
-    cost: 0
+    cost: 5
     skillID: 4001
   - id: 4005
     name: "\u7EA2\u5149\u7B2C\u4E00\u4E2A\u6CD5\u672F"
