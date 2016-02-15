@@ -15,6 +15,7 @@ public enum BattleEvent
 	OnMessageUpdate,//更新战斗信息
 
 	OnBuffActivated,//有BUFF被激活
+	OnBuffDeactivated,//有BUFF被激活
 	OnEffectExecuted,//有特效被激活
 	OnHPAutoRecover,//HP自动恢复
 	OnMPAutoRecover,//MP自动恢复

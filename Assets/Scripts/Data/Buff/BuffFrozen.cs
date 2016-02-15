@@ -21,7 +21,7 @@ public class BuffFrozen:Buff
 
 		MessageEventArgs args = new MessageEventArgs ();
 		args.AddMessage("Message",string.Format("{0}解除了冰冻！", source.GetName()));
-		EventManager.Instance.PostEvent (BattleEvent.OnBuffActivated, args);
+		EventManager.Instance.PostEvent (BattleEvent.OnBuffDeactivated, args);
 	}
 
 	IEnumerator RemoveBuffFrozen()

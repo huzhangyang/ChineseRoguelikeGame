@@ -16,5 +16,12 @@ public class BuffWeak:Buff
 	
 	protected override void Revert()
 	{
+		if(source.GetBattleType() != BattleType.Physical)
+		{		
+			source.maxHPMulti += 0.5f;
+			MessageEventArgs args = new MessageEventArgs ();
+			args.AddMessage("Message",string.Format("{0}不再气虚了！", source.GetName()));
+			EventManager.Instance.PostEvent (BattleEvent.OnBuffActivated, args);
+		}
 	}
 }
