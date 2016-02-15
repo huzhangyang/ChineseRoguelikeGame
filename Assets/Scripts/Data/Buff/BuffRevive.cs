@@ -3,6 +3,10 @@ using System.Collections;
 
 public class BuffRevive:Buff
 {	
+	protected override void Init()
+	{
+	}
+
 	protected override void Execute()
 	{
 		source.currentHP = 1;

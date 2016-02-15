@@ -4,14 +4,19 @@ using System.Collections;
 
 public class BuffFrozen:Buff
 {	
-	protected override void Execute()
-	{
+	protected override void Init()
+	{	
 		GlobalManager.Instance.StartCoroutine(RemoveBuffFrozen());
 		source.isBuffFrozen = true;
-
+		
 		MessageEventArgs args = new MessageEventArgs ();
 		args.AddMessage("Message",string.Format("{0}被冰冻了！", source.GetName()));
 		EventManager.Instance.PostEvent (BattleEvent.OnBuffActivated, args);
+	}
+
+	protected override void Execute()
+	{
+
 	}
 	
 	protected override void Revert()
