@@ -6,8 +6,7 @@ public class SkillEffectBackStab:SkillEffect
 	protected override void Execute()
 	{
 		BattleObject target = source.damage.target;
-		if(target.timelinePosition == 0 ||
-		   (target.timelinePosition >= GlobalDataStructure.BATTLE_TIMELINE_READY && target.timelinePosition <= GlobalDataStructure.BATTLE_TIMELINE_MAX))
+		if(target.timelinePosition == 0 || target.timelinePosition >= GlobalDataStructure.BATTLE_TIMELINE_READY)
 		{
 			source.damage.forceHit = true;
 		}

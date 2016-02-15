@@ -1637,7 +1637,7 @@ MonoBehaviour:
   - id: 8
     name: "\u51FB\u5012"
     description: "\u56DE\u5230\u65F6\u95F4\u8F740\u70B9\uFF0C\u5E76\u4E14\u5BB9\u6613\u88AB\u66B4\u51FB"
-    trigger: 0
+    trigger: 4
     buffEffect: Knockout
   - id: 9
     name: "\u72C2\u4E71"
