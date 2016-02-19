@@ -62,6 +62,10 @@ public class ItemDataSet : ScriptableObject
 			return false;
 	}
 
+	public bool IsWeaponSkill(int skillID)
+	{
+		return GetMagicDataBySkillID(skillID) == null;
+	}
 }
 
 [System.Serializable]

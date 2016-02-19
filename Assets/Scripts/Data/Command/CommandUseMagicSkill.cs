@@ -11,8 +11,8 @@ public class CommandUseMagicSkill : Command
 		commandName = skillData.name;
 		commandDescription = skillData.description;
 		targetType = skillData.targetType;
-		preExecutionSpeed = (int)(magicData.basicSPD * skillData.preSPDMultiplier / 3);
-		postExecutionRecover = 0;
+		preExecutionSpeed = Mathf.RoundToInt(magicData.basicSPD * skillData.preSPDMultiplier);
+		postExecutionRecover = Mathf.RoundToInt(6000 / magicData.basicSPD * skillData.postSPDMultiplier);
 		
 		this.skillID = skillID;
 	}
