@@ -30,20 +30,25 @@ public class SkillHelper
 
 		if(isWeaponDamage)
 		{
-			WeaponData weaponData = DataManager.Instance.GetItemDataSet().GetWeaponData(source.GetWeapon());
+			CheckWeaponEffect(trigger, source);
+		}
+	}
 
-			for(int i = 0; i < weaponData.effectID.Count; i++)
+	public static void CheckWeaponEffect(EffectTrigger trigger, BattleObject source)
+	{
+		WeaponData weaponData = DataManager.Instance.GetItemDataSet().GetWeaponData(source.GetWeapon());
+		
+		for(int i = 0; i < weaponData.effectID.Count; i++)
+		{
+			if(weaponData.effectID[i] == 0)continue;
+			
+			int random = UnityEngine.Random.Range(0, 101);
+			if(random <= weaponData.effectPercent[i])
 			{
-				if(weaponData.effectID[i] == 0)continue;
-
-				int random = UnityEngine.Random.Range(0, 101);
-				if(random <= weaponData.effectPercent[i])
+				SkillEffectData effectData = DataManager.Instance.GetSkillDataSet().GetEffectData(weaponData.effectID[i]);
+				if(effectData.trigger == trigger)
 				{
-					SkillEffectData effectData = DataManager.Instance.GetSkillDataSet().GetEffectData(weaponData.effectID[i]);
-					if(effectData.trigger == trigger)
-					{
-						SkillEffect.ExecuteSkillEffect(source, effectData.effectString);
-					}
+					SkillEffect.ExecuteSkillEffect(source, effectData.effectString);
 				}
 			}
 		}

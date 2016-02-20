@@ -95,8 +95,8 @@ MonoBehaviour:
     buffID: 00000000
     buffPercent: 00000000
     buffTurns: 00000000
-    effectID: 02000000
-    effectPercent: 01000000
+    effectID: 0100000002000000
+    effectPercent: 6400000001000000
   - id: 1101
     name: "\u9C7C\u80A0+1"
     type: 0
@@ -113,8 +113,8 @@ MonoBehaviour:
     buffID: 00000000
     buffPercent: 00000000
     buffTurns: 00000000
-    effectID: 02000000
-    effectPercent: 01000000
+    effectID: 0100000002000000
+    effectPercent: 6400000001000000
   - id: 1102
     name: "\u9C7C\u80A0+2"
     type: 0
@@ -131,8 +131,8 @@ MonoBehaviour:
     buffID: 00000000
     buffPercent: 00000000
     buffTurns: 00000000
-    effectID: 02000000
-    effectPercent: 02000000
+    effectID: 0100000002000000
+    effectPercent: 6400000002000000
   - id: 1103
     name: "\u9C7C\u80A0+3"
     type: 0
@@ -149,8 +149,8 @@ MonoBehaviour:
     buffID: 00000000
     buffPercent: 00000000
     buffTurns: 00000000
-    effectID: 02000000
-    effectPercent: 03000000
+    effectID: 0100000002000000
+    effectPercent: 6400000003000000
   - id: 1104
     name: "\u9C7C\u80A0+4"
     type: 0
@@ -167,8 +167,8 @@ MonoBehaviour:
     buffID: 00000000
     buffPercent: 00000000
     buffTurns: 00000000
-    effectID: 02000000
-    effectPercent: 04000000
+    effectID: 0100000002000000
+    effectPercent: 6400000004000000
   - id: 1105
     name: "\u9C7C\u80A0+5"
     type: 0
@@ -185,8 +185,8 @@ MonoBehaviour:
     buffID: 00000000
     buffPercent: 00000000
     buffTurns: 00000000
-    effectID: 02000000
-    effectPercent: 05000000
+    effectID: 0100000002000000
+    effectPercent: 6400000005000000
   - id: 1110
     name: "\u9ED1\u94C1\u94A9\u722A"
     type: 0
@@ -203,8 +203,8 @@ MonoBehaviour:
     buffID: 00000000
     buffPercent: 00000000
     buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    effectID: 01000000
+    effectPercent: 64000000
   - id: 1111
     name: "\u9ED1\u94C1\u94A9\u722A+1"
     type: 0
@@ -221,8 +221,8 @@ MonoBehaviour:
     buffID: 00000000
     buffPercent: 00000000
     buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    effectID: 01000000
+    effectPercent: 64000000
   - id: 1112
     name: "\u9ED1\u94C1\u94A9\u722A+2"
     type: 0
@@ -239,8 +239,8 @@ MonoBehaviour:
     buffID: 00000000
     buffPercent: 00000000
     buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    effectID: 01000000
+    effectPercent: 64000000
   - id: 1113
     name: "\u9ED1\u94C1\u94A9\u722A+3"
     type: 0
@@ -257,8 +257,8 @@ MonoBehaviour:
     buffID: 00000000
     buffPercent: 00000000
     buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    effectID: 01000000
+    effectPercent: 64000000
   - id: 1114
     name: "\u9ED1\u94C1\u94A9\u722A+4"
     type: 0
@@ -275,8 +275,8 @@ MonoBehaviour:
     buffID: 00000000
     buffPercent: 00000000
     buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    effectID: 01000000
+    effectPercent: 64000000
   - id: 1115
     name: "\u9ED1\u94C1\u94A9\u722A+5"
     type: 0
@@ -293,8 +293,8 @@ MonoBehaviour:
     buffID: 00000000
     buffPercent: 00000000
     buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    effectID: 01000000
+    effectPercent: 64000000
   - id: 1120
     name: "\u51B0\u971C\u523A\u5251"
     type: 0
@@ -311,8 +311,8 @@ MonoBehaviour:
     buffID: 00000000
     buffPercent: 00000000
     buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    effectID: 01000000
+    effectPercent: 64000000
   - id: 1121
     name: "\u51B0\u971C\u523A\u5251+1"
     type: 0
@@ -329,8 +329,8 @@ MonoBehaviour:
     buffID: 00000000
     buffPercent: 00000000
     buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    effectID: 01000000
+    effectPercent: 64000000
   - id: 1122
     name: "\u51B0\u971C\u523A\u5251+2"
     type: 0
@@ -347,8 +347,8 @@ MonoBehaviour:
     buffID: 00000000
     buffPercent: 00000000
     buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    effectID: 01000000
+    effectPercent: 64000000
   - id: 1123
     name: "\u51B0\u971C\u523A\u5251+3"
     type: 0
@@ -365,8 +365,8 @@ MonoBehaviour:
     buffID: 00000000
     buffPercent: 00000000
     buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    effectID: 01000000
+    effectPercent: 64000000
   - id: 1124
     name: "\u51B0\u971C\u523A\u5251+4"
     type: 0
@@ -383,8 +383,8 @@ MonoBehaviour:
     buffID: 00000000
     buffPercent: 00000000
     buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    effectID: 01000000
+    effectPercent: 64000000
   - id: 1125
     name: "\u51B0\u971C\u523A\u5251+5"
     type: 0
@@ -401,8 +401,8 @@ MonoBehaviour:
     buffID: 00000000
     buffPercent: 00000000
     buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    effectID: 01000000
+    effectPercent: 64000000
   - id: 1200
     name: "\u65E5\u7F61\xB7\u6708\u715E"
     type: 0
