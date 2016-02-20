@@ -534,9 +534,9 @@ MonoBehaviour:
     postSPDMultiplier: 1
     interruptMultiplier: 0
     maxCombo: 0
-    buffID: 
-    buffPercent: 
-    buffTurns: 
+    buffID: 06000000
+    buffPercent: 14000000
+    buffTurns: ffffffff
     effectID: 
     effectPercent: 
   - id: 1507
@@ -551,9 +551,9 @@ MonoBehaviour:
     postSPDMultiplier: 1
     interruptMultiplier: 0
     maxCombo: 0
-    buffID: 
-    buffPercent: 
-    buffTurns: 
+    buffID: 09000000
+    buffPercent: 14000000
+    buffTurns: 05000000
     effectID: 
     effectPercent: 
   - id: 1601
@@ -1807,12 +1807,12 @@ MonoBehaviour:
   - id: 102
     name: "\u5FC5\u66B4\u51FB"
     description: "\u82E5\u5BF9\u65B9\u672A\u683C\u6321\uFF0C\u5219\u5F3A\u5236\u66B4\u51FB"
-    trigger: 1
+    trigger: 2
     effectString: ForceCrit
   - id: 103
     name: "\u65E0\u89C6\u9632\u5FA1\u72B6\u6001"
     description: "\u65E0\u89C6\u5BF9\u65B9\u7684\u9632\u5FA1\u72B6\u6001\u3002\u547D\u4E2D\u7387\u4E0E\u4F24\u5BB3\u503C\u7167\u5E38\u8BA1\u7B97"
-    trigger: 1
+    trigger: 2
     effectString: IgnoreDefence
   - id: 104
     name: "\u4E09\u8FDE\u51FB"
@@ -1830,7 +1830,7 @@ MonoBehaviour:
     trigger: 1
     effectString: ForceInterrupt
   - id: 107
-    name: "\u65E0\u89C6\u9632\u5FA1\u529B"
+    name: "\u7834\u7532"
     description: "\u5BF9\u65B9\u9632\u5FA1\u529B\u89C6\u4E3A0"
-    trigger: 1
-    effectString: None
+    trigger: 2
+    effectString: IgnoreArmor

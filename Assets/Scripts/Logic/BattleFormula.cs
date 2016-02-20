@@ -41,18 +41,20 @@ public class BattleFormula {
 		SkillHelper.CheckSkillEffect (EffectTrigger.BeforeHit, source);//检查命中前生效的特效
 
 		//计算真实命中、暴击、伤害
-		damagePack.dmg *= (1 - BattleAttribute.DefenceMulti(target));
+		if(!damagePack.ignoreArmor)
+		{
+			damagePack.dmg *= (1 - BattleAttribute.DefenceMulti(target));
+		}
 		damagePack.hit -= BattleAttribute.ExtraEvasion(target);
 		damagePack.crit = Mathf.Max(0, damagePack.crit - BattleAttribute.ExtraCritResist(target));
 
-		//判断防御反击
-		if(target.commandToExecute.commandType == CommandType.Defence)
-		{
-			damagePack.isCountered = true;
-		}
-
 		if(!damagePack.ignoreDefence)
 		{
+			//判断防御反击
+			if(target.commandToExecute.commandType == CommandType.Defence)
+			{
+				damagePack.isCountered = true;
+			}
 			//加入防御效果
 			if(target.isEvading)
 			{

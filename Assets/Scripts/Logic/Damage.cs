@@ -27,6 +27,7 @@ public class Damage
 	public bool forceMiss;//强制不中（优先级低于强制命中）
 	public bool forceCrit;//强制暴击
 	public bool ignoreDefence;//无视防御
+	public bool ignoreArmor;//无视护甲
 	
 	public Damage(BattleObject source, BattleObject target, int skillID, bool isWeaponDamage)
 	{
