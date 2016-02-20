@@ -48,7 +48,7 @@ public class Damage
 	public void OnCounter()
 	{
 		MessageEventArgs args = new MessageEventArgs();
-		args.AddMessage("Name",source.GetName());
+		args.AddMessage("Name",target.GetName());
 		EventManager.Instance.PostEvent(BattleEvent.BattleObjectCounter, args);
 		
 		BattleFormula.OnDamage(source, BattleFormula.GetCounterDamage(source), 0);

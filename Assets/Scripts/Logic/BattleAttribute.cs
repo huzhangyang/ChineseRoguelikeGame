@@ -30,7 +30,7 @@ public class BattleAttribute {
 	//防御倍率
 	public static float DefenceMulti(BattleObject bo)
 	{
-		return Mathf.Max(bo.toughness / (100f + bo.toughness) + bo.defenceMulti, 1);
+		return Mathf.Min(bo.toughness / (100f + bo.toughness) + bo.defenceMulti, 1);
 	}
 
 	//命中率
