@@ -418,8 +418,8 @@ MonoBehaviour:
     buffID: 
     buffPercent: 
     buffTurns: 
-    effectID: 
-    effectPercent: 
+    effectID: 6b000000
+    effectPercent: 64000000
   - id: 1405
     name: "\u7EDD\u6280\uFF1A\u5F00\u5929\u8F9F\u5730"
     description: "\u5A01\u9707\u516B\u65B9\u7684\u4E00\u51FB\uFF0C\u5927\u51E0\u7387\u5C06\u5BF9\u65B9\u51FB\u5012\u3002"
@@ -1817,12 +1817,12 @@ MonoBehaviour:
   - id: 104
     name: "\u4E09\u8FDE\u51FB"
     description: "\u8FFD\u52A02\u6B21\u4F24\u5BB3\u7ED3\u7B97"
-    trigger: 3
+    trigger: 2
     effectString: Combo3
   - id: 105
     name: "\u4E8C\u8FDE\u51FB"
     description: "\u8FFD\u52A01\u6B21\u4F24\u5BB3\u7ED3\u7B97"
-    trigger: 3
+    trigger: 2
     effectString: Combo2
   - id: 106
     name: "\u5FC5\u6253\u65AD"

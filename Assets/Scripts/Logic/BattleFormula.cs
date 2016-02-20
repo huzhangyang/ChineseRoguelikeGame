@@ -1,4 +1,4 @@
-using UnityEngine;
+ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
@@ -24,7 +24,8 @@ public class BattleFormula {
 		if(isWeaponDamage)
 		{
 			WeaponData weaponData = DataManager.Instance.GetItemDataSet().GetWeaponData(source.GetWeapon());
-			damagePack.dmg = Random.Range(weaponData.basicATKMin, weaponData.basicATKMax + 1) * skillData.ATKMultiplier * BattleAttribute.AttackMulti(source);//伤害值
+			damagePack.minDmg = weaponData.basicATKMin * skillData.ATKMultiplier * BattleAttribute.AttackMulti(source);//最小伤害值
+			damagePack.maxDmg = weaponData.basicATKMax * skillData.ATKMultiplier * BattleAttribute.AttackMulti(source);//最大伤害值
 			damagePack.hit = weaponData.basicACC * skillData.ACCMultiplier + BattleAttribute.ExtraAccuracy(source);//命中率
 			damagePack.crit = weaponData.basicCRT * skillData.CRTMultiplier + BattleAttribute.ExtraCrit(source);//暴击率
 			damagePack.interrupt = weaponData.interrupt * skillData.interruptMultiplier * 100;//打断
@@ -32,7 +33,8 @@ public class BattleFormula {
 		else
 		{
 			MagicData magicData = DataManager.Instance.GetItemDataSet().GetMagicDataBySkillID(skillID);
-			damagePack.dmg = Random.Range(magicData.basicATKMin, magicData.basicATKMax + 1) * skillData.ATKMultiplier * BattleAttribute.AttackMulti(source);//伤害值
+			damagePack.minDmg = magicData.basicATKMin * skillData.ATKMultiplier * BattleAttribute.AttackMulti(source);//最小伤害值
+			damagePack.maxDmg = magicData.basicATKMax * skillData.ATKMultiplier * BattleAttribute.AttackMulti(source);//最大伤害值
 			damagePack.hit = magicData.basicACC * skillData.ACCMultiplier + BattleAttribute.ExtraAccuracy(source);//命中率
 			damagePack.crit = magicData.basicCRT * skillData.CRTMultiplier + BattleAttribute.ExtraCrit(source);//暴击率
 			damagePack.interrupt = magicData.interrupt * skillData.interruptMultiplier * 100;
@@ -43,7 +45,8 @@ public class BattleFormula {
 		//计算真实命中、暴击、伤害
 		if(!damagePack.ignoreArmor)
 		{
-			damagePack.dmg *= (1 - BattleAttribute.DefenceMulti(target));
+			damagePack.minDmg *= (1 - BattleAttribute.DefenceMulti(target));
+			damagePack.maxDmg *= (1 - BattleAttribute.DefenceMulti(target));
 		}
 		damagePack.hit -= BattleAttribute.ExtraEvasion(target);
 		damagePack.crit = Mathf.Max(0, damagePack.crit - BattleAttribute.ExtraCritResist(target));
@@ -64,40 +67,45 @@ public class BattleFormula {
 			if(target.isGuarding)
 			{
 				damagePack.isGuarded = true;
-				damagePack.dmg /= 2;
+				damagePack.minDmg /= 2;
+				damagePack.maxDmg /= 2;
 				damagePack.interrupt = 0;
 			}
 		}
 
-		//判断是否命中，是否暴击
-		damagePack.isHit = Random.Range(0,101) <= damagePack.hit?true:false;
-		damagePack.isCrit = Random.Range(0,101) <= damagePack.crit?true:false;
-		damagePack.isHit = damagePack.forceHit ? true : damagePack.forceMiss ? false : damagePack.isHit;
-		damagePack.isCrit = damagePack.forceCrit ? true : damagePack.isCrit;
-		
-		SkillHelper.CheckSkillEffect (EffectTrigger.OnDamage, source);//检查结算中生效的特效
-		//damagePack.Log ();
-
-		//处理最终结果
-		if(damagePack.isCountered)//被反击
+		for(int i = 0; i < damagePack.combo; i++)
 		{
-			damagePack.OnCounter();
-		}
-		else if(!damagePack.isHit)//被闪避
-		{
-			damagePack.OnMiss();
-		}
-		else if(damagePack.isGuarded)//被防御[被防御，就不会被暴击]
-		{
-			damagePack.OnGuarded();
-		}
-		else if(damagePack.isCrit)//暴击
-		{
-			damagePack.OnCriticalHit();
-		}
-		else//正常命中
-		{
-			damagePack.OnHit();
+			//判断是否命中，是否暴击,随机实际伤害值
+			damagePack.dmg = Random.Range(Mathf.RoundToInt(damagePack.minDmg), Mathf.RoundToInt(damagePack.maxDmg) + 1);
+			damagePack.isHit = Random.Range(0,101) <= damagePack.hit?true:false;
+			damagePack.isCrit = Random.Range(0,101) <= damagePack.crit?true:false;
+			damagePack.isHit = damagePack.forceHit ? true : damagePack.forceMiss ? false : damagePack.isHit;
+			damagePack.isCrit = damagePack.forceCrit ? true : damagePack.isCrit;
+			
+			SkillHelper.CheckSkillEffect (EffectTrigger.OnDamage, source);//检查结算中生效的特效
+			//damagePack.Log ();
+			
+			//处理最终结果
+			if(damagePack.isCountered)//被反击
+			{
+				damagePack.OnCounter();
+			}
+			else if(!damagePack.isHit)//被闪避
+			{
+				damagePack.OnMiss();
+			}
+			else if(damagePack.isGuarded)//被防御[被防御，就不会被暴击]
+			{
+				damagePack.OnGuarded();
+			}
+			else if(damagePack.isCrit)//暴击
+			{
+				damagePack.OnCriticalHit();
+			}
+			else//正常命中
+			{
+				damagePack.OnHit();
+			}
 		}
 	}
 	

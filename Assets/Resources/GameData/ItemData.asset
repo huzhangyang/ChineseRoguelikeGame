@@ -305,7 +305,7 @@ MonoBehaviour:
     basicCRT: 15
     basicSPD: 200
     interrupt: 1
-    skill1ID: 1102
+    skill1ID: 1101
     skill2ID: 1105
     skill3ID: 1106
     buffID: 00000000
@@ -323,7 +323,7 @@ MonoBehaviour:
     basicCRT: 15
     basicSPD: 210
     interrupt: 1
-    skill1ID: 1102
+    skill1ID: 1101
     skill2ID: 1105
     skill3ID: 1106
     buffID: 00000000
@@ -341,7 +341,7 @@ MonoBehaviour:
     basicCRT: 15
     basicSPD: 220
     interrupt: 1
-    skill1ID: 1102
+    skill1ID: 1101
     skill2ID: 1105
     skill3ID: 1106
     buffID: 00000000
@@ -359,7 +359,7 @@ MonoBehaviour:
     basicCRT: 15
     basicSPD: 230
     interrupt: 1
-    skill1ID: 1102
+    skill1ID: 1101
     skill2ID: 1105
     skill3ID: 1106
     buffID: 00000000
@@ -377,7 +377,7 @@ MonoBehaviour:
     basicCRT: 15
     basicSPD: 240
     interrupt: 1
-    skill1ID: 1102
+    skill1ID: 1101
     skill2ID: 1105
     skill3ID: 1106
     buffID: 00000000
@@ -395,7 +395,7 @@ MonoBehaviour:
     basicCRT: 15
     basicSPD: 250
     interrupt: 1
-    skill1ID: 1102
+    skill1ID: 1101
     skill2ID: 1105
     skill3ID: 1106
     buffID: 00000000

@@ -12,7 +12,7 @@ public class CommandSwitchWeapon : Command
 		preExecutionSpeed = GlobalDataStructure.BATTLE_STANDARDSPEED;
 		postExecutionRecover = 0;
 		
-		itemID = 1100;
+		itemID = 1125;
 	}
 
 	public override void Execute()

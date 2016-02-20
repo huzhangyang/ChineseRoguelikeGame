@@ -13,7 +13,10 @@ public class Damage
 	public int skillID;//造成伤害的技能ID（如果有）
 	public bool isWeaponDamage;//伤害是通过武器造成的
 
-	public float dmg;//伤害值
+	public int combo = 1;//连击次数
+	public float maxDmg;//最大伤害值
+	public float minDmg;//最小伤害值
+	public float dmg;//实际伤害值
 	public float hit;//命中率[0..100]
 	public float crit;//暴击率[0..100]
 	public float interrupt;
