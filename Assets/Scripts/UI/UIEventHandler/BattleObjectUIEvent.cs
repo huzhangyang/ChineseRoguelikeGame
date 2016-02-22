@@ -5,18 +5,19 @@ using System.Collections;
 
 public class BattleObjectUIEvent : MonoBehaviour {
 
-	private bool allowClick;
+	public Image objectImage;
+	public Image shadowImage;
 	private Image avatarImage;
-	private Image objectImage;
 	private Slider HPBar;
 	private Text HPText;
+
+	private bool allowClick;
 
 	public void Init(int playerID) 
 	{
 		allowClick = false;
-		objectImage = this.GetComponent<Image>();
 		objectImage.sprite = Resources.Load(GlobalDataStructure.PATH_UIIMAGE_BATTLE + "Avatar" + playerID.ToString("00"), typeof(Sprite)) as Sprite;
-		objectImage.rectTransform.sizeDelta = new Vector2 (objectImage.sprite.rect.width, objectImage.sprite.rect.height);
+		shadowImage.rectTransform.sizeDelta = new Vector2 (objectImage.sprite.rect.width, objectImage.sprite.rect.height);
 		InitAvatar();
 		GetComponent<Button>().onClick.AddListener(delegate(){OnClick();});		
 	}
@@ -98,22 +99,24 @@ public class BattleObjectUIEvent : MonoBehaviour {
 	{
 		avatarImage.transform.DOScale(new Vector3(1.2f, 1.2f), 1).SetLoops(-1,LoopType.Yoyo);
 		avatarImage.transform.SetAsLastSibling ();
+		shadowImage.sprite = Resources.Load(GlobalDataStructure.PATH_UIIMAGE_COMMON + "AvatarBack_Light", typeof(Sprite)) as Sprite;
 	}
 
 	public void EndReady()
 	{
 		avatarImage.transform.DOKill ();
 		avatarImage.transform.localScale = new Vector3 (1, 1, 1);
+		shadowImage.sprite = Resources.Load(GlobalDataStructure.PATH_UIIMAGE_COMMON + "AvatarBack_Dark", typeof(Sprite)) as Sprite;
 	}
 
 	public void BeginExecute()
 	{
-		//objectImage.transform.localScale = new Vector3 (1.2f, 1.2f, 1);
+		shadowImage.sprite = Resources.Load(GlobalDataStructure.PATH_UIIMAGE_COMMON + "AvatarBack_Light", typeof(Sprite)) as Sprite;
 	}
 
 	public void EndExecute()
 	{
-		//objectImage.transform.localScale = new Vector3 (1, 1, 1);
+		shadowImage.sprite = Resources.Load(GlobalDataStructure.PATH_UIIMAGE_COMMON + "AvatarBack_Dark", typeof(Sprite)) as Sprite;
 	}
 
 	public void EnableClick()

@@ -108,10 +108,7 @@ public class BattleWindow: MonoBehaviour {
 			player.transform.SetParent(playerPanel.transform, false);
 			player.GetComponent<Player>().Init(0);			
 			
-			if(args.ContainsMessage("Girl"))
-			{
-				player.transform.DOLocalMoveX(-250,0.5f);
-			}
+			player.transform.DOLocalMoveX(-250,0.5f);
 		}
 
 		if(args.ContainsMessage("Girl"))
@@ -120,10 +117,7 @@ public class BattleWindow: MonoBehaviour {
 			player.transform.SetParent(playerPanel.transform, false);
 			player.GetComponent<Player>().Init(1);
 			
-			if(args.ContainsMessage("Man"))
-			{
-				player.transform.DOLocalMoveX(250,0.5f);
-			}
+			player.transform.DOLocalMoveX(250,0.5f);
 		}
 
 		if(args.ContainsMessage("Enemy"))
