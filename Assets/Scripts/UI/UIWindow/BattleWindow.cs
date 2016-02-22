@@ -69,6 +69,7 @@ public class BattleWindow: MonoBehaviour {
 	{
 		commandPanel.SetActive(true);
 		subCommandPanel.SetActive (true);
+		commandPanel.GetComponent<CommandPanelUIEvent>().SetButtonActive();
 	}
 
 	void OnBasicCommandSelected(MessageEventArgs args)

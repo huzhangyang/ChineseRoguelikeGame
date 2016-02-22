@@ -10,6 +10,7 @@ GameObject:
   - 224: {fileID: 22424156}
   - 222: {fileID: 22213320}
   - 114: {fileID: 11461210}
+  - 114: {fileID: 11429518}
   m_Layer: 5
   m_Name: CommandPanel
   m_TagString: Untagged
@@ -625,6 +626,21 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &11429518
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 101830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2029babd07efeca438978eda722dad0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  commandAttack: {fileID: 11497354}
+  commandDefence: {fileID: 11424280}
+  commandItem: {fileID: 11427030}
+  commandStrategy: {fileID: 11488790}
 --- !u!114 &11436674
 MonoBehaviour:
   m_ObjectHideFlags: 1
