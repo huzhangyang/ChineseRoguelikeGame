@@ -13,6 +13,16 @@ public class CommandButtonUIEvent : MonoBehaviour {
 	public Text post;
 	public Text kck;
 
+	void OnEnable() 
+	{
+		EventManager.Instance.RegisterEvent(BattleEvent.OnCommandClicked, OnCommandClicked);
+	}
+	
+	void OnDisable () 
+	{
+		EventManager.Instance.UnRegisterEvent(BattleEvent.OnCommandClicked, OnCommandClicked);
+	}
+
 	public void Init(Command command, bool availAble)
 	{
 		nameText.text = command.commandName;
@@ -64,8 +74,8 @@ public class CommandButtonUIEvent : MonoBehaviour {
 		if(availAble)
 		{
 			GetComponent<Button>().onClick.AddListener(delegate(){OnClick();});	
-			nameText.color = Color.black;
-			descriptionText.color = Color.black;
+			nameText.color = Color.white;
+			descriptionText.color = Color.white;
 		}
 		else
 		{
@@ -81,4 +91,15 @@ public class CommandButtonUIEvent : MonoBehaviour {
 		EventManager.Instance.PostEvent (BattleEvent.OnCommandClicked, args);
 	}
 
+	void OnCommandClicked(MessageEventArgs args)
+	{
+		if(args.GetMessage<string>("CommandName") == nameText.text)
+		{
+			this.GetComponent<Image>().sprite = Resources.Load(GlobalDataStructure.PATH_UIIMAGE_COMMON + "Box_Light", typeof(Sprite)) as Sprite;
+		}
+		else
+		{
+			this.GetComponent<Image>().sprite = Resources.Load(GlobalDataStructure.PATH_UIIMAGE_COMMON + "Box_Dark", typeof(Sprite)) as Sprite;
+		}
+	}
 }
