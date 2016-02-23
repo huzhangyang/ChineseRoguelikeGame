@@ -49,8 +49,8 @@ public class BattleObjectUIEvent : MonoBehaviour {
 	{
 		GameObject bar = Instantiate(Resources.Load(GlobalDataStructure.PATH_UIPREFAB_BATTLE + "EnemyHPBar")) as GameObject;
 		bar.transform.SetParent(this.transform, false);
-		bar.transform.localPosition = new Vector3(0, objectImage.rectTransform.sizeDelta.y / 2, 0); 
-		((RectTransform)bar.transform).sizeDelta = new Vector2 (objectImage.rectTransform.sizeDelta.x / 2, 32);
+		bar.transform.localPosition = new Vector3(0, shadowImage.rectTransform.sizeDelta.y / 2, 0); 
+		((RectTransform)bar.transform).sizeDelta = new Vector2 (shadowImage.rectTransform.sizeDelta.x / 2, 32);
 		HPBar = bar.GetComponent<Slider>();
 		HPBar.maxValue = max;
 		HPBar.value = max;
