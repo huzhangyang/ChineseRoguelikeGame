@@ -16,7 +16,7 @@ MonoBehaviour:
     id: 0
     talentID: 0
     natureID: 0
-    battleType: 0
+    battleType: 2
     stamina: 0
     power: 0
     agility: 0
@@ -37,7 +37,7 @@ MonoBehaviour:
     id: 101
     talentID: 0
     natureID: 0
-    battleType: 0
+    battleType: 2
     stamina: 10
     power: 10
     agility: 10
@@ -58,7 +58,7 @@ MonoBehaviour:
     id: 102
     talentID: 0
     natureID: 0
-    battleType: 2
+    battleType: 0
     stamina: 12
     power: 12
     agility: 8
@@ -100,7 +100,7 @@ MonoBehaviour:
     id: 104
     talentID: 0
     natureID: 0
-    battleType: 2
+    battleType: 0
     stamina: 99
     power: 50
     agility: 50
