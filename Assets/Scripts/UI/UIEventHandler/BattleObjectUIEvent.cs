@@ -121,7 +121,14 @@ public class BattleObjectUIEvent : MonoBehaviour {
 
 	public void EnableClick()
 	{
-		objectImage.DOColor(new Color(0.5f,0.5f,0.5f), 1f).SetLoops(-1,LoopType.Yoyo);
+		if(DOTween.IsTweening(objectImage))
+		{
+			DOTween.Restart(objectImage);
+		}
+		else
+		{
+			objectImage.DOColor(new Color(0.5f,0.5f,0.5f), 1f).SetLoops(-1,LoopType.Yoyo);
+		}
 		allowClick = true;
 	}
 
