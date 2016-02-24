@@ -469,8 +469,8 @@ MonoBehaviour:
     buffID: 
     buffPercent: 
     buffTurns: 
-    effectID: 
-    effectPercent: 
+    effectID: 65000000
+    effectPercent: 64000000
   - id: 1503
     name: "\u53CC\u5203\u4E8C\u6BB5\u6253"
     description: "\u5229\u7528\u5F13\u7684\u5203\u90E8\u53D1\u8D77\u653B\u51FB\uFF0C\u4E0D\u6D88\u8017\u5F39\u836F\u3002"
@@ -602,9 +602,9 @@ MonoBehaviour:
     postSPDMultiplier: .300000012
     interruptMultiplier: 1
     maxCombo: 0
-    buffID: 
-    buffPercent: 
-    buffTurns: 
+    buffID: 0a000000
+    buffPercent: 64000000
+    buffTurns: 01000000
     effectID: 
     effectPercent: 
   - id: 1604
@@ -619,9 +619,9 @@ MonoBehaviour:
     postSPDMultiplier: 1
     interruptMultiplier: 1
     maxCombo: 0
-    buffID: 
-    buffPercent: 
-    buffTurns: 
+    buffID: 07000000
+    buffPercent: 0a000000
+    buffTurns: 03000000
     effectID: 
     effectPercent: 
   - id: 1605
@@ -636,9 +636,9 @@ MonoBehaviour:
     postSPDMultiplier: 1
     interruptMultiplier: 0
     maxCombo: 0
-    buffID: 
-    buffPercent: 
-    buffTurns: 
+    buffID: 07000000
+    buffPercent: 64000000
+    buffTurns: 03000000
     effectID: 
     effectPercent: 
   - id: 1606
@@ -656,8 +656,8 @@ MonoBehaviour:
     buffID: 
     buffPercent: 
     buffTurns: 
-    effectID: 
-    effectPercent: 
+    effectID: 6500000066000000
+    effectPercent: 6400000064000000
   - id: 1607
     name: "\u6218\u6597\u8282\u594F\u63A7\u5236"
     description: "\u6709\u6761\u4E0D\u7D0A\u5730\u63A7\u5236\u6218\u6597\u8282\u594F\u5427\uFF01"
@@ -673,13 +673,13 @@ MonoBehaviour:
     buffID: 
     buffPercent: 
     buffTurns: 
-    effectID: 
-    effectPercent: 
+    effectID: 0b000000
+    effectPercent: 64000000
   - id: 1608
     name: "\u5145\u503C"
     description: "\u6CA1\u94B1\u73A9\u4E2A\u6BDB\u7EBF\uFF01"
     skillType: 0
-    targetType: 1
+    targetType: 2
     ATKMultiplier: 1
     ACCMultiplier: 1
     CRTMultiplier: 1
@@ -690,13 +690,13 @@ MonoBehaviour:
     buffID: 
     buffPercent: 
     buffTurns: 
-    effectID: 
-    effectPercent: 
+    effectID: 0c000000
+    effectPercent: 64000000
   - id: 1609
     name: "\u66F4\u6539\u9700\u6C42"
     description: "\u6211\u8981\u52A0\u5165\u4E00\u6761\u4E34\u65F6\u9700\u6C42\uFF01"
     skillType: 0
-    targetType: 1
+    targetType: 7
     ATKMultiplier: 1
     ACCMultiplier: 1
     CRTMultiplier: 1
@@ -707,8 +707,8 @@ MonoBehaviour:
     buffID: 
     buffPercent: 
     buffTurns: 
-    effectID: 
-    effectPercent: 
+    effectID: 0d000000
+    effectPercent: 64000000
   - id: 2001
     name: "\u7075\u6C14\u7BAD"
     description: "\u5C06\u7075\u6C14\u6C47\u805A\u6210\u7BAD\u7684\u5F62\u72B6\u5C04\u5411\u5BF9\u624B\uFF0C\u5BF9\u5176\u9020\u6210\u7075\u5C5E\u6027\u4F24\u5BB3\u3002"
@@ -1044,9 +1044,9 @@ MonoBehaviour:
     postSPDMultiplier: 0
     interruptMultiplier: 1
     maxCombo: 0
-    buffID: 
-    buffPercent: 
-    buffTurns: 
+    buffID: 0a000000
+    buffPercent: 14000000
+    buffTurns: 01000000
     effectID: 
     effectPercent: 
   - id: 2108
@@ -1231,9 +1231,9 @@ MonoBehaviour:
     postSPDMultiplier: 0
     interruptMultiplier: 1
     maxCombo: 0
-    buffID: 
-    buffPercent: 
-    buffTurns: 
+    buffID: 05000000
+    buffPercent: 14000000
+    buffTurns: 05000000
     effectID: 
     effectPercent: 
   - id: 2207
@@ -1248,9 +1248,9 @@ MonoBehaviour:
     postSPDMultiplier: 0
     interruptMultiplier: 1
     maxCombo: 0
-    buffID: 
-    buffPercent: 
-    buffTurns: 
+    buffID: 0b000000
+    buffPercent: 14000000
+    buffTurns: ffffffff
     effectID: 
     effectPercent: 
   - id: 2208
@@ -1316,9 +1316,9 @@ MonoBehaviour:
     postSPDMultiplier: 0
     interruptMultiplier: 1
     maxCombo: 0
-    buffID: 
-    buffPercent: 
-    buffTurns: 
+    buffID: 0e000000
+    buffPercent: 14000000
+    buffTurns: 05000000
     effectID: 
     effectPercent: 
   - id: 2212
@@ -1799,6 +1799,21 @@ MonoBehaviour:
     description: "\u989D\u5916\u9020\u62109\u6B21\u4F24\u5BB3\uFF0C\u6BCF\u6B21\u653B\u51FB\u968F\u673A\u76EE\u6807"
     trigger: 3
     effectString: CrazyShot
+  - id: 11
+    name: "\u56FA\u5B9A\u6BD4\u4F8B\u4F24\u5BB3"
+    description: "\u56FA\u5B9A\u5BF9\u654C\u65B9\u9020\u621010%\uFF08BOSS\u51CF\u534A\uFF09\u4F24\u5BB3"
+    trigger: 1
+    effectString: FixedDamage
+  - id: 12
+    name: "\u91D1\u94B1\u51B3\u5B9A\u4F24\u5BB3"
+    description: "\u6839\u636E\u5F53\u524D\u6211\u65B9\u91D1\u94B1\u51B3\u5B9A\u4F24\u5BB3\u503C"
+    trigger: 1
+    effectString: MoneyDamage
+  - id: 13
+    name: "\u968F\u673A\u9644\u52A0BUFF"
+    description: "\u968F\u673A\u4E3A\u76EE\u6807\u9644\u52A0BUFF"
+    trigger: 3
+    effectString: AddRandomBuff
   - id: 101
     name: "\u5FC5\u4E2D"
     description: "\u5F3A\u5236\u547D\u4E2D"
