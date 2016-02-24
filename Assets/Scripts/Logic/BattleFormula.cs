@@ -93,7 +93,9 @@ public class BattleFormula {
 	{
 		if(amount < 0) amount = 0;
 		target.currentHP += amount;
-		
+
+		target.GetComponent<BattleObjectUIEvent>().OnHeal();
+
 		MessageEventArgs args = new MessageEventArgs();
 		args.AddMessage("Name", target.GetName());
 		args.AddMessage("Amount", amount);
@@ -106,13 +108,21 @@ public class BattleFormula {
 		target.currentHP -= Mathf.RoundToInt(target.damageTaken.dmg);
 		//timeline interrupt
 		target.timelinePosition -= Mathf.RoundToInt(target.damageTaken.interrupt);
-		if(target.timelinePosition < GlobalDataStructure.BATTLE_TIMELINE_READY)
+		if(target.battleStatus == BattleStatus.Action && target.timelinePosition < GlobalDataStructure.BATTLE_TIMELINE_READY)
+		{
 			target.battleStatus = BattleStatus.Prepare;
+			target.timelinePosition = 0;
+			//BattleManager.Instance.RemoveFromCommandQueue(target.commandToExecute);
+			MessageEventArgs args = new MessageEventArgs();
+			args.AddMessage("Name", target.GetName());
+			EventManager.Instance.PostEvent(BattleEvent.BattleObjectInterrupted, args);
+		}
+		target.GetComponent<BattleObjectUIEvent>().OnDamage();
 		//send message
-		MessageEventArgs args = new MessageEventArgs();
-		args.AddMessage("Name", target.GetName());
-		args.AddMessage("Damage", Mathf.RoundToInt(target.damageTaken.dmg));
-		EventManager.Instance.PostEvent(BattleEvent.BattleObjectHurt, args);
+		MessageEventArgs args2 = new MessageEventArgs();
+		args2.AddMessage("Name", target.GetName());
+		args2.AddMessage("Damage", Mathf.RoundToInt(target.damageTaken.dmg));
+		EventManager.Instance.PostEvent(BattleEvent.BattleObjectHurt, args2);
 		//calculate die event
 		if(target.currentHP <= 0)
 		{			

@@ -68,7 +68,6 @@ public class BattleObjectUIEvent : MonoBehaviour {
 	{
 		HPBar.DOValue(current, 1).SetEase(Ease.OutSine);
 		HPText.text = current + "/" + HPBar.maxValue;
-		this.transform.DOPunchScale(new Vector2(0.1f, 0.1f), 1);
 	}
 
 	public void SetHPBar(int current, int max)
@@ -93,6 +92,18 @@ public class BattleObjectUIEvent : MonoBehaviour {
 			avatarImage.rectTransform.DOLocalMoveX(posX - 250, 1).SetEase(Ease.OutSine);
 		else
 			avatarImage.rectTransform.anchoredPosition = new Vector2(posX, 35);			
+	}
+
+	/*---------- Effect ----------*/
+
+	public void OnDamage()
+	{
+		this.transform.DOPunchScale(new Vector2(0.1f, 0.1f), 1);
+	}
+
+	public void OnHeal()
+	{
+		this.transform.DOPunchScale(new Vector2(0.1f, 0.1f), 1);
 	}
 
 	public void BeginReady()
@@ -138,6 +149,8 @@ public class BattleObjectUIEvent : MonoBehaviour {
 		objectImage.DOKill();
 		allowClick = false;
 	}
+
+	/*---------- Callback ----------*/
 
 	void OnClick()
 	{

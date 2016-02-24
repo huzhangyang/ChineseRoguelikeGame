@@ -19,6 +19,7 @@ public class BattleMessage : MonoBehaviour {
 		EventManager.Instance.RegisterEvent(BattleEvent.BattleObjectHurt, OnBattleObjectHurt);
 		EventManager.Instance.RegisterEvent(BattleEvent.BattleObjectHeal, OnBattleObjectHeal);
 		EventManager.Instance.RegisterEvent(BattleEvent.BattleObjectCounter, OnBattleObjectCounter);
+		EventManager.Instance.RegisterEvent(BattleEvent.BattleObjectInterrupted, OnBattleObjectInterrupted);
 		EventManager.Instance.RegisterEvent(BattleEvent.BattleObjectDied, OnBattleObjectDied);
 		EventManager.Instance.RegisterEvent(BattleEvent.OnBattleWin, OnBattleWin);
 		EventManager.Instance.RegisterEvent(BattleEvent.OnBattleLose, OnBattleLose);
@@ -38,6 +39,7 @@ public class BattleMessage : MonoBehaviour {
 		EventManager.Instance.UnRegisterEvent(BattleEvent.BattleObjectHurt, OnBattleObjectHurt);
 		EventManager.Instance.UnRegisterEvent(BattleEvent.BattleObjectHeal, OnBattleObjectHeal);
 		EventManager.Instance.UnRegisterEvent(BattleEvent.BattleObjectCounter, OnBattleObjectCounter);
+		EventManager.Instance.UnRegisterEvent(BattleEvent.BattleObjectInterrupted, OnBattleObjectInterrupted);
 		EventManager.Instance.UnRegisterEvent(BattleEvent.BattleObjectDied, OnBattleObjectDied);
 		EventManager.Instance.UnRegisterEvent(BattleEvent.OnBattleWin, OnBattleWin);
 		EventManager.Instance.UnRegisterEvent(BattleEvent.OnBattleLose, OnBattleLose);
@@ -117,6 +119,12 @@ public class BattleMessage : MonoBehaviour {
 	{
 		string name = args.GetMessage<string>("Name");
 		AddMessage(name + " 看穿了攻击，并做出反击！");
+	}
+
+	void OnBattleObjectInterrupted(MessageEventArgs args)
+	{
+		string name = args.GetMessage<string>("Name");
+		AddMessage(name + " 的行动被打断了！");
 	}
 
 	void OnBattleObjectDied(MessageEventArgs args)

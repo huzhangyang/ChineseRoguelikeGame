@@ -85,7 +85,7 @@ public class Damage
 		args.AddMessage("Name",target.GetName());
 		EventManager.Instance.PostEvent(BattleEvent.BattleObjectCounter, args);
 		
-		BattleFormula.OnCounterDamage(source, target);
+		BattleFormula.OnCounterDamage(target, source);
 	}
 	
 	private void OnGuarded()
