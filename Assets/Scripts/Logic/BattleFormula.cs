@@ -79,7 +79,7 @@ public class BattleFormula {
 			damagePack.dmg = Random.Range(Mathf.RoundToInt(damagePack.minDmg), Mathf.RoundToInt(damagePack.maxDmg) + 1);
 			damagePack.isHit = Random.Range(0,101) <= damagePack.hit?true:false;
 			damagePack.isCrit = Random.Range(0,101) <= damagePack.crit?true:false;
-			damagePack.isHit = damagePack.forceHit ? true : damagePack.forceMiss ? false : damagePack.isHit;
+			damagePack.isHit = (damagePack.forceHit|| damagePack.target == damagePack.source) ? true : damagePack.forceMiss ? false : damagePack.isHit;
 			damagePack.isCrit = damagePack.forceCrit ? true : damagePack.isCrit;
 			
 			SkillHelper.CheckSkillEffect (EffectTrigger.OnDamage, source);//检查结算中生效的特效
