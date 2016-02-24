@@ -54,14 +54,13 @@ public class Damage
 		args.AddMessage("Name",target.GetName());
 		EventManager.Instance.PostEvent(BattleEvent.BattleObjectCounter, args);
 		
-		BattleFormula.OnDamage(source, BattleFormula.GetCounterDamage(source), 0);
-
+		BattleFormula.OnCounterDamage(source, target);
 	}
 	
 	public void OnGuarded()
 	{
 		AudioManager.Instance.PlaySE("guard");
-		BattleFormula.OnDamage(target, this.dmg, this.interrupt);
+		BattleFormula.OnDamage(target, this);
 		SkillHelper.CheckSkillEffect (EffectTrigger.AfterDamage, source);//检查伤害后生效的特效
 		SkillHelper.CheckBuffAdd (source);//检查附带的BUFF是否命中
 	}
@@ -75,7 +74,7 @@ public class Damage
 		args.AddMessage("Name", target.GetName());
 		EventManager.Instance.PostEvent(BattleEvent.BattleObjectCritical, args);
 		
-		BattleFormula.OnDamage(target, this.dmg, this.interrupt);
+		BattleFormula.OnDamage(target, this);
 		SkillHelper.CheckSkillEffect (EffectTrigger.AfterDamage, source);//检查伤害后生效的特效
 		SkillHelper.CheckBuffAdd (source);//检查附带的BUFF是否命中
 	}
@@ -84,7 +83,7 @@ public class Damage
 	{
 		AudioManager.Instance.PlaySE("hit");
 
-		BattleFormula.OnDamage(target, this.dmg, this.interrupt);
+		BattleFormula.OnDamage(target, this);
 		SkillHelper.CheckSkillEffect (EffectTrigger.AfterDamage, source);//检查伤害后生效的特效
 		SkillHelper.CheckBuffAdd (source);//检查附带的BUFF是否命中
 	}

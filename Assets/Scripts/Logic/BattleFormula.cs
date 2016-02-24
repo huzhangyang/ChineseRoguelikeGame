@@ -10,7 +10,7 @@ public class BattleFormula {
 	//计算防御反击伤害
 	public static int GetCounterDamage(BattleObject bo)
 	{
-		return (int)Mathf.Round((bo.power + bo.skill) * BattleAttribute.AttackMulti(bo));
+		return Mathf.RoundToInt((bo.power + bo.skill) * BattleAttribute.AttackMulti(bo));
 	}
 
 	/*计算武器伤害*/
@@ -121,17 +121,32 @@ public class BattleFormula {
 		EventManager.Instance.PostEvent(BattleEvent.BattleObjectHeal, args);
 	}
 
-	public static void OnDamage(BattleObject target, float damage, float interrupt)
+	public static void OnDamage(BattleObject target, Damage damage)
 	{
-		target.currentHP -= (int)Mathf.Round(damage);
+		target.currentHP -= Mathf.RoundToInt(damage.dmg);
 		//timeline interrupt
-		target.timelinePosition -= (int)Mathf.Round(interrupt);
+		target.timelinePosition -= Mathf.RoundToInt(damage.interrupt);
 		if(target.timelinePosition < GlobalDataStructure.BATTLE_TIMELINE_READY)
 			target.battleStatus = BattleStatus.Prepare;
 		//send message
 		MessageEventArgs args = new MessageEventArgs();
 		args.AddMessage("Name", target.GetName());
-		args.AddMessage("Damage", (int)Mathf.Round(damage));
+		args.AddMessage("Damage", Mathf.RoundToInt(damage.dmg));
+		EventManager.Instance.PostEvent(BattleEvent.BattleObjectHurt, args);
+		//calculate die event
+		if(target.currentHP <= 0)
+		{			
+			OnDead(target);
+		}
+	}
+
+	public static void OnCounterDamage(BattleObject source, BattleObject target)
+	{
+		target.currentHP -= GetCounterDamage(source);
+		//send message
+		MessageEventArgs args = new MessageEventArgs();
+		args.AddMessage("Name", target.GetName());
+		args.AddMessage("Damage", GetCounterDamage(source));
 		EventManager.Instance.PostEvent(BattleEvent.BattleObjectHurt, args);
 		//calculate die event
 		if(target.currentHP <= 0)
