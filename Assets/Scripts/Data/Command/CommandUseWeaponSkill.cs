@@ -12,7 +12,7 @@ public class CommandUseWeaponSkill : Command
 		commandDescription = skillData.description;
 		targetType = skillData.targetType;
 		preExecutionSpeed = Mathf.RoundToInt(weaponData.basicSPD * skillData.preSPDMultiplier);
-		postExecutionRecover = Mathf.RoundToInt(6000 / weaponData.basicSPD * skillData.postSPDMultiplier);
+		postExecutionRecover = Mathf.RoundToInt(weaponData.basicSPD / skillData.postSPDMultiplier * 0.6f);
 		
 		this.skillID = skillID;
 	}

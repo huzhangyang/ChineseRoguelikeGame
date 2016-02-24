@@ -1248,9 +1248,9 @@ MonoBehaviour:
     postSPDMultiplier: 0
     interruptMultiplier: 1
     maxCombo: 0
-    buffID: 0b000000
-    buffPercent: 14000000
-    buffTurns: ffffffff
+    buffID: 
+    buffPercent: 
+    buffTurns: 
     effectID: 
     effectPercent: 
   - id: 2208

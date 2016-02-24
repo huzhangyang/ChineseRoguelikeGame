@@ -292,6 +292,7 @@ public class BattleManager : MonoBehaviour {
 		isPaused = true;
 		yield return new WaitForSeconds(10);
 		EventManager.Instance.PostEvent(BattleEvent.OnBattleFinish);
+		SaveManager.Instance.SaveGame();
 
 		MessageEventArgs arg = new MessageEventArgs();
 		arg.AddMessage("WindowID", UIWindowID.MapWindow);

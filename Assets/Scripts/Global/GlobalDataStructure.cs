@@ -35,7 +35,7 @@ public class GlobalDataStructure{
 	public const int BATTLE_TIMELINE_READY = 6000;//时间轴Ready点
 	public const int BATTLE_TIMELINE_MAX = 10000;//时间轴最大长度
 	public const float HP_RECOVER_THRESHOLD = 0.8f;//HP恢复阈值（元素瓶恢复量，以及自动回血阈值）
-	public const float HP_RECOVER_AMOUNT = 0.05f;//生命每回合的恢复量
+	public const float HP_RECOVER_AMOUNT = 0.02f;//生命每回合的恢复量
 	public const float MP_RECOVER_AMOUNT = 0.1f;//灵力每回合的恢复量
 	public const float HP_WEAKEN_THRESHOLD = 0.5f;//HP虚弱阈值（降低力技速）
 	public const float HP_WEAKEN_AMOUNT = 0.25f;//HP对力技速的最大削弱比

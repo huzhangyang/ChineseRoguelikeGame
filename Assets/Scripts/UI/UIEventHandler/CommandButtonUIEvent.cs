@@ -28,7 +28,7 @@ public class CommandButtonUIEvent : MonoBehaviour {
 		nameText.text = command.commandName;
 		descriptionText.text = command.commandDescription;
 		pre.text = (100f / command.preExecutionSpeed).ToString("F2") + "s";
-		post.text = (command.postExecutionRecover == 0 ? 0 : 60f / command.postExecutionRecover).ToString("F2") + "s";
+		post.text = (command.postExecutionRecover / 60f).ToString("F2") + "s";
 
 		if(command.commandType != CommandType.Attack)
 		{

@@ -113,15 +113,15 @@ MonoBehaviour:
     ring1ID: 0
     ring2ID: 0
     magicIDs: 
-    itemKeys: 
-    itemValues: 
+    itemKeys: 01000000
+    itemValues: 01000000
     isBoss: 1
     imageID: 104
   - name: "\u66B4\u8D70\u6FAA"
     id: 105
     talentID: 0
     natureID: 0
-    battleType: 1
+    battleType: 2
     stamina: 255
     power: 99
     agility: 99
@@ -134,8 +134,8 @@ MonoBehaviour:
     ring1ID: 0
     ring2ID: 0
     magicIDs: f80700005c080000c0080000
-    itemKeys: 
-    itemValues: 
+    itemKeys: 01000000
+    itemValues: 01000000
     isBoss: 1
     imageID: 105
   - name: "\u7EA2\u5149"
@@ -247,7 +247,7 @@ MonoBehaviour:
     id: 13
     talentID: 0
     natureID: 0
-    battleType: 0
+    battleType: 2
     stamina: 0
     power: 0
     agility: 0
@@ -268,7 +268,7 @@ MonoBehaviour:
     id: 23
     talentID: 0
     natureID: 0
-    battleType: 0
+    battleType: 2
     stamina: 0
     power: 0
     agility: 0
@@ -289,7 +289,7 @@ MonoBehaviour:
     id: 37
     talentID: 0
     natureID: 0
-    battleType: 0
+    battleType: 2
     stamina: 0
     power: 0
     agility: 0
@@ -310,7 +310,7 @@ MonoBehaviour:
     id: 14
     talentID: 0
     natureID: 0
-    battleType: 0
+    battleType: 2
     stamina: 0
     power: 0
     agility: 0
@@ -331,7 +331,7 @@ MonoBehaviour:
     id: 15
     talentID: 0
     natureID: 0
-    battleType: 0
+    battleType: 2
     stamina: 0
     power: 0
     agility: 0
@@ -352,7 +352,7 @@ MonoBehaviour:
     id: 25
     talentID: 0
     natureID: 0
-    battleType: 0
+    battleType: 2
     stamina: 0
     power: 0
     agility: 0
@@ -373,7 +373,7 @@ MonoBehaviour:
     id: 26
     talentID: 0
     natureID: 0
-    battleType: 0
+    battleType: 2
     stamina: 0
     power: 0
     agility: 0
@@ -394,7 +394,7 @@ MonoBehaviour:
     id: 39
     talentID: 0
     natureID: 0
-    battleType: 0
+    battleType: 2
     stamina: 0
     power: 0
     agility: 0
@@ -415,7 +415,7 @@ MonoBehaviour:
     id: 310
     talentID: 0
     natureID: 0
-    battleType: 0
+    battleType: 2
     stamina: 0
     power: 0
     agility: 0
@@ -436,7 +436,7 @@ MonoBehaviour:
     id: 313
     talentID: 0
     natureID: 0
-    battleType: 0
+    battleType: 2
     stamina: 0
     power: 0
     agility: 0
@@ -457,7 +457,7 @@ MonoBehaviour:
     id: 16
     talentID: 0
     natureID: 0
-    battleType: 0
+    battleType: 2
     stamina: 0
     power: 0
     agility: 0
@@ -478,7 +478,7 @@ MonoBehaviour:
     id: 28
     talentID: 0
     natureID: 0
-    battleType: 0
+    battleType: 2
     stamina: 0
     power: 0
     agility: 0
@@ -499,7 +499,7 @@ MonoBehaviour:
     id: 314
     talentID: 0
     natureID: 0
-    battleType: 0
+    battleType: 2
     stamina: 0
     power: 0
     agility: 0
@@ -520,7 +520,7 @@ MonoBehaviour:
     id: 316
     talentID: 0
     natureID: 0
-    battleType: 0
+    battleType: 2
     stamina: 0
     power: 0
     agility: 0
@@ -541,7 +541,7 @@ MonoBehaviour:
     id: 318
     talentID: 0
     natureID: 0
-    battleType: 0
+    battleType: 2
     stamina: 0
     power: 0
     agility: 0
@@ -562,7 +562,7 @@ MonoBehaviour:
     id: 17
     talentID: 0
     natureID: 0
-    battleType: 0
+    battleType: 2
     stamina: 0
     power: 0
     agility: 0
@@ -583,7 +583,7 @@ MonoBehaviour:
     id: 211
     talentID: 0
     natureID: 0
-    battleType: 0
+    battleType: 2
     stamina: 0
     power: 0
     agility: 0
@@ -604,7 +604,7 @@ MonoBehaviour:
     id: 212
     talentID: 0
     natureID: 0
-    battleType: 0
+    battleType: 2
     stamina: 0
     power: 0
     agility: 0
@@ -625,7 +625,7 @@ MonoBehaviour:
     id: 319
     talentID: 0
     natureID: 0
-    battleType: 0
+    battleType: 2
     stamina: 0
     power: 0
     agility: 0
@@ -646,7 +646,7 @@ MonoBehaviour:
     id: 320
     talentID: 0
     natureID: 0
-    battleType: 0
+    battleType: 2
     stamina: 0
     power: 0
     agility: 0
@@ -667,7 +667,7 @@ MonoBehaviour:
     id: 321
     talentID: 0
     natureID: 0
-    battleType: 0
+    battleType: 2
     stamina: 0
     power: 0
     agility: 0
@@ -688,7 +688,7 @@ MonoBehaviour:
     id: 18
     talentID: 0
     natureID: 0
-    battleType: 0
+    battleType: 2
     stamina: 0
     power: 0
     agility: 0
@@ -709,7 +709,7 @@ MonoBehaviour:
     id: 214
     talentID: 0
     natureID: 0
-    battleType: 0
+    battleType: 2
     stamina: 0
     power: 0
     agility: 0
@@ -730,7 +730,7 @@ MonoBehaviour:
     id: 215
     talentID: 0
     natureID: 0
-    battleType: 0
+    battleType: 2
     stamina: 0
     power: 0
     agility: 0
@@ -751,7 +751,7 @@ MonoBehaviour:
     id: 216
     talentID: 0
     natureID: 0
-    battleType: 0
+    battleType: 2
     stamina: 0
     power: 0
     agility: 0
@@ -772,7 +772,7 @@ MonoBehaviour:
     id: 325
     talentID: 0
     natureID: 0
-    battleType: 0
+    battleType: 2
     stamina: 0
     power: 0
     agility: 0
@@ -793,7 +793,7 @@ MonoBehaviour:
     id: 326
     talentID: 0
     natureID: 0
-    battleType: 0
+    battleType: 2
     stamina: 0
     power: 0
     agility: 0
@@ -814,7 +814,7 @@ MonoBehaviour:
     id: 19
     talentID: 0
     natureID: 0
-    battleType: 0
+    battleType: 2
     stamina: 0
     power: 0
     agility: 0
@@ -835,7 +835,7 @@ MonoBehaviour:
     id: 218
     talentID: 0
     natureID: 0
-    battleType: 0
+    battleType: 2
     stamina: 0
     power: 0
     agility: 0
@@ -856,7 +856,7 @@ MonoBehaviour:
     id: 327
     talentID: 0
     natureID: 0
-    battleType: 0
+    battleType: 2
     stamina: 0
     power: 0
     agility: 0
@@ -877,7 +877,7 @@ MonoBehaviour:
     id: 328
     talentID: 0
     natureID: 0
-    battleType: 0
+    battleType: 2
     stamina: 0
     power: 0
     agility: 0
@@ -898,7 +898,7 @@ MonoBehaviour:
     id: 110
     talentID: 0
     natureID: 0
-    battleType: 0
+    battleType: 2
     stamina: 0
     power: 0
     agility: 0
@@ -919,7 +919,7 @@ MonoBehaviour:
     id: 111
     talentID: 0
     natureID: 0
-    battleType: 0
+    battleType: 2
     stamina: 0
     power: 0
     agility: 0
@@ -940,7 +940,7 @@ MonoBehaviour:
     id: 112
     talentID: 0
     natureID: 0
-    battleType: 0
+    battleType: 2
     stamina: 0
     power: 0
     agility: 0
@@ -961,7 +961,7 @@ MonoBehaviour:
     id: 219
     talentID: 0
     natureID: 0
-    battleType: 0
+    battleType: 2
     stamina: 0
     power: 0
     agility: 0
@@ -982,7 +982,7 @@ MonoBehaviour:
     id: 220
     talentID: 0
     natureID: 0
-    battleType: 0
+    battleType: 2
     stamina: 0
     power: 0
     agility: 0
@@ -1003,7 +1003,7 @@ MonoBehaviour:
     id: 330
     talentID: 0
     natureID: 0
-    battleType: 0
+    battleType: 2
     stamina: 0
     power: 0
     agility: 0
@@ -1024,7 +1024,7 @@ MonoBehaviour:
     id: 333
     talentID: 0
     natureID: 0
-    battleType: 0
+    battleType: 2
     stamina: 0
     power: 0
     agility: 0
@@ -1045,7 +1045,7 @@ MonoBehaviour:
     id: 113
     talentID: 0
     natureID: 0
-    battleType: 0
+    battleType: 2
     stamina: 0
     power: 0
     agility: 0
@@ -1066,7 +1066,7 @@ MonoBehaviour:
     id: 221
     talentID: 0
     natureID: 0
-    battleType: 0
+    battleType: 2
     stamina: 0
     power: 0
     agility: 0
@@ -1087,7 +1087,7 @@ MonoBehaviour:
     id: 222
     talentID: 0
     natureID: 0
-    battleType: 0
+    battleType: 2
     stamina: 0
     power: 0
     agility: 0
@@ -1108,7 +1108,7 @@ MonoBehaviour:
     id: 334
     talentID: 0
     natureID: 0
-    battleType: 0
+    battleType: 2
     stamina: 0
     power: 0
     agility: 0
@@ -1129,7 +1129,7 @@ MonoBehaviour:
     id: 335
     talentID: 0
     natureID: 0
-    battleType: 0
+    battleType: 2
     stamina: 0
     power: 0
     agility: 0
@@ -1150,7 +1150,7 @@ MonoBehaviour:
     id: 336
     talentID: 0
     natureID: 0
-    battleType: 0
+    battleType: 2
     stamina: 0
     power: 0
     agility: 0
