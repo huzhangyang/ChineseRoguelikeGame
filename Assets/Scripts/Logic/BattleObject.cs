@@ -81,6 +81,7 @@ public abstract class BattleObject : MonoBehaviour {
 	public bool isEvading = false;//是否正在躲避
 	public bool isEnemy = false;//是否敌人
 	public bool isHealingBottleUsed = false;//是否使用过元素瓶
+	public bool isRecovering{get{return timelinePosition < 0;}}
 	public float buffFrozenTime = 0;//冰冻BUFF剩余时间
 
 	protected BattleObjectUIEvent UIEvent;

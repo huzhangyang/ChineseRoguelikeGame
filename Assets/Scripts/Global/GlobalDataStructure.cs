@@ -11,7 +11,7 @@ public enum SkillType{None, Slash, Blunt, Thrust, Neutral, Yin, Yang}
 public enum BuffTrigger{Always, Dead, Ready, Action, Behit, AfterDamage} 
 public enum EffectTrigger{SwitchWeapon, OnDamage, BeforeHit, AfterDamage} 
 public enum ItemType{NormalItem, Weapon, Magic, Ring}
-public enum BattleStatus{Prepare, Ready, Action}
+public enum BattleStatus{Prepare, Ready, Action, Recover}
 
 public class GlobalDataStructure{
 	//path
@@ -32,7 +32,7 @@ public class GlobalDataStructure{
 	public const int BATTLE_MINSPEED = 50;//战斗策略最慢执行速度
 	public const int BATTLE_STANDARDSPEED = 100;//战斗策略标准执行速度
 	public const int BATTLE_MAXSPEED = 2000;//战斗策略最快执行速度
-	public const int BATTLE_TIMELINE_READY = 5000;//时间轴Ready点
+	public const int BATTLE_TIMELINE_READY = 6000;//时间轴Ready点
 	public const int BATTLE_TIMELINE_MAX = 10000;//时间轴最大长度
 	public const float HP_RECOVER_THRESHOLD = 0.8f;//HP恢复阈值（元素瓶恢复量，以及自动回血阈值）
 	public const float HP_RECOVER_AMOUNT = 0.05f;//生命每回合的恢复量
