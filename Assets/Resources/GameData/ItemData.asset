@@ -88,7 +88,7 @@ MonoBehaviour:
     basicACC: 90
     basicCRT: 10
     basicSPD: 150
-    interrupt: 2
+    interrupt: 4
     skill1ID: 1101
     skill2ID: 1102
     skill3ID: 1103
@@ -106,7 +106,7 @@ MonoBehaviour:
     basicACC: 90
     basicCRT: 11
     basicSPD: 150
-    interrupt: 2
+    interrupt: 4
     skill1ID: 1101
     skill2ID: 1102
     skill3ID: 1103
@@ -124,7 +124,7 @@ MonoBehaviour:
     basicACC: 90
     basicCRT: 12
     basicSPD: 150
-    interrupt: 2
+    interrupt: 4
     skill1ID: 1101
     skill2ID: 1102
     skill3ID: 1103
@@ -142,7 +142,7 @@ MonoBehaviour:
     basicACC: 90
     basicCRT: 13
     basicSPD: 150
-    interrupt: 2
+    interrupt: 4
     skill1ID: 1101
     skill2ID: 1102
     skill3ID: 1103
@@ -160,7 +160,7 @@ MonoBehaviour:
     basicACC: 90
     basicCRT: 14
     basicSPD: 150
-    interrupt: 2
+    interrupt: 4
     skill1ID: 1101
     skill2ID: 1102
     skill3ID: 1103
@@ -178,7 +178,7 @@ MonoBehaviour:
     basicACC: 90
     basicCRT: 15
     basicSPD: 150
-    interrupt: 2
+    interrupt: 4
     skill1ID: 1101
     skill2ID: 1102
     skill3ID: 1103
@@ -196,7 +196,7 @@ MonoBehaviour:
     basicACC: 110
     basicCRT: 16
     basicSPD: 160
-    interrupt: 2
+    interrupt: 5
     skill1ID: 1101
     skill2ID: 1102
     skill3ID: 1104
@@ -214,7 +214,7 @@ MonoBehaviour:
     basicACC: 110
     basicCRT: 16
     basicSPD: 160
-    interrupt: 3
+    interrupt: 5
     skill1ID: 1101
     skill2ID: 1102
     skill3ID: 1104
@@ -232,7 +232,7 @@ MonoBehaviour:
     basicACC: 110
     basicCRT: 16
     basicSPD: 160
-    interrupt: 4
+    interrupt: 5
     skill1ID: 1101
     skill2ID: 1102
     skill3ID: 1104
@@ -268,7 +268,7 @@ MonoBehaviour:
     basicACC: 110
     basicCRT: 16
     basicSPD: 160
-    interrupt: 6
+    interrupt: 5
     skill1ID: 1101
     skill2ID: 1102
     skill3ID: 1104
@@ -286,7 +286,7 @@ MonoBehaviour:
     basicACC: 110
     basicCRT: 16
     basicSPD: 160
-    interrupt: 7
+    interrupt: 5
     skill1ID: 1101
     skill2ID: 1102
     skill3ID: 1104
@@ -304,7 +304,7 @@ MonoBehaviour:
     basicACC: 100
     basicCRT: 15
     basicSPD: 200
-    interrupt: 1
+    interrupt: 2
     skill1ID: 1101
     skill2ID: 1105
     skill3ID: 1106
@@ -322,7 +322,7 @@ MonoBehaviour:
     basicACC: 100
     basicCRT: 15
     basicSPD: 210
-    interrupt: 1
+    interrupt: 2
     skill1ID: 1101
     skill2ID: 1105
     skill3ID: 1106
@@ -340,7 +340,7 @@ MonoBehaviour:
     basicACC: 100
     basicCRT: 15
     basicSPD: 220
-    interrupt: 1
+    interrupt: 2
     skill1ID: 1101
     skill2ID: 1105
     skill3ID: 1106
@@ -358,7 +358,7 @@ MonoBehaviour:
     basicACC: 100
     basicCRT: 15
     basicSPD: 230
-    interrupt: 1
+    interrupt: 2
     skill1ID: 1101
     skill2ID: 1105
     skill3ID: 1106
@@ -376,7 +376,7 @@ MonoBehaviour:
     basicACC: 100
     basicCRT: 15
     basicSPD: 240
-    interrupt: 1
+    interrupt: 2
     skill1ID: 1101
     skill2ID: 1105
     skill3ID: 1106
@@ -394,7 +394,7 @@ MonoBehaviour:
     basicACC: 100
     basicCRT: 15
     basicSPD: 250
-    interrupt: 1
+    interrupt: 2
     skill1ID: 1101
     skill2ID: 1105
     skill3ID: 1106
@@ -412,7 +412,7 @@ MonoBehaviour:
     basicACC: 80
     basicCRT: 12
     basicSPD: 120
-    interrupt: 7
+    interrupt: 8
     skill1ID: 1201
     skill2ID: 1202
     skill3ID: 1203
@@ -430,7 +430,7 @@ MonoBehaviour:
     basicACC: 80
     basicCRT: 12
     basicSPD: 120
-    interrupt: 7
+    interrupt: 8
     skill1ID: 1201
     skill2ID: 1202
     skill3ID: 1203
@@ -448,7 +448,7 @@ MonoBehaviour:
     basicACC: 80
     basicCRT: 12
     basicSPD: 120
-    interrupt: 7
+    interrupt: 8
     skill1ID: 1201
     skill2ID: 1202
     skill3ID: 1203
@@ -466,7 +466,7 @@ MonoBehaviour:
     basicACC: 80
     basicCRT: 12
     basicSPD: 120
-    interrupt: 7
+    interrupt: 8
     skill1ID: 1201
     skill2ID: 1202
     skill3ID: 1203
@@ -484,7 +484,7 @@ MonoBehaviour:
     basicACC: 80
     basicCRT: 12
     basicSPD: 120
-    interrupt: 7
+    interrupt: 8
     skill1ID: 1201
     skill2ID: 1202
     skill3ID: 1203
@@ -502,7 +502,7 @@ MonoBehaviour:
     basicACC: 80
     basicCRT: 12
     basicSPD: 120
-    interrupt: 7
+    interrupt: 8
     skill1ID: 1201
     skill2ID: 1202
     skill3ID: 1203
@@ -520,7 +520,7 @@ MonoBehaviour:
     basicACC: 90
     basicCRT: 0
     basicSPD: 30
-    interrupt: 7
+    interrupt: 13
     skill1ID: 1201
     skill2ID: 1204
     skill3ID: 1205
@@ -538,7 +538,7 @@ MonoBehaviour:
     basicACC: 92
     basicCRT: 2
     basicSPD: 30
-    interrupt: 7
+    interrupt: 13
     skill1ID: 1201
     skill2ID: 1204
     skill3ID: 1205
@@ -556,7 +556,7 @@ MonoBehaviour:
     basicACC: 94
     basicCRT: 4
     basicSPD: 30
-    interrupt: 7
+    interrupt: 13
     skill1ID: 1201
     skill2ID: 1204
     skill3ID: 1205
@@ -574,7 +574,7 @@ MonoBehaviour:
     basicACC: 96
     basicCRT: 6
     basicSPD: 30
-    interrupt: 7
+    interrupt: 13
     skill1ID: 1201
     skill2ID: 1204
     skill3ID: 1205
@@ -592,7 +592,7 @@ MonoBehaviour:
     basicACC: 98
     basicCRT: 8
     basicSPD: 30
-    interrupt: 7
+    interrupt: 13
     skill1ID: 1201
     skill2ID: 1204
     skill3ID: 1205
@@ -610,7 +610,7 @@ MonoBehaviour:
     basicACC: 100
     basicCRT: 10
     basicSPD: 30
-    interrupt: 7
+    interrupt: 13
     skill1ID: 1201
     skill2ID: 1204
     skill3ID: 1205
@@ -628,7 +628,7 @@ MonoBehaviour:
     basicACC: 80
     basicCRT: 0
     basicSPD: 110
-    interrupt: 7
+    interrupt: 9
     skill1ID: 1201
     skill2ID: 1206
     skill3ID: 1207
@@ -664,7 +664,7 @@ MonoBehaviour:
     basicACC: 80
     basicCRT: 10
     basicSPD: 130
-    interrupt: 10
+    interrupt: 7
     skill1ID: 1301
     skill2ID: 1302
     skill3ID: 1304
@@ -682,7 +682,7 @@ MonoBehaviour:
     basicACC: 80
     basicCRT: 10
     basicSPD: 130
-    interrupt: 10
+    interrupt: 7
     skill1ID: 1301
     skill2ID: 1302
     skill3ID: 1304
@@ -700,7 +700,7 @@ MonoBehaviour:
     basicACC: 80
     basicCRT: 10
     basicSPD: 130
-    interrupt: 10
+    interrupt: 7
     skill1ID: 1301
     skill2ID: 1302
     skill3ID: 1304
@@ -718,7 +718,7 @@ MonoBehaviour:
     basicACC: 80
     basicCRT: 10
     basicSPD: 130
-    interrupt: 10
+    interrupt: 7
     skill1ID: 1301
     skill2ID: 1302
     skill3ID: 1304
@@ -736,7 +736,7 @@ MonoBehaviour:
     basicACC: 80
     basicCRT: 10
     basicSPD: 130
-    interrupt: 10
+    interrupt: 7
     skill1ID: 1301
     skill2ID: 1302
     skill3ID: 1304
@@ -754,7 +754,7 @@ MonoBehaviour:
     basicACC: 80
     basicCRT: 10
     basicSPD: 130
-    interrupt: 10
+    interrupt: 7
     skill1ID: 1301
     skill2ID: 1302
     skill3ID: 1304
@@ -826,7 +826,7 @@ MonoBehaviour:
     basicACC: 90
     basicCRT: 11
     basicSPD: 110
-    interrupt: 110
+    interrupt: 11
     skill1ID: 1301
     skill2ID: 1305
     skill3ID: 1306
@@ -844,7 +844,7 @@ MonoBehaviour:
     basicACC: 100
     basicCRT: 12
     basicSPD: 120
-    interrupt: 120
+    interrupt: 12
     skill1ID: 1301
     skill2ID: 1305
     skill3ID: 1306
@@ -862,7 +862,7 @@ MonoBehaviour:
     basicACC: 110
     basicCRT: 13
     basicSPD: 130
-    interrupt: 130
+    interrupt: 13
     skill1ID: 1301
     skill2ID: 1305
     skill3ID: 1306
@@ -880,7 +880,7 @@ MonoBehaviour:
     basicACC: 60
     basicCRT: 10
     basicSPD: 80
-    interrupt: 14
+    interrupt: 18
     skill1ID: 1401
     skill2ID: 1402
     skill3ID: 1403
@@ -898,7 +898,7 @@ MonoBehaviour:
     basicACC: 65
     basicCRT: 10
     basicSPD: 80
-    interrupt: 14
+    interrupt: 18
     skill1ID: 1401
     skill2ID: 1402
     skill3ID: 1403
@@ -916,7 +916,7 @@ MonoBehaviour:
     basicACC: 70
     basicCRT: 10
     basicSPD: 80
-    interrupt: 14
+    interrupt: 18
     skill1ID: 1401
     skill2ID: 1402
     skill3ID: 1403
@@ -934,7 +934,7 @@ MonoBehaviour:
     basicACC: 75
     basicCRT: 10
     basicSPD: 80
-    interrupt: 14
+    interrupt: 18
     skill1ID: 1401
     skill2ID: 1402
     skill3ID: 1403
@@ -952,7 +952,7 @@ MonoBehaviour:
     basicACC: 80
     basicCRT: 10
     basicSPD: 80
-    interrupt: 14
+    interrupt: 18
     skill1ID: 1401
     skill2ID: 1402
     skill3ID: 1403
@@ -970,7 +970,7 @@ MonoBehaviour:
     basicACC: 85
     basicCRT: 10
     basicSPD: 80
-    interrupt: 14
+    interrupt: 18
     skill1ID: 1401
     skill2ID: 1402
     skill3ID: 1403
@@ -988,7 +988,7 @@ MonoBehaviour:
     basicACC: 90
     basicCRT: 11
     basicSPD: 110
-    interrupt: 12
+    interrupt: 14
     skill1ID: 1401
     skill2ID: 1402
     skill3ID: 1404
@@ -1006,7 +1006,7 @@ MonoBehaviour:
     basicACC: 90
     basicCRT: 11
     basicSPD: 110
-    interrupt: 14
+    interrupt: 16
     skill1ID: 1401
     skill2ID: 1402
     skill3ID: 1404
@@ -1024,7 +1024,7 @@ MonoBehaviour:
     basicACC: 90
     basicCRT: 11
     basicSPD: 110
-    interrupt: 16
+    interrupt: 18
     skill1ID: 1401
     skill2ID: 1402
     skill3ID: 1404
@@ -1042,7 +1042,7 @@ MonoBehaviour:
     basicACC: 90
     basicCRT: 11
     basicSPD: 110
-    interrupt: 18
+    interrupt: 20
     skill1ID: 1401
     skill2ID: 1402
     skill3ID: 1404
@@ -1060,7 +1060,7 @@ MonoBehaviour:
     basicACC: 90
     basicCRT: 11
     basicSPD: 110
-    interrupt: 20
+    interrupt: 22
     skill1ID: 1401
     skill2ID: 1402
     skill3ID: 1404
@@ -1078,7 +1078,7 @@ MonoBehaviour:
     basicACC: 90
     basicCRT: 11
     basicSPD: 110
-    interrupt: 22
+    interrupt: 24
     skill1ID: 1401
     skill2ID: 1402
     skill3ID: 1404
@@ -1096,7 +1096,7 @@ MonoBehaviour:
     basicACC: 60
     basicCRT: 10
     basicSPD: 40
-    interrupt: 22
+    interrupt: 28
     skill1ID: 1401
     skill2ID: 1402
     skill3ID: 1405
@@ -1114,7 +1114,7 @@ MonoBehaviour:
     basicACC: 60
     basicCRT: 10
     basicSPD: 45
-    interrupt: 22
+    interrupt: 28
     skill1ID: 1401
     skill2ID: 1402
     skill3ID: 1405
@@ -1132,7 +1132,7 @@ MonoBehaviour:
     basicACC: 60
     basicCRT: 10
     basicSPD: 50
-    interrupt: 22
+    interrupt: 28
     skill1ID: 1401
     skill2ID: 1402
     skill3ID: 1405
@@ -1150,7 +1150,7 @@ MonoBehaviour:
     basicACC: 60
     basicCRT: 10
     basicSPD: 55
-    interrupt: 22
+    interrupt: 28
     skill1ID: 1401
     skill2ID: 1402
     skill3ID: 1405
@@ -1168,7 +1168,7 @@ MonoBehaviour:
     basicACC: 60
     basicCRT: 10
     basicSPD: 60
-    interrupt: 22
+    interrupt: 28
     skill1ID: 1401
     skill2ID: 1402
     skill3ID: 1405
@@ -1186,7 +1186,7 @@ MonoBehaviour:
     basicACC: 60
     basicCRT: 10
     basicSPD: 65
-    interrupt: 22
+    interrupt: 28
     skill1ID: 1401
     skill2ID: 1402
     skill3ID: 1405
@@ -1204,7 +1204,7 @@ MonoBehaviour:
     basicACC: 70
     basicCRT: 11
     basicSPD: 80
-    interrupt: 7
+    interrupt: 11
     skill1ID: 1501
     skill2ID: 1503
     skill3ID: 1504
@@ -1222,7 +1222,7 @@ MonoBehaviour:
     basicACC: 72
     basicCRT: 11
     basicSPD: 82
-    interrupt: 7
+    interrupt: 11
     skill1ID: 1501
     skill2ID: 1503
     skill3ID: 1504
@@ -1240,7 +1240,7 @@ MonoBehaviour:
     basicACC: 74
     basicCRT: 11
     basicSPD: 84
-    interrupt: 7
+    interrupt: 11
     skill1ID: 1501
     skill2ID: 1503
     skill3ID: 1504
@@ -1258,7 +1258,7 @@ MonoBehaviour:
     basicACC: 76
     basicCRT: 15
     basicSPD: 86
-    interrupt: 7
+    interrupt: 11
     skill1ID: 1501
     skill2ID: 1503
     skill3ID: 1504
@@ -1276,7 +1276,7 @@ MonoBehaviour:
     basicACC: 78
     basicCRT: 15
     basicSPD: 88
-    interrupt: 7
+    interrupt: 11
     skill1ID: 1501
     skill2ID: 1503
     skill3ID: 1504
@@ -1294,7 +1294,7 @@ MonoBehaviour:
     basicACC: 80
     basicCRT: 15
     basicSPD: 90
-    interrupt: 7
+    interrupt: 11
     skill1ID: 1501
     skill2ID: 1503
     skill3ID: 1504
@@ -1312,7 +1312,7 @@ MonoBehaviour:
     basicACC: 100
     basicCRT: 13
     basicSPD: 60
-    interrupt: 12
+    interrupt: 17
     skill1ID: 1501
     skill2ID: 1502
     skill3ID: 1505
@@ -1330,7 +1330,7 @@ MonoBehaviour:
     basicACC: 100
     basicCRT: 13
     basicSPD: 60
-    interrupt: 12
+    interrupt: 17
     skill1ID: 1501
     skill2ID: 1502
     skill3ID: 1505
@@ -1348,7 +1348,7 @@ MonoBehaviour:
     basicACC: 100
     basicCRT: 13
     basicSPD: 60
-    interrupt: 12
+    interrupt: 17
     skill1ID: 1501
     skill2ID: 1502
     skill3ID: 1505
@@ -1366,7 +1366,7 @@ MonoBehaviour:
     basicACC: 100
     basicCRT: 13
     basicSPD: 80
-    interrupt: 12
+    interrupt: 17
     skill1ID: 1501
     skill2ID: 1502
     skill3ID: 1505
@@ -1384,7 +1384,7 @@ MonoBehaviour:
     basicACC: 100
     basicCRT: 13
     basicSPD: 80
-    interrupt: 12
+    interrupt: 17
     skill1ID: 1501
     skill2ID: 1502
     skill3ID: 1505
@@ -1402,7 +1402,7 @@ MonoBehaviour:
     basicACC: 100
     basicCRT: 13
     basicSPD: 80
-    interrupt: 12
+    interrupt: 17
     skill1ID: 1501
     skill2ID: 1502
     skill3ID: 1505
@@ -1420,7 +1420,7 @@ MonoBehaviour:
     basicACC: 90
     basicCRT: 15
     basicSPD: 110
-    interrupt: 3
+    interrupt: 6
     skill1ID: 1501
     skill2ID: 1506
     skill3ID: 1507
@@ -1438,7 +1438,7 @@ MonoBehaviour:
     basicACC: 90
     basicCRT: 15
     basicSPD: 110
-    interrupt: 3
+    interrupt: 6
     skill1ID: 1501
     skill2ID: 1506
     skill3ID: 1507
@@ -1456,7 +1456,7 @@ MonoBehaviour:
     basicACC: 90
     basicCRT: 15
     basicSPD: 110
-    interrupt: 3
+    interrupt: 6
     skill1ID: 1501
     skill2ID: 1506
     skill3ID: 1507
@@ -1474,7 +1474,7 @@ MonoBehaviour:
     basicACC: 100
     basicCRT: 15
     basicSPD: 110
-    interrupt: 6
+    interrupt: 12
     skill1ID: 1501
     skill2ID: 1506
     skill3ID: 1507
@@ -1492,7 +1492,7 @@ MonoBehaviour:
     basicACC: 100
     basicCRT: 15
     basicSPD: 110
-    interrupt: 6
+    interrupt: 12
     skill1ID: 1501
     skill2ID: 1506
     skill3ID: 1507
@@ -1510,7 +1510,7 @@ MonoBehaviour:
     basicACC: 100
     basicCRT: 15
     basicSPD: 110
-    interrupt: 6
+    interrupt: 12
     skill1ID: 1501
     skill2ID: 1506
     skill3ID: 1507
@@ -1528,7 +1528,7 @@ MonoBehaviour:
     basicACC: 40
     basicCRT: 10
     basicSPD: 75
-    interrupt: 13
+    interrupt: 20
     skill1ID: 1601
     skill2ID: 1602
     skill3ID: 1603
@@ -1546,7 +1546,7 @@ MonoBehaviour:
     basicACC: 45
     basicCRT: 10
     basicSPD: 76
-    interrupt: 14
+    interrupt: 21
     skill1ID: 1601
     skill2ID: 1602
     skill3ID: 1603
@@ -1564,7 +1564,7 @@ MonoBehaviour:
     basicACC: 50
     basicCRT: 10
     basicSPD: 77
-    interrupt: 15
+    interrupt: 22
     skill1ID: 1601
     skill2ID: 1602
     skill3ID: 1603
@@ -1582,7 +1582,7 @@ MonoBehaviour:
     basicACC: 55
     basicCRT: 10
     basicSPD: 78
-    interrupt: 16
+    interrupt: 23
     skill1ID: 1601
     skill2ID: 1602
     skill3ID: 1603
@@ -1600,7 +1600,7 @@ MonoBehaviour:
     basicACC: 60
     basicCRT: 10
     basicSPD: 79
-    interrupt: 17
+    interrupt: 24
     skill1ID: 1601
     skill2ID: 1602
     skill3ID: 1603
@@ -1618,7 +1618,7 @@ MonoBehaviour:
     basicACC: 60
     basicCRT: 10
     basicSPD: 80
-    interrupt: 17
+    interrupt: 25
     skill1ID: 1601
     skill2ID: 1602
     skill3ID: 1603
@@ -1636,7 +1636,7 @@ MonoBehaviour:
     basicACC: 60
     basicCRT: 10
     basicSPD: 80
-    interrupt: 15
+    interrupt: 5
     skill1ID: 1604
     skill2ID: 1605
     skill3ID: 1606
@@ -1654,7 +1654,7 @@ MonoBehaviour:
     basicACC: 60
     basicCRT: 12
     basicSPD: 80
-    interrupt: 20
+    interrupt: 10
     skill1ID: 1604
     skill2ID: 1605
     skill3ID: 1606
@@ -1672,7 +1672,7 @@ MonoBehaviour:
     basicACC: 60
     basicCRT: 14
     basicSPD: 80
-    interrupt: 25
+    interrupt: 15
     skill1ID: 1604
     skill2ID: 1605
     skill3ID: 1606
@@ -1690,7 +1690,7 @@ MonoBehaviour:
     basicACC: 60
     basicCRT: 16
     basicSPD: 80
-    interrupt: 30
+    interrupt: 20
     skill1ID: 1604
     skill2ID: 1605
     skill3ID: 1606
@@ -1708,7 +1708,7 @@ MonoBehaviour:
     basicACC: 60
     basicCRT: 18
     basicSPD: 80
-    interrupt: 35
+    interrupt: 25
     skill1ID: 1604
     skill2ID: 1605
     skill3ID: 1606
@@ -1726,7 +1726,7 @@ MonoBehaviour:
     basicACC: 60
     basicCRT: 20
     basicSPD: 80
-    interrupt: 40
+    interrupt: 30
     skill1ID: 1604
     skill2ID: 1605
     skill3ID: 1606
@@ -1865,7 +1865,7 @@ MonoBehaviour:
     basicSPD: 70
     basicACC: 80
     basicCRT: 5
-    interrupt: 5
+    interrupt: 15
     cost: 5
     skillID: 2001
   - id: 2110
@@ -1877,7 +1877,7 @@ MonoBehaviour:
     basicSPD: 105
     basicACC: 100
     basicCRT: 6
-    interrupt: 4
+    interrupt: 5
     cost: 3
     skillID: 2101
   - id: 2210
@@ -1889,7 +1889,7 @@ MonoBehaviour:
     basicSPD: 80
     basicACC: 90
     basicCRT: 4
-    interrupt: 6
+    interrupt: 10
     cost: 4
     skillID: 2201
   - id: 2020
@@ -1901,7 +1901,7 @@ MonoBehaviour:
     basicSPD: 70
     basicACC: 80
     basicCRT: 10
-    interrupt: 5
+    interrupt: 15
     cost: 20
     skillID: 2002
   - id: 2021
@@ -1913,7 +1913,7 @@ MonoBehaviour:
     basicSPD: 50
     basicACC: 70
     basicCRT: 6
-    interrupt: 6
+    interrupt: 8
     cost: 30
     skillID: 2003
   - id: 2022
@@ -1949,7 +1949,7 @@ MonoBehaviour:
     basicSPD: 95
     basicACC: 95
     basicCRT: 9
-    interrupt: 8
+    interrupt: 5
     cost: 12
     skillID: 2102
   - id: 2121
@@ -1973,7 +1973,7 @@ MonoBehaviour:
     basicSPD: 90
     basicACC: 120
     basicCRT: 20
-    interrupt: 20
+    interrupt: 22
     cost: 24
     skillID: 2104
   - id: 2123
@@ -1997,7 +1997,7 @@ MonoBehaviour:
     basicSPD: 80
     basicACC: 90
     basicCRT: 12
-    interrupt: 12
+    interrupt: 10
     cost: 16
     skillID: 2202
   - id: 2221
@@ -2009,7 +2009,7 @@ MonoBehaviour:
     basicSPD: 60
     basicACC: 50
     basicCRT: 25
-    interrupt: 8
+    interrupt: 18
     cost: 32
     skillID: 2203
   - id: 2222
@@ -2045,19 +2045,19 @@ MonoBehaviour:
     basicSPD: 60
     basicACC: 80
     basicCRT: 10
-    interrupt: 10
+    interrupt: 15
     cost: 80
     skillID: 2006
   - id: 2031
     name: "\u5F3A\u529B\u7075\u6C14\u5F39\u4E4B\u4E66"
     type: 0
-    description: "\u8BB0\u8F7D\u7740\u6CD5\u672F\u3010\u5F3A\u529B\u7075\u6C14\u5F39\u3011\u7684\u53E4\u4E66\u3002\u9633\u708E\u672F\u662F\u6700\u57FA\u7840\u7684\u9633\u5C5E\u6027\u6CD5\u672F\uFF0C\u5229\u7528\u4E86\u4E16\u95F4\u7684\u9633\u6C14\u4E4B\u529B\u3002"
+    description: "\u8BB0\u8F7D\u7740\u6CD5\u672F\u3010\u5F3A\u529B\u7075\u6C14\u5F39\u3011\u7684\u53E4\u4E66\u3002\u80FD\u591F\u5236\u9020\u66F4\u5927\u66F4\u5F3A\u7684\u7075\u6C14\u5F39\u3002"
     basicATKMin: 90
     basicATKMax: 140
     basicSPD: 50
     basicACC: 70
     basicCRT: 6
-    interrupt: 6
+    interrupt: 8
     cost: 100
     skillID: 2007
   - id: 2032
@@ -2105,7 +2105,7 @@ MonoBehaviour:
     basicSPD: 105
     basicACC: 105
     basicCRT: 9
-    interrupt: 8
+    interrupt: 5
     cost: 48
     skillID: 2106
   - id: 2131
@@ -2117,7 +2117,7 @@ MonoBehaviour:
     basicSPD: 75
     basicACC: 85
     basicCRT: 22
-    interrupt: 15
+    interrupt: 20
     cost: 80
     skillID: 2107
   - id: 2132
@@ -2153,8 +2153,8 @@ MonoBehaviour:
     basicSPD: 80
     basicACC: 80
     basicCRT: 0
-    interrupt: 180
-    cost: 0
+    interrupt: 0
+    cost: 180
     skillID: 2110
   - id: 2230
     name: "\u7EC8\u6781\u9633\u708E\u672F\u4E4B\u4E66"
@@ -2165,7 +2165,7 @@ MonoBehaviour:
     basicSPD: 95
     basicACC: 95
     basicCRT: 12
-    interrupt: 12
+    interrupt: 10
     cost: 64
     skillID: 2206
   - id: 2231
@@ -2177,7 +2177,7 @@ MonoBehaviour:
     basicSPD: 65
     basicACC: 75
     basicCRT: 28
-    interrupt: 19
+    interrupt: 25
     cost: 80
     skillID: 2207
   - id: 2232
@@ -2201,7 +2201,7 @@ MonoBehaviour:
     basicSPD: 200
     basicACC: 66
     basicCRT: 0
-    interrupt: 12
+    interrupt: 38
     cost: 120
     skillID: 2209
   - id: 2234
@@ -2225,7 +2225,7 @@ MonoBehaviour:
     basicSPD: 50
     basicACC: 90
     basicCRT: 10
-    interrupt: 20
+    interrupt: 40
     cost: 150
     skillID: 2011
   - id: 2041
@@ -2237,7 +2237,7 @@ MonoBehaviour:
     basicSPD: 50
     basicACC: 80
     basicCRT: 10
-    interrupt: 10
+    interrupt: 20
     cost: 180
     skillID: 2012
   - id: 2042
@@ -2261,7 +2261,7 @@ MonoBehaviour:
     basicSPD: 75
     basicACC: 110
     basicCRT: 2
-    interrupt: 15
+    interrupt: 25
     cost: 125
     skillID: 2111
   - id: 2141
@@ -2285,7 +2285,7 @@ MonoBehaviour:
     basicSPD: 50
     basicACC: 75
     basicCRT: 16
-    interrupt: 38
+    interrupt: 30
     cost: 133
     skillID: 2211
   - id: 2241
