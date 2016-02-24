@@ -18,7 +18,7 @@ public class BattleFormula {
 	{
 		//获取必要信息
 		SkillData skillData = DataManager.Instance.GetSkillDataSet().GetSkillData(skillID);
-		Damage damagePack = source.damage = new Damage(source, target, skillID, isWeaponDamage);
+		Damage damagePack = source.damage = target.damageTaken = new Damage(source, target, skillID, isWeaponDamage);
 
 		//计算击出命中、暴击、伤害
 		if(isWeaponDamage)
@@ -83,29 +83,9 @@ public class BattleFormula {
 			damagePack.isCrit = damagePack.forceCrit ? true : damagePack.isCrit;
 			
 			SkillHelper.CheckSkillEffect (EffectTrigger.OnDamage, source);//检查结算中生效的特效
-			//damagePack.Log ();
-			
-			//处理最终结果
-			if(damagePack.isCountered)//被反击
-			{
-				damagePack.OnCounter();
-			}
-			else if(!damagePack.isHit)//被闪避
-			{
-				damagePack.OnMiss();
-			}
-			else if(damagePack.isGuarded)//被防御[被防御，就不会被暴击]
-			{
-				damagePack.OnGuarded();
-			}
-			else if(damagePack.isCrit)//暴击
-			{
-				damagePack.OnCriticalHit();
-			}
-			else//正常命中
-			{
-				damagePack.OnHit();
-			}
+			SkillHelper.CheckBuff (BuffTrigger.Behit, target);//检查命中前生效的特效
+
+			damagePack.TakeEffect();
 		}
 	}
 	
@@ -121,17 +101,17 @@ public class BattleFormula {
 		EventManager.Instance.PostEvent(BattleEvent.BattleObjectHeal, args);
 	}
 
-	public static void OnDamage(BattleObject target, Damage damage)
+	public static void OnDamage(BattleObject target)
 	{
-		target.currentHP -= Mathf.RoundToInt(damage.dmg);
+		target.currentHP -= Mathf.RoundToInt(target.damageTaken.dmg);
 		//timeline interrupt
-		target.timelinePosition -= Mathf.RoundToInt(damage.interrupt);
+		target.timelinePosition -= Mathf.RoundToInt(target.damageTaken.interrupt);
 		if(target.timelinePosition < GlobalDataStructure.BATTLE_TIMELINE_READY)
 			target.battleStatus = BattleStatus.Prepare;
 		//send message
 		MessageEventArgs args = new MessageEventArgs();
 		args.AddMessage("Name", target.GetName());
-		args.AddMessage("Damage", Mathf.RoundToInt(damage.dmg));
+		args.AddMessage("Damage", Mathf.RoundToInt(target.damageTaken.dmg));
 		EventManager.Instance.PostEvent(BattleEvent.BattleObjectHurt, args);
 		//calculate die event
 		if(target.currentHP <= 0)

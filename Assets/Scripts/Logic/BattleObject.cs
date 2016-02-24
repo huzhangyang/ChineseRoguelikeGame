@@ -72,7 +72,8 @@ public abstract class BattleObject : MonoBehaviour {
 
 	public BattleStatus battleStatus = BattleStatus.Prepare;
 	public Command commandToExecute = new CommandNone();
-	public Damage damage;//伤害值
+	public Damage damage;//击出的伤害
+	public Damage damageTaken;//受到的伤害
 	public List<Command> availableCommands = new List<Command>();
 	public List<Buff> buffList = new List<Buff>();
 	

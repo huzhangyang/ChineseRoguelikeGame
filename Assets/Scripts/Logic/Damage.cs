@@ -48,7 +48,38 @@ public class Damage
 		Debug.Log (log);
 	}
 
-	public void OnCounter()
+	public void TakeEffect()
+	{
+		//Log();
+		if(isCountered)//被反击
+		{
+			OnCounter();
+			return;
+		}
+		else if(!isHit)//被闪避
+		{
+			OnMiss();
+			return;
+		}
+		else if(isGuarded)//被防御[被防御，就不会被暴击]
+		{
+			OnGuarded();
+		}
+		else if(isCrit)//暴击
+		{
+			OnCriticalHit();
+		}
+		else//正常命中
+		{
+			OnHit();
+		}
+
+		BattleFormula.OnDamage(target);
+		SkillHelper.CheckSkillEffect (EffectTrigger.AfterDamage, source);//检查伤害后生效的特效
+		SkillHelper.CheckBuffAdd (source);//检查附带的BUFF是否命中
+	}
+
+	private void OnCounter()
 	{
 		MessageEventArgs args = new MessageEventArgs();
 		args.AddMessage("Name",target.GetName());
@@ -57,15 +88,12 @@ public class Damage
 		BattleFormula.OnCounterDamage(source, target);
 	}
 	
-	public void OnGuarded()
+	private void OnGuarded()
 	{
 		AudioManager.Instance.PlaySE("guard");
-		BattleFormula.OnDamage(target, this);
-		SkillHelper.CheckSkillEffect (EffectTrigger.AfterDamage, source);//检查伤害后生效的特效
-		SkillHelper.CheckBuffAdd (source);//检查附带的BUFF是否命中
 	}
 	
-	public void OnCriticalHit()
+	private void OnCriticalHit()
 	{
 		this.dmg *= 2;
 		AudioManager.Instance.PlaySE("critical");
@@ -73,22 +101,14 @@ public class Damage
 		MessageEventArgs args = new MessageEventArgs();
 		args.AddMessage("Name", target.GetName());
 		EventManager.Instance.PostEvent(BattleEvent.BattleObjectCritical, args);
-		
-		BattleFormula.OnDamage(target, this);
-		SkillHelper.CheckSkillEffect (EffectTrigger.AfterDamage, source);//检查伤害后生效的特效
-		SkillHelper.CheckBuffAdd (source);//检查附带的BUFF是否命中
 	}
 	
-	public void OnHit()
+	private void OnHit()
 	{
 		AudioManager.Instance.PlaySE("hit");
-
-		BattleFormula.OnDamage(target, this);
-		SkillHelper.CheckSkillEffect (EffectTrigger.AfterDamage, source);//检查伤害后生效的特效
-		SkillHelper.CheckBuffAdd (source);//检查附带的BUFF是否命中
 	}
 	
-	public void OnMiss()
+	private void OnMiss()
 	{
 		MessageEventArgs args = new MessageEventArgs();
 		args.AddMessage("Name", target.GetName());
