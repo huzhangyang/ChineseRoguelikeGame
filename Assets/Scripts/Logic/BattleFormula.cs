@@ -152,6 +152,8 @@ public class BattleFormula {
 
 		if(target.currentHP <= 0)
 		{			
+			target.buffFrozenTime = 1;
+
 			MessageEventArgs args2 = new MessageEventArgs();
 			args2.AddMessage("Object", target);
 			EventManager.Instance.PostEvent(BattleEvent.BattleObjectDied, args2);

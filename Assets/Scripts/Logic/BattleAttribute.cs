@@ -17,7 +17,7 @@ public class BattleAttribute {
 	//时间轴速度
 	public static int Speed(BattleObject bo)
 	{
-		int speed = Mathf.RoundToInt(Mathf.Log10(bo.agility) * 80);
+		int speed = Mathf.RoundToInt(Mathf.Log10(bo.agility) * 50);
 		return Mathf.RoundToInt(speed * (1 + bo.speedMulti));
 	}
 
@@ -68,7 +68,7 @@ public class BattleAttribute {
 	//时间轴速度
 	public static int Speed(ObjectData data)
 	{
-		return (int)Mathf.Round(Mathf.Log10(data.agility) * 80);
+		return (int)Mathf.Round(Mathf.Log10(data.agility) * 50);
 	}
 	
 	//攻击倍率

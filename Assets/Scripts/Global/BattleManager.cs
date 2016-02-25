@@ -252,13 +252,12 @@ public class BattleManager : MonoBehaviour {
 		PauseEveryOne();
 		for (int i = 0; i < commandQueue.Count; i++) 
 		{
-			Command cmd = commandQueue.Peek() as Command;
+			Command cmd = commandQueue.Dequeue() as Command;
 			if(cmd == null) continue;
 			cmd.Execute();
 			cmd.source.GetComponent<BattleObjectUIEvent>().BeginExecute();
-			yield return new WaitForSeconds(1);
+			yield return new WaitForSeconds(2);
 			cmd.source.GetComponent<BattleObjectUIEvent>().EndExecute();
-			commandQueue.Dequeue();
 		}
 		ResumeEveryOne();
 	}
