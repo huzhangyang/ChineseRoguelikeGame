@@ -256,7 +256,7 @@ public class BattleManager : MonoBehaviour {
 			if(cmd == null) continue;
 			cmd.Execute();
 			cmd.source.GetComponent<BattleObjectUIEvent>().BeginExecute();
-			yield return new WaitForSeconds(2);
+			yield return new WaitForSeconds(1);
 			cmd.source.GetComponent<BattleObjectUIEvent>().EndExecute();
 		}
 		ResumeEveryOne();

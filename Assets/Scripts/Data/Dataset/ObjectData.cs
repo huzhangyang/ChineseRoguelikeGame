@@ -26,6 +26,13 @@ public abstract class ObjectData{
 	public int insight;//洞察
 	public int eloquence;//口才
 	public int luck;//运气
+	//extra attribute
+	public float slashMulti = 1;
+	public float thrustMulti = 1;
+	public float bluntMulti = 1;
+	public float yinMulti = 1;	
+	public float yangMulti = 1;
+	public float neutralMulti = 1;
 	//Equipment
 	public int weaponID;
 	public int ring1ID;

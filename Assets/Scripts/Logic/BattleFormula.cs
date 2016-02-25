@@ -76,7 +76,7 @@ public class BattleFormula {
 		for(int i = 0; i < damagePack.combo; i++)
 		{
 			//判断是否命中，是否暴击,随机实际伤害值
-			damagePack.dmg = Random.Range(Mathf.RoundToInt(damagePack.minDmg), Mathf.RoundToInt(damagePack.maxDmg) + 1);
+			damagePack.dmg = Random.Range(damagePack.minDmg, damagePack.maxDmg) * target.GetSkillTypeMulti(skillData.skillType);
 			damagePack.isHit = Random.Range(0,101) <= damagePack.hit?true:false;
 			damagePack.isCrit = Random.Range(0,101) <= damagePack.crit?true:false;
 			damagePack.isHit = (damagePack.forceHit|| damagePack.target == damagePack.source) ? true : damagePack.forceMiss ? false : damagePack.isHit;
@@ -158,6 +158,7 @@ public class BattleFormula {
 		if(target.currentHP <= 0)
 		{			
 			target.buffFrozenTime = 1;
+			target.isDead = true;
 
 			MessageEventArgs args2 = new MessageEventArgs();
 			args2.AddMessage("Object", target);

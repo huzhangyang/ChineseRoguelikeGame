@@ -25,6 +25,12 @@ MonoBehaviour:
     insight: 0
     eloquence: 0
     luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
     weaponID: 1000
     ring1ID: 0
     ring2ID: 0
@@ -46,6 +52,12 @@ MonoBehaviour:
     insight: 10
     eloquence: 10
     luck: 10
+    slashMulti: 1
+    thrustMulti: 1.5
+    bluntMulti: .5
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
     weaponID: 3001
     ring1ID: 0
     ring2ID: 0
@@ -67,6 +79,12 @@ MonoBehaviour:
     insight: 0
     eloquence: 0
     luck: 8
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 2
     weaponID: 1220
     ring1ID: 0
     ring2ID: 0
@@ -88,6 +106,12 @@ MonoBehaviour:
     insight: 0
     eloquence: 0
     luck: 12
+    slashMulti: 2
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
     weaponID: 1000
     ring1ID: 0
     ring2ID: 0
@@ -109,6 +133,12 @@ MonoBehaviour:
     insight: 50
     eloquence: 50
     luck: 50
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
     weaponID: 3002
     ring1ID: 0
     ring2ID: 0
@@ -130,6 +160,12 @@ MonoBehaviour:
     insight: 99
     eloquence: 99
     luck: 99
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
     weaponID: 1000
     ring1ID: 0
     ring2ID: 0
@@ -151,6 +187,12 @@ MonoBehaviour:
     insight: 15
     eloquence: 25
     luck: 20
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
     weaponID: 1000
     ring1ID: 0
     ring2ID: 0
@@ -172,6 +214,12 @@ MonoBehaviour:
     insight: 25
     eloquence: 15
     luck: 20
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
     weaponID: 3003
     ring1ID: 0
     ring2ID: 0
@@ -193,6 +241,12 @@ MonoBehaviour:
     insight: 12
     eloquence: 12
     luck: 15
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
     weaponID: 3004
     ring1ID: 0
     ring2ID: 0
@@ -214,6 +268,12 @@ MonoBehaviour:
     insight: 8
     eloquence: 10
     luck: 9
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
     weaponID: 3005
     ring1ID: 0
     ring2ID: 0
@@ -235,6 +295,12 @@ MonoBehaviour:
     insight: 15
     eloquence: 10
     luck: 11
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
     weaponID: 1000
     ring1ID: 0
     ring2ID: 0
@@ -256,6 +322,12 @@ MonoBehaviour:
     insight: 0
     eloquence: 0
     luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
     weaponID: 1000
     ring1ID: 0
     ring2ID: 0
@@ -277,6 +349,12 @@ MonoBehaviour:
     insight: 0
     eloquence: 0
     luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
     weaponID: 1000
     ring1ID: 0
     ring2ID: 0
@@ -298,6 +376,12 @@ MonoBehaviour:
     insight: 0
     eloquence: 0
     luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
     weaponID: 1000
     ring1ID: 0
     ring2ID: 0
@@ -319,6 +403,12 @@ MonoBehaviour:
     insight: 0
     eloquence: 0
     luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
     weaponID: 1000
     ring1ID: 0
     ring2ID: 0
@@ -340,6 +430,12 @@ MonoBehaviour:
     insight: 0
     eloquence: 0
     luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
     weaponID: 1000
     ring1ID: 0
     ring2ID: 0
@@ -361,6 +457,12 @@ MonoBehaviour:
     insight: 0
     eloquence: 0
     luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
     weaponID: 1000
     ring1ID: 0
     ring2ID: 0
@@ -382,6 +484,12 @@ MonoBehaviour:
     insight: 0
     eloquence: 0
     luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
     weaponID: 1000
     ring1ID: 0
     ring2ID: 0
@@ -403,6 +511,12 @@ MonoBehaviour:
     insight: 0
     eloquence: 0
     luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
     weaponID: 1000
     ring1ID: 0
     ring2ID: 0
@@ -424,6 +538,12 @@ MonoBehaviour:
     insight: 0
     eloquence: 0
     luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
     weaponID: 1000
     ring1ID: 0
     ring2ID: 0
@@ -445,6 +565,12 @@ MonoBehaviour:
     insight: 0
     eloquence: 0
     luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
     weaponID: 1000
     ring1ID: 0
     ring2ID: 0
@@ -466,6 +592,12 @@ MonoBehaviour:
     insight: 0
     eloquence: 0
     luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
     weaponID: 1000
     ring1ID: 0
     ring2ID: 0
@@ -487,6 +619,12 @@ MonoBehaviour:
     insight: 0
     eloquence: 0
     luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
     weaponID: 1000
     ring1ID: 0
     ring2ID: 0
@@ -508,6 +646,12 @@ MonoBehaviour:
     insight: 0
     eloquence: 0
     luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
     weaponID: 1000
     ring1ID: 0
     ring2ID: 0
@@ -529,6 +673,12 @@ MonoBehaviour:
     insight: 0
     eloquence: 0
     luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
     weaponID: 1000
     ring1ID: 0
     ring2ID: 0
@@ -550,6 +700,12 @@ MonoBehaviour:
     insight: 0
     eloquence: 0
     luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
     weaponID: 1000
     ring1ID: 0
     ring2ID: 0
@@ -571,6 +727,12 @@ MonoBehaviour:
     insight: 0
     eloquence: 0
     luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
     weaponID: 1000
     ring1ID: 0
     ring2ID: 0
@@ -592,6 +754,12 @@ MonoBehaviour:
     insight: 0
     eloquence: 0
     luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
     weaponID: 1000
     ring1ID: 0
     ring2ID: 0
@@ -613,6 +781,12 @@ MonoBehaviour:
     insight: 0
     eloquence: 0
     luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
     weaponID: 1000
     ring1ID: 0
     ring2ID: 0
@@ -634,6 +808,12 @@ MonoBehaviour:
     insight: 0
     eloquence: 0
     luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
     weaponID: 1000
     ring1ID: 0
     ring2ID: 0
@@ -655,6 +835,12 @@ MonoBehaviour:
     insight: 0
     eloquence: 0
     luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
     weaponID: 1000
     ring1ID: 0
     ring2ID: 0
@@ -676,6 +862,12 @@ MonoBehaviour:
     insight: 0
     eloquence: 0
     luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
     weaponID: 1000
     ring1ID: 0
     ring2ID: 0
@@ -697,6 +889,12 @@ MonoBehaviour:
     insight: 0
     eloquence: 0
     luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
     weaponID: 1000
     ring1ID: 0
     ring2ID: 0
@@ -718,6 +916,12 @@ MonoBehaviour:
     insight: 0
     eloquence: 0
     luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
     weaponID: 1000
     ring1ID: 0
     ring2ID: 0
@@ -739,6 +943,12 @@ MonoBehaviour:
     insight: 0
     eloquence: 0
     luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
     weaponID: 1000
     ring1ID: 0
     ring2ID: 0
@@ -760,6 +970,12 @@ MonoBehaviour:
     insight: 0
     eloquence: 0
     luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
     weaponID: 1000
     ring1ID: 0
     ring2ID: 0
@@ -781,6 +997,12 @@ MonoBehaviour:
     insight: 0
     eloquence: 0
     luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
     weaponID: 1000
     ring1ID: 0
     ring2ID: 0
@@ -802,6 +1024,12 @@ MonoBehaviour:
     insight: 0
     eloquence: 0
     luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
     weaponID: 1000
     ring1ID: 0
     ring2ID: 0
@@ -823,6 +1051,12 @@ MonoBehaviour:
     insight: 0
     eloquence: 0
     luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
     weaponID: 1000
     ring1ID: 0
     ring2ID: 0
@@ -844,6 +1078,12 @@ MonoBehaviour:
     insight: 0
     eloquence: 0
     luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
     weaponID: 1000
     ring1ID: 0
     ring2ID: 0
@@ -865,6 +1105,12 @@ MonoBehaviour:
     insight: 0
     eloquence: 0
     luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
     weaponID: 1000
     ring1ID: 0
     ring2ID: 0
@@ -886,6 +1132,12 @@ MonoBehaviour:
     insight: 0
     eloquence: 0
     luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
     weaponID: 1000
     ring1ID: 0
     ring2ID: 0
@@ -907,6 +1159,12 @@ MonoBehaviour:
     insight: 0
     eloquence: 0
     luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
     weaponID: 1000
     ring1ID: 0
     ring2ID: 0
@@ -928,6 +1186,12 @@ MonoBehaviour:
     insight: 0
     eloquence: 0
     luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
     weaponID: 1000
     ring1ID: 0
     ring2ID: 0
@@ -949,6 +1213,12 @@ MonoBehaviour:
     insight: 0
     eloquence: 0
     luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
     weaponID: 1000
     ring1ID: 0
     ring2ID: 0
@@ -970,6 +1240,12 @@ MonoBehaviour:
     insight: 0
     eloquence: 0
     luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
     weaponID: 1000
     ring1ID: 0
     ring2ID: 0
@@ -991,6 +1267,12 @@ MonoBehaviour:
     insight: 0
     eloquence: 0
     luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
     weaponID: 1000
     ring1ID: 0
     ring2ID: 0
@@ -1012,6 +1294,12 @@ MonoBehaviour:
     insight: 0
     eloquence: 0
     luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
     weaponID: 1000
     ring1ID: 0
     ring2ID: 0
@@ -1033,6 +1321,12 @@ MonoBehaviour:
     insight: 0
     eloquence: 0
     luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
     weaponID: 1000
     ring1ID: 0
     ring2ID: 0
@@ -1054,6 +1348,12 @@ MonoBehaviour:
     insight: 0
     eloquence: 0
     luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
     weaponID: 1000
     ring1ID: 0
     ring2ID: 0
@@ -1075,6 +1375,12 @@ MonoBehaviour:
     insight: 0
     eloquence: 0
     luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
     weaponID: 1000
     ring1ID: 0
     ring2ID: 0
@@ -1096,6 +1402,12 @@ MonoBehaviour:
     insight: 0
     eloquence: 0
     luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
     weaponID: 1000
     ring1ID: 0
     ring2ID: 0
@@ -1117,6 +1429,12 @@ MonoBehaviour:
     insight: 0
     eloquence: 0
     luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
     weaponID: 1000
     ring1ID: 0
     ring2ID: 0
@@ -1138,6 +1456,12 @@ MonoBehaviour:
     insight: 0
     eloquence: 0
     luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
     weaponID: 1000
     ring1ID: 0
     ring2ID: 0
@@ -1159,6 +1483,12 @@ MonoBehaviour:
     insight: 0
     eloquence: 0
     luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
     weaponID: 1000
     ring1ID: 0
     ring2ID: 0

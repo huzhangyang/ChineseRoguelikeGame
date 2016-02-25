@@ -76,7 +76,8 @@ public abstract class BattleObject : MonoBehaviour {
 	public Damage damageTaken;//受到的伤害
 	public List<Command> availableCommands = new List<Command>();
 	public List<Buff> buffList = new List<Buff>();
-	
+
+	public bool isDead = false;//是否已经死了
 	public bool isGuarding = false;//是否正在防御
 	public bool isEvading = false;//是否正在躲避
 	public bool isEnemy = false;//是否敌人
@@ -105,6 +106,8 @@ public abstract class BattleObject : MonoBehaviour {
 	/*更新时间轴*/
 	protected void OnTimelineUpdate(MessageEventArgs args)
 	{
+		if(this.isDead)return;
+
 		if(buffFrozenTime > 0)
 			buffFrozenTime -= Time.deltaTime;
 		else if(battleStatus == BattleStatus.Prepare)
@@ -250,6 +253,26 @@ public abstract class BattleObject : MonoBehaviour {
 	public void AcquireItem(int itemID, int count)
 	{
 		data.AcquireItem(itemID, count);
+	}
+
+	public float GetSkillTypeMulti(SkillType skillType)
+	{
+		switch(skillType)
+		{
+		case SkillType.Blunt:
+			return data.bluntMulti;
+		case SkillType.Slash:
+			return data.slashMulti;
+		case SkillType.Thrust:
+			return data.thrustMulti;
+		case SkillType.Neutral:
+			return data.neutralMulti;
+		case SkillType.Yin:
+			return data.yinMulti;
+		case SkillType.Yang:
+			return data.yangMulti;
+		}
+		return 1f;
 	}
 }
 
