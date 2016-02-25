@@ -86,6 +86,11 @@ public class BattleFormula {
 			SkillHelper.CheckBuff (BuffTrigger.Behit, target);//检查命中前生效的特效
 
 			damagePack.TakeEffect();
+
+			if(damagePack.isCountered || (!damagePack.isHit && damagePack.stopComboOnMiss))
+			{
+				break;
+			}
 		}
 	}
 	

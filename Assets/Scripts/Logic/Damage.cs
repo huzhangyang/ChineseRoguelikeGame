@@ -31,6 +31,7 @@ public class Damage
 	public bool forceCrit;//强制暴击
 	public bool ignoreDefence;//无视防御
 	public bool ignoreArmor;//无视护甲
+	public bool stopComboOnMiss;//不中时停止连击
 	
 	public Damage(BattleObject source, BattleObject target, int skillID, bool isWeaponDamage)
 	{
@@ -50,7 +51,7 @@ public class Damage
 
 	public void TakeEffect()
 	{
-		//Log();
+		Log();
 		if(isCountered)//被反击
 		{
 			OnCounter();
