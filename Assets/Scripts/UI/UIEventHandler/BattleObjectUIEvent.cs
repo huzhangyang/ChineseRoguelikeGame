@@ -98,7 +98,8 @@ public class BattleObjectUIEvent : MonoBehaviour {
 
 	public void OnDamage()
 	{
-		this.transform.DOPunchScale(new Vector2(0.1f, 0.1f), 1);
+		if(!DOTween.IsTweening(this.transform))
+			this.transform.DOPunchScale(new Vector2(0.1f, 0.1f), 1);
 	}
 
 	public void OnHeal()

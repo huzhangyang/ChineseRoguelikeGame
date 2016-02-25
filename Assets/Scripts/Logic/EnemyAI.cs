@@ -44,6 +44,7 @@ public class EnemyAI : MonoBehaviour {
 				command = AIAttack();
 		}
 
+		command.source = self;
 		self.commandToExecute = command;
 		AISelectTarget();
 	}
