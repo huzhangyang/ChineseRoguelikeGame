@@ -87,7 +87,7 @@ public class BattleFormula {
 
 			damagePack.TakeEffect();
 
-			if(damagePack.isCountered || (!damagePack.isHit && damagePack.stopComboOnMiss))
+			if(damagePack.isCountered || damagePack.target.isDead || (!damagePack.isHit && damagePack.stopComboOnMiss))
 			{
 				break;
 			}

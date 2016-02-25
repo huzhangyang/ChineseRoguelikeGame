@@ -13,8 +13,8 @@ public class BattleManager : MonoBehaviour {
 	public BattleManager() { s_Instance = this; }
 	public static BattleManager Instance { get { return s_Instance; } }
 
-	private List<Enemy> enemys;
-	private List<Player> players;
+	private List<Enemy> enemys = new List<Enemy>();
+	private List<Player> players = new List<Player>();
 	private Player currentPlayer;//当前在选择指令的角色
 	private Command currentCommand;//当前角色选择的指令
 	private Queue commandQueue = new Queue();//指令序列
@@ -73,6 +73,8 @@ public class BattleManager : MonoBehaviour {
 		isPaused = true;
 		enemys = new List<Enemy>();
 		players = new List<Player>();
+		commandQueue = new Queue();//指令序列
+		readyQueue = new Queue();//Ready序列
 	}
 
 	void OnEnemySpawn(MessageEventArgs args)
@@ -252,8 +254,16 @@ public class BattleManager : MonoBehaviour {
 		PauseEveryOne();
 		for (int i = 0; i < commandQueue.Count; i++) 
 		{
-			Command cmd = commandQueue.Dequeue() as Command;
-			if(cmd == null) continue;
+			Command cmd;
+			try
+			{
+				cmd = commandQueue.Dequeue() as Command;
+			}
+			catch(InvalidOperationException ex)
+			{
+				Debug.LogWarning(ex.ToString());
+				continue;
+			}
 			cmd.Execute();
 			cmd.source.GetComponent<BattleObjectUIEvent>().BeginExecute();
 			yield return new WaitForSeconds(1);
