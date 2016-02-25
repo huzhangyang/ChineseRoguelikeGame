@@ -31,4 +31,9 @@ public class Enemy : BattleObject {
 		AI.AISelectCommand();
 		battleStatus = BattleStatus.Action;
 	}
+
+	public override bool IsBoss()
+	{
+		return ((EnemyData)data).isBoss;
+	}
 }

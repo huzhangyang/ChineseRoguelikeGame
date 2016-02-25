@@ -33,4 +33,9 @@ public class Player : BattleObject {
 		EventManager.Instance.PostEvent(BattleEvent.OnPlayerReady, args);
 	}
 
+	public override bool IsBoss()
+	{
+		return false;
+	}
+
 }

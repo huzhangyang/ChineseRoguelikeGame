@@ -99,6 +99,9 @@ public abstract class BattleObject : MonoBehaviour {
 		EventManager.Instance.UnRegisterEvent(BattleEvent.BattleObjectDied, OnBattleObjectDied);
 	}
 
+	protected abstract void SelectCommand();
+	public abstract bool IsBoss();
+
 	/*更新时间轴*/
 	protected void OnTimelineUpdate(MessageEventArgs args)
 	{
@@ -181,8 +184,6 @@ public abstract class BattleObject : MonoBehaviour {
 
 		availableCommands = Command.GetAvailableCommands(this);
 	}
-
-	protected abstract void SelectCommand();
 
 	protected virtual void ExecuteCommand()
 	{
