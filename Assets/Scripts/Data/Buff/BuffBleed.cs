@@ -3,6 +3,10 @@ using System.Collections;
 
 public class BuffBleed:Buff
 {	
+	protected override void Init()
+	{
+	}
+
 	protected override void Execute()
 	{
 		if(source.GetBattleType() != BattleType.Magical)

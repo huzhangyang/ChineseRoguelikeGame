@@ -11,9 +11,10 @@ public class Enemy : BattleObject {
 	public void Init(int enemyID)
 	{
 		data = DataManager.Instance.GetEnemyDataSet ().GetEnemyData (enemyID).Clone();
+		isEnemy = true;
 
 		UIEvent = this.GetComponent<BattleObjectUIEvent>();
-		UIEvent.Init(enemyID);
+		UIEvent.Init(((EnemyData)data).imageID);
 		UIEvent.InitEnemyHPBar(maxHP, data.battleType);
 		currentHP = maxHP;
 
@@ -27,7 +28,12 @@ public class Enemy : BattleObject {
 
 	protected override void SelectCommand()
 	{
-		commandToExecute = AI.AISelectCommand();
+		AI.AISelectCommand();
 		battleStatus = BattleStatus.Action;
+	}
+
+	public override bool IsBoss()
+	{
+		return ((EnemyData)data).isBoss;
 	}
 }

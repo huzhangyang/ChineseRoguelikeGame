@@ -12,12 +12,14 @@ public class BattleMessage : MonoBehaviour {
 		EventManager.Instance.RegisterEvent(BattleEvent.OnHPAutoRecover, OnHPAutoRecover);
 		EventManager.Instance.RegisterEvent(BattleEvent.OnMPAutoRecover, OnMPAutoRecover);
 		EventManager.Instance.RegisterEvent(BattleEvent.OnBuffActivated, OnBuffActivated);
+		EventManager.Instance.RegisterEvent(BattleEvent.OnBuffDeactivated, OnBuffDeactivated);
 		EventManager.Instance.RegisterEvent(BattleEvent.OnEffectExecuted, OnEffectExecuted);
 		EventManager.Instance.RegisterEvent(BattleEvent.BattleObjectMiss, OnBattleObjectMiss);
 		EventManager.Instance.RegisterEvent(BattleEvent.BattleObjectCritical, OnBattleObjectCritical);
 		EventManager.Instance.RegisterEvent(BattleEvent.BattleObjectHurt, OnBattleObjectHurt);
 		EventManager.Instance.RegisterEvent(BattleEvent.BattleObjectHeal, OnBattleObjectHeal);
 		EventManager.Instance.RegisterEvent(BattleEvent.BattleObjectCounter, OnBattleObjectCounter);
+		EventManager.Instance.RegisterEvent(BattleEvent.BattleObjectInterrupted, OnBattleObjectInterrupted);
 		EventManager.Instance.RegisterEvent(BattleEvent.BattleObjectDied, OnBattleObjectDied);
 		EventManager.Instance.RegisterEvent(BattleEvent.OnBattleWin, OnBattleWin);
 		EventManager.Instance.RegisterEvent(BattleEvent.OnBattleLose, OnBattleLose);
@@ -30,12 +32,14 @@ public class BattleMessage : MonoBehaviour {
 		EventManager.Instance.UnRegisterEvent(BattleEvent.OnHPAutoRecover, OnHPAutoRecover);
 		EventManager.Instance.UnRegisterEvent(BattleEvent.OnMPAutoRecover, OnMPAutoRecover);
 		EventManager.Instance.UnRegisterEvent(BattleEvent.OnBuffActivated, OnBuffActivated);
+		EventManager.Instance.UnRegisterEvent(BattleEvent.OnBuffDeactivated, OnBuffDeactivated);
 		EventManager.Instance.UnRegisterEvent(BattleEvent.OnEffectExecuted, OnEffectExecuted);
 		EventManager.Instance.UnRegisterEvent(BattleEvent.BattleObjectMiss, OnBattleObjectMiss);
 		EventManager.Instance.UnRegisterEvent(BattleEvent.BattleObjectCritical, OnBattleObjectCritical);
 		EventManager.Instance.UnRegisterEvent(BattleEvent.BattleObjectHurt, OnBattleObjectHurt);
 		EventManager.Instance.UnRegisterEvent(BattleEvent.BattleObjectHeal, OnBattleObjectHeal);
 		EventManager.Instance.UnRegisterEvent(BattleEvent.BattleObjectCounter, OnBattleObjectCounter);
+		EventManager.Instance.UnRegisterEvent(BattleEvent.BattleObjectInterrupted, OnBattleObjectInterrupted);
 		EventManager.Instance.UnRegisterEvent(BattleEvent.BattleObjectDied, OnBattleObjectDied);
 		EventManager.Instance.UnRegisterEvent(BattleEvent.OnBattleWin, OnBattleWin);
 		EventManager.Instance.UnRegisterEvent(BattleEvent.OnBattleLose, OnBattleLose);
@@ -62,6 +66,12 @@ public class BattleMessage : MonoBehaviour {
 	}
 
 	void OnBuffActivated(MessageEventArgs args)
+	{
+		string message = args.GetMessage<string>("Message");
+		AddMessage(message);
+	}
+
+	void OnBuffDeactivated(MessageEventArgs args)
 	{
 		string message = args.GetMessage<string>("Message");
 		AddMessage(message);
@@ -109,6 +119,12 @@ public class BattleMessage : MonoBehaviour {
 	{
 		string name = args.GetMessage<string>("Name");
 		AddMessage(name + " 看穿了攻击，并做出反击！");
+	}
+
+	void OnBattleObjectInterrupted(MessageEventArgs args)
+	{
+		string name = args.GetMessage<string>("Name");
+		AddMessage(name + " 的行动被打断了！");
 	}
 
 	void OnBattleObjectDied(MessageEventArgs args)

@@ -13,9 +13,10 @@ public class BattleManager : MonoBehaviour {
 	public BattleManager() { s_Instance = this; }
 	public static BattleManager Instance { get { return s_Instance; } }
 
-	private List<Enemy> enemys;
-	private List<Player> players;
-	private Command currentCommand;//当前玩家选择的指令
+	private List<Enemy> enemys = new List<Enemy>();
+	private List<Player> players = new List<Player>();
+	private Player currentPlayer;//当前在选择指令的角色
+	private Command currentCommand;//当前角色选择的指令
 	private Queue commandQueue = new Queue();//指令序列
 	private Queue readyQueue = new Queue();//Ready序列
 	private bool isPaused;//战斗是否暂停
@@ -72,6 +73,8 @@ public class BattleManager : MonoBehaviour {
 		isPaused = true;
 		enemys = new List<Enemy>();
 		players = new List<Player>();
+		commandQueue = new Queue();//指令序列
+		readyQueue = new Queue();//Ready序列
 	}
 
 	void OnEnemySpawn(MessageEventArgs args)
@@ -112,7 +115,7 @@ public class BattleManager : MonoBehaviour {
 	void OnCommandClicked(MessageEventArgs args)
 	{
 		string commandName = args.GetMessage<string>("CommandName");
-		currentCommand = GetCurrentPlayer ().availableCommands.Find((Command cmd)=>{return cmd.commandName == commandName;});
+		currentCommand = currentPlayer.availableCommands.Find((Command cmd)=>{return cmd.commandName == commandName;});
 		switch(currentCommand.targetType)
 		{
 		case TargetType.SingleEnemy:
@@ -122,15 +125,12 @@ public class BattleManager : MonoBehaviour {
 			}
 			break;
 		case TargetType.SingleAlly:
-
 			foreach(Player player in players)
 			{
 				player.GetComponent<BattleObjectUIEvent>().EnableClick();
 			}
 			break;
-		case TargetType.AllAllies:
-		case TargetType.AllEnemies:
-		case TargetType.Self:
+		default:
 			EventManager.Instance.PostEvent(BattleEvent.OnCommandSelected);
 			break;
 		}
@@ -138,30 +138,18 @@ public class BattleManager : MonoBehaviour {
 
 	void OnCommandSelected(MessageEventArgs args)
 	{
-		switch(currentCommand.targetType)
+		currentPlayer.commandToExecute = currentCommand;
+		bool result = SkillHelper.FillCommandTarget(currentPlayer);
+		if(!result)
 		{
-		case TargetType.Self:
-			currentCommand.targetList.Add(GetCurrentPlayer());
-			break;
-		case TargetType.SingleEnemy:
-		case TargetType.SingleAlly:
 			if(args.ContainsMessage("Target"))
 			{
 				BattleObject bo = args.GetMessage<BattleObject>("Target");
 				currentCommand.targetList.Add(bo);
 			}
-			break;
-		case TargetType.AllEnemies:
-			currentCommand.targetList = new List<BattleObject>(enemys.ToArray());
-			break;
-		case TargetType.AllAllies:
-			currentCommand.targetList = new List<BattleObject>(players.ToArray());
-			break;
 		}
-
-		GetCurrentPlayer().commandToExecute = currentCommand;
-		GetCurrentPlayer().GetComponent<BattleObjectUIEvent>().EndReady();
-		GetCurrentPlayer().battleStatus = BattleStatus.Action;
+		currentPlayer.GetComponent<BattleObjectUIEvent>().EndReady();
+		currentPlayer.battleStatus = BattleStatus.Action;
 		foreach(Enemy enemy in enemys)
 		{
 			enemy.GetComponent<BattleObjectUIEvent>().DisableClick();
@@ -182,7 +170,7 @@ public class BattleManager : MonoBehaviour {
 	void OnBattleObjectDied(MessageEventArgs args)
 	{
 		BattleObject bo = args.GetMessage<BattleObject>("Object");
-		if(bo is Enemy)
+		if(bo.isEnemy)
 		{
 			enemys.Remove((Enemy)bo);
 			if(enemys.Count == 0)
@@ -209,25 +197,46 @@ public class BattleManager : MonoBehaviour {
 
 	public Player GetCurrentPlayer()
 	{
-		return readyQueue.Peek() as Player;
+		return currentPlayer;
 	}
 
 	public BattleObject GetARandomEnemy(BattleObject bo)
 	{
-		if (bo is Enemy)
-			return players [UnityEngine.Random.Range (0, BattleManager.Instance.GetPlayerList ().Count)];
+		if (bo.isEnemy)
+			return players[UnityEngine.Random.Range (0, players.Count)];
 		else
-			return enemys[UnityEngine.Random.Range (0, BattleManager.Instance.GetEnemyList ().Count)];
+			return enemys[UnityEngine.Random.Range (0, enemys.Count)];
 	}
 
-	public List<Player> GetPlayerList()
+	public List<BattleObject> GetAllEnemies(BattleObject bo)
 	{
-		return players;
+		if (bo.isEnemy)
+			return new List<BattleObject>(players.ToArray());
+		else
+			return new List<BattleObject>(enemys.ToArray());
 	}
 
-	public List<Enemy> GetEnemyList()
+	public List<BattleObject> GetAllAllies(BattleObject bo)
 	{
-		return enemys;
+		if (bo.isEnemy)
+			return new List<BattleObject>(enemys.ToArray());
+		else
+			return new List<BattleObject>(players.ToArray());
+	}
+
+	public List<BattleObject> GetEveryone()
+	{
+		List<BattleObject> ret = new List<BattleObject>();
+		ret.AddRange(players.ToArray());
+		ret.AddRange(enemys.ToArray());
+		return ret;
+	}
+
+	public List<BattleObject> GetEveryoneElse(BattleObject bo)
+	{
+		List<BattleObject> ret = GetEveryone();
+		ret.Remove(bo);
+		return ret;
 	}
 
 	public void AddToCommandQueue(Command cmd)
@@ -245,12 +254,20 @@ public class BattleManager : MonoBehaviour {
 		PauseEveryOne();
 		for (int i = 0; i < commandQueue.Count; i++) 
 		{
-			Command cmd = commandQueue.Peek() as Command;
+			Command cmd;
+			try
+			{
+				cmd = commandQueue.Dequeue() as Command;
+			}
+			catch(InvalidOperationException ex)
+			{
+				Debug.LogWarning(ex.ToString());
+				continue;
+			}
 			cmd.Execute();
 			cmd.source.GetComponent<BattleObjectUIEvent>().BeginExecute();
 			yield return new WaitForSeconds(1);
 			cmd.source.GetComponent<BattleObjectUIEvent>().EndExecute();
-			commandQueue.Dequeue();
 		}
 		ResumeEveryOne();
 	}
@@ -261,7 +278,7 @@ public class BattleManager : MonoBehaviour {
 		while(readyQueue.Count > 0)
 		{
 			EventManager.Instance.PostEvent(BattleEvent.OnCommandShowUp);
-			Player currentPlayer = GetCurrentPlayer();
+			currentPlayer = readyQueue.Peek() as Player;
 			currentPlayer.GetComponent<BattleObjectUIEvent>().BeginReady();
 			while(readyQueue.Contains(currentPlayer))
 			{
@@ -284,6 +301,7 @@ public class BattleManager : MonoBehaviour {
 		isPaused = true;
 		yield return new WaitForSeconds(10);
 		EventManager.Instance.PostEvent(BattleEvent.OnBattleFinish);
+		SaveManager.Instance.SaveGame();
 
 		MessageEventArgs arg = new MessageEventArgs();
 		arg.AddMessage("WindowID", UIWindowID.MapWindow);

@@ -16,7 +16,7 @@ MonoBehaviour:
     id: 0
     talentID: 0
     natureID: 0
-    battleType: 0
+    battleType: 2
     stamina: 0
     power: 0
     agility: 0
@@ -25,18 +25,25 @@ MonoBehaviour:
     insight: 0
     eloquence: 0
     luck: 0
-    weaponID: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
+    weaponID: 1000
     ring1ID: 0
     ring2ID: 0
-    magicIDs: 00000000
-    itemKeys: 00000000
-    itemValues: 00000000
+    magicIDs: 
+    itemKeys: 
+    itemValues: 
     isBoss: 0
+    imageID: 1
   - name: "\u54A9\u54A9"
-    id: 10
+    id: 101
     talentID: 0
     natureID: 0
-    battleType: 0
+    battleType: 2
     stamina: 10
     power: 10
     agility: 10
@@ -45,18 +52,79 @@ MonoBehaviour:
     insight: 10
     eloquence: 10
     luck: 10
+    slashMulti: 1
+    thrustMulti: 1.5
+    bluntMulti: .5
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
     weaponID: 3001
     ring1ID: 0
     ring2ID: 0
-    magicIDs: 00000000
-    itemKeys: 01000000
-    itemValues: 03000000
+    magicIDs: a10f0000
+    itemKeys: 
+    itemValues: 
     isBoss: 0
-  - name: "\u5C71\u795E\u54A9"
-    id: 11
+    imageID: 101
+  - name: "\u7269\u7406\u54A9"
+    id: 102
     talentID: 0
     natureID: 0
-    battleType: 2
+    battleType: 0
+    stamina: 12
+    power: 12
+    agility: 8
+    skill: 8
+    toughness: 12
+    insight: 0
+    eloquence: 0
+    luck: 8
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 2
+    weaponID: 1220
+    ring1ID: 0
+    ring2ID: 0
+    magicIDs: 
+    itemKeys: 
+    itemValues: 
+    isBoss: 0
+    imageID: 101
+  - name: "\u6CD5\u672F\u54A9"
+    id: 103
+    talentID: 0
+    natureID: 0
+    battleType: 1
+    stamina: 8
+    power: 8
+    agility: 12
+    skill: 12
+    toughness: 8
+    insight: 0
+    eloquence: 0
+    luck: 12
+    slashMulti: 2
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
+    weaponID: 1000
+    ring1ID: 0
+    ring2ID: 0
+    magicIDs: da0700003e080000a2080000
+    itemKeys: 
+    itemValues: 
+    isBoss: 0
+    imageID: 101
+  - name: "\u5C71\u795E\u54A9"
+    id: 104
+    talentID: 0
+    natureID: 0
+    battleType: 0
     stamina: 99
     power: 50
     agility: 50
@@ -65,18 +133,25 @@ MonoBehaviour:
     insight: 50
     eloquence: 50
     luck: 50
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
     weaponID: 3002
     ring1ID: 0
     ring2ID: 0
-    magicIDs: a10f0000
+    magicIDs: 
     itemKeys: 01000000
     itemValues: 01000000
     isBoss: 1
+    imageID: 104
   - name: "\u66B4\u8D70\u6FAA"
-    id: 12
+    id: 105
     talentID: 0
     natureID: 0
-    battleType: 1
+    battleType: 2
     stamina: 255
     power: 99
     agility: 99
@@ -85,10 +160,1340 @@ MonoBehaviour:
     insight: 99
     eloquence: 99
     luck: 99
-    weaponID: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
+    weaponID: 1000
     ring1ID: 0
     ring2ID: 0
-    magicIDs: a20f0000a30f0000a40f0000
-    itemKeys: 00000000
-    itemValues: 00000000
+    magicIDs: f80700005c080000c0080000
+    itemKeys: 01000000
+    itemValues: 01000000
     isBoss: 1
+    imageID: 105
+  - name: "\u7EA2\u5149"
+    id: 11
+    talentID: 0
+    natureID: 0
+    battleType: 1
+    stamina: 20
+    power: 25
+    agility: 15
+    skill: 20
+    toughness: 20
+    insight: 15
+    eloquence: 25
+    luck: 20
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
+    weaponID: 1000
+    ring1ID: 0
+    ring2ID: 0
+    magicIDs: a50f0000a60f0000
+    itemKeys: 
+    itemValues: 
+    isBoss: 1
+    imageID: 1
+  - name: "\u767D\u6C11"
+    id: 12
+    talentID: 0
+    natureID: 0
+    battleType: 0
+    stamina: 20
+    power: 15
+    agility: 25
+    skill: 20
+    toughness: 20
+    insight: 25
+    eloquence: 15
+    luck: 20
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
+    weaponID: 3003
+    ring1ID: 0
+    ring2ID: 0
+    magicIDs: 
+    itemKeys: 
+    itemValues: 
+    isBoss: 1
+    imageID: 1
+  - name: "\u7384\u9F9F"
+    id: 21
+    talentID: 0
+    natureID: 0
+    battleType: 2
+    stamina: 20
+    power: 18
+    agility: 11
+    skill: 14
+    toughness: 18
+    insight: 12
+    eloquence: 12
+    luck: 15
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
+    weaponID: 3004
+    ring1ID: 0
+    ring2ID: 0
+    magicIDs: a70f0000
+    itemKeys: 
+    itemValues: 
+    isBoss: 0
+    imageID: 1
+  - name: "\u733C\u8A11"
+    id: 32
+    talentID: 0
+    natureID: 0
+    battleType: 0
+    stamina: 8
+    power: 12
+    agility: 15
+    skill: 9
+    toughness: 9
+    insight: 8
+    eloquence: 10
+    luck: 9
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
+    weaponID: 3005
+    ring1ID: 0
+    ring2ID: 0
+    magicIDs: 
+    itemKeys: 
+    itemValues: 
+    isBoss: 0
+    imageID: 1
+  - name: "\u9B3D"
+    id: 34
+    talentID: 0
+    natureID: 0
+    battleType: 1
+    stamina: 8
+    power: 7
+    agility: 12
+    skill: 9
+    toughness: 8
+    insight: 15
+    eloquence: 10
+    luck: 11
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
+    weaponID: 1000
+    ring1ID: 0
+    ring2ID: 0
+    magicIDs: a80f0000
+    itemKeys: 
+    itemValues: 
+    isBoss: 0
+    imageID: 1
+  - name: "\u8BA1\u8499"
+    id: 13
+    talentID: 0
+    natureID: 0
+    battleType: 2
+    stamina: 0
+    power: 0
+    agility: 0
+    skill: 0
+    toughness: 0
+    insight: 0
+    eloquence: 0
+    luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
+    weaponID: 1000
+    ring1ID: 0
+    ring2ID: 0
+    magicIDs: 
+    itemKeys: 
+    itemValues: 
+    isBoss: 1
+    imageID: 1
+  - name: "\u80A5\u9057"
+    id: 23
+    talentID: 0
+    natureID: 0
+    battleType: 2
+    stamina: 0
+    power: 0
+    agility: 0
+    skill: 0
+    toughness: 0
+    insight: 0
+    eloquence: 0
+    luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
+    weaponID: 1000
+    ring1ID: 0
+    ring2ID: 0
+    magicIDs: 
+    itemKeys: 
+    itemValues: 
+    isBoss: 0
+    imageID: 1
+  - name: "\u86EE\u86EE"
+    id: 37
+    talentID: 0
+    natureID: 0
+    battleType: 2
+    stamina: 0
+    power: 0
+    agility: 0
+    skill: 0
+    toughness: 0
+    insight: 0
+    eloquence: 0
+    luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
+    weaponID: 1000
+    ring1ID: 0
+    ring2ID: 0
+    magicIDs: 
+    itemKeys: 
+    itemValues: 
+    isBoss: 0
+    imageID: 1
+  - name: "\u9F13"
+    id: 14
+    talentID: 0
+    natureID: 0
+    battleType: 2
+    stamina: 0
+    power: 0
+    agility: 0
+    skill: 0
+    toughness: 0
+    insight: 0
+    eloquence: 0
+    luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
+    weaponID: 1000
+    ring1ID: 0
+    ring2ID: 0
+    magicIDs: 
+    itemKeys: 
+    itemValues: 
+    isBoss: 1
+    imageID: 1
+  - name: "\u8446\u6C5F"
+    id: 15
+    talentID: 0
+    natureID: 0
+    battleType: 2
+    stamina: 0
+    power: 0
+    agility: 0
+    skill: 0
+    toughness: 0
+    insight: 0
+    eloquence: 0
+    luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
+    weaponID: 1000
+    ring1ID: 0
+    ring2ID: 0
+    magicIDs: 
+    itemKeys: 
+    itemValues: 
+    isBoss: 1
+    imageID: 1
+  - name: "\u5B5F\u6781"
+    id: 25
+    talentID: 0
+    natureID: 0
+    battleType: 2
+    stamina: 0
+    power: 0
+    agility: 0
+    skill: 0
+    toughness: 0
+    insight: 0
+    eloquence: 0
+    luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
+    weaponID: 1000
+    ring1ID: 0
+    ring2ID: 0
+    magicIDs: 
+    itemKeys: 
+    itemValues: 
+    isBoss: 0
+    imageID: 1
+  - name: "\u8BF8\u728D"
+    id: 26
+    talentID: 0
+    natureID: 0
+    battleType: 2
+    stamina: 0
+    power: 0
+    agility: 0
+    skill: 0
+    toughness: 0
+    insight: 0
+    eloquence: 0
+    luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
+    weaponID: 1000
+    ring1ID: 0
+    ring2ID: 0
+    magicIDs: 
+    itemKeys: 
+    itemValues: 
+    isBoss: 0
+    imageID: 1
+  - name: "\u4E5D\u9B3F"
+    id: 39
+    talentID: 0
+    natureID: 0
+    battleType: 2
+    stamina: 0
+    power: 0
+    agility: 0
+    skill: 0
+    toughness: 0
+    insight: 0
+    eloquence: 0
+    luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
+    weaponID: 1000
+    ring1ID: 0
+    ring2ID: 0
+    magicIDs: 
+    itemKeys: 
+    itemValues: 
+    isBoss: 0
+    imageID: 1
+  - name: "\u5BD3"
+    id: 310
+    talentID: 0
+    natureID: 0
+    battleType: 2
+    stamina: 0
+    power: 0
+    agility: 0
+    skill: 0
+    toughness: 0
+    insight: 0
+    eloquence: 0
+    luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
+    weaponID: 1000
+    ring1ID: 0
+    ring2ID: 0
+    magicIDs: 
+    itemKeys: 
+    itemValues: 
+    isBoss: 0
+    imageID: 1
+  - name: "\u9178\u4E0E"
+    id: 313
+    talentID: 0
+    natureID: 0
+    battleType: 2
+    stamina: 0
+    power: 0
+    agility: 0
+    skill: 0
+    toughness: 0
+    insight: 0
+    eloquence: 0
+    luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
+    weaponID: 1000
+    ring1ID: 0
+    ring2ID: 0
+    magicIDs: 
+    itemKeys: 
+    itemValues: 
+    isBoss: 0
+    imageID: 1
+  - name: "\u9646\u543E"
+    id: 16
+    talentID: 0
+    natureID: 0
+    battleType: 2
+    stamina: 0
+    power: 0
+    agility: 0
+    skill: 0
+    toughness: 0
+    insight: 0
+    eloquence: 0
+    luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
+    weaponID: 1000
+    ring1ID: 0
+    ring2ID: 0
+    magicIDs: 
+    itemKeys: 
+    itemValues: 
+    isBoss: 1
+    imageID: 1
+  - name: "\u6761\u45E4"
+    id: 28
+    talentID: 0
+    natureID: 0
+    battleType: 2
+    stamina: 0
+    power: 0
+    agility: 0
+    skill: 0
+    toughness: 0
+    insight: 0
+    eloquence: 0
+    luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
+    weaponID: 1000
+    ring1ID: 0
+    ring2ID: 0
+    magicIDs: 
+    itemKeys: 
+    itemValues: 
+    isBoss: 0
+    imageID: 1
+  - name: "\u4ECE\u4ECE"
+    id: 314
+    talentID: 0
+    natureID: 0
+    battleType: 2
+    stamina: 0
+    power: 0
+    agility: 0
+    skill: 0
+    toughness: 0
+    insight: 0
+    eloquence: 0
+    luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
+    weaponID: 1000
+    ring1ID: 0
+    ring2ID: 0
+    magicIDs: 
+    itemKeys: 
+    itemValues: 
+    isBoss: 0
+    imageID: 1
+  - name: "\u6761\u45E4"
+    id: 316
+    talentID: 0
+    natureID: 0
+    battleType: 2
+    stamina: 0
+    power: 0
+    agility: 0
+    skill: 0
+    toughness: 0
+    insight: 0
+    eloquence: 0
+    luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
+    weaponID: 1000
+    ring1ID: 0
+    ring2ID: 0
+    magicIDs: 
+    itemKeys: 
+    itemValues: 
+    isBoss: 0
+    imageID: 1
+  - name: "\u5408\u7AB3"
+    id: 318
+    talentID: 0
+    natureID: 0
+    battleType: 2
+    stamina: 0
+    power: 0
+    agility: 0
+    skill: 0
+    toughness: 0
+    insight: 0
+    eloquence: 0
+    luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
+    weaponID: 1000
+    ring1ID: 0
+    ring2ID: 0
+    magicIDs: 
+    itemKeys: 
+    itemValues: 
+    isBoss: 0
+    imageID: 1
+  - name: "\u82F1\u62DB"
+    id: 17
+    talentID: 0
+    natureID: 0
+    battleType: 2
+    stamina: 0
+    power: 0
+    agility: 0
+    skill: 0
+    toughness: 0
+    insight: 0
+    eloquence: 0
+    luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
+    weaponID: 1000
+    ring1ID: 0
+    ring2ID: 0
+    magicIDs: 
+    itemKeys: 
+    itemValues: 
+    isBoss: 1
+    imageID: 1
+  - name: "\u9E23\u86C7"
+    id: 211
+    talentID: 0
+    natureID: 0
+    battleType: 2
+    stamina: 0
+    power: 0
+    agility: 0
+    skill: 0
+    toughness: 0
+    insight: 0
+    eloquence: 0
+    luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
+    weaponID: 1000
+    ring1ID: 0
+    ring2ID: 0
+    magicIDs: 
+    itemKeys: 
+    itemValues: 
+    isBoss: 0
+    imageID: 1
+  - name: "\u6CF0\u9022"
+    id: 212
+    talentID: 0
+    natureID: 0
+    battleType: 2
+    stamina: 0
+    power: 0
+    agility: 0
+    skill: 0
+    toughness: 0
+    insight: 0
+    eloquence: 0
+    luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
+    weaponID: 1000
+    ring1ID: 0
+    ring2ID: 0
+    magicIDs: 
+    itemKeys: 
+    itemValues: 
+    isBoss: 0
+    imageID: 1
+  - name: "\u5316\u86C7"
+    id: 319
+    talentID: 0
+    natureID: 0
+    battleType: 2
+    stamina: 0
+    power: 0
+    agility: 0
+    skill: 0
+    toughness: 0
+    insight: 0
+    eloquence: 0
+    luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
+    weaponID: 1000
+    ring1ID: 0
+    ring2ID: 0
+    magicIDs: 
+    itemKeys: 
+    itemValues: 
+    isBoss: 0
+    imageID: 1
+  - name: "\u72E4"
+    id: 320
+    talentID: 0
+    natureID: 0
+    battleType: 2
+    stamina: 0
+    power: 0
+    agility: 0
+    skill: 0
+    toughness: 0
+    insight: 0
+    eloquence: 0
+    luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
+    weaponID: 1000
+    ring1ID: 0
+    ring2ID: 0
+    magicIDs: 
+    itemKeys: 
+    itemValues: 
+    isBoss: 0
+    imageID: 1
+  - name: "\u94A6\u539F"
+    id: 321
+    talentID: 0
+    natureID: 0
+    battleType: 2
+    stamina: 0
+    power: 0
+    agility: 0
+    skill: 0
+    toughness: 0
+    insight: 0
+    eloquence: 0
+    luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
+    weaponID: 1000
+    ring1ID: 0
+    ring2ID: 0
+    magicIDs: 
+    itemKeys: 
+    itemValues: 
+    isBoss: 0
+    imageID: 1
+  - name: "\u767D\u5E1D\u5C11\u660A"
+    id: 18
+    talentID: 0
+    natureID: 0
+    battleType: 2
+    stamina: 0
+    power: 0
+    agility: 0
+    skill: 0
+    toughness: 0
+    insight: 0
+    eloquence: 0
+    luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
+    weaponID: 1000
+    ring1ID: 0
+    ring2ID: 0
+    magicIDs: 
+    itemKeys: 
+    itemValues: 
+    isBoss: 1
+    imageID: 1
+  - name: "\u538C\u706B"
+    id: 214
+    talentID: 0
+    natureID: 0
+    battleType: 2
+    stamina: 0
+    power: 0
+    agility: 0
+    skill: 0
+    toughness: 0
+    insight: 0
+    eloquence: 0
+    luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
+    weaponID: 1000
+    ring1ID: 0
+    ring2ID: 0
+    magicIDs: 
+    itemKeys: 
+    itemValues: 
+    isBoss: 0
+    imageID: 1
+  - name: "\u4E09\u9996"
+    id: 215
+    talentID: 0
+    natureID: 0
+    battleType: 2
+    stamina: 0
+    power: 0
+    agility: 0
+    skill: 0
+    toughness: 0
+    insight: 0
+    eloquence: 0
+    luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
+    weaponID: 1000
+    ring1ID: 0
+    ring2ID: 0
+    magicIDs: 
+    itemKeys: 
+    itemValues: 
+    isBoss: 0
+    imageID: 1
+  - name: "\u4E09\u8EAB"
+    id: 216
+    talentID: 0
+    natureID: 0
+    battleType: 2
+    stamina: 0
+    power: 0
+    agility: 0
+    skill: 0
+    toughness: 0
+    insight: 0
+    eloquence: 0
+    luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
+    weaponID: 1000
+    ring1ID: 0
+    ring2ID: 0
+    magicIDs: 
+    itemKeys: 
+    itemValues: 
+    isBoss: 0
+    imageID: 1
+  - name: "\u6587\u864E"
+    id: 325
+    talentID: 0
+    natureID: 0
+    battleType: 2
+    stamina: 0
+    power: 0
+    agility: 0
+    skill: 0
+    toughness: 0
+    insight: 0
+    eloquence: 0
+    luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
+    weaponID: 1000
+    ring1ID: 0
+    ring2ID: 0
+    magicIDs: 
+    itemKeys: 
+    itemValues: 
+    isBoss: 0
+    imageID: 1
+  - name: "\u9B48"
+    id: 326
+    talentID: 0
+    natureID: 0
+    battleType: 2
+    stamina: 0
+    power: 0
+    agility: 0
+    skill: 0
+    toughness: 0
+    insight: 0
+    eloquence: 0
+    luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
+    weaponID: 1000
+    ring1ID: 0
+    ring2ID: 0
+    magicIDs: 
+    itemKeys: 
+    itemValues: 
+    isBoss: 0
+    imageID: 1
+  - name: "\u9752\u5E1D\u592A\u660A"
+    id: 19
+    talentID: 0
+    natureID: 0
+    battleType: 2
+    stamina: 0
+    power: 0
+    agility: 0
+    skill: 0
+    toughness: 0
+    insight: 0
+    eloquence: 0
+    luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
+    weaponID: 1000
+    ring1ID: 0
+    ring2ID: 0
+    magicIDs: 
+    itemKeys: 
+    itemValues: 
+    isBoss: 1
+    imageID: 1
+  - name: "\u5947\u80B1"
+    id: 218
+    talentID: 0
+    natureID: 0
+    battleType: 2
+    stamina: 0
+    power: 0
+    agility: 0
+    skill: 0
+    toughness: 0
+    insight: 0
+    eloquence: 0
+    luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
+    weaponID: 1000
+    ring1ID: 0
+    ring2ID: 0
+    magicIDs: 
+    itemKeys: 
+    itemValues: 
+    isBoss: 0
+    imageID: 1
+  - name: "\u7FBD\u6C11"
+    id: 327
+    talentID: 0
+    natureID: 0
+    battleType: 2
+    stamina: 0
+    power: 0
+    agility: 0
+    skill: 0
+    toughness: 0
+    insight: 0
+    eloquence: 0
+    luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
+    weaponID: 1000
+    ring1ID: 0
+    ring2ID: 0
+    magicIDs: 
+    itemKeys: 
+    itemValues: 
+    isBoss: 0
+    imageID: 1
+  - name: "\u706D\u8499"
+    id: 328
+    talentID: 0
+    natureID: 0
+    battleType: 2
+    stamina: 0
+    power: 0
+    agility: 0
+    skill: 0
+    toughness: 0
+    insight: 0
+    eloquence: 0
+    luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
+    weaponID: 1000
+    ring1ID: 0
+    ring2ID: 0
+    magicIDs: 
+    itemKeys: 
+    itemValues: 
+    isBoss: 0
+    imageID: 1
+  - name: "\u897F\u738B\u6BCD"
+    id: 110
+    talentID: 0
+    natureID: 0
+    battleType: 2
+    stamina: 0
+    power: 0
+    agility: 0
+    skill: 0
+    toughness: 0
+    insight: 0
+    eloquence: 0
+    luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
+    weaponID: 1000
+    ring1ID: 0
+    ring2ID: 0
+    magicIDs: 
+    itemKeys: 
+    itemValues: 
+    isBoss: 1
+    imageID: 1
+  - name: "\u795D\u878D"
+    id: 111
+    talentID: 0
+    natureID: 0
+    battleType: 2
+    stamina: 0
+    power: 0
+    agility: 0
+    skill: 0
+    toughness: 0
+    insight: 0
+    eloquence: 0
+    luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
+    weaponID: 1000
+    ring1ID: 0
+    ring2ID: 0
+    magicIDs: 
+    itemKeys: 
+    itemValues: 
+    isBoss: 1
+    imageID: 1
+  - name: "\u5171\u5DE5"
+    id: 112
+    talentID: 0
+    natureID: 0
+    battleType: 2
+    stamina: 0
+    power: 0
+    agility: 0
+    skill: 0
+    toughness: 0
+    insight: 0
+    eloquence: 0
+    luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
+    weaponID: 1000
+    ring1ID: 0
+    ring2ID: 0
+    magicIDs: 
+    itemKeys: 
+    itemValues: 
+    isBoss: 1
+    imageID: 1
+  - name: "\u65E0\u542F"
+    id: 219
+    talentID: 0
+    natureID: 0
+    battleType: 2
+    stamina: 0
+    power: 0
+    agility: 0
+    skill: 0
+    toughness: 0
+    insight: 0
+    eloquence: 0
+    luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
+    weaponID: 1000
+    ring1ID: 0
+    ring2ID: 0
+    magicIDs: 
+    itemKeys: 
+    itemValues: 
+    isBoss: 0
+    imageID: 1
+  - name: "\u76F8\u67F3"
+    id: 220
+    talentID: 0
+    natureID: 0
+    battleType: 2
+    stamina: 0
+    power: 0
+    agility: 0
+    skill: 0
+    toughness: 0
+    insight: 0
+    eloquence: 0
+    luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
+    weaponID: 1000
+    ring1ID: 0
+    ring2ID: 0
+    magicIDs: 
+    itemKeys: 
+    itemValues: 
+    isBoss: 0
+    imageID: 1
+  - name: "\u535A\u7236"
+    id: 330
+    talentID: 0
+    natureID: 0
+    battleType: 2
+    stamina: 0
+    power: 0
+    agility: 0
+    skill: 0
+    toughness: 0
+    insight: 0
+    eloquence: 0
+    luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
+    weaponID: 1000
+    ring1ID: 0
+    ring2ID: 0
+    magicIDs: 
+    itemKeys: 
+    itemValues: 
+    isBoss: 0
+    imageID: 1
+  - name: "\u9B46"
+    id: 333
+    talentID: 0
+    natureID: 0
+    battleType: 2
+    stamina: 0
+    power: 0
+    agility: 0
+    skill: 0
+    toughness: 0
+    insight: 0
+    eloquence: 0
+    luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
+    weaponID: 1000
+    ring1ID: 0
+    ring2ID: 0
+    magicIDs: 
+    itemKeys: 
+    itemValues: 
+    isBoss: 0
+    imageID: 1
+  - name: "\u53E5\u8292"
+    id: 113
+    talentID: 0
+    natureID: 0
+    battleType: 2
+    stamina: 0
+    power: 0
+    agility: 0
+    skill: 0
+    toughness: 0
+    insight: 0
+    eloquence: 0
+    luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
+    weaponID: 1000
+    ring1ID: 0
+    ring2ID: 0
+    magicIDs: 
+    itemKeys: 
+    itemValues: 
+    isBoss: 1
+    imageID: 1
+  - name: "\u5962\u6BD4\u5C38"
+    id: 221
+    talentID: 0
+    natureID: 0
+    battleType: 2
+    stamina: 0
+    power: 0
+    agility: 0
+    skill: 0
+    toughness: 0
+    insight: 0
+    eloquence: 0
+    luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
+    weaponID: 1000
+    ring1ID: 0
+    ring2ID: 0
+    magicIDs: 
+    itemKeys: 
+    itemValues: 
+    isBoss: 0
+    imageID: 1
+  - name: "\u5929\u5434"
+    id: 222
+    talentID: 0
+    natureID: 0
+    battleType: 2
+    stamina: 0
+    power: 0
+    agility: 0
+    skill: 0
+    toughness: 0
+    insight: 0
+    eloquence: 0
+    luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
+    weaponID: 1000
+    ring1ID: 0
+    ring2ID: 0
+    magicIDs: 
+    itemKeys: 
+    itemValues: 
+    isBoss: 0
+    imageID: 1
+  - name: "\u9ED1\u9F7F"
+    id: 334
+    talentID: 0
+    natureID: 0
+    battleType: 2
+    stamina: 0
+    power: 0
+    agility: 0
+    skill: 0
+    toughness: 0
+    insight: 0
+    eloquence: 0
+    luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
+    weaponID: 1000
+    ring1ID: 0
+    ring2ID: 0
+    magicIDs: 
+    itemKeys: 
+    itemValues: 
+    isBoss: 0
+    imageID: 1
+  - name: "\u96E8\u5E08"
+    id: 335
+    talentID: 0
+    natureID: 0
+    battleType: 2
+    stamina: 0
+    power: 0
+    agility: 0
+    skill: 0
+    toughness: 0
+    insight: 0
+    eloquence: 0
+    luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
+    weaponID: 1000
+    ring1ID: 0
+    ring2ID: 0
+    magicIDs: 
+    itemKeys: 
+    itemValues: 
+    isBoss: 0
+    imageID: 1
+  - name: "\u7384\u80A1"
+    id: 336
+    talentID: 0
+    natureID: 0
+    battleType: 2
+    stamina: 0
+    power: 0
+    agility: 0
+    skill: 0
+    toughness: 0
+    insight: 0
+    eloquence: 0
+    luck: 0
+    slashMulti: 1
+    thrustMulti: 1
+    bluntMulti: 1
+    yinMulti: 1
+    yangMulti: 1
+    neutralMulti: 1
+    weaponID: 1000
+    ring1ID: 0
+    ring2ID: 0
+    magicIDs: 
+    itemKeys: 
+    itemValues: 
+    isBoss: 0
+    imageID: 1

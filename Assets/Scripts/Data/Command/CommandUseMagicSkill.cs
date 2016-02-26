@@ -11,19 +11,28 @@ public class CommandUseMagicSkill : Command
 		commandName = skillData.name;
 		commandDescription = skillData.description;
 		targetType = skillData.targetType;
-		preExecutionSpeed = (int)(magicData.basicSPD * skillData.preSPDMultiplier / 3);
-		postExecutionRecover = 0;
+		preExecutionSpeed = Mathf.RoundToInt(magicData.basicSPD * skillData.preSPDMultiplier);
+		postExecutionRecover = skillData.postSPDMultiplier == 0 ? 0 : Mathf.RoundToInt(6000f / magicData.basicSPD / skillData.postSPDMultiplier);
 		
 		this.skillID = skillID;
 	}
 
 	public override void Execute()
 	{
-		SkillData skillData = DataManager.Instance.GetSkillDataSet ().GetSkillData (skillID);
-		float cost = skillData.postSPDMultiplier >= 1 ? skillData.postSPDMultiplier :source.maxHP * skillData.postSPDMultiplier;
-		source.currentHP -= (int)Mathf.Round(cost);
+		SkillData skillData = DataManager.Instance.GetSkillDataSet().GetSkillData(skillID);
 
-		executeMessage = source.GetName() + "使用了" + skillData.name + "!\n" + "消耗了" + cost + "点灵力!" ;
+		if(source.GetBattleType() == BattleType.Magical)
+		{
+			MagicData magicData = DataManager.Instance.GetItemDataSet().GetMagicDataBySkillID(skillID);
+			float cost = magicData.cost >= 1 ? magicData.cost :source.maxHP * magicData.cost;
+			source.currentHP -= Mathf.RoundToInt(cost);
+			executeMessage = source.GetName() + "使用了" + skillData.name + "!\n" + "消耗了" + cost + "点灵力!" ;
+		}
+		else
+		{
+			executeMessage = source.GetName() + "使用了" + skillData.name + "!" ;
+		}
+
 		SendExecuteMessage ();
 
 		foreach(BattleObject target in targetList)

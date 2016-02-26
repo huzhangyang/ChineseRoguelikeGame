@@ -10,6 +10,7 @@ GameObject:
   - 224: {fileID: 22424156}
   - 222: {fileID: 22213320}
   - 114: {fileID: 11461210}
+  - 114: {fileID: 11429518}
   m_Layer: 5
   m_Name: CommandPanel
   m_TagString: Untagged
@@ -327,7 +328,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 1
-  m_Spacing: 50
+  m_Spacing: 20
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 0
 --- !u!114 &11408928
@@ -625,6 +626,21 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &11429518
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 101830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2029babd07efeca438978eda722dad0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  commandAttack: {fileID: 11497354}
+  commandDefence: {fileID: 11424280}
+  commandItem: {fileID: 11427030}
+  commandStrategy: {fileID: 11488790}
 --- !u!114 &11436674
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1170,7 +1186,7 @@ RectTransform:
   m_RootOrder: 7
   m_AnchorMin: {x: .5, y: 1}
   m_AnchorMax: {x: .5, y: 1}
-  m_AnchoredPosition: {x: 150, y: -64}
+  m_AnchoredPosition: {x: 50, y: -64}
   m_SizeDelta: {x: 15, y: 80}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22435370
@@ -1352,7 +1368,7 @@ RectTransform:
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 480, y: 480}
+  m_SizeDelta: {x: 640, y: 480}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22493252
 RectTransform:

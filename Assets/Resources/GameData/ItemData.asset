@@ -88,15 +88,15 @@ MonoBehaviour:
     basicACC: 90
     basicCRT: 10
     basicSPD: 150
-    interrupt: 2
+    interrupt: 4
     skill1ID: 1101
     skill2ID: 1102
     skill3ID: 1103
     buffID: 00000000
     buffPercent: 00000000
     buffTurns: 00000000
-    effectID: 02000000
-    effectPercent: 01000000
+    effectID: 0100000002000000
+    effectPercent: 6400000001000000
   - id: 1101
     name: "\u9C7C\u80A0+1"
     type: 0
@@ -106,15 +106,15 @@ MonoBehaviour:
     basicACC: 90
     basicCRT: 11
     basicSPD: 150
-    interrupt: 2
+    interrupt: 4
     skill1ID: 1101
     skill2ID: 1102
     skill3ID: 1103
     buffID: 00000000
     buffPercent: 00000000
     buffTurns: 00000000
-    effectID: 02000000
-    effectPercent: 01000000
+    effectID: 0100000002000000
+    effectPercent: 6400000001000000
   - id: 1102
     name: "\u9C7C\u80A0+2"
     type: 0
@@ -124,15 +124,15 @@ MonoBehaviour:
     basicACC: 90
     basicCRT: 12
     basicSPD: 150
-    interrupt: 2
+    interrupt: 4
     skill1ID: 1101
     skill2ID: 1102
     skill3ID: 1103
     buffID: 00000000
     buffPercent: 00000000
     buffTurns: 00000000
-    effectID: 02000000
-    effectPercent: 02000000
+    effectID: 0100000002000000
+    effectPercent: 6400000002000000
   - id: 1103
     name: "\u9C7C\u80A0+3"
     type: 0
@@ -142,15 +142,15 @@ MonoBehaviour:
     basicACC: 90
     basicCRT: 13
     basicSPD: 150
-    interrupt: 2
+    interrupt: 4
     skill1ID: 1101
     skill2ID: 1102
     skill3ID: 1103
     buffID: 00000000
     buffPercent: 00000000
     buffTurns: 00000000
-    effectID: 02000000
-    effectPercent: 03000000
+    effectID: 0100000002000000
+    effectPercent: 6400000003000000
   - id: 1104
     name: "\u9C7C\u80A0+4"
     type: 0
@@ -160,15 +160,15 @@ MonoBehaviour:
     basicACC: 90
     basicCRT: 14
     basicSPD: 150
-    interrupt: 2
+    interrupt: 4
     skill1ID: 1101
     skill2ID: 1102
     skill3ID: 1103
     buffID: 00000000
     buffPercent: 00000000
     buffTurns: 00000000
-    effectID: 02000000
-    effectPercent: 04000000
+    effectID: 0100000002000000
+    effectPercent: 6400000004000000
   - id: 1105
     name: "\u9C7C\u80A0+5"
     type: 0
@@ -178,15 +178,15 @@ MonoBehaviour:
     basicACC: 90
     basicCRT: 15
     basicSPD: 150
-    interrupt: 2
+    interrupt: 4
     skill1ID: 1101
     skill2ID: 1102
     skill3ID: 1103
     buffID: 00000000
     buffPercent: 00000000
     buffTurns: 00000000
-    effectID: 02000000
-    effectPercent: 05000000
+    effectID: 0100000002000000
+    effectPercent: 6400000005000000
   - id: 1110
     name: "\u9ED1\u94C1\u94A9\u722A"
     type: 0
@@ -196,15 +196,15 @@ MonoBehaviour:
     basicACC: 110
     basicCRT: 16
     basicSPD: 160
-    interrupt: 2
+    interrupt: 5
     skill1ID: 1101
     skill2ID: 1102
     skill3ID: 1104
     buffID: 00000000
     buffPercent: 00000000
     buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    effectID: 01000000
+    effectPercent: 64000000
   - id: 1111
     name: "\u9ED1\u94C1\u94A9\u722A+1"
     type: 0
@@ -214,15 +214,15 @@ MonoBehaviour:
     basicACC: 110
     basicCRT: 16
     basicSPD: 160
-    interrupt: 3
+    interrupt: 5
     skill1ID: 1101
     skill2ID: 1102
     skill3ID: 1104
     buffID: 00000000
     buffPercent: 00000000
     buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    effectID: 01000000
+    effectPercent: 64000000
   - id: 1112
     name: "\u9ED1\u94C1\u94A9\u722A+2"
     type: 0
@@ -232,15 +232,15 @@ MonoBehaviour:
     basicACC: 110
     basicCRT: 16
     basicSPD: 160
-    interrupt: 4
+    interrupt: 5
     skill1ID: 1101
     skill2ID: 1102
     skill3ID: 1104
     buffID: 00000000
     buffPercent: 00000000
     buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    effectID: 01000000
+    effectPercent: 64000000
   - id: 1113
     name: "\u9ED1\u94C1\u94A9\u722A+3"
     type: 0
@@ -257,8 +257,8 @@ MonoBehaviour:
     buffID: 00000000
     buffPercent: 00000000
     buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    effectID: 01000000
+    effectPercent: 64000000
   - id: 1114
     name: "\u9ED1\u94C1\u94A9\u722A+4"
     type: 0
@@ -268,15 +268,15 @@ MonoBehaviour:
     basicACC: 110
     basicCRT: 16
     basicSPD: 160
-    interrupt: 6
+    interrupt: 5
     skill1ID: 1101
     skill2ID: 1102
     skill3ID: 1104
     buffID: 00000000
     buffPercent: 00000000
     buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    effectID: 01000000
+    effectPercent: 64000000
   - id: 1115
     name: "\u9ED1\u94C1\u94A9\u722A+5"
     type: 0
@@ -286,15 +286,15 @@ MonoBehaviour:
     basicACC: 110
     basicCRT: 16
     basicSPD: 160
-    interrupt: 7
+    interrupt: 5
     skill1ID: 1101
     skill2ID: 1102
     skill3ID: 1104
     buffID: 00000000
     buffPercent: 00000000
     buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    effectID: 01000000
+    effectPercent: 64000000
   - id: 1120
     name: "\u51B0\u971C\u523A\u5251"
     type: 0
@@ -304,15 +304,15 @@ MonoBehaviour:
     basicACC: 100
     basicCRT: 15
     basicSPD: 200
-    interrupt: 1
-    skill1ID: 1102
+    interrupt: 2
+    skill1ID: 1101
     skill2ID: 1105
     skill3ID: 1106
     buffID: 00000000
     buffPercent: 00000000
     buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    effectID: 01000000
+    effectPercent: 64000000
   - id: 1121
     name: "\u51B0\u971C\u523A\u5251+1"
     type: 0
@@ -322,15 +322,15 @@ MonoBehaviour:
     basicACC: 100
     basicCRT: 15
     basicSPD: 210
-    interrupt: 1
-    skill1ID: 1102
+    interrupt: 2
+    skill1ID: 1101
     skill2ID: 1105
     skill3ID: 1106
     buffID: 00000000
     buffPercent: 00000000
     buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    effectID: 01000000
+    effectPercent: 64000000
   - id: 1122
     name: "\u51B0\u971C\u523A\u5251+2"
     type: 0
@@ -340,15 +340,15 @@ MonoBehaviour:
     basicACC: 100
     basicCRT: 15
     basicSPD: 220
-    interrupt: 1
-    skill1ID: 1102
+    interrupt: 2
+    skill1ID: 1101
     skill2ID: 1105
     skill3ID: 1106
     buffID: 00000000
     buffPercent: 00000000
     buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    effectID: 01000000
+    effectPercent: 64000000
   - id: 1123
     name: "\u51B0\u971C\u523A\u5251+3"
     type: 0
@@ -358,15 +358,15 @@ MonoBehaviour:
     basicACC: 100
     basicCRT: 15
     basicSPD: 230
-    interrupt: 1
-    skill1ID: 1102
+    interrupt: 2
+    skill1ID: 1101
     skill2ID: 1105
     skill3ID: 1106
     buffID: 00000000
     buffPercent: 00000000
     buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    effectID: 01000000
+    effectPercent: 64000000
   - id: 1124
     name: "\u51B0\u971C\u523A\u5251+4"
     type: 0
@@ -376,15 +376,15 @@ MonoBehaviour:
     basicACC: 100
     basicCRT: 15
     basicSPD: 240
-    interrupt: 1
-    skill1ID: 1102
+    interrupt: 2
+    skill1ID: 1101
     skill2ID: 1105
     skill3ID: 1106
     buffID: 00000000
     buffPercent: 00000000
     buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    effectID: 01000000
+    effectPercent: 64000000
   - id: 1125
     name: "\u51B0\u971C\u523A\u5251+5"
     type: 0
@@ -394,15 +394,15 @@ MonoBehaviour:
     basicACC: 100
     basicCRT: 15
     basicSPD: 250
-    interrupt: 1
-    skill1ID: 1102
+    interrupt: 2
+    skill1ID: 1101
     skill2ID: 1105
     skill3ID: 1106
     buffID: 00000000
     buffPercent: 00000000
     buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    effectID: 01000000
+    effectPercent: 64000000
   - id: 1200
     name: "\u65E5\u7F61\xB7\u6708\u715E"
     type: 0
@@ -412,7 +412,7 @@ MonoBehaviour:
     basicACC: 80
     basicCRT: 12
     basicSPD: 120
-    interrupt: 7
+    interrupt: 8
     skill1ID: 1201
     skill2ID: 1202
     skill3ID: 1203
@@ -430,7 +430,7 @@ MonoBehaviour:
     basicACC: 80
     basicCRT: 12
     basicSPD: 120
-    interrupt: 7
+    interrupt: 8
     skill1ID: 1201
     skill2ID: 1202
     skill3ID: 1203
@@ -448,7 +448,7 @@ MonoBehaviour:
     basicACC: 80
     basicCRT: 12
     basicSPD: 120
-    interrupt: 7
+    interrupt: 8
     skill1ID: 1201
     skill2ID: 1202
     skill3ID: 1203
@@ -466,7 +466,7 @@ MonoBehaviour:
     basicACC: 80
     basicCRT: 12
     basicSPD: 120
-    interrupt: 7
+    interrupt: 8
     skill1ID: 1201
     skill2ID: 1202
     skill3ID: 1203
@@ -484,7 +484,7 @@ MonoBehaviour:
     basicACC: 80
     basicCRT: 12
     basicSPD: 120
-    interrupt: 7
+    interrupt: 8
     skill1ID: 1201
     skill2ID: 1202
     skill3ID: 1203
@@ -502,7 +502,7 @@ MonoBehaviour:
     basicACC: 80
     basicCRT: 12
     basicSPD: 120
-    interrupt: 7
+    interrupt: 8
     skill1ID: 1201
     skill2ID: 1202
     skill3ID: 1203
@@ -520,7 +520,7 @@ MonoBehaviour:
     basicACC: 90
     basicCRT: 0
     basicSPD: 30
-    interrupt: 7
+    interrupt: 13
     skill1ID: 1201
     skill2ID: 1204
     skill3ID: 1205
@@ -538,7 +538,7 @@ MonoBehaviour:
     basicACC: 92
     basicCRT: 2
     basicSPD: 30
-    interrupt: 7
+    interrupt: 13
     skill1ID: 1201
     skill2ID: 1204
     skill3ID: 1205
@@ -556,7 +556,7 @@ MonoBehaviour:
     basicACC: 94
     basicCRT: 4
     basicSPD: 30
-    interrupt: 7
+    interrupt: 13
     skill1ID: 1201
     skill2ID: 1204
     skill3ID: 1205
@@ -574,7 +574,7 @@ MonoBehaviour:
     basicACC: 96
     basicCRT: 6
     basicSPD: 30
-    interrupt: 7
+    interrupt: 13
     skill1ID: 1201
     skill2ID: 1204
     skill3ID: 1205
@@ -592,7 +592,7 @@ MonoBehaviour:
     basicACC: 98
     basicCRT: 8
     basicSPD: 30
-    interrupt: 7
+    interrupt: 13
     skill1ID: 1201
     skill2ID: 1204
     skill3ID: 1205
@@ -610,7 +610,7 @@ MonoBehaviour:
     basicACC: 100
     basicCRT: 10
     basicSPD: 30
-    interrupt: 7
+    interrupt: 13
     skill1ID: 1201
     skill2ID: 1204
     skill3ID: 1205
@@ -628,7 +628,7 @@ MonoBehaviour:
     basicACC: 80
     basicCRT: 0
     basicSPD: 110
-    interrupt: 7
+    interrupt: 9
     skill1ID: 1201
     skill2ID: 1206
     skill3ID: 1207
@@ -664,7 +664,7 @@ MonoBehaviour:
     basicACC: 80
     basicCRT: 10
     basicSPD: 130
-    interrupt: 10
+    interrupt: 7
     skill1ID: 1301
     skill2ID: 1302
     skill3ID: 1304
@@ -682,7 +682,7 @@ MonoBehaviour:
     basicACC: 80
     basicCRT: 10
     basicSPD: 130
-    interrupt: 10
+    interrupt: 7
     skill1ID: 1301
     skill2ID: 1302
     skill3ID: 1304
@@ -700,7 +700,7 @@ MonoBehaviour:
     basicACC: 80
     basicCRT: 10
     basicSPD: 130
-    interrupt: 10
+    interrupt: 7
     skill1ID: 1301
     skill2ID: 1302
     skill3ID: 1304
@@ -718,7 +718,7 @@ MonoBehaviour:
     basicACC: 80
     basicCRT: 10
     basicSPD: 130
-    interrupt: 10
+    interrupt: 7
     skill1ID: 1301
     skill2ID: 1302
     skill3ID: 1304
@@ -736,7 +736,7 @@ MonoBehaviour:
     basicACC: 80
     basicCRT: 10
     basicSPD: 130
-    interrupt: 10
+    interrupt: 7
     skill1ID: 1301
     skill2ID: 1302
     skill3ID: 1304
@@ -754,7 +754,7 @@ MonoBehaviour:
     basicACC: 80
     basicCRT: 10
     basicSPD: 130
-    interrupt: 10
+    interrupt: 7
     skill1ID: 1301
     skill2ID: 1302
     skill3ID: 1304
@@ -826,7 +826,7 @@ MonoBehaviour:
     basicACC: 90
     basicCRT: 11
     basicSPD: 110
-    interrupt: 110
+    interrupt: 11
     skill1ID: 1301
     skill2ID: 1305
     skill3ID: 1306
@@ -844,7 +844,7 @@ MonoBehaviour:
     basicACC: 100
     basicCRT: 12
     basicSPD: 120
-    interrupt: 120
+    interrupt: 12
     skill1ID: 1301
     skill2ID: 1305
     skill3ID: 1306
@@ -862,7 +862,7 @@ MonoBehaviour:
     basicACC: 110
     basicCRT: 13
     basicSPD: 130
-    interrupt: 130
+    interrupt: 13
     skill1ID: 1301
     skill2ID: 1305
     skill3ID: 1306
@@ -880,7 +880,7 @@ MonoBehaviour:
     basicACC: 60
     basicCRT: 10
     basicSPD: 80
-    interrupt: 14
+    interrupt: 18
     skill1ID: 1401
     skill2ID: 1402
     skill3ID: 1403
@@ -898,7 +898,7 @@ MonoBehaviour:
     basicACC: 65
     basicCRT: 10
     basicSPD: 80
-    interrupt: 14
+    interrupt: 18
     skill1ID: 1401
     skill2ID: 1402
     skill3ID: 1403
@@ -916,7 +916,7 @@ MonoBehaviour:
     basicACC: 70
     basicCRT: 10
     basicSPD: 80
-    interrupt: 14
+    interrupt: 18
     skill1ID: 1401
     skill2ID: 1402
     skill3ID: 1403
@@ -934,7 +934,7 @@ MonoBehaviour:
     basicACC: 75
     basicCRT: 10
     basicSPD: 80
-    interrupt: 14
+    interrupt: 18
     skill1ID: 1401
     skill2ID: 1402
     skill3ID: 1403
@@ -952,7 +952,7 @@ MonoBehaviour:
     basicACC: 80
     basicCRT: 10
     basicSPD: 80
-    interrupt: 14
+    interrupt: 18
     skill1ID: 1401
     skill2ID: 1402
     skill3ID: 1403
@@ -970,7 +970,7 @@ MonoBehaviour:
     basicACC: 85
     basicCRT: 10
     basicSPD: 80
-    interrupt: 14
+    interrupt: 18
     skill1ID: 1401
     skill2ID: 1402
     skill3ID: 1403
@@ -988,7 +988,7 @@ MonoBehaviour:
     basicACC: 90
     basicCRT: 11
     basicSPD: 110
-    interrupt: 12
+    interrupt: 14
     skill1ID: 1401
     skill2ID: 1402
     skill3ID: 1404
@@ -1006,7 +1006,7 @@ MonoBehaviour:
     basicACC: 90
     basicCRT: 11
     basicSPD: 110
-    interrupt: 14
+    interrupt: 16
     skill1ID: 1401
     skill2ID: 1402
     skill3ID: 1404
@@ -1024,7 +1024,7 @@ MonoBehaviour:
     basicACC: 90
     basicCRT: 11
     basicSPD: 110
-    interrupt: 16
+    interrupt: 18
     skill1ID: 1401
     skill2ID: 1402
     skill3ID: 1404
@@ -1042,7 +1042,7 @@ MonoBehaviour:
     basicACC: 90
     basicCRT: 11
     basicSPD: 110
-    interrupt: 18
+    interrupt: 20
     skill1ID: 1401
     skill2ID: 1402
     skill3ID: 1404
@@ -1060,7 +1060,7 @@ MonoBehaviour:
     basicACC: 90
     basicCRT: 11
     basicSPD: 110
-    interrupt: 20
+    interrupt: 22
     skill1ID: 1401
     skill2ID: 1402
     skill3ID: 1404
@@ -1078,7 +1078,7 @@ MonoBehaviour:
     basicACC: 90
     basicCRT: 11
     basicSPD: 110
-    interrupt: 22
+    interrupt: 24
     skill1ID: 1401
     skill2ID: 1402
     skill3ID: 1404
@@ -1096,7 +1096,7 @@ MonoBehaviour:
     basicACC: 60
     basicCRT: 10
     basicSPD: 40
-    interrupt: 22
+    interrupt: 28
     skill1ID: 1401
     skill2ID: 1402
     skill3ID: 1405
@@ -1114,7 +1114,7 @@ MonoBehaviour:
     basicACC: 60
     basicCRT: 10
     basicSPD: 45
-    interrupt: 22
+    interrupt: 28
     skill1ID: 1401
     skill2ID: 1402
     skill3ID: 1405
@@ -1132,7 +1132,7 @@ MonoBehaviour:
     basicACC: 60
     basicCRT: 10
     basicSPD: 50
-    interrupt: 22
+    interrupt: 28
     skill1ID: 1401
     skill2ID: 1402
     skill3ID: 1405
@@ -1150,7 +1150,7 @@ MonoBehaviour:
     basicACC: 60
     basicCRT: 10
     basicSPD: 55
-    interrupt: 22
+    interrupt: 28
     skill1ID: 1401
     skill2ID: 1402
     skill3ID: 1405
@@ -1168,7 +1168,7 @@ MonoBehaviour:
     basicACC: 60
     basicCRT: 10
     basicSPD: 60
-    interrupt: 22
+    interrupt: 28
     skill1ID: 1401
     skill2ID: 1402
     skill3ID: 1405
@@ -1186,7 +1186,7 @@ MonoBehaviour:
     basicACC: 60
     basicCRT: 10
     basicSPD: 65
-    interrupt: 22
+    interrupt: 28
     skill1ID: 1401
     skill2ID: 1402
     skill3ID: 1405
@@ -1204,7 +1204,7 @@ MonoBehaviour:
     basicACC: 70
     basicCRT: 11
     basicSPD: 80
-    interrupt: 7
+    interrupt: 11
     skill1ID: 1501
     skill2ID: 1503
     skill3ID: 1504
@@ -1222,7 +1222,7 @@ MonoBehaviour:
     basicACC: 72
     basicCRT: 11
     basicSPD: 82
-    interrupt: 7
+    interrupt: 11
     skill1ID: 1501
     skill2ID: 1503
     skill3ID: 1504
@@ -1240,7 +1240,7 @@ MonoBehaviour:
     basicACC: 74
     basicCRT: 11
     basicSPD: 84
-    interrupt: 7
+    interrupt: 11
     skill1ID: 1501
     skill2ID: 1503
     skill3ID: 1504
@@ -1258,7 +1258,7 @@ MonoBehaviour:
     basicACC: 76
     basicCRT: 15
     basicSPD: 86
-    interrupt: 7
+    interrupt: 11
     skill1ID: 1501
     skill2ID: 1503
     skill3ID: 1504
@@ -1276,7 +1276,7 @@ MonoBehaviour:
     basicACC: 78
     basicCRT: 15
     basicSPD: 88
-    interrupt: 7
+    interrupt: 11
     skill1ID: 1501
     skill2ID: 1503
     skill3ID: 1504
@@ -1294,7 +1294,7 @@ MonoBehaviour:
     basicACC: 80
     basicCRT: 15
     basicSPD: 90
-    interrupt: 7
+    interrupt: 11
     skill1ID: 1501
     skill2ID: 1503
     skill3ID: 1504
@@ -1306,13 +1306,13 @@ MonoBehaviour:
   - id: 1510
     name: "\u72D9\u51FB\u5F29"
     type: 0
-    description: "\u52BF\u5927\u529B\u6C89\u7684\u91CD\u578B\u5F29\u70AE\u3002\u5728\u4E0E\u91CE\u517D\u7684\u6218\u6597\u4E2D\u5F88\u5C11\u6709\u4EBA\u4F7F\u7528\u8FDC\u7A0B\u6B66\u5668\uFF0C\u56E0\u4E3A\u4E00\u65E6\u88AB\u654C\u4EBA\u63A5\u8FD1\u5C06\u9020\u6210\u4E0D\u53EF\u633D\u56DE\u7684\u540E\u679C\u3002\u4F46\u5982\u679C\u80FD\u5728\u8FDC\u5904\u5C31\u76F4\u63A5\u5B89\u5168\u5730\u5E72\u6389\u654C\u4EBA\uFF0C\u4F55\u4E50\u800C\u4E0D\u4E3A\u5462\uFF1F"
+    description: "\u52BF\u5927\u529B\u6C89\u7684\u91CD\u578B\u5F29\u70AE\u3002\u5728\u4E0E\u91CE\u517D\u7684\u6218\u6597\u4E2D\u5F88\u5C11\u6709\u4EBA\u4F7F\u7528\u8FDC\u7A0B\u6B66\u5668\uFF0C\u56E0\u4E3A\u4E00\u65E6\u88AB\u654C\u4EBA\u63A5\u8FD1\u5C06\u9020\u6210\u4E0D\u53EF\u633D\u56DE\u7684\u540E\u679C\u3002\u4F46\u8FD9\u79CD\u5F29\u7684\u53D1\u660E\uFF0C\u4F7F\u5F97\u4EBA\u4EEC\u53EF\u4EE5\u5728\u8FDC\u5904\u5C31\u53EF\u4EE5\u8F83\u4E3A\u5B89\u5168\u5730\u5C06\u517D\u4EEC\u8F70\u6740\u81F3\u6E23\u3002"
     basicATKMin: 20
     basicATKMax: 30
     basicACC: 100
     basicCRT: 13
     basicSPD: 60
-    interrupt: 12
+    interrupt: 17
     skill1ID: 1501
     skill2ID: 1502
     skill3ID: 1505
@@ -1324,13 +1324,13 @@ MonoBehaviour:
   - id: 1511
     name: "\u72D9\u51FB\u5F29+1"
     type: 0
-    description: "\u52BF\u5927\u529B\u6C89\u7684\u91CD\u578B\u5F29\u70AE\u3002\u5728\u4E0E\u91CE\u517D\u7684\u6218\u6597\u4E2D\u5F88\u5C11\u6709\u4EBA\u4F7F\u7528\u8FDC\u7A0B\u6B66\u5668\uFF0C\u56E0\u4E3A\u4E00\u65E6\u88AB\u654C\u4EBA\u63A5\u8FD1\u5C06\u9020\u6210\u4E0D\u53EF\u633D\u56DE\u7684\u540E\u679C\u3002\u4F46\u5982\u679C\u80FD\u5728\u8FDC\u5904\u5C31\u76F4\u63A5\u5B89\u5168\u5730\u5E72\u6389\u654C\u4EBA\uFF0C\u4F55\u4E50\u800C\u4E0D\u4E3A\u5462\uFF1F"
+    description: "\u52BF\u5927\u529B\u6C89\u7684\u91CD\u578B\u5F29\u70AE\u3002\u5728\u4E0E\u91CE\u517D\u7684\u6218\u6597\u4E2D\u5F88\u5C11\u6709\u4EBA\u4F7F\u7528\u8FDC\u7A0B\u6B66\u5668\uFF0C\u56E0\u4E3A\u4E00\u65E6\u88AB\u654C\u4EBA\u63A5\u8FD1\u5C06\u9020\u6210\u4E0D\u53EF\u633D\u56DE\u7684\u540E\u679C\u3002\u4F46\u8FD9\u79CD\u5F29\u7684\u53D1\u660E\uFF0C\u4F7F\u5F97\u4EBA\u4EEC\u53EF\u4EE5\u5728\u8FDC\u5904\u5C31\u53EF\u4EE5\u8F83\u4E3A\u5B89\u5168\u5730\u5C06\u517D\u4EEC\u8F70\u6740\u81F3\u6E23\u3002"
     basicATKMin: 50
     basicATKMax: 75
     basicACC: 100
     basicCRT: 13
     basicSPD: 60
-    interrupt: 12
+    interrupt: 17
     skill1ID: 1501
     skill2ID: 1502
     skill3ID: 1505
@@ -1342,13 +1342,13 @@ MonoBehaviour:
   - id: 1512
     name: "\u72D9\u51FB\u5F29+2"
     type: 0
-    description: "\u52BF\u5927\u529B\u6C89\u7684\u91CD\u578B\u5F29\u70AE\u3002\u5728\u4E0E\u91CE\u517D\u7684\u6218\u6597\u4E2D\u5F88\u5C11\u6709\u4EBA\u4F7F\u7528\u8FDC\u7A0B\u6B66\u5668\uFF0C\u56E0\u4E3A\u4E00\u65E6\u88AB\u654C\u4EBA\u63A5\u8FD1\u5C06\u9020\u6210\u4E0D\u53EF\u633D\u56DE\u7684\u540E\u679C\u3002\u4F46\u5982\u679C\u80FD\u5728\u8FDC\u5904\u5C31\u76F4\u63A5\u5B89\u5168\u5730\u5E72\u6389\u654C\u4EBA\uFF0C\u4F55\u4E50\u800C\u4E0D\u4E3A\u5462\uFF1F"
+    description: "\u52BF\u5927\u529B\u6C89\u7684\u91CD\u578B\u5F29\u70AE\u3002\u5728\u4E0E\u91CE\u517D\u7684\u6218\u6597\u4E2D\u5F88\u5C11\u6709\u4EBA\u4F7F\u7528\u8FDC\u7A0B\u6B66\u5668\uFF0C\u56E0\u4E3A\u4E00\u65E6\u88AB\u654C\u4EBA\u63A5\u8FD1\u5C06\u9020\u6210\u4E0D\u53EF\u633D\u56DE\u7684\u540E\u679C\u3002\u4F46\u8FD9\u79CD\u5F29\u7684\u53D1\u660E\uFF0C\u4F7F\u5F97\u4EBA\u4EEC\u53EF\u4EE5\u5728\u8FDC\u5904\u5C31\u53EF\u4EE5\u8F83\u4E3A\u5B89\u5168\u5730\u5C06\u517D\u4EEC\u8F70\u6740\u81F3\u6E23\u3002"
     basicATKMin: 80
     basicATKMax: 120
     basicACC: 100
     basicCRT: 13
     basicSPD: 60
-    interrupt: 12
+    interrupt: 17
     skill1ID: 1501
     skill2ID: 1502
     skill3ID: 1505
@@ -1360,13 +1360,13 @@ MonoBehaviour:
   - id: 1513
     name: "\u72D9\u51FB\u5F29+3"
     type: 0
-    description: "\u52BF\u5927\u529B\u6C89\u7684\u91CD\u578B\u5F29\u70AE\u3002\u5728\u4E0E\u91CE\u517D\u7684\u6218\u6597\u4E2D\u5F88\u5C11\u6709\u4EBA\u4F7F\u7528\u8FDC\u7A0B\u6B66\u5668\uFF0C\u56E0\u4E3A\u4E00\u65E6\u88AB\u654C\u4EBA\u63A5\u8FD1\u5C06\u9020\u6210\u4E0D\u53EF\u633D\u56DE\u7684\u540E\u679C\u3002\u4F46\u5982\u679C\u80FD\u5728\u8FDC\u5904\u5C31\u76F4\u63A5\u5B89\u5168\u5730\u5E72\u6389\u654C\u4EBA\uFF0C\u4F55\u4E50\u800C\u4E0D\u4E3A\u5462\uFF1F"
+    description: "\u52BF\u5927\u529B\u6C89\u7684\u91CD\u578B\u5F29\u70AE\u3002\u5728\u4E0E\u91CE\u517D\u7684\u6218\u6597\u4E2D\u5F88\u5C11\u6709\u4EBA\u4F7F\u7528\u8FDC\u7A0B\u6B66\u5668\uFF0C\u56E0\u4E3A\u4E00\u65E6\u88AB\u654C\u4EBA\u63A5\u8FD1\u5C06\u9020\u6210\u4E0D\u53EF\u633D\u56DE\u7684\u540E\u679C\u3002\u4F46\u8FD9\u79CD\u5F29\u7684\u53D1\u660E\uFF0C\u4F7F\u5F97\u4EBA\u4EEC\u53EF\u4EE5\u5728\u8FDC\u5904\u5C31\u53EF\u4EE5\u8F83\u4E3A\u5B89\u5168\u5730\u5C06\u517D\u4EEC\u8F70\u6740\u81F3\u6E23\u3002"
     basicATKMin: 100
     basicATKMax: 150
     basicACC: 100
     basicCRT: 13
     basicSPD: 80
-    interrupt: 12
+    interrupt: 17
     skill1ID: 1501
     skill2ID: 1502
     skill3ID: 1505
@@ -1378,13 +1378,13 @@ MonoBehaviour:
   - id: 1514
     name: "\u72D9\u51FB\u5F29+4"
     type: 0
-    description: "\u52BF\u5927\u529B\u6C89\u7684\u91CD\u578B\u5F29\u70AE\u3002\u5728\u4E0E\u91CE\u517D\u7684\u6218\u6597\u4E2D\u5F88\u5C11\u6709\u4EBA\u4F7F\u7528\u8FDC\u7A0B\u6B66\u5668\uFF0C\u56E0\u4E3A\u4E00\u65E6\u88AB\u654C\u4EBA\u63A5\u8FD1\u5C06\u9020\u6210\u4E0D\u53EF\u633D\u56DE\u7684\u540E\u679C\u3002\u4F46\u5982\u679C\u80FD\u5728\u8FDC\u5904\u5C31\u76F4\u63A5\u5B89\u5168\u5730\u5E72\u6389\u654C\u4EBA\uFF0C\u4F55\u4E50\u800C\u4E0D\u4E3A\u5462\uFF1F"
+    description: "\u52BF\u5927\u529B\u6C89\u7684\u91CD\u578B\u5F29\u70AE\u3002\u5728\u4E0E\u91CE\u517D\u7684\u6218\u6597\u4E2D\u5F88\u5C11\u6709\u4EBA\u4F7F\u7528\u8FDC\u7A0B\u6B66\u5668\uFF0C\u56E0\u4E3A\u4E00\u65E6\u88AB\u654C\u4EBA\u63A5\u8FD1\u5C06\u9020\u6210\u4E0D\u53EF\u633D\u56DE\u7684\u540E\u679C\u3002\u4F46\u8FD9\u79CD\u5F29\u7684\u53D1\u660E\uFF0C\u4F7F\u5F97\u4EBA\u4EEC\u53EF\u4EE5\u5728\u8FDC\u5904\u5C31\u53EF\u4EE5\u8F83\u4E3A\u5B89\u5168\u5730\u5C06\u517D\u4EEC\u8F70\u6740\u81F3\u6E23\u3002"
     basicATKMin: 130
     basicATKMax: 195
     basicACC: 100
     basicCRT: 13
     basicSPD: 80
-    interrupt: 12
+    interrupt: 17
     skill1ID: 1501
     skill2ID: 1502
     skill3ID: 1505
@@ -1396,13 +1396,13 @@ MonoBehaviour:
   - id: 1515
     name: "\u72D9\u51FB\u5F29+5"
     type: 0
-    description: "\u52BF\u5927\u529B\u6C89\u7684\u91CD\u578B\u5F29\u70AE\u3002\u5728\u4E0E\u91CE\u517D\u7684\u6218\u6597\u4E2D\u5F88\u5C11\u6709\u4EBA\u4F7F\u7528\u8FDC\u7A0B\u6B66\u5668\uFF0C\u56E0\u4E3A\u4E00\u65E6\u88AB\u654C\u4EBA\u63A5\u8FD1\u5C06\u9020\u6210\u4E0D\u53EF\u633D\u56DE\u7684\u540E\u679C\u3002\u4F46\u5982\u679C\u80FD\u5728\u8FDC\u5904\u5C31\u76F4\u63A5\u5B89\u5168\u5730\u5E72\u6389\u654C\u4EBA\uFF0C\u4F55\u4E50\u800C\u4E0D\u4E3A\u5462\uFF1F"
+    description: "\u52BF\u5927\u529B\u6C89\u7684\u91CD\u578B\u5F29\u70AE\u3002\u5728\u4E0E\u91CE\u517D\u7684\u6218\u6597\u4E2D\u5F88\u5C11\u6709\u4EBA\u4F7F\u7528\u8FDC\u7A0B\u6B66\u5668\uFF0C\u56E0\u4E3A\u4E00\u65E6\u88AB\u654C\u4EBA\u63A5\u8FD1\u5C06\u9020\u6210\u4E0D\u53EF\u633D\u56DE\u7684\u540E\u679C\u3002\u4F46\u8FD9\u79CD\u5F29\u7684\u53D1\u660E\uFF0C\u4F7F\u5F97\u4EBA\u4EEC\u53EF\u4EE5\u5728\u8FDC\u5904\u5C31\u53EF\u4EE5\u8F83\u4E3A\u5B89\u5168\u5730\u5C06\u517D\u4EEC\u8F70\u6740\u81F3\u6E23\u3002"
     basicATKMin: 160
     basicATKMax: 240
     basicACC: 100
     basicCRT: 13
     basicSPD: 80
-    interrupt: 12
+    interrupt: 17
     skill1ID: 1501
     skill2ID: 1502
     skill3ID: 1505
@@ -1420,10 +1420,10 @@ MonoBehaviour:
     basicACC: 90
     basicCRT: 15
     basicSPD: 110
-    interrupt: 3
+    interrupt: 6
     skill1ID: 1501
-    skill2ID: 1502
-    skill3ID: 1506
+    skill2ID: 1506
+    skill3ID: 1507
     buffID: 00000000
     buffPercent: 00000000
     buffTurns: 00000000
@@ -1438,10 +1438,10 @@ MonoBehaviour:
     basicACC: 90
     basicCRT: 15
     basicSPD: 110
-    interrupt: 3
+    interrupt: 6
     skill1ID: 1501
-    skill2ID: 1502
-    skill3ID: 1506
+    skill2ID: 1506
+    skill3ID: 1507
     buffID: 00000000
     buffPercent: 00000000
     buffTurns: 00000000
@@ -1456,10 +1456,10 @@ MonoBehaviour:
     basicACC: 90
     basicCRT: 15
     basicSPD: 110
-    interrupt: 3
+    interrupt: 6
     skill1ID: 1501
-    skill2ID: 1502
-    skill3ID: 1506
+    skill2ID: 1506
+    skill3ID: 1507
     buffID: 00000000
     buffPercent: 00000000
     buffTurns: 00000000
@@ -1474,10 +1474,10 @@ MonoBehaviour:
     basicACC: 100
     basicCRT: 15
     basicSPD: 110
-    interrupt: 6
+    interrupt: 12
     skill1ID: 1501
-    skill2ID: 1502
-    skill3ID: 1506
+    skill2ID: 1506
+    skill3ID: 1507
     buffID: 00000000
     buffPercent: 00000000
     buffTurns: 00000000
@@ -1492,10 +1492,10 @@ MonoBehaviour:
     basicACC: 100
     basicCRT: 15
     basicSPD: 110
-    interrupt: 6
+    interrupt: 12
     skill1ID: 1501
-    skill2ID: 1502
-    skill3ID: 1506
+    skill2ID: 1506
+    skill3ID: 1507
     buffID: 00000000
     buffPercent: 00000000
     buffTurns: 00000000
@@ -1510,10 +1510,10 @@ MonoBehaviour:
     basicACC: 100
     basicCRT: 15
     basicSPD: 110
-    interrupt: 6
+    interrupt: 12
     skill1ID: 1501
-    skill2ID: 1502
-    skill3ID: 1506
+    skill2ID: 1506
+    skill3ID: 1507
     buffID: 00000000
     buffPercent: 00000000
     buffTurns: 00000000
@@ -1528,7 +1528,7 @@ MonoBehaviour:
     basicACC: 40
     basicCRT: 10
     basicSPD: 75
-    interrupt: 13
+    interrupt: 20
     skill1ID: 1601
     skill2ID: 1602
     skill3ID: 1603
@@ -1546,7 +1546,7 @@ MonoBehaviour:
     basicACC: 45
     basicCRT: 10
     basicSPD: 76
-    interrupt: 14
+    interrupt: 21
     skill1ID: 1601
     skill2ID: 1602
     skill3ID: 1603
@@ -1564,7 +1564,7 @@ MonoBehaviour:
     basicACC: 50
     basicCRT: 10
     basicSPD: 77
-    interrupt: 15
+    interrupt: 22
     skill1ID: 1601
     skill2ID: 1602
     skill3ID: 1603
@@ -1582,7 +1582,7 @@ MonoBehaviour:
     basicACC: 55
     basicCRT: 10
     basicSPD: 78
-    interrupt: 16
+    interrupt: 23
     skill1ID: 1601
     skill2ID: 1602
     skill3ID: 1603
@@ -1600,7 +1600,7 @@ MonoBehaviour:
     basicACC: 60
     basicCRT: 10
     basicSPD: 79
-    interrupt: 17
+    interrupt: 24
     skill1ID: 1601
     skill2ID: 1602
     skill3ID: 1603
@@ -1618,7 +1618,7 @@ MonoBehaviour:
     basicACC: 60
     basicCRT: 10
     basicSPD: 80
-    interrupt: 17
+    interrupt: 25
     skill1ID: 1601
     skill2ID: 1602
     skill3ID: 1603
@@ -1636,7 +1636,7 @@ MonoBehaviour:
     basicACC: 60
     basicCRT: 10
     basicSPD: 80
-    interrupt: 15
+    interrupt: 5
     skill1ID: 1604
     skill2ID: 1605
     skill3ID: 1606
@@ -1654,7 +1654,7 @@ MonoBehaviour:
     basicACC: 60
     basicCRT: 12
     basicSPD: 80
-    interrupt: 20
+    interrupt: 10
     skill1ID: 1604
     skill2ID: 1605
     skill3ID: 1606
@@ -1672,7 +1672,7 @@ MonoBehaviour:
     basicACC: 60
     basicCRT: 14
     basicSPD: 80
-    interrupt: 25
+    interrupt: 15
     skill1ID: 1604
     skill2ID: 1605
     skill3ID: 1606
@@ -1690,7 +1690,7 @@ MonoBehaviour:
     basicACC: 60
     basicCRT: 16
     basicSPD: 80
-    interrupt: 30
+    interrupt: 20
     skill1ID: 1604
     skill2ID: 1605
     skill3ID: 1606
@@ -1708,7 +1708,7 @@ MonoBehaviour:
     basicACC: 60
     basicCRT: 18
     basicSPD: 80
-    interrupt: 35
+    interrupt: 25
     skill1ID: 1604
     skill2ID: 1605
     skill3ID: 1606
@@ -1726,7 +1726,7 @@ MonoBehaviour:
     basicACC: 60
     basicCRT: 20
     basicSPD: 80
-    interrupt: 40
+    interrupt: 30
     skill1ID: 1604
     skill2ID: 1605
     skill3ID: 1606
@@ -1854,28 +1854,31 @@ MonoBehaviour:
     basicACC: 0
     basicCRT: 0
     interrupt: 0
+    cost: 0
     skillID: 0
   - id: 2010
     name: "\u7075\u6C14\u7BAD\u5377\u8F74"
     type: 0
     description: "\u8BB0\u8F7D\u7740\u6CD5\u672F\u3010\u7075\u6C14\u7BAD\u3011\u7684\u5377\u8F74\u3002\u7075\u6C14\u7BAD\u662F\u6700\u7B80\u5355\u4E5F\u662F\u6700\u7EAF\u51C0\u7684\u7075\u6C14\u6CD5\u672F\uFF0C\u4F46\u5DF2\u5177\u6709\u4E00\u5B9A\u7684\u7834\u574F\u529B\u3002"
-    basicATKMin: 15
-    basicATKMax: 25
-    basicSPD: 60
+    basicATKMin: 20
+    basicATKMax: 30
+    basicSPD: 70
     basicACC: 80
-    basicCRT: 10
-    interrupt: 10
+    basicCRT: 5
+    interrupt: 15
+    cost: 5
     skillID: 2001
   - id: 2110
     name: "\u51B0\u5C01\u672F\u5377\u8F74"
     type: 0
     description: "\u8BB0\u8F7D\u7740\u6CD5\u672F\u3010\u51B0\u5C01\u672F\u3011\u7684\u5377\u8F74\u3002\u51B0\u5C01\u672F\u662F\u6700\u57FA\u7840\u7684\u9634\u5C5E\u6027\u6CD5\u672F\uFF0C\u5229\u7528\u4E86\u4E16\u95F4\u7684\u9634\u6C14\u4E4B\u529B\u3002"
-    basicATKMin: 10
+    basicATKMin: 8
     basicATKMax: 16
-    basicSPD: 100
+    basicSPD: 105
     basicACC: 100
-    basicCRT: 8
-    interrupt: 8
+    basicCRT: 6
+    interrupt: 5
+    cost: 3
     skillID: 2101
   - id: 2210
     name: "\u9633\u708E\u672F\u5377\u8F74"
@@ -1885,8 +1888,9 @@ MonoBehaviour:
     basicATKMax: 20
     basicSPD: 80
     basicACC: 90
-    basicCRT: 12
-    interrupt: 12
+    basicCRT: 4
+    interrupt: 10
+    cost: 4
     skillID: 2201
   - id: 2020
     name: "\u5F3A\u529B\u7075\u6C14\u7BAD\u4E4B\u4E66"
@@ -1894,10 +1898,11 @@ MonoBehaviour:
     description: "\u8BB0\u8F7D\u7740\u6CD5\u672F\u3010\u5F3A\u529B\u7075\u6C14\u7BAD\u3011\u7684\u53E4\u4E66\u3002\u5F3A\u529B\u7075\u6C14\u7BAD\u7684\u5A01\u529B\u6BD4\u4E00\u822C\u7684\u7075\u6C14\u7BAD\u8981\u66F4\u5F3A\uFF0C\u529B\u91CF\u4E5F\u66F4\u7EAF\u51C0\u3002"
     basicATKMin: 75
     basicATKMax: 99
-    basicSPD: 60
+    basicSPD: 70
     basicACC: 80
     basicCRT: 10
-    interrupt: 10
+    interrupt: 15
+    cost: 20
     skillID: 2002
   - id: 2021
     name: "\u7075\u6C14\u5F39\u4E4B\u4E66"
@@ -1908,7 +1913,8 @@ MonoBehaviour:
     basicSPD: 50
     basicACC: 70
     basicCRT: 6
-    interrupt: 6
+    interrupt: 8
+    cost: 30
     skillID: 2003
   - id: 2022
     name: "\u7075\u6C14\u4E71\u5C04\u5377\u8F74"
@@ -1920,6 +1926,7 @@ MonoBehaviour:
     basicACC: 60
     basicCRT: 25
     interrupt: 10
+    cost: 50
     skillID: 2004
   - id: 2023
     name: "\u7075\u6C14\u5FAA\u73AF\u5377\u8F74"
@@ -1931,6 +1938,7 @@ MonoBehaviour:
     basicACC: 100
     basicCRT: 0
     interrupt: 0
+    cost: .200000003
     skillID: 2005
   - id: 2120
     name: "\u5F3A\u529B\u51B0\u5C01\u672F\u4E4B\u4E66"
@@ -1941,7 +1949,8 @@ MonoBehaviour:
     basicSPD: 95
     basicACC: 95
     basicCRT: 9
-    interrupt: 8
+    interrupt: 5
+    cost: 12
     skillID: 2102
   - id: 2121
     name: "\u5438\u661F\u672F\u4E4B\u4E66"
@@ -1953,6 +1962,7 @@ MonoBehaviour:
     basicACC: 75
     basicCRT: 0
     interrupt: 0
+    cost: 18
     skillID: 2103
   - id: 2122
     name: "\u72C2\u98CE\u67AA\u5377\u8F74"
@@ -1963,7 +1973,8 @@ MonoBehaviour:
     basicSPD: 90
     basicACC: 120
     basicCRT: 20
-    interrupt: 20
+    interrupt: 22
+    cost: 24
     skillID: 2104
   - id: 2123
     name: "\u7075\u529B\u4FB5\u8680\u5377\u8F74"
@@ -1975,6 +1986,7 @@ MonoBehaviour:
     basicACC: 60
     basicCRT: 0
     interrupt: 0
+    cost: 20
     skillID: 2105
   - id: 2220
     name: "\u5F3A\u529B\u9633\u708E\u672F\u4E4B\u4E66"
@@ -1985,7 +1997,8 @@ MonoBehaviour:
     basicSPD: 80
     basicACC: 90
     basicCRT: 12
-    interrupt: 12
+    interrupt: 10
+    cost: 16
     skillID: 2202
   - id: 2221
     name: "\u96F7\u66B4\u672F\u4E4B\u4E66"
@@ -1996,7 +2009,8 @@ MonoBehaviour:
     basicSPD: 60
     basicACC: 50
     basicCRT: 25
-    interrupt: 8
+    interrupt: 18
+    cost: 32
     skillID: 2203
   - id: 2222
     name: "\u5723\u5149\u5377\u8F74"
@@ -2008,6 +2022,7 @@ MonoBehaviour:
     basicACC: 100
     basicCRT: 0
     interrupt: 0
+    cost: 24
     skillID: 2204
   - id: 2223
     name: "\u7075\u6C14\u51C0\u5316\u5377\u8F74"
@@ -2019,6 +2034,7 @@ MonoBehaviour:
     basicACC: 100
     basicCRT: 0
     interrupt: 0
+    cost: 50
     skillID: 2205
   - id: 2030
     name: "\u7EC8\u6781\u7075\u6C14\u7BAD\u4E4B\u4E66"
@@ -2029,18 +2045,20 @@ MonoBehaviour:
     basicSPD: 60
     basicACC: 80
     basicCRT: 10
-    interrupt: 10
+    interrupt: 15
+    cost: 80
     skillID: 2006
   - id: 2031
     name: "\u5F3A\u529B\u7075\u6C14\u5F39\u4E4B\u4E66"
     type: 0
-    description: "\u8BB0\u8F7D\u7740\u6CD5\u672F\u3010\u5F3A\u529B\u7075\u6C14\u5F39\u3011\u7684\u53E4\u4E66\u3002\u9633\u708E\u672F\u662F\u6700\u57FA\u7840\u7684\u9633\u5C5E\u6027\u6CD5\u672F\uFF0C\u5229\u7528\u4E86\u4E16\u95F4\u7684\u9633\u6C14\u4E4B\u529B\u3002"
+    description: "\u8BB0\u8F7D\u7740\u6CD5\u672F\u3010\u5F3A\u529B\u7075\u6C14\u5F39\u3011\u7684\u53E4\u4E66\u3002\u80FD\u591F\u5236\u9020\u66F4\u5927\u66F4\u5F3A\u7684\u7075\u6C14\u5F39\u3002"
     basicATKMin: 90
     basicATKMax: 140
     basicSPD: 50
     basicACC: 70
     basicCRT: 6
-    interrupt: 6
+    interrupt: 8
+    cost: 100
     skillID: 2007
   - id: 2032
     name: "\u7075\u6C14\u5171\u9E23\u4E4B\u4E66"
@@ -2052,6 +2070,7 @@ MonoBehaviour:
     basicACC: 100
     basicCRT: 0
     interrupt: 0
+    cost: 0
     skillID: 2008
   - id: 2033
     name: "\u72C2\u5316\u7075\u6C14\u4E71\u5C04\u4E4B\u4E66"
@@ -2063,6 +2082,7 @@ MonoBehaviour:
     basicACC: 50
     basicCRT: 25
     interrupt: 10
+    cost: 200
     skillID: 2009
   - id: 2034
     name: "\u7075\u4E4B\u5E7B\u5883\u5377\u8F74"
@@ -2074,6 +2094,7 @@ MonoBehaviour:
     basicACC: 100
     basicCRT: 0
     interrupt: 0
+    cost: .150000006
     skillID: 2010
   - id: 2130
     name: "\u7EC8\u6781\u51B0\u5C01\u672F\u4E4B\u4E66"
@@ -2084,7 +2105,8 @@ MonoBehaviour:
     basicSPD: 105
     basicACC: 105
     basicCRT: 9
-    interrupt: 8
+    interrupt: 5
+    cost: 48
     skillID: 2106
   - id: 2131
     name: "\u6697\u4E4B\u539F\u529B\u4E4B\u4E66"
@@ -2095,7 +2117,8 @@ MonoBehaviour:
     basicSPD: 75
     basicACC: 85
     basicCRT: 22
-    interrupt: 15
+    interrupt: 20
+    cost: 80
     skillID: 2107
   - id: 2132
     name: "\u6708\u4E4B\u9886\u57DF\u4E4B\u4E66"
@@ -2107,6 +2130,7 @@ MonoBehaviour:
     basicACC: 100
     basicCRT: 0
     interrupt: 0
+    cost: .119999997
     skillID: 2108
   - id: 2133
     name: "\u8BC5\u5492\u5377\u8F74"
@@ -2118,6 +2142,7 @@ MonoBehaviour:
     basicACC: 100
     basicCRT: 0
     interrupt: 0
+    cost: 66
     skillID: 2109
   - id: 2134
     name: "\u7075\u6C14\u5077\u53D6\u5377\u8F74"
@@ -2128,7 +2153,8 @@ MonoBehaviour:
     basicSPD: 80
     basicACC: 80
     basicCRT: 0
-    interrupt: 180
+    interrupt: 0
+    cost: 180
     skillID: 2110
   - id: 2230
     name: "\u7EC8\u6781\u9633\u708E\u672F\u4E4B\u4E66"
@@ -2139,7 +2165,8 @@ MonoBehaviour:
     basicSPD: 95
     basicACC: 95
     basicCRT: 12
-    interrupt: 12
+    interrupt: 10
+    cost: 64
     skillID: 2206
   - id: 2231
     name: "\u5149\u4E4B\u539F\u529B\u4E4B\u4E66"
@@ -2150,7 +2177,8 @@ MonoBehaviour:
     basicSPD: 65
     basicACC: 75
     basicCRT: 28
-    interrupt: 19
+    interrupt: 25
+    cost: 80
     skillID: 2207
   - id: 2232
     name: "\u65E5\u4E4B\u9886\u57DF\u4E4B\u4E66"
@@ -2162,6 +2190,7 @@ MonoBehaviour:
     basicACC: 100
     basicCRT: 0
     interrupt: 0
+    cost: .119999997
     skillID: 2208
   - id: 2233
     name: "\u5929\u542F\u5377\u8F74"
@@ -2172,7 +2201,8 @@ MonoBehaviour:
     basicSPD: 200
     basicACC: 66
     basicCRT: 0
-    interrupt: 12
+    interrupt: 38
+    cost: 120
     skillID: 2209
   - id: 2234
     name: "\u7075\u6C14\u8FC7\u8F7D\u5377\u8F74"
@@ -2184,6 +2214,7 @@ MonoBehaviour:
     basicACC: 100
     basicCRT: 0
     interrupt: 0
+    cost: 0
     skillID: 2210
   - id: 2040
     name: "\u7075\u566C\u4E4B\u5370"
@@ -2194,7 +2225,8 @@ MonoBehaviour:
     basicSPD: 50
     basicACC: 90
     basicCRT: 10
-    interrupt: 20
+    interrupt: 40
+    cost: 150
     skillID: 2011
   - id: 2041
     name: "\u7075\u7206\u4E4B\u5370"
@@ -2205,7 +2237,8 @@ MonoBehaviour:
     basicSPD: 50
     basicACC: 80
     basicCRT: 10
-    interrupt: 10
+    interrupt: 20
+    cost: 180
     skillID: 2012
   - id: 2042
     name: "\u7075\u529B\u89E3\u653E\u4E4B\u5370"
@@ -2217,6 +2250,7 @@ MonoBehaviour:
     basicACC: 100
     basicCRT: 0
     interrupt: 0
+    cost: 0
     skillID: 2013
   - id: 2140
     name: "\u9ED1\u6697\u6D2A\u6D41\u4E4B\u5370"
@@ -2227,7 +2261,8 @@ MonoBehaviour:
     basicSPD: 75
     basicACC: 110
     basicCRT: 2
-    interrupt: 15
+    interrupt: 25
+    cost: 125
     skillID: 2111
   - id: 2141
     name: "\u6697\u6708\u5F71\u4E4B\u5370"
@@ -2239,6 +2274,7 @@ MonoBehaviour:
     basicACC: 100
     basicCRT: 0
     interrupt: 0
+    cost: .5
     skillID: 2112
   - id: 2240
     name: "\u592A\u9633\u98CE\u66B4\u4E4B\u5370"
@@ -2249,7 +2285,8 @@ MonoBehaviour:
     basicSPD: 50
     basicACC: 75
     basicCRT: 16
-    interrupt: 38
+    interrupt: 30
+    cost: 133
     skillID: 2211
   - id: 2241
     name: "\u5149\u8F89\u7075\u76FE\u4E4B\u5370"
@@ -2261,17 +2298,19 @@ MonoBehaviour:
     basicACC: 100
     basicCRT: 0
     interrupt: 0
+    cost: .5
     skillID: 2212
   - id: 4001
     name: "\u54A9\u54A9\u7684\u6124\u6012"
     type: 0
     description: "\u7075\u5C5E\u6027\uFF0C\u9020\u6210\u968F\u673A\u4F24\u5BB3"
-    basicATKMin: 1
-    basicATKMax: 99
+    basicATKMin: 10
+    basicATKMax: 30
     basicSPD: 100
     basicACC: 100
     basicCRT: 0
     interrupt: 0
+    cost: 5
     skillID: 4001
   - id: 4005
     name: "\u7EA2\u5149\u7B2C\u4E00\u4E2A\u6CD5\u672F"
@@ -2283,6 +2322,7 @@ MonoBehaviour:
     basicACC: 0
     basicCRT: 0
     interrupt: 0
+    cost: 0
     skillID: 4005
   - id: 4006
     name: "\u7EA2\u5149\u7B2C\u4E8C\u4E2A\u6CD5\u672F"
@@ -2294,6 +2334,7 @@ MonoBehaviour:
     basicACC: 0
     basicCRT: 0
     interrupt: 0
+    cost: 0
     skillID: 4006
   - id: 4007
     name: "\u9F9F\u7F29\u4E4B\u672F"
@@ -2305,6 +2346,7 @@ MonoBehaviour:
     basicACC: 0
     basicCRT: 0
     interrupt: 0
+    cost: 0
     skillID: 4007
   - id: 4008
     name: "\u5E7D\u7075\u7684\u6CE8\u89C6"
@@ -2316,4 +2358,5 @@ MonoBehaviour:
     basicACC: 0
     basicCRT: 0
     interrupt: 0
+    cost: 0
     skillID: 4008

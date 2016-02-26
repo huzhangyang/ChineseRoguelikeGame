@@ -69,6 +69,7 @@ public class BattleWindow: MonoBehaviour {
 	{
 		commandPanel.SetActive(true);
 		subCommandPanel.SetActive (true);
+		commandPanel.GetComponent<CommandPanelUIEvent>().SetButtonActive();
 	}
 
 	void OnBasicCommandSelected(MessageEventArgs args)
@@ -85,7 +86,7 @@ public class BattleWindow: MonoBehaviour {
 		{
 			GameObject commandButton = Instantiate(Resources.Load(GlobalDataStructure.PATH_UIPREFAB_BATTLE + "CommandButton")) as GameObject;
 			commandButton.transform.SetParent(commandButtonPanel, false);
-			commandButton.GetComponent<CommandButtonUIEvent>().Init(validCommands[i].commandName, validCommands[i].commandDescription);
+			commandButton.GetComponent<CommandButtonUIEvent>().Init(validCommands[i], validCommands[i].IsAvailable());
 		}
 	}
 
@@ -107,10 +108,7 @@ public class BattleWindow: MonoBehaviour {
 			player.transform.SetParent(playerPanel.transform, false);
 			player.GetComponent<Player>().Init(0);			
 			
-			if(args.ContainsMessage("Girl"))
-			{
-				player.transform.DOLocalMoveX(-250,0.5f);
-			}
+			player.transform.DOLocalMoveX(-250,0.5f);
 		}
 
 		if(args.ContainsMessage("Girl"))
@@ -119,10 +117,7 @@ public class BattleWindow: MonoBehaviour {
 			player.transform.SetParent(playerPanel.transform, false);
 			player.GetComponent<Player>().Init(1);
 			
-			if(args.ContainsMessage("Man"))
-			{
-				player.transform.DOLocalMoveX(250,0.5f);
-			}
+			player.transform.DOLocalMoveX(250,0.5f);
 		}
 
 		if(args.ContainsMessage("Enemy"))

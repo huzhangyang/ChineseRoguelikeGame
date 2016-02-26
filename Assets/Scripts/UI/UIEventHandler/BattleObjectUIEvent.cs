@@ -5,18 +5,19 @@ using System.Collections;
 
 public class BattleObjectUIEvent : MonoBehaviour {
 
-	private bool allowClick;
+	public Image objectImage;
+	public Image shadowImage;
 	private Image avatarImage;
-	private Image objectImage;
 	private Slider HPBar;
 	private Text HPText;
+
+	private bool allowClick;
 
 	public void Init(int playerID) 
 	{
 		allowClick = false;
-		objectImage = this.GetComponent<Image>();
 		objectImage.sprite = Resources.Load(GlobalDataStructure.PATH_UIIMAGE_BATTLE + "Avatar" + playerID.ToString("00"), typeof(Sprite)) as Sprite;
-		objectImage.rectTransform.sizeDelta = new Vector2 (objectImage.sprite.rect.width, objectImage.sprite.rect.height);
+		shadowImage.rectTransform.sizeDelta = new Vector2 (objectImage.sprite.rect.width, objectImage.sprite.rect.height);
 		InitAvatar();
 		GetComponent<Button>().onClick.AddListener(delegate(){OnClick();});		
 	}
@@ -48,8 +49,8 @@ public class BattleObjectUIEvent : MonoBehaviour {
 	{
 		GameObject bar = Instantiate(Resources.Load(GlobalDataStructure.PATH_UIPREFAB_BATTLE + "EnemyHPBar")) as GameObject;
 		bar.transform.SetParent(this.transform, false);
-		bar.transform.localPosition = new Vector3(0, objectImage.rectTransform.sizeDelta.y / 2, 0); 
-		((RectTransform)bar.transform).sizeDelta = new Vector2 (objectImage.rectTransform.sizeDelta.x / 2, 32);
+		bar.transform.localPosition = new Vector3(0, shadowImage.rectTransform.sizeDelta.y / 2, 0); 
+		((RectTransform)bar.transform).sizeDelta = new Vector2 (shadowImage.rectTransform.sizeDelta.x / 2, 32);
 		HPBar = bar.GetComponent<Slider>();
 		HPBar.maxValue = max;
 		HPBar.value = max;
@@ -67,7 +68,12 @@ public class BattleObjectUIEvent : MonoBehaviour {
 	{
 		HPBar.DOValue(current, 1).SetEase(Ease.OutSine);
 		HPText.text = current + "/" + HPBar.maxValue;
-		this.transform.DOPunchScale(new Vector2(0.1f, 0.1f), 1);
+	}
+
+	public void SetHPBar(int current, int max)
+	{
+		HPBar.maxValue = max;
+		SetHPBar(current);
 	}
 	
 	public void InitAvatar()
@@ -88,31 +94,53 @@ public class BattleObjectUIEvent : MonoBehaviour {
 			avatarImage.rectTransform.anchoredPosition = new Vector2(posX, 35);			
 	}
 
+	/*---------- Effect ----------*/
+
+	public void OnDamage()
+	{
+		if(!DOTween.IsTweening(this.transform))
+			this.transform.DOPunchScale(new Vector2(0.1f, 0.1f), 1);
+	}
+
+	public void OnHeal()
+	{
+		this.transform.DOPunchScale(new Vector2(0.1f, 0.1f), 1);
+	}
+
 	public void BeginReady()
 	{
 		avatarImage.transform.DOScale(new Vector3(1.2f, 1.2f), 1).SetLoops(-1,LoopType.Yoyo);
 		avatarImage.transform.SetAsLastSibling ();
+		shadowImage.sprite = Resources.Load(GlobalDataStructure.PATH_UIIMAGE_COMMON + "AvatarBack_Light", typeof(Sprite)) as Sprite;
 	}
 
 	public void EndReady()
 	{
 		avatarImage.transform.DOKill ();
 		avatarImage.transform.localScale = new Vector3 (1, 1, 1);
+		shadowImage.sprite = Resources.Load(GlobalDataStructure.PATH_UIIMAGE_COMMON + "AvatarBack_Dark", typeof(Sprite)) as Sprite;
 	}
 
 	public void BeginExecute()
 	{
-		//objectImage.transform.localScale = new Vector3 (1.2f, 1.2f, 1);
+		shadowImage.sprite = Resources.Load(GlobalDataStructure.PATH_UIIMAGE_COMMON + "AvatarBack_Light", typeof(Sprite)) as Sprite;
 	}
 
 	public void EndExecute()
 	{
-		//objectImage.transform.localScale = new Vector3 (1, 1, 1);
+		shadowImage.sprite = Resources.Load(GlobalDataStructure.PATH_UIIMAGE_COMMON + "AvatarBack_Dark", typeof(Sprite)) as Sprite;
 	}
 
 	public void EnableClick()
 	{
-		objectImage.DOColor(new Color(0.5f,0.5f,0.5f), 1f).SetLoops(-1,LoopType.Yoyo);
+		if(DOTween.IsTweening(objectImage))
+		{
+			DOTween.Restart(objectImage);
+		}
+		else
+		{
+			objectImage.DOColor(new Color(0.5f,0.5f,0.5f), 1f).SetLoops(-1,LoopType.Yoyo);
+		}
 		allowClick = true;
 	}
 
@@ -122,6 +150,8 @@ public class BattleObjectUIEvent : MonoBehaviour {
 		objectImage.DOKill();
 		allowClick = false;
 	}
+
+	/*---------- Callback ----------*/
 
 	void OnClick()
 	{

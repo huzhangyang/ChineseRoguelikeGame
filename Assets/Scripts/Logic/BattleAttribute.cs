@@ -10,71 +10,65 @@ public class BattleAttribute {
 	//最大生命值
 	public static int MaxHP(BattleObject bo)
 	{
-		if(bo.GetBattleType() == BattleType.Magical)
-			return (int)Mathf.Round(Mathf.Pow(bo.stamina, 1.5f) * 3);
-		else if(bo.GetBattleType() == BattleType.Physical)
-			return (int)Mathf.Round(Mathf.Pow(bo.stamina, 1.3f) * 5);
-		else
-			return (int)Mathf.Round(Mathf.Pow(bo.stamina, 1.4f) * 4);
+		int maxHP = Mathf.RoundToInt(Mathf.Pow(bo.stamina, 1.4f) * 4);
+		return Mathf.RoundToInt(maxHP * (1 + bo.maxHPMulti));
 	}
 
 	//时间轴速度
 	public static int Speed(BattleObject bo)
 	{
-		return (int)Mathf.Round(Mathf.Log10(bo.agility) * 80);
+		int speed = Mathf.RoundToInt(Mathf.Log10(bo.agility) * 50);
+		return Mathf.RoundToInt(speed * (1 + bo.speedMulti));
 	}
 
 	//攻击倍率
 	public static float AttackMulti(BattleObject bo)
 	{
-		return 1 + bo.power / 100f;
+		return 1 + bo.power / 100f + bo.attackMulti;
 	}
 
 	//防御倍率
 	public static float DefenceMulti(BattleObject bo)
 	{
-		return bo.toughness / (100f + bo.toughness);
+		return Mathf.Min(bo.toughness / (100f + bo.toughness) + bo.defenceMulti, 1);
 	}
 
 	//命中率
 	public static float ExtraAccuracy(BattleObject bo)
 	{
-		return bo.skill + bo.luck / 9f;
+		return bo.skill + bo.luck / 9f + bo.accuracyMulti;
 	}
 
 	//回避率
 	public static float ExtraEvasion(BattleObject bo)
 	{
-		return bo.skill * 0.9f + bo.luck / 4.5f;
+		return bo.skill * 0.9f + bo.luck / 4.5f + bo.evasionMulti;
 	}
 
 	//暴击率
 	public static float ExtraCrit(BattleObject bo)
 	{
-		return bo.skill / 4.5f + bo.luck / 9f;
+		return bo.skill / 4.5f + bo.luck / 9f + bo.critMulti;
 	}
 
 	//抗暴击率
 	public static float ExtraCritResist(BattleObject bo)
 	{
-		return bo.skill / 4.5f + bo.luck / 4.5f;
+		return bo.skill / 4.5f + bo.luck / 4.5f + bo.critMulti;
 	}
+
+/**********************战斗外**********************/
 
 	//最大生命值
 	public static int MaxHP(ObjectData data)
 	{
-		if(data.battleType == BattleType.Magical)
-			return (int)Mathf.Round(Mathf.Pow(data.stamina, 1.5f) * 3);
-		else if(data.battleType == BattleType.Physical)
-			return (int)Mathf.Round(Mathf.Pow(data.stamina, 1.3f) * 5);
-		else
-			return (int)Mathf.Round(Mathf.Pow(data.stamina, 1.4f) * 4);
+		return (int)Mathf.Round(Mathf.Pow(data.stamina, 1.4f) * 4);
 	}
 	
 	//时间轴速度
 	public static int Speed(ObjectData data)
 	{
-		return (int)Mathf.Round(Mathf.Log10(data.agility) * 80);
+		return (int)Mathf.Round(Mathf.Log10(data.agility) * 50);
 	}
 	
 	//攻击倍率

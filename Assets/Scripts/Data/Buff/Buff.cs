@@ -10,6 +10,7 @@ public abstract class Buff {
 	protected BuffData data;
 	protected BattleObject source;
 
+	protected abstract void Init();
 	protected abstract void Execute();
 	protected abstract void Revert();	
 
@@ -19,7 +20,7 @@ public abstract class Buff {
 		buff.source = bo;
 		buff.data = data;
 		buff.effectTurns = effectTurns;
-		buff.OnAddBuff();
+		buff.Init();
 
 		return buff;
 	}
@@ -46,24 +47,6 @@ public abstract class Buff {
 	public void Check(BuffTrigger trigger)
 	{
 		if(data.trigger == trigger)
-			this.Execute();
-	}
-
-	private void OnAddBuff()
-	{
-		Check(BuffTrigger.Always);
-	}
-
-
-	public void OnReady()
-	{
-		if(data.trigger == BuffTrigger.Ready)
-			this.Execute();
-	}
-
-	public void OnAction()
-	{
-		if(data.trigger == BuffTrigger.Ready)
 			this.Execute();
 	}
 }

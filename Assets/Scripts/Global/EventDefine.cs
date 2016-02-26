@@ -15,6 +15,7 @@ public enum BattleEvent
 	OnMessageUpdate,//更新战斗信息
 
 	OnBuffActivated,//有BUFF被激活
+	OnBuffDeactivated,//有BUFF被激活
 	OnEffectExecuted,//有特效被激活
 	OnHPAutoRecover,//HP自动恢复
 	OnMPAutoRecover,//MP自动恢复
@@ -31,6 +32,7 @@ public enum BattleEvent
 	BattleObjectHurt,//有玩家或敌人受伤
 	BattleObjectHeal,//有玩家或敌人恢复生命
 	BattleObjectCounter,//有玩家或敌人反击
+	BattleObjectInterrupted,//有玩家或敌人被打断
 	BattleObjectDied,//有玩家或敌人死亡
 	BattleObjectEscape,//有玩家或敌人逃跑
 }

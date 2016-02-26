@@ -33,7 +33,6 @@ public class PlayerData : ObjectData {
 	public int expLuck;//运气成长值
 	public int expEloquence;//口才成长值
 	//saved attribute
-	public int currentHP;//当前生命值,用于战斗外保存
 
 	public void InitWithID(int playerID)
 	{
@@ -49,7 +48,7 @@ public class PlayerData : ObjectData {
 			luck = 10;
 			eloquence = 10;			
 			battleType = BattleType.Physical;
-			weaponID = 1000 + Random.Range(1,7) * 100 + Random.Range(0,3) * 10;			
+			weaponID = 1300;			
 			items.Add(1,3);
 			break;
 		case 1: name = "澪";
@@ -66,6 +65,7 @@ public class PlayerData : ObjectData {
 			magicIDs.Add(2010);
 			magicIDs.Add(2110);
 			magicIDs.Add(2210);
+			items.Add(1,3);
 			break;
 		}
 		this.id = playerID;

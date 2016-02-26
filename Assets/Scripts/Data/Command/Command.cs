@@ -15,7 +15,7 @@ public abstract class Command {
 	public int itemID;//对应的物品ID(仅在使用物品时生效)
 	public BattleObject source;//执行者
 	public List<BattleObject> targetList = new List<BattleObject>();//执行目标
-	public string executeMessage;//执行时显示的信息
+	public string executeMessage;//执行时显示的信息 
 
 	public abstract void Execute ();
 	public virtual bool IsAvailable()
@@ -61,6 +61,11 @@ public abstract class Command {
 		//检查策略
 		availableCommands.Add(new CommandNone());
 		availableCommands.Add(new CommandEscape());
+
+		foreach(Command command in availableCommands)
+		{
+			command.source = bo;
+		}
 
 		return availableCommands;
 	}

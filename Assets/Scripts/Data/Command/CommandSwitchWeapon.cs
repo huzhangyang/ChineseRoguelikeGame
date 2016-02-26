@@ -12,7 +12,7 @@ public class CommandSwitchWeapon : Command
 		preExecutionSpeed = GlobalDataStructure.BATTLE_STANDARDSPEED;
 		postExecutionRecover = 0;
 		
-		itemID = 1000 + Random.Range(1,6) * 100;
+		itemID = 1125;
 	}
 
 	public override void Execute()
@@ -21,6 +21,6 @@ public class CommandSwitchWeapon : Command
 		SendExecuteMessage ();
 		source.SetWeapon(itemID);
 
-		SkillHelper.CheckSkillEffect (EffectTrigger.SwitchWeapon, source);//检查切换武器时生效的特效
+		SkillHelper.CheckWeaponEffect(EffectTrigger.SwitchWeapon, source);//检查切换武器时生效的特效
 	}
 }

@@ -40,9 +40,26 @@ public abstract class BattleObject : MonoBehaviour {
 		}
 	}
 
-	public int maxHP{get{return Mathf.RoundToInt((BattleAttribute.MaxHP(this) + maxHPAdd) * (1 + maxHPMulti));}}
-	public int maxHPAdd = 0;
-	public float maxHPMulti = 0;
+	public int maxHP{get{return BattleAttribute.MaxHP(this);}}
+
+	private float _maxHPMulti;
+	public float maxHPMulti
+	{
+		get{return _maxHPMulti;}
+		set{
+			float previousMulti = 1 + _maxHPMulti;
+			_maxHPMulti = value;
+			currentHP = Mathf.RoundToInt(currentHP * (1 + _maxHPMulti) / previousMulti);
+			UIEvent.SetHPBar(currentHP, maxHP);
+		}
+	}
+	public float speedMulti = 0;
+	public float attackMulti = 0;
+	public float defenceMulti = 0;
+	public float accuracyMulti = 0;
+	public float evasionMulti = 0;
+	public float critMulti = 0;
+	public float critResistMulti = 0;
 
 	public int stamina{get{return data.stamina;}}
 	public int power{get{return data.power;}}
@@ -55,13 +72,18 @@ public abstract class BattleObject : MonoBehaviour {
 
 	public BattleStatus battleStatus = BattleStatus.Prepare;
 	public Command commandToExecute = new CommandNone();
-	public Damage damage;//伤害值
+	public Damage damage;//击出的伤害
+	public Damage damageTaken;//受到的伤害
 	public List<Command> availableCommands = new List<Command>();
 	public List<Buff> buffList = new List<Buff>();
-	
-	public bool isGuarding = false;
-	public bool isEvading = false;
-	public bool isBuffFrozen = false;
+
+	public bool isDead = false;//是否已经死了
+	public bool isGuarding = false;//是否正在防御
+	public bool isEvading = false;//是否正在躲避
+	public bool isEnemy = false;//是否敌人
+	public bool isHealingBottleUsed = false;//是否使用过元素瓶
+	public bool isRecovering{get{return timelinePosition < 0;}}
+	public float buffFrozenTime = 0;//冰冻BUFF剩余时间
 
 	protected BattleObjectUIEvent UIEvent;
 	protected ObjectData data;
@@ -78,11 +100,16 @@ public abstract class BattleObject : MonoBehaviour {
 		EventManager.Instance.UnRegisterEvent(BattleEvent.BattleObjectDied, OnBattleObjectDied);
 	}
 
+	protected abstract void SelectCommand();
+	public abstract bool IsBoss();
+
 	/*更新时间轴*/
 	protected void OnTimelineUpdate(MessageEventArgs args)
 	{
-		if(isBuffFrozen)
-			timelinePosition += 0;
+		if(this.isDead)return;
+
+		if(buffFrozenTime > 0)
+			buffFrozenTime -= Time.deltaTime;
 		else if(battleStatus == BattleStatus.Prepare)
 			timelinePosition += BattleAttribute.Speed(this);
 		else if(battleStatus == BattleStatus.Action)
@@ -161,13 +188,10 @@ public abstract class BattleObject : MonoBehaviour {
 		availableCommands = Command.GetAvailableCommands(this);
 	}
 
-	protected abstract void SelectCommand();
-
 	protected virtual void ExecuteCommand()
 	{
 		SkillHelper.CheckBuff (BuffTrigger.Action, this);
 		//decide command
-		commandToExecute.source = this;
 		BattleManager.Instance.AddToCommandQueue (commandToExecute);
 		//post process
 		timelinePosition = -commandToExecute.postExecutionRecover * BattleAttribute.Speed(this);//后退距离 = 帧 * 步进
@@ -229,6 +253,26 @@ public abstract class BattleObject : MonoBehaviour {
 	public void AcquireItem(int itemID, int count)
 	{
 		data.AcquireItem(itemID, count);
+	}
+
+	public float GetSkillTypeMulti(SkillType skillType)
+	{
+		switch(skillType)
+		{
+		case SkillType.Blunt:
+			return data.bluntMulti;
+		case SkillType.Slash:
+			return data.slashMulti;
+		case SkillType.Thrust:
+			return data.thrustMulti;
+		case SkillType.Neutral:
+			return data.neutralMulti;
+		case SkillType.Yin:
+			return data.yinMulti;
+		case SkillType.Yang:
+			return data.yangMulti;
+		}
+		return 1f;
 	}
 }
 

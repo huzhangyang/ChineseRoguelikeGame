@@ -25,6 +25,7 @@ public class PlayerPanel: MonoBehaviour {
 	void OnDisable()
 	{
 		EventManager.Instance.UnRegisterEvent(UIEvent.OnSwitchLeader, OnSwitchLeader);
+		SaveManager.Instance.SaveGame();
 	}
 	
 	void OnSwitchLeader(MessageEventArgs args)
