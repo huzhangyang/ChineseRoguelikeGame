@@ -6,6 +6,7 @@ public class SkillEffectSanction:SkillEffect
 	protected override void Execute()
 	{
 		int targetHP = source.damage.target.currentHP;
-		source.damage.dmg = targetHP - source.currentHP - 1;
+		source.damage.minDmg = targetHP - source.currentHP - 1;
+		source.damage.maxDmg = targetHP - source.currentHP - 1;
 	}
 }

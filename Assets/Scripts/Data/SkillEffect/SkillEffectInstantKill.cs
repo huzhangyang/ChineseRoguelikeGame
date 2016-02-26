@@ -6,6 +6,7 @@ public class SkillEffectInstantKill:SkillEffect
 	protected override void Execute()
 	{
 		int targetHP = source.damage.target.currentHP;
-		source.damage.dmg = targetHP;
+		source.damage.minDmg = targetHP;
+		source.damage.maxDmg = targetHP;
 	}
 }

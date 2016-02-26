@@ -76,7 +76,7 @@ public class Damage
 		}
 
 		BattleFormula.OnDamage(target);
-		SkillHelper.CheckSkillEffect (EffectTrigger.AfterDamage, source);//检查伤害后生效的特效
+		SkillHelper.CheckSkillEffect (EffectTrigger.AfterHit, source);//检查伤害后生效的特效
 		SkillHelper.CheckBuffAdd (source);//检查附带的BUFF是否命中
 	}
 
