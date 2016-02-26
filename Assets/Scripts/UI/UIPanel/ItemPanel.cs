@@ -40,9 +40,9 @@ public class ItemPanel : MonoBehaviour {
 		{
 			GameObject.Destroy(itemList.GetChild(i).gameObject);
 		}
-		for(int i = 0; i < playerData.itemKeys.Count; i++)
+		foreach(int itemID in playerData.GetItemDict().Keys)
 		{
-			ItemData itemData = DataManager.Instance.GetItemDataSet().GetItemData(playerData.itemKeys[i]);
+			ItemData itemData = DataManager.Instance.GetItemDataSet().GetItemData(itemID);
 			GameObject itemButton = Instantiate(Resources.Load(GlobalDataStructure.PATH_UIPREFAB_COMMON + "ItemButton")) as GameObject;
 			itemButton.transform.SetParent(itemList, false);
 			itemButton.GetComponent<ItemButtonUIEvent>().Init(itemData.name, itemData.description);

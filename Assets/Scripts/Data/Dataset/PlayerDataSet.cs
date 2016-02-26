@@ -50,6 +50,7 @@ public class PlayerData : ObjectData {
 			battleType = BattleType.Physical;
 			weaponID = 1300;			
 			items.Add(1,3);
+			items.Add(1300,1);
 			break;
 		case 1: name = "澪";
 			stamina = 10;
@@ -62,9 +63,9 @@ public class PlayerData : ObjectData {
 			eloquence = 10;			
 			battleType = BattleType.Magical;
 			weaponID = 1000;
-			magicIDs.Add(2010);
-			magicIDs.Add(2110);
-			magicIDs.Add(2210);
+			items.Add(2010,1);
+			items.Add(2110,1);
+			items.Add(2210,1);
 			items.Add(1,3);
 			break;
 		}

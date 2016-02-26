@@ -232,7 +232,7 @@ public abstract class BattleObject : MonoBehaviour {
 
 	public List<int> GetMagic()
 	{
-		return data.magicIDs;
+		return data.GetMagics();
 	}
 
 	public BattleType GetBattleType()

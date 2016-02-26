@@ -35,12 +35,11 @@ public abstract class ObjectData{
 	public float neutralMulti = 1;
 	//Equipment
 	public int weaponID;
-	public int ring1ID;
-	public int ring2ID;
-	public List<int> magicIDs = new List<int>();
-	public List<int> itemKeys = new List<int>();
-	public List<int> itemValues = new List<int>();	
-	protected Dictionary<int, int> items = new Dictionary<int, int>();//id, amount
+	
+	protected Dictionary<int, int> items = new Dictionary<int, int>();//物品列表
+
+	public List<int> itemKeys = new List<int>();// for serialization
+	public List<int> itemValues = new List<int>();	// for serialization
 
 	public void OnSerialize()
 	{
@@ -57,9 +56,14 @@ public abstract class ObjectData{
 		}
 	}
 
+	public Dictionary<int, int> GetItemDict()
+	{
+		return items;
+	}
+
 	public int GetItemCount(int itemID)
 	{
-		if( !items.ContainsKey(itemID))
+		if(!items.ContainsKey(itemID))
 		{
 			return 0;
 		}
@@ -79,9 +83,40 @@ public abstract class ObjectData{
 	
 	public void AcquireItem(int itemID, int count)
 	{
+		ItemData itemData = DataManager.Instance.GetItemDataSet().GetItemData(itemID);
+		if(itemData == null) return;
+
 		if(!items.ContainsKey(itemID))
 			items.Add(itemID,count);
 		else
 			items[itemID] += count;
+	}
+
+	public List<int> GetMagics()//获取可用法术列表
+	{
+		List<int> returnVal = new List<int>();
+		foreach(int itemID in items.Keys)
+		{
+			ItemData itemData = DataManager.Instance.GetItemDataSet().GetItemData(itemID);
+			if(itemData.type == ItemType.Magic && !returnVal.Contains(itemID))
+			{
+				returnVal.Add(itemID);
+			}
+		}
+		return returnVal;
+	}
+
+	public List<int> GetWeapons()//获取可用武器列表
+	{
+		List<int> returnVal = new List<int>();
+		foreach(int itemID in items.Keys)
+		{
+			ItemData itemData = DataManager.Instance.GetItemDataSet().GetItemData(itemID);
+			if(itemData.type == ItemType.Weapon && !returnVal.Contains(itemID))
+			{
+				returnVal.Add(itemID);
+			}
+		}
+		return returnVal;
 	}
 }
