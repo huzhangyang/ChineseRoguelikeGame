@@ -30,7 +30,6 @@ public class ItemPanel : MonoBehaviour {
 	void SetData()
 	{
 		playerData = DataManager.Instance.GetPlayerDataSet().GetPlayerData(DataManager.Instance.GetConfigData().currentLeaderID);
-		playerData.AcquireItem(1,3);
 		InitItemButtons();
 	}
 
@@ -40,12 +39,11 @@ public class ItemPanel : MonoBehaviour {
 		{
 			GameObject.Destroy(itemList.GetChild(i).gameObject);
 		}
-		foreach(int itemID in playerData.GetItemDict().Keys)
+		foreach(var itemSlot in playerData.GetItemDict())
 		{
-			ItemData itemData = DataManager.Instance.GetItemDataSet().GetItemData(itemID);
 			GameObject itemButton = Instantiate(Resources.Load(GlobalDataStructure.PATH_UIPREFAB_COMMON + "ItemButton")) as GameObject;
 			itemButton.transform.SetParent(itemList, false);
-			itemButton.GetComponent<ItemButtonUIEvent>().Init(itemData.name, itemData.description);
+			itemButton.GetComponent<ItemButtonUIEvent>().Init(itemSlot.Key, itemSlot.Value);
 		}
 	}
 }

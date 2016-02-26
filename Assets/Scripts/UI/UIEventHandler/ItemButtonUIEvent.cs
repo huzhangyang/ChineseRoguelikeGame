@@ -6,11 +6,15 @@ public class ItemButtonUIEvent : MonoBehaviour {
 	
 	public Text nameText;
 	public Text descriptionText;
+	public Text numText;
 	
-	public void Init(string name, string description)
+	public void Init(int itemID, int num)
 	{
-		nameText.text = name;
-		descriptionText.text = description;
+		ItemData itemData = DataManager.Instance.GetItemDataSet().GetItemData(itemID);
+
+		nameText.text = itemData.name;
+		descriptionText.text = itemData.description;
+		numText.text = "*" + num.ToString();
 		GetComponent<Button>().onClick.AddListener(delegate()  
 		                                           {  
 			OnClick(name);  
