@@ -44,7 +44,7 @@ public abstract class Command {
 		}
 		if(bo.GetBattleType() != BattleType.Physical)
 		{
-			foreach(int magicID in bo.GetMagic())
+			foreach(int magicID in bo.GetMagicList())
 			{
 				MagicData magicData = DataManager.Instance.GetItemDataSet().GetMagicData(magicID);
 				availableCommands.Add(new CommandUseMagicSkill(magicData, magicData.skillID));
@@ -55,9 +55,14 @@ public abstract class Command {
 		availableCommands.Add(new CommandEvade());
 		//检查物品
 		if(bo.GetBattleType() != BattleType.Magical)
-			availableCommands.Add(new CommandSwitchWeapon());
-		if(bo.GetItemCount(1) > 0)
-			availableCommands.Add(new CommandUseHealing(bo.GetItemCount(1)));
+		{
+			foreach(int weaponID in bo.GetWeaponList())
+			{
+				if(weaponID != bo.GetWeapon())
+					availableCommands.Add(new CommandSwitchWeapon(weaponID));
+			}
+		}
+		availableCommands.Add(new CommandUseHealing(bo.GetItemCount(1)));
 		//检查策略
 		availableCommands.Add(new CommandNone());
 		availableCommands.Add(new CommandEscape());

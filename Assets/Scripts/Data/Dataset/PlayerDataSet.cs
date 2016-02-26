@@ -51,6 +51,8 @@ public class PlayerData : ObjectData {
 			weaponID = 1300;			
 			items.Add(1,3);
 			items.Add(1300,1);
+			items.Add(1310,1);
+			items.Add(1320,1);
 			break;
 		case 1: name = "澪";
 			stamina = 10;

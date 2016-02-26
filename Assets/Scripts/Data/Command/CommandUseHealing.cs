@@ -37,8 +37,8 @@ public class CommandUseHealing : Command
 	public override bool IsAvailable()
 	{
 		if(source.GetBattleType() == BattleType.Magical)
-			return !source.isHealingBottleUsed;
+			return source.GetItemCount(1) > 0 && !source.isHealingBottleUsed;
 		else
-			return true;
+			return source.GetItemCount(1) > 0;
 	}
 }
