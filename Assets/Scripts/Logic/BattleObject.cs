@@ -230,9 +230,14 @@ public abstract class BattleObject : MonoBehaviour {
 		return data.weaponID;
 	}
 
-	public List<int> GetMagic()
+	public List<int> GetWeaponList()
 	{
-		return data.magicIDs;
+		return data.GetWeapons();
+	}
+
+	public List<int> GetMagicList()
+	{
+		return data.GetMagics();
 	}
 
 	public BattleType GetBattleType()

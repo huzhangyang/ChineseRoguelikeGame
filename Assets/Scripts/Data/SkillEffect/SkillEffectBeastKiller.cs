@@ -7,7 +7,8 @@ public class SkillEffectBeastKiller:SkillEffect
 	{
 		if(source.damage.target.GetBattleType() == BattleType.Magical)
 		{
-			source.damage.dmg = 0;
+			source.damage.maxDmg = 0;
+			source.damage.minDmg = 0;
 		}
 	}
 }

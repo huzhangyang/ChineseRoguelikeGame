@@ -8,11 +8,12 @@ public class SkillEffectDevilHit:SkillEffect
 		int targetHP = source.damage.target.currentHP;
 		if(targetHP < source.currentHP)
 		{
-			source.damage.dmg = targetHP;
+			source.damage.minDmg = targetHP;
+			source.damage.maxDmg = targetHP;
 		}
 		else
 		{
-			source.damage.isCountered = true;
+			source.damage.target = source;
 		}
 	}
 }

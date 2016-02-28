@@ -7,11 +7,13 @@ public class SkillEffectFixedDamage:SkillEffect
 	{
 		if(source.damage.target.IsBoss())
 		{
-			source.damage.dmg = source.damage.target.maxHP * 0.05f;
+			source.damage.minDmg = source.damage.target.maxHP * 0.05f;
+			source.damage.maxDmg = source.damage.target.maxHP * 0.05f;
 		}
 		else
 		{
-			source.damage.dmg = source.damage.target.maxHP * 0.1f;
+			source.damage.minDmg = source.damage.target.maxHP * 0.1f;
+			source.damage.maxDmg = source.damage.target.maxHP * 0.1f;
 		}
 
 	}

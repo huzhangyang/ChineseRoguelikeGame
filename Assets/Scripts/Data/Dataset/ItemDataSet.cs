@@ -15,6 +15,16 @@ public class ItemDataSet : ScriptableObject
 			if (data.id == itemID)
 				return data;
 		}
+		foreach (ItemData data in weaponDataSet)
+		{
+			if (data.id == itemID)
+				return data;
+		}
+		foreach (ItemData data in magicDataSet)
+		{
+			if (data.id == itemID)
+				return data;
+		}
 		Debug.LogError("Asking for an non-exist item:" + itemID);
 		return null;
 	}
@@ -45,23 +55,7 @@ public class ItemDataSet : ScriptableObject
 	{
 		return magicDataSet.Find((MagicData _data)=>{return _data.skillID == skillID;});
 	}
-
-	public bool IsWeapon(int itemID)
-	{
-		if(itemID >= 1000 && itemID < 2000)
-			return true;
-		else
-			return false;
-	}
-
-	public bool IsMagic(int itemID)
-	{
-		if(itemID >= 2000 && itemID < 3000)
-			return true;
-		else
-			return false;
-	}
-
+	
 	public bool IsWeaponSkill(int skillID)
 	{
 		return GetMagicDataBySkillID(skillID) == null;
@@ -76,7 +70,8 @@ public class ItemData{
 	public int id;
 	public string name;
 	public ItemType type;
-	public string description;
+	public string shortDesc;//短描述
+	public string description;//完整描述
 }
 
 [System.Serializable]

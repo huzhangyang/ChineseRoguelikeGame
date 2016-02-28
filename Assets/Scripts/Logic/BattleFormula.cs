@@ -40,7 +40,7 @@ public class BattleFormula {
 			damagePack.interrupt = magicData.interrupt * skillData.interruptMultiplier * 100;
 		}
 
-		SkillHelper.CheckSkillEffect (EffectTrigger.BeforeHit, source);//检查命中前生效的特效
+		SkillHelper.CheckSkillEffect (EffectTrigger.OnHit, source);//检查命中前生效的特效
 
 		//计算真实命中、暴击、伤害
 		if(!damagePack.ignoreArmor)
@@ -81,8 +81,7 @@ public class BattleFormula {
 			damagePack.isCrit = Random.Range(0,101) <= damagePack.crit?true:false;
 			damagePack.isHit = (damagePack.forceHit|| damagePack.target == damagePack.source) ? true : damagePack.forceMiss ? false : damagePack.isHit;
 			damagePack.isCrit = damagePack.forceCrit ? true : damagePack.isCrit;
-			
-			SkillHelper.CheckSkillEffect (EffectTrigger.OnDamage, source);//检查结算中生效的特效
+
 			SkillHelper.CheckBuff (BuffTrigger.Behit, target);//检查命中前生效的特效
 
 			damagePack.TakeEffect();

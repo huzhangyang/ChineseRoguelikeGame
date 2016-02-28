@@ -31,6 +31,20 @@ public class ItemDataConverter : MonoBehaviour {
 			dataTable = excelReader.AsDataSet ().Tables["Magic"];
 			loader = new ExcelLoader(dataTable);
 			itemDataSet.magicDataSet = loader.CreateDataList<MagicData>();
+
+			foreach(ItemData item in itemDataSet.itemDataSet)
+			{
+				item.type = ItemType.NormalItem;
+			}
+			foreach(WeaponData weapon in itemDataSet.weaponDataSet)
+			{
+				weapon.type = ItemType.Weapon;
+			}
+			foreach(MagicData magic in itemDataSet.magicDataSet)
+			{
+				magic.type = ItemType.Magic;
+			}
+
 			AssetDatabase.CreateAsset(itemDataSet, PATH_ASSET);
 		}
 		excelReader.Dispose ();
