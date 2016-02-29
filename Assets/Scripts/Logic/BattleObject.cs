@@ -113,7 +113,7 @@ public abstract class BattleObject : MonoBehaviour {
 		else if(battleStatus == BattleStatus.Prepare)
 			timelinePosition += BattleAttribute.Speed(this);
 		else if(battleStatus == BattleStatus.Action)
-			timelinePosition += commandToExecute.preExecutionSpeed;
+			timelinePosition += commandToExecute.preExecutionSpeed * 2 / 3;
 
 		if(timelinePosition >= GlobalDataStructure.BATTLE_TIMELINE_READY && battleStatus == BattleStatus.Prepare)
 		{
