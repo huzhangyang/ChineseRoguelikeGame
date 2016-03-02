@@ -4,8 +4,12 @@ using System.Collections;
 
 public class ItemPanel : MonoBehaviour {
 
+	private enum ViewMode{Consumable, Weapon, Accessory, KeyItem}
+
 	public Transform itemList;
+
 	private PlayerData playerData;
+	private ViewMode viewMode;
 
 	void Start()
 	{
@@ -40,6 +44,12 @@ public class ItemPanel : MonoBehaviour {
 	void SetData()
 	{
 		playerData = DataManager.Instance.GetPlayerDataSet().GetPlayerData(DataManager.Instance.GetConfigData().currentLeaderID);
+		SetViewMode((int)ViewMode.Consumable);
+	}
+
+	public void SetViewMode(int mode)
+	{
+		viewMode = (ViewMode)mode;
 		InitItemButtons();
 	}
 
@@ -51,9 +61,27 @@ public class ItemPanel : MonoBehaviour {
 		}
 		foreach(var itemSlot in playerData.GetItemDict())
 		{
-			GameObject itemButton = Instantiate(Resources.Load(GlobalDataStructure.PATH_UIPREFAB_COMMON + "ItemButton")) as GameObject;
-			itemButton.transform.SetParent(itemList, false);
-			itemButton.GetComponent<ItemButtonUIEvent>().Init(itemSlot.Key, itemSlot.Value);
+			if(IsItemFitViewMode(itemSlot.Key))
+			{
+				GameObject itemButton = Instantiate(Resources.Load(GlobalDataStructure.PATH_UIPREFAB_COMMON + "ItemButton")) as GameObject;
+				itemButton.transform.SetParent(itemList, false);				
+				itemButton.GetComponent<ItemButtonUIEvent>().Init(itemSlot.Key, itemSlot.Value);
+			}
+		}
+	}
+
+	private bool IsItemFitViewMode(int itemID)
+	{
+		ItemData itemData = DataManager.Instance.GetItemDataSet().GetItemData(itemID);
+		ItemType itemType = itemData.type;
+
+		switch(viewMode)
+		{
+		case ViewMode.Consumable: return itemType == ItemType.Consumable;
+		case ViewMode.Weapon: return itemType == ItemType.Weapon || itemType == ItemType.Magic;
+		case ViewMode.Accessory: return itemType == ItemType.Accessory;
+		case ViewMode.KeyItem: return itemType == ItemType.KeyItem;
+		default: return false;
 		}
 	}
 }

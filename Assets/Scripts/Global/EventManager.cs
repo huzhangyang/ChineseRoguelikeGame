@@ -74,7 +74,7 @@ public class EventManager : MonoBehaviour{
 		PostEvent((int)evt, new MessageEventArgs());
 	}
 
-	public void PostEvent(UIEvent evt, MessageEventArgs args)
+	public void PostEvent(UIEvent evt, MessageEventArgs args = null)
 	{
 		PostEvent((int)evt, args);
 	}

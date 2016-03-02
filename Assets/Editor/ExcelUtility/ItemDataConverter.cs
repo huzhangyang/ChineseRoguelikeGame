@@ -32,10 +32,6 @@ public class ItemDataConverter : MonoBehaviour {
 			loader = new ExcelLoader(dataTable);
 			itemDataSet.magicDataSet = loader.CreateDataList<MagicData>();
 
-			foreach(ItemData item in itemDataSet.itemDataSet)
-			{
-				item.type = ItemType.NormalItem;
-			}
 			foreach(WeaponData weapon in itemDataSet.weaponDataSet)
 			{
 				weapon.type = ItemType.Weapon;
