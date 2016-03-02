@@ -15,16 +15,26 @@ public class ItemPanel : MonoBehaviour {
 	void OnEnable()
 	{
 		EventManager.Instance.RegisterEvent(UIEvent.OnSwitchLeader, OnSwitchLeader);
+		EventManager.Instance.RegisterEvent(UIEvent.OnItemClicked, OnItemClicked);
 	}
 
 	void OnDisable()
 	{
 		EventManager.Instance.UnRegisterEvent(UIEvent.OnSwitchLeader, OnSwitchLeader);
+		EventManager.Instance.RegisterEvent(UIEvent.OnItemClicked, OnItemClicked);
 	}
 
 	void OnSwitchLeader(MessageEventArgs args)
 	{
 		SetData();
+	}
+
+	void OnItemClicked(MessageEventArgs args)
+	{
+		int itemID = args.GetMessage<int>("ItemID");
+		ItemData itemData = DataManager.Instance.GetItemDataSet().GetItemData(itemID);
+		args.AddMessage ("Message", itemData.description);
+		EventManager.Instance.PostEvent (UIEvent.OnMessageShow, args);
 	}
 
 	void SetData()

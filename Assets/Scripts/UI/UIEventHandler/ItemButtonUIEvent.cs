@@ -7,13 +7,15 @@ public class ItemButtonUIEvent : MonoBehaviour {
 	public Text nameText;
 	public Text descriptionText;
 	public Text numText;
+
+	ItemData itemData;
 	
 	public void Init(int itemID, int num)
 	{
-		ItemData itemData = DataManager.Instance.GetItemDataSet().GetItemData(itemID);
+		itemData = DataManager.Instance.GetItemDataSet().GetItemData(itemID);
 
 		nameText.text = itemData.name;
-		descriptionText.text = itemData.description;
+		descriptionText.text = itemData.shortDesc;
 		numText.text = "*" + num.ToString();
 		GetComponent<Button>().onClick.AddListener(delegate()  
 		                                           {  
@@ -24,7 +26,7 @@ public class ItemButtonUIEvent : MonoBehaviour {
 	void OnClick(string name)
 	{
 		MessageEventArgs args = new MessageEventArgs ();
-		args.AddMessage ("ItemName", name);
+		args.AddMessage ("ItemID", itemData.id);
 		EventManager.Instance.PostEvent (UIEvent.OnItemClicked, args);
 	}
 	

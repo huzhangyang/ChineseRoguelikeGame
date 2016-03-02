@@ -42,6 +42,8 @@ public enum UIEvent
 	OpenUIWindow = 100,
 	OnItemClicked,
 	OnSwitchLeader,
+	OnMessageShow,//直接显示某信息
+	OnMessageUpdate,//更新某信息
 }
 
 public enum UIWindowID
