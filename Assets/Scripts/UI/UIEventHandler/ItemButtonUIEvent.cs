@@ -27,8 +27,22 @@ public class ItemButtonUIEvent : MonoBehaviour {
 		nameText.text = itemData.name;
 		descriptionText.text = itemData.shortDesc;
 		numText.text = "*" + num.ToString();
+
+		if(itemData.type == ItemType.Weapon)
+		{
+			WeaponData weaponData = itemData as WeaponData;
+			descriptionText.text = System.String.Format("攻击:{0}~{1}   命中:{2}   速度:{3}   暴击:{4}",
+				weaponData.basicATKMin, weaponData.basicATKMax, weaponData.basicACC, weaponData.basicSPD, weaponData.basicCRT);
+		}
+		else if(itemData.type == ItemType.Magic)
+		{
+			MagicData magicData = itemData as MagicData;
+			descriptionText.text = System.String.Format("攻击:{0}~{1}   命中:{2}   速度:{3}   暴击:{4}",
+				magicData.basicATKMin, magicData.basicATKMax, magicData.basicACC, magicData.basicSPD, magicData.basicCRT);
+		}
+
 		GetComponent<Button>().onClick.AddListener(delegate()  
-		                                           {  
+		{  
 			OnClick(name);  
 		});		  
 	}
