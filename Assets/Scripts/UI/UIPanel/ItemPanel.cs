@@ -26,6 +26,7 @@ public class ItemPanel : MonoBehaviour {
 	{
 		EventManager.Instance.UnRegisterEvent(UIEvent.OnSwitchLeader, OnSwitchLeader);
 		EventManager.Instance.RegisterEvent(UIEvent.OnItemClicked, OnItemClicked);
+		EventManager.Instance.PostEvent (UIEvent.OnMessageClear);
 	}
 
 	void OnSwitchLeader(MessageEventArgs args)
