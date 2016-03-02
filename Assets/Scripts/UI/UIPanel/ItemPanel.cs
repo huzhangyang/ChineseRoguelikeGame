@@ -51,6 +51,7 @@ public class ItemPanel : MonoBehaviour {
 	{
 		viewMode = (ViewMode)mode;
 		InitItemButtons();
+		EventManager.Instance.PostEvent (UIEvent.OnMessageClear);
 	}
 
 	private void InitItemButtons()

@@ -19,26 +19,24 @@ public class MessagePanel : MonoBehaviour {
 	
 	void OnEnable() 
 	{
-		EventManager.Instance.RegisterEvent(BattleEvent.OnBattleEnter, OnBattleEnter);
-		EventManager.Instance.RegisterEvent(BattleEvent.OnBattleFinish, OnBattleFinish);
+		EventManager.Instance.RegisterEvent(BattleEvent.OnBattleEnter, OnMessageClear);
+		EventManager.Instance.RegisterEvent(BattleEvent.OnBattleFinish, OnMessageClear);
 		EventManager.Instance.RegisterEvent(BattleEvent.OnMessageUpdate, OnMessageUpdate);
 		EventManager.Instance.RegisterEvent(UIEvent.OnMessageShow, OnMessageShow);
+		EventManager.Instance.RegisterEvent(UIEvent.OnMessageClear, OnMessageClear);
+
 	}
 	
 	void OnDisable () 
 	{
-		EventManager.Instance.UnRegisterEvent(BattleEvent.OnBattleEnter, OnBattleEnter);
-		EventManager.Instance.UnRegisterEvent(BattleEvent.OnBattleFinish, OnBattleFinish);
+		EventManager.Instance.UnRegisterEvent(BattleEvent.OnBattleEnter, OnMessageClear);
+		EventManager.Instance.UnRegisterEvent(BattleEvent.OnBattleFinish, OnMessageClear);
 		EventManager.Instance.UnRegisterEvent(BattleEvent.OnMessageUpdate, OnMessageUpdate);
 		EventManager.Instance.UnRegisterEvent(UIEvent.OnMessageShow, OnMessageShow);
+		EventManager.Instance.UnRegisterEvent(UIEvent.OnMessageClear, OnMessageClear);
 	}
 	
-	void OnBattleEnter(MessageEventArgs args)
-	{
-		ClearMessage();
-	}
-
-	void OnBattleFinish(MessageEventArgs args)
+	void OnMessageClear(MessageEventArgs args)
 	{
 		ClearMessage();
 	}

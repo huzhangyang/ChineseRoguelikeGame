@@ -64,14 +64,9 @@ public class EventManager : MonoBehaviour{
 		waitEvent.Add(new InvokeParam(eventID, args));
 	}
 
-	public void PostEvent(BattleEvent evt, MessageEventArgs args)
+	public void PostEvent(BattleEvent evt, MessageEventArgs args = null)
 	{
 		PostEvent((int)evt, args);
-	}
-
-	public void PostEvent(BattleEvent evt)
-	{
-		PostEvent((int)evt, new MessageEventArgs());
 	}
 
 	public void PostEvent(UIEvent evt, MessageEventArgs args = null)
@@ -79,10 +74,10 @@ public class EventManager : MonoBehaviour{
 		PostEvent((int)evt, args);
 	}
 
-	public void PostEvent(UIEvent evt)
+	public void PostEvent(GameEvent evt, MessageEventArgs args = null)
 	{
-		PostEvent((int)evt, new MessageEventArgs());
-	}
+		PostEvent((int)evt, args);
+	}	
 
 	// 立即执行事件
 	public void InvokeEvent(int eventID, MessageEventArgs args)
@@ -116,6 +111,11 @@ public class EventManager : MonoBehaviour{
 	{
 		RegisterEvent((int)evt, handler);
 	}
+
+	public void RegisterEvent(GameEvent evt, EventHandler handler)
+	{
+		RegisterEvent((int)evt, handler);
+	}
 		
 	// 取消注册事件
 	private void UnRegisterEvent(int eventID, EventHandler handler)
@@ -133,6 +133,11 @@ public class EventManager : MonoBehaviour{
 	}
 	
 	public void UnRegisterEvent(UIEvent evt, EventHandler handler)
+	{
+		UnRegisterEvent((int)evt, handler);
+	}
+
+	public void UnRegisterEvent(GameEvent evt, EventHandler handler)
 	{
 		UnRegisterEvent((int)evt, handler);
 	}
