@@ -12,10 +12,28 @@ public class ChatWindow : MonoBehaviour {
 	DialogueData dialogueData;
 	int currentTextCount;
 
-	void OnEnable() 
+	void Awake()
 	{
+		EventManager.Instance.RegisterEvent (GameEvent.PlayDialogue, OnPlayDialogue);
+	}
+
+	void OnDestroy()
+	{
+		EventManager.Instance.UnRegisterEvent (GameEvent.PlayDialogue, OnPlayDialogue);
+	}
+
+	void OnPlayDialogue(MessageEventArgs args)
+	{
+		dialogID = args.GetMessage<int>("DialogueID");
+		PlayDialogue();
+	}
+
+	public void PlayDialogue() 
+	{
+		this.gameObject.SetActive(true);
+		this.GetComponent<CanvasGroup>().alpha = 1;
 		dialogueData = DataManager.Instance.GetDialogueDataSet ().GetDialogueData(dialogID);
-		currentTextCount = 1;
+		currentTextCount = 0;
 		OnNextDialogue ();
 	}
 
@@ -23,9 +41,9 @@ public class ChatWindow : MonoBehaviour {
 	{
 		if (dialogueData == null)
 			return;
-		if(currentTextCount <= dialogueData.sentences.Count)
+		if(currentTextCount < dialogueData.sentences.Count)
 		{
-			SentenceData sentence = dialogueData.sentences[currentTextCount - 1];
+			SentenceData sentence = dialogueData.sentences[currentTextCount];
 			dialogText.text = sentence.content;
 			tellerName.text = sentence.tellerName;
 			//TODO set tellerImage according to tellerID
@@ -34,12 +52,13 @@ public class ChatWindow : MonoBehaviour {
 		}
 		else
 		{
-			this.gameObject.SetActive(false);
+			OnSkipDialogue();
 		}
 	}
 	
 	public void OnSkipDialogue()
 	{
 		this.gameObject.SetActive(false);
+		this.GetComponent<CanvasGroup>().alpha = 0;
 	}
 }
