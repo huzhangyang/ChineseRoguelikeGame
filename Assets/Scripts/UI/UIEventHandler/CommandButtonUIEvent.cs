@@ -6,12 +6,9 @@ public class CommandButtonUIEvent : MonoBehaviour {
 
 	public Text nameText;
 	public Text descriptionText;
-	public Text atk;
-	public Text acc;
-	public Text crt;
 	public Text pre;
 	public Text post;
-	public Text kck;
+	public Text acc;
 
 	void OnEnable() 
 	{
@@ -29,45 +26,21 @@ public class CommandButtonUIEvent : MonoBehaviour {
 		descriptionText.text = command.commandDescription;
 		pre.text = (100f / command.preExecutionSpeed).ToString("F2") + "s";
 		post.text = (command.postExecutionRecover / 60f).ToString("F2") + "s";
-
-		if(command.commandType != CommandType.Attack)
-		{
-			atk.text = "N/A";
-			acc.text = "N/A";
-			crt.text = "N/A";
-			kck.text = "N/A";
-		}
-		else
+		acc.text = "N/A";
+		if(command.commandType == CommandType.Attack)
 		{
 			SkillData skillData = DataManager.Instance.GetSkillDataSet().GetSkillData(command.skillID);
 			if(DataManager.Instance.GetItemDataSet().IsWeaponSkill(command.skillID))
 			{
 				WeaponData weaponData = DataManager.Instance.GetItemDataSet().GetWeaponData(command.source.GetWeapon());
-				int minATK = Mathf.RoundToInt(weaponData.basicATKMin * skillData.ATKMultiplier * BattleAttribute.AttackMulti(command.source));
-				int maxATK = Mathf.RoundToInt(weaponData.basicATKMax * skillData.ATKMultiplier * BattleAttribute.AttackMulti(command.source));
 				int accuracy = Mathf.RoundToInt(weaponData.basicACC * skillData.ACCMultiplier + BattleAttribute.ExtraAccuracy(command.source));
-				int critical = Mathf.RoundToInt(weaponData.basicCRT * skillData.CRTMultiplier + BattleAttribute.ExtraCrit(command.source));
-				int interrupt = Mathf.RoundToInt(weaponData.interrupt * skillData.interruptMultiplier);
-
-				atk.text = minATK.ToString() + "-" + maxATK.ToString();
 				acc.text = accuracy.ToString() + "%";
-				crt.text = critical.ToString() + "%";
-				kck.text = interrupt.ToString() + "%";
 			}
 			else
 			{
 				MagicData magicData = DataManager.Instance.GetItemDataSet().GetMagicDataBySkillID(command.skillID);
-
-				int minATK = Mathf.RoundToInt(magicData.basicATKMin * skillData.ATKMultiplier * BattleAttribute.AttackMulti(command.source));
-				int maxATK = Mathf.RoundToInt(magicData.basicATKMax * skillData.ATKMultiplier * BattleAttribute.AttackMulti(command.source));
 				int accuracy = Mathf.RoundToInt(magicData.basicACC * skillData.ACCMultiplier + BattleAttribute.ExtraAccuracy(command.source));
-				int critical = Mathf.RoundToInt(magicData.basicCRT * skillData.CRTMultiplier + BattleAttribute.ExtraCrit(command.source));
-				int interrupt = Mathf.RoundToInt(magicData.interrupt * skillData.interruptMultiplier);
-
-				atk.text = minATK.ToString() + "-" + maxATK.ToString();
 				acc.text = accuracy.ToString() + "%";
-				crt.text = critical.ToString() + "%";
-				kck.text = interrupt.ToString() + "%";
 			}
 		}
 
