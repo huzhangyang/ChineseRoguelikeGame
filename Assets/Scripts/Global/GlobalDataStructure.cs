@@ -21,6 +21,7 @@ public class GlobalDataStructure{
 	public const string PATH_UIPREFAB_COMMON = "UIPrefab/Common/";//通用素材文件夹
 	public const string PATH_UIIMAGE_BATTLE = "UI/Battle/";//战斗图片素材文件夹
 	public const string PATH_UIIMAGE_COMMON = "UI/Common/";//通用图片素材文件夹
+	public const string PATH_UIIMAGE_ICON = "UI/Icon/";//Buff图片素材文件夹
 	public const string PATH_MUSIC = "Music/";//音乐相关素材文件夹
 	public const string PATH_SE = "SE/";//音效相关素材文件夹
 	public static string PATH_SAVE = Application.persistentDataPath + "/Player.sav";//游戏存档存放路径

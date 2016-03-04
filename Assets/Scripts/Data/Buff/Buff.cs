@@ -9,6 +9,7 @@ public abstract class Buff {
 	public int effectTurns;
 	protected BuffData data;
 	protected BattleObject source;
+	protected GameObject buffIcon;
 
 	protected abstract void Init();
 	protected abstract void Execute();
@@ -21,6 +22,7 @@ public abstract class Buff {
 		buff.data = data;
 		buff.effectTurns = effectTurns;
 		buff.Init();
+		buff.AddBuffIcon();
 
 		return buff;
 	}
@@ -31,11 +33,13 @@ public abstract class Buff {
 		if(effectTurns > 0)
 		{
 			effectTurns--;
+			TickBuffIcon();
 		}
 
 		if(effectTurns == 0)
 		{
-			this.Revert();			
+			this.Revert();	
+			RemoveBuffIcon();
 		}
 		else
 		{
@@ -48,5 +52,25 @@ public abstract class Buff {
 	{
 		if(data.trigger == trigger)
 			this.Execute();
+	}
+
+	private void AddBuffIcon()
+	{
+		if(!data.hasIcon) return;
+		buffIcon = GameObject.Instantiate(Resources.Load(GlobalDataStructure.PATH_UIPREFAB_BATTLE + "BuffIcon")) as GameObject;
+		buffIcon.transform.SetParent(source.GetComponent<BattleObjectUIEvent>().buffTransform, false);
+		buffIcon.GetComponent<BuffIconUIEvent>().Init(this.data, this.effectTurns);
+	}
+
+	private void TickBuffIcon()
+	{
+		if(buffIcon != null)
+			buffIcon.GetComponent<BuffIconUIEvent>().SetEffectTurns(this.effectTurns);
+	}
+
+	private void RemoveBuffIcon()
+	{
+		if(buffIcon != null)
+			GameObject.Destroy(buffIcon.gameObject);
 	}
 }

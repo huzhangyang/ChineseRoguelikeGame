@@ -87,6 +87,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectImage: {fileID: 11481938}
   shadowImage: {fileID: 11481172}
+  buffTransform: {fileID: 22449712}
 --- !u!114 &11432484
 MonoBehaviour:
   m_ObjectHideFlags: 1
