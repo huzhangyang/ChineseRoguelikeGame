@@ -9,7 +9,7 @@ public class CommandEscape : Command
 		commandName = "逃跑";
 		commandDescription = "逃命！";
 		targetType = TargetType.Self;
-		preExecutionSpeed = GlobalDataStructure.BATTLE_MINSPEED;
+		preExecutionSpeed = GlobalDataStructure.BATTLE_SLOWSPEED;
 		postExecutionRecover = 0;
 	}
 

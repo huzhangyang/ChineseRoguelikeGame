@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class CommandUseHealing : Command
@@ -9,7 +9,7 @@ public class CommandUseHealing : Command
 		commandName = "灵气之壶(" + itemCount + ")";
 		commandDescription = "服下灵气结晶，提升生命力";
 		targetType = TargetType.Self;
-		preExecutionSpeed = GlobalDataStructure.BATTLE_MINSPEED;
+		preExecutionSpeed = GlobalDataStructure.BATTLE_SLOWSPEED;
 		postExecutionRecover = 0;
 		
 		itemID = 1;

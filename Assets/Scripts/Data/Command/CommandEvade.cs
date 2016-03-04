@@ -9,7 +9,7 @@ public class CommandEvade : Command
 		targetType = TargetType.Self;
 		commandName = "闪避";
 		commandDescription = "尝试躲避敌方接下来的攻击";
-		preExecutionSpeed = GlobalDataStructure.BATTLE_STANDARDSPEED;
+		preExecutionSpeed = GlobalDataStructure.BATTLE_FASTSPEED;
 		postExecutionRecover = 0;
 	}
 

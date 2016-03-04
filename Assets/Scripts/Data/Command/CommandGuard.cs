@@ -9,7 +9,7 @@ public class CommandGuard : Command
 		commandName = "格挡";
 		commandDescription = "尝试格挡敌方接下来的攻击";
 		targetType = TargetType.Self;
-		preExecutionSpeed = GlobalDataStructure.BATTLE_STANDARDSPEED;
+		preExecutionSpeed = GlobalDataStructure.BATTLE_FASTSPEED;
 		postExecutionRecover = 0;
 	}
 

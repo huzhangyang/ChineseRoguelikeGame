@@ -128,7 +128,8 @@ public class BattleWindow: MonoBehaviour {
 				GameObject enemy = Instantiate(Resources.Load(GlobalDataStructure.PATH_UIPREFAB_BATTLE + "Enemy")) as GameObject;			
 				enemy.transform.SetParent(enemyPanel.transform, false);
 				enemy.GetComponent<Enemy>().Init(enemyIDs[i]);
-
+				enemy.transform.localScale = new Vector3(0,0,0);
+				enemy.transform.DOScale(1, 1);
 				yield return new WaitForSeconds(1f);
 				switch(enemyIDs.Length)
 				{
