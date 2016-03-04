@@ -202,8 +202,6 @@ public abstract class BattleObject : MonoBehaviour {
 	public void AddBuff(int id, int effectTurns)
 	{
 		BuffData data = DataManager.Instance.GetSkillDataSet().GetBuffData(id);
-		Buff buff = Buff.CreateBuff(this, data, effectTurns);
-
 		Buff duplicatedBuff = buffList.Find((Buff temp)=>{return temp.id == id;});
 		if(duplicatedBuff != null)
 		{
@@ -211,6 +209,7 @@ public abstract class BattleObject : MonoBehaviour {
 		}
 		else
 		{
+			Buff buff = Buff.CreateBuff(this, data, effectTurns);
 			buffList.Add(buff);
 		}
 	}

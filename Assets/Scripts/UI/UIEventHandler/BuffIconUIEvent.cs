@@ -16,7 +16,8 @@ public class BuffIconUIEvent : MonoBehaviour {
 		description.text = data.name + ":" + data.description;
 		turns.text = effectTurns >= 0 ? effectTurns.ToString() : "";
 		GetComponent<Button>().onClick.AddListener(delegate(){OnClick();});
-		description.transform.parent.localScale = new Vector3(0,0,0);
+
+		description.transform.parent.localScale = new Vector3(0, 0, 0);
 	}
 
 	public void SetEffectTurns(int effectTurns)
@@ -26,7 +27,10 @@ public class BuffIconUIEvent : MonoBehaviour {
 
 	void OnClick()
 	{
-		description.transform.parent.DOScale(1, 0.2f).OnComplete(()=>{description.transform.parent.DOScale(0, 0.5f).SetDelay(1);});
+		if(!DOTween.IsTweening(description.transform.parent))
+		{
+			description.transform.parent.DOScale(1, 0.2f).OnComplete(()=>{description.transform.parent.DOScale(0, 0.5f).SetDelay(1);});
+		}
 	}
 
 }
