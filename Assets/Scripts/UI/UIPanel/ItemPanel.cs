@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
@@ -39,7 +39,7 @@ public class ItemPanel : MonoBehaviour {
 		int itemID = args.GetMessage<int>("ItemID");
 		ItemData itemData = DataManager.Instance.GetItemDataSet().GetItemData(itemID);
 		args.AddMessage ("Message", itemData.description);
-		EventManager.Instance.PostEvent (UIEvent.OnMessageShow, args);
+		EventManager.Instance.PostEvent (UIEvent.OnMessageSet, args);
 	}
 
 	void SetData()

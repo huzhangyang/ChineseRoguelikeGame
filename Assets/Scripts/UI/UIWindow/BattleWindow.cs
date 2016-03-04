@@ -70,6 +70,7 @@ public class BattleWindow: MonoBehaviour {
 		commandPanel.SetActive(true);
 		subCommandPanel.SetActive (true);
 		commandPanel.GetComponent<CommandPanelUIEvent>().SetButtonActive();
+		EventManager.Instance.PostEvent(UIEvent.OnMessageHide);
 	}
 
 	void OnBasicCommandSelected(MessageEventArgs args)
@@ -94,6 +95,7 @@ public class BattleWindow: MonoBehaviour {
 	{
 		commandPanel.SetActive(false);
 		subCommandPanel.SetActive(false);
+		EventManager.Instance.PostEvent(UIEvent.OnMessageShow);
 		foreach(Transform child in commandButtonPanel)
 		{
 			Destroy(child.gameObject);

@@ -147,6 +147,6 @@ public class BattleMessage : MonoBehaviour {
 	{
 		MessageEventArgs args = new MessageEventArgs ();
 		args.AddMessage("Message",msg);
-		EventManager.Instance.PostEvent (BattleEvent.OnMessageUpdate, args);
+		EventManager.Instance.PostEvent (UIEvent.OnMessageUpdate, args);
 	}
 }

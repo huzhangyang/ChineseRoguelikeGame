@@ -21,30 +21,46 @@ public class MessagePanel : MonoBehaviour {
 	{
 		EventManager.Instance.RegisterEvent(BattleEvent.OnBattleEnter, OnMessageClear);
 		EventManager.Instance.RegisterEvent(BattleEvent.OnBattleFinish, OnMessageClear);
-		EventManager.Instance.RegisterEvent(BattleEvent.OnMessageUpdate, OnMessageUpdate);
-		EventManager.Instance.RegisterEvent(UIEvent.OnMessageShow, OnMessageShow);
+		EventManager.Instance.RegisterEvent(UIEvent.OnMessageUpdate, OnMessageUpdate);
+		EventManager.Instance.RegisterEvent(UIEvent.OnMessageSet, OnMessageSet);
 		EventManager.Instance.RegisterEvent(UIEvent.OnMessageClear, OnMessageClear);
-
+		EventManager.Instance.RegisterEvent(UIEvent.OnMessageHide, OnMessageHide);
+		EventManager.Instance.RegisterEvent(UIEvent.OnMessageShow, OnMessageShow);
 	}
 	
 	void OnDisable () 
 	{
 		EventManager.Instance.UnRegisterEvent(BattleEvent.OnBattleEnter, OnMessageClear);
 		EventManager.Instance.UnRegisterEvent(BattleEvent.OnBattleFinish, OnMessageClear);
-		EventManager.Instance.UnRegisterEvent(BattleEvent.OnMessageUpdate, OnMessageUpdate);
-		EventManager.Instance.UnRegisterEvent(UIEvent.OnMessageShow, OnMessageShow);
+		EventManager.Instance.UnRegisterEvent(UIEvent.OnMessageUpdate, OnMessageUpdate);
+		EventManager.Instance.UnRegisterEvent(UIEvent.OnMessageSet, OnMessageSet);
 		EventManager.Instance.UnRegisterEvent(UIEvent.OnMessageClear, OnMessageClear);
+		EventManager.Instance.UnRegisterEvent(UIEvent.OnMessageHide, OnMessageHide);
+		EventManager.Instance.UnRegisterEvent(UIEvent.OnMessageShow, OnMessageShow);
 	}
 	
 	void OnMessageClear(MessageEventArgs args)
 	{
-		ClearMessage();
+		message.text = "";
+		msgList.Clear();	
+	}
+
+	void OnMessageSet(MessageEventArgs args)
+	{
+		string msg = args.GetMessage<string>("Message");
+		message.text = msg;
+		msgList.Clear();
+		msgList.Add(msg);
+	}
+
+	void OnMessageHide(MessageEventArgs args)
+	{
+		message.gameObject.SetActive(false);
 	}
 
 	void OnMessageShow(MessageEventArgs args)
 	{
-		string msg = args.GetMessage<string>("Message");
-		message.text = msg;
+		message.gameObject.SetActive(true);
 	}
 
 	void OnMessageUpdate(MessageEventArgs args)
@@ -75,11 +91,4 @@ public class MessagePanel : MonoBehaviour {
 		message.DOKill();
 		message.DOText(message.text + "<color=yellow>" + msgList[msgList.Count - 1] + "</color>", 0.5f).SetEase(Ease.Linear);
 	}
-		
-	void ClearMessage()
-	{
-		message.text = "";
-		msgList.Clear();	
-	}
-
 }
