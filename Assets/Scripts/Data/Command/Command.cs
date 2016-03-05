@@ -51,7 +51,7 @@ public abstract class Command {
 			}
 		}
 		//检查防御技能
-		availableCommands.Add(new CommandGuard());
+		availableCommands.Add(new CommandBlock());
 		availableCommands.Add(new CommandEvade());
 		//检查物品
 		if(bo.GetBattleType() != BattleType.Magical)

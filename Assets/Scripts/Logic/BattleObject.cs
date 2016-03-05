@@ -78,7 +78,7 @@ public abstract class BattleObject : MonoBehaviour {
 	public List<Buff> buffList = new List<Buff>();
 
 	public bool isDead = false;//是否已经死了
-	public bool isGuarding = false;//是否正在防御
+	public bool isBlocking = false;//是否正在格挡
 	public bool isEvading = false;//是否正在躲避
 	public bool isEnemy = false;//是否敌人
 	public bool isHealingBottleUsed = false;//是否使用过元素瓶
@@ -138,7 +138,7 @@ public abstract class BattleObject : MonoBehaviour {
 	protected void OnReady()
 	{
 		timelinePosition = GlobalDataStructure.BATTLE_TIMELINE_READY;
-		isGuarding = false;
+		isBlocking = false;
 		isEvading = false;
 		battleStatus = BattleStatus.Ready;
 

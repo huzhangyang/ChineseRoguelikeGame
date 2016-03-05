@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CommandGuard : Command
+public class CommandBlock : Command
 {
-	public CommandGuard()
+	public CommandBlock()
 	{
 		commandType = CommandType.Defence;
 		commandName = "格挡";
@@ -17,6 +17,6 @@ public class CommandGuard : Command
 	{
 		executeMessage = source.GetName() + "试图格挡！";
 		SendExecuteMessage ();
-		source.isGuarding = true;
+		source.isBlocking = true;
 	}
 }

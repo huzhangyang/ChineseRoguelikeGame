@@ -22,7 +22,7 @@ public class Damage
 	public float interrupt;
 	public bool isCountered;//是否遭到反击
 	public bool isEvaded;//是否遭到闪避
-	public bool isGuarded;//是否遭到格挡
+	public bool isBlocked;//是否遭到格挡
 	public bool isHit;//是否最终命中
 	public bool isCrit;//最终是否暴击
 	
@@ -62,7 +62,7 @@ public class Damage
 			OnMiss();
 			return;
 		}
-		else if(isGuarded)//被防御[被防御，就不会被暴击]
+		else if(isBlocked)//被防御[被防御，就不会被暴击]
 		{
 			OnGuarded();
 		}

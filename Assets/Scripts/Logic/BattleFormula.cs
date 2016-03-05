@@ -64,9 +64,9 @@ public class BattleFormula {
 				damagePack.isEvaded = true;
 				damagePack.hit /= 2;
 			}
-			if(target.isGuarding)
+			if(target.isBlocking)
 			{
-				damagePack.isGuarded = true;
+				damagePack.isBlocked = true;
 				damagePack.minDmg /= 2;
 				damagePack.maxDmg /= 2;
 				damagePack.interrupt = 0;
