@@ -76,7 +76,7 @@ public class BuffData{
 	public string description;
 	public BuffTrigger trigger;//触发时机
 	public string buffEffect;//效果函数名
-	public bool hasIcon;//是否包含图标
+	public bool bornBuff;//天生BUFF（没有图标，不会被去除）
 }
 
 [System.Serializable]

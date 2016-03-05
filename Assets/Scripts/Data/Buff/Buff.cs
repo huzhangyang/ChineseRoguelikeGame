@@ -56,7 +56,7 @@ public abstract class Buff {
 
 	private void AddBuffIcon()
 	{
-		if(!data.hasIcon) return;
+		if(data.bornBuff) return;
 		buffIcon = GameObject.Instantiate(Resources.Load(GlobalDataStructure.PATH_UIPREFAB_BATTLE + "BuffIcon")) as GameObject;
 		buffIcon.transform.SetParent(source.GetComponent<BattleObjectUIEvent>().buffTransform, false);
 		buffIcon.GetComponent<BuffIconUIEvent>().Init(this.data, this.effectTurns);

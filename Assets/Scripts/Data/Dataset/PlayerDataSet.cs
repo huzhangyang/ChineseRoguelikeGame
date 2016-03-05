@@ -69,6 +69,7 @@ public class PlayerData : ObjectData {
 			items.Add(2110,1);
 			items.Add(2210,1);
 			items.Add(2,3);
+			bornBuffs.Add(1);
 			break;
 		}
 		this.id = playerID;

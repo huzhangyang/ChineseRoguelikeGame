@@ -21,6 +21,11 @@ public class Enemy : BattleObject {
 		AI = this.GetComponent<EnemyAI>();
 		AI.InitAI();
 
+		for(int i = 0; i < data.bornBuffs.Count; i++)
+		{
+			AddBuff(data.bornBuffs[i], -1);//添加固有BUFF
+		}
+
 		MessageEventArgs args = new MessageEventArgs();
 		args.AddMessage("Object", this);
 		EventManager.Instance.PostEvent(BattleEvent.OnEnemySpawn, args);

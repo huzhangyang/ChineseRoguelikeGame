@@ -19,10 +19,9 @@ public class Player : BattleObject {
 		args.AddMessage("Object", this);
 		EventManager.Instance.PostEvent(BattleEvent.OnPlayerSpawn, args);
 
-
-		if(playerID == 1)
+		for(int i = 0; i < data.bornBuffs.Count; i++)
 		{
-			AddBuff(1, -1);//为妹子添加不死buff
+			AddBuff(data.bornBuffs[i], -1);//添加固有BUFF
 		}
 	}
 

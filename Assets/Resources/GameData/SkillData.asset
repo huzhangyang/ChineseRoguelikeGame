@@ -1616,151 +1616,151 @@ MonoBehaviour:
     description: "\u5E76\u6CA1\u6709\u7279\u6B8A\u6548\u679C"
     trigger: 0
     buffEffect: None
-    hasIcon: 0
+    bornBuff: 1
   - id: 1
     name: "\u4E0D\u6B7B"
     description: "\u65E0\u8BBA\u5982\u4F55\u4E5F\u4E0D\u4F1A\u6B7B\u4EA1"
     trigger: 1
     buffEffect: Revive
-    hasIcon: 0
+    bornBuff: 1
   - id: 2
     name: "\u6D41\u8840"
     description: "\u751F\u547D\u503C\u51CF\u5C11\u6700\u5927\u751F\u547D\u503C\u76845%"
     trigger: 2
     buffEffect: Bleed
-    hasIcon: 1
+    bornBuff: 0
   - id: 3
     name: "\u6C14\u865A"
     description: "\u6700\u5927\u751F\u547D\u503C\u964D\u4F4E50%"
     trigger: 0
     buffEffect: Weak
-    hasIcon: 0
+    bornBuff: 1
   - id: 4
     name: "\u51B0\u51BB"
     description: "\u65F6\u95F4\u8F74\u4E0A\u505C\u6B625\u79D2"
     trigger: 0
     buffEffect: Frozen
-    hasIcon: 1
+    bornBuff: 0
   - id: 5
     name: "\u70E7\u4F24"
     description: "\u653B\u9632\u4E0B\u964D50%"
     trigger: 0
     buffEffect: Burnt
-    hasIcon: 1
+    bornBuff: 0
   - id: 6
     name: "\u4E2D\u6BD2"
     description: "\u9010\u6E10\u6D41\u5931\u751F\u547D"
     trigger: 2
     buffEffect: Poison
-    hasIcon: 1
+    bornBuff: 0
   - id: 7
     name: "\u9EBB\u75F9"
     description: "\u547D\u4E2D\u56DE\u907F\u66B4\u51FB\u6297\u66B4\u4E0B\u964D"
     trigger: 0
     buffEffect: Paralized
-    hasIcon: 0
+    bornBuff: 1
   - id: 8
     name: "\u51FB\u5012"
     description: "\u56DE\u5230\u65F6\u95F4\u8F740\u70B9\uFF0C\u5E76\u4E14\u5BB9\u6613\u88AB\u66B4\u51FB"
     trigger: 4
     buffEffect: Knockout
-    hasIcon: 0
+    bornBuff: 1
   - id: 9
     name: "\u72C2\u4E71"
     description: "\u653B\u51FB\u529B\u4E0A\u5347\uFF0C\u4F46\u884C\u52A8\u4E0D\u53D7\u9650\u5236\u4E14\u53EF\u80FD\u653B\u51FB\u53CB\u65B9"
     trigger: 2
     buffEffect: Bezerk
-    hasIcon: 0
+    bornBuff: 1
   - id: 10
     name: "\u5931\u9B42"
     description: "\u53EA\u80FD\u9009\u62E9[\u8DF3\u8FC7]"
     trigger: 2
     buffEffect: Insane
-    hasIcon: 0
+    bornBuff: 1
   - id: 11
     name: "\u795D\u798F"
     description: "\u5B8C\u5168\u62B5\u5FA1\u4E0B\u6B21\u4F24\u5BB3"
     trigger: 4
     buffEffect: Blessed
-    hasIcon: 1
+    bornBuff: 0
   - id: 12
     name: "\u9738\u4F53"
     description: "\u4E0D\u4F1A\u88AB\u51FB\u9000"
     trigger: 4
     buffEffect: Endure
-    hasIcon: 1
+    bornBuff: 0
   - id: 13
     name: "\u8BC5\u5492"
     description: "\u9020\u6210\u7684\u4F24\u5BB3100%\u53CD\u566C\u7ED9\u81EA\u5DF1"
     trigger: 5
     buffEffect: Cursed
-    hasIcon: 0
+    bornBuff: 1
   - id: 14
     name: "\u6FC0\u6602"
     description: "\u653B\u9632\u901F\u4E0A\u534720%"
     trigger: 0
     buffEffect: Excited
-    hasIcon: 0
+    bornBuff: 1
   - id: 101
     name: "\u7075\u6C14\u5FAA\u73AF"
     description: "\u5E76\u6CA1\u6709\u7279\u6B8A\u6548\u679C"
     trigger: 0
     buffEffect: None
-    hasIcon: 0
+    bornBuff: 1
   - id: 102
     name: "\u7075\u6C14\u5171\u9E23"
     description: "\u5E76\u6CA1\u6709\u7279\u6B8A\u6548\u679C"
     trigger: 0
     buffEffect: None
-    hasIcon: 0
+    bornBuff: 1
   - id: 103
     name: "\u7075\u529B\u89E3\u653E"
     description: "\u5E76\u6CA1\u6709\u7279\u6B8A\u6548\u679C"
     trigger: 0
     buffEffect: None
-    hasIcon: 0
+    bornBuff: 1
   - id: 104
     name: "\u7075\u6C14\u5077\u53D6"
     description: "\u5E76\u6CA1\u6709\u7279\u6B8A\u6548\u679C"
     trigger: 0
     buffEffect: None
-    hasIcon: 0
+    bornBuff: 1
   - id: 105
     name: "\u6697\u6708\u9B54\u5F71"
     description: "\u5E76\u6CA1\u6709\u7279\u6B8A\u6548\u679C"
     trigger: 0
     buffEffect: None
-    hasIcon: 0
+    bornBuff: 1
   - id: 106
     name: "\u7075\u6C14\u8FC7\u8F7D"
     description: "\u5E76\u6CA1\u6709\u7279\u6B8A\u6548\u679C"
     trigger: 0
     buffEffect: None
-    hasIcon: 0
+    bornBuff: 1
   - id: 107
     name: "\u5149\u8F89\u7075\u76FE"
     description: "\u5E76\u6CA1\u6709\u7279\u6B8A\u6548\u679C"
     trigger: 0
     buffEffect: None
-    hasIcon: 0
+    bornBuff: 1
   - id: 201
     name: "\u7075\u4E4B\u5E7B\u5883"
     description: "\u5E76\u6CA1\u6709\u7279\u6B8A\u6548\u679C"
     trigger: 0
     buffEffect: None
-    hasIcon: 0
+    bornBuff: 1
   - id: 202
     name: "\u6708\u4E4B\u9886\u57DF"
     description: "\u5E76\u6CA1\u6709\u7279\u6B8A\u6548\u679C"
     trigger: 0
     buffEffect: None
-    hasIcon: 0
+    bornBuff: 1
   - id: 203
     name: "\u65E5\u4E4B\u9886\u57DF"
     description: "\u5E76\u6CA1\u6709\u7279\u6B8A\u6548\u679C"
     trigger: 0
     buffEffect: None
-    hasIcon: 0
+    bornBuff: 1
   effectDataSet:
   - id: 0
     name: "\u65E0"
