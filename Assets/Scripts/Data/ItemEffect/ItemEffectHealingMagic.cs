@@ -5,8 +5,11 @@ public class ItemEffectHealingMagic:ItemEffect
 {
 	protected override void Execute()
 	{
-		source.maxHPMulti += 0.5f;
-		source.currentHP = source.maxHP;
-		source.isHealingBottleUsed = true;
+		if(source.GetBattleType() != BattleType.Physical)
+		{
+			source.maxHPMulti += 0.5f;
+			source.currentHP = source.maxHP;
+			source.isHealingBottleUsed = true;
+		}
 	}
 }
