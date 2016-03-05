@@ -70,8 +70,11 @@ public class ItemData{
 	public int id;
 	public string name;
 	public ItemType type;
+	public bool usedInBattle;//在战斗中使用
+	public TargetType targetType;//使用对象
 	public string shortDesc;//短描述
 	public string description;//完整描述
+	public string effectString;//效果函数名
 }
 
 [System.Serializable]

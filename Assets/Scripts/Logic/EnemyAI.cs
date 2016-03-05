@@ -75,7 +75,7 @@ public class EnemyAI : MonoBehaviour {
 
 	public Command AIHeal()
 	{
-		Command command = new CommandUseHealing(self.GetItemCount(1));
+		Command command = new CommandUseItem(1, self.GetItemCount(1));
 		command.targetList.Add(self);
 		return command;
 	}

@@ -15,109 +15,172 @@ MonoBehaviour:
   - id: 0
     name: "\u65E0"
     type: 0
+    usedInBattle: 0
+    targetType: 0
     shortDesc: "\u6CA1\u6709\u4F5C\u7528"
     description: "\u4E07\u7269\u7686\u7A7A\uFF0C\u4E07\u4E8B\u7686\u5141"
+    effectString: 
   - id: 1
     name: "\u6D3B\u529B\u74F6"
     type: 0
+    usedInBattle: 1
+    targetType: 0
     shortDesc: "\u56DE\u590D\u751F\u547D\u503C\u81F380%"
     description: "\u6536\u96C6\u4E86\u7075\u836F\u7684\u7EA2\u8272\u74F6\u5B50\uFF0C\u996E\u4E0B\u5176\u4E2D\u7684\u6DB2\u4F53\u53EF\u56DE\u590D\u751F\u547D\u3002"
+    effectString: ItemEffectHealingPhysic
   - id: 2
     name: "\u7075\u6C14\u74F6"
     type: 0
+    usedInBattle: 1
+    targetType: 0
     shortDesc: "\u56DE\u590D\u5168\u90E8\u7075\u6C14\uFF0C\u5E76\u63D0\u5347\u7075\u6C14\u4E0A\u965050%"
     description: "\u6536\u96C6\u4E86\u7075\u6C14\u7684\u84DD\u8272\u74F6\u5B50\uFF0C\u996E\u4E0B\u5176\u4E2D\u7684\u6DB2\u4F53\u53EF\u56DE\u590D\u7075\u6C14\uFF0C\u8FD8\u80FD\u6682\u65F6\u63D0\u5347\u7075\u6C14\u7684\u5B58\u91CF\u3002"
+    effectString: HealingMagic
   - id: 3
     name: "\u706B\u79CD"
     type: 0
+    usedInBattle: 0
+    targetType: 0
     shortDesc: "\u642D\u5EFA\u8425\u706B\uFF0C\u53EF\u4EE5\u4F11\u606F\u5E76\u4E14\u6574\u5907"
     description: "\u7528\u6765\u751F\u706B\u7684\u706B\u79CD\u3002\u706B\u7130\u4E0D\u4EC5\u7ED9\u4EBA\u6E29\u6696\uFF0C\u5728\u5B64\u72EC\u7684\u65C5\u9014\u4E2D\u66F4\u589E\u6DFB\u4FE1\u5FC3\uFF0C\u662F\u5FC5\u4E0D\u53EF\u5C11\u7684\u7269\u54C1\u3002"
+    effectString: 
   - id: 4
     name: "\u751F\u547D\u4E4B\u79CD"
     type: 0
+    usedInBattle: 0
+    targetType: 0
     shortDesc: "\u6D3B\u529B\u74F6/\u7075\u6C14\u74F6\u4E0A\u9650+1"
     description: "\u8574\u542B\u4E86\u751F\u547D\u529B\u7684\u79CD\u5B50\uFF0C\u6295\u5165\u5230\u6D3B\u529B\u74F6/\u7075\u6C14\u74F6\u4E2D\u53EF\u63D0\u5347\u6DB2\u4F53\u6D53\u5EA6\uFF0C\u4ECE\u800C\u589E\u52A0\u4F7F\u7528\u6B21\u6570\u3002"
+    effectString: 
   - id: 11
     name: "\u521D\u7EA7\u9510\u77F3"
     type: 0
+    usedInBattle: 0
+    targetType: 0
     shortDesc: "\u5C06\u77ED\u5251\u3001\u5200\u3001\u957F\u5251\u7C7B\u6B66\u5668\u5F3A\u5316\u81F3+1"
     description: "\u4E07\u7269\u7686\u7A7A\uFF0C\u4E07\u4E8B\u7686\u5141"
+    effectString: 
   - id: 12
     name: "\u4E2D\u7EA7\u9510\u77F3"
     type: 0
+    usedInBattle: 0
+    targetType: 0
     shortDesc: "\u5C06\u77ED\u5251\u3001\u5200\u3001\u957F\u5251\u7C7B\u6B66\u5668\u5F3A\u5316\u81F3+2"
     description: "\u4E07\u7269\u7686\u7A7A\uFF0C\u4E07\u4E8B\u7686\u5141"
+    effectString: 
   - id: 13
     name: "\u9AD8\u7EA7\u9510\u77F3"
     type: 0
+    usedInBattle: 0
+    targetType: 0
     shortDesc: "\u5C06\u77ED\u5251\u3001\u5200\u3001\u957F\u5251\u7C7B\u6B66\u5668\u5F3A\u5316\u81F3+3"
     description: "\u4E07\u7269\u7686\u7A7A\uFF0C\u4E07\u4E8B\u7686\u5141"
+    effectString: 
   - id: 14
     name: "\u7279\u7EA7\u9510\u77F3"
     type: 0
+    usedInBattle: 0
+    targetType: 0
     shortDesc: "\u5C06\u77ED\u5251\u3001\u5200\u3001\u957F\u5251\u7C7B\u6B66\u5668\u5F3A\u5316\u81F3+4"
     description: "\u4E07\u7269\u7686\u7A7A\uFF0C\u4E07\u4E8B\u7686\u5141"
+    effectString: 
   - id: 15
     name: "\u7EC8\u6781\u9510\u77F3"
     type: 0
+    usedInBattle: 0
+    targetType: 0
     shortDesc: "\u5C06\u77ED\u5251\u3001\u5200\u3001\u957F\u5251\u7C7B\u6B66\u5668\u5F3A\u5316\u81F3+5"
     description: "\u4E07\u7269\u7686\u7A7A\uFF0C\u4E07\u4E8B\u7686\u5141"
+    effectString: 
   - id: 16
     name: "\u521D\u7EA7\u786C\u77F3"
     type: 0
+    usedInBattle: 0
+    targetType: 0
     shortDesc: "\u5C06\u91CD\u6B66\u3001\u5F13\u5F29\u7C7B\u6B66\u5668\u5F3A\u5316\u81F3+1"
     description: "\u4E07\u7269\u7686\u7A7A\uFF0C\u4E07\u4E8B\u7686\u5141"
+    effectString: 
   - id: 17
     name: "\u4E2D\u7EA7\u786C\u77F3"
     type: 0
+    usedInBattle: 0
+    targetType: 0
     shortDesc: "\u5C06\u91CD\u6B66\u3001\u5F13\u5F29\u7C7B\u6B66\u5668\u5F3A\u5316\u81F3+2"
     description: "\u4E07\u7269\u7686\u7A7A\uFF0C\u4E07\u4E8B\u7686\u5141"
+    effectString: 
   - id: 18
     name: "\u9AD8\u7EA7\u786C\u77F3"
     type: 0
+    usedInBattle: 0
+    targetType: 0
     shortDesc: "\u5C06\u91CD\u6B66\u3001\u5F13\u5F29\u7C7B\u6B66\u5668\u5F3A\u5316\u81F3+3"
     description: "\u4E07\u7269\u7686\u7A7A\uFF0C\u4E07\u4E8B\u7686\u5141"
+    effectString: 
   - id: 19
     name: "\u7279\u7EA7\u786C\u77F3"
     type: 0
+    usedInBattle: 0
+    targetType: 0
     shortDesc: "\u5C06\u91CD\u6B66\u3001\u5F13\u5F29\u7C7B\u6B66\u5668\u5F3A\u5316\u81F3+4"
     description: "\u4E07\u7269\u7686\u7A7A\uFF0C\u4E07\u4E8B\u7686\u5141"
+    effectString: 
   - id: 20
     name: "\u7EC8\u6781\u786C\u77F3"
     type: 0
+    usedInBattle: 0
+    targetType: 0
     shortDesc: "\u5C06\u91CD\u6B66\u3001\u5F13\u5F29\u7C7B\u6B66\u5668\u5F3A\u5316\u81F3+5"
     description: "\u4E07\u7269\u7686\u7A7A\uFF0C\u4E07\u4E8B\u7686\u5141"
+    effectString: 
   - id: 21
     name: "\u521D\u7EA7\u517D\u9B42\u77F3"
     type: 0
+    usedInBattle: 0
+    targetType: 0
     shortDesc: "\u5C06\u4EFB\u610F\u6B66\u5668\u5F3A\u5316\u81F3+1"
     description: "\u4E07\u7269\u7686\u7A7A\uFF0C\u4E07\u4E8B\u7686\u5141"
+    effectString: 
   - id: 22
     name: "\u4E2D\u7EA7\u517D\u9B42\u77F3"
     type: 0
+    usedInBattle: 0
+    targetType: 0
     shortDesc: "\u5C06\u4EFB\u610F\u6B66\u5668\u5F3A\u5316\u81F3+2"
     description: "\u4E07\u7269\u7686\u7A7A\uFF0C\u4E07\u4E8B\u7686\u5141"
+    effectString: 
   - id: 23
     name: "\u9AD8\u7EA7\u517D\u9B42\u77F3"
     type: 0
+    usedInBattle: 0
+    targetType: 0
     shortDesc: "\u5C06\u4EFB\u610F\u6B66\u5668\u5F3A\u5316\u81F3+3"
     description: "\u4E07\u7269\u7686\u7A7A\uFF0C\u4E07\u4E8B\u7686\u5141"
+    effectString: 
   - id: 24
     name: "\u7279\u7EA7\u517D\u9B42\u77F3"
     type: 0
+    usedInBattle: 0
+    targetType: 0
     shortDesc: "\u5C06\u4EFB\u610F\u6B66\u5668\u5F3A\u5316\u81F3+4"
     description: "\u4E07\u7269\u7686\u7A7A\uFF0C\u4E07\u4E8B\u7686\u5141"
+    effectString: 
   - id: 25
     name: "\u7EC8\u6781\u517D\u9B42\u77F3"
     type: 0
+    usedInBattle: 0
+    targetType: 0
     shortDesc: "\u5C06\u4EFB\u610F\u6B66\u5668\u5F3A\u5316\u81F3+5"
     description: "\u4E07\u7269\u7686\u7A7A\uFF0C\u4E07\u4E8B\u7686\u5141"
+    effectString: 
   weaponDataSet:
   - id: 1000
     name: "\u65E0"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u65E0"
+    effectString: 
     basicATKMin: 0
     basicATKMax: 0
     basicACC: 0
@@ -135,8 +198,11 @@ MonoBehaviour:
   - id: 1100
     name: "\u9C7C\u80A0"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u4F20\u8BF4\u662F\u67D0\u8457\u540D\u6740\u624B\u66FE\u4F7F\u7528\u8FC7\u7684\u77ED\u5251\u3002\u5251\u8EAB\u77ED\u82E5\u5315\u9996\uFF0C\u4F7F\u7528\u7684\u6837\u5B50\u65E0\u8BBA\u5982\u4F55\u4E5F\u7B97\u4E0D\u4E0A\u4F18\u96C5\u3002\u4E0D\u8FC7\u82E5\u662F\u80FD\u591F\u8FBE\u5230\u76EE\u7684\uFF0C\u8FD9\u4E5F\u4E0D\u662F\u592A\u5927\u7684\u95EE\u9898\u3002"
+    effectString: 
     basicATKMin: 6
     basicATKMax: 8
     basicACC: 90
@@ -154,8 +220,11 @@ MonoBehaviour:
   - id: 1101
     name: "\u9C7C\u80A0+1"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u4F20\u8BF4\u662F\u67D0\u8457\u540D\u6740\u624B\u66FE\u4F7F\u7528\u8FC7\u7684\u77ED\u5251\u3002\u5251\u8EAB\u77ED\u82E5\u5315\u9996\uFF0C\u4F7F\u7528\u7684\u6837\u5B50\u65E0\u8BBA\u5982\u4F55\u4E5F\u7B97\u4E0D\u4E0A\u4F18\u96C5\u3002\u4E0D\u8FC7\u82E5\u662F\u80FD\u591F\u8FBE\u5230\u76EE\u7684\uFF0C\u8FD9\u4E5F\u4E0D\u662F\u592A\u5927\u7684\u95EE\u9898\u3002"
+    effectString: 
     basicATKMin: 18
     basicATKMax: 24
     basicACC: 90
@@ -173,8 +242,11 @@ MonoBehaviour:
   - id: 1102
     name: "\u9C7C\u80A0+2"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u4F20\u8BF4\u662F\u67D0\u8457\u540D\u6740\u624B\u66FE\u4F7F\u7528\u8FC7\u7684\u77ED\u5251\u3002\u5251\u8EAB\u77ED\u82E5\u5315\u9996\uFF0C\u4F7F\u7528\u7684\u6837\u5B50\u65E0\u8BBA\u5982\u4F55\u4E5F\u7B97\u4E0D\u4E0A\u4F18\u96C5\u3002\u4E0D\u8FC7\u82E5\u662F\u80FD\u591F\u8FBE\u5230\u76EE\u7684\uFF0C\u8FD9\u4E5F\u4E0D\u662F\u592A\u5927\u7684\u95EE\u9898\u3002"
+    effectString: 
     basicATKMin: 30
     basicATKMax: 40
     basicACC: 90
@@ -192,8 +264,11 @@ MonoBehaviour:
   - id: 1103
     name: "\u9C7C\u80A0+3"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u4F20\u8BF4\u662F\u67D0\u8457\u540D\u6740\u624B\u66FE\u4F7F\u7528\u8FC7\u7684\u77ED\u5251\u3002\u5251\u8EAB\u77ED\u82E5\u5315\u9996\uFF0C\u4F7F\u7528\u7684\u6837\u5B50\u65E0\u8BBA\u5982\u4F55\u4E5F\u7B97\u4E0D\u4E0A\u4F18\u96C5\u3002\u4E0D\u8FC7\u82E5\u662F\u80FD\u591F\u8FBE\u5230\u76EE\u7684\uFF0C\u8FD9\u4E5F\u4E0D\u662F\u592A\u5927\u7684\u95EE\u9898\u3002"
+    effectString: 
     basicATKMin: 48
     basicATKMax: 64
     basicACC: 90
@@ -211,8 +286,11 @@ MonoBehaviour:
   - id: 1104
     name: "\u9C7C\u80A0+4"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u4F20\u8BF4\u662F\u67D0\u8457\u540D\u6740\u624B\u66FE\u4F7F\u7528\u8FC7\u7684\u77ED\u5251\u3002\u5251\u8EAB\u77ED\u82E5\u5315\u9996\uFF0C\u4F7F\u7528\u7684\u6837\u5B50\u65E0\u8BBA\u5982\u4F55\u4E5F\u7B97\u4E0D\u4E0A\u4F18\u96C5\u3002\u4E0D\u8FC7\u82E5\u662F\u80FD\u591F\u8FBE\u5230\u76EE\u7684\uFF0C\u8FD9\u4E5F\u4E0D\u662F\u592A\u5927\u7684\u95EE\u9898\u3002"
+    effectString: 
     basicATKMin: 66
     basicATKMax: 88
     basicACC: 90
@@ -230,8 +308,11 @@ MonoBehaviour:
   - id: 1105
     name: "\u9C7C\u80A0+5"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u4F20\u8BF4\u662F\u67D0\u8457\u540D\u6740\u624B\u66FE\u4F7F\u7528\u8FC7\u7684\u77ED\u5251\u3002\u5251\u8EAB\u77ED\u82E5\u5315\u9996\uFF0C\u4F7F\u7528\u7684\u6837\u5B50\u65E0\u8BBA\u5982\u4F55\u4E5F\u7B97\u4E0D\u4E0A\u4F18\u96C5\u3002\u4E0D\u8FC7\u82E5\u662F\u80FD\u591F\u8FBE\u5230\u76EE\u7684\uFF0C\u8FD9\u4E5F\u4E0D\u662F\u592A\u5927\u7684\u95EE\u9898\u3002"
+    effectString: 
     basicATKMin: 90
     basicATKMax: 120
     basicACC: 90
@@ -249,8 +330,11 @@ MonoBehaviour:
   - id: 1110
     name: "\u9ED1\u94C1\u94A9\u722A"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u9644\u6709\u94C1\u94A9\u7684\u722A\uFF0C\u672C\u662F\u4E00\u79CD\u6697\u5668\uFF0C\u4F46\u662F\u88C5\u5907\u5728\u624B\u4E0A\u4E5F\u53EF\u4EE5\u4F7F\u7528\u3002\u8FD9\u79CD\u770B\u8D77\u6765\u4E0D\u8D77\u773C\u5374\u80FD\u9020\u6210\u4E0D\u76F8\u79F0\u7834\u574F\u529B\u7684\u7269\u4EF6\uFF0C\u4E0D\u50CF\u662F\u4EBA\u4EBA\u90FD\u80FD\u638C\u63E1\u7684\u3002"
+    effectString: 
     basicATKMin: 8
     basicATKMax: 10
     basicACC: 110
@@ -268,8 +352,11 @@ MonoBehaviour:
   - id: 1111
     name: "\u9ED1\u94C1\u94A9\u722A+1"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u9644\u6709\u94C1\u94A9\u7684\u722A\uFF0C\u672C\u662F\u4E00\u79CD\u6697\u5668\uFF0C\u4F46\u662F\u88C5\u5907\u5728\u624B\u4E0A\u4E5F\u53EF\u4EE5\u4F7F\u7528\u3002\u8FD9\u79CD\u770B\u8D77\u6765\u4E0D\u8D77\u773C\u5374\u80FD\u9020\u6210\u4E0D\u76F8\u79F0\u7834\u574F\u529B\u7684\u7269\u4EF6\uFF0C\u4E0D\u50CF\u662F\u4EBA\u4EBA\u90FD\u80FD\u638C\u63E1\u7684\u3002"
+    effectString: 
     basicATKMin: 24
     basicATKMax: 30
     basicACC: 110
@@ -287,8 +374,11 @@ MonoBehaviour:
   - id: 1112
     name: "\u9ED1\u94C1\u94A9\u722A+2"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u9644\u6709\u94C1\u94A9\u7684\u722A\uFF0C\u672C\u662F\u4E00\u79CD\u6697\u5668\uFF0C\u4F46\u662F\u88C5\u5907\u5728\u624B\u4E0A\u4E5F\u53EF\u4EE5\u4F7F\u7528\u3002\u8FD9\u79CD\u770B\u8D77\u6765\u4E0D\u8D77\u773C\u5374\u80FD\u9020\u6210\u4E0D\u76F8\u79F0\u7834\u574F\u529B\u7684\u7269\u4EF6\uFF0C\u4E0D\u50CF\u662F\u4EBA\u4EBA\u90FD\u80FD\u638C\u63E1\u7684\u3002"
+    effectString: 
     basicATKMin: 40
     basicATKMax: 50
     basicACC: 110
@@ -306,8 +396,11 @@ MonoBehaviour:
   - id: 1113
     name: "\u9ED1\u94C1\u94A9\u722A+3"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u9644\u6709\u94C1\u94A9\u7684\u722A\uFF0C\u672C\u662F\u4E00\u79CD\u6697\u5668\uFF0C\u4F46\u662F\u88C5\u5907\u5728\u624B\u4E0A\u4E5F\u53EF\u4EE5\u4F7F\u7528\u3002\u8FD9\u79CD\u770B\u8D77\u6765\u4E0D\u8D77\u773C\u5374\u80FD\u9020\u6210\u4E0D\u76F8\u79F0\u7834\u574F\u529B\u7684\u7269\u4EF6\uFF0C\u4E0D\u50CF\u662F\u4EBA\u4EBA\u90FD\u80FD\u638C\u63E1\u7684\u3002"
+    effectString: 
     basicATKMin: 64
     basicATKMax: 80
     basicACC: 110
@@ -325,8 +418,11 @@ MonoBehaviour:
   - id: 1114
     name: "\u9ED1\u94C1\u94A9\u722A+4"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u9644\u6709\u94C1\u94A9\u7684\u722A\uFF0C\u672C\u662F\u4E00\u79CD\u6697\u5668\uFF0C\u4F46\u662F\u88C5\u5907\u5728\u624B\u4E0A\u4E5F\u53EF\u4EE5\u4F7F\u7528\u3002\u8FD9\u79CD\u770B\u8D77\u6765\u4E0D\u8D77\u773C\u5374\u80FD\u9020\u6210\u4E0D\u76F8\u79F0\u7834\u574F\u529B\u7684\u7269\u4EF6\uFF0C\u4E0D\u50CF\u662F\u4EBA\u4EBA\u90FD\u80FD\u638C\u63E1\u7684\u3002"
+    effectString: 
     basicATKMin: 88
     basicATKMax: 110
     basicACC: 110
@@ -344,8 +440,11 @@ MonoBehaviour:
   - id: 1115
     name: "\u9ED1\u94C1\u94A9\u722A+5"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u9644\u6709\u94C1\u94A9\u7684\u722A\uFF0C\u672C\u662F\u4E00\u79CD\u6697\u5668\uFF0C\u4F46\u662F\u88C5\u5907\u5728\u624B\u4E0A\u4E5F\u53EF\u4EE5\u4F7F\u7528\u3002\u8FD9\u79CD\u770B\u8D77\u6765\u4E0D\u8D77\u773C\u5374\u80FD\u9020\u6210\u4E0D\u76F8\u79F0\u7834\u574F\u529B\u7684\u7269\u4EF6\uFF0C\u4E0D\u50CF\u662F\u4EBA\u4EBA\u90FD\u80FD\u638C\u63E1\u7684\u3002"
+    effectString: 
     basicATKMin: 120
     basicATKMax: 150
     basicACC: 110
@@ -363,8 +462,11 @@ MonoBehaviour:
   - id: 1120
     name: "\u51B0\u971C\u523A\u5251"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u6837\u5B50\u4E0A\u53EA\u662F\u5E74\u4EE3\u4E45\u8FDC\u3001\u9508\u8FF9\u6591\u6591\u7684\u523A\u5251\uFF0C\u770B\u4E0A\u53BB\u6CA1\u6709\u4EC0\u4E48\u50CF\u6837\u7684\u5A01\u529B\u3002\u7136\u800C\u5E73\u51E1\u7684\u5916\u8868\u4E0B\u4F3C\u4E4E\u6709\u7740\u4E00\u4E9B\u5947\u5F02\u7684\u529B\u91CF\uFF1F"
+    effectString: 
     basicATKMin: 3
     basicATKMax: 5
     basicACC: 100
@@ -382,8 +484,11 @@ MonoBehaviour:
   - id: 1121
     name: "\u51B0\u971C\u523A\u5251+1"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u6837\u5B50\u4E0A\u53EA\u662F\u5E74\u4EE3\u4E45\u8FDC\u3001\u9508\u8FF9\u6591\u6591\u7684\u523A\u5251\uFF0C\u770B\u4E0A\u53BB\u6CA1\u6709\u4EC0\u4E48\u50CF\u6837\u7684\u5A01\u529B\u3002\u7136\u800C\u5E73\u51E1\u7684\u5916\u8868\u4E0B\u4F3C\u4E4E\u6709\u7740\u4E00\u4E9B\u5947\u5F02\u7684\u529B\u91CF\uFF1F"
+    effectString: 
     basicATKMin: 9
     basicATKMax: 15
     basicACC: 100
@@ -401,8 +506,11 @@ MonoBehaviour:
   - id: 1122
     name: "\u51B0\u971C\u523A\u5251+2"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u6837\u5B50\u4E0A\u53EA\u662F\u5E74\u4EE3\u4E45\u8FDC\u3001\u9508\u8FF9\u6591\u6591\u7684\u523A\u5251\uFF0C\u770B\u4E0A\u53BB\u6CA1\u6709\u4EC0\u4E48\u50CF\u6837\u7684\u5A01\u529B\u3002\u7136\u800C\u5E73\u51E1\u7684\u5916\u8868\u4E0B\u4F3C\u4E4E\u6709\u7740\u4E00\u4E9B\u5947\u5F02\u7684\u529B\u91CF\uFF1F"
+    effectString: 
     basicATKMin: 15
     basicATKMax: 25
     basicACC: 100
@@ -420,8 +528,11 @@ MonoBehaviour:
   - id: 1123
     name: "\u51B0\u971C\u523A\u5251+3"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u6837\u5B50\u4E0A\u53EA\u662F\u5E74\u4EE3\u4E45\u8FDC\u3001\u9508\u8FF9\u6591\u6591\u7684\u523A\u5251\uFF0C\u770B\u4E0A\u53BB\u6CA1\u6709\u4EC0\u4E48\u50CF\u6837\u7684\u5A01\u529B\u3002\u7136\u800C\u5E73\u51E1\u7684\u5916\u8868\u4E0B\u4F3C\u4E4E\u6709\u7740\u4E00\u4E9B\u5947\u5F02\u7684\u529B\u91CF\uFF1F"
+    effectString: 
     basicATKMin: 24
     basicATKMax: 40
     basicACC: 100
@@ -439,8 +550,11 @@ MonoBehaviour:
   - id: 1124
     name: "\u51B0\u971C\u523A\u5251+4"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u6837\u5B50\u4E0A\u53EA\u662F\u5E74\u4EE3\u4E45\u8FDC\u3001\u9508\u8FF9\u6591\u6591\u7684\u523A\u5251\uFF0C\u770B\u4E0A\u53BB\u6CA1\u6709\u4EC0\u4E48\u50CF\u6837\u7684\u5A01\u529B\u3002\u7136\u800C\u5E73\u51E1\u7684\u5916\u8868\u4E0B\u4F3C\u4E4E\u6709\u7740\u4E00\u4E9B\u5947\u5F02\u7684\u529B\u91CF\uFF1F"
+    effectString: 
     basicATKMin: 33
     basicATKMax: 55
     basicACC: 100
@@ -458,8 +572,11 @@ MonoBehaviour:
   - id: 1125
     name: "\u51B0\u971C\u523A\u5251+5"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u6837\u5B50\u4E0A\u53EA\u662F\u5E74\u4EE3\u4E45\u8FDC\u3001\u9508\u8FF9\u6591\u6591\u7684\u523A\u5251\uFF0C\u770B\u4E0A\u53BB\u6CA1\u6709\u4EC0\u4E48\u50CF\u6837\u7684\u5A01\u529B\u3002\u7136\u800C\u5E73\u51E1\u7684\u5916\u8868\u4E0B\u4F3C\u4E4E\u6709\u7740\u4E00\u4E9B\u5947\u5F02\u7684\u529B\u91CF\uFF1F"
+    effectString: 
     basicATKMin: 45
     basicATKMax: 75
     basicACC: 100
@@ -477,8 +594,11 @@ MonoBehaviour:
   - id: 1200
     name: "\u65E5\u7F61\xB7\u6708\u715E"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u88C5\u9970\u534E\u4E3D\u7684\u4E00\u5BF9\u53CC\u5200\uFF0C\u950B\u5229\u7684\u5200\u950B\u80FD\u591F\u5207\u5F00\u575A\u786C\u7684\u76AE\u80A4\u548C\u62A4\u7532\uFF0C\u7ED9\u654C\u4EBA\u653E\u8840\u3002"
+    effectString: 
     basicATKMin: 12
     basicATKMax: 16
     basicACC: 80
@@ -496,8 +616,11 @@ MonoBehaviour:
   - id: 1201
     name: "\u65E5\u7F61\xB7\u6708\u715E+1"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u88C5\u9970\u534E\u4E3D\u7684\u4E00\u5BF9\u53CC\u5200\uFF0C\u950B\u5229\u7684\u5200\u950B\u80FD\u591F\u5207\u5F00\u575A\u786C\u7684\u76AE\u80A4\u548C\u62A4\u7532\uFF0C\u7ED9\u654C\u4EBA\u653E\u8840\u3002"
+    effectString: 
     basicATKMin: 24
     basicATKMax: 32
     basicACC: 80
@@ -515,8 +638,11 @@ MonoBehaviour:
   - id: 1202
     name: "\u65E5\u7F61\xB7\u6708\u715E+2"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u88C5\u9970\u534E\u4E3D\u7684\u4E00\u5BF9\u53CC\u5200\uFF0C\u950B\u5229\u7684\u5200\u950B\u80FD\u591F\u5207\u5F00\u575A\u786C\u7684\u76AE\u80A4\u548C\u62A4\u7532\uFF0C\u7ED9\u654C\u4EBA\u653E\u8840\u3002"
+    effectString: 
     basicATKMin: 48
     basicATKMax: 64
     basicACC: 80
@@ -534,8 +660,11 @@ MonoBehaviour:
   - id: 1203
     name: "\u65E5\u7F61\xB7\u6708\u715E+3"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u88C5\u9970\u534E\u4E3D\u7684\u4E00\u5BF9\u53CC\u5200\uFF0C\u950B\u5229\u7684\u5200\u950B\u80FD\u591F\u5207\u5F00\u575A\u786C\u7684\u76AE\u80A4\u548C\u62A4\u7532\uFF0C\u7ED9\u654C\u4EBA\u653E\u8840\u3002"
+    effectString: 
     basicATKMin: 60
     basicATKMax: 96
     basicACC: 80
@@ -553,8 +682,11 @@ MonoBehaviour:
   - id: 1204
     name: "\u65E5\u7F61\xB7\u6708\u715E+4"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u88C5\u9970\u534E\u4E3D\u7684\u4E00\u5BF9\u53CC\u5200\uFF0C\u950B\u5229\u7684\u5200\u950B\u80FD\u591F\u5207\u5F00\u575A\u786C\u7684\u76AE\u80A4\u548C\u62A4\u7532\uFF0C\u7ED9\u654C\u4EBA\u653E\u8840\u3002"
+    effectString: 
     basicATKMin: 96
     basicATKMax: 128
     basicACC: 80
@@ -572,8 +704,11 @@ MonoBehaviour:
   - id: 1205
     name: "\u65E5\u7F61\xB7\u6708\u715E+5"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u88C5\u9970\u534E\u4E3D\u7684\u4E00\u5BF9\u53CC\u5200\uFF0C\u950B\u5229\u7684\u5200\u950B\u80FD\u591F\u5207\u5F00\u575A\u786C\u7684\u76AE\u80A4\u548C\u62A4\u7532\uFF0C\u7ED9\u654C\u4EBA\u653E\u8840\u3002"
+    effectString: 
     basicATKMin: 120
     basicATKMax: 160
     basicACC: 80
@@ -591,8 +726,11 @@ MonoBehaviour:
   - id: 1210
     name: "\u5907\u524D\u957F\u8239"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u5200\u8EAB\u957F\u5F97\u6709\u4E9B\u4E0D\u50CF\u8BDD\uFF0C\u867D\u7136\u8FD9\u4F7F\u5F97\u6B66\u5668\u80FD\u591F\u8F83\u5BB9\u6613\u547D\u4E2D\u654C\u4EBA\uFF0C\u4F46\u5B9E\u5728\u96BE\u4EE5\u6325\u821E\u3002\u636E\u8BF4\u5982\u679C\u8BA9\u654C\u4EBA\u770B\u6E05\u4E86\u5200\u5203\uFF0C\u6B64\u5200\u4FBF\u4F1A\u79BB\u4E3B\u4EBA\u800C\u53BB\u3002"
+    effectString: 
     basicATKMin: 15
     basicATKMax: 19
     basicACC: 90
@@ -610,8 +748,11 @@ MonoBehaviour:
   - id: 1211
     name: "\u5907\u524D\u957F\u8239+1"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u5200\u8EAB\u957F\u5F97\u6709\u4E9B\u4E0D\u50CF\u8BDD\uFF0C\u867D\u7136\u8FD9\u4F7F\u5F97\u6B66\u5668\u80FD\u591F\u8F83\u5BB9\u6613\u547D\u4E2D\u654C\u4EBA\uFF0C\u4F46\u5B9E\u5728\u96BE\u4EE5\u6325\u821E\u3002\u636E\u8BF4\u5982\u679C\u8BA9\u654C\u4EBA\u770B\u6E05\u4E86\u5200\u5203\uFF0C\u6B64\u5200\u4FBF\u4F1A\u79BB\u4E3B\u4EBA\u800C\u53BB\u3002"
+    effectString: 
     basicATKMin: 30
     basicATKMax: 38
     basicACC: 92
@@ -629,8 +770,11 @@ MonoBehaviour:
   - id: 1212
     name: "\u5907\u524D\u957F\u8239+2"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u5200\u8EAB\u957F\u5F97\u6709\u4E9B\u4E0D\u50CF\u8BDD\uFF0C\u867D\u7136\u8FD9\u4F7F\u5F97\u6B66\u5668\u80FD\u591F\u8F83\u5BB9\u6613\u547D\u4E2D\u654C\u4EBA\uFF0C\u4F46\u5B9E\u5728\u96BE\u4EE5\u6325\u821E\u3002\u636E\u8BF4\u5982\u679C\u8BA9\u654C\u4EBA\u770B\u6E05\u4E86\u5200\u5203\uFF0C\u6B64\u5200\u4FBF\u4F1A\u79BB\u4E3B\u4EBA\u800C\u53BB\u3002"
+    effectString: 
     basicATKMin: 60
     basicATKMax: 76
     basicACC: 94
@@ -648,8 +792,11 @@ MonoBehaviour:
   - id: 1213
     name: "\u5907\u524D\u957F\u8239+3"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u5200\u8EAB\u957F\u5F97\u6709\u4E9B\u4E0D\u50CF\u8BDD\uFF0C\u867D\u7136\u8FD9\u4F7F\u5F97\u6B66\u5668\u80FD\u591F\u8F83\u5BB9\u6613\u547D\u4E2D\u654C\u4EBA\uFF0C\u4F46\u5B9E\u5728\u96BE\u4EE5\u6325\u821E\u3002\u636E\u8BF4\u5982\u679C\u8BA9\u654C\u4EBA\u770B\u6E05\u4E86\u5200\u5203\uFF0C\u6B64\u5200\u4FBF\u4F1A\u79BB\u4E3B\u4EBA\u800C\u53BB\u3002"
+    effectString: 
     basicATKMin: 90
     basicATKMax: 114
     basicACC: 96
@@ -667,8 +814,11 @@ MonoBehaviour:
   - id: 1214
     name: "\u5907\u524D\u957F\u8239+4"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u5200\u8EAB\u957F\u5F97\u6709\u4E9B\u4E0D\u50CF\u8BDD\uFF0C\u867D\u7136\u8FD9\u4F7F\u5F97\u6B66\u5668\u80FD\u591F\u8F83\u5BB9\u6613\u547D\u4E2D\u654C\u4EBA\uFF0C\u4F46\u5B9E\u5728\u96BE\u4EE5\u6325\u821E\u3002\u636E\u8BF4\u5982\u679C\u8BA9\u654C\u4EBA\u770B\u6E05\u4E86\u5200\u5203\uFF0C\u6B64\u5200\u4FBF\u4F1A\u79BB\u4E3B\u4EBA\u800C\u53BB\u3002"
+    effectString: 
     basicATKMin: 120
     basicATKMax: 152
     basicACC: 98
@@ -686,8 +836,11 @@ MonoBehaviour:
   - id: 1215
     name: "\u5907\u524D\u957F\u8239+5"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u5200\u8EAB\u957F\u5F97\u6709\u4E9B\u4E0D\u50CF\u8BDD\uFF0C\u867D\u7136\u8FD9\u4F7F\u5F97\u6B66\u5668\u80FD\u591F\u8F83\u5BB9\u6613\u547D\u4E2D\u654C\u4EBA\uFF0C\u4F46\u5B9E\u5728\u96BE\u4EE5\u6325\u821E\u3002\u636E\u8BF4\u5982\u679C\u8BA9\u654C\u4EBA\u770B\u6E05\u4E86\u5200\u5203\uFF0C\u6B64\u5200\u4FBF\u4F1A\u79BB\u4E3B\u4EBA\u800C\u53BB\u3002"
+    effectString: 
     basicATKMin: 150
     basicATKMax: 190
     basicACC: 100
@@ -705,8 +858,11 @@ MonoBehaviour:
   - id: 1220
     name: "\u8D64\u5F71"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u4F20\u8BF4\u4E2D\u88AB\u8BC5\u5492\u7684\u5996\u5200\u3002\u732E\u796D\u9C9C\u8840\u4F3C\u4E4E\u80FD\u591F\u8BA9\u6B64\u5200\u66F4\u52A0\u950B\u5229\uFF0C\u5374\u4E5F\u56E0\u6B64\u66F4\u52A0\u6E34\u6C42\u66F4\u591A\u7684\u9C9C\u8840\u3002\u4EBA\u7C7B\u603B\u662F\u6E34\u6C42\u66F4\u591A\uFF0C\u533A\u533A\u8BC5\u5492\u80FD\u8BA9\u4ED6\u4EEC\u505C\u4E0B\u811A\u6B65\u5417\uFF1F"
+    effectString: 
     basicATKMin: 1
     basicATKMax: 10
     basicACC: 80
@@ -724,8 +880,11 @@ MonoBehaviour:
   - id: 1300
     name: "\u9E93\u5143\u7684\u77F3\u5251"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u9E93\u5143\u7684\u7231\u5251\u3002\u672C\u662F\u4E00\u628A\u666E\u901A\u7684\u53CC\u624B\u5251\uFF0C\u5374\u5BC4\u6258\u4E86\u5BF9\u517D\u65CF\u7684\u4EC7\u6068\uFF0C\u7ECF\u8FC7\u53CD\u590D\u9524\u70BC\u800C\u53D8\u5F97\u5F3A\u529B\u800C\u575A\u786C\u3002\u7231\u4E5F\u597D\uFF0C\u6068\u4E5F\u7F62\uFF0C\u611F\u60C5\u5728\u8FD9\u4E2A\u4E16\u754C\u4E0A\u603B\u6709\u5176\u5C40\u9650\uFF0C\u53EF\u80FD\u53EA\u662F\u8FD8\u6CA1\u6709\u610F\u8BC6\u5230\u7F62\u4E86\u3002"
+    effectString: 
     basicATKMin: 18
     basicATKMax: 22
     basicACC: 80
@@ -743,8 +902,11 @@ MonoBehaviour:
   - id: 1310
     name: "\u771F\u7A7A\u4E4B\u5203"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u4E0D\u77E5\u4EC0\u4E48\u6750\u8D28\u6253\u9020\u800C\u6210\uFF0C\u5251\u5203\u8584\u5230\u53EF\u4EE5\u900F\u5149\uFF0C\u751A\u81F3\u8BA9\u4EBA\u6000\u7591\u8FD9\u628A\u5251\u771F\u7684\u6709\u5B9E\u4F53\u5417\uFF1F"
+    effectString: 
     basicATKMin: 16
     basicATKMax: 20
     basicACC: 80
@@ -762,8 +924,11 @@ MonoBehaviour:
   - id: 1311
     name: "\u771F\u7A7A\u4E4B\u5203+1"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u4E0D\u77E5\u4EC0\u4E48\u6750\u8D28\u6253\u9020\u800C\u6210\uFF0C\u5251\u5203\u8584\u5230\u53EF\u4EE5\u900F\u5149\uFF0C\u751A\u81F3\u8BA9\u4EBA\u6000\u7591\u8FD9\u628A\u5251\u771F\u7684\u6709\u5B9E\u4F53\u5417\uFF1F"
+    effectString: 
     basicATKMin: 32
     basicATKMax: 40
     basicACC: 80
@@ -781,8 +946,11 @@ MonoBehaviour:
   - id: 1312
     name: "\u771F\u7A7A\u4E4B\u5203+2"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u4E0D\u77E5\u4EC0\u4E48\u6750\u8D28\u6253\u9020\u800C\u6210\uFF0C\u5251\u5203\u8584\u5230\u53EF\u4EE5\u900F\u5149\uFF0C\u751A\u81F3\u8BA9\u4EBA\u6000\u7591\u8FD9\u628A\u5251\u771F\u7684\u6709\u5B9E\u4F53\u5417\uFF1F"
+    effectString: 
     basicATKMin: 64
     basicATKMax: 80
     basicACC: 80
@@ -800,8 +968,11 @@ MonoBehaviour:
   - id: 1313
     name: "\u771F\u7A7A\u4E4B\u5203+3"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u4E0D\u77E5\u4EC0\u4E48\u6750\u8D28\u6253\u9020\u800C\u6210\uFF0C\u5251\u5203\u8584\u5230\u53EF\u4EE5\u900F\u5149\uFF0C\u751A\u81F3\u8BA9\u4EBA\u6000\u7591\u8FD9\u628A\u5251\u771F\u7684\u6709\u5B9E\u4F53\u5417\uFF1F"
+    effectString: 
     basicATKMin: 96
     basicATKMax: 120
     basicACC: 80
@@ -819,8 +990,11 @@ MonoBehaviour:
   - id: 1314
     name: "\u771F\u7A7A\u4E4B\u5203+4"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u4E0D\u77E5\u4EC0\u4E48\u6750\u8D28\u6253\u9020\u800C\u6210\uFF0C\u5251\u5203\u8584\u5230\u53EF\u4EE5\u900F\u5149\uFF0C\u751A\u81F3\u8BA9\u4EBA\u6000\u7591\u8FD9\u628A\u5251\u771F\u7684\u6709\u5B9E\u4F53\u5417\uFF1F"
+    effectString: 
     basicATKMin: 128
     basicATKMax: 160
     basicACC: 80
@@ -838,8 +1012,11 @@ MonoBehaviour:
   - id: 1315
     name: "\u771F\u7A7A\u4E4B\u5203+5"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u4E0D\u77E5\u4EC0\u4E48\u6750\u8D28\u6253\u9020\u800C\u6210\uFF0C\u5251\u5203\u8584\u5230\u53EF\u4EE5\u900F\u5149\uFF0C\u751A\u81F3\u8BA9\u4EBA\u6000\u7591\u8FD9\u628A\u5251\u771F\u7684\u6709\u5B9E\u4F53\u5417\uFF1F"
+    effectString: 
     basicATKMin: 160
     basicATKMax: 200
     basicACC: 80
@@ -857,8 +1034,11 @@ MonoBehaviour:
   - id: 1320
     name: "\u6E5B\u5362"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u4F20\u8BF4\u66FE\u4E3A\u4E00\u540D\u660E\u541B\u4F69\u6234\uFF0C\u7EC8\u8EAB\u4E0D\u66FE\u51FA\u9798\u3002\u5728\u8FD9\u4E71\u4E16\uFF0C\u53EA\u6709\u4FDD\u5B58\u4E00\u9897\u4EC1\u4E49\u4E4B\u5FC3\u8005\u624D\u53EF\u6325\u821E\u6B64\u5251\u3002"
+    effectString: 
     basicATKMin: 15
     basicATKMax: 15
     basicACC: 60
@@ -876,8 +1056,11 @@ MonoBehaviour:
   - id: 1321
     name: "\u6E5B\u5362+1"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u4F20\u8BF4\u66FE\u4E3A\u4E00\u540D\u660E\u541B\u4F69\u6234\uFF0C\u7EC8\u8EAB\u4E0D\u66FE\u51FA\u9798\u3002\u5728\u8FD9\u4E71\u4E16\uFF0C\u53EA\u6709\u4FDD\u5B58\u4E00\u9897\u4EC1\u4E49\u4E4B\u5FC3\u8005\u624D\u53EF\u6325\u821E\u6B64\u5251\u3002"
+    effectString: 
     basicATKMin: 45
     basicATKMax: 45
     basicACC: 70
@@ -895,8 +1078,11 @@ MonoBehaviour:
   - id: 1322
     name: "\u6E5B\u5362+2"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u4F20\u8BF4\u66FE\u4E3A\u4E00\u540D\u660E\u541B\u4F69\u6234\uFF0C\u7EC8\u8EAB\u4E0D\u66FE\u51FA\u9798\u3002\u5728\u8FD9\u4E71\u4E16\uFF0C\u53EA\u6709\u4FDD\u5B58\u4E00\u9897\u4EC1\u4E49\u4E4B\u5FC3\u8005\u624D\u53EF\u6325\u821E\u6B64\u5251\u3002"
+    effectString: 
     basicATKMin: 75
     basicATKMax: 75
     basicACC: 80
@@ -914,8 +1100,11 @@ MonoBehaviour:
   - id: 1323
     name: "\u6E5B\u5362+3"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u4F20\u8BF4\u66FE\u4E3A\u4E00\u540D\u660E\u541B\u4F69\u6234\uFF0C\u7EC8\u8EAB\u4E0D\u66FE\u51FA\u9798\u3002\u5728\u8FD9\u4E71\u4E16\uFF0C\u53EA\u6709\u4FDD\u5B58\u4E00\u9897\u4EC1\u4E49\u4E4B\u5FC3\u8005\u624D\u53EF\u6325\u821E\u6B64\u5251\u3002"
+    effectString: 
     basicATKMin: 105
     basicATKMax: 105
     basicACC: 90
@@ -933,8 +1122,11 @@ MonoBehaviour:
   - id: 1324
     name: "\u6E5B\u5362+4"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u4F20\u8BF4\u66FE\u4E3A\u4E00\u540D\u660E\u541B\u4F69\u6234\uFF0C\u7EC8\u8EAB\u4E0D\u66FE\u51FA\u9798\u3002\u5728\u8FD9\u4E71\u4E16\uFF0C\u53EA\u6709\u4FDD\u5B58\u4E00\u9897\u4EC1\u4E49\u4E4B\u5FC3\u8005\u624D\u53EF\u6325\u821E\u6B64\u5251\u3002"
+    effectString: 
     basicATKMin: 135
     basicATKMax: 135
     basicACC: 100
@@ -952,8 +1144,11 @@ MonoBehaviour:
   - id: 1325
     name: "\u6E5B\u5362+5"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u4F20\u8BF4\u66FE\u4E3A\u4E00\u540D\u660E\u541B\u4F69\u6234\uFF0C\u7EC8\u8EAB\u4E0D\u66FE\u51FA\u9798\u3002\u5728\u8FD9\u4E71\u4E16\uFF0C\u53EA\u6709\u4FDD\u5B58\u4E00\u9897\u4EC1\u4E49\u4E4B\u5FC3\u8005\u624D\u53EF\u6325\u821E\u6B64\u5251\u3002"
+    effectString: 
     basicATKMin: 165
     basicATKMax: 165
     basicACC: 110
@@ -971,8 +1166,11 @@ MonoBehaviour:
   - id: 1400
     name: "\u6076\u4E4B\u82B1"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u901A\u8EAB\u9C9C\u7EA2\u7684\u9570\u5200\u3002\u9634\u67D4\u7684\u5916\u8868\u4E0B\u5374\u6709\u7740\u5F3A\u5927\u7684\u653B\u51FB\u529B\uFF0C\u542C\u8BF4\u5305\u62EC\u7B2C\u4E00\u4EFB\u5728\u5185\u7684\u5386\u4EFB\u4E3B\u4EBA\u5747\u79BB\u5947\u81EA\u6740\u800C\u4EA1\u3002\u5E38\u6709\u4EBA\u628A\u90AA\u6076\u548C\u8BF1\u60D1\u8054\u7CFB\u5728\u4E00\u8D77\uFF0C\u5374\u4E0D\u77E5\u662F\u56E0\u4E3A\u8BF1\u60D1\u6240\u4EE5\u90AA\u6076\u8FD8\u662F\u56E0\u4E3A\u90AA\u6076\u6240\u4EE5\u8BF1\u60D1\u3002"
+    effectString: 
     basicATKMin: 25
     basicATKMax: 35
     basicACC: 60
@@ -990,8 +1188,11 @@ MonoBehaviour:
   - id: 1401
     name: "\u6076\u4E4B\u82B1+1"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u901A\u8EAB\u9C9C\u7EA2\u7684\u9570\u5200\u3002\u9634\u67D4\u7684\u5916\u8868\u4E0B\u5374\u6709\u7740\u5F3A\u5927\u7684\u653B\u51FB\u529B\uFF0C\u542C\u8BF4\u5305\u62EC\u7B2C\u4E00\u4EFB\u5728\u5185\u7684\u5386\u4EFB\u4E3B\u4EBA\u5747\u79BB\u5947\u81EA\u6740\u800C\u4EA1\u3002\u5E38\u6709\u4EBA\u628A\u90AA\u6076\u548C\u8BF1\u60D1\u8054\u7CFB\u5728\u4E00\u8D77\uFF0C\u5374\u4E0D\u77E5\u662F\u56E0\u4E3A\u8BF1\u60D1\u6240\u4EE5\u90AA\u6076\u8FD8\u662F\u56E0\u4E3A\u90AA\u6076\u6240\u4EE5\u8BF1\u60D1\u3002"
+    effectString: 
     basicATKMin: 50
     basicATKMax: 70
     basicACC: 65
@@ -1009,8 +1210,11 @@ MonoBehaviour:
   - id: 1402
     name: "\u6076\u4E4B\u82B1+2"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u901A\u8EAB\u9C9C\u7EA2\u7684\u9570\u5200\u3002\u9634\u67D4\u7684\u5916\u8868\u4E0B\u5374\u6709\u7740\u5F3A\u5927\u7684\u653B\u51FB\u529B\uFF0C\u542C\u8BF4\u5305\u62EC\u7B2C\u4E00\u4EFB\u5728\u5185\u7684\u5386\u4EFB\u4E3B\u4EBA\u5747\u79BB\u5947\u81EA\u6740\u800C\u4EA1\u3002\u5E38\u6709\u4EBA\u628A\u90AA\u6076\u548C\u8BF1\u60D1\u8054\u7CFB\u5728\u4E00\u8D77\uFF0C\u5374\u4E0D\u77E5\u662F\u56E0\u4E3A\u8BF1\u60D1\u6240\u4EE5\u90AA\u6076\u8FD8\u662F\u56E0\u4E3A\u90AA\u6076\u6240\u4EE5\u8BF1\u60D1\u3002"
+    effectString: 
     basicATKMin: 75
     basicATKMax: 105
     basicACC: 70
@@ -1028,8 +1232,11 @@ MonoBehaviour:
   - id: 1403
     name: "\u6076\u4E4B\u82B1+3"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u901A\u8EAB\u9C9C\u7EA2\u7684\u9570\u5200\u3002\u9634\u67D4\u7684\u5916\u8868\u4E0B\u5374\u6709\u7740\u5F3A\u5927\u7684\u653B\u51FB\u529B\uFF0C\u542C\u8BF4\u5305\u62EC\u7B2C\u4E00\u4EFB\u5728\u5185\u7684\u5386\u4EFB\u4E3B\u4EBA\u5747\u79BB\u5947\u81EA\u6740\u800C\u4EA1\u3002\u5E38\u6709\u4EBA\u628A\u90AA\u6076\u548C\u8BF1\u60D1\u8054\u7CFB\u5728\u4E00\u8D77\uFF0C\u5374\u4E0D\u77E5\u662F\u56E0\u4E3A\u8BF1\u60D1\u6240\u4EE5\u90AA\u6076\u8FD8\u662F\u56E0\u4E3A\u90AA\u6076\u6240\u4EE5\u8BF1\u60D1\u3002"
+    effectString: 
     basicATKMin: 100
     basicATKMax: 140
     basicACC: 75
@@ -1047,8 +1254,11 @@ MonoBehaviour:
   - id: 1404
     name: "\u6076\u4E4B\u82B1+4"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u901A\u8EAB\u9C9C\u7EA2\u7684\u9570\u5200\u3002\u9634\u67D4\u7684\u5916\u8868\u4E0B\u5374\u6709\u7740\u5F3A\u5927\u7684\u653B\u51FB\u529B\uFF0C\u542C\u8BF4\u5305\u62EC\u7B2C\u4E00\u4EFB\u5728\u5185\u7684\u5386\u4EFB\u4E3B\u4EBA\u5747\u79BB\u5947\u81EA\u6740\u800C\u4EA1\u3002\u5E38\u6709\u4EBA\u628A\u90AA\u6076\u548C\u8BF1\u60D1\u8054\u7CFB\u5728\u4E00\u8D77\uFF0C\u5374\u4E0D\u77E5\u662F\u56E0\u4E3A\u8BF1\u60D1\u6240\u4EE5\u90AA\u6076\u8FD8\u662F\u56E0\u4E3A\u90AA\u6076\u6240\u4EE5\u8BF1\u60D1\u3002"
+    effectString: 
     basicATKMin: 125
     basicATKMax: 175
     basicACC: 80
@@ -1066,8 +1276,11 @@ MonoBehaviour:
   - id: 1405
     name: "\u6076\u4E4B\u82B1+5"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u901A\u8EAB\u9C9C\u7EA2\u7684\u9570\u5200\u3002\u9634\u67D4\u7684\u5916\u8868\u4E0B\u5374\u6709\u7740\u5F3A\u5927\u7684\u653B\u51FB\u529B\uFF0C\u542C\u8BF4\u5305\u62EC\u7B2C\u4E00\u4EFB\u5728\u5185\u7684\u5386\u4EFB\u4E3B\u4EBA\u5747\u79BB\u5947\u81EA\u6740\u800C\u4EA1\u3002\u5E38\u6709\u4EBA\u628A\u90AA\u6076\u548C\u8BF1\u60D1\u8054\u7CFB\u5728\u4E00\u8D77\uFF0C\u5374\u4E0D\u77E5\u662F\u56E0\u4E3A\u8BF1\u60D1\u6240\u4EE5\u90AA\u6076\u8FD8\u662F\u56E0\u4E3A\u90AA\u6076\u6240\u4EE5\u8BF1\u60D1\u3002"
+    effectString: 
     basicATKMin: 150
     basicATKMax: 210
     basicACC: 85
@@ -1085,8 +1298,11 @@ MonoBehaviour:
   - id: 1410
     name: "\u72C2\u4EBA\u4E4B\u9524"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u4F20\u8BF4\u662F\u4E00\u4E2A\u953B\u9020\u5230\u8D70\u706B\u5165\u9B54\u7684\u8457\u540D\u94C1\u5320\u7684\u6700\u540E\u4E00\u4EF6\u4F5C\u54C1\uFF0C\u800C\u4ED6\u4E5F\u5728\u5B8C\u6210\u7684\u540C\u4E00\u5929\u75AF\u6389\u4E86\uFF0C\u6B66\u5668\u56E0\u6B64\u5F97\u540D\u3002\u4EBA\u4EEC\u7ECF\u5E38\u8D5E\u8BB8\u4E13\u6CE8\u4E4B\u4EBA\uFF0C\u5374\u4ECE\u6765\u6CA1\u6709\u4EBA\u7406\u89E3\u8FC7\u5176\u4E2D\u7684\u75DB\u82E6\u3002"
+    effectString: 
     basicATKMin: 18
     basicATKMax: 32
     basicACC: 90
@@ -1104,8 +1320,11 @@ MonoBehaviour:
   - id: 1411
     name: "\u72C2\u4EBA\u4E4B\u9524+1"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u4F20\u8BF4\u662F\u4E00\u4E2A\u953B\u9020\u5230\u8D70\u706B\u5165\u9B54\u7684\u8457\u540D\u94C1\u5320\u7684\u6700\u540E\u4E00\u4EF6\u4F5C\u54C1\uFF0C\u800C\u4ED6\u4E5F\u5728\u5B8C\u6210\u7684\u540C\u4E00\u5929\u75AF\u6389\u4E86\uFF0C\u6B66\u5668\u56E0\u6B64\u5F97\u540D\u3002\u4EBA\u4EEC\u7ECF\u5E38\u8D5E\u8BB8\u4E13\u6CE8\u4E4B\u4EBA\uFF0C\u5374\u4ECE\u6765\u6CA1\u6709\u4EBA\u7406\u89E3\u8FC7\u5176\u4E2D\u7684\u75DB\u82E6\u3002"
+    effectString: 
     basicATKMin: 36
     basicATKMax: 64
     basicACC: 90
@@ -1123,8 +1342,11 @@ MonoBehaviour:
   - id: 1412
     name: "\u72C2\u4EBA\u4E4B\u9524+2"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u4F20\u8BF4\u662F\u4E00\u4E2A\u953B\u9020\u5230\u8D70\u706B\u5165\u9B54\u7684\u8457\u540D\u94C1\u5320\u7684\u6700\u540E\u4E00\u4EF6\u4F5C\u54C1\uFF0C\u800C\u4ED6\u4E5F\u5728\u5B8C\u6210\u7684\u540C\u4E00\u5929\u75AF\u6389\u4E86\uFF0C\u6B66\u5668\u56E0\u6B64\u5F97\u540D\u3002\u4EBA\u4EEC\u7ECF\u5E38\u8D5E\u8BB8\u4E13\u6CE8\u4E4B\u4EBA\uFF0C\u5374\u4ECE\u6765\u6CA1\u6709\u4EBA\u7406\u89E3\u8FC7\u5176\u4E2D\u7684\u75DB\u82E6\u3002"
+    effectString: 
     basicATKMin: 54
     basicATKMax: 96
     basicACC: 90
@@ -1142,8 +1364,11 @@ MonoBehaviour:
   - id: 1413
     name: "\u72C2\u4EBA\u4E4B\u9524+3"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u4F20\u8BF4\u662F\u4E00\u4E2A\u953B\u9020\u5230\u8D70\u706B\u5165\u9B54\u7684\u8457\u540D\u94C1\u5320\u7684\u6700\u540E\u4E00\u4EF6\u4F5C\u54C1\uFF0C\u800C\u4ED6\u4E5F\u5728\u5B8C\u6210\u7684\u540C\u4E00\u5929\u75AF\u6389\u4E86\uFF0C\u6B66\u5668\u56E0\u6B64\u5F97\u540D\u3002\u4EBA\u4EEC\u7ECF\u5E38\u8D5E\u8BB8\u4E13\u6CE8\u4E4B\u4EBA\uFF0C\u5374\u4ECE\u6765\u6CA1\u6709\u4EBA\u7406\u89E3\u8FC7\u5176\u4E2D\u7684\u75DB\u82E6\u3002"
+    effectString: 
     basicATKMin: 72
     basicATKMax: 128
     basicACC: 90
@@ -1161,8 +1386,11 @@ MonoBehaviour:
   - id: 1414
     name: "\u72C2\u4EBA\u4E4B\u9524+4"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u4F20\u8BF4\u662F\u4E00\u4E2A\u953B\u9020\u5230\u8D70\u706B\u5165\u9B54\u7684\u8457\u540D\u94C1\u5320\u7684\u6700\u540E\u4E00\u4EF6\u4F5C\u54C1\uFF0C\u800C\u4ED6\u4E5F\u5728\u5B8C\u6210\u7684\u540C\u4E00\u5929\u75AF\u6389\u4E86\uFF0C\u6B66\u5668\u56E0\u6B64\u5F97\u540D\u3002\u4EBA\u4EEC\u7ECF\u5E38\u8D5E\u8BB8\u4E13\u6CE8\u4E4B\u4EBA\uFF0C\u5374\u4ECE\u6765\u6CA1\u6709\u4EBA\u7406\u89E3\u8FC7\u5176\u4E2D\u7684\u75DB\u82E6\u3002"
+    effectString: 
     basicATKMin: 90
     basicATKMax: 160
     basicACC: 90
@@ -1180,8 +1408,11 @@ MonoBehaviour:
   - id: 1415
     name: "\u72C2\u4EBA\u4E4B\u9524+5"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u4F20\u8BF4\u662F\u4E00\u4E2A\u953B\u9020\u5230\u8D70\u706B\u5165\u9B54\u7684\u8457\u540D\u94C1\u5320\u7684\u6700\u540E\u4E00\u4EF6\u4F5C\u54C1\uFF0C\u800C\u4ED6\u4E5F\u5728\u5B8C\u6210\u7684\u540C\u4E00\u5929\u75AF\u6389\u4E86\uFF0C\u6B66\u5668\u56E0\u6B64\u5F97\u540D\u3002\u4EBA\u4EEC\u7ECF\u5E38\u8D5E\u8BB8\u4E13\u6CE8\u4E4B\u4EBA\uFF0C\u5374\u4ECE\u6765\u6CA1\u6709\u4EBA\u7406\u89E3\u8FC7\u5176\u4E2D\u7684\u75DB\u82E6\u3002"
+    effectString: 
     basicATKMin: 108
     basicATKMax: 192
     basicACC: 90
@@ -1199,8 +1430,11 @@ MonoBehaviour:
   - id: 1420
     name: "\u76D8\u53E4\u5DE8\u65A7"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u53E4\u795E\u5F00\u5929\u8F9F\u5730\u4F7F\u7528\u7684\u9053\u5177\uFF0C\u4F46\u88AB\u4EBA\u8D28\u7591\u5176\u771F\u5B9E\u6027\u3002\u4F46\u5373\u4FBF\u5982\u6B64\uFF0C\u4E5F\u96BE\u4EE5\u60F3\u8C61\u662F\u5982\u4F55\u88AB\u4EBA\u7C7B\u6325\u821E\u8D77\u6765\u7684\u3002"
+    effectString: 
     basicATKMin: 28
     basicATKMax: 40
     basicACC: 60
@@ -1218,8 +1452,11 @@ MonoBehaviour:
   - id: 1421
     name: "\u76D8\u53E4\u5DE8\u65A7+1"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u53E4\u795E\u5F00\u5929\u8F9F\u5730\u4F7F\u7528\u7684\u9053\u5177\uFF0C\u4F46\u88AB\u4EBA\u8D28\u7591\u5176\u771F\u5B9E\u6027\u3002\u4F46\u5373\u4FBF\u5982\u6B64\uFF0C\u4E5F\u96BE\u4EE5\u60F3\u8C61\u662F\u5982\u4F55\u88AB\u4EBA\u7C7B\u6325\u821E\u8D77\u6765\u7684\u3002"
+    effectString: 
     basicATKMin: 56
     basicATKMax: 80
     basicACC: 60
@@ -1237,8 +1474,11 @@ MonoBehaviour:
   - id: 1422
     name: "\u76D8\u53E4\u5DE8\u65A7+2"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u53E4\u795E\u5F00\u5929\u8F9F\u5730\u4F7F\u7528\u7684\u9053\u5177\uFF0C\u4F46\u88AB\u4EBA\u8D28\u7591\u5176\u771F\u5B9E\u6027\u3002\u4F46\u5373\u4FBF\u5982\u6B64\uFF0C\u4E5F\u96BE\u4EE5\u60F3\u8C61\u662F\u5982\u4F55\u88AB\u4EBA\u7C7B\u6325\u821E\u8D77\u6765\u7684\u3002"
+    effectString: 
     basicATKMin: 74
     basicATKMax: 120
     basicACC: 60
@@ -1256,8 +1496,11 @@ MonoBehaviour:
   - id: 1423
     name: "\u76D8\u53E4\u5DE8\u65A7+3"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u53E4\u795E\u5F00\u5929\u8F9F\u5730\u4F7F\u7528\u7684\u9053\u5177\uFF0C\u4F46\u88AB\u4EBA\u8D28\u7591\u5176\u771F\u5B9E\u6027\u3002\u4F46\u5373\u4FBF\u5982\u6B64\uFF0C\u4E5F\u96BE\u4EE5\u60F3\u8C61\u662F\u5982\u4F55\u88AB\u4EBA\u7C7B\u6325\u821E\u8D77\u6765\u7684\u3002"
+    effectString: 
     basicATKMin: 112
     basicATKMax: 160
     basicACC: 60
@@ -1275,8 +1518,11 @@ MonoBehaviour:
   - id: 1424
     name: "\u76D8\u53E4\u5DE8\u65A7+4"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u53E4\u795E\u5F00\u5929\u8F9F\u5730\u4F7F\u7528\u7684\u9053\u5177\uFF0C\u4F46\u88AB\u4EBA\u8D28\u7591\u5176\u771F\u5B9E\u6027\u3002\u4F46\u5373\u4FBF\u5982\u6B64\uFF0C\u4E5F\u96BE\u4EE5\u60F3\u8C61\u662F\u5982\u4F55\u88AB\u4EBA\u7C7B\u6325\u821E\u8D77\u6765\u7684\u3002"
+    effectString: 
     basicATKMin: 140
     basicATKMax: 200
     basicACC: 60
@@ -1294,8 +1540,11 @@ MonoBehaviour:
   - id: 1425
     name: "\u76D8\u53E4\u5DE8\u65A7+5"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u53E4\u795E\u5F00\u5929\u8F9F\u5730\u4F7F\u7528\u7684\u9053\u5177\uFF0C\u4F46\u88AB\u4EBA\u8D28\u7591\u5176\u771F\u5B9E\u6027\u3002\u4F46\u5373\u4FBF\u5982\u6B64\uFF0C\u4E5F\u96BE\u4EE5\u60F3\u8C61\u662F\u5982\u4F55\u88AB\u4EBA\u7C7B\u6325\u821E\u8D77\u6765\u7684\u3002"
+    effectString: 
     basicATKMin: 168
     basicATKMax: 240
     basicACC: 60
@@ -1313,8 +1562,11 @@ MonoBehaviour:
   - id: 1500
     name: "\u53CC\u5203\u5F13"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u706B\u795E\u795D\u878D\u795D\u798F\u8FC7\u7684\u5F13\uFF0C\u62E5\u6709\u5C06\u5C04\u51FA\u7684\u7BAD\u9644\u5E26\u706B\u4E4B\u529B\u7684\u80FD\u529B\u3002\u867D\u7136\u662F\u5F13\uFF0C\u4E24\u5934\u5374\u9644\u6709\u5229\u5203\uFF0C\u53EF\u4EE5\u4F5C\u4E3A\u53CC\u5203\u5251\u4F7F\u7528\u3002"
+    effectString: 
     basicATKMin: 15
     basicATKMax: 25
     basicACC: 70
@@ -1332,8 +1584,11 @@ MonoBehaviour:
   - id: 1501
     name: "\u53CC\u5203\u5F13+1"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u706B\u795E\u795D\u878D\u795D\u798F\u8FC7\u7684\u5F13\uFF0C\u62E5\u6709\u5C06\u5C04\u51FA\u7684\u7BAD\u9644\u5E26\u706B\u4E4B\u529B\u7684\u80FD\u529B\u3002\u867D\u7136\u662F\u5F13\uFF0C\u4E24\u5934\u5374\u9644\u6709\u5229\u5203\uFF0C\u53EF\u4EE5\u4F5C\u4E3A\u53CC\u5203\u5251\u4F7F\u7528\u3002"
+    effectString: 
     basicATKMin: 38
     basicATKMax: 63
     basicACC: 72
@@ -1351,8 +1606,11 @@ MonoBehaviour:
   - id: 1502
     name: "\u53CC\u5203\u5F13+2"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u706B\u795E\u795D\u878D\u795D\u798F\u8FC7\u7684\u5F13\uFF0C\u62E5\u6709\u5C06\u5C04\u51FA\u7684\u7BAD\u9644\u5E26\u706B\u4E4B\u529B\u7684\u80FD\u529B\u3002\u867D\u7136\u662F\u5F13\uFF0C\u4E24\u5934\u5374\u9644\u6709\u5229\u5203\uFF0C\u53EF\u4EE5\u4F5C\u4E3A\u53CC\u5203\u5251\u4F7F\u7528\u3002"
+    effectString: 
     basicATKMin: 60
     basicATKMax: 100
     basicACC: 74
@@ -1370,8 +1628,11 @@ MonoBehaviour:
   - id: 1503
     name: "\u53CC\u5203\u5F13+3"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u706B\u795E\u795D\u878D\u795D\u798F\u8FC7\u7684\u5F13\uFF0C\u62E5\u6709\u5C06\u5C04\u51FA\u7684\u7BAD\u9644\u5E26\u706B\u4E4B\u529B\u7684\u80FD\u529B\u3002\u867D\u7136\u662F\u5F13\uFF0C\u4E24\u5934\u5374\u9644\u6709\u5229\u5203\uFF0C\u53EF\u4EE5\u4F5C\u4E3A\u53CC\u5203\u5251\u4F7F\u7528\u3002"
+    effectString: 
     basicATKMin: 75
     basicATKMax: 125
     basicACC: 76
@@ -1389,8 +1650,11 @@ MonoBehaviour:
   - id: 1504
     name: "\u53CC\u5203\u5F13+4"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u706B\u795E\u795D\u878D\u795D\u798F\u8FC7\u7684\u5F13\uFF0C\u62E5\u6709\u5C06\u5C04\u51FA\u7684\u7BAD\u9644\u5E26\u706B\u4E4B\u529B\u7684\u80FD\u529B\u3002\u867D\u7136\u662F\u5F13\uFF0C\u4E24\u5934\u5374\u9644\u6709\u5229\u5203\uFF0C\u53EF\u4EE5\u4F5C\u4E3A\u53CC\u5203\u5251\u4F7F\u7528\u3002"
+    effectString: 
     basicATKMin: 98
     basicATKMax: 163
     basicACC: 78
@@ -1408,8 +1672,11 @@ MonoBehaviour:
   - id: 1505
     name: "\u53CC\u5203\u5F13+5"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u706B\u795E\u795D\u878D\u795D\u798F\u8FC7\u7684\u5F13\uFF0C\u62E5\u6709\u5C06\u5C04\u51FA\u7684\u7BAD\u9644\u5E26\u706B\u4E4B\u529B\u7684\u80FD\u529B\u3002\u867D\u7136\u662F\u5F13\uFF0C\u4E24\u5934\u5374\u9644\u6709\u5229\u5203\uFF0C\u53EF\u4EE5\u4F5C\u4E3A\u53CC\u5203\u5251\u4F7F\u7528\u3002"
+    effectString: 
     basicATKMin: 120
     basicATKMax: 200
     basicACC: 80
@@ -1427,8 +1694,11 @@ MonoBehaviour:
   - id: 1510
     name: "\u72D9\u51FB\u5F29"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u52BF\u5927\u529B\u6C89\u7684\u91CD\u578B\u5F29\u70AE\u3002\u5728\u4E0E\u91CE\u517D\u7684\u6218\u6597\u4E2D\u5F88\u5C11\u6709\u4EBA\u4F7F\u7528\u8FDC\u7A0B\u6B66\u5668\uFF0C\u56E0\u4E3A\u4E00\u65E6\u88AB\u654C\u4EBA\u63A5\u8FD1\u5C06\u9020\u6210\u4E0D\u53EF\u633D\u56DE\u7684\u540E\u679C\u3002\u4F46\u8FD9\u79CD\u5F29\u7684\u53D1\u660E\uFF0C\u4F7F\u5F97\u4EBA\u4EEC\u53EF\u4EE5\u5728\u8FDC\u5904\u5C31\u53EF\u4EE5\u8F83\u4E3A\u5B89\u5168\u5730\u5C06\u517D\u4EEC\u8F70\u6740\u81F3\u6E23\u3002"
+    effectString: 
     basicATKMin: 20
     basicATKMax: 30
     basicACC: 100
@@ -1446,8 +1716,11 @@ MonoBehaviour:
   - id: 1511
     name: "\u72D9\u51FB\u5F29+1"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u52BF\u5927\u529B\u6C89\u7684\u91CD\u578B\u5F29\u70AE\u3002\u5728\u4E0E\u91CE\u517D\u7684\u6218\u6597\u4E2D\u5F88\u5C11\u6709\u4EBA\u4F7F\u7528\u8FDC\u7A0B\u6B66\u5668\uFF0C\u56E0\u4E3A\u4E00\u65E6\u88AB\u654C\u4EBA\u63A5\u8FD1\u5C06\u9020\u6210\u4E0D\u53EF\u633D\u56DE\u7684\u540E\u679C\u3002\u4F46\u8FD9\u79CD\u5F29\u7684\u53D1\u660E\uFF0C\u4F7F\u5F97\u4EBA\u4EEC\u53EF\u4EE5\u5728\u8FDC\u5904\u5C31\u53EF\u4EE5\u8F83\u4E3A\u5B89\u5168\u5730\u5C06\u517D\u4EEC\u8F70\u6740\u81F3\u6E23\u3002"
+    effectString: 
     basicATKMin: 50
     basicATKMax: 75
     basicACC: 100
@@ -1465,8 +1738,11 @@ MonoBehaviour:
   - id: 1512
     name: "\u72D9\u51FB\u5F29+2"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u52BF\u5927\u529B\u6C89\u7684\u91CD\u578B\u5F29\u70AE\u3002\u5728\u4E0E\u91CE\u517D\u7684\u6218\u6597\u4E2D\u5F88\u5C11\u6709\u4EBA\u4F7F\u7528\u8FDC\u7A0B\u6B66\u5668\uFF0C\u56E0\u4E3A\u4E00\u65E6\u88AB\u654C\u4EBA\u63A5\u8FD1\u5C06\u9020\u6210\u4E0D\u53EF\u633D\u56DE\u7684\u540E\u679C\u3002\u4F46\u8FD9\u79CD\u5F29\u7684\u53D1\u660E\uFF0C\u4F7F\u5F97\u4EBA\u4EEC\u53EF\u4EE5\u5728\u8FDC\u5904\u5C31\u53EF\u4EE5\u8F83\u4E3A\u5B89\u5168\u5730\u5C06\u517D\u4EEC\u8F70\u6740\u81F3\u6E23\u3002"
+    effectString: 
     basicATKMin: 80
     basicATKMax: 120
     basicACC: 100
@@ -1484,8 +1760,11 @@ MonoBehaviour:
   - id: 1513
     name: "\u72D9\u51FB\u5F29+3"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u52BF\u5927\u529B\u6C89\u7684\u91CD\u578B\u5F29\u70AE\u3002\u5728\u4E0E\u91CE\u517D\u7684\u6218\u6597\u4E2D\u5F88\u5C11\u6709\u4EBA\u4F7F\u7528\u8FDC\u7A0B\u6B66\u5668\uFF0C\u56E0\u4E3A\u4E00\u65E6\u88AB\u654C\u4EBA\u63A5\u8FD1\u5C06\u9020\u6210\u4E0D\u53EF\u633D\u56DE\u7684\u540E\u679C\u3002\u4F46\u8FD9\u79CD\u5F29\u7684\u53D1\u660E\uFF0C\u4F7F\u5F97\u4EBA\u4EEC\u53EF\u4EE5\u5728\u8FDC\u5904\u5C31\u53EF\u4EE5\u8F83\u4E3A\u5B89\u5168\u5730\u5C06\u517D\u4EEC\u8F70\u6740\u81F3\u6E23\u3002"
+    effectString: 
     basicATKMin: 100
     basicATKMax: 150
     basicACC: 100
@@ -1503,8 +1782,11 @@ MonoBehaviour:
   - id: 1514
     name: "\u72D9\u51FB\u5F29+4"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u52BF\u5927\u529B\u6C89\u7684\u91CD\u578B\u5F29\u70AE\u3002\u5728\u4E0E\u91CE\u517D\u7684\u6218\u6597\u4E2D\u5F88\u5C11\u6709\u4EBA\u4F7F\u7528\u8FDC\u7A0B\u6B66\u5668\uFF0C\u56E0\u4E3A\u4E00\u65E6\u88AB\u654C\u4EBA\u63A5\u8FD1\u5C06\u9020\u6210\u4E0D\u53EF\u633D\u56DE\u7684\u540E\u679C\u3002\u4F46\u8FD9\u79CD\u5F29\u7684\u53D1\u660E\uFF0C\u4F7F\u5F97\u4EBA\u4EEC\u53EF\u4EE5\u5728\u8FDC\u5904\u5C31\u53EF\u4EE5\u8F83\u4E3A\u5B89\u5168\u5730\u5C06\u517D\u4EEC\u8F70\u6740\u81F3\u6E23\u3002"
+    effectString: 
     basicATKMin: 130
     basicATKMax: 195
     basicACC: 100
@@ -1522,8 +1804,11 @@ MonoBehaviour:
   - id: 1515
     name: "\u72D9\u51FB\u5F29+5"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u52BF\u5927\u529B\u6C89\u7684\u91CD\u578B\u5F29\u70AE\u3002\u5728\u4E0E\u91CE\u517D\u7684\u6218\u6597\u4E2D\u5F88\u5C11\u6709\u4EBA\u4F7F\u7528\u8FDC\u7A0B\u6B66\u5668\uFF0C\u56E0\u4E3A\u4E00\u65E6\u88AB\u654C\u4EBA\u63A5\u8FD1\u5C06\u9020\u6210\u4E0D\u53EF\u633D\u56DE\u7684\u540E\u679C\u3002\u4F46\u8FD9\u79CD\u5F29\u7684\u53D1\u660E\uFF0C\u4F7F\u5F97\u4EBA\u4EEC\u53EF\u4EE5\u5728\u8FDC\u5904\u5C31\u53EF\u4EE5\u8F83\u4E3A\u5B89\u5168\u5730\u5C06\u517D\u4EEC\u8F70\u6740\u81F3\u6E23\u3002"
+    effectString: 
     basicATKMin: 160
     basicATKMax: 240
     basicACC: 100
@@ -1541,8 +1826,11 @@ MonoBehaviour:
   - id: 1520
     name: "\u8896\u5F29"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u7ED1\u5728\u624B\u81C2\u4E0A\u7531\u673A\u5173\u5C04\u51FA\u7684\u5F29\u3002\u867D\u7136\u7B97\u4E0D\u4E0A\u4EC0\u4E48\u6B63\u5927\u5149\u660E\u7684\u653B\u51FB\uFF0C\u4E0D\u8FC7\u6218\u4E89\u65F6\u6CA1\u6709\u4EBA\u5728\u610F\u8FD9\u4E9B\u3002"
+    effectString: 
     basicATKMin: 13
     basicATKMax: 23
     basicACC: 90
@@ -1560,8 +1848,11 @@ MonoBehaviour:
   - id: 1521
     name: "\u8896\u5F29+1"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u7ED1\u5728\u624B\u81C2\u4E0A\u7531\u673A\u5173\u5C04\u51FA\u7684\u5F29\u3002\u867D\u7136\u7B97\u4E0D\u4E0A\u4EC0\u4E48\u6B63\u5927\u5149\u660E\u7684\u653B\u51FB\uFF0C\u4E0D\u8FC7\u6218\u4E89\u65F6\u6CA1\u6709\u4EBA\u5728\u610F\u8FD9\u4E9B\u3002"
+    effectString: 
     basicATKMin: 39
     basicATKMax: 58
     basicACC: 90
@@ -1579,8 +1870,11 @@ MonoBehaviour:
   - id: 1522
     name: "\u8896\u5F29+2"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u7ED1\u5728\u624B\u81C2\u4E0A\u7531\u673A\u5173\u5C04\u51FA\u7684\u5F29\u3002\u867D\u7136\u7B97\u4E0D\u4E0A\u4EC0\u4E48\u6B63\u5927\u5149\u660E\u7684\u653B\u51FB\uFF0C\u4E0D\u8FC7\u6218\u4E89\u65F6\u6CA1\u6709\u4EBA\u5728\u610F\u8FD9\u4E9B\u3002"
+    effectString: 
     basicATKMin: 65
     basicATKMax: 92
     basicACC: 90
@@ -1598,8 +1892,11 @@ MonoBehaviour:
   - id: 1523
     name: "\u8896\u5F29+3"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u7ED1\u5728\u624B\u81C2\u4E0A\u7531\u673A\u5173\u5C04\u51FA\u7684\u5F29\u3002\u867D\u7136\u7B97\u4E0D\u4E0A\u4EC0\u4E48\u6B63\u5927\u5149\u660E\u7684\u653B\u51FB\uFF0C\u4E0D\u8FC7\u6218\u4E89\u65F6\u6CA1\u6709\u4EBA\u5728\u610F\u8FD9\u4E9B\u3002"
+    effectString: 
     basicATKMin: 91
     basicATKMax: 115
     basicACC: 100
@@ -1617,8 +1914,11 @@ MonoBehaviour:
   - id: 1524
     name: "\u8896\u5F29+4"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u7ED1\u5728\u624B\u81C2\u4E0A\u7531\u673A\u5173\u5C04\u51FA\u7684\u5F29\u3002\u867D\u7136\u7B97\u4E0D\u4E0A\u4EC0\u4E48\u6B63\u5927\u5149\u660E\u7684\u653B\u51FB\uFF0C\u4E0D\u8FC7\u6218\u4E89\u65F6\u6CA1\u6709\u4EBA\u5728\u610F\u8FD9\u4E9B\u3002"
+    effectString: 
     basicATKMin: 117
     basicATKMax: 150
     basicACC: 100
@@ -1636,8 +1936,11 @@ MonoBehaviour:
   - id: 1525
     name: "\u8896\u5F29+5"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u7ED1\u5728\u624B\u81C2\u4E0A\u7531\u673A\u5173\u5C04\u51FA\u7684\u5F29\u3002\u867D\u7136\u7B97\u4E0D\u4E0A\u4EC0\u4E48\u6B63\u5927\u5149\u660E\u7684\u653B\u51FB\uFF0C\u4E0D\u8FC7\u6218\u4E89\u65F6\u6CA1\u6709\u4EBA\u5728\u610F\u8FD9\u4E9B\u3002"
+    effectString: 
     basicATKMin: 143
     basicATKMax: 184
     basicACC: 100
@@ -1655,8 +1958,11 @@ MonoBehaviour:
   - id: 1600
     name: "\u5DE8\u517D\u4E4B\u7259"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u517D\u7684\u730E\u4EBA\u9633\u6C4E\u7684\u6B66\u5668\u3002\u9633\u6C4E\u662F\u4EBA\u517D\u6218\u4E89\u4E2D\u6700\u8457\u540D\u7684\u52C7\u8005\uFF0C\u4ED6\u4E0D\u4F7F\u7528\u6B66\u5668\uFF0C\u800C\u662F\u76F4\u63A5\u6325\u821E\u4E00\u5934\u5DE8\u517D\u7684\u7259\u9F7F\uFF0C\u7ADF\u4F7F\u5F97\u91CE\u517D\u4E0D\u80FD\u8FD1\u8EAB\u3002\u6D2A\u6C34\u9000\u53BB\u4E4B\u540E\uFF0C\u9633\u6C4E\u5374\u83AB\u540D\u6D88\u5931\u4E86\uFF0C\u6CA1\u6709\u4EBA\u518D\u89C1\u8FC7\u4ED6\u3002"
+    effectString: 
     basicATKMin: 1
     basicATKMax: 30
     basicACC: 40
@@ -1674,8 +1980,11 @@ MonoBehaviour:
   - id: 1601
     name: "\u5DE8\u517D\u4E4B\u7259+1"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u517D\u7684\u730E\u4EBA\u9633\u6C4E\u7684\u6B66\u5668\u3002\u9633\u6C4E\u662F\u4EBA\u517D\u6218\u4E89\u4E2D\u6700\u8457\u540D\u7684\u52C7\u8005\uFF0C\u4ED6\u4E0D\u4F7F\u7528\u6B66\u5668\uFF0C\u800C\u662F\u76F4\u63A5\u6325\u821E\u4E00\u5934\u5DE8\u517D\u7684\u7259\u9F7F\uFF0C\u7ADF\u4F7F\u5F97\u91CE\u517D\u4E0D\u80FD\u8FD1\u8EAB\u3002\u6D2A\u6C34\u9000\u53BB\u4E4B\u540E\uFF0C\u9633\u6C4E\u5374\u83AB\u540D\u6D88\u5931\u4E86\uFF0C\u6CA1\u6709\u4EBA\u518D\u89C1\u8FC7\u4ED6\u3002"
+    effectString: 
     basicATKMin: 1
     basicATKMax: 60
     basicACC: 45
@@ -1693,8 +2002,11 @@ MonoBehaviour:
   - id: 1602
     name: "\u5DE8\u517D\u4E4B\u7259+2"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u517D\u7684\u730E\u4EBA\u9633\u6C4E\u7684\u6B66\u5668\u3002\u9633\u6C4E\u662F\u4EBA\u517D\u6218\u4E89\u4E2D\u6700\u8457\u540D\u7684\u52C7\u8005\uFF0C\u4ED6\u4E0D\u4F7F\u7528\u6B66\u5668\uFF0C\u800C\u662F\u76F4\u63A5\u6325\u821E\u4E00\u5934\u5DE8\u517D\u7684\u7259\u9F7F\uFF0C\u7ADF\u4F7F\u5F97\u91CE\u517D\u4E0D\u80FD\u8FD1\u8EAB\u3002\u6D2A\u6C34\u9000\u53BB\u4E4B\u540E\uFF0C\u9633\u6C4E\u5374\u83AB\u540D\u6D88\u5931\u4E86\uFF0C\u6CA1\u6709\u4EBA\u518D\u89C1\u8FC7\u4ED6\u3002"
+    effectString: 
     basicATKMin: 1
     basicATKMax: 90
     basicACC: 50
@@ -1712,8 +2024,11 @@ MonoBehaviour:
   - id: 1603
     name: "\u5DE8\u517D\u4E4B\u7259+3"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u517D\u7684\u730E\u4EBA\u9633\u6C4E\u7684\u6B66\u5668\u3002\u9633\u6C4E\u662F\u4EBA\u517D\u6218\u4E89\u4E2D\u6700\u8457\u540D\u7684\u52C7\u8005\uFF0C\u4ED6\u4E0D\u4F7F\u7528\u6B66\u5668\uFF0C\u800C\u662F\u76F4\u63A5\u6325\u821E\u4E00\u5934\u5DE8\u517D\u7684\u7259\u9F7F\uFF0C\u7ADF\u4F7F\u5F97\u91CE\u517D\u4E0D\u80FD\u8FD1\u8EAB\u3002\u6D2A\u6C34\u9000\u53BB\u4E4B\u540E\uFF0C\u9633\u6C4E\u5374\u83AB\u540D\u6D88\u5931\u4E86\uFF0C\u6CA1\u6709\u4EBA\u518D\u89C1\u8FC7\u4ED6\u3002"
+    effectString: 
     basicATKMin: 1
     basicATKMax: 120
     basicACC: 55
@@ -1731,8 +2046,11 @@ MonoBehaviour:
   - id: 1604
     name: "\u5DE8\u517D\u4E4B\u7259+4"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u517D\u7684\u730E\u4EBA\u9633\u6C4E\u7684\u6B66\u5668\u3002\u9633\u6C4E\u662F\u4EBA\u517D\u6218\u4E89\u4E2D\u6700\u8457\u540D\u7684\u52C7\u8005\uFF0C\u4ED6\u4E0D\u4F7F\u7528\u6B66\u5668\uFF0C\u800C\u662F\u76F4\u63A5\u6325\u821E\u4E00\u5934\u5DE8\u517D\u7684\u7259\u9F7F\uFF0C\u7ADF\u4F7F\u5F97\u91CE\u517D\u4E0D\u80FD\u8FD1\u8EAB\u3002\u6D2A\u6C34\u9000\u53BB\u4E4B\u540E\uFF0C\u9633\u6C4E\u5374\u83AB\u540D\u6D88\u5931\u4E86\uFF0C\u6CA1\u6709\u4EBA\u518D\u89C1\u8FC7\u4ED6\u3002"
+    effectString: 
     basicATKMin: 1
     basicATKMax: 150
     basicACC: 60
@@ -1750,8 +2068,11 @@ MonoBehaviour:
   - id: 1605
     name: "\u5DE8\u517D\u4E4B\u7259+5"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u517D\u7684\u730E\u4EBA\u9633\u6C4E\u7684\u6B66\u5668\u3002\u9633\u6C4E\u662F\u4EBA\u517D\u6218\u4E89\u4E2D\u6700\u8457\u540D\u7684\u52C7\u8005\uFF0C\u4ED6\u4E0D\u4F7F\u7528\u6B66\u5668\uFF0C\u800C\u662F\u76F4\u63A5\u6325\u821E\u4E00\u5934\u5DE8\u517D\u7684\u7259\u9F7F\uFF0C\u7ADF\u4F7F\u5F97\u91CE\u517D\u4E0D\u80FD\u8FD1\u8EAB\u3002\u6D2A\u6C34\u9000\u53BB\u4E4B\u540E\uFF0C\u9633\u6C4E\u5374\u83AB\u540D\u6D88\u5931\u4E86\uFF0C\u6CA1\u6709\u4EBA\u518D\u89C1\u8FC7\u4ED6\u3002"
+    effectString: 
     basicATKMin: 1
     basicATKMax: 210
     basicACC: 60
@@ -1769,8 +2090,11 @@ MonoBehaviour:
   - id: 1610
     name: "\u5723\u76FE\u4E4B\u73AF"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u56DB\u5468\u9644\u6709\u73AF\u72B6\u5C16\u523A\u7684\u76FE\u3002\u5728\u4E0E\u517D\u6F2B\u957F\u7684\u6297\u4E89\u8FC7\u7A0B\u4E2D\u6709\u4EBA\u53D1\u660E\u4E86\u6B64\u7269\uFF0C\u60F3\u8981\u8BC1\u660E\u6BD4\u8D77\u8FDB\u653B\uFF0C\u9632\u5B88\u624D\u662F\u4E0E\u517D\u6218\u6597\u4E2D\u66F4\u91CD\u8981\u7684\uFF0C\u5374\u88AB\u5632\u7B11\u4E3A\u80C6\u5C0F\u9B3C\uFF0C\u6B66\u5668\u4E5F\u968F\u4E4B\u5931\u843D\u3002"
+    effectString: 
     basicATKMin: 16
     basicATKMax: 20
     basicACC: 60
@@ -1788,8 +2112,11 @@ MonoBehaviour:
   - id: 1611
     name: "\u5723\u76FE\u4E4B\u73AF+1"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u56DB\u5468\u9644\u6709\u73AF\u72B6\u5C16\u523A\u7684\u76FE\u3002\u5728\u4E0E\u517D\u6F2B\u957F\u7684\u6297\u4E89\u8FC7\u7A0B\u4E2D\u6709\u4EBA\u53D1\u660E\u4E86\u6B64\u7269\uFF0C\u60F3\u8981\u8BC1\u660E\u6BD4\u8D77\u8FDB\u653B\uFF0C\u9632\u5B88\u624D\u662F\u4E0E\u517D\u6218\u6597\u4E2D\u66F4\u91CD\u8981\u7684\uFF0C\u5374\u88AB\u5632\u7B11\u4E3A\u80C6\u5C0F\u9B3C\uFF0C\u6B66\u5668\u4E5F\u968F\u4E4B\u5931\u843D\u3002"
+    effectString: 
     basicATKMin: 32
     basicATKMax: 40
     basicACC: 60
@@ -1807,8 +2134,11 @@ MonoBehaviour:
   - id: 1612
     name: "\u5723\u76FE\u4E4B\u73AF+2"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u56DB\u5468\u9644\u6709\u73AF\u72B6\u5C16\u523A\u7684\u76FE\u3002\u5728\u4E0E\u517D\u6F2B\u957F\u7684\u6297\u4E89\u8FC7\u7A0B\u4E2D\u6709\u4EBA\u53D1\u660E\u4E86\u6B64\u7269\uFF0C\u60F3\u8981\u8BC1\u660E\u6BD4\u8D77\u8FDB\u653B\uFF0C\u9632\u5B88\u624D\u662F\u4E0E\u517D\u6218\u6597\u4E2D\u66F4\u91CD\u8981\u7684\uFF0C\u5374\u88AB\u5632\u7B11\u4E3A\u80C6\u5C0F\u9B3C\uFF0C\u6B66\u5668\u4E5F\u968F\u4E4B\u5931\u843D\u3002"
+    effectString: 
     basicATKMin: 48
     basicATKMax: 60
     basicACC: 60
@@ -1826,8 +2156,11 @@ MonoBehaviour:
   - id: 1613
     name: "\u5723\u76FE\u4E4B\u73AF+3"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u56DB\u5468\u9644\u6709\u73AF\u72B6\u5C16\u523A\u7684\u76FE\u3002\u5728\u4E0E\u517D\u6F2B\u957F\u7684\u6297\u4E89\u8FC7\u7A0B\u4E2D\u6709\u4EBA\u53D1\u660E\u4E86\u6B64\u7269\uFF0C\u60F3\u8981\u8BC1\u660E\u6BD4\u8D77\u8FDB\u653B\uFF0C\u9632\u5B88\u624D\u662F\u4E0E\u517D\u6218\u6597\u4E2D\u66F4\u91CD\u8981\u7684\uFF0C\u5374\u88AB\u5632\u7B11\u4E3A\u80C6\u5C0F\u9B3C\uFF0C\u6B66\u5668\u4E5F\u968F\u4E4B\u5931\u843D\u3002"
+    effectString: 
     basicATKMin: 64
     basicATKMax: 80
     basicACC: 60
@@ -1845,8 +2178,11 @@ MonoBehaviour:
   - id: 1614
     name: "\u5723\u76FE\u4E4B\u73AF+4"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u56DB\u5468\u9644\u6709\u73AF\u72B6\u5C16\u523A\u7684\u76FE\u3002\u5728\u4E0E\u517D\u6F2B\u957F\u7684\u6297\u4E89\u8FC7\u7A0B\u4E2D\u6709\u4EBA\u53D1\u660E\u4E86\u6B64\u7269\uFF0C\u60F3\u8981\u8BC1\u660E\u6BD4\u8D77\u8FDB\u653B\uFF0C\u9632\u5B88\u624D\u662F\u4E0E\u517D\u6218\u6597\u4E2D\u66F4\u91CD\u8981\u7684\uFF0C\u5374\u88AB\u5632\u7B11\u4E3A\u80C6\u5C0F\u9B3C\uFF0C\u6B66\u5668\u4E5F\u968F\u4E4B\u5931\u843D\u3002"
+    effectString: 
     basicATKMin: 72
     basicATKMax: 100
     basicACC: 60
@@ -1864,8 +2200,11 @@ MonoBehaviour:
   - id: 1615
     name: "\u5723\u76FE\u4E4B\u73AF+5"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u56DB\u5468\u9644\u6709\u73AF\u72B6\u5C16\u523A\u7684\u76FE\u3002\u5728\u4E0E\u517D\u6F2B\u957F\u7684\u6297\u4E89\u8FC7\u7A0B\u4E2D\u6709\u4EBA\u53D1\u660E\u4E86\u6B64\u7269\uFF0C\u60F3\u8981\u8BC1\u660E\u6BD4\u8D77\u8FDB\u653B\uFF0C\u9632\u5B88\u624D\u662F\u4E0E\u517D\u6218\u6597\u4E2D\u66F4\u91CD\u8981\u7684\uFF0C\u5374\u88AB\u5632\u7B11\u4E3A\u80C6\u5C0F\u9B3C\uFF0C\u6B66\u5668\u4E5F\u968F\u4E4B\u5931\u843D\u3002"
+    effectString: 
     basicATKMin: 108
     basicATKMax: 140
     basicACC: 60
@@ -1883,8 +2222,11 @@ MonoBehaviour:
   - id: 1620
     name: "\u7B56\u5212\u4E4B\u53CB"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u4E0D\u77E5\u4ECE\u4EC0\u4E48\u65F6\u7A7A\u51FA\u73B0\u7684\u7269\u54C1\uFF0C\u7A76\u7ADF\u6709\u4EC0\u4E48\u4F5C\u7528\u4E5F\u65E0\u4EBA\u77E5\u6653\uFF0C\u5982\u679C\u6709\u4EBA\u60F3\u8981\u62FF\u6765\u5F53\u4F5C\u6B66\u5668\uFF0C\u53EF\u80FD\u662F\u8111\u5B50\u51FA\u4E86\u95EE\u9898\u5427\u3002"
+    effectString: 
     basicATKMin: 0
     basicATKMax: 0
     basicACC: 100
@@ -1902,8 +2244,11 @@ MonoBehaviour:
   - id: 3001
     name: "\u54A9\u54A9\u4E4B\u722A"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u54A9\u54A9\u7684\u722A\u5B50\uFF0C\u9020\u6210\u7684\u4F24\u5BB3\u4E0D\u53EF\u8F7B\u89C6\u3002"
+    effectString: 
     basicATKMin: 1
     basicATKMax: 25
     basicACC: 80
@@ -1921,8 +2266,11 @@ MonoBehaviour:
   - id: 3002
     name: "\u54A9\u54A9\u5229\u722A"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u66F4\u52A0\u950B\u5229\u7684\u54A9\u54A9\u4E4B\u722A"
+    effectString: 
     basicATKMin: 25
     basicATKMax: 99
     basicACC: 80
@@ -1940,8 +2288,11 @@ MonoBehaviour:
   - id: 3003
     name: "\u5438\u6C34\u63D0\u5362\u67AA"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u6B64\u67AA\u950B\u5229\u65E0\u6BD4\uFF0C\u81F3\u521A\u81F3\u5F3A\uFF1B\u67AA\u5934\u6709\u5B54\uFF0C\u523A\u5165\u4EBA\u4F53\u53EF\u5438\u8840\uFF0C\u8FDB\u6D78\u5165\u6C34\u4E2D\u53EF\u5438\u6C34\uFF0C\u56E0\u6545\u5F97\u540D\u5438\u6C34\u63D0\u5362\u67AA\u3002"
+    effectString: 
     basicATKMin: 0
     basicATKMax: 0
     basicACC: 0
@@ -1959,8 +2310,11 @@ MonoBehaviour:
   - id: 3004
     name: "\u7384\u9F9F\u4E4B\u58F3"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u7384\u9F9F\u7684\u80CC\u58F3\uFF0C\u575A\u786C\u65E0\u6BD4\uFF0C\u649E\u8FC7\u6765\u7684\u65F6\u5019\u5341\u5206\u5F3A\u529B"
+    effectString: 
     basicATKMin: 0
     basicATKMax: 0
     basicACC: 0
@@ -1978,8 +2332,11 @@ MonoBehaviour:
   - id: 3005
     name: "\u733C\u8A11\u7684\u5168\u8EAB"
     type: 1
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u4F5C\u4E3A\u4E00\u53EA\u4E5D\u6761\u5C3E\u5DF4\uFF0C\u56DB\u53EA\u8033\u6735\uFF0C\u773C\u775B\u957F\u5728\u80CC\u4E0A\u7684\u7F8A\uFF0C\u5B83\u5168\u8EAB\u90FD\u662F\u6B66\u5668"
+    effectString: 
     basicATKMin: 0
     basicATKMax: 0
     basicACC: 0
@@ -1998,8 +2355,11 @@ MonoBehaviour:
   - id: 2000
     name: "\u65E0"
     type: 2
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u6216\u8BB8\u662F\u67D0\u79CD\u795E\u79D8\u7684\u7075\u6C14\u4E4B\u529B"
+    effectString: 
     basicATKMin: 0
     basicATKMax: 0
     basicSPD: 0
@@ -2011,8 +2371,11 @@ MonoBehaviour:
   - id: 2010
     name: "\u7075\u6C14\u7BAD\u5377\u8F74"
     type: 2
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u8BB0\u8F7D\u7740\u6CD5\u672F\u3010\u7075\u6C14\u7BAD\u3011\u7684\u5377\u8F74\u3002\u7075\u6C14\u7BAD\u662F\u6700\u7B80\u5355\u4E5F\u662F\u6700\u7EAF\u51C0\u7684\u7075\u6C14\u6CD5\u672F\uFF0C\u4F46\u5DF2\u5177\u6709\u4E00\u5B9A\u7684\u7834\u574F\u529B\u3002"
+    effectString: 
     basicATKMin: 20
     basicATKMax: 30
     basicSPD: 70
@@ -2024,8 +2387,11 @@ MonoBehaviour:
   - id: 2110
     name: "\u51B0\u5C01\u672F\u5377\u8F74"
     type: 2
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u8BB0\u8F7D\u7740\u6CD5\u672F\u3010\u51B0\u5C01\u672F\u3011\u7684\u5377\u8F74\u3002\u51B0\u5C01\u672F\u662F\u6700\u57FA\u7840\u7684\u9634\u5C5E\u6027\u6CD5\u672F\uFF0C\u5229\u7528\u4E86\u4E16\u95F4\u7684\u9634\u6C14\u4E4B\u529B\u3002"
+    effectString: 
     basicATKMin: 8
     basicATKMax: 16
     basicSPD: 105
@@ -2037,8 +2403,11 @@ MonoBehaviour:
   - id: 2210
     name: "\u9633\u708E\u672F\u5377\u8F74"
     type: 2
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u8BB0\u8F7D\u7740\u6CD5\u672F\u3010\u9633\u708E\u672F\u3011\u7684\u5377\u8F74\u3002\u9633\u708E\u672F\u662F\u6700\u57FA\u7840\u7684\u9633\u5C5E\u6027\u6CD5\u672F\uFF0C\u5229\u7528\u4E86\u4E16\u95F4\u7684\u9633\u6C14\u4E4B\u529B\u3002"
+    effectString: 
     basicATKMin: 12
     basicATKMax: 20
     basicSPD: 80
@@ -2050,8 +2419,11 @@ MonoBehaviour:
   - id: 2020
     name: "\u5F3A\u529B\u7075\u6C14\u7BAD\u4E4B\u4E66"
     type: 2
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u8BB0\u8F7D\u7740\u6CD5\u672F\u3010\u5F3A\u529B\u7075\u6C14\u7BAD\u3011\u7684\u53E4\u4E66\u3002\u5F3A\u529B\u7075\u6C14\u7BAD\u7684\u5A01\u529B\u6BD4\u4E00\u822C\u7684\u7075\u6C14\u7BAD\u8981\u66F4\u5F3A\uFF0C\u529B\u91CF\u4E5F\u66F4\u7EAF\u51C0\u3002"
+    effectString: 
     basicATKMin: 75
     basicATKMax: 99
     basicSPD: 70
@@ -2063,8 +2435,11 @@ MonoBehaviour:
   - id: 2021
     name: "\u7075\u6C14\u5F39\u4E4B\u4E66"
     type: 2
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u8BB0\u8F7D\u7740\u6CD5\u672F\u3010\u7075\u6C14\u5F39\u3011\u7684\u53E4\u4E66\u3002\u7075\u6C14\u5F39\u662F\u4EBA\u4EEC\u5C06\u7075\u6C14\u7BAD\u8FDB\u884C\u6539\u9020\u7684\u6210\u679C\uFF0C\u5176\u9002\u7528\u8303\u56F4\u66F4\u5E7F\u3002"
+    effectString: 
     basicATKMin: 30
     basicATKMax: 60
     basicSPD: 50
@@ -2076,8 +2451,11 @@ MonoBehaviour:
   - id: 2022
     name: "\u7075\u6C14\u4E71\u5C04\u5377\u8F74"
     type: 2
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u8BB0\u8F7D\u7740\u6CD5\u672F\u3010\u7075\u6C14\u4E71\u5C04\u3011\u7684\u5377\u8F74\u3002\u7075\u6C14\u4E71\u5C04\u867D\u7136\u5A01\u529B\u4E0D\u51E1\uFF0C\u4F46\u5176\u4E0D\u53D7\u65BD\u6CD5\u8005\u63A7\u5236\uFF0C\u5F88\u662F\u5371\u9669\u3002"
+    effectString: 
     basicATKMin: 1
     basicATKMax: 50
     basicSPD: 120
@@ -2089,8 +2467,11 @@ MonoBehaviour:
   - id: 2023
     name: "\u7075\u6C14\u5FAA\u73AF\u5377\u8F74"
     type: 2
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u8BB0\u8F7D\u7740\u6CD5\u672F\u3010\u7075\u6C14\u5FAA\u73AF\u3011\u7684\u5377\u8F74\u3002\u7075\u6C14\u5B58\u4E8E\u4E16\u95F4\uFF0C\u820D\u4E4B\u5F97\u4E4B\u3002"
+    effectString: 
     basicATKMin: 0
     basicATKMax: 0
     basicSPD: 25
@@ -2102,8 +2483,11 @@ MonoBehaviour:
   - id: 2120
     name: "\u5F3A\u529B\u51B0\u5C01\u672F\u4E4B\u4E66"
     type: 2
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u8BB0\u8F7D\u7740\u6CD5\u672F\u3010\u5F3A\u529B\u51B0\u5C01\u672F\u3011\u7684\u53E4\u4E66\u3002\u6BD4\u4E00\u822C\u7684\u51B0\u5C01\u672F\u66F4\u5F3A\uFF0C\u66F4\u5BB9\u6613\u4F7F\u654C\u4EBA\u51B0\u51BB\u3002"
+    effectString: 
     basicATKMin: 35
     basicATKMax: 70
     basicSPD: 95
@@ -2115,8 +2499,11 @@ MonoBehaviour:
   - id: 2121
     name: "\u5438\u661F\u672F\u4E4B\u4E66"
     type: 2
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u8BB0\u8F7D\u7740\u6CD5\u672F\u3010\u5438\u661F\u672F\u3011\u7684\u53E4\u4E66\u3002\u6B64\u672F\u53EF\u5438\u53D6\u76EE\u6807\u7075\u6C14\uFF0C\u89C6\u4E3A\u7981\u672F\uFF0C\u7136\u800C\u4ECD\u6709\u4EBA\u5077\u5077\u7EC3\u4E60\u3002"
+    effectString: 
     basicATKMin: 25
     basicATKMax: 50
     basicSPD: 80
@@ -2128,8 +2515,11 @@ MonoBehaviour:
   - id: 2122
     name: "\u72C2\u98CE\u67AA\u5377\u8F74"
     type: 2
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u8BB0\u8F7D\u7740\u6CD5\u672F\u3010\u72C2\u98CE\u67AA\u3011\u7684\u5377\u8F74\u3002\u5C06\u7075\u529B\u878D\u8FDB\u98CE\u4E4B\u529B\u5316\u4E3A\u5C16\u67AA\u63B7\u51FA\uFF0C\u4F24\u5BB3\u53EF\u89C2\u3002"
+    effectString: 
     basicATKMin: 55
     basicATKMax: 65
     basicSPD: 90
@@ -2141,8 +2531,11 @@ MonoBehaviour:
   - id: 2123
     name: "\u7075\u529B\u4FB5\u8680\u5377\u8F74"
     type: 2
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u8BB0\u8F7D\u7740\u6CD5\u672F\u3010\u7075\u529B\u4FB5\u8680\u3011\u7684\u5377\u8F74\u3002\u4E0D\u77E5\u4F55\u4EBA\u521B\u9020\u7684\u90AA\u6076\u6CD5\u672F\uFF0C\u4E0E\u3010\u5438\u661F\u672F\u3011\u540C\u4E3A\u7981\u672F\u3002"
+    effectString: 
     basicATKMin: 0
     basicATKMax: 0
     basicSPD: 50
@@ -2154,8 +2547,11 @@ MonoBehaviour:
   - id: 2220
     name: "\u5F3A\u529B\u9633\u708E\u672F\u4E4B\u4E66"
     type: 2
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u8BB0\u8F7D\u7740\u6CD5\u672F\u3010\u5F3A\u529B\u9633\u708E\u672F\u3011\u7684\u53E4\u4E66\u3002\u6BD4\u4E00\u822C\u7684\u9633\u708E\u672F\u66F4\u5F3A\uFF0C\u66F4\u5BB9\u6613\u4F7F\u654C\u4EBA\u70B9\u71C3\u3002"
+    effectString: 
     basicATKMin: 40
     basicATKMax: 80
     basicSPD: 80
@@ -2167,8 +2563,11 @@ MonoBehaviour:
   - id: 2221
     name: "\u96F7\u66B4\u672F\u4E4B\u4E66"
     type: 2
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u8BB0\u8F7D\u7740\u6CD5\u672F\u3010\u96F7\u66B4\u672F\u3011\u7684\u53E4\u4E66\u3002\u5A01\u529B\u867D\u9AD8\u4F46\u4E0D\u7A33\u5B9A\uFF0C\u4F1A\u4F7F\u654C\u4EBA\u9EBB\u75F9\u3002"
+    effectString: 
     basicATKMin: 60
     basicATKMax: 120
     basicSPD: 60
@@ -2180,8 +2579,11 @@ MonoBehaviour:
   - id: 2222
     name: "\u5723\u5149\u5377\u8F74"
     type: 2
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u8BB0\u8F7D\u7740\u6CD5\u672F\u3010\u5723\u5149\u3011\u7684\u5377\u8F74\u3002\u65E7\u65F6\u4EBA\u4EEC\u4FEE\u70BC\u8FD9\u4E00\u6CD5\u672F\u4EE5\u5F3A\u5065\u81EA\u5DF1\u7684\u4F53\u9B44\uFF0C\u5176\u4F5C\u7528\u6709\u4EBA\u8BF4\u6548\u679C\u5F88\u660E\u663E\uFF0C\u4E5F\u6709\u4EBA\u8BF4\u6CA1\u6709\u611F\u89C9\u5230\u3002"
+    effectString: 
     basicATKMin: 0
     basicATKMax: 0
     basicSPD: 35
@@ -2193,8 +2595,11 @@ MonoBehaviour:
   - id: 2223
     name: "\u7075\u6C14\u51C0\u5316\u5377\u8F74"
     type: 2
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u8BB0\u8F7D\u7740\u6CD5\u672F\u3010\u7075\u6C14\u51C0\u5316\u3011\u7684\u5377\u8F74\u3002\u5229\u7528\u9633\u4E4B\u6C14\u5C06\u4EBA\u7684\u8EAB\u4F53\u5F97\u4EE5\u51C0\u5316\uFF0C\u867D\u7136\u53EF\u4EE5\u53BB\u9664\u8EAB\u4E0A\u7684\u8BC5\u5492\uFF0C\u4F46\u4E00\u4E9B\u597D\u7684\u6548\u679C\u4E5F\u540C\u65F6\u6D41\u5931\u4E86\uFF0C\u6240\u4EE5\u4E0D\u77E5\u662F\u597D\u662F\u574F\u3002"
+    effectString: 
     basicATKMin: 0
     basicATKMax: 0
     basicSPD: 25
@@ -2206,8 +2611,11 @@ MonoBehaviour:
   - id: 2030
     name: "\u7EC8\u6781\u7075\u6C14\u7BAD\u4E4B\u4E66"
     type: 2
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u8BB0\u8F7D\u7740\u6CD5\u672F\u3010\u7EC8\u6781\u7075\u6C14\u7BAD\u3011\u7684\u5377\u8F74\u3002\u8FD9\u662F\u5C06\u7075\u6C14\u7BAD\u8FD9\u4E00\u57FA\u7840\u6CD5\u672F\u4FEE\u70BC\u5230\u6781\u81F4\u7684\u6210\u679C\u3002"
+    effectString: 
     basicATKMin: 120
     basicATKMax: 175
     basicSPD: 60
@@ -2219,8 +2627,11 @@ MonoBehaviour:
   - id: 2031
     name: "\u5F3A\u529B\u7075\u6C14\u5F39\u4E4B\u4E66"
     type: 2
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u8BB0\u8F7D\u7740\u6CD5\u672F\u3010\u5F3A\u529B\u7075\u6C14\u5F39\u3011\u7684\u53E4\u4E66\u3002\u80FD\u591F\u5236\u9020\u66F4\u5927\u66F4\u5F3A\u7684\u7075\u6C14\u5F39\u3002"
+    effectString: 
     basicATKMin: 90
     basicATKMax: 140
     basicSPD: 50
@@ -2232,8 +2643,11 @@ MonoBehaviour:
   - id: 2032
     name: "\u7075\u6C14\u5171\u9E23\u4E4B\u4E66"
     type: 2
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u8BB0\u8F7D\u7740\u6CD5\u672F\u3010\u7075\u6C14\u5171\u9E23\u3011\u7684\u5377\u8F74\u3002\u5C06\u5185\u5728\u7684\u7075\u6C14\u5FAA\u73AF\u6253\u7834\u5E76\u91CA\u653E\uFF0C\u5BF9\u654C\u65B9\u9020\u6210\u4F24\u5BB3\uFF0C\u867D\u7136\u5BF9\u7075\u529B\u5F3A\u7684\u4EBA\u5F88\u6709\u6548\uFF0C\u4F46\u603B\u6709\u6740\u654C\u4E00\u5343\u81EA\u635F\u516B\u767E\u7684\u611F\u89C9\u3002"
+    effectString: 
     basicATKMin: 0
     basicATKMax: 0
     basicSPD: 50
@@ -2245,8 +2659,11 @@ MonoBehaviour:
   - id: 2033
     name: "\u72C2\u5316\u7075\u6C14\u4E71\u5C04\u4E4B\u4E66"
     type: 2
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u8BB0\u8F7D\u7740\u6CD5\u672F\u3010\u72C2\u5316\u7075\u6C14\u4E71\u5C04\u3011\u7684\u53E4\u4E66\u3002\u5A01\u529B\u5927\u7684\u6050\u6016\uFF0C\u4F46\u5982\u679C\u81EA\u8EAB\u610F\u5FD7\u4E0D\u591F\u5F3A\u5927\uFF0C\u4F1A\u88AB\u6CD5\u672F\u7684\u529B\u91CF\u672C\u8EAB\u53CD\u566C\u3002"
+    effectString: 
     basicATKMin: 100
     basicATKMax: 250
     basicSPD: 150
@@ -2258,8 +2675,11 @@ MonoBehaviour:
   - id: 2034
     name: "\u7075\u4E4B\u5E7B\u5883\u5377\u8F74"
     type: 2
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u8BB0\u8F7D\u7740\u6CD5\u672F\u3010\u7075\u4E4B\u5E7B\u5883\u3011\u7684\u5377\u8F74\u3002\u5F3A\u5927\u7684\u7075\u6C14\u4E4B\u529B\u53EF\u4EE5\u4EA7\u751F\u5E7B\u5883\uFF0C\u4EE5\u7075\u6C14\u4E3B\u4EBA\u7684\u610F\u5FD7\u9644\u52A0\u529B\u91CF\uFF0C\u4F46\u5176\u6D88\u8017\u4E5F\u662F\u76F8\u5F53\u53EF\u89C2\u7684\u3002"
+    effectString: 
     basicATKMin: 0
     basicATKMax: 0
     basicSPD: 20
@@ -2271,8 +2691,11 @@ MonoBehaviour:
   - id: 2130
     name: "\u7EC8\u6781\u51B0\u5C01\u672F\u4E4B\u4E66"
     type: 2
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u8BB0\u8F7D\u7740\u6CD5\u672F\u3010\u7EC8\u6781\u51B0\u5C01\u672F\u3011\u7684\u53E4\u4E66\u3002\u9634\u5C5E\u6027\u6CD5\u672F\u4FEE\u70BC\u5230\u4E00\u5B9A\u5883\u754C\u7684\u8FBE\u4EBA\u53EF\u4EE5\u638C\u63E1\u7684\u62DB\u5F0F\u3002"
+    effectString: 
     basicATKMin: 87
     basicATKMax: 124
     basicSPD: 105
@@ -2284,8 +2707,11 @@ MonoBehaviour:
   - id: 2131
     name: "\u6697\u4E4B\u539F\u529B\u4E4B\u4E66"
     type: 2
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u8BB0\u8F7D\u7740\u6CD5\u672F\u3010\u6697\u4E4B\u539F\u529B\u3011\u7684\u53E4\u4E66\u3002\u636E\u8BF4\u6697\u662F\u9634\u6CD5\u672F\u7684\u672C\u8D28\uFF0C\u53EF\u6697\u672C\u8EAB\u7A76\u7ADF\u662F\u4EC0\u4E48\u5462\uFF1F"
+    effectString: 
     basicATKMin: 119
     basicATKMax: 156
     basicSPD: 75
@@ -2297,8 +2723,11 @@ MonoBehaviour:
   - id: 2132
     name: "\u6708\u4E4B\u9886\u57DF\u4E4B\u4E66"
     type: 2
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u8BB0\u8F7D\u7740\u6CD5\u672F\u3010\u6708\u4E4B\u9886\u57DF\u3011\u7684\u53E4\u4E66\u3002\u5F3A\u5927\u7684\u7075\u6C14\u4E4B\u529B\u53EF\u4EE5\u4EA7\u751F\u5E7B\u5883\uFF0C\u4EE5\u7075\u6C14\u4E3B\u4EBA\u7684\u610F\u5FD7\u9644\u52A0\u529B\u91CF\uFF0C\u4F46\u5176\u6D88\u8017\u4E5F\u662F\u76F8\u5F53\u53EF\u89C2\u7684\u3002"
+    effectString: 
     basicATKMin: 0
     basicATKMax: 0
     basicSPD: 20
@@ -2310,8 +2739,11 @@ MonoBehaviour:
   - id: 2133
     name: "\u8BC5\u5492\u5377\u8F74"
     type: 2
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u8BB0\u8F7D\u7740\u6CD5\u672F\u3010\u8BC5\u5492\u3011\u7684\u5377\u8F74\u3002\u8FD9\u4E00\u65E0\u6BD4\u9ED1\u6697\u7684\u6CD5\u672F\u4E0D\u77E5\u4E3A\u4F55\u4EBA\u53D1\u660E\uFF0C\u4E5F\u4E0D\u77E5\u6700\u521D\u662F\u7528\u4E8E\u4F55\u5904\uFF0C\u8FD8\u662F\u4E0D\u8981\u7EC6\u60F3\u4E3A\u597D\u3002"
+    effectString: 
     basicATKMin: 0
     basicATKMax: 0
     basicSPD: 100
@@ -2323,8 +2755,11 @@ MonoBehaviour:
   - id: 2134
     name: "\u7075\u6C14\u5077\u53D6\u5377\u8F74"
     type: 2
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u8BB0\u8F7D\u7740\u6CD5\u672F\u3010\u7075\u6C14\u5077\u53D6\u3011\u7684\u5377\u8F74\u3002\u79D8\u5BC6\u7814\u7A76\u3010\u5438\u661F\u672F\u3011\u7684\u5B66\u5F92\u5728\u5176\u57FA\u7840\u4E0A\u7814\u5236\u6210\u7684\u6CD5\u672F\uFF0C\u80FD\u591F\u5B9E\u73B0\u66F4\u4E3A\u5F7B\u5E95\u7684\u7075\u529B\u5438\u53D6\u3002"
+    effectString: 
     basicATKMin: 0
     basicATKMax: 0
     basicSPD: 80
@@ -2336,8 +2771,11 @@ MonoBehaviour:
   - id: 2230
     name: "\u7EC8\u6781\u9633\u708E\u672F\u4E4B\u4E66"
     type: 2
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u8BB0\u8F7D\u7740\u6CD5\u672F\u3010\u7EC8\u6781\u9633\u708E\u672F\u3011\u7684\u53E4\u4E66\u3002\u9633\u5C5E\u6027\u6CD5\u672F\u4FEE\u70BC\u5230\u4E00\u5B9A\u5883\u754C\u7684\u8FBE\u4EBA\u53EF\u4EE5\u638C\u63E1\u7684\u62DB\u5F0F\u3002"
+    effectString: 
     basicATKMin: 99
     basicATKMax: 138
     basicSPD: 95
@@ -2349,8 +2787,11 @@ MonoBehaviour:
   - id: 2231
     name: "\u5149\u4E4B\u539F\u529B\u4E4B\u4E66"
     type: 2
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u8BB0\u8F7D\u7740\u6CD5\u672F\u3010\u5149\u4E4B\u539F\u529B\u3011\u7684\u53E4\u4E66\u3002\u636E\u8BF4\u5149\u662F\u9633\u6CD5\u672F\u7684\u672C\u8D28\uFF0C\u53EF\u5149\u672C\u8EAB\u7A76\u7ADF\u662F\u4EC0\u4E48\u5462\uFF1F"
+    effectString: 
     basicATKMin: 147
     basicATKMax: 169
     basicSPD: 65
@@ -2362,8 +2803,11 @@ MonoBehaviour:
   - id: 2232
     name: "\u65E5\u4E4B\u9886\u57DF\u4E4B\u4E66"
     type: 2
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u8BB0\u8F7D\u7740\u6CD5\u672F\u3010\u65E5\u4E4B\u9886\u57DF\u3011\u7684\u53E4\u4E66\u3002\u5F3A\u5927\u7684\u7075\u6C14\u4E4B\u529B\u53EF\u4EE5\u4EA7\u751F\u5E7B\u5883\uFF0C\u4EE5\u7075\u6C14\u4E3B\u4EBA\u7684\u610F\u5FD7\u9644\u52A0\u529B\u91CF\uFF0C\u4F46\u5176\u6D88\u8017\u4E5F\u662F\u76F8\u5F53\u53EF\u89C2\u7684\u3002"
+    effectString: 
     basicATKMin: 0
     basicATKMax: 0
     basicSPD: 20
@@ -2375,8 +2819,11 @@ MonoBehaviour:
   - id: 2233
     name: "\u5929\u542F\u5377\u8F74"
     type: 2
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u8BB0\u8F7D\u7740\u6CD5\u672F\u3010\u5929\u542F\u3011\u7684\u5377\u8F74\u3002\u53EC\u5524\u795E\u7684\u6124\u6012\uFF0C\u65E0\u5DEE\u522B\u5730\u653B\u51FB\u6240\u6709\u4EBA\u3002"
+    effectString: 
     basicATKMin: 255
     basicATKMax: 255
     basicSPD: 200
@@ -2388,8 +2835,11 @@ MonoBehaviour:
   - id: 2234
     name: "\u7075\u6C14\u8FC7\u8F7D\u5377\u8F74"
     type: 2
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u8BB0\u8F7D\u7740\u6CD5\u672F\u3010\u7075\u6C14\u8FC7\u8F7D\u3011\u7684\u5377\u8F74\u3002\u8FD9\u4E00\u6CD5\u672F\u867D\u7136\u53EF\u4EE5\u6682\u65F6\u4F7F\u7075\u529B\u8005\u53D8\u5F97\u65E0\u6BD4\u5F3A\u5927\uFF0C\u5374\u4E5F\u4F1A\u4ECE\u5185\u90E8\u5C06\u5176\u541E\u566C\uFF0C\u8FD9\u4FBF\u662F\u529B\u91CF\u672C\u8EAB\u7684\u4EE3\u4EF7\u5417\u3002"
+    effectString: 
     basicATKMin: 0
     basicATKMax: 0
     basicSPD: 100
@@ -2401,8 +2851,11 @@ MonoBehaviour:
   - id: 2040
     name: "\u7075\u566C\u4E4B\u5370"
     type: 2
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u638C\u63E1\u4E86\u79D8\u672F\u3010\u7075\u566C\u3011\u7684\u6807\u8BC6\u3002\u8FD9\u4E00\u79D8\u672F\u662F\u7075\u6C14\u5927\u5E08[\u5409\u5B89]\u6BD5\u751F\u7684\u7814\u7A76\u6210\u679C\uFF0C\u5A01\u529B\u65E0\u7A77\u3002"
+    effectString: 
     basicATKMin: 200
     basicATKMax: 255
     basicSPD: 50
@@ -2414,8 +2867,11 @@ MonoBehaviour:
   - id: 2041
     name: "\u7075\u7206\u4E4B\u5370"
     type: 2
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u638C\u63E1\u4E86\u79D8\u672F\u3010\u7075\u7206\u3011\u7684\u6807\u8BC6\u3002\u8FD9\u4E00\u79D8\u672F\u662F\u7075\u6C14\u5927\u5E08[\u5C14\u5C3C]\u6BD5\u751F\u7684\u7814\u7A76\u6210\u679C\uFF0C\u5A01\u529B\u65E0\u7A77\u3002"
+    effectString: 
     basicATKMin: 150
     basicATKMax: 192
     basicSPD: 50
@@ -2427,8 +2883,11 @@ MonoBehaviour:
   - id: 2042
     name: "\u7075\u529B\u89E3\u653E\u4E4B\u5370"
     type: 2
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u638C\u63E1\u4E86\u79D8\u672F\u3010\u7075\u529B\u89E3\u653E\u3011\u7684\u6807\u8BC6\u3002\u8FD9\u662F\u7EC4\u7EC7\u79C1\u4E0B\u7814\u5236\u7684\u79D8\u672F\uFF0C\u80FD\u591F\u6FC0\u53D1\u4EBA\u4F53\u6F5C\u80FD\u66F4\u597D\u5730\u5229\u7528\u7075\u529B\uFF0C\u4F46\u636E\u8BF4\u51E0\u6B21\u5B9E\u9A8C\u7EB7\u7EB7\u4EE5\u5931\u8D25\u544A\u7EC8\u3002"
+    effectString: 
     basicATKMin: 0
     basicATKMax: 0
     basicSPD: 33
@@ -2440,8 +2899,11 @@ MonoBehaviour:
   - id: 2140
     name: "\u9ED1\u6697\u6D2A\u6D41\u4E4B\u5370"
     type: 2
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u638C\u63E1\u4E86\u79D8\u672F\u3010\u9ED1\u6697\u6D2A\u6D41\u3011\u7684\u6807\u8BC6\u3002\u5C06\u9ED1\u6697\u4E4B\u529B\u4ECE\u9634\u95F4\u53EC\u5524\u800C\u6765\u7684\u79D8\u672F\uFF0C\u5176\u4E2D\u6DF7\u5408\u7740\u8BC5\u5492\uFF0C\u6216\u662F\u66F4\u52A0\u975E\u4EBA\u4E4B\u7269\u3002"
+    effectString: 
     basicATKMin: 142
     basicATKMax: 197
     basicSPD: 75
@@ -2453,8 +2915,11 @@ MonoBehaviour:
   - id: 2141
     name: "\u6697\u6708\u5F71\u4E4B\u5370"
     type: 2
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u638C\u63E1\u4E86\u79D8\u672F\u3010\u6697\u6708\u9B54\u5F71\u3011\u7684\u6807\u8BC6\u3002\u7528\u5F71\u7684\u529B\u91CF\u53D8\u51FA\u5206\u8EAB\u8DDF\u968F\u81EA\u5DF1\u653B\u51FB\uFF0C\u6781\u4E3A\u8017\u8D39\u5143\u795E\u3002"
+    effectString: 
     basicATKMin: 0
     basicATKMax: 0
     basicSPD: 2000
@@ -2466,8 +2931,11 @@ MonoBehaviour:
   - id: 2240
     name: "\u592A\u9633\u98CE\u66B4\u4E4B\u5370"
     type: 2
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u638C\u63E1\u4E86\u79D8\u672F\u3010\u592A\u9633\u98CE\u66B4\u3011\u7684\u6807\u8BC6\u3002\u5982\u592A\u9633\u8FD1\u5728\u773C\u524D\u822C\u7684\u706B\u7130\u98CE\u66B4\u51E0\u4E4E\u53EF\u4EE5\u541E\u566C\u4E00\u5207\uFF0C\u8FD9\u5C31\u662F\u795E\u6012\u5417\u3002"
+    effectString: 
     basicATKMin: 176
     basicATKMax: 224
     basicSPD: 50
@@ -2479,8 +2947,11 @@ MonoBehaviour:
   - id: 2241
     name: "\u5149\u8F89\u7075\u76FE\u4E4B\u5370"
     type: 2
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u638C\u63E1\u4E86\u79D8\u672F\u3010\u5149\u8F89\u7075\u76FE\u3011\u7684\u6807\u8BC6\u3002\u7528\u5149\u7684\u529B\u91CF\u521B\u9020\u4E00\u4E2A\u62A4\u76FE\uFF0C\u80FD\u591F\u5438\u6536\u4F24\u5BB3\u5E76\u8FD4\u8FD8\u7ED9\u5BF9\u624B\u3002"
+    effectString: 
     basicATKMin: 0
     basicATKMax: 0
     basicSPD: 33
@@ -2492,8 +2963,11 @@ MonoBehaviour:
   - id: 4001
     name: "\u54A9\u54A9\u7684\u6124\u6012"
     type: 2
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u7075\u5C5E\u6027\uFF0C\u9020\u6210\u968F\u673A\u4F24\u5BB3"
+    effectString: 
     basicATKMin: 10
     basicATKMax: 30
     basicSPD: 100
@@ -2505,8 +2979,11 @@ MonoBehaviour:
   - id: 4005
     name: "\u7EA2\u5149\u7B2C\u4E00\u4E2A\u6CD5\u672F"
     type: 2
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u6216\u8BB8\u662F\u67D0\u79CD\u795E\u79D8\u7684\u7075\u6C14\u4E4B\u529B"
+    effectString: 
     basicATKMin: 0
     basicATKMax: 0
     basicSPD: 0
@@ -2518,8 +2995,11 @@ MonoBehaviour:
   - id: 4006
     name: "\u7EA2\u5149\u7B2C\u4E8C\u4E2A\u6CD5\u672F"
     type: 2
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u6216\u8BB8\u662F\u67D0\u79CD\u795E\u79D8\u7684\u7075\u6C14\u4E4B\u529B"
+    effectString: 
     basicATKMin: 0
     basicATKMax: 0
     basicSPD: 0
@@ -2531,8 +3011,11 @@ MonoBehaviour:
   - id: 4007
     name: "\u9F9F\u7F29\u4E4B\u672F"
     type: 2
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u5C06\u8EAB\u4F53\u7F29\u5165\u58F3\u4E2D\uFF0C\u53EF\u4EE5\u56DE\u590D\u4F53\u529B\uFF0C\u5E76\u4E14\u9632\u5FA1\u529B\u5927\u589E"
+    effectString: 
     basicATKMin: 0
     basicATKMax: 0
     basicSPD: 0
@@ -2544,8 +3027,11 @@ MonoBehaviour:
   - id: 4008
     name: "\u5E7D\u7075\u7684\u6CE8\u89C6"
     type: 2
+    usedInBattle: 0
+    targetType: 0
     shortDesc: 
     description: "\u201C\u88AB\u5E7D\u7075\u6CE8\u89C6\u7740\uFF0C\u4E0D\u81EA\u89C9\u5730\u5168\u8EAB\u9165\u9EBB\uFF0C\u7EF5\u8F6F\u65E0\u529B\u201D"
+    effectString: 
     basicATKMin: 0
     basicATKMax: 0
     basicSPD: 0

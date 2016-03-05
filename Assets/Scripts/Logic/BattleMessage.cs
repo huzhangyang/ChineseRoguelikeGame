@@ -112,7 +112,7 @@ public class BattleMessage : MonoBehaviour {
 		string name = args.GetMessage<string>("Name");
 		int amount = args.GetMessage<int>("Amount");
 		int curHP = args.GetMessage<int>("CurrentHP");
-		AddMessage(name + " 回复了 " + amount + "点生命，现在生命值为 " + curHP + "!");
+		AddMessage(name + " 回复了 " + amount + "点生命!");
 	}
 
 	void OnBattleObjectCounter(MessageEventArgs args)

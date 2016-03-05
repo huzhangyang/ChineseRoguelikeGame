@@ -239,6 +239,18 @@ public abstract class BattleObject : MonoBehaviour {
 		return data.GetMagics();
 	}
 
+	public Dictionary<int, int> GetItemList()
+	{
+		Dictionary<int, int> returnVal = new Dictionary<int, int>();
+		foreach(var item in data.GetItemDict())
+		{
+			ItemData itemData = DataManager.Instance.GetItemDataSet().GetItemData(item.Key);
+			if(itemData.usedInBattle)
+				returnVal.Add(item.Key, item.Value);
+		}
+		return returnVal;
+	}
+
 	public BattleType GetBattleType()
 	{
 		return data.battleType;

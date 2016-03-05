@@ -116,7 +116,6 @@ public class BattleFormula {
 		{
 			target.battleStatus = BattleStatus.Prepare;
 			target.timelinePosition = 0;
-			//BattleManager.Instance.RemoveFromCommandQueue(target.commandToExecute);
 			MessageEventArgs args = new MessageEventArgs();
 			args.AddMessage("Name", target.GetName());
 			EventManager.Instance.PostEvent(BattleEvent.BattleObjectInterrupted, args);

@@ -62,7 +62,10 @@ public abstract class Command {
 					availableCommands.Add(new CommandSwitchWeapon(weaponID));
 			}
 		}
-		availableCommands.Add(new CommandUseHealing(bo.GetItemCount(1)));
+		foreach(var item in bo.GetItemList())
+		{
+			availableCommands.Add(new CommandUseItem(item.Key, item.Value));
+		}
 		//检查策略
 		availableCommands.Add(new CommandNone());
 		availableCommands.Add(new CommandEscape());
