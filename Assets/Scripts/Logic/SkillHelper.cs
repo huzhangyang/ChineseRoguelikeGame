@@ -102,6 +102,7 @@ public class SkillHelper
 		{
 		case TargetType.SingleEnemy:
 		case TargetType.SingleAlly:
+		case TargetType.OtherAlly:
 			return false;
 		case TargetType.Self:
 			source.commandToExecute.targetList.Add(source);

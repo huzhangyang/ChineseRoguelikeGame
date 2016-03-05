@@ -74,8 +74,8 @@ public abstract class BattleObject : MonoBehaviour {
 	public Command commandToExecute = new CommandNone();
 	public Damage damage;//击出的伤害
 	public Damage damageTaken;//受到的伤害
-	public List<Command> availableCommands = new List<Command>();
-	public List<Buff> buffList = new List<Buff>();
+	public List<Command> availableCommands = new List<Command>();//可用指令
+	public List<Buff> buffList = new List<Buff>();//激活buff
 
 	public bool isDead = false;//是否已经死了
 	public bool isBlocking = false;//是否正在格挡
@@ -84,6 +84,8 @@ public abstract class BattleObject : MonoBehaviour {
 	public bool isHealingBottleUsed = false;//是否使用过元素瓶
 	public bool isRecovering{get{return timelinePosition < 0;}}
 	public float buffFrozenTime = 0;//冰冻BUFF剩余时间
+	public BattleObject guardTarget = null;//守护对象
+	public BattleObject guardedTarget = null;//被守护对象
 
 	protected BattleObjectUIEvent UIEvent;
 	protected ObjectData data;
@@ -141,6 +143,11 @@ public abstract class BattleObject : MonoBehaviour {
 		isBlocking = false;
 		isEvading = false;
 		battleStatus = BattleStatus.Ready;
+		if(guardedTarget != null)
+		{
+			guardedTarget.guardTarget = null;
+			guardedTarget = null;
+		}
 
 		if(data.battleType == BattleType.Physical)
 		{//自愈机制

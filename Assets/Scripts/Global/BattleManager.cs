@@ -130,6 +130,15 @@ public class BattleManager : MonoBehaviour {
 				player.GetComponent<BattleObjectUIEvent>().EnableClick();
 			}
 			break;
+		case TargetType.OtherAlly:
+			foreach(Player player in players)
+			{
+				if(player != currentPlayer)
+				{
+					player.GetComponent<BattleObjectUIEvent>().EnableClick();
+				}
+			}
+			break;
 		default:
 			EventManager.Instance.PostEvent(BattleEvent.OnCommandSelected);
 			break;
@@ -206,6 +215,14 @@ public class BattleManager : MonoBehaviour {
 			return players[UnityEngine.Random.Range (0, players.Count)];
 		else
 			return enemys[UnityEngine.Random.Range (0, enemys.Count)];
+	}
+
+	public BattleObject GetARandomAlly(BattleObject bo)
+	{
+		if (bo.isEnemy)
+			return enemys[UnityEngine.Random.Range (0, players.Count)];
+		else
+			return players[UnityEngine.Random.Range (0, enemys.Count)];
 	}
 
 	public List<BattleObject> GetAllEnemies(BattleObject bo)

@@ -54,10 +54,29 @@ public class EnemyAI : MonoBehaviour {
 		bool result = SkillHelper.FillCommandTarget(self);
 		if(!result)
 		{
-			if(self.commandToExecute.targetType == TargetType.SingleEnemy)
+			switch(self.commandToExecute.targetType)
+			{
+			case TargetType.SingleEnemy:
 				self.commandToExecute.targetList.Add(BattleManager.Instance.GetARandomEnemy(self));
-			else
-				self.commandToExecute.targetList.Add(self);
+				break;
+			case TargetType.SingleAlly:
+				self.commandToExecute.targetList.Add(BattleManager.Instance.GetARandomAlly(self));
+				break;
+			case TargetType.OtherAlly:
+				while(true)
+				{
+					BattleObject ally = BattleManager.Instance.GetARandomAlly(self);
+					if(ally != self)
+					{
+						self.commandToExecute.targetList.Add(ally);
+						break;
+					}
+				}
+				break;
+			default:
+				EventManager.Instance.PostEvent(BattleEvent.OnCommandSelected);
+				break;
+			}
 		}
 	}
 
