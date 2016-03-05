@@ -8,7 +8,7 @@ public class ItemEffectHealingMagic:ItemEffect
 		if(source.GetBattleType() != BattleType.Physical)
 		{
 			source.maxHPMulti += 0.5f;
-			source.currentHP = source.maxHP;
+			BattleFormula.Heal(source, (int)(source.maxHP - source.currentHP));
 			source.isHealingBottleUsed = true;
 		}
 	}

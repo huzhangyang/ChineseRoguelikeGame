@@ -95,7 +95,7 @@ public class BattleFormula {
 	
 	public static void Heal(BattleObject target, int amount)
 	{
-		if(amount < 0) amount = 0;
+		if(amount <= 0) return;
 		target.currentHP += amount;
 
 		target.GetComponent<BattleObjectUIEvent>().OnHeal();
