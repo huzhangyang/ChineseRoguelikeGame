@@ -11,15 +11,11 @@ public class ItemPanel : MonoBehaviour {
 	private PlayerData playerData;
 	private ViewMode viewMode;
 
-	void Start()
-	{
-		SetData();
-	}
-
 	void OnEnable()
 	{
 		EventManager.Instance.RegisterEvent(UIEvent.OnSwitchLeader, OnSwitchLeader);
 		EventManager.Instance.RegisterEvent(UIEvent.OnItemClicked, OnItemClicked);
+		SetData();
 	}
 
 	void OnDisable()

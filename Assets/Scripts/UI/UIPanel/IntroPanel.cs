@@ -39,8 +39,6 @@ public class IntroPanel : MonoBehaviour {
 			MessageEventArgs args = new MessageEventArgs();
 			args.AddMessage("WindowID", UIWindowID.LoadingWindow);
 			EventManager.Instance.PostEvent(UIEvent.OpenUIWindow, args);
-
-			this.gameObject.SetActive(false);
 		}
 
 	}

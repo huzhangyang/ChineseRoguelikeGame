@@ -14,12 +14,13 @@ public class PlayerPanel: MonoBehaviour {
 
 	void Start()
 	{
-		SetData();
+
 	}
 	
 	void OnEnable()
 	{
 		EventManager.Instance.RegisterEvent(UIEvent.OnSwitchLeader, OnSwitchLeader);
+		SetData();
 	}
 	
 	void OnDisable()
