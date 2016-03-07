@@ -7,5 +7,6 @@ public class SkillEffectMoneyDamage:SkillEffect
 	{//TODO
 		source.damage.minDmg = 6;
 		source.damage.maxDmg = 648;
+		source.damage.ignoreArmor = true;
 	}
 }

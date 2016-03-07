@@ -8,5 +8,6 @@ public class SkillEffectInstantKill:SkillEffect
 		int targetHP = source.damage.target.currentHP;
 		source.damage.minDmg = targetHP;
 		source.damage.maxDmg = targetHP;
+		source.damage.ignoreArmor = true;
 	}
 }
