@@ -282,7 +282,7 @@ public class BattleManager : MonoBehaviour {
 				continue;
 			}
 			cmd.source.GetComponent<BattleObjectUIEvent>().BeginExecute();
-			yield return cmd.OnExecute();
+			yield return StartCoroutine(cmd.OnExecute());
 			cmd.source.GetComponent<BattleObjectUIEvent>().EndExecute();
 		}
 		ResumeEveryOne();
