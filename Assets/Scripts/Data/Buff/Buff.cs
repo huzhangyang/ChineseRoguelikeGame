@@ -6,6 +6,7 @@ using System.Reflection;
 public abstract class Buff {
 
 	public int id{get{return data.id;}}
+	public bool isBornBuff{get{return data.bornBuff;}}
 	public int effectTurns;
 	protected BuffData data;
 	protected BattleObject source;
@@ -38,13 +39,18 @@ public abstract class Buff {
 
 		if(effectTurns == 0)
 		{
-			this.Revert();	
-			RemoveBuffIcon();
+			Remove();
 		}
 		else
 		{
 			Check(BuffTrigger.Ready);
 		}
+	}
+
+	public void Remove()
+	{
+		Revert();	
+		RemoveBuffIcon();
 	}
 
 	/*-----BUFF CALLBACK-----*/

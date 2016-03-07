@@ -10,7 +10,7 @@ public class BuffExcited:Buff
 		source.speedMulti += 0.2f;
 		
 		MessageEventArgs args = new MessageEventArgs ();
-		args.AddMessage("Message",string.Format("{0}变得激昂了！", source.GetName()));
+		args.AddMessage("Message",string.Format("{0}因为<激昂>,能力上升!", source.GetName()));
 		EventManager.Instance.PostEvent (BattleEvent.OnBuffActivated, args);
 	}
 	
@@ -24,5 +24,9 @@ public class BuffExcited:Buff
 		source.attackMulti -= 0.2f;
 		source.defenceMulti -= 0.2f;
 		source.speedMulti -= 0.2f;
+
+		MessageEventArgs args = new MessageEventArgs ();
+		args.AddMessage("Message",string.Format("{0}不再<激昂>了!", source.GetName()));
+		EventManager.Instance.PostEvent (BattleEvent.OnBuffDeactivated, args);
 	}
 }

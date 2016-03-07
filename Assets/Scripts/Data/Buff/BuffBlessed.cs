@@ -12,7 +12,7 @@ public class BuffBlessed:Buff
 		source.damageTaken.dmg = 0;
 		source.damageTaken.interrupt = 0;
 		MessageEventArgs args = new MessageEventArgs ();
-		args.AddMessage("Message",string.Format("{0}因为祝福完全抵御了此次伤害！", source.GetName()));
+		args.AddMessage("Message",string.Format("{0}因为<祝福>,完全抵御了此次伤害!", source.GetName()));
 		EventManager.Instance.PostEvent (BattleEvent.OnBuffActivated, args);
 		source.buffList.Remove(this);
 	}

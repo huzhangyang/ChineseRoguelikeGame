@@ -224,6 +224,23 @@ public abstract class BattleObject : MonoBehaviour {
 		}
 	}
 
+	public void ClearBuff()
+	{
+		List<Buff> toRemoveList = new List<Buff>();
+		foreach(Buff buff in buffList)
+		{
+			if(!buff.isBornBuff)
+			{
+				buff.Remove();
+				toRemoveList.Add(buff);
+			}
+		}
+		foreach(Buff buff in toRemoveList)
+		{
+			buffList.Remove(buff);	
+		}
+	}
+
 	public string GetName()
 	{
 		return data.name;

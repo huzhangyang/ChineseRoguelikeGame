@@ -9,7 +9,7 @@ public class BuffFrozen:Buff
 		source.buffFrozenTime = 5;
 		
 		MessageEventArgs args = new MessageEventArgs ();
-		args.AddMessage("Message",string.Format("{0}被冰冻了！", source.GetName()));
+		args.AddMessage("Message",string.Format("{0}因为<冰冻>,暂时不能行动!", source.GetName()));
 		EventManager.Instance.PostEvent (BattleEvent.OnBuffActivated, args);
 	}
 
@@ -23,7 +23,7 @@ public class BuffFrozen:Buff
 		source.buffFrozenTime = 0;
 
 		MessageEventArgs args = new MessageEventArgs ();
-		args.AddMessage("Message",string.Format("{0}解除了冰冻！", source.GetName()));
+		args.AddMessage("Message",string.Format("{0}不再<冰冻>了!", source.GetName()));
 		EventManager.Instance.PostEvent (BattleEvent.OnBuffDeactivated, args);
 	}
 }
