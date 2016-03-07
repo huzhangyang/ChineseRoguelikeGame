@@ -11,7 +11,7 @@ public enum SkillType{None, Slash, Blunt, Thrust, Neutral, Yin, Yang}
 public enum BuffTrigger{Always, Dead, Ready, Action, Behit, AfterDamage} 
 public enum EffectTrigger{SwitchWeapon, OnHit, AfterHit} 
 public enum ItemType{Consumable, Weapon, Magic, Accessory, KeyItem}
-public enum BattleStatus{Prepare, Ready, Action, Recover}
+public enum BattleStatus{Prepare, Ready, Action}
 
 public class GlobalDataStructure{
 	//path

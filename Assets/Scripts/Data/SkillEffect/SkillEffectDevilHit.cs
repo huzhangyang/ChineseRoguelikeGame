@@ -14,6 +14,7 @@ public class SkillEffectDevilHit:SkillEffect
 		else
 		{
 			source.damage.target = source;
+			source.damageTaken = source.damage;
 		}
 	}
 }
