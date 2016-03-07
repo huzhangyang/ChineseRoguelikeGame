@@ -109,7 +109,7 @@ MonoBehaviour:
     postSPDMultiplier: 1
     interruptMultiplier: 2
     maxCombo: 0
-    buffID: 04000000
+    buffID: 69000000
     buffPercent: 05000000
     buffTurns: ffffffff
     effectID: 68000000
@@ -177,7 +177,7 @@ MonoBehaviour:
     postSPDMultiplier: 1
     interruptMultiplier: 3
     maxCombo: 0
-    buffID: 02000000
+    buffID: 65000000
     buffPercent: 32000000
     buffTurns: 05000000
     effectID: 69000000
@@ -228,7 +228,7 @@ MonoBehaviour:
     postSPDMultiplier: 1
     interruptMultiplier: 0
     maxCombo: 0
-    buffID: 02000000
+    buffID: 65000000
     buffPercent: 64000000
     buffTurns: 05000000
     effectID: 
@@ -296,7 +296,7 @@ MonoBehaviour:
     postSPDMultiplier: .300000012
     interruptMultiplier: 3
     maxCombo: 0
-    buffID: 0e000000
+    buffID: 71000000
     buffPercent: 14000000
     buffTurns: 03000000
     effectID: 
@@ -313,7 +313,7 @@ MonoBehaviour:
     postSPDMultiplier: .5
     interruptMultiplier: 2
     maxCombo: 0
-    buffID: 03000000
+    buffID: 66000000
     buffPercent: 64000000
     buffTurns: 03000000
     effectID: 
@@ -432,7 +432,7 @@ MonoBehaviour:
     postSPDMultiplier: 1
     interruptMultiplier: 1
     maxCombo: 0
-    buffID: 08000000
+    buffID: 6b000000
     buffPercent: 32000000
     buffTurns: 01000000
     effectID: 
@@ -500,7 +500,7 @@ MonoBehaviour:
     postSPDMultiplier: 1
     interruptMultiplier: 1
     maxCombo: 0
-    buffID: 05000000
+    buffID: 6a000000
     buffPercent: 0a000000
     buffTurns: 05000000
     effectID: 68000000
@@ -534,7 +534,7 @@ MonoBehaviour:
     postSPDMultiplier: 1
     interruptMultiplier: 0
     maxCombo: 0
-    buffID: 06000000
+    buffID: 68000000
     buffPercent: 14000000
     buffTurns: ffffffff
     effectID: 
@@ -551,7 +551,7 @@ MonoBehaviour:
     postSPDMultiplier: 1
     interruptMultiplier: 0
     maxCombo: 0
-    buffID: 09000000
+    buffID: 6e000000
     buffPercent: 14000000
     buffTurns: 05000000
     effectID: 
@@ -602,7 +602,7 @@ MonoBehaviour:
     postSPDMultiplier: .300000012
     interruptMultiplier: 1
     maxCombo: 0
-    buffID: 0a000000
+    buffID: 6f000000
     buffPercent: 64000000
     buffTurns: 01000000
     effectID: 
@@ -619,7 +619,7 @@ MonoBehaviour:
     postSPDMultiplier: 1
     interruptMultiplier: 1
     maxCombo: 0
-    buffID: 07000000
+    buffID: 67000000
     buffPercent: 0a000000
     buffTurns: 03000000
     effectID: 
@@ -636,7 +636,7 @@ MonoBehaviour:
     postSPDMultiplier: 1
     interruptMultiplier: 0
     maxCombo: 0
-    buffID: 07000000
+    buffID: 67000000
     buffPercent: 64000000
     buffTurns: 03000000
     effectID: 
@@ -942,7 +942,7 @@ MonoBehaviour:
     postSPDMultiplier: 0
     interruptMultiplier: 1
     maxCombo: 0
-    buffID: 04000000
+    buffID: 69000000
     buffPercent: 0a000000
     buffTurns: ffffffff
     effectID: 
@@ -959,7 +959,7 @@ MonoBehaviour:
     postSPDMultiplier: 0
     interruptMultiplier: 1
     maxCombo: 0
-    buffID: 04000000
+    buffID: 69000000
     buffPercent: 14000000
     buffTurns: ffffffff
     effectID: 
@@ -1010,7 +1010,7 @@ MonoBehaviour:
     postSPDMultiplier: 0
     interruptMultiplier: 1
     maxCombo: 0
-    buffID: 06000000
+    buffID: 68000000
     buffPercent: 64000000
     buffTurns: ffffffff
     effectID: 
@@ -1027,7 +1027,7 @@ MonoBehaviour:
     postSPDMultiplier: 0
     interruptMultiplier: 1
     maxCombo: 0
-    buffID: 04000000
+    buffID: 69000000
     buffPercent: 14000000
     buffTurns: ffffffff
     effectID: 
@@ -1044,7 +1044,7 @@ MonoBehaviour:
     postSPDMultiplier: 0
     interruptMultiplier: 1
     maxCombo: 0
-    buffID: 0a000000
+    buffID: 6f000000
     buffPercent: 14000000
     buffTurns: 01000000
     effectID: 
@@ -1146,7 +1146,7 @@ MonoBehaviour:
     postSPDMultiplier: 0
     interruptMultiplier: 1
     maxCombo: 0
-    buffID: 05000000
+    buffID: 6a000000
     buffPercent: 0a000000
     buffTurns: 05000000
     effectID: 
@@ -1163,7 +1163,7 @@ MonoBehaviour:
     postSPDMultiplier: 0
     interruptMultiplier: 1
     maxCombo: 0
-    buffID: 05000000
+    buffID: 6a000000
     buffPercent: 14000000
     buffTurns: 05000000
     effectID: 
@@ -1180,7 +1180,7 @@ MonoBehaviour:
     postSPDMultiplier: 0
     interruptMultiplier: 1
     maxCombo: 0
-    buffID: 07000000
+    buffID: 73000000
     buffPercent: 0a000000
     buffTurns: 03000000
     effectID: 
@@ -1231,7 +1231,7 @@ MonoBehaviour:
     postSPDMultiplier: 0
     interruptMultiplier: 1
     maxCombo: 0
-    buffID: 05000000
+    buffID: 6a000000
     buffPercent: 14000000
     buffTurns: 05000000
     effectID: 
@@ -1316,7 +1316,7 @@ MonoBehaviour:
     postSPDMultiplier: 0
     interruptMultiplier: 1
     maxCombo: 0
-    buffID: 0e000000
+    buffID: 73000000
     buffPercent: 14000000
     buffTurns: 05000000
     effectID: 
@@ -1618,144 +1618,150 @@ MonoBehaviour:
     buffEffect: None
     bornBuff: 1
   - id: 1
-    name: "\u4E0D\u6B7B"
+    name: "\u7075\u6C14\u4E4B\u8EAB"
     description: "\u65E0\u8BBA\u5982\u4F55\u4E5F\u4E0D\u4F1A\u6B7B\u4EA1"
     trigger: 1
     buffEffect: Revive
     bornBuff: 1
   - id: 2
+    name: "\u6B66\u5668\u72C2\u4EBA"
+    description: "\u4E0D\u80FD\u4F7F\u7528\u9632\u5FA1\u548C\u7B56\u7565"
+    trigger: 2
+    buffEffect: NoStrategy
+    bornBuff: 1
+  - id: 101
     name: "\u6D41\u8840"
-    description: "\u751F\u547D\u503C\u51CF\u5C11\u6700\u5927\u751F\u547D\u503C\u76845%"
+    description: "\u6BCF\u56DE\u5408\u6D41\u5931\u6700\u5927\u751F\u547D\u503C\u76845%"
     trigger: 2
     buffEffect: Bleed
     bornBuff: 0
-  - id: 3
+  - id: 102
     name: "\u6C14\u865A"
-    description: "\u6700\u5927\u751F\u547D\u503C\u964D\u4F4E50%"
+    description: "\u7075\u6C14\u503C\u4E0A\u9650\u4E0B\u964D50%"
     trigger: 0
     buffEffect: Weak
     bornBuff: 1
-  - id: 4
-    name: "\u51B0\u51BB"
-    description: "\u65F6\u95F4\u8F74\u4E0A\u505C\u6B625\u79D2"
-    trigger: 0
-    buffEffect: Frozen
-    bornBuff: 0
-  - id: 5
-    name: "\u70E7\u4F24"
-    description: "\u653B\u9632\u4E0B\u964D50%"
-    trigger: 0
-    buffEffect: Burnt
-    bornBuff: 0
-  - id: 6
-    name: "\u4E2D\u6BD2"
-    description: "\u9010\u6E10\u6D41\u5931\u751F\u547D"
-    trigger: 2
-    buffEffect: Poison
-    bornBuff: 0
-  - id: 7
+  - id: 103
     name: "\u9EBB\u75F9"
-    description: "\u547D\u4E2D\u56DE\u907F\u66B4\u51FB\u6297\u66B4\u4E0B\u964D"
+    description: "[\u91D1]\u547D\u4E2D\u3001\u56DE\u907F\u3001\u66B4\u51FB\u3001\u6297\u66B4\u4E0B\u964D25%"
     trigger: 0
     buffEffect: Paralized
     bornBuff: 1
-  - id: 8
+  - id: 104
+    name: "\u4E2D\u6BD2"
+    description: "[\u6728]\u6BCF\u56DE\u5408\u9010\u6E10\u6D41\u5931\u751F\u547D"
+    trigger: 2
+    buffEffect: Poison
+    bornBuff: 0
+  - id: 105
+    name: "\u51B0\u51BB"
+    description: "[\u6C34]5\u79D2\u949F\u884C\u52A8"
+    trigger: 0
+    buffEffect: Frozen
+    bornBuff: 0
+  - id: 106
+    name: "\u707C\u4F24"
+    description: "[\u706B]\u653B\u51FB\u3001\u9632\u5FA1\u4E0B\u964D50%"
+    trigger: 0
+    buffEffect: Burnt
+    bornBuff: 0
+  - id: 107
     name: "\u51FB\u5012"
-    description: "\u56DE\u5230\u65F6\u95F4\u8F740\u70B9\uFF0C\u5E76\u4E14\u5BB9\u6613\u88AB\u66B4\u51FB"
+    description: "[\u571F]\u91CD\u65B0\u5F00\u59CB\u56DE\u5408\uFF0C\u4E14\u5BB9\u6613\u53D7\u5230\u66B4\u51FB"
     trigger: 4
     buffEffect: Knockout
     bornBuff: 1
-  - id: 9
+  - id: 110
     name: "\u72C2\u4E71"
     description: "\u653B\u51FB\u529B\u4E0A\u5347\uFF0C\u4F46\u884C\u52A8\u4E0D\u53D7\u9650\u5236\u4E14\u53EF\u80FD\u653B\u51FB\u53CB\u65B9"
     trigger: 2
     buffEffect: Bezerk
     bornBuff: 1
-  - id: 10
+  - id: 111
     name: "\u5931\u9B42"
     description: "\u53EA\u80FD\u9009\u62E9[\u8DF3\u8FC7]"
     trigger: 2
     buffEffect: Insane
     bornBuff: 1
-  - id: 11
+  - id: 112
     name: "\u795D\u798F"
     description: "\u5B8C\u5168\u62B5\u5FA1\u4E0B\u6B21\u4F24\u5BB3"
     trigger: 4
     buffEffect: Blessed
     bornBuff: 0
-  - id: 12
+  - id: 113
     name: "\u9738\u4F53"
     description: "\u4E0D\u4F1A\u88AB\u51FB\u9000"
     trigger: 4
     buffEffect: Endure
     bornBuff: 0
-  - id: 13
+  - id: 114
     name: "\u8BC5\u5492"
     description: "\u9020\u6210\u7684\u4F24\u5BB3100%\u53CD\u566C\u7ED9\u81EA\u5DF1"
     trigger: 5
     buffEffect: Cursed
     bornBuff: 1
-  - id: 14
+  - id: 115
     name: "\u6FC0\u6602"
     description: "\u653B\u9632\u901F\u4E0A\u534720%"
     trigger: 0
     buffEffect: Excited
     bornBuff: 1
-  - id: 101
+  - id: 201
     name: "\u7075\u6C14\u5FAA\u73AF"
     description: "\u5E76\u6CA1\u6709\u7279\u6B8A\u6548\u679C"
     trigger: 0
     buffEffect: None
     bornBuff: 1
-  - id: 102
+  - id: 202
     name: "\u7075\u6C14\u5171\u9E23"
     description: "\u5E76\u6CA1\u6709\u7279\u6B8A\u6548\u679C"
     trigger: 0
     buffEffect: None
     bornBuff: 1
-  - id: 103
+  - id: 203
     name: "\u7075\u529B\u89E3\u653E"
     description: "\u5E76\u6CA1\u6709\u7279\u6B8A\u6548\u679C"
     trigger: 0
     buffEffect: None
     bornBuff: 1
-  - id: 104
+  - id: 204
     name: "\u7075\u6C14\u5077\u53D6"
     description: "\u5E76\u6CA1\u6709\u7279\u6B8A\u6548\u679C"
     trigger: 0
     buffEffect: None
     bornBuff: 1
-  - id: 105
+  - id: 205
     name: "\u6697\u6708\u9B54\u5F71"
     description: "\u5E76\u6CA1\u6709\u7279\u6B8A\u6548\u679C"
     trigger: 0
     buffEffect: None
     bornBuff: 1
-  - id: 106
+  - id: 206
     name: "\u7075\u6C14\u8FC7\u8F7D"
     description: "\u5E76\u6CA1\u6709\u7279\u6B8A\u6548\u679C"
     trigger: 0
     buffEffect: None
     bornBuff: 1
-  - id: 107
+  - id: 207
     name: "\u5149\u8F89\u7075\u76FE"
     description: "\u5E76\u6CA1\u6709\u7279\u6B8A\u6548\u679C"
     trigger: 0
     buffEffect: None
     bornBuff: 1
-  - id: 201
+  - id: 210
     name: "\u7075\u4E4B\u5E7B\u5883"
     description: "\u5E76\u6CA1\u6709\u7279\u6B8A\u6548\u679C"
     trigger: 0
     buffEffect: None
     bornBuff: 1
-  - id: 202
+  - id: 211
     name: "\u6708\u4E4B\u9886\u57DF"
     description: "\u5E76\u6CA1\u6709\u7279\u6B8A\u6548\u679C"
     trigger: 0
     buffEffect: None
     bornBuff: 1
-  - id: 203
+  - id: 212
     name: "\u65E5\u4E4B\u9886\u57DF"
     description: "\u5E76\u6CA1\u6709\u7279\u6B8A\u6548\u679C"
     trigger: 0

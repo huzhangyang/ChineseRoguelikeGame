@@ -608,7 +608,7 @@ MonoBehaviour:
     skill1ID: 1201
     skill2ID: 1202
     skill3ID: 1203
-    buffID: 02000000
+    buffID: 65000000
     buffPercent: 0a000000
     buffTurns: 05000000
     effectID: 00000000
@@ -630,7 +630,7 @@ MonoBehaviour:
     skill1ID: 1201
     skill2ID: 1202
     skill3ID: 1203
-    buffID: 02000000
+    buffID: 65000000
     buffPercent: 0b000000
     buffTurns: 05000000
     effectID: 00000000
@@ -652,7 +652,7 @@ MonoBehaviour:
     skill1ID: 1201
     skill2ID: 1202
     skill3ID: 1203
-    buffID: 02000000
+    buffID: 65000000
     buffPercent: 0c000000
     buffTurns: 05000000
     effectID: 00000000
@@ -674,7 +674,7 @@ MonoBehaviour:
     skill1ID: 1201
     skill2ID: 1202
     skill3ID: 1203
-    buffID: 02000000
+    buffID: 65000000
     buffPercent: 0d000000
     buffTurns: 05000000
     effectID: 00000000
@@ -696,7 +696,7 @@ MonoBehaviour:
     skill1ID: 1201
     skill2ID: 1202
     skill3ID: 1203
-    buffID: 02000000
+    buffID: 65000000
     buffPercent: 0e000000
     buffTurns: 05000000
     effectID: 00000000
@@ -718,7 +718,7 @@ MonoBehaviour:
     skill1ID: 1201
     skill2ID: 1202
     skill3ID: 1203
-    buffID: 02000000
+    buffID: 65000000
     buffPercent: 0f000000
     buffTurns: 05000000
     effectID: 00000000
@@ -916,7 +916,7 @@ MonoBehaviour:
     skill1ID: 1301
     skill2ID: 1302
     skill3ID: 1304
-    buffID: 03000000
+    buffID: 66000000
     buffPercent: 0a000000
     buffTurns: 03000000
     effectID: 00000000
@@ -938,7 +938,7 @@ MonoBehaviour:
     skill1ID: 1301
     skill2ID: 1302
     skill3ID: 1304
-    buffID: 03000000
+    buffID: 66000000
     buffPercent: 0b000000
     buffTurns: 03000000
     effectID: 00000000
@@ -960,7 +960,7 @@ MonoBehaviour:
     skill1ID: 1301
     skill2ID: 1302
     skill3ID: 1304
-    buffID: 03000000
+    buffID: 66000000
     buffPercent: 0c000000
     buffTurns: 03000000
     effectID: 00000000
@@ -982,7 +982,7 @@ MonoBehaviour:
     skill1ID: 1301
     skill2ID: 1302
     skill3ID: 1304
-    buffID: 03000000
+    buffID: 66000000
     buffPercent: 0d000000
     buffTurns: 03000000
     effectID: 00000000
@@ -1004,7 +1004,7 @@ MonoBehaviour:
     skill1ID: 1301
     skill2ID: 1302
     skill3ID: 1304
-    buffID: 03000000
+    buffID: 66000000
     buffPercent: 0e000000
     buffTurns: 03000000
     effectID: 00000000
@@ -1026,7 +1026,7 @@ MonoBehaviour:
     skill1ID: 1301
     skill2ID: 1302
     skill3ID: 1304
-    buffID: 03000000
+    buffID: 66000000
     buffPercent: 0f000000
     buffTurns: 03000000
     effectID: 00000000
