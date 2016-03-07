@@ -17,10 +17,10 @@ public class CommandUseMagicSkill : Command
 		this.skillID = skillID;
 	}
 
-	public override void Execute()
+	protected override void SetExecuteMessage()
 	{
 		SkillData skillData = DataManager.Instance.GetSkillDataSet().GetSkillData(skillID);
-
+		
 		if(source.GetBattleType() == BattleType.Magical)
 		{
 			MagicData magicData = DataManager.Instance.GetItemDataSet().GetMagicDataBySkillID(skillID);
@@ -32,9 +32,10 @@ public class CommandUseMagicSkill : Command
 		{
 			executeMessage = source.GetName() + "使用了" + skillData.name + "!" ;
 		}
+	}
 
-		SendExecuteMessage ();
-
+	protected override void Execute()
+	{
 		foreach(BattleObject target in targetList)
 		{
 			BattleFormula.CalculateSkill(source, target, skillID, false);

@@ -13,10 +13,13 @@ public class CommandBlock : Command
 		postExecutionRecover = 0;
 	}
 
-	public override void Execute()
+	protected override void SetExecuteMessage()
 	{
 		executeMessage = source.GetName() + "试图格挡！";
-		SendExecuteMessage ();
+	}
+
+	protected override void Execute()
+	{
 		source.isBlocking = true;
 	}
 }

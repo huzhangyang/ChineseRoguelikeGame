@@ -281,9 +281,8 @@ public class BattleManager : MonoBehaviour {
 				Debug.LogWarning(ex.ToString());
 				continue;
 			}
-			cmd.Execute();
 			cmd.source.GetComponent<BattleObjectUIEvent>().BeginExecute();
-			yield return new WaitForSeconds(1);
+			yield return cmd.OnExecute();
 			cmd.source.GetComponent<BattleObjectUIEvent>().EndExecute();
 		}
 		ResumeEveryOne();

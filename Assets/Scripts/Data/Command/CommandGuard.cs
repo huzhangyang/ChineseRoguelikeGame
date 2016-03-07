@@ -13,11 +13,14 @@ public class CommandGuard : Command
 		preExecutionSpeed = GlobalDataStructure.BATTLE_MAXSPEED;
 		postExecutionRecover = 0;
 	}
-	
-	public override void Execute()
+
+	protected override void SetExecuteMessage()
 	{
 		executeMessage = String.Format("{0}正在守护{1}！",source.GetName(),targetList[0].GetName());
-		SendExecuteMessage ();
+	}
+	
+	protected override void Execute()
+	{
 		targetList[0].guardTarget = source;
 		source.guardedTarget = targetList[0];
 	}

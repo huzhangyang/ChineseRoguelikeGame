@@ -13,10 +13,13 @@ public class CommandEscape : Command
 		postExecutionRecover = 0;
 	}
 
-	public override void Execute()
+	protected override void SetExecuteMessage()
 	{
 		executeMessage = source.GetName() + "逃跑了！";
-		SendExecuteMessage ();
+	}
+
+	protected override void Execute()
+	{
 		EventManager.Instance.PostEvent(BattleEvent.BattleObjectEscape);
 	}
 }

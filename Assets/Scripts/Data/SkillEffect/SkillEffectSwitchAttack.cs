@@ -9,6 +9,6 @@ public class SkillEffectSwitchAttack:SkillEffect
 		CommandUseWeaponSkill command = new CommandUseWeaponSkill(weaponData, weaponData.skill1ID);
 		command.source = this.source;
 		command.targetList.Add(BattleManager.Instance.GetARandomEnemy(source));
-		command.Execute();
+		BattleManager.Instance.AddToCommandQueue(command);
 	}
 }

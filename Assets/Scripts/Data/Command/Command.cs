@@ -17,18 +17,23 @@ public abstract class Command {
 	public List<BattleObject> targetList = new List<BattleObject>();//执行目标
 	public string executeMessage;//执行时显示的信息 
 
-	public abstract void Execute ();
-	public virtual bool IsAvailable()
-	{
-		return true;
-	}
+	protected abstract void Execute ();
+	protected abstract void SetExecuteMessage();
+	public virtual bool IsAvailable(){return true;}
 
-	protected void SendExecuteMessage()
+	private void SendExecuteMessage()
 	{
-		//send message
 		MessageEventArgs args = new MessageEventArgs();
 		args.AddMessage("Message", executeMessage);
 		EventManager.Instance.PostEvent(BattleEvent.OnCommandExecute, args);
+	}
+
+	public IEnumerator OnExecute()
+	{
+		SetExecuteMessage();
+		SendExecuteMessage();
+		yield return new WaitForSeconds(1);
+		Execute();
 	}
 
 	public static List<Command> GetAvailableCommands(BattleObject bo)
