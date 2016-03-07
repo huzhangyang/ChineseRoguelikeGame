@@ -1864,3 +1864,8 @@ MonoBehaviour:
     description: "\u8FFD\u52A09\u6B21\u4F24\u5BB3\u7ED3\u7B97\uFF0C\u4F46\u672A\u547D\u4E2D\u65F6\u505C\u6B62"
     trigger: 1
     effectString: Combo10
+  - id: 109
+    name: "\u65E0\u89C6\u5B88\u62A4\u72B6\u6001"
+    description: "\u65E0\u89C6\u5B88\u62A4\u5BF9\u8C61\u5F3A\u5236\u547D\u4E2D\u76EE\u6807"
+    trigger: 1
+    effectString: IgnoreGuard

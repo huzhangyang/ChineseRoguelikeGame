@@ -43,7 +43,7 @@ public class BattleFormula {
 		SkillHelper.CheckSkillEffect (EffectTrigger.OnHit, source);//检查命中前生效的特效
 
 		//守护效果
-		if(target.guardTarget != null)
+		if(!damagePack.ignoreGuard && target.guardTarget != null)
 		{
 			target = target.guardTarget;
 			damagePack.target = target;
