@@ -32,6 +32,8 @@ public class SettingPanel : MonoBehaviour {
 	{
 		this.gameObject.SetActive(false);
 
+		DataManager.Instance.UnLoadAllData();
+
 		MessageEventArgs arg = new MessageEventArgs();
 		arg.AddMessage("WindowID", UIWindowID.IntroWindow);
 		EventManager.Instance.PostEvent(UIEvent.OpenUIWindow, arg);
