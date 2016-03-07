@@ -27,7 +27,7 @@ MonoBehaviour:
     targetType: 0
     shortDesc: "\u56DE\u590D\u751F\u547D\u503C\u81F380%"
     description: "\u6536\u96C6\u4E86\u7075\u836F\u7684\u7EA2\u8272\u74F6\u5B50\uFF0C\u996E\u4E0B\u5176\u4E2D\u7684\u6DB2\u4F53\u53EF\u56DE\u590D\u751F\u547D\u3002"
-    effectString: ItemEffectHealingPhysic
+    effectString: HealingPhysic
   - id: 2
     name: "\u7075\u6C14\u74F6"
     type: 0

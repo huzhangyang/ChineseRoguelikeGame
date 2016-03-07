@@ -219,7 +219,7 @@ MonoBehaviour:
   - id: 1206
     name: "\u732E\u8EAB"
     description: "\u5207\u5F00\u81EA\u5DF1\u7684\u8EAB\u4F53\uFF0C\u8FDB\u5165\u6D41\u8840\u72B6\u6001\u3002"
-    skillType: 1
+    skillType: 0
     targetType: 0
     ATKMultiplier: 1
     ACCMultiplier: 1
@@ -338,7 +338,7 @@ MonoBehaviour:
   - id: 1306
     name: "\u7EDD\u6280\uFF1A\u5236\u88C1"
     description: "\u5236\u88C1\u5BF9\u624B\uFF0C\u4F46\u624B\u4E0B\u7559\u60C5\u3002\u6548\u679C\u4E0E\u53CC\u65B9\u7684\u5B9E\u529B\u5DEE\u8DDD\u6709\u5173\u3002"
-    skillType: 2
+    skillType: 0
     targetType: 1
     ATKMultiplier: 2.5
     ACCMultiplier: 1.29999995
