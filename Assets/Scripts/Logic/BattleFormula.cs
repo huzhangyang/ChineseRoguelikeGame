@@ -122,8 +122,9 @@ public class BattleFormula {
 		target.timelinePosition -= Mathf.RoundToInt(target.damageTaken.interrupt);
 		if(target.battleStatus == BattleStatus.Action && target.timelinePosition < GlobalDataStructure.BATTLE_TIMELINE_READY)
 		{
-			target.battleStatus = BattleStatus.Prepare;
 			target.timelinePosition = 0;
+			target.battleStatus = BattleStatus.Prepare;
+			target.commandToExecute = new CommandNone();
 			MessageEventArgs args = new MessageEventArgs();
 			args.AddMessage("Name", target.GetName());
 			EventManager.Instance.PostEvent(BattleEvent.BattleObjectInterrupted, args);

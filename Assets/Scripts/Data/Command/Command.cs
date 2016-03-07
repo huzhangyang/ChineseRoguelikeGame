@@ -34,6 +34,7 @@ public abstract class Command {
 		SendExecuteMessage();
 		yield return new WaitForSeconds(1);
 		Execute();
+		source.PostExecute();
 	}
 
 	public static List<Command> GetAvailableCommands(BattleObject bo)

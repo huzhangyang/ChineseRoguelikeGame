@@ -200,7 +200,10 @@ public abstract class BattleObject : MonoBehaviour {
 		SkillHelper.CheckBuff (BuffTrigger.Action, this);
 		//decide command
 		BattleManager.Instance.AddToCommandQueue (commandToExecute);
-		//post process
+	}
+
+	public void PostExecute()
+	{
 		timelinePosition = -commandToExecute.postExecutionRecover * BattleAttribute.Speed(this);//后退距离 = 帧 * 步进
 		battleStatus = BattleStatus.Prepare;
 		commandToExecute = new CommandNone();
