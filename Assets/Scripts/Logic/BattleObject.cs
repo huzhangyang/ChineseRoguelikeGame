@@ -233,6 +233,7 @@ public abstract class BattleObject : MonoBehaviour {
 		{
 			if(buff.id == id)
 			{
+				buff.Remove();
 				buffList.Remove(buff);	
 				break;
 			}
