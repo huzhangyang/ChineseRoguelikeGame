@@ -9,6 +9,7 @@ public enum TargetType{Self, SingleEnemy, AllEnemies, SingleAlly, AllAllies, Eve
 public enum BattleType{Physical, Magical, Both}
 public enum SkillType{None, Slash, Blunt, Thrust, Neutral, Yin, Yang} 
 public enum BuffTrigger{Always, Dead, Ready, Action, Behit, AfterDamage} 
+public enum BuffAddTrigger{TargetAfterDamage = 0, SelfAfterDamage = 1, Self = 2}
 public enum EffectTrigger{SwitchWeapon, OnHit, AfterHit} 
 public enum ItemType{Consumable, Weapon, Magic, Accessory, KeyItem}
 public enum BattleStatus{Prepare, Ready, Action}

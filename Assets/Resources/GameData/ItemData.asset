@@ -190,11 +190,12 @@ MonoBehaviour:
     skill1ID: 0
     skill2ID: 0
     skill3ID: 0
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
+    effectID: 
+    effectPercent: 
   - id: 1100
     name: "\u9C7C\u80A0"
     type: 1
@@ -212,9 +213,10 @@ MonoBehaviour:
     skill1ID: 1101
     skill2ID: 1102
     skill3ID: 1103
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
     effectID: 0100000002000000
     effectPercent: 6400000001000000
   - id: 1101
@@ -234,9 +236,10 @@ MonoBehaviour:
     skill1ID: 1101
     skill2ID: 1102
     skill3ID: 1103
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
     effectID: 0100000002000000
     effectPercent: 6400000001000000
   - id: 1102
@@ -256,9 +259,10 @@ MonoBehaviour:
     skill1ID: 1101
     skill2ID: 1102
     skill3ID: 1103
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
     effectID: 0100000002000000
     effectPercent: 6400000002000000
   - id: 1103
@@ -278,9 +282,10 @@ MonoBehaviour:
     skill1ID: 1101
     skill2ID: 1102
     skill3ID: 1103
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
     effectID: 0100000002000000
     effectPercent: 6400000003000000
   - id: 1104
@@ -300,9 +305,10 @@ MonoBehaviour:
     skill1ID: 1101
     skill2ID: 1102
     skill3ID: 1103
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
     effectID: 0100000002000000
     effectPercent: 6400000004000000
   - id: 1105
@@ -322,9 +328,10 @@ MonoBehaviour:
     skill1ID: 1101
     skill2ID: 1102
     skill3ID: 1103
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
     effectID: 0100000002000000
     effectPercent: 6400000005000000
   - id: 1110
@@ -344,9 +351,10 @@ MonoBehaviour:
     skill1ID: 1101
     skill2ID: 1102
     skill3ID: 1104
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
     effectID: 01000000
     effectPercent: 64000000
   - id: 1111
@@ -366,9 +374,10 @@ MonoBehaviour:
     skill1ID: 1101
     skill2ID: 1102
     skill3ID: 1104
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
     effectID: 01000000
     effectPercent: 64000000
   - id: 1112
@@ -388,9 +397,10 @@ MonoBehaviour:
     skill1ID: 1101
     skill2ID: 1102
     skill3ID: 1104
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
     effectID: 01000000
     effectPercent: 64000000
   - id: 1113
@@ -410,9 +420,10 @@ MonoBehaviour:
     skill1ID: 1101
     skill2ID: 1102
     skill3ID: 1104
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
     effectID: 01000000
     effectPercent: 64000000
   - id: 1114
@@ -432,9 +443,10 @@ MonoBehaviour:
     skill1ID: 1101
     skill2ID: 1102
     skill3ID: 1104
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
     effectID: 01000000
     effectPercent: 64000000
   - id: 1115
@@ -454,9 +466,10 @@ MonoBehaviour:
     skill1ID: 1101
     skill2ID: 1102
     skill3ID: 1104
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
     effectID: 01000000
     effectPercent: 64000000
   - id: 1120
@@ -476,9 +489,10 @@ MonoBehaviour:
     skill1ID: 1101
     skill2ID: 1105
     skill3ID: 1106
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
     effectID: 01000000
     effectPercent: 64000000
   - id: 1121
@@ -498,9 +512,10 @@ MonoBehaviour:
     skill1ID: 1101
     skill2ID: 1105
     skill3ID: 1106
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
     effectID: 01000000
     effectPercent: 64000000
   - id: 1122
@@ -520,9 +535,10 @@ MonoBehaviour:
     skill1ID: 1101
     skill2ID: 1105
     skill3ID: 1106
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
     effectID: 01000000
     effectPercent: 64000000
   - id: 1123
@@ -542,9 +558,10 @@ MonoBehaviour:
     skill1ID: 1101
     skill2ID: 1105
     skill3ID: 1106
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
     effectID: 01000000
     effectPercent: 64000000
   - id: 1124
@@ -564,9 +581,10 @@ MonoBehaviour:
     skill1ID: 1101
     skill2ID: 1105
     skill3ID: 1106
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
     effectID: 01000000
     effectPercent: 64000000
   - id: 1125
@@ -586,9 +604,10 @@ MonoBehaviour:
     skill1ID: 1101
     skill2ID: 1105
     skill3ID: 1106
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
     effectID: 01000000
     effectPercent: 64000000
   - id: 1200
@@ -611,8 +630,9 @@ MonoBehaviour:
     buffID: 65000000
     buffPercent: 0a000000
     buffTurns: 05000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffAddTriggers: 00000000
+    effectID: 
+    effectPercent: 
   - id: 1201
     name: "\u65E5\u7F61\xB7\u6708\u715E+1"
     type: 1
@@ -633,8 +653,9 @@ MonoBehaviour:
     buffID: 65000000
     buffPercent: 0b000000
     buffTurns: 05000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffAddTriggers: 00000000
+    effectID: 
+    effectPercent: 
   - id: 1202
     name: "\u65E5\u7F61\xB7\u6708\u715E+2"
     type: 1
@@ -655,8 +676,9 @@ MonoBehaviour:
     buffID: 65000000
     buffPercent: 0c000000
     buffTurns: 05000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffAddTriggers: 00000000
+    effectID: 
+    effectPercent: 
   - id: 1203
     name: "\u65E5\u7F61\xB7\u6708\u715E+3"
     type: 1
@@ -677,8 +699,9 @@ MonoBehaviour:
     buffID: 65000000
     buffPercent: 0d000000
     buffTurns: 05000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffAddTriggers: 00000000
+    effectID: 
+    effectPercent: 
   - id: 1204
     name: "\u65E5\u7F61\xB7\u6708\u715E+4"
     type: 1
@@ -699,8 +722,9 @@ MonoBehaviour:
     buffID: 65000000
     buffPercent: 0e000000
     buffTurns: 05000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffAddTriggers: 00000000
+    effectID: 
+    effectPercent: 
   - id: 1205
     name: "\u65E5\u7F61\xB7\u6708\u715E+5"
     type: 1
@@ -721,8 +745,9 @@ MonoBehaviour:
     buffID: 65000000
     buffPercent: 0f000000
     buffTurns: 05000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffAddTriggers: 00000000
+    effectID: 
+    effectPercent: 
   - id: 1210
     name: "\u5907\u524D\u957F\u8239"
     type: 1
@@ -740,11 +765,12 @@ MonoBehaviour:
     skill1ID: 1201
     skill2ID: 1204
     skill3ID: 1205
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
+    effectID: 
+    effectPercent: 
   - id: 1211
     name: "\u5907\u524D\u957F\u8239+1"
     type: 1
@@ -762,11 +788,12 @@ MonoBehaviour:
     skill1ID: 1201
     skill2ID: 1204
     skill3ID: 1205
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
+    effectID: 
+    effectPercent: 
   - id: 1212
     name: "\u5907\u524D\u957F\u8239+2"
     type: 1
@@ -784,11 +811,12 @@ MonoBehaviour:
     skill1ID: 1201
     skill2ID: 1204
     skill3ID: 1205
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
+    effectID: 
+    effectPercent: 
   - id: 1213
     name: "\u5907\u524D\u957F\u8239+3"
     type: 1
@@ -806,11 +834,12 @@ MonoBehaviour:
     skill1ID: 1201
     skill2ID: 1204
     skill3ID: 1205
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
+    effectID: 
+    effectPercent: 
   - id: 1214
     name: "\u5907\u524D\u957F\u8239+4"
     type: 1
@@ -828,11 +857,12 @@ MonoBehaviour:
     skill1ID: 1201
     skill2ID: 1204
     skill3ID: 1205
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
+    effectID: 
+    effectPercent: 
   - id: 1215
     name: "\u5907\u524D\u957F\u8239+5"
     type: 1
@@ -850,11 +880,12 @@ MonoBehaviour:
     skill1ID: 1201
     skill2ID: 1204
     skill3ID: 1205
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
+    effectID: 
+    effectPercent: 
   - id: 1220
     name: "\u8D64\u5F71"
     type: 1
@@ -872,11 +903,12 @@ MonoBehaviour:
     skill1ID: 1201
     skill2ID: 1206
     skill3ID: 1207
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
+    effectID: 
+    effectPercent: 
   - id: 1300
     name: "\u9E93\u5143\u7684\u77F3\u5251"
     type: 1
@@ -894,9 +926,10 @@ MonoBehaviour:
     skill1ID: 1301
     skill2ID: 1302
     skill3ID: 1303
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
     effectID: 07000000
     effectPercent: 64000000
   - id: 1310
@@ -919,8 +952,9 @@ MonoBehaviour:
     buffID: 66000000
     buffPercent: 0a000000
     buffTurns: 03000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffAddTriggers: 00000000
+    effectID: 
+    effectPercent: 
   - id: 1311
     name: "\u771F\u7A7A\u4E4B\u5203+1"
     type: 1
@@ -941,8 +975,9 @@ MonoBehaviour:
     buffID: 66000000
     buffPercent: 0b000000
     buffTurns: 03000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffAddTriggers: 00000000
+    effectID: 
+    effectPercent: 
   - id: 1312
     name: "\u771F\u7A7A\u4E4B\u5203+2"
     type: 1
@@ -963,8 +998,9 @@ MonoBehaviour:
     buffID: 66000000
     buffPercent: 0c000000
     buffTurns: 03000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffAddTriggers: 00000000
+    effectID: 
+    effectPercent: 
   - id: 1313
     name: "\u771F\u7A7A\u4E4B\u5203+3"
     type: 1
@@ -985,8 +1021,9 @@ MonoBehaviour:
     buffID: 66000000
     buffPercent: 0d000000
     buffTurns: 03000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffAddTriggers: 00000000
+    effectID: 
+    effectPercent: 
   - id: 1314
     name: "\u771F\u7A7A\u4E4B\u5203+4"
     type: 1
@@ -1007,8 +1044,9 @@ MonoBehaviour:
     buffID: 66000000
     buffPercent: 0e000000
     buffTurns: 03000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffAddTriggers: 00000000
+    effectID: 
+    effectPercent: 
   - id: 1315
     name: "\u771F\u7A7A\u4E4B\u5203+5"
     type: 1
@@ -1029,8 +1067,9 @@ MonoBehaviour:
     buffID: 66000000
     buffPercent: 0f000000
     buffTurns: 03000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffAddTriggers: 00000000
+    effectID: 
+    effectPercent: 
   - id: 1320
     name: "\u6E5B\u5362"
     type: 1
@@ -1048,11 +1087,12 @@ MonoBehaviour:
     skill1ID: 1301
     skill2ID: 1305
     skill3ID: 1306
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
+    effectID: 
+    effectPercent: 
   - id: 1321
     name: "\u6E5B\u5362+1"
     type: 1
@@ -1070,11 +1110,12 @@ MonoBehaviour:
     skill1ID: 1301
     skill2ID: 1305
     skill3ID: 1306
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
+    effectID: 
+    effectPercent: 
   - id: 1322
     name: "\u6E5B\u5362+2"
     type: 1
@@ -1092,11 +1133,12 @@ MonoBehaviour:
     skill1ID: 1301
     skill2ID: 1305
     skill3ID: 1306
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
+    effectID: 
+    effectPercent: 
   - id: 1323
     name: "\u6E5B\u5362+3"
     type: 1
@@ -1114,11 +1156,12 @@ MonoBehaviour:
     skill1ID: 1301
     skill2ID: 1305
     skill3ID: 1306
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
+    effectID: 
+    effectPercent: 
   - id: 1324
     name: "\u6E5B\u5362+4"
     type: 1
@@ -1136,11 +1179,12 @@ MonoBehaviour:
     skill1ID: 1301
     skill2ID: 1305
     skill3ID: 1306
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
+    effectID: 
+    effectPercent: 
   - id: 1325
     name: "\u6E5B\u5362+5"
     type: 1
@@ -1158,11 +1202,12 @@ MonoBehaviour:
     skill1ID: 1301
     skill2ID: 1305
     skill3ID: 1306
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
+    effectID: 
+    effectPercent: 
   - id: 1400
     name: "\u6076\u4E4B\u82B1"
     type: 1
@@ -1180,11 +1225,12 @@ MonoBehaviour:
     skill1ID: 1401
     skill2ID: 1402
     skill3ID: 1403
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
+    effectID: 
+    effectPercent: 
   - id: 1401
     name: "\u6076\u4E4B\u82B1+1"
     type: 1
@@ -1202,11 +1248,12 @@ MonoBehaviour:
     skill1ID: 1401
     skill2ID: 1402
     skill3ID: 1403
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
+    effectID: 
+    effectPercent: 
   - id: 1402
     name: "\u6076\u4E4B\u82B1+2"
     type: 1
@@ -1224,11 +1271,12 @@ MonoBehaviour:
     skill1ID: 1401
     skill2ID: 1402
     skill3ID: 1403
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
+    effectID: 
+    effectPercent: 
   - id: 1403
     name: "\u6076\u4E4B\u82B1+3"
     type: 1
@@ -1246,11 +1294,12 @@ MonoBehaviour:
     skill1ID: 1401
     skill2ID: 1402
     skill3ID: 1403
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
+    effectID: 
+    effectPercent: 
   - id: 1404
     name: "\u6076\u4E4B\u82B1+4"
     type: 1
@@ -1268,11 +1317,12 @@ MonoBehaviour:
     skill1ID: 1401
     skill2ID: 1402
     skill3ID: 1403
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
+    effectID: 
+    effectPercent: 
   - id: 1405
     name: "\u6076\u4E4B\u82B1+5"
     type: 1
@@ -1290,11 +1340,12 @@ MonoBehaviour:
     skill1ID: 1401
     skill2ID: 1402
     skill3ID: 1403
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
+    effectID: 
+    effectPercent: 
   - id: 1410
     name: "\u72C2\u4EBA\u4E4B\u9524"
     type: 1
@@ -1312,11 +1363,12 @@ MonoBehaviour:
     skill1ID: 1401
     skill2ID: 1402
     skill3ID: 1404
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
+    effectID: 
+    effectPercent: 
   - id: 1411
     name: "\u72C2\u4EBA\u4E4B\u9524+1"
     type: 1
@@ -1334,11 +1386,12 @@ MonoBehaviour:
     skill1ID: 1401
     skill2ID: 1402
     skill3ID: 1404
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
+    effectID: 
+    effectPercent: 
   - id: 1412
     name: "\u72C2\u4EBA\u4E4B\u9524+2"
     type: 1
@@ -1356,11 +1409,12 @@ MonoBehaviour:
     skill1ID: 1401
     skill2ID: 1402
     skill3ID: 1404
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
+    effectID: 
+    effectPercent: 
   - id: 1413
     name: "\u72C2\u4EBA\u4E4B\u9524+3"
     type: 1
@@ -1378,11 +1432,12 @@ MonoBehaviour:
     skill1ID: 1401
     skill2ID: 1402
     skill3ID: 1404
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
+    effectID: 
+    effectPercent: 
   - id: 1414
     name: "\u72C2\u4EBA\u4E4B\u9524+4"
     type: 1
@@ -1400,11 +1455,12 @@ MonoBehaviour:
     skill1ID: 1401
     skill2ID: 1402
     skill3ID: 1404
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
+    effectID: 
+    effectPercent: 
   - id: 1415
     name: "\u72C2\u4EBA\u4E4B\u9524+5"
     type: 1
@@ -1422,11 +1478,12 @@ MonoBehaviour:
     skill1ID: 1401
     skill2ID: 1402
     skill3ID: 1404
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
+    effectID: 
+    effectPercent: 
   - id: 1420
     name: "\u76D8\u53E4\u5DE8\u65A7"
     type: 1
@@ -1444,11 +1501,12 @@ MonoBehaviour:
     skill1ID: 1401
     skill2ID: 1402
     skill3ID: 1405
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
+    effectID: 
+    effectPercent: 
   - id: 1421
     name: "\u76D8\u53E4\u5DE8\u65A7+1"
     type: 1
@@ -1466,11 +1524,12 @@ MonoBehaviour:
     skill1ID: 1401
     skill2ID: 1402
     skill3ID: 1405
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
+    effectID: 
+    effectPercent: 
   - id: 1422
     name: "\u76D8\u53E4\u5DE8\u65A7+2"
     type: 1
@@ -1488,11 +1547,12 @@ MonoBehaviour:
     skill1ID: 1401
     skill2ID: 1402
     skill3ID: 1405
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
+    effectID: 
+    effectPercent: 
   - id: 1423
     name: "\u76D8\u53E4\u5DE8\u65A7+3"
     type: 1
@@ -1510,11 +1570,12 @@ MonoBehaviour:
     skill1ID: 1401
     skill2ID: 1402
     skill3ID: 1405
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
+    effectID: 
+    effectPercent: 
   - id: 1424
     name: "\u76D8\u53E4\u5DE8\u65A7+4"
     type: 1
@@ -1532,11 +1593,12 @@ MonoBehaviour:
     skill1ID: 1401
     skill2ID: 1402
     skill3ID: 1405
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
+    effectID: 
+    effectPercent: 
   - id: 1425
     name: "\u76D8\u53E4\u5DE8\u65A7+5"
     type: 1
@@ -1554,11 +1616,12 @@ MonoBehaviour:
     skill1ID: 1401
     skill2ID: 1402
     skill3ID: 1405
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
+    effectID: 
+    effectPercent: 
   - id: 1500
     name: "\u53CC\u5203\u5F13"
     type: 1
@@ -1576,11 +1639,12 @@ MonoBehaviour:
     skill1ID: 1501
     skill2ID: 1503
     skill3ID: 1504
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
+    effectID: 
+    effectPercent: 
   - id: 1501
     name: "\u53CC\u5203\u5F13+1"
     type: 1
@@ -1598,11 +1662,12 @@ MonoBehaviour:
     skill1ID: 1501
     skill2ID: 1503
     skill3ID: 1504
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
+    effectID: 
+    effectPercent: 
   - id: 1502
     name: "\u53CC\u5203\u5F13+2"
     type: 1
@@ -1620,11 +1685,12 @@ MonoBehaviour:
     skill1ID: 1501
     skill2ID: 1503
     skill3ID: 1504
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
+    effectID: 
+    effectPercent: 
   - id: 1503
     name: "\u53CC\u5203\u5F13+3"
     type: 1
@@ -1642,11 +1708,12 @@ MonoBehaviour:
     skill1ID: 1501
     skill2ID: 1503
     skill3ID: 1504
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
+    effectID: 
+    effectPercent: 
   - id: 1504
     name: "\u53CC\u5203\u5F13+4"
     type: 1
@@ -1664,11 +1731,12 @@ MonoBehaviour:
     skill1ID: 1501
     skill2ID: 1503
     skill3ID: 1504
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
+    effectID: 
+    effectPercent: 
   - id: 1505
     name: "\u53CC\u5203\u5F13+5"
     type: 1
@@ -1686,11 +1754,12 @@ MonoBehaviour:
     skill1ID: 1501
     skill2ID: 1503
     skill3ID: 1504
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
+    effectID: 
+    effectPercent: 
   - id: 1510
     name: "\u72D9\u51FB\u5F29"
     type: 1
@@ -1708,11 +1777,12 @@ MonoBehaviour:
     skill1ID: 1501
     skill2ID: 1502
     skill3ID: 1505
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
+    effectID: 
+    effectPercent: 
   - id: 1511
     name: "\u72D9\u51FB\u5F29+1"
     type: 1
@@ -1730,11 +1800,12 @@ MonoBehaviour:
     skill1ID: 1501
     skill2ID: 1502
     skill3ID: 1505
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
+    effectID: 
+    effectPercent: 
   - id: 1512
     name: "\u72D9\u51FB\u5F29+2"
     type: 1
@@ -1752,11 +1823,12 @@ MonoBehaviour:
     skill1ID: 1501
     skill2ID: 1502
     skill3ID: 1505
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
+    effectID: 
+    effectPercent: 
   - id: 1513
     name: "\u72D9\u51FB\u5F29+3"
     type: 1
@@ -1774,11 +1846,12 @@ MonoBehaviour:
     skill1ID: 1501
     skill2ID: 1502
     skill3ID: 1505
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
+    effectID: 
+    effectPercent: 
   - id: 1514
     name: "\u72D9\u51FB\u5F29+4"
     type: 1
@@ -1796,11 +1869,12 @@ MonoBehaviour:
     skill1ID: 1501
     skill2ID: 1502
     skill3ID: 1505
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
+    effectID: 
+    effectPercent: 
   - id: 1515
     name: "\u72D9\u51FB\u5F29+5"
     type: 1
@@ -1818,11 +1892,12 @@ MonoBehaviour:
     skill1ID: 1501
     skill2ID: 1502
     skill3ID: 1505
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
+    effectID: 
+    effectPercent: 
   - id: 1520
     name: "\u8896\u5F29"
     type: 1
@@ -1840,11 +1915,12 @@ MonoBehaviour:
     skill1ID: 1501
     skill2ID: 1506
     skill3ID: 1507
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
+    effectID: 
+    effectPercent: 
   - id: 1521
     name: "\u8896\u5F29+1"
     type: 1
@@ -1862,11 +1938,12 @@ MonoBehaviour:
     skill1ID: 1501
     skill2ID: 1506
     skill3ID: 1507
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
+    effectID: 
+    effectPercent: 
   - id: 1522
     name: "\u8896\u5F29+2"
     type: 1
@@ -1884,11 +1961,12 @@ MonoBehaviour:
     skill1ID: 1501
     skill2ID: 1506
     skill3ID: 1507
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
+    effectID: 
+    effectPercent: 
   - id: 1523
     name: "\u8896\u5F29+3"
     type: 1
@@ -1906,11 +1984,12 @@ MonoBehaviour:
     skill1ID: 1501
     skill2ID: 1506
     skill3ID: 1507
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
+    effectID: 
+    effectPercent: 
   - id: 1524
     name: "\u8896\u5F29+4"
     type: 1
@@ -1928,11 +2007,12 @@ MonoBehaviour:
     skill1ID: 1501
     skill2ID: 1506
     skill3ID: 1507
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
+    effectID: 
+    effectPercent: 
   - id: 1525
     name: "\u8896\u5F29+5"
     type: 1
@@ -1950,11 +2030,12 @@ MonoBehaviour:
     skill1ID: 1501
     skill2ID: 1506
     skill3ID: 1507
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
+    effectID: 
+    effectPercent: 
   - id: 1600
     name: "\u5DE8\u517D\u4E4B\u7259"
     type: 1
@@ -1972,11 +2053,12 @@ MonoBehaviour:
     skill1ID: 1601
     skill2ID: 1602
     skill3ID: 1603
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
+    effectID: 
+    effectPercent: 
   - id: 1601
     name: "\u5DE8\u517D\u4E4B\u7259+1"
     type: 1
@@ -1994,11 +2076,12 @@ MonoBehaviour:
     skill1ID: 1601
     skill2ID: 1602
     skill3ID: 1603
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
+    effectID: 
+    effectPercent: 
   - id: 1602
     name: "\u5DE8\u517D\u4E4B\u7259+2"
     type: 1
@@ -2016,11 +2099,12 @@ MonoBehaviour:
     skill1ID: 1601
     skill2ID: 1602
     skill3ID: 1603
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
+    effectID: 
+    effectPercent: 
   - id: 1603
     name: "\u5DE8\u517D\u4E4B\u7259+3"
     type: 1
@@ -2038,11 +2122,12 @@ MonoBehaviour:
     skill1ID: 1601
     skill2ID: 1602
     skill3ID: 1603
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
+    effectID: 
+    effectPercent: 
   - id: 1604
     name: "\u5DE8\u517D\u4E4B\u7259+4"
     type: 1
@@ -2060,11 +2145,12 @@ MonoBehaviour:
     skill1ID: 1601
     skill2ID: 1602
     skill3ID: 1603
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
+    effectID: 
+    effectPercent: 
   - id: 1605
     name: "\u5DE8\u517D\u4E4B\u7259+5"
     type: 1
@@ -2082,11 +2168,12 @@ MonoBehaviour:
     skill1ID: 1601
     skill2ID: 1602
     skill3ID: 1603
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
+    effectID: 
+    effectPercent: 
   - id: 1610
     name: "\u5723\u76FE\u4E4B\u73AF"
     type: 1
@@ -2104,11 +2191,12 @@ MonoBehaviour:
     skill1ID: 1604
     skill2ID: 1605
     skill3ID: 1606
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
+    effectID: 
+    effectPercent: 
   - id: 1611
     name: "\u5723\u76FE\u4E4B\u73AF+1"
     type: 1
@@ -2126,11 +2214,12 @@ MonoBehaviour:
     skill1ID: 1604
     skill2ID: 1605
     skill3ID: 1606
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
+    effectID: 
+    effectPercent: 
   - id: 1612
     name: "\u5723\u76FE\u4E4B\u73AF+2"
     type: 1
@@ -2148,11 +2237,12 @@ MonoBehaviour:
     skill1ID: 1604
     skill2ID: 1605
     skill3ID: 1606
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
+    effectID: 
+    effectPercent: 
   - id: 1613
     name: "\u5723\u76FE\u4E4B\u73AF+3"
     type: 1
@@ -2170,11 +2260,12 @@ MonoBehaviour:
     skill1ID: 1604
     skill2ID: 1605
     skill3ID: 1606
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
+    effectID: 
+    effectPercent: 
   - id: 1614
     name: "\u5723\u76FE\u4E4B\u73AF+4"
     type: 1
@@ -2192,11 +2283,12 @@ MonoBehaviour:
     skill1ID: 1604
     skill2ID: 1605
     skill3ID: 1606
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
+    effectID: 
+    effectPercent: 
   - id: 1615
     name: "\u5723\u76FE\u4E4B\u73AF+5"
     type: 1
@@ -2214,11 +2306,12 @@ MonoBehaviour:
     skill1ID: 1604
     skill2ID: 1605
     skill3ID: 1606
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
+    effectID: 
+    effectPercent: 
   - id: 1620
     name: "\u7B56\u5212\u4E4B\u53CB"
     type: 1
@@ -2236,11 +2329,12 @@ MonoBehaviour:
     skill1ID: 1607
     skill2ID: 1608
     skill3ID: 1609
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
+    effectID: 
+    effectPercent: 
   - id: 3001
     name: "\u54A9\u54A9\u4E4B\u722A"
     type: 1
@@ -2258,11 +2352,12 @@ MonoBehaviour:
     skill1ID: 3001
     skill2ID: 3002
     skill3ID: 3003
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
+    effectID: 
+    effectPercent: 
   - id: 3002
     name: "\u54A9\u54A9\u5229\u722A"
     type: 1
@@ -2280,11 +2375,12 @@ MonoBehaviour:
     skill1ID: 3001
     skill2ID: 3002
     skill3ID: 3004
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
+    effectID: 
+    effectPercent: 
   - id: 3003
     name: "\u5438\u6C34\u63D0\u5362\u67AA"
     type: 1
@@ -2302,11 +2398,12 @@ MonoBehaviour:
     skill1ID: 3005
     skill2ID: 3006
     skill3ID: 3007
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
+    effectID: 
+    effectPercent: 
   - id: 3004
     name: "\u7384\u9F9F\u4E4B\u58F3"
     type: 1
@@ -2324,11 +2421,12 @@ MonoBehaviour:
     skill1ID: 3008
     skill2ID: 0
     skill3ID: 0
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
+    effectID: 
+    effectPercent: 
   - id: 3005
     name: "\u733C\u8A11\u7684\u5168\u8EAB"
     type: 1
@@ -2346,11 +2444,12 @@ MonoBehaviour:
     skill1ID: 3009
     skill2ID: 3010
     skill3ID: 3011
-    buffID: 00000000
-    buffPercent: 00000000
-    buffTurns: 00000000
-    effectID: 00000000
-    effectPercent: 00000000
+    buffID: 
+    buffPercent: 
+    buffTurns: 
+    buffAddTriggers: 
+    effectID: 
+    effectPercent: 
   magicDataSet:
   - id: 2000
     name: "\u65E0"

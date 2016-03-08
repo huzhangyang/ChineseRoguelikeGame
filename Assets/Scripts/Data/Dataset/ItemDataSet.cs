@@ -94,6 +94,7 @@ public class WeaponData:ItemData{
 	public List<int> buffID;
 	public List<int> buffPercent;
 	public List<int> buffTurns;
+	public List<int> buffAddTriggers;
 	public List<int> effectID;
 	public List<int> effectPercent;
 }

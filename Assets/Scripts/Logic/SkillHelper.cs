@@ -75,7 +75,14 @@ public class SkillHelper
 			int random = UnityEngine.Random.Range(0, 101);
 			if(random <= skillData.buffPercent[i])
 			{
-				source.damage.target.AddBuff(skillData.buffID[i], skillData.buffTurns[i]);
+				if(skillData.buffAddTriggers[i] == (int)BuffAddTrigger.SelfAfterDamage)
+				{
+					source.AddBuff(skillData.buffID[i], skillData.buffTurns[i]);
+				}
+				else if(skillData.buffAddTriggers[i] == (int)BuffAddTrigger.TargetAfterDamage)
+				{
+					source.damage.target.AddBuff(skillData.buffID[i], skillData.buffTurns[i]);
+				}
 			}
 		}
 		
@@ -90,7 +97,14 @@ public class SkillHelper
 				int random = UnityEngine.Random.Range(0, 101);
 				if(random <= weaponData.buffPercent[i])
 				{
-					source.damage.target.AddBuff(weaponData.buffID[i], weaponData.buffTurns[i]);
+					if(weaponData.buffAddTriggers[i] == (int)BuffAddTrigger.SelfAfterDamage)
+					{
+						source.AddBuff(weaponData.buffID[i], weaponData.buffTurns[i]);
+					}
+					else if(weaponData.buffAddTriggers[i] == (int)BuffAddTrigger.TargetAfterDamage)
+					{
+						source.damage.target.AddBuff(weaponData.buffID[i], weaponData.buffTurns[i]);
+					}
 				}
 			}
 		}
