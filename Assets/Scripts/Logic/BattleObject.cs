@@ -87,6 +87,11 @@ public abstract class BattleObject : MonoBehaviour {
 	public BattleObject guardTarget = null;//守护对象
 	public BattleObject guardedTarget = null;//被守护对象
 
+	public bool disableAttackCommand;
+	public bool disableDefenceCommand;
+	public bool disableItemCommand;
+	public bool disableStrategyCommand;
+
 	protected BattleObjectUIEvent UIEvent;
 	protected ObjectData data;
 

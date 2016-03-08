@@ -1363,10 +1363,10 @@ MonoBehaviour:
     skill1ID: 1401
     skill2ID: 1402
     skill3ID: 1404
-    buffID: 
-    buffPercent: 
-    buffTurns: 
-    buffAddTriggers: 
+    buffID: 02000000
+    buffPercent: 64000000
+    buffTurns: ffffffff
+    buffAddTriggers: 02000000
     effectID: 
     effectPercent: 
   - id: 1411
@@ -1386,10 +1386,10 @@ MonoBehaviour:
     skill1ID: 1401
     skill2ID: 1402
     skill3ID: 1404
-    buffID: 
-    buffPercent: 
-    buffTurns: 
-    buffAddTriggers: 
+    buffID: 02000000
+    buffPercent: 64000000
+    buffTurns: ffffffff
+    buffAddTriggers: 02000000
     effectID: 
     effectPercent: 
   - id: 1412
@@ -1409,10 +1409,10 @@ MonoBehaviour:
     skill1ID: 1401
     skill2ID: 1402
     skill3ID: 1404
-    buffID: 
-    buffPercent: 
-    buffTurns: 
-    buffAddTriggers: 
+    buffID: 02000000
+    buffPercent: 64000000
+    buffTurns: ffffffff
+    buffAddTriggers: 02000000
     effectID: 
     effectPercent: 
   - id: 1413
@@ -1432,10 +1432,10 @@ MonoBehaviour:
     skill1ID: 1401
     skill2ID: 1402
     skill3ID: 1404
-    buffID: 
-    buffPercent: 
-    buffTurns: 
-    buffAddTriggers: 
+    buffID: 02000000
+    buffPercent: 64000000
+    buffTurns: ffffffff
+    buffAddTriggers: 02000000
     effectID: 
     effectPercent: 
   - id: 1414
@@ -1455,10 +1455,10 @@ MonoBehaviour:
     skill1ID: 1401
     skill2ID: 1402
     skill3ID: 1404
-    buffID: 
-    buffPercent: 
-    buffTurns: 
-    buffAddTriggers: 
+    buffID: 02000000
+    buffPercent: 64000000
+    buffTurns: ffffffff
+    buffAddTriggers: 02000000
     effectID: 
     effectPercent: 
   - id: 1415
@@ -1478,10 +1478,10 @@ MonoBehaviour:
     skill1ID: 1401
     skill2ID: 1402
     skill3ID: 1404
-    buffID: 
-    buffPercent: 
-    buffTurns: 
-    buffAddTriggers: 
+    buffID: 02000000
+    buffPercent: 64000000
+    buffTurns: ffffffff
+    buffAddTriggers: 02000000
     effectID: 
     effectPercent: 
   - id: 1420
