@@ -105,7 +105,8 @@ public abstract class BattleObject : MonoBehaviour {
 	protected abstract void SelectCommand();
 	public abstract bool IsBoss();
 
-	/*更新时间轴*/
+	/*-----时间轴相关-----*/
+
 	protected void OnTimelineUpdate(MessageEventArgs args)
 	{
 		if(this.isDead)return;
@@ -209,6 +210,8 @@ public abstract class BattleObject : MonoBehaviour {
 		commandToExecute = new CommandNone();
 	}
 
+	/*-----Buff相关-----*/
+
 	public void AddBuff(int id, int effectTurns)
 	{
 		BuffData data = DataManager.Instance.GetSkillDataSet().GetBuffData(id);
@@ -221,6 +224,18 @@ public abstract class BattleObject : MonoBehaviour {
 		{
 			Buff buff = Buff.CreateBuff(this, data, effectTurns);
 			buffList.Add(buff);
+		}
+	}
+
+	public void RemoveBuff(int id)
+	{
+		foreach(Buff buff in buffList)
+		{
+			if(buff.id == id)
+			{
+				buffList.Remove(buff);	
+				break;
+			}
 		}
 	}
 
@@ -240,6 +255,8 @@ public abstract class BattleObject : MonoBehaviour {
 			buffList.Remove(buff);	
 		}
 	}
+
+	/*-----数据相关-----*/
 
 	public string GetName()
 	{

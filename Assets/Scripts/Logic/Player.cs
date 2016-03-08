@@ -23,6 +23,7 @@ public class Player : BattleObject {
 		{
 			AddBuff(data.bornBuffs[i], -1);//添加固有BUFF
 		}
+		SkillHelper.CheckWeaponBuff(this);
 	}
 
 	protected override void SelectCommand()

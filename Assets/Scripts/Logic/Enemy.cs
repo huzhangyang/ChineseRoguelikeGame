@@ -25,6 +25,7 @@ public class Enemy : BattleObject {
 		{
 			AddBuff(data.bornBuffs[i], -1);//添加固有BUFF
 		}
+		SkillHelper.CheckWeaponBuff(this);
 
 		MessageEventArgs args = new MessageEventArgs();
 		args.AddMessage("Object", this);

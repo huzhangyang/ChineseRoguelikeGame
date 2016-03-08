@@ -26,7 +26,9 @@ public class CommandSwitchWeapon : Command
 
 	protected override void Execute()
 	{
+		int offID = source.GetWeapon ();
 		source.SetWeapon(itemID);
+		SkillHelper.CheckWeaponBuff (source, offID);
 		SkillHelper.CheckWeaponEffect(EffectTrigger.SwitchWeapon, source);//检查切换武器时生效的特效
 	}
 }

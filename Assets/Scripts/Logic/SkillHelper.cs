@@ -54,6 +54,40 @@ public class SkillHelper
 		}
 	}
 
+	public static void CheckWeaponBuff(BattleObject source, int offID = 0)
+	{
+		if(offID > 0)
+		{
+			WeaponData oldWeaponData = DataManager.Instance.GetItemDataSet().GetWeaponData(offID);
+			
+			for(int i = 0; i < oldWeaponData.buffID.Count; i++)
+			{
+				if(oldWeaponData.buffID[i] == 0)continue;
+				
+				if(oldWeaponData.buffAddTriggers[i] == (int)BuffAddTrigger.Self)
+				{
+					source.RemoveBuff(oldWeaponData.buffID[i]);
+				}
+			}
+		}
+
+		WeaponData weaponData = DataManager.Instance.GetItemDataSet().GetWeaponData(source.GetWeapon());
+		
+		for(int i = 0; i < weaponData.buffID.Count; i++)
+		{
+			if(weaponData.buffID[i] == 0)continue;
+			
+			int random = UnityEngine.Random.Range(0, 101);
+			if(random <= weaponData.buffPercent[i])
+			{
+				if(weaponData.buffAddTriggers[i] == (int)BuffAddTrigger.Self)
+				{
+					source.AddBuff(weaponData.buffID[i], weaponData.buffTurns[i]);
+				}
+			}
+		}
+	}
+
 	public static void CheckBuff(BuffTrigger trigger, BattleObject source)
 	{
 		for(int i = 0; i < source.buffList.Count; i++)
