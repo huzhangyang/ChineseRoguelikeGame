@@ -46,9 +46,12 @@ public abstract class Command {
 			if(bo.GetBattleType() != BattleType.Magical && bo.GetWeapon() > 1000)
 			{
 				WeaponData weaponData = DataManager.Instance.GetItemDataSet().GetWeaponData(bo.GetWeapon());
-				availableCommands.Add(new CommandUseWeaponSkill(weaponData, weaponData.skill1ID));
-				availableCommands.Add(new CommandUseWeaponSkill(weaponData, weaponData.skill2ID));
-				availableCommands.Add(new CommandUseWeaponSkill(weaponData, weaponData.skill3ID));
+				if(weaponData.skill1ID > 0)
+					availableCommands.Add(new CommandUseWeaponSkill(weaponData, weaponData.skill1ID));
+				if(weaponData.skill2ID > 0)
+					availableCommands.Add(new CommandUseWeaponSkill(weaponData, weaponData.skill2ID));
+				if(weaponData.skill3ID > 0)
+					availableCommands.Add(new CommandUseWeaponSkill(weaponData, weaponData.skill3ID));
 			}
 			if(bo.GetBattleType() != BattleType.Physical)
 			{
