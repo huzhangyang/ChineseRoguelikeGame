@@ -98,13 +98,11 @@ public abstract class BattleObject : MonoBehaviour {
 	void OnEnable() 
 	{
 		EventManager.Instance.RegisterEvent (BattleEvent.OnTimelineUpdate, OnTimelineUpdate);
-		EventManager.Instance.RegisterEvent(BattleEvent.BattleObjectDied, OnBattleObjectDied);
 	}
 	
 	void OnDisable () 
 	{
 		EventManager.Instance.UnRegisterEvent (BattleEvent.OnTimelineUpdate, OnTimelineUpdate);
-		EventManager.Instance.UnRegisterEvent(BattleEvent.BattleObjectDied, OnBattleObjectDied);
 	}
 
 	protected abstract void SelectCommand();
@@ -131,15 +129,6 @@ public abstract class BattleObject : MonoBehaviour {
 		if(timelinePosition >= GlobalDataStructure.BATTLE_TIMELINE_MAX && battleStatus == BattleStatus.Action)
 		{
 			ExecuteCommand();
-		}
-	}
-
-	protected void OnBattleObjectDied(MessageEventArgs args)
-	{
-		BattleObject bo = args.GetMessage<BattleObject> ("Object");
-		if(this == bo)
-		{
-			UIEvent.DestoryUI ();
 		}
 	}
 

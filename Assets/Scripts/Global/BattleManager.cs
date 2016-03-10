@@ -182,6 +182,7 @@ public class BattleManager : MonoBehaviour {
 		if(bo.isEnemy)
 		{
 			enemys.Remove((Enemy)bo);
+			bo.GetComponent<BattleObjectUIEvent>().DestoryUI();
 			if(enemys.Count == 0)
 			{
 				EventManager.Instance.PostEvent(BattleEvent.OnBattleWin);
@@ -219,9 +220,9 @@ public class BattleManager : MonoBehaviour {
 	public BattleObject GetARandomAlly(BattleObject bo)
 	{
 		if (bo.isEnemy)
-			return enemys[UnityEngine.Random.Range (0, players.Count)];
+			return enemys[UnityEngine.Random.Range (0, enemys.Count)];
 		else
-			return players[UnityEngine.Random.Range (0, enemys.Count)];
+			return players[UnityEngine.Random.Range (0, players.Count)];
 	}
 
 	public List<BattleObject> GetAllEnemies(BattleObject bo)

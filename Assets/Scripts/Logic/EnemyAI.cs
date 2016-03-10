@@ -142,7 +142,7 @@ public class EnemyAI : MonoBehaviour {
 	private Command AIDefence()
 	{
 		List<Command> validCommands = self.availableCommands.FindAll((x)=>{return x.commandType == CommandType.Defence;});
-		if(hpPercent > data.escapeThreshold)
+		if(hpPercent > data.escapeThreshold && BattleManager.Instance.GetAllAllies(self).Count > 1)
 		{
 			return new CommandGuard ();
 		}

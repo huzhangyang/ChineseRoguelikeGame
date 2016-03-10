@@ -346,7 +346,7 @@ MonoBehaviour:
     basicATKMax: 10
     basicACC: 110
     basicCRT: 16
-    basicSPD: 160
+    basicSPD: 175
     interrupt: 5
     skill1ID: 1101
     skill2ID: 1102
@@ -369,7 +369,7 @@ MonoBehaviour:
     basicATKMax: 30
     basicACC: 110
     basicCRT: 16
-    basicSPD: 160
+    basicSPD: 175
     interrupt: 5
     skill1ID: 1101
     skill2ID: 1102
@@ -392,7 +392,7 @@ MonoBehaviour:
     basicATKMax: 50
     basicACC: 110
     basicCRT: 16
-    basicSPD: 160
+    basicSPD: 175
     interrupt: 5
     skill1ID: 1101
     skill2ID: 1102
@@ -415,7 +415,7 @@ MonoBehaviour:
     basicATKMax: 80
     basicACC: 110
     basicCRT: 16
-    basicSPD: 160
+    basicSPD: 175
     interrupt: 5
     skill1ID: 1101
     skill2ID: 1102
@@ -438,7 +438,7 @@ MonoBehaviour:
     basicATKMax: 110
     basicACC: 110
     basicCRT: 16
-    basicSPD: 160
+    basicSPD: 175
     interrupt: 5
     skill1ID: 1101
     skill2ID: 1102
@@ -461,7 +461,7 @@ MonoBehaviour:
     basicATKMax: 150
     basicACC: 110
     basicCRT: 16
-    basicSPD: 160
+    basicSPD: 175
     interrupt: 5
     skill1ID: 1101
     skill2ID: 1102
@@ -760,7 +760,7 @@ MonoBehaviour:
     basicATKMax: 19
     basicACC: 90
     basicCRT: 0
-    basicSPD: 30
+    basicSPD: 33
     interrupt: 13
     skill1ID: 1201
     skill2ID: 1204
@@ -783,7 +783,7 @@ MonoBehaviour:
     basicATKMax: 38
     basicACC: 92
     basicCRT: 2
-    basicSPD: 30
+    basicSPD: 33
     interrupt: 13
     skill1ID: 1201
     skill2ID: 1204
@@ -806,7 +806,7 @@ MonoBehaviour:
     basicATKMax: 76
     basicACC: 94
     basicCRT: 4
-    basicSPD: 30
+    basicSPD: 33
     interrupt: 13
     skill1ID: 1201
     skill2ID: 1204
@@ -829,7 +829,7 @@ MonoBehaviour:
     basicATKMax: 114
     basicACC: 96
     basicCRT: 6
-    basicSPD: 30
+    basicSPD: 33
     interrupt: 13
     skill1ID: 1201
     skill2ID: 1204
@@ -852,7 +852,7 @@ MonoBehaviour:
     basicATKMax: 152
     basicACC: 98
     basicCRT: 8
-    basicSPD: 30
+    basicSPD: 33
     interrupt: 13
     skill1ID: 1201
     skill2ID: 1204
@@ -875,7 +875,7 @@ MonoBehaviour:
     basicATKMax: 190
     basicACC: 100
     basicCRT: 10
-    basicSPD: 30
+    basicSPD: 33
     interrupt: 13
     skill1ID: 1201
     skill2ID: 1204
@@ -898,7 +898,7 @@ MonoBehaviour:
     basicATKMax: 10
     basicACC: 80
     basicCRT: 0
-    basicSPD: 110
+    basicSPD: 125
     interrupt: 9
     skill1ID: 1201
     skill2ID: 1206
@@ -1080,7 +1080,7 @@ MonoBehaviour:
     effectString: 
     basicATKMin: 15
     basicATKMax: 15
-    basicACC: 60
+    basicACC: 75
     basicCRT: 8
     basicSPD: 80
     interrupt: 8
@@ -1103,7 +1103,7 @@ MonoBehaviour:
     effectString: 
     basicATKMin: 45
     basicATKMax: 45
-    basicACC: 70
+    basicACC: 80
     basicCRT: 9
     basicSPD: 90
     interrupt: 9
@@ -1126,7 +1126,7 @@ MonoBehaviour:
     effectString: 
     basicATKMin: 75
     basicATKMax: 75
-    basicACC: 80
+    basicACC: 85
     basicCRT: 10
     basicSPD: 100
     interrupt: 10
@@ -1172,7 +1172,7 @@ MonoBehaviour:
     effectString: 
     basicATKMin: 135
     basicATKMax: 135
-    basicACC: 100
+    basicACC: 95
     basicCRT: 12
     basicSPD: 120
     interrupt: 12
@@ -1195,7 +1195,7 @@ MonoBehaviour:
     effectString: 
     basicATKMin: 165
     basicATKMax: 165
-    basicACC: 110
+    basicACC: 100
     basicCRT: 13
     basicSPD: 130
     interrupt: 13
@@ -1220,7 +1220,7 @@ MonoBehaviour:
     basicATKMax: 35
     basicACC: 60
     basicCRT: 10
-    basicSPD: 80
+    basicSPD: 55
     interrupt: 18
     skill1ID: 1401
     skill2ID: 1402
@@ -1243,7 +1243,7 @@ MonoBehaviour:
     basicATKMax: 70
     basicACC: 65
     basicCRT: 10
-    basicSPD: 80
+    basicSPD: 55
     interrupt: 18
     skill1ID: 1401
     skill2ID: 1402
@@ -1266,7 +1266,7 @@ MonoBehaviour:
     basicATKMax: 105
     basicACC: 70
     basicCRT: 10
-    basicSPD: 80
+    basicSPD: 55
     interrupt: 18
     skill1ID: 1401
     skill2ID: 1402
@@ -1289,7 +1289,7 @@ MonoBehaviour:
     basicATKMax: 140
     basicACC: 75
     basicCRT: 10
-    basicSPD: 80
+    basicSPD: 55
     interrupt: 18
     skill1ID: 1401
     skill2ID: 1402
@@ -1312,7 +1312,7 @@ MonoBehaviour:
     basicATKMax: 175
     basicACC: 80
     basicCRT: 10
-    basicSPD: 80
+    basicSPD: 55
     interrupt: 18
     skill1ID: 1401
     skill2ID: 1402
@@ -1335,7 +1335,7 @@ MonoBehaviour:
     basicATKMax: 210
     basicACC: 85
     basicCRT: 10
-    basicSPD: 80
+    basicSPD: 55
     interrupt: 18
     skill1ID: 1401
     skill2ID: 1402
@@ -1358,7 +1358,7 @@ MonoBehaviour:
     basicATKMax: 32
     basicACC: 90
     basicCRT: 11
-    basicSPD: 110
+    basicSPD: 75
     interrupt: 14
     skill1ID: 1401
     skill2ID: 1402
@@ -1381,7 +1381,7 @@ MonoBehaviour:
     basicATKMax: 64
     basicACC: 90
     basicCRT: 11
-    basicSPD: 110
+    basicSPD: 75
     interrupt: 16
     skill1ID: 1401
     skill2ID: 1402
@@ -1404,7 +1404,7 @@ MonoBehaviour:
     basicATKMax: 96
     basicACC: 90
     basicCRT: 11
-    basicSPD: 110
+    basicSPD: 75
     interrupt: 18
     skill1ID: 1401
     skill2ID: 1402
@@ -1427,7 +1427,7 @@ MonoBehaviour:
     basicATKMax: 128
     basicACC: 90
     basicCRT: 11
-    basicSPD: 110
+    basicSPD: 75
     interrupt: 20
     skill1ID: 1401
     skill2ID: 1402
@@ -1450,7 +1450,7 @@ MonoBehaviour:
     basicATKMax: 160
     basicACC: 90
     basicCRT: 11
-    basicSPD: 110
+    basicSPD: 75
     interrupt: 22
     skill1ID: 1401
     skill2ID: 1402
@@ -1473,7 +1473,7 @@ MonoBehaviour:
     basicATKMax: 192
     basicACC: 90
     basicCRT: 11
-    basicSPD: 110
+    basicSPD: 75
     interrupt: 24
     skill1ID: 1401
     skill2ID: 1402
@@ -1495,8 +1495,8 @@ MonoBehaviour:
     basicATKMin: 28
     basicATKMax: 40
     basicACC: 60
-    basicCRT: 10
-    basicSPD: 40
+    basicCRT: 20
+    basicSPD: 20
     interrupt: 28
     skill1ID: 1401
     skill2ID: 1402
@@ -1518,8 +1518,8 @@ MonoBehaviour:
     basicATKMin: 56
     basicATKMax: 80
     basicACC: 60
-    basicCRT: 10
-    basicSPD: 45
+    basicCRT: 20
+    basicSPD: 25
     interrupt: 28
     skill1ID: 1401
     skill2ID: 1402
@@ -1541,8 +1541,8 @@ MonoBehaviour:
     basicATKMin: 74
     basicATKMax: 120
     basicACC: 60
-    basicCRT: 10
-    basicSPD: 50
+    basicCRT: 20
+    basicSPD: 30
     interrupt: 28
     skill1ID: 1401
     skill2ID: 1402
@@ -1564,8 +1564,8 @@ MonoBehaviour:
     basicATKMin: 112
     basicATKMax: 160
     basicACC: 60
-    basicCRT: 10
-    basicSPD: 55
+    basicCRT: 20
+    basicSPD: 35
     interrupt: 28
     skill1ID: 1401
     skill2ID: 1402
@@ -1587,8 +1587,8 @@ MonoBehaviour:
     basicATKMin: 140
     basicATKMax: 200
     basicACC: 60
-    basicCRT: 10
-    basicSPD: 60
+    basicCRT: 20
+    basicSPD: 40
     interrupt: 28
     skill1ID: 1401
     skill2ID: 1402
@@ -1610,8 +1610,8 @@ MonoBehaviour:
     basicATKMin: 168
     basicATKMax: 240
     basicACC: 60
-    basicCRT: 10
-    basicSPD: 65
+    basicCRT: 20
+    basicSPD: 45
     interrupt: 28
     skill1ID: 1401
     skill2ID: 1402
@@ -1772,7 +1772,7 @@ MonoBehaviour:
     basicATKMax: 30
     basicACC: 100
     basicCRT: 13
-    basicSPD: 60
+    basicSPD: 50
     interrupt: 17
     skill1ID: 1501
     skill2ID: 1502
@@ -1795,7 +1795,7 @@ MonoBehaviour:
     basicATKMax: 75
     basicACC: 100
     basicCRT: 13
-    basicSPD: 60
+    basicSPD: 50
     interrupt: 17
     skill1ID: 1501
     skill2ID: 1502
@@ -1818,7 +1818,7 @@ MonoBehaviour:
     basicATKMax: 120
     basicACC: 100
     basicCRT: 13
-    basicSPD: 60
+    basicSPD: 50
     interrupt: 17
     skill1ID: 1501
     skill2ID: 1502
@@ -1841,7 +1841,7 @@ MonoBehaviour:
     basicATKMax: 150
     basicACC: 100
     basicCRT: 13
-    basicSPD: 80
+    basicSPD: 60
     interrupt: 17
     skill1ID: 1501
     skill2ID: 1502
@@ -1864,7 +1864,7 @@ MonoBehaviour:
     basicATKMax: 195
     basicACC: 100
     basicCRT: 13
-    basicSPD: 80
+    basicSPD: 60
     interrupt: 17
     skill1ID: 1501
     skill2ID: 1502
@@ -1887,7 +1887,7 @@ MonoBehaviour:
     basicATKMax: 240
     basicACC: 100
     basicCRT: 13
-    basicSPD: 80
+    basicSPD: 60
     interrupt: 17
     skill1ID: 1501
     skill2ID: 1502

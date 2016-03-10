@@ -53,9 +53,9 @@ MonoBehaviour:
     description: "\u7528\u5C3D\u5168\u529B\u5411\u5BF9\u65B9\u523A\u53BB,\u9020\u6210\u653B\u51FB\u529B{0}\u7684\u4F24\u5BB3\u548C{1}\u7684\u51FB\u9000\u6548\u679C\u3002"
     skillType: 3
     targetType: 1
-    ATKMultiplier: 1.5
-    ACCMultiplier: .899999976
-    CRTMultiplier: 1
+    ATKMultiplier: 2
+    ACCMultiplier: .800000012
+    CRTMultiplier: 2
     preSPDMultiplier: 1
     postSPDMultiplier: 1
     interruptMultiplier: 2
@@ -164,7 +164,7 @@ MonoBehaviour:
     ATKMultiplier: 1.20000005
     ACCMultiplier: .800000012
     CRTMultiplier: 1
-    preSPDMultiplier: .699999988
+    preSPDMultiplier: .600000024
     postSPDMultiplier: 2
     interruptMultiplier: 2
     maxCombo: 0
