@@ -20,6 +20,8 @@ public class CommandEscape : Command
 
 	protected override void Execute()
 	{
+		MessageEventArgs args = new MessageEventArgs ();
+		args.AddMessage("Object", source);
 		EventManager.Instance.PostEvent(BattleEvent.BattleObjectEscape);
 	}
 }
