@@ -6,11 +6,12 @@ public class Player : BattleObject {
 /*
  * 角色在战斗中的数据实体与逻辑。
  * */	
-	protected new PlayerData data;
+	protected PlayerData playerData;
 
 	public void Init(int playerID)
 	{
 		data = DataManager.Instance.GetPlayerDataSet().GetPlayerData(playerID).Clone();
+		playerData = data as PlayerData;
 
 		UIEvent = this.GetComponent<BattleObjectUIEvent>();
 		UIEvent.Init(playerID);

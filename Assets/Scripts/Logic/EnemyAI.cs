@@ -4,12 +4,14 @@ using System.Collections.Generic;
 
 public class EnemyAI : MonoBehaviour {
 
+	AIData data;
 	Enemy self;
 	Command command = new CommandNone();
 
 	public void InitAI(int aiID)
 	{
 		self = GetComponent<Enemy>();
+		data = DataManager.Instance.GetEnemyDataSet ().GetAIData (aiID);
 	}
 
 	public void AISelectCommand()
