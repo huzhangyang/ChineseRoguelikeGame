@@ -22,6 +22,6 @@ public class CommandEscape : Command
 	{
 		MessageEventArgs args = new MessageEventArgs ();
 		args.AddMessage("Object", source);
-		EventManager.Instance.PostEvent(BattleEvent.BattleObjectEscape);
+		EventManager.Instance.PostEvent(BattleEvent.BattleObjectEscape, args);
 	}
 }

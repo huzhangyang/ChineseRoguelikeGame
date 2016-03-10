@@ -8,7 +8,9 @@ public class EnemyAI : MonoBehaviour {
 	private Enemy self;
 	private Command command = new CommandNone();
 
-	private Dictionary<CommandType, int> commandFrequency;
+	private Dictionary<int, int> hatredDict = new Dictionary<int, int>();//仇恨列表
+	private float hpPercent;//当前自身HP百分比
+
 	private int attackFrequency;
 	private int defenceFrequency;
 	private int itemFrequency;
@@ -39,13 +41,13 @@ public class EnemyAI : MonoBehaviour {
 		itemFrequency = data.itemFrequency;
 		strategyFrequency = data.strategyFrequency;
 
-		float hpPercent = self.currentHP / (float)self.maxHP;
-		if(hpPercent < 0.2f)
+		hpPercent = self.currentHP / (float)self.maxHP;
+		if(hpPercent <= 0.2f)
 		{
 			defenceFrequency += 50;
 			itemFrequency += 100;
 		}
-		else if(hpPercent < 0.5f)
+		else if(hpPercent <= 0.5f)
 		{
 			defenceFrequency += 10;
 			itemFrequency += 20;
@@ -70,13 +72,21 @@ public class EnemyAI : MonoBehaviour {
 			if (randomValue <= commandRange[i])
 			{
 				if(i == 0)
+				{
 					command = AIAttack();
+				}
 				else if(i == 1)
+				{
 					command = AIDefence();
+				}
 				else if(i == 2)
+				{
 					command = AIHeal();
+				}
 				else if(i == 3)
+				{
 					command = AIStrategy();
+				}
 
 				if(command == null) AISelectCommand();//若选择的模式里没有命令，则重新选择
 				break;
@@ -122,24 +132,44 @@ public class EnemyAI : MonoBehaviour {
 	private Command AIAttack()
 	{
 		List<Command> validCommands = self.availableCommands.FindAll((x)=>{return x.commandType == CommandType.Attack;});
-		return validCommands[Random.Range(0, validCommands.Count)];
+		if(validCommands.Count > 0)
+		{
+			return validCommands[Random.Range(0, validCommands.Count)];
+		}
+		else return null;
 	}
 
 	private Command AIDefence()
 	{
 		List<Command> validCommands = self.availableCommands.FindAll((x)=>{return x.commandType == CommandType.Defence;});
-		return validCommands[Random.Range(0, validCommands.Count)];
+		if(hpPercent > data.escapeThreshold)
+		{
+			return new CommandGuard ();
+		}
+		if(validCommands.Count > 0)
+		{
+			return validCommands[Random.Range(0, validCommands.Count)];
+		}
+		else return null;
 	}
 
 	private Command AIHeal()
 	{
-		Command command = new CommandUseItem(1, self.GetItemCount(1));
-		return command;
+		List<Command> validCommands = self.availableCommands.FindAll((x)=>{return x.commandType == CommandType.Item;});
+		if(validCommands.Count > 0)
+		{
+			return validCommands[Random.Range(0, validCommands.Count)];
+		}
+		else return null;
 	}
 
 	private Command AIStrategy()
 	{
-		Command command = new CommandEscape();
-		return command;
+		List<Command> validCommands = self.availableCommands.FindAll((x)=>{return x.commandType == CommandType.Strategy;});
+		if(validCommands.Count > 0 && hpPercent <= data.escapeThreshold)
+		{
+			return validCommands[Random.Range(0, validCommands.Count)];
+		}
+		else return null;
 	}
 }

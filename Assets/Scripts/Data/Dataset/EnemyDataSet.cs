@@ -58,5 +58,5 @@ public class AIData {
 	public int itemFrequency;
 	public int strategyFrequency;
 	public int escapeThreshold;
-	public bool useGuard;
+	public int guardThreshold;
 }

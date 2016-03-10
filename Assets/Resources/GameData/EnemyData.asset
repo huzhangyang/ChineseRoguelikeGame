@@ -1450,7 +1450,7 @@ MonoBehaviour:
     itemFrequency: 0
     strategyFrequency: 0
     escapeThreshold: 0
-    useGuard: 0
+    guardThreshold: 0
   - id: 1
     name: "\u8F93\u51FA\u578BAI"
     attackFrequency: 50
@@ -1458,7 +1458,7 @@ MonoBehaviour:
     itemFrequency: 15
     strategyFrequency: 5
     escapeThreshold: 20
-    useGuard: 0
+    guardThreshold: 100
   - id: 2
     name: "\u5766\u514B\u578BAI"
     attackFrequency: 30
@@ -1466,7 +1466,7 @@ MonoBehaviour:
     itemFrequency: 15
     strategyFrequency: 5
     escapeThreshold: 20
-    useGuard: 1
+    guardThreshold: 50
   - id: 3
     name: "\u7B56\u7565\u578BAI"
     attackFrequency: 20
@@ -1474,7 +1474,7 @@ MonoBehaviour:
     itemFrequency: 30
     strategyFrequency: 30
     escapeThreshold: 20
-    useGuard: 0
+    guardThreshold: 100
   - id: 4
     name: "\u65E0\u8111\u578BAI"
     attackFrequency: 70
@@ -1482,7 +1482,7 @@ MonoBehaviour:
     itemFrequency: 10
     strategyFrequency: 10
     escapeThreshold: 0
-    useGuard: 0
+    guardThreshold: 100
   - id: 5
     name: "\u80C6\u5C0F\u578BAI"
     attackFrequency: 20
@@ -1490,4 +1490,4 @@ MonoBehaviour:
     itemFrequency: 10
     strategyFrequency: 10
     escapeThreshold: 50
-    useGuard: 0
+    guardThreshold: 100
