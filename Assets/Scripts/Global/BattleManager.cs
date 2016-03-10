@@ -198,8 +198,7 @@ public class BattleManager : MonoBehaviour {
 
 	void OnBattleObjectEscape(MessageEventArgs args)
 	{
-		EventManager.Instance.PostEvent(BattleEvent.OnBattleLose);
-		StartCoroutine(FinishBattle());
+		OnBattleObjectDied();
 	}
 
 	/*CUSTOM METHOD*/
