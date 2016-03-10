@@ -6,6 +6,8 @@ public class Player : BattleObject {
 /*
  * 角色在战斗中的数据实体与逻辑。
  * */	
+	protected new PlayerData data;
+
 	public void Init(int playerID)
 	{
 		data = DataManager.Instance.GetPlayerDataSet().GetPlayerData(playerID).Clone();

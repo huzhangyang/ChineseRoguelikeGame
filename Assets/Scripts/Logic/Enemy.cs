@@ -7,6 +7,7 @@ public class Enemy : BattleObject {
  * 敌人在战斗中的数据实体与逻辑。
  * */
 	protected EnemyAI AI;
+	protected new EnemyData data;
 
 	public void Init(int enemyID)
 	{
@@ -14,12 +15,12 @@ public class Enemy : BattleObject {
 		isEnemy = true;
 
 		UIEvent = this.GetComponent<BattleObjectUIEvent>();
-		UIEvent.Init(((EnemyData)data).imageID);
+		UIEvent.Init(data.imageID);
 		UIEvent.InitEnemyHPBar(maxHP, data.battleType);
 		currentHP = maxHP;
 
 		AI = this.GetComponent<EnemyAI>();
-		AI.InitAI();
+		AI.InitAI(data.aiID);
 
 		for(int i = 0; i < data.bornBuffs.Count; i++)
 		{
@@ -40,6 +41,6 @@ public class Enemy : BattleObject {
 
 	public override bool IsBoss()
 	{
-		return ((EnemyData)data).isBoss;
+		return data.isBoss;
 	}
 }

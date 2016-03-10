@@ -7,7 +7,7 @@ public class EnemyAI : MonoBehaviour {
 	Enemy self;
 	Command command = new CommandNone();
 
-	public void InitAI()
+	public void InitAI(int aiID)
 	{
 		self = GetComponent<Enemy>();
 	}
