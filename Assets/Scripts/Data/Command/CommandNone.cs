@@ -13,9 +13,12 @@ public class CommandNone : Command
 		postExecutionRecover = 0;
 	}
 
-	public override void Execute()
+	protected override void SetExecuteMessage()
 	{
 		executeMessage = source.GetName() + "按兵不动！";
-		SendExecuteMessage ();
+	}
+
+	protected override void Execute()
+	{
 	}
 }

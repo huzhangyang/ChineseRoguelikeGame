@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07d0b623813b87343ae47dfef0aead06, type: 3}
   m_Name: EnemyData
   m_EditorClassIdentifier: 
-  dataSet:
+  enemyDataSet:
   - name: "\u65E0"
     id: 0
     talentID: 0
@@ -31,14 +31,13 @@ MonoBehaviour:
     yinMulti: 1
     yangMulti: 1
     neutralMulti: 1
+    bornBuffs: 
     weaponID: 1000
-    ring1ID: 0
-    ring2ID: 0
-    magicIDs: 
     itemKeys: 
     itemValues: 
     isBoss: 0
     imageID: 1
+    aiID: 0
   - name: "\u54A9\u54A9"
     id: 101
     talentID: 0
@@ -58,14 +57,13 @@ MonoBehaviour:
     yinMulti: 1
     yangMulti: 1
     neutralMulti: 1
+    bornBuffs: 
     weaponID: 3001
-    ring1ID: 0
-    ring2ID: 0
-    magicIDs: a10f0000
-    itemKeys: 
-    itemValues: 
+    itemKeys: a10f0000
+    itemValues: 01000000
     isBoss: 0
     imageID: 101
+    aiID: 2
   - name: "\u7269\u7406\u54A9"
     id: 102
     talentID: 0
@@ -85,14 +83,13 @@ MonoBehaviour:
     yinMulti: 1
     yangMulti: 1
     neutralMulti: 2
+    bornBuffs: 
     weaponID: 1220
-    ring1ID: 0
-    ring2ID: 0
-    magicIDs: 
     itemKeys: 
     itemValues: 
     isBoss: 0
     imageID: 101
+    aiID: 1
   - name: "\u6CD5\u672F\u54A9"
     id: 103
     talentID: 0
@@ -112,14 +109,13 @@ MonoBehaviour:
     yinMulti: 1
     yangMulti: 1
     neutralMulti: 1
+    bornBuffs: 
     weaponID: 1000
-    ring1ID: 0
-    ring2ID: 0
-    magicIDs: da0700003e080000a2080000
-    itemKeys: 
-    itemValues: 
+    itemKeys: da0700003e080000a2080000
+    itemValues: 010000000100000001000000
     isBoss: 0
     imageID: 101
+    aiID: 1
   - name: "\u5C71\u795E\u54A9"
     id: 104
     talentID: 0
@@ -139,14 +135,13 @@ MonoBehaviour:
     yinMulti: 1
     yangMulti: 1
     neutralMulti: 1
+    bornBuffs: 
     weaponID: 3002
-    ring1ID: 0
-    ring2ID: 0
-    magicIDs: 
     itemKeys: 01000000
     itemValues: 01000000
     isBoss: 1
     imageID: 104
+    aiID: 2
   - name: "\u66B4\u8D70\u6FAA"
     id: 105
     talentID: 0
@@ -166,14 +161,13 @@ MonoBehaviour:
     yinMulti: 1
     yangMulti: 1
     neutralMulti: 1
+    bornBuffs: 
     weaponID: 1000
-    ring1ID: 0
-    ring2ID: 0
-    magicIDs: f80700005c080000c0080000
-    itemKeys: 01000000
-    itemValues: 01000000
+    itemKeys: f80700005c080000c0080000
+    itemValues: 010000000100000001000000
     isBoss: 1
     imageID: 105
+    aiID: 4
   - name: "\u7EA2\u5149"
     id: 11
     talentID: 0
@@ -193,14 +187,13 @@ MonoBehaviour:
     yinMulti: 1
     yangMulti: 1
     neutralMulti: 1
+    bornBuffs: 
     weaponID: 1000
-    ring1ID: 0
-    ring2ID: 0
-    magicIDs: a50f0000a60f0000
-    itemKeys: 
-    itemValues: 
+    itemKeys: a50f0000a60f0000
+    itemValues: 0100000001000000
     isBoss: 1
     imageID: 1
+    aiID: 0
   - name: "\u767D\u6C11"
     id: 12
     talentID: 0
@@ -220,14 +213,13 @@ MonoBehaviour:
     yinMulti: 1
     yangMulti: 1
     neutralMulti: 1
+    bornBuffs: 
     weaponID: 3003
-    ring1ID: 0
-    ring2ID: 0
-    magicIDs: 
     itemKeys: 
     itemValues: 
     isBoss: 1
     imageID: 1
+    aiID: 0
   - name: "\u7384\u9F9F"
     id: 21
     talentID: 0
@@ -247,14 +239,13 @@ MonoBehaviour:
     yinMulti: 1
     yangMulti: 1
     neutralMulti: 1
+    bornBuffs: 
     weaponID: 3004
-    ring1ID: 0
-    ring2ID: 0
-    magicIDs: a70f0000
-    itemKeys: 
-    itemValues: 
+    itemKeys: a70f0000
+    itemValues: 01000000
     isBoss: 0
     imageID: 1
+    aiID: 0
   - name: "\u733C\u8A11"
     id: 32
     talentID: 0
@@ -274,14 +265,13 @@ MonoBehaviour:
     yinMulti: 1
     yangMulti: 1
     neutralMulti: 1
+    bornBuffs: 
     weaponID: 3005
-    ring1ID: 0
-    ring2ID: 0
-    magicIDs: 
     itemKeys: 
     itemValues: 
     isBoss: 0
     imageID: 1
+    aiID: 0
   - name: "\u9B3D"
     id: 34
     talentID: 0
@@ -301,14 +291,13 @@ MonoBehaviour:
     yinMulti: 1
     yangMulti: 1
     neutralMulti: 1
+    bornBuffs: 
     weaponID: 1000
-    ring1ID: 0
-    ring2ID: 0
-    magicIDs: a80f0000
-    itemKeys: 
-    itemValues: 
+    itemKeys: a80f0000
+    itemValues: 01000000
     isBoss: 0
     imageID: 1
+    aiID: 0
   - name: "\u8BA1\u8499"
     id: 13
     talentID: 0
@@ -328,14 +317,13 @@ MonoBehaviour:
     yinMulti: 1
     yangMulti: 1
     neutralMulti: 1
+    bornBuffs: 
     weaponID: 1000
-    ring1ID: 0
-    ring2ID: 0
-    magicIDs: 
     itemKeys: 
     itemValues: 
     isBoss: 1
     imageID: 1
+    aiID: 0
   - name: "\u80A5\u9057"
     id: 23
     talentID: 0
@@ -355,14 +343,13 @@ MonoBehaviour:
     yinMulti: 1
     yangMulti: 1
     neutralMulti: 1
+    bornBuffs: 
     weaponID: 1000
-    ring1ID: 0
-    ring2ID: 0
-    magicIDs: 
     itemKeys: 
     itemValues: 
     isBoss: 0
     imageID: 1
+    aiID: 0
   - name: "\u86EE\u86EE"
     id: 37
     talentID: 0
@@ -382,14 +369,13 @@ MonoBehaviour:
     yinMulti: 1
     yangMulti: 1
     neutralMulti: 1
+    bornBuffs: 
     weaponID: 1000
-    ring1ID: 0
-    ring2ID: 0
-    magicIDs: 
     itemKeys: 
     itemValues: 
     isBoss: 0
     imageID: 1
+    aiID: 0
   - name: "\u9F13"
     id: 14
     talentID: 0
@@ -409,14 +395,13 @@ MonoBehaviour:
     yinMulti: 1
     yangMulti: 1
     neutralMulti: 1
+    bornBuffs: 
     weaponID: 1000
-    ring1ID: 0
-    ring2ID: 0
-    magicIDs: 
     itemKeys: 
     itemValues: 
     isBoss: 1
     imageID: 1
+    aiID: 0
   - name: "\u8446\u6C5F"
     id: 15
     talentID: 0
@@ -436,14 +421,13 @@ MonoBehaviour:
     yinMulti: 1
     yangMulti: 1
     neutralMulti: 1
+    bornBuffs: 
     weaponID: 1000
-    ring1ID: 0
-    ring2ID: 0
-    magicIDs: 
     itemKeys: 
     itemValues: 
     isBoss: 1
     imageID: 1
+    aiID: 0
   - name: "\u5B5F\u6781"
     id: 25
     talentID: 0
@@ -463,14 +447,13 @@ MonoBehaviour:
     yinMulti: 1
     yangMulti: 1
     neutralMulti: 1
+    bornBuffs: 
     weaponID: 1000
-    ring1ID: 0
-    ring2ID: 0
-    magicIDs: 
     itemKeys: 
     itemValues: 
     isBoss: 0
     imageID: 1
+    aiID: 0
   - name: "\u8BF8\u728D"
     id: 26
     talentID: 0
@@ -490,14 +473,13 @@ MonoBehaviour:
     yinMulti: 1
     yangMulti: 1
     neutralMulti: 1
+    bornBuffs: 
     weaponID: 1000
-    ring1ID: 0
-    ring2ID: 0
-    magicIDs: 
     itemKeys: 
     itemValues: 
     isBoss: 0
     imageID: 1
+    aiID: 0
   - name: "\u4E5D\u9B3F"
     id: 39
     talentID: 0
@@ -517,14 +499,13 @@ MonoBehaviour:
     yinMulti: 1
     yangMulti: 1
     neutralMulti: 1
+    bornBuffs: 
     weaponID: 1000
-    ring1ID: 0
-    ring2ID: 0
-    magicIDs: 
     itemKeys: 
     itemValues: 
     isBoss: 0
     imageID: 1
+    aiID: 0
   - name: "\u5BD3"
     id: 310
     talentID: 0
@@ -544,14 +525,13 @@ MonoBehaviour:
     yinMulti: 1
     yangMulti: 1
     neutralMulti: 1
+    bornBuffs: 
     weaponID: 1000
-    ring1ID: 0
-    ring2ID: 0
-    magicIDs: 
     itemKeys: 
     itemValues: 
     isBoss: 0
     imageID: 1
+    aiID: 0
   - name: "\u9178\u4E0E"
     id: 313
     talentID: 0
@@ -571,14 +551,13 @@ MonoBehaviour:
     yinMulti: 1
     yangMulti: 1
     neutralMulti: 1
+    bornBuffs: 
     weaponID: 1000
-    ring1ID: 0
-    ring2ID: 0
-    magicIDs: 
     itemKeys: 
     itemValues: 
     isBoss: 0
     imageID: 1
+    aiID: 0
   - name: "\u9646\u543E"
     id: 16
     talentID: 0
@@ -598,14 +577,13 @@ MonoBehaviour:
     yinMulti: 1
     yangMulti: 1
     neutralMulti: 1
+    bornBuffs: 
     weaponID: 1000
-    ring1ID: 0
-    ring2ID: 0
-    magicIDs: 
     itemKeys: 
     itemValues: 
     isBoss: 1
     imageID: 1
+    aiID: 0
   - name: "\u6761\u45E4"
     id: 28
     talentID: 0
@@ -625,14 +603,13 @@ MonoBehaviour:
     yinMulti: 1
     yangMulti: 1
     neutralMulti: 1
+    bornBuffs: 
     weaponID: 1000
-    ring1ID: 0
-    ring2ID: 0
-    magicIDs: 
     itemKeys: 
     itemValues: 
     isBoss: 0
     imageID: 1
+    aiID: 0
   - name: "\u4ECE\u4ECE"
     id: 314
     talentID: 0
@@ -652,14 +629,13 @@ MonoBehaviour:
     yinMulti: 1
     yangMulti: 1
     neutralMulti: 1
+    bornBuffs: 
     weaponID: 1000
-    ring1ID: 0
-    ring2ID: 0
-    magicIDs: 
     itemKeys: 
     itemValues: 
     isBoss: 0
     imageID: 1
+    aiID: 0
   - name: "\u6761\u45E4"
     id: 316
     talentID: 0
@@ -679,14 +655,13 @@ MonoBehaviour:
     yinMulti: 1
     yangMulti: 1
     neutralMulti: 1
+    bornBuffs: 
     weaponID: 1000
-    ring1ID: 0
-    ring2ID: 0
-    magicIDs: 
     itemKeys: 
     itemValues: 
     isBoss: 0
     imageID: 1
+    aiID: 0
   - name: "\u5408\u7AB3"
     id: 318
     talentID: 0
@@ -706,14 +681,13 @@ MonoBehaviour:
     yinMulti: 1
     yangMulti: 1
     neutralMulti: 1
+    bornBuffs: 
     weaponID: 1000
-    ring1ID: 0
-    ring2ID: 0
-    magicIDs: 
     itemKeys: 
     itemValues: 
     isBoss: 0
     imageID: 1
+    aiID: 0
   - name: "\u82F1\u62DB"
     id: 17
     talentID: 0
@@ -733,14 +707,13 @@ MonoBehaviour:
     yinMulti: 1
     yangMulti: 1
     neutralMulti: 1
+    bornBuffs: 
     weaponID: 1000
-    ring1ID: 0
-    ring2ID: 0
-    magicIDs: 
     itemKeys: 
     itemValues: 
     isBoss: 1
     imageID: 1
+    aiID: 0
   - name: "\u9E23\u86C7"
     id: 211
     talentID: 0
@@ -760,14 +733,13 @@ MonoBehaviour:
     yinMulti: 1
     yangMulti: 1
     neutralMulti: 1
+    bornBuffs: 
     weaponID: 1000
-    ring1ID: 0
-    ring2ID: 0
-    magicIDs: 
     itemKeys: 
     itemValues: 
     isBoss: 0
     imageID: 1
+    aiID: 0
   - name: "\u6CF0\u9022"
     id: 212
     talentID: 0
@@ -787,14 +759,13 @@ MonoBehaviour:
     yinMulti: 1
     yangMulti: 1
     neutralMulti: 1
+    bornBuffs: 
     weaponID: 1000
-    ring1ID: 0
-    ring2ID: 0
-    magicIDs: 
     itemKeys: 
     itemValues: 
     isBoss: 0
     imageID: 1
+    aiID: 0
   - name: "\u5316\u86C7"
     id: 319
     talentID: 0
@@ -814,14 +785,13 @@ MonoBehaviour:
     yinMulti: 1
     yangMulti: 1
     neutralMulti: 1
+    bornBuffs: 
     weaponID: 1000
-    ring1ID: 0
-    ring2ID: 0
-    magicIDs: 
     itemKeys: 
     itemValues: 
     isBoss: 0
     imageID: 1
+    aiID: 0
   - name: "\u72E4"
     id: 320
     talentID: 0
@@ -841,14 +811,13 @@ MonoBehaviour:
     yinMulti: 1
     yangMulti: 1
     neutralMulti: 1
+    bornBuffs: 
     weaponID: 1000
-    ring1ID: 0
-    ring2ID: 0
-    magicIDs: 
     itemKeys: 
     itemValues: 
     isBoss: 0
     imageID: 1
+    aiID: 0
   - name: "\u94A6\u539F"
     id: 321
     talentID: 0
@@ -868,14 +837,13 @@ MonoBehaviour:
     yinMulti: 1
     yangMulti: 1
     neutralMulti: 1
+    bornBuffs: 
     weaponID: 1000
-    ring1ID: 0
-    ring2ID: 0
-    magicIDs: 
     itemKeys: 
     itemValues: 
     isBoss: 0
     imageID: 1
+    aiID: 0
   - name: "\u767D\u5E1D\u5C11\u660A"
     id: 18
     talentID: 0
@@ -895,14 +863,13 @@ MonoBehaviour:
     yinMulti: 1
     yangMulti: 1
     neutralMulti: 1
+    bornBuffs: 
     weaponID: 1000
-    ring1ID: 0
-    ring2ID: 0
-    magicIDs: 
     itemKeys: 
     itemValues: 
     isBoss: 1
     imageID: 1
+    aiID: 0
   - name: "\u538C\u706B"
     id: 214
     talentID: 0
@@ -922,14 +889,13 @@ MonoBehaviour:
     yinMulti: 1
     yangMulti: 1
     neutralMulti: 1
+    bornBuffs: 
     weaponID: 1000
-    ring1ID: 0
-    ring2ID: 0
-    magicIDs: 
     itemKeys: 
     itemValues: 
     isBoss: 0
     imageID: 1
+    aiID: 0
   - name: "\u4E09\u9996"
     id: 215
     talentID: 0
@@ -949,14 +915,13 @@ MonoBehaviour:
     yinMulti: 1
     yangMulti: 1
     neutralMulti: 1
+    bornBuffs: 
     weaponID: 1000
-    ring1ID: 0
-    ring2ID: 0
-    magicIDs: 
     itemKeys: 
     itemValues: 
     isBoss: 0
     imageID: 1
+    aiID: 0
   - name: "\u4E09\u8EAB"
     id: 216
     talentID: 0
@@ -976,14 +941,13 @@ MonoBehaviour:
     yinMulti: 1
     yangMulti: 1
     neutralMulti: 1
+    bornBuffs: 
     weaponID: 1000
-    ring1ID: 0
-    ring2ID: 0
-    magicIDs: 
     itemKeys: 
     itemValues: 
     isBoss: 0
     imageID: 1
+    aiID: 0
   - name: "\u6587\u864E"
     id: 325
     talentID: 0
@@ -1003,14 +967,13 @@ MonoBehaviour:
     yinMulti: 1
     yangMulti: 1
     neutralMulti: 1
+    bornBuffs: 
     weaponID: 1000
-    ring1ID: 0
-    ring2ID: 0
-    magicIDs: 
     itemKeys: 
     itemValues: 
     isBoss: 0
     imageID: 1
+    aiID: 0
   - name: "\u9B48"
     id: 326
     talentID: 0
@@ -1030,14 +993,13 @@ MonoBehaviour:
     yinMulti: 1
     yangMulti: 1
     neutralMulti: 1
+    bornBuffs: 
     weaponID: 1000
-    ring1ID: 0
-    ring2ID: 0
-    magicIDs: 
     itemKeys: 
     itemValues: 
     isBoss: 0
     imageID: 1
+    aiID: 0
   - name: "\u9752\u5E1D\u592A\u660A"
     id: 19
     talentID: 0
@@ -1057,14 +1019,13 @@ MonoBehaviour:
     yinMulti: 1
     yangMulti: 1
     neutralMulti: 1
+    bornBuffs: 
     weaponID: 1000
-    ring1ID: 0
-    ring2ID: 0
-    magicIDs: 
     itemKeys: 
     itemValues: 
     isBoss: 1
     imageID: 1
+    aiID: 0
   - name: "\u5947\u80B1"
     id: 218
     talentID: 0
@@ -1084,14 +1045,13 @@ MonoBehaviour:
     yinMulti: 1
     yangMulti: 1
     neutralMulti: 1
+    bornBuffs: 
     weaponID: 1000
-    ring1ID: 0
-    ring2ID: 0
-    magicIDs: 
     itemKeys: 
     itemValues: 
     isBoss: 0
     imageID: 1
+    aiID: 0
   - name: "\u7FBD\u6C11"
     id: 327
     talentID: 0
@@ -1111,14 +1071,13 @@ MonoBehaviour:
     yinMulti: 1
     yangMulti: 1
     neutralMulti: 1
+    bornBuffs: 
     weaponID: 1000
-    ring1ID: 0
-    ring2ID: 0
-    magicIDs: 
     itemKeys: 
     itemValues: 
     isBoss: 0
     imageID: 1
+    aiID: 0
   - name: "\u706D\u8499"
     id: 328
     talentID: 0
@@ -1138,14 +1097,13 @@ MonoBehaviour:
     yinMulti: 1
     yangMulti: 1
     neutralMulti: 1
+    bornBuffs: 
     weaponID: 1000
-    ring1ID: 0
-    ring2ID: 0
-    magicIDs: 
     itemKeys: 
     itemValues: 
     isBoss: 0
     imageID: 1
+    aiID: 0
   - name: "\u897F\u738B\u6BCD"
     id: 110
     talentID: 0
@@ -1165,14 +1123,13 @@ MonoBehaviour:
     yinMulti: 1
     yangMulti: 1
     neutralMulti: 1
+    bornBuffs: 
     weaponID: 1000
-    ring1ID: 0
-    ring2ID: 0
-    magicIDs: 
     itemKeys: 
     itemValues: 
     isBoss: 1
     imageID: 1
+    aiID: 0
   - name: "\u795D\u878D"
     id: 111
     talentID: 0
@@ -1192,14 +1149,13 @@ MonoBehaviour:
     yinMulti: 1
     yangMulti: 1
     neutralMulti: 1
+    bornBuffs: 
     weaponID: 1000
-    ring1ID: 0
-    ring2ID: 0
-    magicIDs: 
     itemKeys: 
     itemValues: 
     isBoss: 1
     imageID: 1
+    aiID: 0
   - name: "\u5171\u5DE5"
     id: 112
     talentID: 0
@@ -1219,14 +1175,13 @@ MonoBehaviour:
     yinMulti: 1
     yangMulti: 1
     neutralMulti: 1
+    bornBuffs: 
     weaponID: 1000
-    ring1ID: 0
-    ring2ID: 0
-    magicIDs: 
     itemKeys: 
     itemValues: 
     isBoss: 1
     imageID: 1
+    aiID: 0
   - name: "\u65E0\u542F"
     id: 219
     talentID: 0
@@ -1246,14 +1201,13 @@ MonoBehaviour:
     yinMulti: 1
     yangMulti: 1
     neutralMulti: 1
+    bornBuffs: 
     weaponID: 1000
-    ring1ID: 0
-    ring2ID: 0
-    magicIDs: 
     itemKeys: 
     itemValues: 
     isBoss: 0
     imageID: 1
+    aiID: 0
   - name: "\u76F8\u67F3"
     id: 220
     talentID: 0
@@ -1273,14 +1227,13 @@ MonoBehaviour:
     yinMulti: 1
     yangMulti: 1
     neutralMulti: 1
+    bornBuffs: 
     weaponID: 1000
-    ring1ID: 0
-    ring2ID: 0
-    magicIDs: 
     itemKeys: 
     itemValues: 
     isBoss: 0
     imageID: 1
+    aiID: 0
   - name: "\u535A\u7236"
     id: 330
     talentID: 0
@@ -1300,14 +1253,13 @@ MonoBehaviour:
     yinMulti: 1
     yangMulti: 1
     neutralMulti: 1
+    bornBuffs: 
     weaponID: 1000
-    ring1ID: 0
-    ring2ID: 0
-    magicIDs: 
     itemKeys: 
     itemValues: 
     isBoss: 0
     imageID: 1
+    aiID: 0
   - name: "\u9B46"
     id: 333
     talentID: 0
@@ -1327,14 +1279,13 @@ MonoBehaviour:
     yinMulti: 1
     yangMulti: 1
     neutralMulti: 1
+    bornBuffs: 
     weaponID: 1000
-    ring1ID: 0
-    ring2ID: 0
-    magicIDs: 
     itemKeys: 
     itemValues: 
     isBoss: 0
     imageID: 1
+    aiID: 0
   - name: "\u53E5\u8292"
     id: 113
     talentID: 0
@@ -1354,14 +1305,13 @@ MonoBehaviour:
     yinMulti: 1
     yangMulti: 1
     neutralMulti: 1
+    bornBuffs: 
     weaponID: 1000
-    ring1ID: 0
-    ring2ID: 0
-    magicIDs: 
     itemKeys: 
     itemValues: 
     isBoss: 1
     imageID: 1
+    aiID: 0
   - name: "\u5962\u6BD4\u5C38"
     id: 221
     talentID: 0
@@ -1381,14 +1331,13 @@ MonoBehaviour:
     yinMulti: 1
     yangMulti: 1
     neutralMulti: 1
+    bornBuffs: 
     weaponID: 1000
-    ring1ID: 0
-    ring2ID: 0
-    magicIDs: 
     itemKeys: 
     itemValues: 
     isBoss: 0
     imageID: 1
+    aiID: 0
   - name: "\u5929\u5434"
     id: 222
     talentID: 0
@@ -1408,14 +1357,13 @@ MonoBehaviour:
     yinMulti: 1
     yangMulti: 1
     neutralMulti: 1
+    bornBuffs: 
     weaponID: 1000
-    ring1ID: 0
-    ring2ID: 0
-    magicIDs: 
     itemKeys: 
     itemValues: 
     isBoss: 0
     imageID: 1
+    aiID: 0
   - name: "\u9ED1\u9F7F"
     id: 334
     talentID: 0
@@ -1435,14 +1383,13 @@ MonoBehaviour:
     yinMulti: 1
     yangMulti: 1
     neutralMulti: 1
+    bornBuffs: 
     weaponID: 1000
-    ring1ID: 0
-    ring2ID: 0
-    magicIDs: 
     itemKeys: 
     itemValues: 
     isBoss: 0
     imageID: 1
+    aiID: 0
   - name: "\u96E8\u5E08"
     id: 335
     talentID: 0
@@ -1462,14 +1409,13 @@ MonoBehaviour:
     yinMulti: 1
     yangMulti: 1
     neutralMulti: 1
+    bornBuffs: 
     weaponID: 1000
-    ring1ID: 0
-    ring2ID: 0
-    magicIDs: 
     itemKeys: 
     itemValues: 
     isBoss: 0
     imageID: 1
+    aiID: 0
   - name: "\u7384\u80A1"
     id: 336
     talentID: 0
@@ -1489,11 +1435,59 @@ MonoBehaviour:
     yinMulti: 1
     yangMulti: 1
     neutralMulti: 1
+    bornBuffs: 
     weaponID: 1000
-    ring1ID: 0
-    ring2ID: 0
-    magicIDs: 
     itemKeys: 
     itemValues: 
     isBoss: 0
     imageID: 1
+    aiID: 0
+  aiDataSet:
+  - id: 0
+    name: "\u65E0"
+    attackFrequency: 0
+    defenceFrequency: 0
+    itemFrequency: 0
+    strategyFrequency: 0
+    escapeThreshold: 0
+    guardThreshold: 0
+  - id: 1
+    name: "\u8F93\u51FA\u578BAI"
+    attackFrequency: 50
+    defenceFrequency: 30
+    itemFrequency: 15
+    strategyFrequency: 5
+    escapeThreshold: 20
+    guardThreshold: 100
+  - id: 2
+    name: "\u5766\u514B\u578BAI"
+    attackFrequency: 30
+    defenceFrequency: 50
+    itemFrequency: 15
+    strategyFrequency: 5
+    escapeThreshold: 20
+    guardThreshold: 50
+  - id: 3
+    name: "\u7B56\u7565\u578BAI"
+    attackFrequency: 20
+    defenceFrequency: 20
+    itemFrequency: 30
+    strategyFrequency: 30
+    escapeThreshold: 20
+    guardThreshold: 100
+  - id: 4
+    name: "\u65E0\u8111\u578BAI"
+    attackFrequency: 70
+    defenceFrequency: 10
+    itemFrequency: 10
+    strategyFrequency: 10
+    escapeThreshold: 0
+    guardThreshold: 100
+  - id: 5
+    name: "\u80C6\u5C0F\u578BAI"
+    attackFrequency: 20
+    defenceFrequency: 60
+    itemFrequency: 10
+    strategyFrequency: 10
+    escapeThreshold: 50
+    guardThreshold: 100

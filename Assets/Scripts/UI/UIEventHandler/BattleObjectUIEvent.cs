@@ -5,13 +5,14 @@ using System.Collections;
 
 public class BattleObjectUIEvent : MonoBehaviour {
 
-	public Image objectImage;
-	public Image shadowImage;
 	private Image avatarImage;
 	private Slider HPBar;
 	private Text HPText;
-
 	private bool allowClick;
+
+	public Image objectImage;
+	public Image shadowImage;
+	public Transform buffTransform;
 
 	public void Init(int playerID) 
 	{

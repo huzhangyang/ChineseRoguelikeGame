@@ -16,16 +16,19 @@ public class EnemyDataConvertor : MonoBehaviour
 	{		
 		FileStream stream = File.Open(Application.dataPath + PATH_EXCEL, FileMode.Open, FileAccess.Read);
 		IExcelDataReader excelReader = ExcelReaderFactory.CreateOpenXmlReader(stream);
+		DataSet dataSet = excelReader.AsDataSet();
+		ExcelLoader loader;
 
-		DataTable dataTable = excelReader.AsDataSet ().Tables["Enemy"];
-		excelReader.Dispose ();		
-		if (dataTable != null)
+		if (excelReader != null)
 		{
 			EnemyDataSet enemyDataSet = ScriptableObject.CreateInstance<EnemyDataSet>();
-			ExcelLoader loader = new ExcelLoader(dataTable);
-			enemyDataSet.dataSet = loader.CreateDataList<EnemyData>();
+			loader = new ExcelLoader(dataSet.Tables["Enemy"]);
+			enemyDataSet.enemyDataSet = loader.CreateDataList<EnemyData>();
+			loader = new ExcelLoader(dataSet.Tables["AI"]);
+			enemyDataSet.aiDataSet = loader.CreateDataList<AIData>();
 			AssetDatabase.CreateAsset(enemyDataSet, PATH_ASSET);
 		}
+		excelReader.Dispose ();		
 	}
 }
 

@@ -33,6 +33,7 @@ public abstract class ObjectData{
 	public float yinMulti = 1;	
 	public float yangMulti = 1;
 	public float neutralMulti = 1;
+	public List<int> bornBuffs = new List<int>();//自带BUFF
 	//Equipment
 	public int weaponID;
 	

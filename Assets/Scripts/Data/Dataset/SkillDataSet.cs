@@ -62,6 +62,7 @@ public class SkillData{
 	public List<int> buffID;
 	public List<int> buffPercent;
 	public List<int> buffTurns;
+	public List<int> buffAddTriggers;
 	public List<int> effectID;
 	public List<int> effectPercent;
 }
@@ -76,6 +77,7 @@ public class BuffData{
 	public string description;
 	public BuffTrigger trigger;//触发时机
 	public string buffEffect;//效果函数名
+	public bool bornBuff;//天生BUFF（没有图标，不会被去除）
 }
 
 [System.Serializable]

@@ -93,7 +93,10 @@ public class DataManager : MonoBehaviour {
 	{
 		enemyDataSet = new EnemyDataSet ();
 		dialogueDataSet = new DialogueDataSet();
-		//is save need to be unloaded?
+		enemyDataSet = new EnemyDataSet();
+		playerDataSet = new PlayerDataSet();
+		itemDataSet = new ItemDataSet();
+		skillDataSet = new SkillDataSet();
 	}
 
 	public EnemyDataSet GetEnemyDataSet()

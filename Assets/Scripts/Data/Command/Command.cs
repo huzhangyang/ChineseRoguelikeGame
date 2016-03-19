@@ -17,55 +17,80 @@ public abstract class Command {
 	public List<BattleObject> targetList = new List<BattleObject>();//执行目标
 	public string executeMessage;//执行时显示的信息 
 
-	public abstract void Execute ();
-	public virtual bool IsAvailable()
-	{
-		return true;
-	}
+	protected abstract void Execute ();
+	protected abstract void SetExecuteMessage();
+	public virtual bool IsAvailable(){return true;}
 
-	protected void SendExecuteMessage()
+	private void SendExecuteMessage()
 	{
-		//send message
 		MessageEventArgs args = new MessageEventArgs();
 		args.AddMessage("Message", executeMessage);
 		EventManager.Instance.PostEvent(BattleEvent.OnCommandExecute, args);
+	}
+
+	public IEnumerator OnExecute()
+	{
+		SetExecuteMessage();
+		SendExecuteMessage();
+		yield return new WaitForSeconds(1);
+		Execute();
+		source.PostExecute();
 	}
 
 	public static List<Command> GetAvailableCommands(BattleObject bo)
 	{
 		List<Command> availableCommands = new List<Command>();
 		//检查攻击类技能
-		if(bo.GetBattleType() != BattleType.Magical && bo.GetWeapon() > 1000)
+		if(!bo.disableAttackCommand)
 		{
-			WeaponData weaponData = DataManager.Instance.GetItemDataSet().GetWeaponData(bo.GetWeapon());
-			availableCommands.Add(new CommandUseWeaponSkill(weaponData, weaponData.skill1ID));
-			availableCommands.Add(new CommandUseWeaponSkill(weaponData, weaponData.skill2ID));
-			availableCommands.Add(new CommandUseWeaponSkill(weaponData, weaponData.skill3ID));
-		}
-		if(bo.GetBattleType() != BattleType.Physical)
-		{
-			foreach(int magicID in bo.GetMagicList())
+			if(bo.GetBattleType() != BattleType.Magical && bo.GetWeapon() > 1000)
 			{
-				MagicData magicData = DataManager.Instance.GetItemDataSet().GetMagicData(magicID);
-				availableCommands.Add(new CommandUseMagicSkill(magicData, magicData.skillID));
+				WeaponData weaponData = DataManager.Instance.GetItemDataSet().GetWeaponData(bo.GetWeapon());
+				if(weaponData.skill1ID > 0)
+					availableCommands.Add(new CommandUseWeaponSkill(weaponData, weaponData.skill1ID));
+				if(weaponData.skill2ID > 0)
+					availableCommands.Add(new CommandUseWeaponSkill(weaponData, weaponData.skill2ID));
+				if(weaponData.skill3ID > 0)
+					availableCommands.Add(new CommandUseWeaponSkill(weaponData, weaponData.skill3ID));
+			}
+			if(bo.GetBattleType() != BattleType.Physical)
+			{
+				foreach(int magicID in bo.GetMagicList())
+				{
+					MagicData magicData = DataManager.Instance.GetItemDataSet().GetMagicData(magicID);
+					availableCommands.Add(new CommandUseMagicSkill(magicData, magicData.skillID));
+				}
 			}
 		}
 		//检查防御技能
-		availableCommands.Add(new CommandGuard());
-		availableCommands.Add(new CommandEvade());
-		//检查物品
-		if(bo.GetBattleType() != BattleType.Magical)
+		if(!bo.disableDefenceCommand)
 		{
-			foreach(int weaponID in bo.GetWeaponList())
+			availableCommands.Add(new CommandBlock());
+			availableCommands.Add(new CommandEvade());
+			availableCommands.Add(new CommandGuard());
+		}
+		//检查物品
+		if(!bo.disableItemCommand)
+		{
+			if(bo.GetBattleType() != BattleType.Magical)
 			{
-				if(weaponID != bo.GetWeapon())
-					availableCommands.Add(new CommandSwitchWeapon(weaponID));
+				foreach(int weaponID in bo.GetWeaponList())
+				{
+					if(weaponID != bo.GetWeapon())
+						availableCommands.Add(new CommandSwitchWeapon(weaponID));
+				}
+			}
+			foreach(var item in bo.GetItemList())
+			{
+				availableCommands.Add(new CommandUseItem(item.Key, item.Value));
 			}
 		}
-		availableCommands.Add(new CommandUseHealing(bo.GetItemCount(1)));
-		//检查策略
-		availableCommands.Add(new CommandNone());
-		availableCommands.Add(new CommandEscape());
+		//检查策略		
+		if(!bo.disableStrategyCommand)
+		{
+			availableCommands.Add(new CommandNone());
+			availableCommands.Add(new CommandEscape());
+		}
 
 		foreach(Command command in availableCommands)
 		{

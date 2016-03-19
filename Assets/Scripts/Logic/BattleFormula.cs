@@ -42,6 +42,14 @@ public class BattleFormula {
 
 		SkillHelper.CheckSkillEffect (EffectTrigger.OnHit, source);//检查命中前生效的特效
 
+		//守护效果
+		if(!damagePack.ignoreGuard && target.guardTarget != null)
+		{
+			target = target.guardTarget;
+			damagePack.target = target;
+			target.damageTaken = damagePack;
+		}
+
 		//计算真实命中、暴击、伤害
 		if(!damagePack.ignoreArmor)
 		{
@@ -64,9 +72,9 @@ public class BattleFormula {
 				damagePack.isEvaded = true;
 				damagePack.hit /= 2;
 			}
-			if(target.isGuarding)
+			if(target.isBlocking)
 			{
-				damagePack.isGuarded = true;
+				damagePack.isBlocked = true;
 				damagePack.minDmg /= 2;
 				damagePack.maxDmg /= 2;
 				damagePack.interrupt = 0;
@@ -95,7 +103,7 @@ public class BattleFormula {
 	
 	public static void Heal(BattleObject target, int amount)
 	{
-		if(amount < 0) amount = 0;
+		if(amount <= 0) return;
 		target.currentHP += amount;
 
 		target.GetComponent<BattleObjectUIEvent>().OnHeal();
@@ -114,9 +122,9 @@ public class BattleFormula {
 		target.timelinePosition -= Mathf.RoundToInt(target.damageTaken.interrupt);
 		if(target.battleStatus == BattleStatus.Action && target.timelinePosition < GlobalDataStructure.BATTLE_TIMELINE_READY)
 		{
-			target.battleStatus = BattleStatus.Prepare;
 			target.timelinePosition = 0;
-			//BattleManager.Instance.RemoveFromCommandQueue(target.commandToExecute);
+			target.battleStatus = BattleStatus.Prepare;
+			target.commandToExecute = new CommandNone();
 			MessageEventArgs args = new MessageEventArgs();
 			args.AddMessage("Name", target.GetName());
 			EventManager.Instance.PostEvent(BattleEvent.BattleObjectInterrupted, args);

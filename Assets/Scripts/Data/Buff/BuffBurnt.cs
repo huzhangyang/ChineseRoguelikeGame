@@ -9,7 +9,7 @@ public class BuffBurnt:Buff
 		source.defenceMulti -= 0.5f;
 
 		MessageEventArgs args = new MessageEventArgs ();
-		args.AddMessage("Message",string.Format("{0}因为烧伤，攻防下降！", source.GetName()));
+		args.AddMessage("Message",string.Format("{0}因为<烧伤>,能力下降!", source.GetName()));
 		EventManager.Instance.PostEvent (BattleEvent.OnBuffActivated, args);
 	}
 	
@@ -24,7 +24,7 @@ public class BuffBurnt:Buff
 		source.defenceMulti += 0.5f;
 		
 		MessageEventArgs args = new MessageEventArgs ();
-		args.AddMessage("Message",string.Format("{0}不再烧伤了！", source.GetName()));
+		args.AddMessage("Message",string.Format("{0}不再<烧伤>了!", source.GetName()));
 		EventManager.Instance.PostEvent (BattleEvent.OnBuffDeactivated, args);
 	}
 }

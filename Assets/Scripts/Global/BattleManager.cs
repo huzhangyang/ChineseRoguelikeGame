@@ -130,6 +130,15 @@ public class BattleManager : MonoBehaviour {
 				player.GetComponent<BattleObjectUIEvent>().EnableClick();
 			}
 			break;
+		case TargetType.OtherAlly:
+			foreach(Player player in players)
+			{
+				if(player != currentPlayer)
+				{
+					player.GetComponent<BattleObjectUIEvent>().EnableClick();
+				}
+			}
+			break;
 		default:
 			EventManager.Instance.PostEvent(BattleEvent.OnCommandSelected);
 			break;
@@ -173,6 +182,7 @@ public class BattleManager : MonoBehaviour {
 		if(bo.isEnemy)
 		{
 			enemys.Remove((Enemy)bo);
+			bo.GetComponent<BattleObjectUIEvent>().DestoryUI();
 			if(enemys.Count == 0)
 			{
 				EventManager.Instance.PostEvent(BattleEvent.OnBattleWin);
@@ -189,8 +199,7 @@ public class BattleManager : MonoBehaviour {
 
 	void OnBattleObjectEscape(MessageEventArgs args)
 	{
-		EventManager.Instance.PostEvent(BattleEvent.OnBattleLose);
-		StartCoroutine(FinishBattle());
+		OnBattleObjectDied(args);
 	}
 
 	/*CUSTOM METHOD*/
@@ -206,6 +215,14 @@ public class BattleManager : MonoBehaviour {
 			return players[UnityEngine.Random.Range (0, players.Count)];
 		else
 			return enemys[UnityEngine.Random.Range (0, enemys.Count)];
+	}
+
+	public BattleObject GetARandomAlly(BattleObject bo)
+	{
+		if (bo.isEnemy)
+			return enemys[UnityEngine.Random.Range (0, enemys.Count)];
+		else
+			return players[UnityEngine.Random.Range (0, players.Count)];
 	}
 
 	public List<BattleObject> GetAllEnemies(BattleObject bo)
@@ -264,9 +281,8 @@ public class BattleManager : MonoBehaviour {
 				Debug.LogWarning(ex.ToString());
 				continue;
 			}
-			cmd.Execute();
 			cmd.source.GetComponent<BattleObjectUIEvent>().BeginExecute();
-			yield return new WaitForSeconds(1);
+			yield return StartCoroutine(cmd.OnExecute());
 			cmd.source.GetComponent<BattleObjectUIEvent>().EndExecute();
 		}
 		ResumeEveryOne();

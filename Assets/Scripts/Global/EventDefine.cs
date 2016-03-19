@@ -12,7 +12,6 @@ public enum BattleEvent
 	OnPlayerSpawn,//敌人出现
 	OnEnemySpawn,//敌人出现
 	OnTimelineUpdate,//更新时间轴
-	OnMessageUpdate,//更新战斗信息
 
 	OnBuffActivated,//有BUFF被激活
 	OnBuffDeactivated,//有BUFF被激活
@@ -42,6 +41,16 @@ public enum UIEvent
 	OpenUIWindow = 100,
 	OnItemClicked,
 	OnSwitchLeader,
+	OnMessageClear,//清除信息
+	OnMessageSet,//直接显示某信息
+	OnMessageUpdate,//更新某信息
+	OnMessageHide,//隐藏信息
+	OnMessageShow,//显示信息
+}
+
+public enum GameEvent
+{
+	PlayDialogue = 200,
 }
 
 public enum UIWindowID

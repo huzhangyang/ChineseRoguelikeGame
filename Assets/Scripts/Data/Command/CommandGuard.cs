@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+using UnityEngine;
+using System;
 using System.Collections;
 
 public class CommandGuard : Command
@@ -6,17 +7,21 @@ public class CommandGuard : Command
 	public CommandGuard()
 	{
 		commandType = CommandType.Defence;
-		commandName = "格挡";
-		commandDescription = "尝试格挡敌方接下来的攻击";
-		targetType = TargetType.Self;
-		preExecutionSpeed = GlobalDataStructure.BATTLE_STANDARDSPEED;
+		commandName = "守护";
+		commandDescription = "替队友承受攻击";
+		targetType = TargetType.OtherAlly;
+		preExecutionSpeed = GlobalDataStructure.BATTLE_MAXSPEED;
 		postExecutionRecover = 0;
 	}
 
-	public override void Execute()
+	protected override void SetExecuteMessage()
 	{
-		executeMessage = source.GetName() + "试图格挡！";
-		SendExecuteMessage ();
-		source.isGuarding = true;
+		executeMessage = String.Format("{0}正在守护{1}！",source.GetName(),targetList[0].GetName());
+	}
+	
+	protected override void Execute()
+	{
+		targetList[0].guardTarget = source;
+		source.guardedTarget = targetList[0];
 	}
 }

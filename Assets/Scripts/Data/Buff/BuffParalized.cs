@@ -12,7 +12,7 @@ public class BuffParalized:Buff
 		source.critResistMulti -= 0.25f;
 		
 		MessageEventArgs args = new MessageEventArgs ();
-		args.AddMessage("Message",string.Format("{0}被麻痹了！", source.GetName()));
+		args.AddMessage("Message",string.Format("{0}因为<麻痹>,能力下降!", source.GetName()));
 		EventManager.Instance.PostEvent (BattleEvent.OnBuffActivated, args);
 	}
 	
@@ -29,7 +29,7 @@ public class BuffParalized:Buff
 		source.critResistMulti += 0.25f;
 		
 		MessageEventArgs args = new MessageEventArgs ();
-		args.AddMessage("Message",string.Format("{0}解除了麻痹！", source.GetName()));
+		args.AddMessage("Message",string.Format("{0}不再<麻痹>了!", source.GetName()));
 		EventManager.Instance.PostEvent (BattleEvent.OnBuffDeactivated, args);
 	}
 }

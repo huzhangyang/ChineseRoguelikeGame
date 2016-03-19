@@ -9,7 +9,7 @@ public class BuffKnockout:Buff
 		source.timelinePosition = 0;
 		
 		MessageEventArgs args = new MessageEventArgs ();
-		args.AddMessage("Message",string.Format("{0}被击倒了！", source.GetName()));
+		args.AddMessage("Message",string.Format("{0}被<击倒>了!", source.GetName()));
 		EventManager.Instance.PostEvent (BattleEvent.OnBuffActivated, args);
 	}
 	

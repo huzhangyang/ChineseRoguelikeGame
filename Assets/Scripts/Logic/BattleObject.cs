@@ -74,16 +74,23 @@ public abstract class BattleObject : MonoBehaviour {
 	public Command commandToExecute = new CommandNone();
 	public Damage damage;//击出的伤害
 	public Damage damageTaken;//受到的伤害
-	public List<Command> availableCommands = new List<Command>();
-	public List<Buff> buffList = new List<Buff>();
+	public List<Command> availableCommands = new List<Command>();//可用指令
+	public List<Buff> buffList = new List<Buff>();//激活buff
 
 	public bool isDead = false;//是否已经死了
-	public bool isGuarding = false;//是否正在防御
+	public bool isBlocking = false;//是否正在格挡
 	public bool isEvading = false;//是否正在躲避
 	public bool isEnemy = false;//是否敌人
 	public bool isHealingBottleUsed = false;//是否使用过元素瓶
 	public bool isRecovering{get{return timelinePosition < 0;}}
 	public float buffFrozenTime = 0;//冰冻BUFF剩余时间
+	public BattleObject guardTarget = null;//守护对象
+	public BattleObject guardedTarget = null;//被守护对象
+
+	public bool disableAttackCommand;
+	public bool disableDefenceCommand;
+	public bool disableItemCommand;
+	public bool disableStrategyCommand;
 
 	protected BattleObjectUIEvent UIEvent;
 	protected ObjectData data;
@@ -91,19 +98,18 @@ public abstract class BattleObject : MonoBehaviour {
 	void OnEnable() 
 	{
 		EventManager.Instance.RegisterEvent (BattleEvent.OnTimelineUpdate, OnTimelineUpdate);
-		EventManager.Instance.RegisterEvent(BattleEvent.BattleObjectDied, OnBattleObjectDied);
 	}
 	
 	void OnDisable () 
 	{
 		EventManager.Instance.UnRegisterEvent (BattleEvent.OnTimelineUpdate, OnTimelineUpdate);
-		EventManager.Instance.UnRegisterEvent(BattleEvent.BattleObjectDied, OnBattleObjectDied);
 	}
 
 	protected abstract void SelectCommand();
 	public abstract bool IsBoss();
 
-	/*更新时间轴*/
+	/*-----时间轴相关-----*/
+
 	protected void OnTimelineUpdate(MessageEventArgs args)
 	{
 		if(this.isDead)return;
@@ -113,7 +119,7 @@ public abstract class BattleObject : MonoBehaviour {
 		else if(battleStatus == BattleStatus.Prepare)
 			timelinePosition += BattleAttribute.Speed(this);
 		else if(battleStatus == BattleStatus.Action)
-			timelinePosition += commandToExecute.preExecutionSpeed;
+			timelinePosition += commandToExecute.preExecutionSpeed * 2 / 3;
 
 		if(timelinePosition >= GlobalDataStructure.BATTLE_TIMELINE_READY && battleStatus == BattleStatus.Prepare)
 		{
@@ -126,21 +132,17 @@ public abstract class BattleObject : MonoBehaviour {
 		}
 	}
 
-	protected void OnBattleObjectDied(MessageEventArgs args)
-	{
-		BattleObject bo = args.GetMessage<BattleObject> ("Object");
-		if(this == bo)
-		{
-			UIEvent.DestoryUI ();
-		}
-	}
-
 	protected void OnReady()
 	{
 		timelinePosition = GlobalDataStructure.BATTLE_TIMELINE_READY;
-		isGuarding = false;
+		isBlocking = false;
 		isEvading = false;
 		battleStatus = BattleStatus.Ready;
+		if(guardedTarget != null)
+		{
+			guardedTarget.guardTarget = null;
+			guardedTarget = null;
+		}
 
 		if(data.battleType == BattleType.Physical)
 		{//自愈机制
@@ -193,17 +195,20 @@ public abstract class BattleObject : MonoBehaviour {
 		SkillHelper.CheckBuff (BuffTrigger.Action, this);
 		//decide command
 		BattleManager.Instance.AddToCommandQueue (commandToExecute);
-		//post process
+	}
+
+	public void PostExecute()
+	{
 		timelinePosition = -commandToExecute.postExecutionRecover * BattleAttribute.Speed(this);//后退距离 = 帧 * 步进
 		battleStatus = BattleStatus.Prepare;
 		commandToExecute = new CommandNone();
 	}
 
+	/*-----Buff相关-----*/
+
 	public void AddBuff(int id, int effectTurns)
 	{
 		BuffData data = DataManager.Instance.GetSkillDataSet().GetBuffData(id);
-		Buff buff = Buff.CreateBuff(this, data, effectTurns);
-
 		Buff duplicatedBuff = buffList.Find((Buff temp)=>{return temp.id == id;});
 		if(duplicatedBuff != null)
 		{
@@ -211,9 +216,42 @@ public abstract class BattleObject : MonoBehaviour {
 		}
 		else
 		{
+			Buff buff = Buff.CreateBuff(this, data, effectTurns);
 			buffList.Add(buff);
 		}
 	}
+
+	public void RemoveBuff(int id)
+	{
+		foreach(Buff buff in buffList)
+		{
+			if(buff.id == id)
+			{
+				buff.Remove();
+				buffList.Remove(buff);	
+				break;
+			}
+		}
+	}
+
+	public void ClearBuff()
+	{
+		List<Buff> toRemoveList = new List<Buff>();
+		foreach(Buff buff in buffList)
+		{
+			if(!buff.isBornBuff)
+			{
+				buff.Remove();
+				toRemoveList.Add(buff);
+			}
+		}
+		foreach(Buff buff in toRemoveList)
+		{
+			buffList.Remove(buff);	
+		}
+	}
+
+	/*-----数据相关-----*/
 
 	public string GetName()
 	{
@@ -238,6 +276,18 @@ public abstract class BattleObject : MonoBehaviour {
 	public List<int> GetMagicList()
 	{
 		return data.GetMagics();
+	}
+
+	public Dictionary<int, int> GetItemList()
+	{
+		Dictionary<int, int> returnVal = new Dictionary<int, int>();
+		foreach(var item in data.GetItemDict())
+		{
+			ItemData itemData = DataManager.Instance.GetItemDataSet().GetItemData(item.Key);
+			if(itemData.usedInBattle)
+				returnVal.Add(item.Key, item.Value);
+		}
+		return returnVal;
 	}
 
 	public BattleType GetBattleType()

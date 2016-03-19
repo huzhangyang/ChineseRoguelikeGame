@@ -6,9 +6,12 @@ public class Player : BattleObject {
 /*
  * 角色在战斗中的数据实体与逻辑。
  * */	
+	protected PlayerData playerData;
+
 	public void Init(int playerID)
 	{
 		data = DataManager.Instance.GetPlayerDataSet().GetPlayerData(playerID).Clone();
+		playerData = data as PlayerData;
 
 		UIEvent = this.GetComponent<BattleObjectUIEvent>();
 		UIEvent.Init(playerID);
@@ -19,11 +22,11 @@ public class Player : BattleObject {
 		args.AddMessage("Object", this);
 		EventManager.Instance.PostEvent(BattleEvent.OnPlayerSpawn, args);
 
-
-		if(playerID == 1)
+		for(int i = 0; i < data.bornBuffs.Count; i++)
 		{
-			AddBuff(1, -1);//为妹子添加不死buff
+			AddBuff(data.bornBuffs[i], -1);//添加固有BUFF
 		}
+		SkillHelper.CheckWeaponBuff(this);
 	}
 
 	protected override void SelectCommand()

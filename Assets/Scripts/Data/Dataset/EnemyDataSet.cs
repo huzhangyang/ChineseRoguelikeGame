@@ -4,16 +4,28 @@ using System.Collections.Generic;
 
 public class EnemyDataSet : ScriptableObject 
 {
-	public List<EnemyData> dataSet = new List<EnemyData>();
+	public List<EnemyData> enemyDataSet = new List<EnemyData>();
+	public List<AIData> aiDataSet = new List<AIData>();
 	
 	public EnemyData GetEnemyData(int enemyID)
 	{
-		foreach (EnemyData data in dataSet)
+		foreach (EnemyData data in enemyDataSet)
 		{
 			if (data.id == enemyID)
 				return data;
 		}
 		Debug.LogError("Asking for an non-exist enemy:" + enemyID);
+		return null;
+	}
+
+	public AIData GetAIData(int aiID)
+	{
+		foreach (AIData data in aiDataSet)
+		{
+			if (data.id == aiID)
+				return data;
+		}
+		Debug.LogError("Asking for an non-exist ai:" + aiID);
 		return null;
 	}
 }
@@ -25,10 +37,26 @@ public class EnemyData : ObjectData {
 */
 	public bool isBoss;
 	public int imageID;
+	public int aiID;
 
 	public EnemyData Clone()
 	{
 		OnDeSerialize();
 		return(EnemyData)this.MemberwiseClone();
 	}
+}
+
+[System.Serializable]
+public class AIData {
+/*
+ * 怪物行为逻辑数据。
+*/
+	public int id;
+	public string name;
+	public int attackFrequency;
+	public int defenceFrequency;
+	public int itemFrequency;
+	public int strategyFrequency;
+	public int escapeThreshold;
+	public int guardThreshold;
 }
